@@ -1,4 +1,8 @@
-apply plugin: 'com.android.library'
+if (rootProject.ext.isStructureApplication) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
 
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
@@ -12,7 +16,10 @@ android {
         versionCode rootProject.ext.android["versionCode"]
         versionName rootProject.ext.android["versionName"]
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        if (rootProject.ext.isStructureApplication){
+            //组件模式下设置applicationId
+            applicationId "com.transcendence.structure"
+        }
 
     }
 
@@ -28,11 +35,24 @@ android {
         }
     }
 
+
+    sourceSets {
+        main {
+            if (rootProject.ext.isStructureApplication) {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/java/com/transcendence/structure/base/AndroidManifest.xml'
+            }
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    implementation project(':library')
     implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
     implementation "com.android.support:design:$rootProject.ext.supportLibraryVersion"
     implementation "com.android.support.constraint:constraint-layout:$rootProject.ext.constraintLayoutVersion"

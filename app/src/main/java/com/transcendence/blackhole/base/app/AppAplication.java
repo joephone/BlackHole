@@ -7,4 +7,5 @@ package com.transcendence.blackhole.base.app;
  */
 
 public class AppAplication extends LibApplication {
+
 }
