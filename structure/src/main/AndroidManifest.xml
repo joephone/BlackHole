@@ -6,8 +6,11 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_deer"
         android:label="@string/app_structure_name"
-        android:theme="@style/AppTheme">
-        <activity android:name=".StructureMainActivity">
+        android:theme="@style/NoTitleAppTheme">
+        <activity
+            android:name=".StructureMainActivity"
+            android:screenOrientation="portrait"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

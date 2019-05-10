@@ -1,0 +1,45 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!--标题栏的高度-->
+    <dimen name="title_height">45dp</dimen>
+
+    <dimen name="chat_title_height">45dp</dimen>
+    <!-- 含分割线布局的高度-->
+    <dimen name="includeview_height">45dp</dimen>
+    <!-- 标题栏的文字大小 -->
+    <dimen name="title_size">18sp</dimen>
+    <!-- 标题栏右边的文字大小-->
+    <dimen name="title_size_right">18sp</dimen>
+    <!-- 边界距离 -->
+    <dimen name="all_width_height">15dp</dimen>
+    <dimen name="standard_padding">15dp</dimen>
+    <!--  线宽或高 -->
+    <dimen name="view_width">1dp</dimen>
+    <!-- 编辑文字 -->
+    <dimen name="edit_text">14dp</dimen>
+    <!-- 编辑文本框高度 -->
+    <dimen name="edit_text_height">40dp</dimen>
+    <!-- 按钮文字大小 -->
+    <dimen name="button_text">16sp</dimen>
+    <!-- view高 -->
+    <dimen name="divider_height">0.5dp</dimen>
+    <!-- 标准文字大小 -->
+    <dimen name="standard_text">14dp</dimen>
+
+    <dimen name="standard_text_bigger">15dp</dimen>
+    <!-- 大文字 -->
+    <dimen name="big_text">16dp</dimen>
+
+    <!-- 12 标准文字大小 -->
+    <dimen name="small_text">12dp</dimen>
+
+    <!-- 验证码长度-->
+    <!-- 画布高度-->
+    <dimen name="paint_height">200dp</dimen>
+
+
+
+</resources>

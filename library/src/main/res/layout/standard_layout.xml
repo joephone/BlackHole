@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        android:background="@drawable/water_selector"
+        >
+        <ImageView
+            android:id="@+id/ivLeft"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:paddingLeft="@dimen/standard_padding"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/tvLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/standard_padding"
+            android:layout_toRightOf="@id/ivLeft"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/standard_text"
+            android:textColor="@color/text_33"
+            tools:name="左"/>
+
+        <TextView
+            android:id="@+id/tvRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/ivRight"
+            android:paddingRight="10dp"
+            android:textSize="@dimen/standard_text"
+            android:textColor="@color/text_66"
+            tools:name="右"/>
+        <ImageView
+            android:id="@+id/ivRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:paddingRight="@dimen/standard_padding"
+            android:src="@mipmap/ic_right_gray"
+            />
+    </RelativeLayout>
+
+
+    <View
+        android:id="@+id/line"
+        style="@style/Line"   />
+</FrameLayout>
