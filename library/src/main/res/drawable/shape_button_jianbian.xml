@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle"
+    >
+    <!-- 圆角-->
+    <corners android:radius="50dp" />
+    <!-- 渐变-->
+    <gradient android:startColor="#6fd99d" android:centerColor="#63cfc3" android:endColor="#57c5e9"/>
+    <!-- 另一种渐变色值-->
+    <!--<gradient android:startColor="#0b0b0b" android:centerColor="#f10909" android:endColor="#067fe2"/>-->
+</shape>

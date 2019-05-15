@@ -1,4 +1,4 @@
-package com.transcendence.blackhole.base.guide;
+package com.transcendence.blackhole.activity.guide;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -34,7 +34,6 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guide);
-
 
         init();
     }

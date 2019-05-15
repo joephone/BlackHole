@@ -8,6 +8,7 @@
 
     <!-- 元色 -->
     <color name="white">#ffffff</color>
+    <color name="transparent">#00000000</color>
 
 
     <!-- 分割线的颜色 -->
@@ -33,5 +34,11 @@
     <color name="avatarGray">#b2525252</color>
     <color name="blue">#77c7d5</color>
     <color name="black">#000000</color>
+
+    <!-- paintView -->
+    <color name="paintview_panel_bg">#000000</color>
+    <color name="paintview_panel_bg_pressed">#222222</color>
+    <color name="paint_color_blue">#41c6ff</color>
+    <color name="paint_color_red">#ff4141</color>
 
 </resources>

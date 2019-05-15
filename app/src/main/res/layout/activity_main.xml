@@ -19,7 +19,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:clickable="true"
-            android:background="@drawable/water_selector"
+            android:background="@drawable/water_standard_selector"
             android:text="Hello World!" />
         <TextView
             android:layout_width="0dp"
@@ -27,7 +27,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:clickable="true"
-            android:background="@drawable/water_selector"
+            android:background="@drawable/water_standard_selector"
             android:text="Hello World!" />
         <TextView
             android:layout_width="0dp"
@@ -35,7 +35,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:clickable="true"
-            android:background="@drawable/water_selector"
+            android:background="@drawable/water_standard_selector"
             android:text="Hello World!" />
         <TextView
             android:layout_width="0dp"
@@ -43,7 +43,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:clickable="true"
-            android:background="@drawable/water_selector"
+            android:background="@drawable/water_standard_selector"
             android:text="Hello World!" />
     </LinearLayout>
 
@@ -70,8 +70,31 @@
         android:layout_marginRight="@dimen/standard_padding"
         android:gravity="center"
         android:clickable="true"
-        android:background="@drawable/water_selector"
-        android:text="方法二 ripple" />
+        android:background="@drawable/water_standard_selector"
+        android:text="方法二 正常 ripple" />
+
+    <TextView
+        android:id="@+id/tvJianbian"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/standard_padding"
+        android:layout_marginLeft="@dimen/standard_padding"
+        android:layout_marginRight="@dimen/standard_padding"
+        android:gravity="center"
+        android:clickable="true"
+        android:background="@drawable/water_jianbian_selector"
+        android:text="方法二 渐变 ripple" />
+
+    <com.transcendence.blackhole.widget.custom.StandardLayout
+        android:id="@+id/paintView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/standard_padding"
+        android:clickable="true"
+        app:leftText="画版"
+        app:rightText="右"
+        app:leftIcon="@mipmap/zuimei_ic_mine_portrait"
+        />
 
     <com.transcendence.blackhole.widget.custom.StandardLayout
         android:id="@+id/standardLayout"
@@ -79,8 +102,21 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/standard_padding"
         android:clickable="true"
-        app:leftText="左"
+        app:leftText="标准栏"
         app:rightText="右"
         app:leftIcon="@mipmap/zuimei_ic_mine_portrait"
         />
+
+    <com.transcendence.blackhole.widget.custom.StandardLayout
+        android:id="@+id/edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/standard_padding"
+        android:clickable="true"
+        app:leftText="输入框"
+        app:rightText="右"
+        />
+
+
+
 </LinearLayout>

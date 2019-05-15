@@ -1,30 +1,32 @@
-package com.transcendence.blackhole.fragment;
+package com.transcendence.structure.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.transcendence.blackhole.library.R;
+import com.transcendence.structure.R;
+import com.transcendence.structure.activity.setting.SettingActivity;
 
 
 /**
- * Created by Joephone on 2019/2/13 19:13
+ * Created by Joephone on 2019/5/13 17:13
  * E-Mail Address：joephonechen@gmail.com
  */
 
-public class BlankFragment extends Fragment {
+public class StructureMineFragment extends Fragment implements View.OnClickListener{
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_SHOW_TEXT = "text";
 
     private String mContentText;
 
+    TextView tvContent;
 
-    public BlankFragment() {
+
+    public StructureMineFragment() {
         // Required empty public constructor
     }
 
@@ -32,13 +34,13 @@ public class BlankFragment extends Fragment {
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
-     * @param title Parameter 1.
+     * @param param1 Parameter 1.
      * @return A new instance of fragment .
      */
-    public static BlankFragment newInstance(String title) {
-        BlankFragment fragment = new BlankFragment();
+    public static StructureMineFragment newInstance(String param1) {
+        StructureMineFragment fragment = new StructureMineFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_SHOW_TEXT, title);
+        args.putString(ARG_SHOW_TEXT, param1);
         fragment.setArguments(args);
         return fragment;
     }
@@ -49,20 +51,27 @@ public class BlankFragment extends Fragment {
         if (getArguments() != null) {
             mContentText = getArguments().getString(ARG_SHOW_TEXT);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_blank, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_structure_mine, container, false);
+        tvContent = rootView.findViewById(R.id.tvContent);
+        tvContent.setText(mContentText);
+        tvContent.setOnClickListener(this);
         return rootView;
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        TextView contentTv = view.findViewById(R.id.tvContent);
-        contentTv.setText(mContentText);
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.tvContent:
+                Intent intent = new Intent(getActivity(), SettingActivity.class);
+                startActivity(intent);
+                break;
+        }
     }
 }

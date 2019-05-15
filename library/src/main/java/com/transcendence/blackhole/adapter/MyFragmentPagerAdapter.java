@@ -1,8 +1,10 @@
 package com.transcendence.blackhole.adapter;
 
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.view.ViewGroup;
 
 import java.util.List;
 
@@ -41,4 +43,16 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return this.mList == null ? 0 : this.mList.size();
     }
+
+
+//    @Override
+//    public Object instantiateItem(@NonNull ViewGroup container, int position) {
+//
+//        return fragment;
+//    }
+//
+//    @Override
+//    public void destroyItem( ViewGroup container, int position, @NonNull Object object) {
+//        container.removeView(mList.get(position));
+//    }
 }

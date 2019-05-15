@@ -9,13 +9,14 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:orientation="horizontal"
-        android:background="@drawable/water_selector"
+        android:background="@drawable/water_standard_selector"
         >
         <ImageView
             android:id="@+id/ivLeft"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:paddingLeft="@dimen/standard_padding"
+            android:visibility="gone"
             android:layout_centerVertical="true"/>
 
         <TextView

@@ -1,9 +1,9 @@
-package com.transcendence.blackhole.base;
+package com.transcendence.blackhole.activity.widget.custom;
 
 import android.view.View;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.guide.GuideActivity;
+import com.transcendence.blackhole.activity.guide.GuideActivity;
 import com.transcendence.blackhole.base.mvp.BaseActivity;
 import com.transcendence.blackhole.widget.custom.StandardLayout;
 
@@ -13,7 +13,6 @@ import com.transcendence.blackhole.widget.custom.StandardLayout;
 public class StandardLayoutActivity extends BaseActivity implements View.OnClickListener{
 
     private StandardLayout standardLayout;
-
 
     @Override
     public int getLayoutId() {

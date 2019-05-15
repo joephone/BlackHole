@@ -10,4 +10,9 @@
     <string name="zuimei_home_nav_two">发现</string>
     <string name="zuimei_home_nav_three">消息</string>
     <string name="zuimei_home_nav_four">我的</string>
+
+
+
+    <string name="menu_title_share">Share</string>
+    <string name="title_share">Share To</string>
 </resources>

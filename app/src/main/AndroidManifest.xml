@@ -55,7 +55,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".base.LauncherActivity"
+            android:name=".base.WeChatMainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -65,19 +65,35 @@
         </activity>
 
         <activity
+            android:name=".base.LauncherActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity
             android:name=".base.MainActivity"
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".base.StandardLayoutActivity"
+            android:name=".activity.widget.custom.StandardLayoutActivity"
             android:screenOrientation="portrait"/>
 
-        <activity
-            android:name=".setting.SettingActivity"
-            android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".base.guide.GuideActivity"
+            android:name=".activity.guide.GuideActivity"
+            android:screenOrientation="portrait"/>
+
+            <!-- 画板 -->
+        <activity
+            android:name=".activity.paint.PaintActivity"
+            android:screenOrientation="portrait"/>
+
+            <!-- 自动删除输入框 -->
+        <activity
+            android:name=".activity.widget.edittext.AutoClearEditActivity"
+            android:screenOrientation="portrait"/>
+
+            <!-- 渐变 -->
+        <activity
+            android:name=".activity.widget.button.JianbianButtonActivity"
             android:screenOrientation="portrait"/>
     </application>
 

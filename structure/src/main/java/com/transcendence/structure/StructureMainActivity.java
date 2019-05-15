@@ -4,7 +4,6 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -13,6 +12,7 @@ import com.transcendence.blackhole.adapter.MyFragmentPagerAdapter;
 import com.transcendence.blackhole.fragment.BlankFragment;
 import com.transcendence.blackhole.widget.viewpager.NoScrollViewPager;
 import com.transcendence.structure.fragment.MagazineFragement;
+import com.transcendence.structure.fragment.StructureMineFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +41,7 @@ public class StructureMainActivity extends AppCompatActivity implements BottomNa
         mFragments.add(new MagazineFragement());
         mFragments.add(BlankFragment.newInstance("二"));
         mFragments.add(BlankFragment.newInstance("三"));
-        mFragments.add(BlankFragment.newInstance("四"));
+        mFragments.add(StructureMineFragment.newInstance("四"));
         // init view pager
         mAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager(), mFragments);
         mViewPager.setAdapter(mAdapter);

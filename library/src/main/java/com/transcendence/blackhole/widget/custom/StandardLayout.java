@@ -121,6 +121,7 @@ public class StandardLayout extends FrameLayout {
     public void setLeftIcon(int iconId) {
 //        Logs.logI("setLeftIcon---"+iconId);
         if (iconId > 0) {
+            ivLeft.setVisibility(VISIBLE);
             ivLeft.setImageResource(iconId);
         }else if (iconId == 0){
             ivLeft.setVisibility(GONE);

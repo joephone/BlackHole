@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/bg_public"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <View
+        style="@style/Line"  />
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/standard_padding"
+        android:layout_marginLeft="@dimen/standard_padding"
+        android:layout_marginRight="@dimen/standard_padding"
+        android:gravity="center"
+        android:clickable="true"
+        android:background="@drawable/water_jianbian_selector"
+        android:text="渐变 ripple" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/standard_padding"
+        android:layout_marginLeft="@dimen/standard_padding"
+        android:layout_marginRight="@dimen/standard_padding"
+        android:gravity="center"
+        android:clickable="true"
+        android:background="@drawable/water_jianbian_fangshe_selector"
+        android:text="放射 ripple" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/standard_padding"
+        android:layout_marginLeft="@dimen/standard_padding"
+        android:layout_marginRight="@dimen/standard_padding"
+        android:gravity="center"
+        android:clickable="true"
+        android:background="@drawable/water_jianbian_sweep_selector"
+        android:text="扫描 ripple" />
+
+</LinearLayout>
