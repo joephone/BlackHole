@@ -10,6 +10,7 @@ import com.transcendence.blackhole.base.mvp.BaseActivity;
  */
 
 public class JianbianButtonActivity extends BaseActivity {
+
     @Override
     public int getLayoutId() {
         return R.layout.activity_button_jianbian;

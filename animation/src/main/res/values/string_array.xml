@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2017 Yan Zhenjie
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<resources>
+    <string-array name="main_index_item">
+        <item>简单动画</item>
+        <item>复杂动画</item>
+        <item>Splash引导动画</item>
+        <item>Flip效果合集(折叠)</item>
+        <item>NineOld</item>
+        <item>Property效果</item>
+        <item>高仿动画效果</item>
+        <item>Listview效果集合</item>
+        <item>自定义控件效果集合</item>
+        <item>页面滑动切换效果集合</item>
+        <item>画笔绘制效果集合</item>
+        <item>手势库效果集合</item>
+        <item>Notification效果集合</item>
+    </string-array>
+
+
+    <string-array name="simple_index">
+        <item>a1</item>
+        <item>a2</item>
+        <item>alpha</item>
+        <item>alpha_rotate</item>
+        <item>alpha_scale</item>
+        <item>alpha_scale_rotate</item>
+        <item>alpha_scale_translate</item>
+        <item>alpha_scale_translate_rotate</item>
+        <item>alpha_translate</item>
+        <item>alpha_translate_rotate</item>
+        <item>drawroll_ani_in</item>
+        <item>drawroll_ani_out</item>
+        <item>fade</item><item>gallery_in</item><item>hold</item><item>hyperspace_in</item><item>hyperspace_out</item>
+        <item>left_in</item><item>left_out</item><item>my_alpha_action</item><item>my_scale_action</item>
+        <item>myanimation_set</item><item>myown_design</item><item>push_left_in</item><item>push_left_out</item>
+        <item>push_up_in</item><item>push_up_out</item><item>right_in</item><item>right_out</item><item>rotate</item>
+        <item>scale</item><item>scale_rotate</item><item>scale_translate</item>
+        <item>scale_translate_rotate</item><item>slide_down_out</item><item>slide_left</item>
+        <item>slide_right</item><item>slide_up_in</item><item>translate</item><item>translate_rotate</item>
+        <item>wave_scale</item><item>zoom_enter</item><item>zoom_exit</item>
+    </string-array>
+
+</resources>

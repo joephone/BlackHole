@@ -81,12 +81,12 @@ public class WeChatMainActivity extends BaseActivity {
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixel) {
-                Logs.logI("onPageScrolled pos="+position+",positionOffset="+positionOffset);
+                Logs.d("onPageScrolled pos="+position+",positionOffset="+positionOffset);
             }
 
             @Override
             public void onPageSelected(int position) {
-                Logs.logI("onPageSelected pos="+position);
+                Logs.d("onPageSelected pos="+position);
             }
 
             @Override

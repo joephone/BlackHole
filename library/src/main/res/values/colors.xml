@@ -4,12 +4,12 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="universe_theme">#273535</color>
+
 
     <!-- 元色 -->
     <color name="white">#ffffff</color>
     <color name="transparent">#00000000</color>
-
+    <color name="colorTheme">#273535</color>
 
     <!-- 分割线的颜色 -->
     <color name="colorLine">#ECECEC</color>

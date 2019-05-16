@@ -19,18 +19,14 @@ public class Logs {
 
     }
 
-
-
     public static void logE(String content) {
 
             Log.e(Global.TAG, content);
 
     }
 
-    public static void logV(String content) {
-
-            Log.v(Global.TAG, content);
-
+    public static void d(String content) {
+            Log.d(Global.TAG, content);
     }
 
 }
