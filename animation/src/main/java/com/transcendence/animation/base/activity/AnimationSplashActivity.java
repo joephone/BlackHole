@@ -1,19 +1,16 @@
 package com.transcendence.animation.base.activity;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.ActionBarContextView;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.transcendence.animation.R;
-import com.transcendence.animation.simple.SimpleIndexActivity;
+import com.transcendence.animation.index.ComplexIndexActivity;
+import com.transcendence.animation.index.SimpleIndexActivity;
 import com.transcendence.blackhole.base.mvp.BaseActivity;
 import com.transcendence.blackhole.utils.StringUtils;
 
@@ -71,6 +68,7 @@ public class AnimationSplashActivity extends BaseActivity implements AdapterView
                 break;
             case 1:
                 //复杂动画
+                startActivity(ComplexIndexActivity.class);
                 break;
             case 2:
                 //Splash引导动画

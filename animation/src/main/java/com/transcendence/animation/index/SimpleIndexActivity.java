@@ -1,4 +1,4 @@
-package com.transcendence.animation.simple;
+package com.transcendence.animation.index;
 
 import android.view.View;
 import android.view.animation.Animation;
@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * @author Joephone on 2019/5/16 10:55
  * @E-Mail Address：joephonechen@gmail.com
- * @Desc  动画起动页
+ * @Desc  简单动画索引
  */
 public class SimpleIndexActivity extends BaseActivity implements AdapterView.OnItemClickListener{
     private ArrayAdapter<String> adapter;

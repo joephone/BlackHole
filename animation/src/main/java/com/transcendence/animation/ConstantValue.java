@@ -9,18 +9,20 @@ package com.transcendence.animation;
 public interface ConstantValue {
 // ---------------------------简单动画页面------------------------------------
     /**
-     *  a1 由完全显示 --> 完全透明
-     *  a2 由完全透明 --> 完全显示
+     *  a1 由完全显示 --> 完全透明   1 - 0
+     *  a2 由完全透明 --> 完全显示   0 - 1
      */
-    int[] simple = { R.anim.a1, R.anim.a2};
+    int[] simple = { R.anim.a1, R.anim.a2, R.anim.alpha_rotate,
+                    R.anim.alpha_scale, R.anim.alpha_scale_rotate5,
+                    R.anim.alpha_scale_translate, R.anim.alpha_scale_translate_rotate,
+                    R.anim.alpha_translate, R.anim.alpha_translate_rotate,
+                    R.anim.drawroll_ani_in_10, R.anim.drawroll_ani_out,
+    };
 
 
     /*
-    , R.anim.alpha, R.anim.alpha_rotate,
-            R.anim.alpha_scale, R.anim.alpha_scale_rotate,
-            R.anim.alpha_scale_translate, R.anim.alpha_scale_translate_rotate,
-            R.anim.alpha_translate, R.anim.alpha_translate_rotate,
-            R.anim.drawroll_ani_in, R.anim.drawroll_ani_out, R.anim.fade,
+
+            R.anim.drawroll_ani_in_10, R.anim.drawroll_ani_out, R.anim.fade,
             R.anim.gallery_in, R.anim.hold, R.anim.hyperspace_in,
             R.anim.hyperspace_out, R.anim.left_in, R.anim.left_out,
             R.anim.my_alpha_action, R.anim.my_scale_action,
@@ -33,4 +35,13 @@ public interface ConstantValue {
             R.anim.translate, R.anim.translate_rotate, R.anim.wave_scale,
             R.anim.zoom_enter, R.anim.zoom_exit
      */
+
+
+    // ---------------------------复杂动画页面------------------------------------
+    /**
+     *  a1 由完全显示 --> 完全透明
+     *  a2 由完全透明 --> 完全显示
+     */
+    int[] complex = { R.anim.block_move_right, R.anim.grow_from_top};
+
 }

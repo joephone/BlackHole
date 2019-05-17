@@ -17,7 +17,7 @@
         android:layout_marginBottom="70dp"
         android:padding="10dp"
         android:id="@+id/btnStart"
-        android:textColor="@color/universe_theme"
+        android:textColor="@color/colorTheme"
         android:background="@drawable/water_standard_selector"
         android:text="开始体验黑洞"
         android:visibility="invisible"

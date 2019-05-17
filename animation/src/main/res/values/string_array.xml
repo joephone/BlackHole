@@ -35,15 +35,16 @@
     <string-array name="simple_index">
         <item>a1</item>
         <item>a2</item>
-        <item>alpha</item>
         <item>alpha_rotate</item>
         <item>alpha_scale</item>
-        <item>alpha_scale_rotate</item>
+        <item>alpha_scale_rotate_5</item>
+
         <item>alpha_scale_translate</item>
         <item>alpha_scale_translate_rotate</item>
         <item>alpha_translate</item>
         <item>alpha_translate_rotate</item>
-        <item>drawroll_ani_in</item>
+        <item>drawroll_ani_in_10</item>
+
         <item>drawroll_ani_out</item>
         <item>fade</item><item>gallery_in</item><item>hold</item><item>hyperspace_in</item><item>hyperspace_out</item>
         <item>left_in</item><item>left_out</item><item>my_alpha_action</item><item>my_scale_action</item>
@@ -53,6 +54,11 @@
         <item>scale_translate_rotate</item><item>slide_down_out</item><item>slide_left</item>
         <item>slide_right</item><item>slide_up_in</item><item>translate</item><item>translate_rotate</item>
         <item>wave_scale</item><item>zoom_enter</item><item>zoom_exit</item>
+    </string-array>
+
+
+    <string-array name="complex_index">
+        <item>block_move_right</item><item>grow_from_top</item>
     </string-array>
 
 </resources>
