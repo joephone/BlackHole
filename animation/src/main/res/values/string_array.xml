@@ -15,14 +15,14 @@
     limitations under the License.
 -->
 <resources>
-    <string-array name="main_index_item">
+    <string-array name="anim_main_index_item">
         <item>简单动画</item>
         <item>复杂动画</item>
         <item>Splash引导动画</item>
         <item>Flip效果合集(折叠)</item>
         <item>NineOld</item>
         <item>Property效果</item>
-        <item>高仿动画效果</item>
+        <item>高仿动画效果 6</item>
         <item>Listview效果集合</item>
         <item>自定义控件效果集合</item>
         <item>页面滑动切换效果集合</item>
@@ -31,7 +31,7 @@
         <item>Notification效果集合</item>
     </string-array>
 
-
+    <!-- 简单 -->
     <string-array name="simple_index">
         <item>a1</item>
         <item>a2</item>
@@ -45,20 +45,56 @@
         <item>alpha_translate_rotate</item>
         <item>drawroll_ani_in_10</item>
 
-        <item>drawroll_ani_out</item>
-        <item>fade</item><item>gallery_in</item><item>hold</item><item>hyperspace_in</item><item>hyperspace_out</item>
-        <item>left_in</item><item>left_out</item><item>my_alpha_action</item><item>my_scale_action</item>
-        <item>myanimation_set</item><item>myown_design</item><item>push_left_in</item><item>push_left_out</item>
-        <item>push_up_in</item><item>push_up_out</item><item>right_in</item><item>right_out</item><item>rotate</item>
-        <item>scale</item><item>scale_rotate</item><item>scale_translate</item>
-        <item>scale_translate_rotate</item><item>slide_down_out</item><item>slide_left</item>
+        <item>drawroll_ani_out</item><item>fade_12</item><item>gallery_in</item><item>hold</item>
+        <item>hyperspace_in_15</item>
+
+        <item>hyperspace_out</item>
+        <item>left_in</item><item>left_out</item><item>my_alpha_action</item><item>my_scale_action_20</item>
+
+        <item>myanimation_set</item><item>myown_design</item>
+        <item>push_left_in</item><item>push_left_out</item><item>push_up_in_25</item>
+
+
+        <item>push_up_out</item><item>right_in</item><item>right_out</item><item>rotate</item>
+        <item>scale_30</item>
+
+        <item>scale_rotate</item><item>scale_translate</item>
+        <item>scale_translate_rotate</item><item>slide_down_out</item><item>slide_left_35</item>
+
+
         <item>slide_right</item><item>slide_up_in</item><item>translate</item><item>translate_rotate</item>
-        <item>wave_scale</item><item>zoom_enter</item><item>zoom_exit</item>
+        <item>wave_scale_40</item>
+
+        <item>zoom_enter</item><item>zoom_exit</item>
+    </string-array>
+
+    <!-- 复杂 -->
+    <string-array name="complex_index">
+        <item>block_move_right</item><item>grow_from_top</item>
     </string-array>
 
 
-    <string-array name="complex_index">
-        <item>block_move_right</item><item>grow_from_top</item>
+    <!-- 高仿 -->
+    <string-array name="high_copy_index">
+        <item>火车票出票动画</item>
+        <item>加入购物车动画(曲线轨迹)</item>
+        <item>优酷导航菜单</item>
+        <item>3D图片浏览</item>
+        <item>下拉选择框_5</item>
+        <item>腾讯,360安全雷达效果</item>
+        <item>计算器</item>
+        <item>温度表盘效果</item>
+        <item>瀑布流效果</item>
+        <item>高仿360首页_10</item>
+        <item>滚轮效果_时间And地方</item>
+        <item>浮动在首页的小插件效果</item>
+        <item>仿微信页面</item>
+        <item>模拟心跳</item>
+        <item>上拉抽屉样式_15</item>
+        <item>淘宝菜单2</item>
+        <item>淘宝菜单</item>
+        <item>支付宝声波动画(水波)</item>
+        <item>水波Loding效果</item>
     </string-array>
 
 </resources>

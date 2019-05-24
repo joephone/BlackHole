@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_public"
+                android:padding="12dp"
+                android:text="1、横向自动滚动的TextView，跑马灯效果" />
+
+            <com.transcendence.blackhole.widget.custom.autoscroll.MarqueeTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:text="小火车开来啦...呜呜开...呜呜呜...呜呜呜..." />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#f5f5f5"
+                android:padding="12dp"
+                android:text="2、竖向自动滚动的TextView" />
+
+            <com.transcendence.blackhole.widget.custom.autoscroll.VerticalScrollTextView
+                android:id="@+id/v_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                app:vst_animDuration="1000"
+                app:vst_scrollOrientation="up"
+                app:vst_singleLine="true"
+                app:vst_sleepTime="2000"
+                app:vst_textColor="@color/colorTheme"
+                app:vst_textSize="14sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

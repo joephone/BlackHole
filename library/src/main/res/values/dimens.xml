@@ -40,6 +40,10 @@
     <!-- 画布高度-->
     <dimen name="paint_height">200dp</dimen>
 
+    <!-- image adapter-->
+    <dimen name="padding_small">4dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
 
-
+    <dimen name="dp_10">10dp</dimen>
 </resources>

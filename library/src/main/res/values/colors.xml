@@ -23,6 +23,8 @@
 
 
     <!-- 最美有物 -->
+    <color name="colorBlueTheme">#47bafe</color>
+    <color name="colorBlueThemePress">#3F51B5</color>
     <color name="colorGrayBlack">#262626</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorWhiteDark">#fffffa</color>
@@ -35,10 +37,15 @@
     <color name="blue">#77c7d5</color>
     <color name="black">#000000</color>
 
+    <!-- github -->
+    <color name="colorGitHubGreen">#24292E</color>
+    <color name="colorGitHubBlack">#31C754</color>
+
     <!-- paintView -->
     <color name="paintview_panel_bg">#000000</color>
     <color name="paintview_panel_bg_pressed">#222222</color>
     <color name="paint_color_blue">#41c6ff</color>
     <color name="paint_color_red">#ff4141</color>
+
 
 </resources>

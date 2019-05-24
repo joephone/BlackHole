@@ -20,7 +20,7 @@ public class AutoClearEditActivity extends BaseActivity implements View.OnClickL
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_edittext_autoclear;
+        return R.layout.activity_widget_edittext_autoclear;
     }
 
     @Override

@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.transcendence.blackhole.R;
 import com.transcendence.blackhole.base.mvp.BaseActivity;
 import com.transcendence.blackhole.fragment.BlankFragment;
-import com.transcendence.blackhole.utils.Logs;
+import com.transcendence.blackhole.utils.L;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -81,12 +81,12 @@ public class WeChatMainActivity extends BaseActivity {
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixel) {
-                Logs.d("onPageScrolled pos="+position+",positionOffset="+positionOffset);
+                L.d("onPageScrolled pos="+position+",positionOffset="+positionOffset);
             }
 
             @Override
             public void onPageSelected(int position) {
-                Logs.d("onPageSelected pos="+position);
+                L.d("onPageSelected pos="+position);
             }
 
             @Override

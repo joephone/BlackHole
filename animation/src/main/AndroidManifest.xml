@@ -18,13 +18,26 @@
         </activity>
 
         <activity android:name=".base.activity.AnimationMainActivity"
-            android:screenOrientation="portrait"/>
-
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
+        <!--0 index -->
         <activity android:name=".index.SimpleIndexActivity"
-            android:screenOrientation="portrait"/>
-
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
+        <!-- 1 index-->
         <activity android:name=".index.ComplexIndexActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
+        <!-- 6 index -->
+        <activity android:name=".index.HighCopyIndexActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
+        <!-- 6.1 -->
+        <activity android:name=".ui.highcopy.DrawTicketActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+
     </application>
 
 </manifest>

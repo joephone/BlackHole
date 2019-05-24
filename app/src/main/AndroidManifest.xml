@@ -55,7 +55,7 @@
         android:supportsRtl="true"
         android:theme="@style/NoTitleAppTheme">
         <activity
-            android:name=".base.IndexActivity"
+            android:name=".index.AppIndexActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -64,39 +64,74 @@
         </activity>
 
         <activity
+            android:name=".base.IndexActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".base.LauncherActivity"
-            android:screenOrientation="portrait"/>
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".base.WeChatMainActivity"
-            android:screenOrientation="portrait"/>
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".base.MainActivity"
-            android:screenOrientation="portrait"/>
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".activity.widget.custom.StandardLayoutActivity"
-            android:screenOrientation="portrait"/>
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
 
         <activity
             android:name=".activity.guide.GuideActivity"
-            android:screenOrientation="portrait"/>
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
-            <!-- 画板 -->
+        <!-- 画板 -->
         <activity
             android:name=".activity.paint.PaintActivity"
-            android:screenOrientation="portrait"/>
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
-            <!-- 自动删除输入框 -->
+        <!-- 自动删除输入框 -->
         <activity
             android:name=".activity.widget.edittext.AutoClearEditActivity"
-            android:screenOrientation="portrait"/>
-
-            <!-- 渐变 -->
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 渐变 -->
         <activity
             android:name=".activity.widget.button.JianbianButtonActivity"
-            android:screenOrientation="portrait"/>
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 蓝色风格 -->
+        <activity
+            android:name=".activity.widget.button.WaterButtonBlueActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+
+        <!-- 自动滑动展示页 -->
+        <activity
+            android:name=".activity.widget.custom.AutoScrollActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.toast.ToastActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.image.WxImagePickerActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>

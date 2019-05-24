@@ -2,7 +2,6 @@ package com.transcendence.blackhole.base.mvp;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -15,20 +14,15 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
-import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import com.transcendence.blackhole.utils.Logs;
+import com.transcendence.blackhole.utils.L;
 import com.transcendence.blackhole.utils.permission.PermissionPool;
-
-import java.util.Calendar;
 
 
 /**
@@ -76,7 +70,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      * 设置沉浸状态栏的方法,需要在setContentView()之后调用
      */
     private void setBar() {
-        //兼容5.0+，状态栏设置透明
+        //兼容5.0+，状态栏设置透明  21
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -84,7 +78,7 @@ public abstract class BaseActivity extends AppCompatActivity {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(Color.TRANSPARENT);
         } else
-            //为了沉浸式状态栏 4.4以上才有
+            //为了沉浸式状态栏 4.4以上才有 19
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
                 getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             }
@@ -124,49 +118,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
 
 
-    // 连点最短时间
-    public static final int MIN_CLICK_DELAY_TIME = 600;
-    // 记录点击时间
-    public long lastClickTime1 = 0;
-    // 记录点击时间
-    public long lastClickTime2 = 0;
 
-    /**
-     * 主要的方法，重写dispatchTouchEvent
-     * 专治 连点狂魔
-     * @param ev
-     * @return
-     */
-//    @Override
-//    public boolean dispatchTouchEvent(MotionEvent ev) {
-//        switch (ev.getAction()) {
-//            case MotionEvent.ACTION_UP:     // 抬起
-//                long currentTime1 = Calendar.getInstance().getTimeInMillis();
-//                if (currentTime1 - lastClickTime1 > MIN_CLICK_DELAY_TIME) {
-//                    lastClickTime1 = currentTime1;
-//                } else {
-//                    Logs.logI("ACTION_UP 俩家慢点呃");
-//                    return true;
-//                }
-//                break;
-//            case MotionEvent.ACTION_DOWN:   // 按下
-//                long currentTime2 = Calendar.getInstance().getTimeInMillis();
-//                if (currentTime2 - lastClickTime2 > MIN_CLICK_DELAY_TIME) {
-//                    lastClickTime2 = currentTime2;
-//                } else {
-//                    Logs.logI("ACTION_DOWN 俩家慢点呃");
-//                    return true;
-//                }
-//                View v = getCurrentFocus();
-//                if (isShouldHideKeyboard(v, ev)) {
-//                    hideKeyboard(v.getWindowToken());
-//                }
-//                break;
-//            case MotionEvent.ACTION_MOVE:   // 滑动
-//                break;
-//        }
-//        return super.dispatchTouchEvent(ev);
-//    }
 
 
     /**
@@ -177,7 +129,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     public void onPermissionRequest(@PermissionPool.PermissionCode int permissionCode, @PermissionPool.PermissionName String permissionName){
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            Logs.logI("22以下");
+            L.logI("22以下");
             onPermissionsGranted(permissionCode);
             return ;
         }
@@ -308,6 +260,50 @@ public abstract class BaseActivity extends AppCompatActivity {
         startActivityForResult(intent, requestCode);
     }
 
+
+    // 连点最短时间
+    public static final int MIN_CLICK_DELAY_TIME = 600;
+    // 记录点击时间
+    public long lastClickTime1 = 0;
+    // 记录点击时间
+    public long lastClickTime2 = 0;
+
+    /**
+     * 主要的方法，重写dispatchTouchEvent
+     * 专治 连点狂魔
+     * @param
+     * @return
+     */
+//    @Override
+//    public boolean dispatchTouchEvent(MotionEvent ev) {
+//        switch (ev.getAction()) {
+//            case MotionEvent.ACTION_UP:     // 抬起
+//                long currentTime1 = Calendar.getInstance().getTimeInMillis();
+//                if (currentTime1 - lastClickTime1 > MIN_CLICK_DELAY_TIME) {
+//                    lastClickTime1 = currentTime1;
+//                } else {
+//                    L.logI("ACTION_UP 俩家慢点呃");
+//                    return true;
+//                }
+//                break;
+//            case MotionEvent.ACTION_DOWN:   // 按下
+//                long currentTime2 = Calendar.getInstance().getTimeInMillis();
+//                if (currentTime2 - lastClickTime2 > MIN_CLICK_DELAY_TIME) {
+//                    lastClickTime2 = currentTime2;
+//                } else {
+//                    L.logI("ACTION_DOWN 俩家慢点呃");
+//                    return true;
+//                }
+//                View v = getCurrentFocus();
+//                if (isShouldHideKeyboard(v, ev)) {
+//                    hideKeyboard(v.getWindowToken());
+//                }
+//                break;
+//            case MotionEvent.ACTION_MOVE:   // 滑动
+//                break;
+//        }
+//        return super.dispatchTouchEvent(ev);
+//    }
 
 
     @Override

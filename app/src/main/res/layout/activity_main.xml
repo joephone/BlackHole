@@ -117,6 +117,13 @@
         app:rightText="右"
         />
 
-
+    <com.transcendence.blackhole.widget.custom.StandardLayout
+        android:id="@+id/slBlueThemeWaterButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/standard_padding"
+        android:clickable="true"
+        app:leftText="blue theme"
+        />
 
 </LinearLayout>

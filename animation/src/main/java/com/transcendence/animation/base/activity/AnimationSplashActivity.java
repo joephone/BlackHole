@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.transcendence.animation.R;
 import com.transcendence.animation.index.ComplexIndexActivity;
+import com.transcendence.animation.index.HighCopyIndexActivity;
 import com.transcendence.animation.index.SimpleIndexActivity;
 import com.transcendence.blackhole.base.mvp.BaseActivity;
 import com.transcendence.blackhole.utils.StringUtils;
@@ -53,7 +54,7 @@ public class AnimationSplashActivity extends BaseActivity implements AdapterView
     }
 
     private void initAdapter() {
-        List<String> items = StringUtils.getStringList(mActivity,R.array.main_index_item);
+        List<String> items = StringUtils.getStringList(mActivity,R.array.anim_main_index_item);
         adapter = new ArrayAdapter<>(mActivity,android.R.layout.simple_list_item_1,items);
         lvIndex.setAdapter(adapter);
         lvIndex.setOnItemClickListener(this);
@@ -80,6 +81,10 @@ public class AnimationSplashActivity extends BaseActivity implements AdapterView
                 break;
             case 5:
                 //Property效果
+                break;
+            case 6:
+                //高仿动画效果
+                startActivity(HighCopyIndexActivity.class);
                 break;
         }
     }

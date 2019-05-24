@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_public"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <include layout="@layout/title" />
+
+    <RelativeLayout
+        android:id="@+id/rl_success"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dip"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/iv_success"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:background="@mipmap/ic_swan" />
+
+        <TextView
+            android:id="@+id/tv_hint_success"
+            android:layout_width="200dip"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_success"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dip"
+            android:background="@drawable/bg_third_hint"
+            android:gravity="center"
+            android:paddingBottom="5dip"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip"
+            android:paddingTop="5dip"
+            android:text="收款成功，出票！"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tv_hint_success"
+            android:layout_marginTop="12dip"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="7dip"
+                android:gravity="top"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rl_payInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="-240dip"
+                    android:background="@mipmap/bg_paysuccess_bill"
+                    android:gravity="top"
+                    android:orientation="vertical"></RelativeLayout>
+            </RelativeLayout>
+
+        </FrameLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

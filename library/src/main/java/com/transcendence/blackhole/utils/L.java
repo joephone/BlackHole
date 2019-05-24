@@ -10,7 +10,7 @@ import com.transcendence.blackhole.global.Global;
  * Created by Administrator on 2017/9/7.
  */
 
-public class Logs {
+public class L {
 
     //如果打包  就将isTest设置为false
     public static void logI(String content) {

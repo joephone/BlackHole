@@ -25,7 +25,7 @@ public class SimpleIndexActivity extends BaseActivity implements AdapterView.OnI
     List<String> items;
     @Override
     public int getLayoutId() {
-        return R.layout.activity_standard_anim_index;
+        return R.layout.activity_index;
     }
 
 

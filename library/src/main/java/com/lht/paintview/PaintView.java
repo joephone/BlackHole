@@ -21,7 +21,7 @@ import com.lht.paintview.pojo.SerializablePaint;
 import com.lht.paintview.pojo.SerializablePath;
 import com.lht.paintview.util.BitmapUtil;
 import com.lht.paintview.util.Constant;
-import com.transcendence.blackhole.utils.Logs;
+import com.transcendence.blackhole.utils.L;
 
 import java.util.ArrayList;
 
@@ -515,33 +515,33 @@ public class PaintView extends View {
         switch (event.getAction() & MotionEvent.ACTION_MASK) {
             //多点按下
             case MotionEvent.ACTION_POINTER_DOWN:
-                Logs.logI("ACTION_DOUBLE_DOWN");
+                L.logI("ACTION_DOUBLE_DOWN");
                 if (bGestureEnable) {
                     doubleFingerDown(event);
                 }
                 break;
             //单点按下
             case MotionEvent.ACTION_DOWN:
-                Logs.logI("ACTION_SINGLE_DOWN");
+                L.logI("ACTION_SINGLE_DOWN");
                 touchDown(x, y);
                 break;
             //移动
             case MotionEvent.ACTION_MOVE:
                 //文字不在输入时，单点移动
                 if (event.getPointerCount() == GestureFingers.SINGLE && !bGestureMoving) {
-                    Logs.logI("ACTION_SINGLE_MOVE");
+                    L.logI("ACTION_SINGLE_MOVE");
                     touchMove(x, y);
                 }
                 //文字不在输入时，多点移动
                 else if (event.getPointerCount() == GestureFingers.DOUBLE && bGestureEnable) {
-                    Logs.logI("ACTION_DOUBLE_MOVE");
+                    L.logI("ACTION_DOUBLE_MOVE");
                     bGestureMoving = true;
                     doubleFingerMove(event);
                 }
                 break;
             //抬起
             case MotionEvent.ACTION_UP:
-                Logs.logI("ACTION_UP");
+                L.logI("ACTION_UP");
                 bGestureMoving = false;
                 touchUp(x, y);
                 break;

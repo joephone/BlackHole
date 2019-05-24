@@ -16,7 +16,7 @@ public class StandardLayoutActivity extends BaseActivity implements View.OnClick
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_standard_layout;
+        return R.layout.activity_widget_standard_layout;
     }
 
     @Override

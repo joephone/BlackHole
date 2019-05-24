@@ -14,7 +14,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.transcendence.blackhole.library.R;
-import com.transcendence.blackhole.utils.Logs;
 
 /**
  * @author Joephone on 2019/5/9 17:30
@@ -119,7 +118,7 @@ public class StandardLayout extends FrameLayout {
      * 设置左边的图标
      */
     public void setLeftIcon(int iconId) {
-//        Logs.logI("setLeftIcon---"+iconId);
+//        L.logI("setLeftIcon---"+iconId);
         if (iconId > 0) {
             ivLeft.setVisibility(VISIBLE);
             ivLeft.setImageResource(iconId);

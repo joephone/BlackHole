@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include layout="@layout/activity_standard_anim_index"/>
+    <include layout="@layout/activity_index"/>
 
     <com.transcendence.blackhole.widget.custom.PullDoorView
         android:id="@+id/image"

@@ -434,7 +434,7 @@ public class StringUtils {
         // Log.i(tag, "替换表情：" + string);
         for (int i = 0; i < string.length(); i++) {
             String tempStr = string.charAt(i) + "";
-            Logs.logE( "i=" + i + "\t\t" + tempStr);
+            L.logE( "i=" + i + "\t\t" + tempStr);
             int count = 1;
             try {
                 count = new String(tempStr.getBytes("UTF-8"), "ISO8859_1").length();
@@ -567,12 +567,12 @@ public class StringUtils {
                 blockSize = fis.available();
             } else {
                 file.createNewFile();
-                Logs.logE( "文件不存在!");
+                L.logE( "文件不存在!");
             }
 
         } catch (Exception e) {
             e.printStackTrace();
-            Logs.logE( "获取失败!");
+            L.logE( "获取失败!");
         }
         return blockSize;
     }

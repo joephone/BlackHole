@@ -2,7 +2,11 @@
     <string name="app_name">黑洞</string>
     <string name="app_structure_name">黑洞结构</string>
 
-
+    <!-- home tab -->
+    <string name="tab_one">工作平台</string>
+    <string name="tab_two">消息列表</string>
+    <string name="tab_three">联系人</string>
+    <string name="tab_four">个人中心</string>
 
     <!-- 最美底 nav bar -->
     <string name="home_exit_hint">再按一次退出</string>

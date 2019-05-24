@@ -1,11 +1,9 @@
 package com.transcendence.structure.fragment;
 
-import android.content.Intent;
-import android.util.Log;
 import android.view.View;
 
 import com.transcendence.blackhole.base.mvp.BaseFragment;
-import com.transcendence.blackhole.utils.Logs;
+import com.transcendence.blackhole.utils.L;
 import com.transcendence.structure.R;
 import com.transcendence.structure.magazine.adapter.MagazineAdapter;
 import com.transcendence.structure.magazine.bean.MagazineEntity;
@@ -41,7 +39,7 @@ public class MagazineFragement extends BaseFragment implements Overview.RecentsV
 
     @Override
     protected void init() {
-        Logs.logI( "init: ________________!!!!!!!!!!!!!!!!!!!!");
+        L.logI( "init: ________________!!!!!!!!!!!!!!!!!!!!");
         listRes.add(R.mipmap.beauty01);
         listRes.add(R.mipmap.beauty02);
         listRes.add(R.mipmap.beauty03);
@@ -77,7 +75,7 @@ public class MagazineFragement extends BaseFragment implements Overview.RecentsV
 
     @Override
     public void onCardDismissed(int position) {
-        Logs.logI("onCardDismissed: " + position);
+        L.logI("onCardDismissed: " + position);
     }
 
     //卡片移除完时记载下一页
