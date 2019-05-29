@@ -2,7 +2,7 @@ package com.transcendence.structure.activity.setting;
 
 import android.view.View;
 
-import com.transcendence.blackhole.base.activity.BaseActivity;
+import com.transcendence.blackhole.base.activity.TitleBarActivity;
 import com.transcendence.blackhole.utils.CacheDataManager;
 import com.transcendence.blackhole.widget.custom.StandardLayout;
 import com.transcendence.structure.R;
@@ -13,7 +13,7 @@ import com.transcendence.structure.R;
  * @Desc
  */
 
-public class SettingActivity extends BaseActivity implements View.OnClickListener {
+public class SettingActivity extends TitleBarActivity implements View.OnClickListener {
 
     private StandardLayout slClearCache;
 
@@ -22,14 +22,12 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
         return R.layout.activity_setting;
     }
 
-    @Override
-    public void initView() {
-        slClearCache = findViewById(R.id.slClearCache);
-        slClearCache.setOnClickListener(this);
-    }
 
     @Override
     public void init() {
+        setTitle("设置");
+        slClearCache = findViewById(R.id.slClearCache);
+        slClearCache.setOnClickListener(this);
         // 获取应用缓存大小
         slClearCache.setRightText(CacheDataManager.getTotalCacheSize(this));
     }

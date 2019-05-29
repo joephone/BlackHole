@@ -1,33 +1,39 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
     buildToolsVersion rootProject.ext.android["buildToolsVersion"]
-    defaultConfig {
-        applicationId "com.transcendence.blackhole"
 
+
+
+    defaultConfig {
         minSdkVersion rootProject.ext.android["minSdkVersion"]
         targetSdkVersion rootProject.ext.android["targetSdkVersion"]
         versionCode rootProject.ext.android["versionCode"]
         versionName rootProject.ext.android["versionName"]
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
+
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            postprocessing {
+                removeUnusedCode false
+                removeUnusedResources false
+                obfuscate false
+                optimizeCode false
+                proguardFile 'proguard-rules.pro'
+            }
         }
     }
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':library')
-    implementation project(':imagepicker')
 
     implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
     implementation "com.android.support:design:$rootProject.ext.supportLibraryVersion"
-    implementation "com.android.support.constraint:constraint-layout:$rootProject.ext.constraintLayoutVersion"
-
+    implementation "com.github.bumptech.glide:glide:$rootProject.ext.glideSdkVersion"
 }
