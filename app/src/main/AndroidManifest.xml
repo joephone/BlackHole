@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.transcendence.blackhole">
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
@@ -44,7 +45,9 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
-
+    <!-- 弹出层 -->
+    <uses-permission android:name="android.permission.INTERNAL_SYSTEM_WINDOW"
+        tools:ignore="ProtectedPermissions" />
 
     <application
         android:name=".base.app.AppAplication"
@@ -62,11 +65,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".base.IndexActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
 
         <activity
             android:name=".base.LauncherActivity"
@@ -129,6 +127,37 @@
 
         <activity
             android:name=".activity.image.WxImagePickerActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- 开发基础 之生命周期 -->
+        <activity
+            android:name=".activity.base.LifeCycleActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.base.LifeCycleTwoActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- apk bus demo -->
+        <activity
+            android:name=".activity.apkbus.ApkBusMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+            <!-- apk bus alarm -->
+        <activity
+            android:name=".activity.apkbus.alarm.AlarmTestActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+            <!-- apk bus alarm -->
+        <activity
+            android:name=".activity.apkbus.alarm.ActionActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+            <!-- apk bus top frame -->
+        <activity
+            android:name=".activity.apkbus.topframe.act.TopFrameActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 

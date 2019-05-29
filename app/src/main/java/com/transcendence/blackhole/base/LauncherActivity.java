@@ -5,7 +5,7 @@ import android.view.animation.Animation;
 import android.widget.ImageView;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.mvp.BaseActivity;
+import com.transcendence.blackhole.base.activity.BaseActivity;
 
 /**
  * @author Joephone on 2019/5/8 10:45
@@ -26,15 +26,11 @@ public class LauncherActivity extends BaseActivity implements Animation.Animatio
         return R.layout.activity_launcher;
     }
 
-    @Override
-    public void initView() {
-        ivLauncher = findViewById(R.id.ivLauncher);
-    }
 
     @Override
     public void init() {
+        ivLauncher = findViewById(R.id.ivLauncher);
         initStartAnim();
-
     }
 
     /**

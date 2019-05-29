@@ -7,7 +7,7 @@ import android.widget.ListView;
 
 import com.transcendence.animation.R;
 import com.transcendence.animation.ui.highcopy.DrawTicketActivity;
-import com.transcendence.blackhole.base.mvp.BaseActivity;
+import com.transcendence.blackhole.base.activity.BaseActivity;
 import com.transcendence.blackhole.utils.StringUtils;
 
 import java.util.List;

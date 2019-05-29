@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.mvp.BaseActivity;
+import com.transcendence.blackhole.base.activity.BaseActivity;
 import com.transcendence.blackhole.fragment.BlankFragment;
 import com.transcendence.blackhole.utils.L;
 
@@ -37,8 +37,8 @@ public class WeChatMainActivity extends BaseActivity {
         return R.layout.activity_wechat_main;
     }
 
-    @Override
-    public void initView() {
+
+    private void initViews() {
         mViewPager = findViewById(R.id.viewPager);
         tvTabOne = findViewById(R.id.tvTabOne);
         tvTabTwo = findViewById(R.id.tvTabTwo);
@@ -48,6 +48,8 @@ public class WeChatMainActivity extends BaseActivity {
 
     @Override
     public void init() {
+        initViews();
+
         initVP();
     }
 

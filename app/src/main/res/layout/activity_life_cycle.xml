@@ -9,12 +9,20 @@
     android:layout_height="match_parent">
 
 
-    <ListView
-        android:id="@+id/lvIndex"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-    </ListView>
+
+    <TextView
+        android:id="@+id/tvTab"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/standard_padding"
+        android:layout_marginLeft="@dimen/standard_padding"
+        android:layout_marginRight="@dimen/standard_padding"
+        android:gravity="center"
+        android:clickable="true"
+        android:background="@drawable/water_standard_green_selector"
+        android:text="走一遍生命周期" />
+
 
 
 </LinearLayout>

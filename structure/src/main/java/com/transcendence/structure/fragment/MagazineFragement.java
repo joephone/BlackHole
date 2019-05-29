@@ -2,7 +2,7 @@ package com.transcendence.structure.fragment;
 
 import android.view.View;
 
-import com.transcendence.blackhole.base.mvp.BaseFragment;
+import com.transcendence.blackhole.base.activity.BaseFragment;
 import com.transcendence.blackhole.utils.L;
 import com.transcendence.structure.R;
 import com.transcendence.structure.magazine.adapter.MagazineAdapter;

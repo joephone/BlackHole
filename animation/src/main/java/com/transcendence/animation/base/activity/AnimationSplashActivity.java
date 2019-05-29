@@ -12,7 +12,7 @@ import com.transcendence.animation.R;
 import com.transcendence.animation.index.ComplexIndexActivity;
 import com.transcendence.animation.index.HighCopyIndexActivity;
 import com.transcendence.animation.index.SimpleIndexActivity;
-import com.transcendence.blackhole.base.mvp.BaseActivity;
+import com.transcendence.blackhole.base.activity.TitleBarActivity;
 import com.transcendence.blackhole.utils.StringUtils;
 
 import java.util.List;
@@ -22,7 +22,7 @@ import java.util.List;
  * @E-Mail Address：joephonechen@gmail.com
  * @Desc  动画起动页
  */
-public class AnimationSplashActivity extends BaseActivity implements AdapterView.OnItemClickListener{
+public class AnimationSplashActivity extends TitleBarActivity implements AdapterView.OnItemClickListener{
     private TextView tvEnter;
     private ArrayAdapter<String> adapter;
     private ListView lvIndex;
@@ -33,14 +33,14 @@ public class AnimationSplashActivity extends BaseActivity implements AdapterView
     }
 
 
-    @Override
-    public void initView() {
+    public void initViews() {
         lvIndex = findViewById(R.id.lvIndex);
         tvEnter = findViewById(R.id.tvEnter);
     }
 
     @Override
     public void init() {
+        initViews();
         initAdapter();
 
         // 由完全显示 --> 完全透明

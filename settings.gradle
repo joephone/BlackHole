@@ -1,1 +1,1 @@
-include ':app', ':library', ':structure',':stackOverView', ':animation', ':imagepicker'
+include ':app', ':library', ':structure',':stackOverView', ':animation'

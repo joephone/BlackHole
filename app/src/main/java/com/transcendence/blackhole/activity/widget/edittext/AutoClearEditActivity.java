@@ -3,7 +3,7 @@ package com.transcendence.blackhole.activity.widget.edittext;
 import android.view.View;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.mvp.BaseActivity;
+import com.transcendence.blackhole.base.activity.BaseActivity;
 import com.transcendence.blackhole.widget.edittext.ClearEditText;
 import com.transcendence.blackhole.widget.edittext.EditTextAutoClear;
 
@@ -23,15 +23,11 @@ public class AutoClearEditActivity extends BaseActivity implements View.OnClickL
         return R.layout.activity_widget_edittext_autoclear;
     }
 
-    @Override
-    public void initView() {
-        editTextAutoClear = findViewById(R.id.etStyleOne);
-        clearEditText = findViewById(R.id.etStyleTwo);
-    }
 
     @Override
     public void init() {
-
+        editTextAutoClear = findViewById(R.id.etStyleOne);
+        clearEditText = findViewById(R.id.etStyleTwo);
     }
 
     @Override

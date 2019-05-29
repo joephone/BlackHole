@@ -6,7 +6,7 @@ package com.transcendence.animation;
  * @Desc
  */
 
-public interface ConstantValue {
+public interface AnimConstantValue {
 // ---------------------------简单动画页面------------------------------------
     /**
      *  a1 由完全显示 --> 完全透明   1 - 0

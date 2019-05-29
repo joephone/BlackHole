@@ -4,7 +4,7 @@ import android.view.View;
 
 import com.transcendence.blackhole.R;
 import com.transcendence.blackhole.activity.guide.GuideActivity;
-import com.transcendence.blackhole.base.mvp.BaseActivity;
+import com.transcendence.blackhole.base.activity.BaseActivity;
 import com.transcendence.blackhole.widget.custom.StandardLayout;
 
 /**
@@ -19,14 +19,11 @@ public class StandardLayoutActivity extends BaseActivity implements View.OnClick
         return R.layout.activity_widget_standard_layout;
     }
 
-    @Override
-    public void initView() {
-        standardLayout = findViewById(R.id.standardLayout);
-        standardLayout.setOnClickListener(this);
-    }
 
     @Override
     public void init() {
+        standardLayout = findViewById(R.id.standardLayout);
+        standardLayout.setOnClickListener(this);
         standardLayout.setRightHint("右提示");
     }
 

@@ -2,7 +2,7 @@ package com.transcendence.structure.activity.setting;
 
 import android.view.View;
 
-import com.transcendence.blackhole.base.mvp.BaseActivity;
+import com.transcendence.blackhole.base.activity.BaseActivity;
 import com.transcendence.blackhole.utils.CacheDataManager;
 import com.transcendence.blackhole.widget.custom.StandardLayout;
 import com.transcendence.structure.R;

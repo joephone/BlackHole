@@ -7,9 +7,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.transcendence.animation.ConstantValue;
+import com.transcendence.animation.AnimConstantValue;
 import com.transcendence.animation.R;
-import com.transcendence.blackhole.base.mvp.BaseActivity;
+import com.transcendence.blackhole.base.activity.BaseActivity;
 import com.transcendence.blackhole.utils.StringUtils;
 
 import java.util.List;
@@ -49,7 +49,7 @@ public class ComplexIndexActivity extends BaseActivity implements AdapterView.On
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Animation anim = AnimationUtils.loadAnimation(mActivity, ConstantValue.complex[position]);
+        Animation anim = AnimationUtils.loadAnimation(mActivity, AnimConstantValue.complex[position]);
         lvIndex.startAnimation(anim);
     }
 }

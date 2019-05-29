@@ -9,7 +9,7 @@ import com.transcendence.blackhole.activity.widget.button.JianbianButtonActivity
 import com.transcendence.blackhole.activity.widget.button.WaterButtonBlueActivity;
 import com.transcendence.blackhole.activity.widget.edittext.AutoClearEditActivity;
 import com.transcendence.blackhole.activity.widget.custom.StandardLayoutActivity;
-import com.transcendence.blackhole.base.mvp.BaseActivity;
+import com.transcendence.blackhole.base.activity.BaseActivity;
 import com.transcendence.blackhole.widget.custom.StandardLayout;
 
 /**
@@ -29,8 +29,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         return R.layout.activity_main;
     }
 
+
     @Override
-    public void initView() {
+    public void init() {
         standardLayout = findViewById(R.id.standardLayout);
         paint = findViewById(R.id.paintView);
         edittext = findViewById(R.id.edittext);
@@ -41,11 +42,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         edittext.setOnClickListener(this);
         tvJianbian.setOnClickListener(this);
         slBlueThemeWaterButton.setOnClickListener(this);
-    }
-
-    @Override
-    public void init() {
-
     }
 
     @Override

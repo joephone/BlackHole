@@ -1,7 +1,7 @@
 package com.transcendence.blackhole.activity.widget.custom;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.mvp.BaseActivity;
+import com.transcendence.blackhole.base.activity.BaseActivity;
 import com.transcendence.blackhole.widget.custom.autoscroll.VerticalScrollTextView;
 
 import java.util.ArrayList;
@@ -20,10 +20,7 @@ public class AutoScrollActivity extends BaseActivity {
         return R.layout.activity_widget_custom_auto_scroll;
     }
 
-    @Override
-    public void initView() {
 
-    }
 
     @Override
     public void init() {

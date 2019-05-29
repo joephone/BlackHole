@@ -16,7 +16,12 @@
 -->
 <resources>
     <string-array name="app_index_item">
+        <item>Activity的生命周期</item>
         <item>仿微信imagePicker</item>
+        <item>安卓巴士demo</item>
+        <item>Main</item>
+        <item>鸣谢</item>
+        <item>Toast</item>
     </string-array>
 
     <string-array name="index_item">

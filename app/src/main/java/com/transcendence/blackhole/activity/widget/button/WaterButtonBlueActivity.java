@@ -1,7 +1,7 @@
 package com.transcendence.blackhole.activity.widget.button;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.mvp.BaseActivity;
+import com.transcendence.blackhole.base.activity.TitleBarActivity;
 
 /**
  * @author Joephone on 2019/5/23 16:23
@@ -9,17 +9,14 @@ import com.transcendence.blackhole.base.mvp.BaseActivity;
  * @Desc
  */
 
-public class WaterButtonBlueActivity extends BaseActivity {
+public class WaterButtonBlueActivity extends TitleBarActivity {
 
     @Override
     public int getLayoutId() {
         return R.layout.activity_water_button_blue;
     }
 
-    @Override
-    public void initView() {
 
-    }
 
     @Override
     public void init() {
