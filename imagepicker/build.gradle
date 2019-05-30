@@ -27,7 +27,6 @@ android {
             }
         }
     }
-
 }
 
 dependencies {
@@ -36,4 +35,6 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
     implementation "com.android.support:design:$rootProject.ext.supportLibraryVersion"
     implementation "com.github.bumptech.glide:glide:$rootProject.ext.glideSdkVersion"
+
+    implementation "com.github.chrisbanes:PhotoView:$rootProject.ext.photoViewVersion"
 }
