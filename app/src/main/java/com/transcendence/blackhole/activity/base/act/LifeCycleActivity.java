@@ -82,6 +82,17 @@ public class LifeCycleActivity extends TitleBarActivity {
     }
 
 
+    @Override
+    public void finish() {
+        // TODO Auto-generated method stub
+        L.d("finish()");
+//        if (!PublicClass.Exception) {
+//            ActivityStackManager.activityStackManager.pop();
+//        }
+        super.finish();
+    }
+
+
     TextView mTvTab;
 
     @Override

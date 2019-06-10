@@ -23,6 +23,7 @@ public class LaunchModeActivity extends TitleBarActivity {
 
     @Override
     public void init() {
+        setTitle("启动模式");
         mTv = findViewById(R.id.tv);
         mTv.setText("概述\n" +
                 "上篇我稍微介绍了关于activity的生命周期的知识点，今天我们来谈一下activity的启动模式，这也是一个面试常客。下面容我慢慢道来。\n" +
