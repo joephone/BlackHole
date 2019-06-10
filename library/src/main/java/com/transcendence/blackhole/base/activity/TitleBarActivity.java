@@ -101,6 +101,10 @@ public abstract class TitleBarActivity extends BaseActivity {
         setTitle(showBackButton, title, null);
     }
 
+    protected void setTitle(boolean hasTitle) {
+        mHasTitle = hasTitle;
+    }
+
     protected void setTitle(boolean showBackButton, String title, String rightText) {
         if (flBack != null) {
             flBack.setVisibility(showBackButton ? View.VISIBLE : View.INVISIBLE);

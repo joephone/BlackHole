@@ -1,16 +1,21 @@
 package com.transcendence.blackhole.base.activity;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
 import com.transcendence.blackhole.utils.L;
+import com.transcendence.blackhole.utils.permission.PermissionPool;
 
 
 /**
@@ -48,10 +53,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
 
-    /**
-     * 初始化View后代码写在这个方法中
-     */
-    public abstract void init();
+
 
     /**
      * 返回一个用于显示界面的布局id
@@ -59,6 +61,12 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @return 视图id
      */
     public abstract int getLayoutId();
+
+
+    /**
+     * 初始化View后代码写在这个方法中
+     */
+    public abstract void init();
 
 
     /**
@@ -118,6 +126,50 @@ public abstract class BaseActivity extends AppCompatActivity {
             intent.putExtras(bundle);
         }
         startActivityForResult(intent, requestCode);
+    }
+
+    /**
+     * android6.0权限处理
+     * @param permissionCode    权限标记Code
+     * @param permissionName    权限名称
+     *                          int requestCode, String[] permissions, int[] grantResults
+     */
+    public void onPermissionRequest(@PermissionPool.PermissionCode int permissionCode, @PermissionPool.PermissionName String permissionName){
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            L.logI("22以下");
+            onPermissionsGranted(permissionCode);
+            return ;
+        }
+        if(ContextCompat.checkSelfPermission(this, permissionName)== PackageManager.PERMISSION_GRANTED){
+            //有权限
+            onPermissionsGranted(permissionCode);
+        }else{
+            //没有权限,开始申请
+            ActivityCompat.requestPermissions(this,new String[]{permissionName},permissionCode);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if(grantResults[0]== PackageManager.PERMISSION_GRANTED){
+            //授权成功
+            onPermissionsGranted(requestCode);
+        }else if(grantResults[0]==PackageManager.PERMISSION_DENIED){
+            //授权失败
+            onPermissionsDenied(requestCode);
+        }
+    }
+
+    /**
+     * 有授权执行的方法(子类重写)
+     */
+    protected void onPermissionsGranted(int requestCode) {
+    }
+
+    /**
+     * 没有授权执行的方法(子类重写)
+     */
+    protected void onPermissionsDenied(int requestCode) {
     }
 
 

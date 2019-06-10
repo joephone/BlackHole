@@ -1,11 +1,8 @@
 package com.transcendence.blackhole.activity.widget.custom;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.BaseActivity;
+import com.transcendence.blackhole.base.activity.TitleBarActivity;
 import com.transcendence.blackhole.widget.custom.autoscroll.VerticalScrollTextView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Joephone on 2019/5/17 15:59
@@ -13,7 +10,7 @@ import java.util.List;
  * @Desc  自动滑动展示页
  */
 
-public class AutoScrollActivity extends BaseActivity {
+public class AutoScrollActivity extends TitleBarActivity {
     private VerticalScrollTextView vTextView;
     @Override
     public int getLayoutId() {
@@ -24,15 +21,16 @@ public class AutoScrollActivity extends BaseActivity {
 
     @Override
     public void init() {
+        setTitle("自动滑动展示页");
         initVTextView();
     }
 
     private void initVTextView() {
-        vTextView = findViewById(R.id.v_text_view);
-        List<String> data = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            data.add(String.format("测试竖向滚动文字%s", i));
-        }
-        vTextView.setDataSource(data);
+//        vTextView = findViewById(R.id.v_text_view);
+//        List<String> data = new ArrayList<>();
+//        for (int i = 0; i < 5; i++) {
+//            data.add(String.format("测试竖向滚动文字%s", i));
+//        }
+//        vTextView.setDataSource(data);
     }
 }

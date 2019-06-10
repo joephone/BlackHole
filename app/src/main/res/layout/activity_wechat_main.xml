@@ -14,8 +14,7 @@
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-    <View
-        style="@style/Line" />
+    <View style="@style/Line" />
 
 
     <LinearLayout
@@ -29,8 +28,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:textColor="@color/black"
-            android:text="一" />
+            android:text="一"
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/tvTabTwo"
@@ -38,8 +37,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:textColor="@color/black"
-            android:text="二" />
+            android:text="二"
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/tvTabThree"
@@ -47,8 +46,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:textColor="@color/black"
-            android:text="三" />
+            android:text="三"
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/tvTabFour"
@@ -56,8 +55,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:textColor="@color/black"
-            android:text="四" />
+            android:text="四"
+            android:textColor="@color/black" />
 
     </LinearLayout>
 </LinearLayout>

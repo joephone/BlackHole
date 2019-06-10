@@ -49,6 +49,7 @@
     <uses-permission android:name="android.permission.INTERNAL_SYSTEM_WINDOW"
         tools:ignore="ProtectedPermissions" />
 
+
     <application
         android:name=".base.app.AppAplication"
         android:allowBackup="true"
@@ -121,6 +122,11 @@
             android:screenOrientation="portrait" />
 
         <activity
+            android:name=".activity.widget.scroll.ScrollLayoutTwoActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".activity.toast.ToastActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
@@ -130,15 +136,7 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
-        <!-- 开发基础 之生命周期 -->
-        <activity
-            android:name=".activity.base.LifeCycleActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".activity.base.LifeCycleTwoActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
+
 
         <!-- apk bus demo -->
         <activity
@@ -157,10 +155,33 @@
             android:screenOrientation="portrait" />
             <!-- apk bus top frame -->
         <activity
-            android:name=".activity.apkbus.topframe.act.TopFrameActivity"
+            android:name=".activity.base.act.TelephoneInfoActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
+        <!-- 序列一   开发基础 序列 -->
+        <activity
+            android:name=".index.BaseIndexActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+            <!-- 开发基础 之生命周期 -->
+        <activity
+            android:name=".activity.base.act.LifeCycleActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+            <!-- 开发基础 之生命周期 -->
+        <activity
+            android:name=".activity.base.act.LifeCycleTwoActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.base.act.LaunchModeActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.base.act.HandlerMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

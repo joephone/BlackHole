@@ -41,13 +41,10 @@ public class WxImagePickerActivity extends TitleBarActivity implements ImagePick
         return R.layout.activity_wx_imagepicker;
     }
 
-
     @Override
     public void init() {
         setTitle("图片选择");
-
         initRv();
-
         initImagePicker();
     }
 
@@ -78,6 +75,9 @@ public class WxImagePickerActivity extends TitleBarActivity implements ImagePick
                 List<String> names = new ArrayList<>();
                 names.add("拍照");
                 names.add("相册");
+                if(selImageList.size()>0){
+                    names.add("预览");
+                }
                 showDialog(new SelectDialog.SelectDialogListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

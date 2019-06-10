@@ -1,4 +1,4 @@
-package com.transcendence.blackhole.activity.base;
+package com.transcendence.blackhole.activity.base.act;
 
 import android.os.Bundle;
 import android.os.Handler;
