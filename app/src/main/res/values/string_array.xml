@@ -25,7 +25,7 @@
         <item>Toast</item>
         <item>仿地图上拉控件</item>
         <item>判断双SD卡</item>
-
+        <item>课程表</item>
     </string-array>
 
     <string-array name="base_index_item">

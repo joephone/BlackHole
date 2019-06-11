@@ -7,6 +7,7 @@ import com.transcendence.blackhole.ui.base.act.LifeCycleActivity;
 import com.transcendence.blackhole.ui.base.act.TelephoneInfoActivity;
 import com.transcendence.blackhole.ui.hardware.act.IsTwoSdCardActivity;
 import com.transcendence.blackhole.ui.image.WxImagePickerActivity;
+import com.transcendence.blackhole.ui.other.act.TableScheActivity;
 import com.transcendence.blackhole.ui.toast.ToastActivity;
 import com.transcendence.blackhole.ui.voice.act.RecordActivity;
 import com.transcendence.blackhole.ui.voice.act.RecordActivity2;
@@ -27,7 +28,7 @@ import com.transcendence.blackhole.index.VoiceIndexActivity;
 public interface AppConstantValue {
     Class[] appIndex = {BaseIndexActivity.class,WxImagePickerActivity.class,VoiceIndexActivity.class,ApkBusMainActivity.class,
                         MainActivity.class,AutoScrollActivity.class,ToastActivity.class,ScrollLayoutTwoActivity.class,
-                        IsTwoSdCardActivity.class};
+                        IsTwoSdCardActivity.class, TableScheActivity.class};
 
 
     Class[] baseIndex = {LifeCycleActivity.class, LaunchModeActivity.class,TelephoneInfoActivity.class, HandlerMainActivity.class};

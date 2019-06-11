@@ -204,6 +204,12 @@
             android:name=".ui.voice.act.RecordActivity2"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
+
+        <!-- 课程表 -->
+        <activity
+            android:name=".ui.other.act.TableScheActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

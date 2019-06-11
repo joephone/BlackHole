@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/BlackHole.iml" filepath="$PROJECT_DIR$/BlackHole.iml" />
       <module fileurl="file://$PROJECT_DIR$/animation/animation.iml" filepath="$PROJECT_DIR$/animation/animation.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/douya/douya.iml" filepath="$PROJECT_DIR$/douya/douya.iml" />
       <module fileurl="file://$PROJECT_DIR$/imagepicker/imagepicker.iml" filepath="$PROJECT_DIR$/imagepicker/imagepicker.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
       <module fileurl="file://$PROJECT_DIR$/stackOverView/stackOverView.iml" filepath="$PROJECT_DIR$/stackOverView/stackOverView.iml" />

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">黑洞</string>
     <string name="app_structure_name">黑洞结构</string>
-    <string name="app_car_assistant_name">汽车助手</string>
+    <string name="app_douya_name">豆芽</string>
 
     <!-- home tab -->
     <string name="tab_one">工作平台</string>
