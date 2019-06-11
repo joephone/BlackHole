@@ -1,17 +1,17 @@
 package com.transcendence.blackhole.base;
 
-import com.transcendence.blackhole.activity.apkbus.ApkBusMainActivity;
-import com.transcendence.blackhole.activity.base.act.HandlerMainActivity;
-import com.transcendence.blackhole.activity.base.act.LaunchModeActivity;
-import com.transcendence.blackhole.activity.base.act.LifeCycleActivity;
-import com.transcendence.blackhole.activity.base.act.TelephoneInfoActivity;
-import com.transcendence.blackhole.activity.hardware.act.IsTwoSdCardActivity;
-import com.transcendence.blackhole.activity.image.WxImagePickerActivity;
-import com.transcendence.blackhole.activity.toast.ToastActivity;
-import com.transcendence.blackhole.activity.voice.act.RecordActivity;
-import com.transcendence.blackhole.activity.voice.act.RecordActivity2;
-import com.transcendence.blackhole.activity.widget.custom.AutoScrollActivity;
-import com.transcendence.blackhole.activity.widget.scroll.ScrollLayoutTwoActivity;
+import com.transcendence.blackhole.ui.apkbus.ApkBusMainActivity;
+import com.transcendence.blackhole.ui.base.act.HandlerMainActivity;
+import com.transcendence.blackhole.ui.base.act.LaunchModeActivity;
+import com.transcendence.blackhole.ui.base.act.LifeCycleActivity;
+import com.transcendence.blackhole.ui.base.act.TelephoneInfoActivity;
+import com.transcendence.blackhole.ui.hardware.act.IsTwoSdCardActivity;
+import com.transcendence.blackhole.ui.image.WxImagePickerActivity;
+import com.transcendence.blackhole.ui.toast.ToastActivity;
+import com.transcendence.blackhole.ui.voice.act.RecordActivity;
+import com.transcendence.blackhole.ui.voice.act.RecordActivity2;
+import com.transcendence.blackhole.ui.widget.custom.AutoScrollActivity;
+import com.transcendence.blackhole.ui.widget.scroll.ScrollLayoutTwoActivity;
 import com.transcendence.blackhole.index.BaseIndexActivity;
 import com.transcendence.blackhole.index.VoiceIndexActivity;
 

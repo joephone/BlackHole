@@ -50,7 +50,7 @@
     <dimen name="status_bar_recents_app_label_left_margin">0dip</dimen>
     <!-- Padding between recents items -->
     <dimen name="status_bar_recents_item_padding">0dip</dimen>
-    <!-- When recents first appears, how far the icon and label of the primary activity
+    <!-- When recents first appears, how far the icon and label of the primuivity
          travel -->
     <dimen name="status_bar_recents_app_icon_translate_distance">35dip</dimen>
 

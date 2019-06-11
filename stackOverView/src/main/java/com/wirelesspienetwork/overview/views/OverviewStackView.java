@@ -502,7 +502,7 @@ public class OverviewStackView extends FrameLayout implements OverviewAdapter.Ca
         requestSynchronizeStackViewsWithModel(200);
 
         // If there are no remaining tasks, then either unfilter the current stack, or just close
-        // the activity if there are no filtered stacks
+        // the ui if there are no filtered stacks
         if (mStack.getNumberOfItems() == 0) {
             mCb.onAllCardsDismissed();
         }

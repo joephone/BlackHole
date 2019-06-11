@@ -56,7 +56,7 @@ final class SafeToast extends BaseToast {
                 mHandler.handleMessage(msg);
             } catch (WindowManager.BadTokenException ignored) {
                 // android.view.WindowManager$BadTokenException:
-                // Unable to add window -- token android.os.BinderProxy@94ae84f is not valid; is your activity running?
+                // Unable to add window -- token android.os.BinderProxy@94ae84f is not valid; is your ui running?
             }
         }
 

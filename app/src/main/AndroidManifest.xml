@@ -84,83 +84,83 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.widget.custom.StandardLayoutActivity"
+            android:name=".ui.widget.custom.StandardLayoutActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
 
         <activity
-            android:name=".activity.guide.GuideActivity"
+            android:name=".ui.guide.GuideActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
         <!-- 画板 -->
         <activity
-            android:name=".activity.paint.PaintActivity"
+            android:name=".ui.paint.PaintActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
         <!-- 自动删除输入框 -->
         <activity
-            android:name=".activity.widget.edittext.AutoClearEditActivity"
+            android:name=".ui.widget.edittext.AutoClearEditActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <!-- 渐变 -->
         <activity
-            android:name=".activity.widget.button.JianbianButtonActivity"
+            android:name=".ui.widget.button.JianbianButtonActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <!-- 蓝色风格 -->
         <activity
-            android:name=".activity.widget.button.WaterButtonBlueActivity"
+            android:name=".ui.widget.button.WaterButtonBlueActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
 
         <!-- 自动滑动展示页 -->
         <activity
-            android:name=".activity.widget.custom.AutoScrollActivity"
+            android:name=".ui.widget.custom.AutoScrollActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.widget.scroll.ScrollLayoutTwoActivity"
+            android:name=".ui.widget.scroll.ScrollLayoutTwoActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.toast.ToastActivity"
+            android:name=".ui.toast.ToastActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.image.WxImagePickerActivity"
+            android:name=".ui.image.WxImagePickerActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".activity.hardware.act.IsTwoSdCardActivity"
+            android:name=".ui.hardware.act.IsTwoSdCardActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
         <!-- apk bus demo -->
         <activity
-            android:name=".activity.apkbus.ApkBusMainActivity"
+            android:name=".ui.apkbus.ApkBusMainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
             <!-- apk bus alarm -->
         <activity
-            android:name=".activity.apkbus.alarm.AlarmTestActivity"
+            android:name=".ui.apkbus.alarm.AlarmTestActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
             <!-- apk bus alarm -->
         <activity
-            android:name=".activity.apkbus.alarm.ActionActivity"
+            android:name=".ui.apkbus.alarm.ActionActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
             <!-- apk bus top frame -->
         <activity
-            android:name=".activity.base.act.TelephoneInfoActivity"
+            android:name=".ui.base.act.TelephoneInfoActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
@@ -171,20 +171,20 @@
             android:screenOrientation="portrait"/>
             <!-- 开发基础 之生命周期 -->
         <activity
-            android:name=".activity.base.act.LifeCycleActivity"
+            android:name=".ui.base.act.LifeCycleActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
             <!-- 开发基础 之生命周期 -->
         <activity
-            android:name=".activity.base.act.LifeCycleTwoActivity"
+            android:name=".ui.base.act.LifeCycleTwoActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.base.act.LaunchModeActivity"
+            android:name=".ui.base.act.LaunchModeActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.base.act.HandlerMainActivity"
+            android:name=".ui.base.act.HandlerMainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
@@ -197,11 +197,11 @@
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".activity.voice.act.RecordActivity"
+            android:name=".ui.voice.act.RecordActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".activity.voice.act.RecordActivity2"
+            android:name=".ui.voice.act.RecordActivity2"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
     </application>

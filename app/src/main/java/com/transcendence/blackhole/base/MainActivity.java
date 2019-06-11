@@ -4,11 +4,11 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.activity.paint.PaintActivity;
-import com.transcendence.blackhole.activity.widget.button.JianbianButtonActivity;
-import com.transcendence.blackhole.activity.widget.button.WaterButtonBlueActivity;
-import com.transcendence.blackhole.activity.widget.edittext.AutoClearEditActivity;
-import com.transcendence.blackhole.activity.widget.custom.StandardLayoutActivity;
+import com.transcendence.blackhole.ui.paint.PaintActivity;
+import com.transcendence.blackhole.ui.widget.button.JianbianButtonActivity;
+import com.transcendence.blackhole.ui.widget.button.WaterButtonBlueActivity;
+import com.transcendence.blackhole.ui.widget.edittext.AutoClearEditActivity;
+import com.transcendence.blackhole.ui.widget.custom.StandardLayoutActivity;
 import com.transcendence.blackhole.base.activity.BaseActivity;
 import com.transcendence.blackhole.widget.custom.StandardLayout;
 

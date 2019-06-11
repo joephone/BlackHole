@@ -53,13 +53,13 @@ final class ToastHelper extends Handler {
              因为如果复用了，不同 Activity 之间不能共用一个，第一个 Activity 调用显示方法可以显示出来，但是会导致后面的 Activity 都显示不出来
              又或者说，非第一次调用显示方法的 Activity 都会把这个显示请求推送给之前第一个调用显示的 Activity 上面，如果第一个 Activity 已经销毁，还会报以下异常
              android.view.WindowManager$BadTokenException:
-             Unable to add window -- token android.os.BinderProxy@ef1ccb6 is not valid; is your activity running?
+             Unable to add window -- token android.os.BinderProxy@ef1ccb6 is not valid; is your ui running?
              */
             final WindowManager.LayoutParams params = new WindowManager.LayoutParams();
 
             /*
             // 为什么不能加 TYPE_TOAST，因为通知权限在关闭后设置显示的类型为 Toast 会报错
-            // android.view.WindowManager$BadTokenException: Unable to add window -- token null is not valid; is your activity running?
+            // android.view.WindowManager$BadTokenException: Unable to add window -- token null is not valid; is your ui running?
             params.type = WindowManager.LayoutParams.TYPE_TOAST;
             */
 
