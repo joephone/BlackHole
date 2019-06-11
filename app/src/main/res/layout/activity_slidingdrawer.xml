@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 设置背景图片 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <!-- 设置handle和content的id -->
+
+    <SlidingDrawer
+        android:id="@+id/slidingdrawer"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:content="@+id/content"
+        android:handle="@+id/handle"
+        android:orientation="horizontal" >
+
+        <!-- 设置handle，就是用一个图片按钮来处理滑动抽屉的 -->
+
+        <ImageButton
+            android:id="@id/handle"
+            android:layout_width="50dip"
+            android:layout_height="44dip"
+            android:src="@mipmap/ic_deer" />
+        <!-- 设置内容，一个布局View，其中包含一个文本框，当我们拖动的时候就会看到 -->
+
+        <RelativeLayout
+            android:id="@id/content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#ffffff" >
+
+            <TextView
+                android:id="@+id/tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="这是一个滑动式抽屉的示例"
+                android:textColor="#000000"
+                android:textSize="18px"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+            <ListView 
+                android:layout_below="@id/Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/listv"
+                >
+                
+                
+            </ListView>
+        </RelativeLayout>
+    </SlidingDrawer>
+
+</LinearLayout>
