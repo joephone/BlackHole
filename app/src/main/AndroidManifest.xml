@@ -185,6 +185,19 @@
             android:screenOrientation="portrait" />
 
 
+        <!-- 序列二   抽奖 序列 -->
+        <activity
+            android:name=".index.LotteryIndexActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+                <!-- 抽奖一 -->
+        <activity
+            android:name=".ui.lottery.act.LotteryOneActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+
+
 
 
         <!-- 序列   录音 序列 -->
@@ -219,14 +232,19 @@
             android:screenOrientation="portrait" />
             <!-- 定时切换背景 -->
         <activity
-            android:name=".ui.handler.act.Handler01"
+            android:name=".ui.handler.act.HelloHandler01"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
             <!-- handler sendMessage -->
         <activity
-            android:name=".ui.handler.act.Handler02"
+            android:name=".ui.handler.act.HelloHandler02"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
+
+
+
+
+
 
     </application>
 

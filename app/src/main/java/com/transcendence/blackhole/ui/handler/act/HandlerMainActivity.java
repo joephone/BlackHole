@@ -36,10 +36,10 @@ public class HandlerMainActivity extends TitleBarActivity implements View.OnClic
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.tvhandler3:
-                startActivity(Handler01.class);
+                startActivity(HelloHandler01.class);
                 break;
             case R.id.tvhandler4:
-                startActivity(Handler02.class);
+                startActivity(HelloHandler02.class);
                 break;
         }
     }

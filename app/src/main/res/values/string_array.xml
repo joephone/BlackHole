@@ -17,6 +17,7 @@
 <resources>
     <string-array name="app_index_item">
         <item>开发基础</item>
+        <item>抽奖</item>
         <item>仿微信imagePicker</item>
         <item>Video序列</item>
         <item>安卓巴士demo</item>
@@ -34,6 +35,10 @@
         <item>启动模式</item>
         <item>Tel Info</item>
         <item>什么是Handler</item>
+    </string-array>
+
+    <string-array name="lottery_index_item">
+        <item>抽奖1</item>
     </string-array>
 
     <string-array name="voice_index_item">

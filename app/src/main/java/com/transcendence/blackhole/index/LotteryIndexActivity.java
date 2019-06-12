@@ -14,12 +14,12 @@ import com.transcendence.blackhole.utils.StringUtils;
 import java.util.List;
 
 /**
- * @author Joephone on 2019/5/24 11:55
+ * @author Joephone on 2019/6/12 18:29
  * @E-Mail Address：joephonechen@gmail.com
- * @Desc
+ * @Desc 抽奖序列
  */
 
-public class AppIndexActivity extends TitleBarActivity implements AdapterView.OnItemClickListener {
+public class LotteryIndexActivity extends TitleBarActivity implements AdapterView.OnItemClickListener {
     private ArrayAdapter<String> adapter;
     private ListView lvIndex;
     List<String> items;
@@ -28,18 +28,18 @@ public class AppIndexActivity extends TitleBarActivity implements AdapterView.On
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent();
-        intent.setClass(AppIndexActivity.this, AppConstantValue.appIndex[position]);
+        intent.setClass(LotteryIndexActivity.this, AppConstantValue.lotteryIndex[position]);
         startActivity(intent);
     }
 
 
     @Override
     public void init() {
-        setTitle(false,"序列");
+        setTitle("抽奖序列");
         lvIndex = findViewById(R.id.lvIndex);
 
-        List<String> items = StringUtils.getStringList(mActivity,R.array.app_index_item);
-        adapter = new ArrayAdapter<>(mActivity,
+        List<String> items = StringUtils.getStringList(LotteryIndexActivity.this,R.array.lottery_index_item);
+        adapter = new ArrayAdapter<>(LotteryIndexActivity.this,
                 android.R.layout.simple_list_item_1, items);
         lvIndex.setAdapter(adapter);
         lvIndex.setOnItemClickListener(this);

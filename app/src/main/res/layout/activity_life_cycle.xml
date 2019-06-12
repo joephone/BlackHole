@@ -4,24 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/bg_public"
     android:orientation="vertical"
-    android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
-
-
-    <TextView
-        android:id="@+id/tvTab"
+    <ListView
+        android:id="@+id/lvIndex"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/standard_padding"
         android:layout_marginLeft="@dimen/standard_padding"
         android:layout_marginRight="@dimen/standard_padding"
-        android:gravity="center"
-        android:clickable="true"
-        android:background="@drawable/water_standard_green_selector"
-        android:text="走一遍生命周期" />
+        android:layout_marginBottom="@dimen/standard_padding"
+        android:background="@color/bg_public"
+        >
+        <TextView
+            android:id="@+id/tvTab"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:clickable="true"
+            android:background="@drawable/water_standard_green_selector"
+            android:text="走一遍生命周期" />
+
+    </LinearLayout>
+
 
 
 

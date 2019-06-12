@@ -14,7 +14,7 @@ import com.transcendence.blackhole.base.activity.TitleBarActivity;
  * @EditionHistory
  */
 
-public class Handler01 extends TitleBarActivity {
+public class HelloHandler01 extends TitleBarActivity {
 
     private ImageView mIv;
     private Handler mHandler = new Handler();
