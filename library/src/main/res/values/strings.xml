@@ -26,8 +26,8 @@
     <string name="handler_answer_1">Handler就Android给我提供用来更新UI的一套机制，也是一套消息处理的机制，我们可以发送消息，也可以通过它处理消息。</string>
     <string name="handler_question_2">2、为什么要用handler？</string>
     <string name="handler_answer_2">Android在设计的时候，就封装了一套消息创建、传递、处理机制，如果不遵循这样的机制的就没有办法更新UI信息的，就会抛出异常信息。</string>
-
-
+    <string name="handler_question_5">5、为什么要用handler更新UI？</string>
+    <string name="handler_answer_5">解决多线程并发问题</string>
 
     <string name="auto_scroll_question_1">1、横向自动滚动的TextView，跑马灯效果</string>
     <string name="auto_scrol_answer_1">小火车开来啦...呜呜开...呜呜呜...呜呜呜...</string>

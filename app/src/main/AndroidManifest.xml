@@ -183,10 +183,7 @@
             android:name=".ui.base.act.LaunchModeActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.base.act.HandlerMainActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
+
 
 
 
@@ -205,12 +202,32 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
 
-        <!-- 课程表 -->
+
+        <!-- 序列   其他 课程表 -->
+            <!-- 课程表 -->
         <activity
             android:name=".ui.other.act.TableScheActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
-        <!-- 抽屉效果 -->
+
+
+
+        <!-- 序列   基础  handler -->
+        <activity
+            android:name=".ui.handler.act.HandlerMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+            <!-- 定时切换背景 -->
+        <activity
+            android:name=".ui.handler.act.Handler01"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+            <!-- handler sendMessage -->
+        <activity
+            android:name=".ui.handler.act.Handler02"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>

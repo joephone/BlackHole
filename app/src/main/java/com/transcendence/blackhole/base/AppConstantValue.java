@@ -3,7 +3,7 @@ package com.transcendence.blackhole.base;
 import com.transcendence.blackhole.index.BaseIndexActivity;
 import com.transcendence.blackhole.index.VoiceIndexActivity;
 import com.transcendence.blackhole.ui.apkbus.ApkBusMainActivity;
-import com.transcendence.blackhole.ui.base.act.HandlerMainActivity;
+import com.transcendence.blackhole.ui.handler.act.HandlerMainActivity;
 import com.transcendence.blackhole.ui.base.act.LaunchModeActivity;
 import com.transcendence.blackhole.ui.base.act.LifeCycleActivity;
 import com.transcendence.blackhole.ui.base.act.TelephoneInfoActivity;
