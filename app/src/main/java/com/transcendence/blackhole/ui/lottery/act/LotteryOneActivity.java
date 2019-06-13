@@ -13,6 +13,11 @@ import com.transcendence.blackhole.ui.lottery.view.LotteryViewOne;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 奖品1
+ * @author harry
+ */
+
 public class LotteryOneActivity extends TitleBarActivity {
 	
 	LotteryViewOne nl;
@@ -25,6 +30,7 @@ public class LotteryOneActivity extends TitleBarActivity {
 
 	@Override
 	public void init() {
+		setTitle("九宫格1");
 		nl=(LotteryViewOne) findViewById(R.id.nl);
 		// 这句不能少
 		nl.setZOrderOnTop(true);

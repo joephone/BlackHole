@@ -25,8 +25,8 @@ import java.util.concurrent.Executors;
 /**
  * 奖品1
  * @author harry
- *
  */
+
 public class LotteryViewOne extends SurfaceView implements Callback {
 
 	/**

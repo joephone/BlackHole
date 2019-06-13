@@ -195,9 +195,16 @@
             android:name=".ui.lottery.act.LotteryOneActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
-
-
+                <!-- 抽奖二 -->
+        <activity
+            android:name=".ui.lottery.act.LotteryTwoActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+                <!-- 抽奖三 -->
+        <activity
+            android:name=".ui.lottery.act.LotteryThreeActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
 
         <!-- 序列   录音 序列 -->

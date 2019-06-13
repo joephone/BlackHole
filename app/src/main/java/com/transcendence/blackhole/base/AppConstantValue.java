@@ -4,13 +4,15 @@ import com.transcendence.blackhole.index.BaseIndexActivity;
 import com.transcendence.blackhole.index.LotteryIndexActivity;
 import com.transcendence.blackhole.index.VoiceIndexActivity;
 import com.transcendence.blackhole.ui.apkbus.ApkBusMainActivity;
-import com.transcendence.blackhole.ui.handler.act.HandlerMainActivity;
 import com.transcendence.blackhole.ui.base.act.LaunchModeActivity;
 import com.transcendence.blackhole.ui.base.act.LifeCycleActivity;
 import com.transcendence.blackhole.ui.base.act.TelephoneInfoActivity;
+import com.transcendence.blackhole.ui.handler.act.HandlerMainActivity;
 import com.transcendence.blackhole.ui.hardware.act.IsTwoSdCardActivity;
 import com.transcendence.blackhole.ui.image.WxImagePickerActivity;
 import com.transcendence.blackhole.ui.lottery.act.LotteryOneActivity;
+import com.transcendence.blackhole.ui.lottery.act.LotteryThreeActivity;
+import com.transcendence.blackhole.ui.lottery.act.LotteryTwoActivity;
 import com.transcendence.blackhole.ui.other.act.TableScheActivity;
 import com.transcendence.blackhole.ui.toast.ToastActivity;
 import com.transcendence.blackhole.ui.voice.act.RecordActivity;
@@ -36,7 +38,7 @@ public interface AppConstantValue {
     Class[] baseIndex = {LifeCycleActivity.class, LaunchModeActivity.class,TelephoneInfoActivity.class, HandlerMainActivity.class};
 
 
-    Class[] lotteryIndex = {LotteryOneActivity.class};
+    Class[] lotteryIndex = {LotteryOneActivity.class,LotteryTwoActivity.class,LotteryThreeActivity.class};
 
 
     Class[] voiceIndex = {RecordActivity.class,RecordActivity2.class};

@@ -14,6 +14,7 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
+
 <resources>
     <string-array name="app_index_item">
         <item>开发基础</item>
@@ -27,7 +28,6 @@
         <item>仿地图上拉控件</item>
         <item>判断双SD卡</item>
         <item>课程表</item>
-        <item>抽屉效果</item>
     </string-array>
 
     <string-array name="base_index_item">
@@ -39,6 +39,8 @@
 
     <string-array name="lottery_index_item">
         <item>抽奖1</item>
+        <item>抽奖2</item>
+        <item>抽奖3</item>
     </string-array>
 
     <string-array name="voice_index_item">
@@ -54,4 +56,18 @@
         <item>Toast</item>
     </string-array>
 
+
+
+
+    <string-array name="jifeng_array_info">
+        <item name="huawei_mobile">华为荣耀5C</item>
+        <item name="xiaomi_shouhuan">小米运动手环</item>
+        <item name="qq_sport">QQ运动5积分</item>
+        <item name="gopro_camera">gopro相机</item>
+        <item name="center_info">我要抽奖</item> <!-- don't modified the text length, draw text need four text length -->
+        <item name="misfit_flash">misfit手环</item>
+        <item name="qq_sport">QQ运动8积分</item>
+        <item name="qq_gongzai">QQ公仔</item>
+        <item name="thank_take_part_in">谢谢参与</item> <!-- don't modified the text length, draw text need four text length -->
+    </string-array>
 </resources>

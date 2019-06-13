@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">LotteryView</string>
+
+
+
+    <string name="choujiang">抽奖</string>
+    <string name="choujiang_desc">"抽奖需消耗10积分，确定抽奖吗?"</string>
+    <string name="result_title">恭喜您</string>
+    <string name="result_message">恭喜您获得%s~</string>
+</resources>
