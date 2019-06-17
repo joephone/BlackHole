@@ -109,11 +109,8 @@ public class WxImagePickerActivity extends TitleBarActivity implements ImagePick
                             default:
                                 break;
                         }
-
                     }
                 }, names);
-
-
                 break;
             default:
                 //打开预览

@@ -2,7 +2,9 @@ package com.lzy.imagepicker.adapter;
 
 import android.app.Activity;
 import android.support.v4.view.PagerAdapter;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -55,7 +57,14 @@ public class ImagePageAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup container, int position) {
         PhotoView photoView = new PhotoView(mActivity);
         ImageItem imageItem = images.get(position);
-        imagePicker.getImageLoader().displayImagePreview(mActivity, imageItem.path, photoView, screenWidth, screenHeight);
+        if(!TextUtils.isEmpty(imageItem.path)){
+            Log.d("blackhole",!TextUtils.isEmpty(imageItem.path)+"");
+            imagePicker.getImageLoader().displayImagePreview(mActivity, imageItem.path, photoView, screenWidth, screenHeight);
+        }else if(imageItem.resourceId>0){
+            Log.d("blackhole",imageItem.resourceId+"");
+            imagePicker.getImageLoader().displayImagePreview(mActivity,photoView, imageItem.resourceId,  screenWidth, screenHeight);
+        }
+
         photoView.setOnPhotoTapListener(new PhotoViewAttacher.OnPhotoTapListener() {
             @Override
             public void onPhotoTap(View view, float x, float y) {

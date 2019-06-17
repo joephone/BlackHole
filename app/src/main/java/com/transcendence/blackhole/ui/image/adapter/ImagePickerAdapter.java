@@ -12,6 +12,7 @@ import com.lzy.imagepicker.ImagePicker;
 import com.lzy.imagepicker.bean.ImageItem;
 import com.transcendence.blackhole.R;
 import com.transcendence.blackhole.ui.image.WxImagePickerActivity;
+import com.transcendence.blackhole.utils.L;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -94,6 +95,8 @@ public class ImagePickerAdapter extends RecyclerView.Adapter<ImagePickerAdapter.
             itemView.setOnClickListener(this);
             //根据条目位置设置图片
             ImageItem item = mData.get(position);
+
+            L.d(""+item);
             if (isAdded && position == getItemCount() - 1) {
                 iv_img.setImageResource(R.drawable.selector_image_add);
                 clickPosition = WxImagePickerActivity.IMAGE_ITEM_ADD;

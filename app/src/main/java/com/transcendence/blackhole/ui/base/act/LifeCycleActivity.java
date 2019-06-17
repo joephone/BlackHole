@@ -1,5 +1,6 @@
 package com.transcendence.blackhole.ui.base.act;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -7,10 +8,16 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.hjq.toast.ToastUtils;
+import com.lzy.imagepicker.ImagePicker;
+import com.lzy.imagepicker.bean.ImageItem;
+import com.lzy.imagepicker.imageloader.GlideImageLoader;
+import com.lzy.imagepicker.ui.ImagePreviewActivity;
+import com.lzy.imagepicker.view.CropImageView;
 import com.transcendence.blackhole.R;
 import com.transcendence.blackhole.base.activity.TitleBarActivity;
 import com.transcendence.blackhole.utils.L;
@@ -26,7 +33,7 @@ import java.util.List;
  * @EditionHistory
  */
 
-public class LifeCycleActivity extends TitleBarActivity implements AdapterView.OnItemClickListener {
+public class LifeCycleActivity extends TitleBarActivity implements AdapterView.OnItemClickListener,View.OnClickListener {
     private final int onCreate =1;
     private final int onStart =2;
     private final int onResume =3;
@@ -34,11 +41,12 @@ public class LifeCycleActivity extends TitleBarActivity implements AdapterView.O
     private final int onPause =5;
     private final int onStop =6;
     private final int onDestroy =7;
-
     private final int onRestart =8;
 
+    private ArrayList<ImageItem> imageList = new ArrayList<>();
     private ArrayAdapter<String> adapter;
     private ListView lvIndex;
+    private ImageView ivImg;
     List<String> items = new ArrayList<>();
 
     private Handler mHandler = new Handler(){
@@ -173,20 +181,23 @@ public class LifeCycleActivity extends TitleBarActivity implements AdapterView.O
     @Override
     public void init() {
         setTitle("生命周期");
+        ivImg = findViewById(R.id.ivImg);
         mTvTab = findViewById(R.id.tvTab);
-        mTvTab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(LifeCycleTwoActivity.class);
-            }
-        });
-
         lvIndex = findViewById(R.id.lvIndex);
 
         adapter = new ArrayAdapter<>(mActivity,
                 android.R.layout.simple_list_item_1, items);
         lvIndex.setAdapter(adapter);
+
         lvIndex.setOnItemClickListener(this);
+        ivImg.setOnClickListener(this);
+        mTvTab.setOnClickListener(this);
+
+        ImageItem imageItem = new ImageItem();
+        imageItem.resourceId = R.mipmap.activity_basic_lifecycle;
+        imageList.add(imageItem);
+
+        initImagePicker();
     }
 
     @Override
@@ -197,5 +208,45 @@ public class LifeCycleActivity extends TitleBarActivity implements AdapterView.O
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+    }
+
+    boolean isOrigin;
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.ivImg:
+                Intent intentPreview = new Intent(mActivity, ImagePreviewActivity.class);
+                intentPreview.putExtra(ImagePicker.EXTRA_IMAGE_ITEMS, imageList);
+                intentPreview.putExtra(ImagePicker.EXTRA_SELECTED_IMAGE_POSITION, 0);
+                intentPreview.putExtra(ImagePicker.EXTRA_FROM_ITEMS, true);
+                startActivity(intentPreview);
+
+//                Intent intent = new Intent(mActivity, ImagePreviewActivity.class);
+//                intent.putExtra(ImagePicker.EXTRA_SELECTED_IMAGE_POSITION, 0);
+//                intent.putExtra(ImagePicker.EXTRA_IMAGE_ITEMS, imageList);
+//                intent.putExtra(ImagePreviewActivity.ISORIGIN, isOrigin);
+//                intent.putExtra(ImagePicker.EXTRA_FROM_ITEMS, true);
+//                startActivity(intent);
+                break;
+            case R.id.tvTab:
+                startActivity(LifeCycleTwoActivity.class);
+                break;
+        }
+    }
+
+
+    private void initImagePicker() {
+        ImagePicker imagePicker = ImagePicker.getInstance();
+        imagePicker.setImageLoader(new GlideImageLoader());   //设置图片加载器
+        imagePicker.setShowCamera(true);                      //显示拍照按钮
+        imagePicker.setCrop(true);                           //允许裁剪（单选才有效）
+        imagePicker.setSaveRectangle(true);                   //是否按矩形区域保存
+        imagePicker.setSelectLimit(1);              //选中数量限制
+        imagePicker.setStyle(CropImageView.Style.RECTANGLE);  //裁剪框的形状
+        imagePicker.setFocusWidth(800);                       //裁剪框的宽度。单位像素（圆形自动取宽高最小值）
+        imagePicker.setFocusHeight(800);                      //裁剪框的高度。单位像素（圆形自动取宽高最小值）
+        imagePicker.setOutPutX(1000);                         //保存文件的宽度。单位像素
+        imagePicker.setOutPutY(1000);                         //保存文件的高度。单位像素
     }
 }

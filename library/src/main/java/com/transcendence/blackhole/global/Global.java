@@ -10,6 +10,7 @@ import android.os.Environment;
 public class Global {
     public static final String TAG = "blackhole";
     public static boolean isTest = true;
+    public static int maxImgCount = 9;
 
     public static String ABSOLUTE_PATH =  Environment.getExternalStorageDirectory().getAbsolutePath() + "/blackhole";
 

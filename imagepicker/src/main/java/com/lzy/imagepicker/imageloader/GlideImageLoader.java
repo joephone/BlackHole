@@ -1,6 +1,7 @@
 package com.lzy.imagepicker.imageloader;
 
 import android.app.Activity;
+import android.content.Context;
 import android.net.Uri;
 import android.widget.ImageView;
 
@@ -40,6 +41,15 @@ public class GlideImageLoader implements ImageLoader {
                 .diskCacheStrategy(DiskCacheStrategy.ALL)//缓存全尺寸
                 .into(imageView);
     }
+
+    @Override
+    public void displayImagePreview(Context activity, ImageView imageView, int path, int width, int height) {
+        Glide.with(activity)
+                .load(path)
+                .into(imageView);
+    }
+
+
 
     @Override
     public void clearMemoryCache() {
