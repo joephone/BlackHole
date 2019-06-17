@@ -152,6 +152,8 @@
         <activity
             android:name=".ui.apkbus.alarm.AlarmTestActivity"
             android:launchMode="singleTask"
+
+
             android:screenOrientation="portrait" />
             <!-- apk bus alarm -->
         <activity
@@ -185,6 +187,10 @@
             android:screenOrientation="portrait" />
 
 
+
+
+
+
         <!-- 序列二   抽奖 序列 -->
         <activity
             android:name=".index.LotteryIndexActivity"
@@ -206,6 +212,23 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
+        <!-- 序列三   跑马灯 序列 -->
+        <activity
+            android:name=".index.MarqueeIndexActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+            <!-- 跑马灯一 -->
+        <activity
+            android:name=".ui.widget.marquee.MarqueeTextOneActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+            <!-- 跑马灯二 -->
+        <activity
+            android:name=".ui.widget.marquee.MarqueeTextTwoActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+
 
         <!-- 序列   录音 序列 -->
         <activity
@@ -224,12 +247,26 @@
 
 
         <!-- 序列   其他 课程表 -->
+        <activity
+            android:name=".index.OtherIndexActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
             <!-- 课程表 -->
         <activity
             android:name=".ui.other.act.TableScheActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
-
+            <!-- 瀑布流 -->
+        <activity
+            android:name=".ui.other.photowaterfall.act.WaterFallOneActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+            <!-- 解决软键盘遮挡输入框 -->
+        <activity
+            android:name=".ui.other.act.OverKeyBoardActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="portrait"/>
 
 
         <!-- 序列   基础  handler -->

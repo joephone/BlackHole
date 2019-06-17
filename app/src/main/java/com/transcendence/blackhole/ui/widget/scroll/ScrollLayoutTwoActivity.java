@@ -139,7 +139,7 @@ public class ScrollLayoutTwoActivity extends BaseActivity {
 
         @Override
         public MyAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            View view = mInflater.inflate(R.layout.item_widget_custom_scroll_layout_two, parent, false);
+            View view = mInflater.inflate(R.layout.activity_widget_custom_map_scroll_layout_two_item, parent, false);
             return new MyAdapter.MyViewHolder(view);
         }
 

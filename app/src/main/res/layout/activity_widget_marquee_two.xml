@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/standard_padding"
+    android:addStatesFromChildren="true">
+
+    <com.transcendence.blackhole.widget.custom.autoscroll.MarqueTextViewTwo
+        android:id="@+id/tv"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:background="@drawable/water_standard_green_selector"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
+
+
+</LinearLayout>

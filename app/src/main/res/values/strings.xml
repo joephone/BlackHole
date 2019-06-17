@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">LotteryView</string>
+    <string name="app_name">黑洞</string>
 
-
+    <string name="hello_world">Hello world!</string>
+    <string name="login_title">这里模仿一个登录界面</string>
 
     <string name="choujiang">抽奖</string>
     <string name="choujiang_desc">"抽奖需消耗10积分，确定抽奖吗?"</string>

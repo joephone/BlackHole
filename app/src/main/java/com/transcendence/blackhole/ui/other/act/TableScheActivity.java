@@ -26,7 +26,7 @@ public class TableScheActivity extends TitleBarActivity {
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_table_sche;
+        return R.layout.activity_other_table_sche;
     }
 
     @Override
@@ -98,7 +98,7 @@ public class TableScheActivity extends TitleBarActivity {
     void setClass(LinearLayout ll, String title, String place,
                   String last, String time, int classes, int color)
     {
-        View view = LayoutInflater.from(this).inflate(R.layout.item_table_sche, null);
+        View view = LayoutInflater.from(this).inflate(R.layout.activity_other_table_sche_item, null);
         view.setMinimumHeight(dip2px(this,classes * 48));
         view.setBackgroundColor(colors[color]);
         ((TextView)view.findViewById(R.id.title)).setText(title);

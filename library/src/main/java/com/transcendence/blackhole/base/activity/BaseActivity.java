@@ -191,4 +191,16 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onDestroy();
 //        if (mButterKnife != null){ mButterKnife.unbind();}
     }
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+    }
 }

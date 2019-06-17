@@ -444,7 +444,7 @@ public class LotteryViewTwo extends View {
     }
 
 //    private void showReminderDialog(Context context) {
-//        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+//        AlertDialog.Builder bubeanilder = new AlertDialog.Builder(context);
 //        builder.setTitle(R.string.choujiang)
 //                .setMessage(R.string.choujiang_desc)
 //                .setCancelable(false)
