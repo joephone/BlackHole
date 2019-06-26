@@ -30,7 +30,7 @@ public class OtherIndexActivity extends TitleBarActivity implements AdapterView.
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent();
-        intent.setClass(OtherIndexActivity.this, AppConstantValue.otherIndex[position]);
+        intent.setClass(mActivity, AppConstantValue.otherIndex[position]);
         startActivity(intent);
     }
 
@@ -40,8 +40,8 @@ public class OtherIndexActivity extends TitleBarActivity implements AdapterView.
         setTitle("其他序列");
         lvIndex = findViewById(R.id.lvIndex);
 
-        List<String> items = StringUtils.getStringList(OtherIndexActivity.this,R.array.other_index_item);
-        adapter = new ArrayAdapter<>(OtherIndexActivity.this,
+        List<String> items = StringUtils.getStringList(mActivity,R.array.other_index_item);
+        adapter = new ArrayAdapter<>(mActivity,
                 android.R.layout.simple_list_item_1, items);
         lvIndex.setAdapter(adapter);
         lvIndex.setOnItemClickListener(this);

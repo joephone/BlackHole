@@ -28,7 +28,7 @@ public class VoiceIndexActivity extends TitleBarActivity implements AdapterView.
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent();
-        intent.setClass(VoiceIndexActivity.this, AppConstantValue.voiceIndex[position]);
+        intent.setClass(mActivity, AppConstantValue.voiceIndex[position]);
         startActivity(intent);
     }
 
@@ -38,8 +38,8 @@ public class VoiceIndexActivity extends TitleBarActivity implements AdapterView.
         setTitle("Video序列");
         lvIndex = findViewById(R.id.lvIndex);
 
-        List<String> items = StringUtils.getStringList(VoiceIndexActivity.this,R.array.voice_index_item);
-        adapter = new ArrayAdapter<>(VoiceIndexActivity.this,
+        List<String> items = StringUtils.getStringList(mActivity,R.array.voice_index_item);
+        adapter = new ArrayAdapter<>(mActivity,
                 android.R.layout.simple_list_item_1, items);
         lvIndex.setAdapter(adapter);
         lvIndex.setOnItemClickListener(this);

@@ -20,7 +20,7 @@ public class HelloHandler01 extends TitleBarActivity {
     private Handler mHandler = new Handler();
     private IvRunnable mRunnable = new IvRunnable();
     private int index;
-    private int[] mImageIds = new int[]{R.mipmap.beauty07,R.mipmap.beauty06,R.mipmap.beauty04,R.mipmap.beauty01};
+    private int[] mImageIds = new int[]{R.mipmap.beauty02,R.mipmap.beauty06,R.mipmap.beauty04,R.mipmap.beauty01};
 
     @Override
     public int getLayoutId() {

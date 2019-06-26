@@ -28,7 +28,7 @@ public class AppIndexActivity extends TitleBarActivity implements AdapterView.On
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent();
-        intent.setClass(AppIndexActivity.this, AppConstantValue.appIndex[position]);
+        intent.setClass(mActivity, AppConstantValue.appIndex[position]);
         startActivity(intent);
     }
 

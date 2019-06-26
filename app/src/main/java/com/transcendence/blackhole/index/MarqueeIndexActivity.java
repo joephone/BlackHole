@@ -41,8 +41,8 @@ public class MarqueeIndexActivity extends TitleBarActivity implements AdapterVie
         setTitle("Marquee序列");
         lvIndex = findViewById(R.id.lvIndex);
 
-        List<String> items = StringUtils.getStringList(MarqueeIndexActivity.this,R.array.marquee_index_item);
-        adapter = new ArrayAdapter<>(MarqueeIndexActivity.this,
+        List<String> items = StringUtils.getStringList(mActivity,R.array.marquee_index_item);
+        adapter = new ArrayAdapter<>(mActivity,
                 android.R.layout.simple_list_item_1, items);
         lvIndex.setAdapter(adapter);
         lvIndex.setOnItemClickListener(this);

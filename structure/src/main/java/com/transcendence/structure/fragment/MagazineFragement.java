@@ -41,7 +41,7 @@ public class MagazineFragement extends BaseFragment implements Overview.RecentsV
     protected void init() {
         L.logI( "init: ________________!!!!!!!!!!!!!!!!!!!!");
         listRes.add(R.mipmap.beauty01);
-        listRes.add(R.mipmap.beauty02);
+        listRes.add(R.mipmap.beauty07);
         listRes.add(R.mipmap.beauty03);
         listRes.add(R.mipmap.beauty04);
         listRes.add(R.mipmap.beauty05);

@@ -1,20 +1,25 @@
 package com.transcendence.blackhole.base;
 
 import com.transcendence.blackhole.index.BaseIndexActivity;
+import com.transcendence.blackhole.index.ImageIndexActivity;
 import com.transcendence.blackhole.index.LotteryIndexActivity;
 import com.transcendence.blackhole.index.MarqueeIndexActivity;
 import com.transcendence.blackhole.index.OtherIndexActivity;
 import com.transcendence.blackhole.index.VoiceIndexActivity;
-import com.transcendence.blackhole.ui.apkbus.ApkBusMainActivity;
+import com.transcendence.blackhole.ui.base.act.FirstEventActivity;
 import com.transcendence.blackhole.ui.base.act.LaunchModeActivity;
 import com.transcendence.blackhole.ui.base.act.LifeCycleActivity;
+import com.transcendence.blackhole.ui.base.act.LockerHomeActivity;
+import com.transcendence.blackhole.ui.base.act.ScreenKeyDownActivity;
 import com.transcendence.blackhole.ui.base.act.TelephoneInfoActivity;
 import com.transcendence.blackhole.ui.handler.act.HandlerMainActivity;
 import com.transcendence.blackhole.ui.hardware.act.IsTwoSdCardActivity;
-import com.transcendence.blackhole.ui.image.WxImagePickerActivity;
+import com.transcendence.blackhole.ui.image.act.ImageLoadActivity;
+import com.transcendence.blackhole.ui.image.act.WxImagePickerActivity;
 import com.transcendence.blackhole.ui.lottery.act.LotteryOneActivity;
 import com.transcendence.blackhole.ui.lottery.act.LotteryThreeActivity;
 import com.transcendence.blackhole.ui.lottery.act.LotteryTwoActivity;
+import com.transcendence.blackhole.ui.mvp.act.MvpLoginActivity;
 import com.transcendence.blackhole.ui.other.act.OverKeyBoardActivity;
 import com.transcendence.blackhole.ui.other.act.TableScheActivity;
 import com.transcendence.blackhole.ui.other.photowaterfall.act.WaterFallOneActivity;
@@ -36,11 +41,15 @@ import com.transcendence.blackhole.ui.widget.scroll.ScrollLayoutTwoActivity;
  */
 
 public interface AppConstantValue {
-    Class[] appIndex = {BaseIndexActivity.class, LotteryIndexActivity.class,MarqueeIndexActivity.class, OtherIndexActivity.class,WxImagePickerActivity.class,VoiceIndexActivity.class,ApkBusMainActivity.class,
-                        MainActivity.class,AutoScrollActivity.class,ToastActivity.class};
+    Class[] appIndex = {BaseIndexActivity.class, ImageIndexActivity.class,LotteryIndexActivity.class,MarqueeIndexActivity.class, OtherIndexActivity.class,VoiceIndexActivity.class,
+                        MainActivity.class,AutoScrollActivity.class,ToastActivity.class,MvpLoginActivity.class};
 
 
-    Class[] baseIndex = {LifeCycleActivity.class, LaunchModeActivity.class,TelephoneInfoActivity.class, HandlerMainActivity.class};
+    Class[] baseIndex = {LifeCycleActivity.class, LaunchModeActivity.class,ScreenKeyDownActivity.class,LockerHomeActivity.class,
+            TelephoneInfoActivity.class, HandlerMainActivity.class, FirstEventActivity.class};
+
+
+    Class[] imageIndex = {WxImagePickerActivity.class,ImageLoadActivity.class};
 
 
     Class[] lotteryIndex = {LotteryOneActivity.class,LotteryTwoActivity.class,LotteryThreeActivity.class};
@@ -54,5 +63,7 @@ public interface AppConstantValue {
 
     Class[] otherIndex = {ScrollLayoutTwoActivity.class,
             IsTwoSdCardActivity.class, TableScheActivity.class, WaterFallOneActivity.class, OverKeyBoardActivity.class};
+
+
 
 }

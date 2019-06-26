@@ -18,23 +18,34 @@
 <resources>
     <string-array name="app_index_item">
         <item>开发基础</item>
+        <item>图片序列</item>
         <item>抽奖</item>
         <item>跑马灯序列</item>
         <item>其他序列</item>
-        <item>仿微信imagePicker</item>
         <item>Video序列</item>
-        <item>安卓巴士demo</item>
         <item>Main</item>
         <item>鸣谢</item>
         <item>Toast</item>
+        <item>Mvp</item>
     </string-array>
+
 
     <string-array name="base_index_item">
         <item>Activity的生命周期</item>
         <item>启动模式</item>
+        <item>Android回退键监听</item>
+        <item>禁用Home键</item>
         <item>Tel Info</item>
         <item>什么是Handler</item>
+        <item>第一事件</item>
     </string-array>
+
+
+    <string-array name="image_index_item">
+        <item>仿微信imagePicker</item>
+        <item>imageLoad</item>
+    </string-array>
+
 
     <string-array name="lottery_index_item">
         <item>抽奖1</item>

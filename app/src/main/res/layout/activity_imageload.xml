@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/bg_public"
+    android:orientation="vertical"
+    android:padding="@dimen/standard_padding"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ivImg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/standard_padding"
+        android:gravity="center"
+        android:background="@drawable/water_standard_green_selector"
+        android:text="加载网络图片" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/standard_padding"
+        android:gravity="center"
+        android:background="@drawable/water_standard_green_selector"
+        android:text="加载工程图片" />
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="@dimen/standard_padding"
+        android:gravity="center"
+        android:background="@drawable/water_standard_green_selector"
+        android:text="加载本地图片" />
+
+</LinearLayout>

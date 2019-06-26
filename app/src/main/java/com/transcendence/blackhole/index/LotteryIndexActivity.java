@@ -28,7 +28,7 @@ public class LotteryIndexActivity extends TitleBarActivity implements AdapterVie
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent();
-        intent.setClass(LotteryIndexActivity.this, AppConstantValue.lotteryIndex[position]);
+        intent.setClass(mActivity, AppConstantValue.lotteryIndex[position]);
         startActivity(intent);
     }
 
@@ -38,8 +38,8 @@ public class LotteryIndexActivity extends TitleBarActivity implements AdapterVie
         setTitle("抽奖序列");
         lvIndex = findViewById(R.id.lvIndex);
 
-        List<String> items = StringUtils.getStringList(LotteryIndexActivity.this,R.array.lottery_index_item);
-        adapter = new ArrayAdapter<>(LotteryIndexActivity.this,
+        List<String> items = StringUtils.getStringList(mActivity,R.array.lottery_index_item);
+        adapter = new ArrayAdapter<>(mActivity,
                 android.R.layout.simple_list_item_1, items);
         lvIndex.setAdapter(adapter);
         lvIndex.setOnItemClickListener(this);

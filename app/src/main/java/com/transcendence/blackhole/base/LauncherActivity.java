@@ -13,7 +13,7 @@ import com.transcendence.blackhole.base.activity.BaseActivity;
  * @Desc
  */
 
-public class LauncherActivity extends BaseActivity implements Animation.AnimationListener{
+public class LauncherActivity extends BaseActivity implements Animation.AnimationListener {
     private ImageView ivLauncher;
 
     private final int ANIM_DURATION_TIME = 1000;

@@ -3,8 +3,7 @@ package com.transcendence.blackhole.base.app;
 import android.app.Application;
 import android.content.Context;
 
-import com.hjq.toast.ToastUtils;
-import com.hjq.toast.style.ToastBlackStyle;
+import com.transcendence.blackhole.base.config.AppConfig;
 
 /**
  * @author Joephone on 2019/5/6 11:42
@@ -27,9 +26,9 @@ public class LibApplication extends Application {
         instance = this;
         applicationContext = getApplicationContext();
 
+        AppConfig.INSTANCE.initConfig(this);
 
-        // 初始化吐司工具类
-        ToastUtils.init(this, new ToastBlackStyle());
+
     }
 
     public static LibApplication getInstance() {

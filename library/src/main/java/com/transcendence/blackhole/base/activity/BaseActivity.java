@@ -16,6 +16,7 @@ import android.view.WindowManager;
 
 import com.transcendence.blackhole.utils.L;
 import com.transcendence.blackhole.utils.permission.PermissionPool;
+import com.umeng.analytics.MobclickAgent;
 
 
 /**
@@ -31,9 +32,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        L.d("base onCreate");
+//        L.d("base onCreate");
         setContentView(getLayoutId());
-        L.d("base after setContentView");
+//        L.d("base after setContentView");
 
         initActivity();
     }
@@ -42,7 +43,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     public void setContentView(View view) {
         super.setContentView(view);
-
     }
 
 
@@ -51,8 +51,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         init();
         setBar();
     }
-
-
 
 
     /**
@@ -176,13 +174,13 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-//        MobclickAgent.onPause(this);
+        MobclickAgent.onPause(this);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-//        MobclickAgent.onPause(this);
+        MobclickAgent.onPause(this);
     }
 
 

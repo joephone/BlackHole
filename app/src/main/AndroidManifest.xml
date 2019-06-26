@@ -50,6 +50,8 @@
         tools:ignore="ProtectedPermissions" />
     <!-- 录音 -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 加权限禁止Home键 -->
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
 
 
     <application
@@ -133,10 +135,7 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
-        <activity
-            android:name=".ui.image.WxImagePickerActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
+
 
         <activity
             android:name=".ui.hardware.act.IsTwoSdCardActivity"
@@ -166,6 +165,11 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
+
+
+
+
+
         <!-- 序列一   开发基础 序列 -->
         <activity
             android:name=".index.BaseIndexActivity"
@@ -185,13 +189,46 @@
             android:name=".ui.base.act.LaunchModeActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.base.act.ScreenKeyDownActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.base.act.LockerHomeActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.base.act.FirstEventActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
 
 
 
 
+        <!-- 序列二   图片 序列 -->
+        <activity
+            android:name=".index.ImageIndexActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.image.act.WxImagePickerActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.image.act.ImageLoadActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+                <!-- 单图预览 -->
+        <activity
+            android:name=".ui.image.act.PictruePreviewActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
-        <!-- 序列二   抽奖 序列 -->
+
+
+
+        <!-- 序列3   抽奖 序列 -->
         <activity
             android:name=".index.LotteryIndexActivity"
             android:launchMode="singleTask"
@@ -212,7 +249,7 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
-        <!-- 序列三   跑马灯 序列 -->
+        <!-- 序列4  跑马灯 序列 -->
         <activity
             android:name=".index.MarqueeIndexActivity"
             android:launchMode="singleTask"
@@ -286,8 +323,11 @@
             android:screenOrientation="portrait" />
 
 
-
-
+        <!-- Mvp 测试 -->
+        <activity
+            android:name=".ui.mvp.act.MvpLoginActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
 
     </application>

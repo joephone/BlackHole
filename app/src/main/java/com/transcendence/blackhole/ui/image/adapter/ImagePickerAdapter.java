@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import com.lzy.imagepicker.ImagePicker;
 import com.lzy.imagepicker.bean.ImageItem;
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.ui.image.WxImagePickerActivity;
+import com.transcendence.blackhole.ui.image.act.WxImagePickerActivity;
 import com.transcendence.blackhole.utils.L;
 
 import java.util.ArrayList;

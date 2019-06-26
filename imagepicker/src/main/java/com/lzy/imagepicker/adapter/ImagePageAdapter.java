@@ -58,10 +58,10 @@ public class ImagePageAdapter extends PagerAdapter {
         PhotoView photoView = new PhotoView(mActivity);
         ImageItem imageItem = images.get(position);
         if(!TextUtils.isEmpty(imageItem.path)){
-            Log.d("blackhole",!TextUtils.isEmpty(imageItem.path)+"");
+            Log.d("blackhole","imageItem.path");
             imagePicker.getImageLoader().displayImagePreview(mActivity, imageItem.path, photoView, screenWidth, screenHeight);
         }else if(imageItem.resourceId>0){
-            Log.d("blackhole",imageItem.resourceId+"");
+            Log.d("blackhole","imageItem.resourceId:"+imageItem.resourceId);
             imagePicker.getImageLoader().displayImagePreview(mActivity,photoView, imageItem.resourceId,  screenWidth, screenHeight);
         }
 

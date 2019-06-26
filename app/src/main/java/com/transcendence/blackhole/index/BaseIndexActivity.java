@@ -28,7 +28,7 @@ public class BaseIndexActivity extends TitleBarActivity implements AdapterView.O
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent();
-        intent.setClass(BaseIndexActivity.this, AppConstantValue.baseIndex[position]);
+        intent.setClass(mActivity, AppConstantValue.baseIndex[position]);
         startActivity(intent);
     }
 
@@ -38,8 +38,8 @@ public class BaseIndexActivity extends TitleBarActivity implements AdapterView.O
         setTitle("base序列");
         lvIndex = findViewById(R.id.lvIndex);
 
-        List<String> items = StringUtils.getStringList(BaseIndexActivity.this,R.array.base_index_item);
-        adapter = new ArrayAdapter<>(BaseIndexActivity.this,
+        List<String> items = StringUtils.getStringList(mActivity,R.array.base_index_item);
+        adapter = new ArrayAdapter<>(mActivity,
                 android.R.layout.simple_list_item_1, items);
         lvIndex.setAdapter(adapter);
         lvIndex.setOnItemClickListener(this);

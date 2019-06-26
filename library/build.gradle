@@ -37,4 +37,7 @@ dependencies {
     implementation "com.android.support:design:$rootProject.ext.supportLibraryVersion"
     implementation "com.android.support.constraint:constraint-layout:$rootProject.ext.constraintLayoutVersion"
     implementation "com.github.bumptech.glide:glide:$rootProject.ext.glideSdkVersion"
+
+    //友盟分析
+    implementation "com.umeng.analytics:analytics:latest.integration"
 }

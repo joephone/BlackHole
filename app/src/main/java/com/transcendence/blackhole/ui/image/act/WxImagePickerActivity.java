@@ -1,4 +1,4 @@
-package com.transcendence.blackhole.ui.image;
+package com.transcendence.blackhole.ui.image.act;
 
 import android.content.Intent;
 import android.support.v7.widget.GridLayoutManager;
@@ -10,12 +10,12 @@ import com.lzy.imagepicker.ImagePicker;
 import com.lzy.imagepicker.bean.ImageItem;
 import com.lzy.imagepicker.imageloader.GlideImageLoader;
 import com.lzy.imagepicker.ui.ImageGridActivity;
-import com.lzy.imagepicker.ui.ImagePreviewDelActivity;
+import com.lzy.imagepicker.ui.ImagePreviewActivity;
 import com.lzy.imagepicker.view.CropImageView;
 import com.transcendence.blackhole.R;
+import com.transcendence.blackhole.base.activity.TitleBarActivity;
 import com.transcendence.blackhole.ui.image.adapter.ImagePickerAdapter;
 import com.transcendence.blackhole.ui.image.dialog.SelectDialog;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -113,8 +113,8 @@ public class WxImagePickerActivity extends TitleBarActivity implements ImagePick
                 }, names);
                 break;
             default:
-                //打开预览
-                Intent intentPreview = new Intent(this, ImagePreviewDelActivity.class);
+                //打开预览  ImagePreviewDelActivity
+                Intent intentPreview = new Intent(this, ImagePreviewActivity.class);
                 intentPreview.putExtra(ImagePicker.EXTRA_IMAGE_ITEMS, (ArrayList<ImageItem>) adapter.getImages());
                 intentPreview.putExtra(ImagePicker.EXTRA_SELECTED_IMAGE_POSITION, position);
                 intentPreview.putExtra(ImagePicker.EXTRA_FROM_ITEMS, true);
