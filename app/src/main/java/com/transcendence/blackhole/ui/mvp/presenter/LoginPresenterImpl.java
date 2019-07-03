@@ -40,11 +40,7 @@ public class LoginPresenterImpl implements LoginPresenter.Presenter{
         }else {
             logView.showToast("用户名或密码不能为空");
         }
-
     }
-
-
-
 
 
 }

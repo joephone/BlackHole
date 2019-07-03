@@ -45,6 +45,7 @@ public class AppIndexActivity extends TitleBarActivity implements AdapterView.On
         lvIndex.setOnItemClickListener(this);
     }
 
+
     @Override
     public int getLayoutId() {
         return R.layout.activity_index;

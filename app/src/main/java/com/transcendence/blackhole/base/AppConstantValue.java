@@ -10,6 +10,7 @@ import com.transcendence.blackhole.ui.base.act.FirstEventActivity;
 import com.transcendence.blackhole.ui.base.act.LaunchModeActivity;
 import com.transcendence.blackhole.ui.base.act.LifeCycleActivity;
 import com.transcendence.blackhole.ui.base.act.LockerHomeActivity;
+import com.transcendence.blackhole.ui.base.act.RetrofitIntroActivity;
 import com.transcendence.blackhole.ui.base.act.ScreenKeyDownActivity;
 import com.transcendence.blackhole.ui.base.act.TelephoneInfoActivity;
 import com.transcendence.blackhole.ui.handler.act.HandlerMainActivity;
@@ -42,7 +43,7 @@ import com.transcendence.blackhole.ui.widget.scroll.ScrollLayoutTwoActivity;
 
 public interface AppConstantValue {
     Class[] appIndex = {BaseIndexActivity.class, ImageIndexActivity.class,LotteryIndexActivity.class,MarqueeIndexActivity.class, OtherIndexActivity.class,VoiceIndexActivity.class,
-                        MainActivity.class,AutoScrollActivity.class,ToastActivity.class,MvpLoginActivity.class};
+                        MainActivity.class,AutoScrollActivity.class,ToastActivity.class,MvpLoginActivity.class,RetrofitIntroActivity.class};
 
 
     Class[] baseIndex = {LifeCycleActivity.class, LaunchModeActivity.class,ScreenKeyDownActivity.class,LockerHomeActivity.class,
@@ -55,7 +56,7 @@ public interface AppConstantValue {
     Class[] lotteryIndex = {LotteryOneActivity.class,LotteryTwoActivity.class,LotteryThreeActivity.class};
 
 
-    Class[] marqueeIndex = {MarqueeTextOneActivity.class,MarqueeTextTwoActivity.class,LotteryThreeActivity.class};
+    Class[] marqueeIndex = {MarqueeTextOneActivity.class,MarqueeTextTwoActivity.class};
 
 
     Class[] voiceIndex = {RecordActivity.class,RecordActivity2.class};

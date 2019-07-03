@@ -5,15 +5,19 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.IBinder;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.EditText;
 
+import com.transcendence.blackhole.utils.AppUtils;
 import com.transcendence.blackhole.utils.L;
 import com.transcendence.blackhole.utils.permission.PermissionPool;
 import com.umeng.analytics.MobclickAgent;
@@ -126,6 +130,50 @@ public abstract class BaseActivity extends AppCompatActivity {
         startActivityForResult(intent, requestCode);
     }
 
+
+    public static final int MIN_CLICK_DELAY_TIME = 600;    // 连点最短时间
+    public long lastClickTime1 = 0;  // 记录点击时间
+    public long lastClickTime2 = 0;  // 记录点击时间
+
+    /**
+     * 主要的方法，重写dispatchTouchEvent
+     * 专治 连点狂魔
+     * @param ev
+     * @return
+     */
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        switch (ev.getAction()) {
+            case MotionEvent.ACTION_UP:     // 抬起
+//                long currentTime1 = Calendar.getInstance().getTimeInMillis();
+//                if (currentTime1 - lastClickTime1 > MIN_CLICK_DELAY_TIME) {
+//                    lastClickTime1 = currentTime1;
+//                } else {
+////                    L.logI("ACTION_UP 俩家慢点呃");
+//                    return true;
+//                }
+                break;
+            case MotionEvent.ACTION_DOWN:   // 按下
+//                long currentTime2 = Calendar.getInstance().getTimeInMillis();
+//                if (currentTime2 - lastClickTime2 > MIN_CLICK_DELAY_TIME) {
+//                    lastClickTime2 = currentTime2;
+//                } else {
+////                    L.logI("ACTION_DOWN 俩家慢点呃");
+//                    return true;
+//                }
+
+                //点他处 软键盘自动下沉
+                View v = getCurrentFocus();
+                if (isShouldHideKeyboard(v, ev)) {
+                    hideKeyboard(v.getWindowToken());
+                }
+                break;
+            case MotionEvent.ACTION_MOVE:   // 滑动
+                break;
+        }
+        return super.dispatchTouchEvent(ev);
+    }
+
     /**
      * android6.0权限处理
      * @param permissionCode    权限标记Code
@@ -168,6 +216,46 @@ public abstract class BaseActivity extends AppCompatActivity {
      * 没有授权执行的方法(子类重写)
      */
     protected void onPermissionsDenied(int requestCode) {
+    }
+
+
+    /**
+     * 根据EditText所在坐标和用户点击的坐标相对比，来判断是否隐藏键盘，因为当用户点击EditText时则不能隐藏
+     *
+     * @param v
+     * @param event
+     * @return
+     */
+    private boolean isShouldHideKeyboard(View v, MotionEvent event) {
+        if (v != null && (v instanceof EditText)) {
+            int[] l = {0, 0};
+            v.getLocationInWindow(l);
+            int left = l[0],
+                    top = l[1],
+                    bottom = top + v.getHeight(),
+                    right = left + v.getWidth();
+            if (event.getX() > left && event.getX() < right
+                    && event.getY() > top && event.getY() < bottom) {
+                // 点击EditText的事件，忽略它。
+                return false;
+            } else {
+                return true;
+            }
+        }
+        // 如果焦点不是EditText则忽略，这个发生在视图刚绘制完，第一个焦点不在EditText上，和用户用轨迹球选择其他的焦点
+        return false;
+    }
+
+    /**
+     * 获取InputMethodManager，隐藏软键盘
+     * @param token
+     */
+    public void hideKeyboard(IBinder token) {
+        if (token != null) {
+//            InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+//            im.hideSoftInputFromWindow(token, InputMethodManager.HIDE_NOT_ALWAYS);
+            AppUtils.hideInputMethod(BaseActivity.this);
+        }
     }
 
 

@@ -142,23 +142,6 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
-        <!-- apk bus demo -->
-        <activity
-            android:name=".ui.apkbus.ApkBusMainActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
-            <!-- apk bus alarm -->
-        <activity
-            android:name=".ui.apkbus.alarm.AlarmTestActivity"
-            android:launchMode="singleTask"
-
-
-            android:screenOrientation="portrait" />
-            <!-- apk bus alarm -->
-        <activity
-            android:name=".ui.apkbus.alarm.ActionActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
             <!-- apk bus top frame -->
         <activity
             android:name=".ui.base.act.TelephoneInfoActivity"
@@ -201,7 +184,10 @@
             android:name=".ui.base.act.FirstEventActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
+        <activity
+            android:name=".ui.base.act.RetrofitIntroActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
 
 

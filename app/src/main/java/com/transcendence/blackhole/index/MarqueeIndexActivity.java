@@ -25,13 +25,13 @@ import java.util.List;
 public class MarqueeIndexActivity extends TitleBarActivity implements AdapterView.OnItemClickListener {
     private ArrayAdapter<String> adapter;
     private ListView lvIndex;
-    List<String> items;
+    private List<String> items;
 
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent();
-        intent.setClass(MarqueeIndexActivity.this, AppConstantValue.marqueeIndex[position]);
+        intent.setClass(mActivity, AppConstantValue.marqueeIndex[position]);
         startActivity(intent);
     }
 

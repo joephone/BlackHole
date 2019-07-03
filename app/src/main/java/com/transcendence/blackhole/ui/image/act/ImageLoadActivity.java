@@ -14,6 +14,7 @@ import com.transcendence.blackhole.R;
 import com.transcendence.blackhole.base.activity.TitleBarActivity;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * @author Joephone on 2019/6/19 11:17
@@ -29,6 +30,10 @@ public class ImageLoadActivity extends TitleBarActivity implements View.OnClickL
     TextView textView1;
     TextView textView2;
     TextView textView3;
+
+    int [] imgIds = new int[]{R.mipmap.beauty01,R.mipmap.beauty02,R.mipmap.beauty03,
+                                R.mipmap.beauty04,R.mipmap.beauty05,R.mipmap.beauty06,
+                                R.mipmap.beauty07,R.mipmap.beauty08,R.mipmap.beauty09};
     /**
      * 当前选择的所有图片
      */
@@ -65,7 +70,7 @@ public class ImageLoadActivity extends TitleBarActivity implements View.OnClickL
                 break;
             case R.id.textView2:
                 imageList.clear();
-                imageItem.resourceId = R.mipmap.beauty02;
+                imageItem.resourceId = imgIds[getRandom()];
                 imageList.add(imageItem);
                 ImageLoader.loadImage(mIvImg,imageItem.resourceId);
                 break;
@@ -83,6 +88,10 @@ public class ImageLoadActivity extends TitleBarActivity implements View.OnClickL
                 }
                 break;
         }
+    }
+
+    private int getRandom() {
+       return new Random().nextInt(9);
     }
 
 

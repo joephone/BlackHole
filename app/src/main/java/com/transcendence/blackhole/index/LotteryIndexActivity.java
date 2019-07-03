@@ -22,7 +22,7 @@ import java.util.List;
 public class LotteryIndexActivity extends TitleBarActivity implements AdapterView.OnItemClickListener {
     private ArrayAdapter<String> adapter;
     private ListView lvIndex;
-    List<String> items;
+    private List<String> items;
 
 
     @Override
