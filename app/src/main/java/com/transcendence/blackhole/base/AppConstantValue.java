@@ -13,6 +13,7 @@ import com.transcendence.blackhole.ui.base.act.LockerHomeActivity;
 import com.transcendence.blackhole.ui.base.act.RetrofitIntroActivity;
 import com.transcendence.blackhole.ui.base.act.ScreenKeyDownActivity;
 import com.transcendence.blackhole.ui.base.act.TelephoneInfoActivity;
+import com.transcendence.blackhole.ui.gallery.act.JGalleryMainActivity;
 import com.transcendence.blackhole.ui.handler.act.HandlerMainActivity;
 import com.transcendence.blackhole.ui.hardware.act.IsTwoSdCardActivity;
 import com.transcendence.blackhole.ui.image.act.ImageLoadActivity;
@@ -50,7 +51,8 @@ public interface AppConstantValue {
             TelephoneInfoActivity.class, HandlerMainActivity.class, FirstEventActivity.class};
 
 
-    Class[] imageIndex = {WxImagePickerActivity.class,ImageLoadActivity.class};
+    Class[] imageIndex = {WxImagePickerActivity.class,ImageLoadActivity.class,
+                            JGalleryMainActivity.class};
 
 
     Class[] lotteryIndex = {LotteryOneActivity.class,LotteryTwoActivity.class,LotteryThreeActivity.class};

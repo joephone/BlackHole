@@ -45,6 +45,7 @@
     <string-array name="image_index_item">
         <item>仿微信imagePicker</item>
         <item>imageLoad</item>
+        <item>jGallery</item>
     </string-array>
 
 

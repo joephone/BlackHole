@@ -33,6 +33,7 @@ public class AppIndexActivity extends TitleBarActivity implements AdapterView.On
     }
 
 
+
     @Override
     public void init() {
         setTitle(false,"序列");
