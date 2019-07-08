@@ -29,13 +29,10 @@ public class SimpleIndexActivity extends BaseActivity implements AdapterView.OnI
     }
 
 
-    @Override
-    public void initView() {
-        lvIndex = findViewById(R.id.lvIndex);
-    }
 
     @Override
     public void init() {
+        lvIndex = findViewById(R.id.lvIndex);
         initAdapter();
 
     }

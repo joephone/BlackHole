@@ -4,7 +4,6 @@ import android.view.View;
 
 import com.transcendence.blackhole.base.activity.BaseFragment;
 import com.transcendence.blackhole.utils.L;
-import com.transcendence.structure.R;
 import com.transcendence.structure.magazine.adapter.MagazineAdapter;
 import com.transcendence.structure.magazine.bean.MagazineEntity;
 import com.wirelesspienetwork.overview.views.Overview;
@@ -27,29 +26,29 @@ public class MagazineFragement extends BaseFragment implements Overview.RecentsV
     private List<MagazineEntity.DataBean.ArticlesBean> articles = new ArrayList<>();
     private List<Integer> listRes = new ArrayList<>();
 
-    @Override
-    protected int getLayoutId() {
-        return R.layout.zuimei_fragment_magazine;
-    }
-
-    @Override
-    protected void initView(View view) {
-        mStackOverView = view.findViewById(R.id.stackView);
-    }
-
-    @Override
-    protected void init() {
-        L.logI( "init: ________________!!!!!!!!!!!!!!!!!!!!");
-        listRes.add(R.mipmap.beauty01);
-        listRes.add(R.mipmap.beauty07);
-        listRes.add(R.mipmap.beauty03);
-        listRes.add(R.mipmap.beauty04);
-        listRes.add(R.mipmap.beauty05);
-        listRes.add(R.mipmap.beauty06);
-        //设置overView
-        mStackOverView.setCallbacks(this); //添加手势回调
-        loadData();
-    }
+//    @Override
+//    protected int getLayoutId() {
+//        return R.layout.zuimei_fragment_magazine;
+//    }
+//
+//    @Override
+//    protected void initView(View view) {
+//        mStackOverView = view.findViewById(R.id.stackView);
+//    }
+//
+//    @Override
+//    protected void init() {
+//        L.logI( "init: ________________!!!!!!!!!!!!!!!!!!!!");
+//        listRes.add(R.mipmap.beauty01);
+//        listRes.add(R.mipmap.beauty07);
+//        listRes.add(R.mipmap.beauty03);
+//        listRes.add(R.mipmap.beauty04);
+//        listRes.add(R.mipmap.beauty05);
+//        listRes.add(R.mipmap.beauty06);
+//        //设置overView
+//        mStackOverView.setCallbacks(this); //添加手势回调
+//        loadData();
+//    }
 
 
     public void loadData() {

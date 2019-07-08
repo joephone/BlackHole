@@ -3,7 +3,7 @@
  * All Rights Reserved.
  */
 
-package com.transcendence.douya;
+package com.transcendence.dongnao;
 
 import android.os.Build;
 import android.webkit.WebView;

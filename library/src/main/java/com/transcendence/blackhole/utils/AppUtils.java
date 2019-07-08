@@ -4,7 +4,10 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.os.SystemClock;
 import android.view.inputmethod.InputMethodManager;
+
+import java.util.Random;
 
 /**
  * @author Joephone on 2019/5/28 10:44
@@ -94,5 +97,17 @@ public class AppUtils {
             InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
             imm.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
         }
+    }
+
+
+    /**
+     *  追踪事件用时
+     */
+    public void trace(String tvName){
+        long begin = System.currentTimeMillis();
+        //模拟网络请求耗时 0-2秒
+        SystemClock.sleep(new Random().nextInt(2000));
+        long duration = System.currentTimeMillis() - begin;
+        L.d(tvName + "-检查性能耗时:"+duration);
     }
 }

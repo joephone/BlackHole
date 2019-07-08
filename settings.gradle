@@ -1,1 +1,1 @@
-include ':app', ':library', ':structure',':stackOverView', ':animation', ':imagepicker', ':douya'
+include ':app', ':library', ':structure',':stackOverView', ':animation', ':imagepicker', ':dongnao'

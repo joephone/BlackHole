@@ -1,4 +1,4 @@
-package com.transcendence.douya;
+package com.transcendence.dongnao;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

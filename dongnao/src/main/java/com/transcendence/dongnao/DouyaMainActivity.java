@@ -1,4 +1,4 @@
-package com.transcendence.douya;
+package com.transcendence.dongnao;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

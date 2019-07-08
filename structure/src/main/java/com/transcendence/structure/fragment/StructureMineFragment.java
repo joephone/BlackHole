@@ -1,6 +1,5 @@
 package com.transcendence.structure.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.transcendence.structure.R;
-import com.transcendence.structure.activity.setting.SettingActivity;
 
 
 /**
@@ -68,10 +66,10 @@ public class StructureMineFragment extends Fragment implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.tvContent:
-                Intent intent = new Intent(getActivity(), SettingActivity.class);
-                startActivity(intent);
-                break;
+//            case R.id.tvContent:
+//                Intent intent = new Intent(getActivity(), SettingActivity.class);
+//                startActivity(intent);
+//                break;
         }
     }
 }

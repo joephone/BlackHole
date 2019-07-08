@@ -29,18 +29,19 @@ public class SettingActivity extends TitleBarActivity implements View.OnClickLis
         slClearCache = findViewById(R.id.slClearCache);
         slClearCache.setOnClickListener(this);
         // 获取应用缓存大小
-        slClearCache.setRightText(CacheDataManager.getTotalCacheSize(this));
+        slClearCache.setRightText(CacheDataManager.getTotalCacheSize(mActivity));
     }
+
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.slClearCache:
-//                ImageLoader.clear(this);
-                CacheDataManager.clearAllCache(this);
-                // 重新获取应用缓存大小
-                slClearCache.setRightText(CacheDataManager.getTotalCacheSize(this));
-                break;
+//            case R.id.slClearCache:
+////                ImageLoader.clear(this);
+//                CacheDataManager.clearAllCache(this);
+//                // 重新获取应用缓存大小
+//                slClearCache.setRightText(CacheDataManager.getTotalCacheSize(this));
+//                break;
         }
     }
 }

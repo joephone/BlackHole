@@ -54,18 +54,18 @@ public class StructureMainActivity extends AppCompatActivity implements BottomNa
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.zuimei_home_one:
-                mViewPager.setCurrentItem(0);
-                return true;
-            case R.id.zuimei_home_two:
-                mViewPager.setCurrentItem(1);
-                return true;
-            case R.id.zuimei_home_three:
-                mViewPager.setCurrentItem(2);
-                return true;
-            case R.id.zuimei_home_four:
-                mViewPager.setCurrentItem(3);
-                return true;
+//            case R.id.zuimei_home_one:
+//                mViewPager.setCurrentItem(0);
+//                return true;
+//            case R.id.zuimei_home_two:
+//                mViewPager.setCurrentItem(1);
+//                return true;
+//            case R.id.zuimei_home_three:
+//                mViewPager.setCurrentItem(2);
+//                return true;
+//            case R.id.zuimei_home_four:
+//                mViewPager.setCurrentItem(3);
+//                return true;
         }
         return false;
     }

@@ -29,13 +29,11 @@ public class ComplexIndexActivity extends BaseActivity implements AdapterView.On
     }
 
 
-    @Override
-    public void initView() {
-        lvIndex = findViewById(R.id.lvIndex);
-    }
+
 
     @Override
     public void init() {
+        lvIndex = findViewById(R.id.lvIndex);
         initAdapter();
 
     }
