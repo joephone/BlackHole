@@ -133,7 +133,6 @@ public class LifeCycleActivity extends TitleBarActivity implements AdapterView.O
             public void run() {
                 try {
                     Thread.sleep(2000);
-
                     sendMessage(onRunning);
                 } catch (InterruptedException e) {
                     e.printStackTrace();

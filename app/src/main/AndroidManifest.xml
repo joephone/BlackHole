@@ -148,7 +148,7 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
-        <!-- Mvp 测试 -->
+        <!-- Gallery-->
         <activity
             android:name=".ui.gallery.act.JGalleryMainActivity"
             android:launchMode="singleTask"
@@ -257,6 +257,23 @@
 
 
 
+        <!-- 序列5  mvp 序列 -->
+        <activity
+            android:name=".index.MvpIndexActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+             <!-- Mvp 测试Login -->
+        <activity
+            android:name=".ui.mvp.act.MvpLoginActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+            <!-- Mvp 美女列表 -->
+        <activity
+            android:name=".ui.mvp.act.MvpBeautyListActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+
         <!-- 序列   录音 序列 -->
         <activity
             android:name=".index.VoiceIndexActivity"
@@ -313,11 +330,7 @@
             android:screenOrientation="portrait" />
 
 
-        <!-- Mvp 测试 -->
-        <activity
-            android:name=".ui.mvp.act.MvpLoginActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
+
 
 
     </application>

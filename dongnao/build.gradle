@@ -1,4 +1,4 @@
-if (rootProject.ext.isDouyaApplication) {
+if (rootProject.ext.isDongnaoApplication) {
     apply plugin: 'com.android.application'
 } else {
     apply plugin: 'com.android.library'
@@ -15,9 +15,9 @@ android {
         versionCode rootProject.ext.android["versionCode"]
         versionName rootProject.ext.android["versionName"]
 
-        if (rootProject.ext.isDouyaApplication){
+        if (rootProject.ext.isDongnaoApplication){
             //组件模式下设置applicationId
-            applicationId "com.transcendence.douya"
+            applicationId "com.transcendence.dongnao"
         }
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

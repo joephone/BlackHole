@@ -21,12 +21,12 @@
         <item>图片序列</item>
         <item>抽奖</item>
         <item>跑马灯序列</item>
+        <item>Mvp序列</item>
         <item>其他序列</item>
         <item>Video序列</item>
         <item>Main</item>
         <item>鸣谢</item>
         <item>Toast</item>
-        <item>Mvp</item>
         <item>Retrofit</item>
     </string-array>
 
@@ -60,6 +60,12 @@
         <item>跑马灯1</item>
         <item>跑马灯2</item>
         <item>跑马灯3</item>
+    </string-array>
+
+
+    <string-array name="mvp_index_item">
+        <item>MvpLogin</item>
+        <item>MvpBeautyRv</item>
     </string-array>
 
     <string-array name="other_index_item">

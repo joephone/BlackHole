@@ -1,6 +1,5 @@
 package com.transcendence.blackhole.ui.mvp.presenter;
 
-import com.transcendence.blackhole.base.mvp.BasePresenter;
 import com.transcendence.blackhole.base.mvp.BaseView;
 import com.transcendence.blackhole.ui.mvp.bean.User;
 
@@ -12,7 +11,7 @@ import com.transcendence.blackhole.ui.mvp.bean.User;
  * @EditionHistory
  */
 
-public interface LoginPresenter extends BasePresenter {
+public interface LoginPresenter {
 
     interface View extends BaseView {
         void showToast(String msg) ;
@@ -20,7 +19,7 @@ public interface LoginPresenter extends BasePresenter {
         void loginFailed(String msg) ;
     }
 
-    interface Presenter extends BasePresenter {
+    interface Presenter {
         //绑定view | 由原理图可知，presenter需要绑定View才行
         void attachView(BaseView v);
 

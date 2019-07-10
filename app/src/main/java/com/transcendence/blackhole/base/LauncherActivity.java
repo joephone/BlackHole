@@ -16,7 +16,6 @@ import com.transcendence.blackhole.base.activity.BaseActivity;
 public class LauncherActivity extends BaseActivity implements Animation.AnimationListener {
     private ImageView ivLauncher;
 
-
     private final int ANIM_DURATION_TIME = 1000;
 
     @Override

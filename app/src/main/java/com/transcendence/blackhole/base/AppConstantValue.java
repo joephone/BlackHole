@@ -4,6 +4,7 @@ import com.transcendence.blackhole.index.BaseIndexActivity;
 import com.transcendence.blackhole.index.ImageIndexActivity;
 import com.transcendence.blackhole.index.LotteryIndexActivity;
 import com.transcendence.blackhole.index.MarqueeIndexActivity;
+import com.transcendence.blackhole.index.MvpIndexActivity;
 import com.transcendence.blackhole.index.OtherIndexActivity;
 import com.transcendence.blackhole.index.VoiceIndexActivity;
 import com.transcendence.blackhole.ui.base.act.FirstEventActivity;
@@ -21,6 +22,7 @@ import com.transcendence.blackhole.ui.image.act.WxImagePickerActivity;
 import com.transcendence.blackhole.ui.lottery.act.LotteryOneActivity;
 import com.transcendence.blackhole.ui.lottery.act.LotteryThreeActivity;
 import com.transcendence.blackhole.ui.lottery.act.LotteryTwoActivity;
+import com.transcendence.blackhole.ui.mvp.act.MvpBeautyListActivity;
 import com.transcendence.blackhole.ui.mvp.act.MvpLoginActivity;
 import com.transcendence.blackhole.ui.other.act.OverKeyBoardActivity;
 import com.transcendence.blackhole.ui.other.act.TableScheActivity;
@@ -43,8 +45,8 @@ import com.transcendence.blackhole.ui.widget.scroll.ScrollLayoutTwoActivity;
  */
 
 public interface AppConstantValue {
-    Class[] appIndex = {BaseIndexActivity.class, ImageIndexActivity.class,LotteryIndexActivity.class,MarqueeIndexActivity.class, OtherIndexActivity.class,VoiceIndexActivity.class,
-                        MainActivity.class,AutoScrollActivity.class,ToastActivity.class,MvpLoginActivity.class,RetrofitIntroActivity.class};
+    Class[] appIndex = {BaseIndexActivity.class, ImageIndexActivity.class,LotteryIndexActivity.class,MarqueeIndexActivity.class, MvpIndexActivity.class,OtherIndexActivity.class,VoiceIndexActivity.class,
+                        MainActivity.class,AutoScrollActivity.class,ToastActivity.class,RetrofitIntroActivity.class};
 
 
     Class[] baseIndex = {LifeCycleActivity.class, LaunchModeActivity.class,ScreenKeyDownActivity.class,LockerHomeActivity.class,
@@ -64,9 +66,11 @@ public interface AppConstantValue {
     Class[] voiceIndex = {RecordActivity.class,RecordActivity2.class};
 
 
+    Class[] mvpIndex = {MvpLoginActivity.class,MvpBeautyListActivity.class};
+
+
     Class[] otherIndex = {ScrollLayoutTwoActivity.class,
             IsTwoSdCardActivity.class, TableScheActivity.class, WaterFallOneActivity.class, OverKeyBoardActivity.class};
-
 
 
 }

@@ -36,7 +36,7 @@ public class PaintActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paint);
 
-        mPaintView = (PaintView)findViewById(R.id.view_paint);
+        mPaintView = findViewById(R.id.view_paint);
         mPaintView.setColorFromRes(R.color.paint_color_red);
         mPaintView.setTextColorFromRes(R.color.paint_color_red);
         mPaintView.setBgColor(Color.WHITE);
@@ -49,11 +49,11 @@ public class PaintActivity extends AppCompatActivity
             mPaintView.setBitmap(bitmap);
         }
 
-        mBtnColor = (ImageButton)findViewById(R.id.btn_color);
+        mBtnColor = findViewById(R.id.btn_color);
         mBtnColor.setOnClickListener(this);
-        mBtnStroke = (ImageButton)findViewById(R.id.btn_stroke);
+        mBtnStroke = findViewById(R.id.btn_stroke);
         mBtnStroke.setOnClickListener(this);
-        mBtnUndo = (ImageButton)findViewById(R.id.btn_undo);
+        mBtnUndo = findViewById(R.id.btn_undo);
         mBtnUndo.setEnabled(false);
         mBtnUndo.setOnClickListener(this);
     }

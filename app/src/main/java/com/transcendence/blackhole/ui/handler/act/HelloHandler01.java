@@ -31,7 +31,7 @@ public class HelloHandler01 extends TitleBarActivity {
     public void init() {
         setTitle("定时切换背景");
         mIv = findViewById(R.id.ivImg);
-        mHandler.postDelayed(mRunnable,0);
+        mHandler.postDelayed(mRunnable,0);   //0秒进行切换
     }
 
     class IvRunnable implements Runnable {
@@ -41,7 +41,7 @@ public class HelloHandler01 extends TitleBarActivity {
             index++;
             index = index%(mImageIds.length);
             mIv.setImageResource(mImageIds[index]);
-            mHandler.postDelayed(mRunnable,2000);
+            mHandler.postDelayed(mRunnable,2000);   //2秒切换
         }
     }
 }

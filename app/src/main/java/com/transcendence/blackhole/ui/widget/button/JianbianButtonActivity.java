@@ -38,13 +38,13 @@ public class JianbianButtonActivity extends TitleBarActivity implements View.OnC
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.tvTabOne:
-                AppUtils.getInstance().systemClock("tvTabOne");
+                AppUtils.getInstance().trace("tvTabOne");
                 break;
             case R.id.tvTabTwo:
-                AppUtils.getInstance().systemClock("tvTabTwo");
+                AppUtils.getInstance().trace("tvTabTwo");
                 break;
             case R.id.tvTabThree:
-                AppUtils.getInstance().systemClock("tvTabThree");
+                AppUtils.getInstance().trace("tvTabThree");
                 break;
         }
     }
