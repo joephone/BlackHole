@@ -16,7 +16,7 @@ public class BasePresenter<T> {
     /**
      * 弱引用
      */
-    protected WeakReference<T> mViewWeakRef;   
+    protected WeakReference<T> mViewWeakRef;
 
     //进行绑定
     public void onAttach(T view){

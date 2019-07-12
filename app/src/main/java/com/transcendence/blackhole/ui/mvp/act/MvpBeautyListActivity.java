@@ -5,7 +5,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.hjq.toast.ToastUtils;
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
+import com.transcendence.blackhole.base.activity.BaseMvpActivity;
 import com.transcendence.blackhole.ui.mvp.adp.MvpBeautyListAdapter;
 import com.transcendence.blackhole.ui.mvp.bean.Beauty;
 import com.transcendence.blackhole.ui.mvp.presenter.BeautyListPresenter;
@@ -21,11 +21,9 @@ import java.util.List;
  * @EditionHistory
  */
 
-public class MvpBeautyListActivity extends TitleBarActivity implements IBeautyListView{
+public class MvpBeautyListActivity extends BaseMvpActivity<IBeautyListView,BeautyListPresenter<IBeautyListView>> implements IBeautyListView{
 
     RecyclerView mRv;
-    BeautyListPresenter beautyListPresenter;
-
     @Override
     public int getLayoutId() {
         return R.layout.activity_mvp_beauty_list;
@@ -35,9 +33,12 @@ public class MvpBeautyListActivity extends TitleBarActivity implements IBeautyLi
     public void init() {
         setTitle("老张的期待");
         mRv = findViewById(R.id.rv);
-        beautyListPresenter = new BeautyListPresenter();
-        beautyListPresenter.onAttach(this);
-        beautyListPresenter.presenter();
+        basePresenter.presenter();
+    }
+
+    @Override
+    protected BeautyListPresenter<IBeautyListView> createPresenter() {
+        return new BeautyListPresenter<>();
     }
 
     @Override
@@ -71,17 +72,11 @@ public class MvpBeautyListActivity extends TitleBarActivity implements IBeautyLi
         mRv.setAdapter(adapter);
     }
 
-    class MvpBeautyWaitThread extends Thread {
-        @Override
-        public void run() {
-            ToastUtils.show("加载成功");
-        }
-    }
+
 
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        beautyListPresenter.onDetach();
     }
 }
