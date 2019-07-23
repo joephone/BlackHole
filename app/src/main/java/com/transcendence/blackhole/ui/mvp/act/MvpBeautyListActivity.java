@@ -21,12 +21,14 @@ import java.util.List;
  * @EditionHistory
  */
 
-public class MvpBeautyListActivity extends BaseMvpActivity<IBeautyListView,BeautyListPresenter<IBeautyListView>> implements IBeautyListView{
+public class MvpBeautyListActivity extends BaseMvpActivity<IBeautyListView,BeautyListPresenter<IBeautyListView>> implements IBeautyListView {
 
     RecyclerView mRv;
+
     @Override
     public int getLayoutId() {
         return R.layout.activity_mvp_beauty_list;
+
     }
 
     @Override
@@ -35,6 +37,7 @@ public class MvpBeautyListActivity extends BaseMvpActivity<IBeautyListView,Beaut
         mRv = findViewById(R.id.rv);
         basePresenter.presenter();
     }
+
 
     @Override
     protected BeautyListPresenter<IBeautyListView> createPresenter() {
@@ -67,12 +70,9 @@ public class MvpBeautyListActivity extends BaseMvpActivity<IBeautyListView,Beaut
         mLinearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         mRv.setLayoutManager(mLinearLayoutManager);
 
-
-        MvpBeautyListAdapter adapter = new MvpBeautyListAdapter(MvpBeautyListActivity.this,beautyList);
+        MvpBeautyListAdapter adapter = new MvpBeautyListAdapter(mActivity,beautyList);
         mRv.setAdapter(adapter);
     }
-
-
 
 
     @Override

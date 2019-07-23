@@ -47,7 +47,7 @@ public class LifeCycleActivity extends TitleBarActivity implements AdapterView.O
     private ArrayAdapter<String> adapter;
     private ListView lvIndex;
     private ImageView ivImg;
-    List<String> items = new ArrayList<>();
+    private List<String> items = new ArrayList<>();
 
     private Handler mHandler = new Handler(){
         @Override
