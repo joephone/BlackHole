@@ -242,6 +242,7 @@ public abstract class BaseMvpActivity<V,T extends BasePresenter<V>> extends AppC
      * 有授权执行的方法(子类重写)
      */
     protected void onPermissionsGranted(int requestCode) {
+
     }
 
     /**

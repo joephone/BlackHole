@@ -28,13 +28,13 @@ public abstract class TitleBarActivity extends BaseActivity {
     private ImageView ivRight;
     private FrameLayout flBack;
 
+    protected boolean mHasBack = true;
     protected boolean mHasTitle = true;
-
 
     @Override
     public void setContentView(int layoutResID) {
         L.d("title bar setContentView");
-        prepareContentView(layoutResID, mHasTitle);
+        prepareContentView(layoutResID, mHasBack);
     }
 
     public void setContentView(int layoutResID, boolean hasTitle) {
@@ -49,25 +49,29 @@ public abstract class TitleBarActivity extends BaseActivity {
         L.d("title bar prepareContentView");
         LinearLayout parent = new LinearLayout(this);
         parent.setOrientation(LinearLayout.VERTICAL);
+        titleBar = getLayoutInflater().inflate(R.layout.title, parent, false);
         if (hasTitle) {
-            titleBar = getLayoutInflater().inflate(R.layout.title, parent, false);
             parent.addView(titleBar);
             initTitle();
+
+            // 添加原内容
+            LinearLayout.LayoutParams mainParams = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    1);
+            if (layoutResID > 0) {
+                View mainView = getLayoutInflater().inflate(layoutResID, null);
+                mainView.setLayoutParams(mainParams);
+                parent.addView(mainView);
+                mainView = parent;
+                super.setContentView(mainView);
+            } else {
+                super.setContentView(parent);
+            }
+        }else {
+            titleBar.setVisibility(View.GONE);
         }
-        // 添加原内容
-        LinearLayout.LayoutParams mainParams = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                1);
-        if (layoutResID > 0) {
-            View mainView = getLayoutInflater().inflate(layoutResID, null);
-            mainView.setLayoutParams(mainParams);
-            parent.addView(mainView);
-            mainView = parent;
-            super.setContentView(mainView);
-        } else {
-            super.setContentView(parent);
-        }
+
     }
 
     private void initTitle() {
@@ -103,11 +107,14 @@ public abstract class TitleBarActivity extends BaseActivity {
 
     protected void setTitle(boolean hasTitle) {
         mHasTitle = hasTitle;
+        if(titleBar!=null){
+            titleBar.setVisibility(View.GONE);
+        }
     }
 
-    protected void setTitle(boolean showBackButton, String title, String rightText) {
+    protected void setTitle(boolean hasBack, String title, String rightText) {
         if (flBack != null) {
-            flBack.setVisibility(showBackButton ? View.VISIBLE : View.INVISIBLE);
+            flBack.setVisibility(hasBack ? View.VISIBLE : View.INVISIBLE);
         }
 
         if (tvTitle != null) {

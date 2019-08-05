@@ -17,6 +17,7 @@ import java.util.List;
  * @author Joephone on 2019/7/9 16:09
  * @E-Mail Address：joephonechen@gmail.com
  * @Desc
+ *
  * @Edition 1.0
  * @EditionHistory
  */
@@ -73,6 +74,7 @@ public class MvpBeautyListActivity extends BaseMvpActivity<IBeautyListView,Beaut
         MvpBeautyListAdapter adapter = new MvpBeautyListAdapter(mActivity,beautyList);
         mRv.setAdapter(adapter);
     }
+
 
 
     @Override

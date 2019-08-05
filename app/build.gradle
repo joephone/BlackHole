@@ -29,5 +29,6 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
     implementation "com.android.support:design:$rootProject.ext.supportLibraryVersion"
     implementation "com.android.support.constraint:constraint-layout:$rootProject.ext.constraintLayoutVersion"
-
+    // 图片宽度充满屏幕、高度按原始比例自适应控件
+//    implementation 'com.shizhefei:LargeImageView:1.1.0'
 }

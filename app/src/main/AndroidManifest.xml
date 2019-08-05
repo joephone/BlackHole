@@ -274,6 +274,19 @@
             android:screenOrientation="portrait" />
 
 
+
+        <!-- 序列6  滚动序列 -->
+        <activity
+            android:name=".index.ScrollIndexActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+            <!-- Mvp 小红书 -->
+        <activity
+            android:name=".ui.scroll.xiaohuoshu.act.XiaohongshuActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
+
         <!-- 序列   录音 序列 -->
         <activity
             android:name=".index.VoiceIndexActivity"

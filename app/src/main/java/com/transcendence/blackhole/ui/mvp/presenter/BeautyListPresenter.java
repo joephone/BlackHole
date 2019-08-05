@@ -55,7 +55,6 @@ public class BeautyListPresenter <T extends IBeautyListView> extends BasePresent
                     }
                 });
             }
-
         }
     }
 

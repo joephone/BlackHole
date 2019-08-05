@@ -6,6 +6,7 @@ import com.transcendence.blackhole.index.LotteryIndexActivity;
 import com.transcendence.blackhole.index.MarqueeIndexActivity;
 import com.transcendence.blackhole.index.MvpIndexActivity;
 import com.transcendence.blackhole.index.OtherIndexActivity;
+import com.transcendence.blackhole.index.ScrollIndexActivity;
 import com.transcendence.blackhole.index.VoiceIndexActivity;
 import com.transcendence.blackhole.ui.base.act.FirstEventActivity;
 import com.transcendence.blackhole.ui.base.act.LaunchModeActivity;
@@ -27,6 +28,7 @@ import com.transcendence.blackhole.ui.mvp.act.MvpLoginActivity;
 import com.transcendence.blackhole.ui.other.act.OverKeyBoardActivity;
 import com.transcendence.blackhole.ui.other.act.TableScheActivity;
 import com.transcendence.blackhole.ui.other.photowaterfall.act.WaterFallOneActivity;
+import com.transcendence.blackhole.ui.scroll.xiaohuoshu.act.XiaohongshuActivity;
 import com.transcendence.blackhole.ui.toast.ToastActivity;
 import com.transcendence.blackhole.ui.voice.act.RecordActivity;
 import com.transcendence.blackhole.ui.voice.act.RecordActivity2;
@@ -45,10 +47,12 @@ import com.transcendence.blackhole.ui.widget.scroll.ScrollLayoutTwoActivity;
  */
 
 public interface AppConstantValue {
-    Class[] appIndex = {BaseIndexActivity.class, ImageIndexActivity.class,LotteryIndexActivity.class,MarqueeIndexActivity.class, MvpIndexActivity.class,OtherIndexActivity.class,VoiceIndexActivity.class,
+    Class[] appIndex = {BaseIndexActivity.class, ImageIndexActivity.class,LotteryIndexActivity.class,MarqueeIndexActivity.class, MvpIndexActivity.class,
+            ScrollIndexActivity.class,
+            OtherIndexActivity.class,VoiceIndexActivity.class,
                         MainActivity.class,AutoScrollActivity.class,ToastActivity.class,RetrofitIntroActivity.class};
 
-
+    //1
     Class[] baseIndex = {LifeCycleActivity.class, LaunchModeActivity.class,ScreenKeyDownActivity.class,LockerHomeActivity.class,
             TelephoneInfoActivity.class, HandlerMainActivity.class, FirstEventActivity.class};
 
@@ -59,6 +63,10 @@ public interface AppConstantValue {
 
     Class[] lotteryIndex = {LotteryOneActivity.class,LotteryTwoActivity.class,LotteryThreeActivity.class};
 
+    //5
+    Class[] mvpIndex = {MvpLoginActivity.class,MvpBeautyListActivity.class};
+    //6
+    Class[] scrollIndex = {XiaohongshuActivity.class,MvpBeautyListActivity.class};
 
     Class[] marqueeIndex = {MarqueeTextOneActivity.class,MarqueeTextTwoActivity.class};
 
@@ -66,7 +74,6 @@ public interface AppConstantValue {
     Class[] voiceIndex = {RecordActivity.class,RecordActivity2.class};
 
 
-    Class[] mvpIndex = {MvpLoginActivity.class,MvpBeautyListActivity.class};
 
 
     Class[] otherIndex = {ScrollLayoutTwoActivity.class,

@@ -21,7 +21,8 @@
         <item>图片序列</item>
         <item>抽奖</item>
         <item>跑马灯序列</item>
-        <item>Mvp序列</item>
+        <item>5 Mvp序列</item>
+        <item>6 滑动序列</item>
         <item>其他序列</item>
         <item>Video序列</item>
         <item>Main</item>
@@ -30,7 +31,7 @@
         <item>Retrofit</item>
     </string-array>
 
-
+    <!-- index 1-->
     <string-array name="base_index_item">
         <item>Activity的生命周期</item>
         <item>启动模式</item>
@@ -41,21 +42,21 @@
         <item>第一事件</item>
     </string-array>
 
-
+    <!-- index 2-->
     <string-array name="image_index_item">
         <item>仿微信imagePicker</item>
         <item>imageLoad</item>
         <item>jGallery</item>
     </string-array>
 
-
+    <!-- index 3-->
     <string-array name="lottery_index_item">
         <item>抽奖1</item>
         <item>抽奖2</item>
         <item>抽奖3</item>
     </string-array>
 
-
+    <!-- index 4-->
     <string-array name="marquee_index_item">
         <item>跑马灯1</item>
         <item>跑马灯2</item>
@@ -63,8 +64,15 @@
     </string-array>
 
 
+    <!-- index 5-->
     <string-array name="mvp_index_item">
         <item>MvpLogin</item>
+        <item>MvpBeautyRv</item>
+    </string-array>
+
+    <!-- index 6-->
+    <string-array name="scroll_index_item">
+        <item>小红书</item>
         <item>MvpBeautyRv</item>
     </string-array>
 
@@ -77,17 +85,20 @@
     </string-array>
 
 
-    <string-array name="index_item">
-        <item>Main</item>
-        <item>鸣谢</item>
-        <item>Toast</item>
-    </string-array>
 
 
     <string-array name="voice_index_item">
         <item>仿微信的录音功能1</item>
         <item>仿微信的录音功能2</item>
     </string-array>
+
+
+    <string-array name="index_item">
+        <item>Main</item>
+        <item>鸣谢</item>
+        <item>Toast</item>
+    </string-array>
+
 
     <string-array name="jifeng_array_info">
         <item name="huawei_mobile">华为荣耀5C</item>
