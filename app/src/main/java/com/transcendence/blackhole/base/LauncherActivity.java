@@ -9,10 +9,7 @@ import com.transcendence.blackhole.base.activity.BaseActivity;
 import com.transcendence.blackhole.demo.guide.GuideActivity;
 import com.transcendence.blackhole.global.Global;
 import com.transcendence.blackhole.index.AppIndexActivity;
-import com.transcendence.blackhole.utils.GlideUtils;
 import com.transcendence.blackhole.utils.SPUtils;
-
-import java.util.Random;
 
 /**
  * @author Joephone on 2019/5/8 10:45
@@ -23,7 +20,7 @@ import java.util.Random;
 public class LauncherActivity extends BaseActivity implements Animation.AnimationListener {
     private ImageView ivLauncher;
 
-    private final int ANIM_DURATION_TIME = 5000;
+    private final int ANIM_DURATION_TIME = 1500;
 
     @Override
     public int getLayoutId() {
@@ -37,9 +34,9 @@ public class LauncherActivity extends BaseActivity implements Animation.Animatio
     @Override
     public void init() {
         ivLauncher = findViewById(R.id.ivLauncher);
-        int [] ids = Global.mLauncherIds;
-        int index =new Random().nextInt(ids.length);
-        GlideUtils.getInstance().loadMipmap(mActivity,ids[index],ivLauncher);
+//        int [] ids = Global.mLauncherIds;
+//        int index =new Random().nextInt(ids.length);
+//        GlideUtils.getInstance().loadMipmap(mActivity,ids[index],ivLauncher);
         initStartAnim();
     }
 
@@ -48,7 +45,7 @@ public class LauncherActivity extends BaseActivity implements Animation.Animatio
      */
     private void initStartAnim() {
         // 渐变展示启动屏
-        AlphaAnimation aa = new AlphaAnimation(0.4f, 1.0f);
+        AlphaAnimation aa = new AlphaAnimation(0.3f, 1.0f);
         aa.setDuration(ANIM_DURATION_TIME * 2);
         aa.setAnimationListener(this);
         ivLauncher.startAnimation(aa);

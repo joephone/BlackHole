@@ -32,6 +32,6 @@ public class GitHubContributionActivity extends TitleBarActivity {
         table.setData(2016,4,20,2);
         table.setData(2016,12,13,3);
         table.setData(2016,12,14,3);
-        table.setData(2016,2,15,4);
+        table.setData(2017,2,15,4);
     }
 }

@@ -318,9 +318,14 @@
             android:launchMode="singleTask"
             android:windowSoftInputMode="adjustResize"
             android:screenOrientation="portrait"/>
-            <!--  -->
+            <!--  贡献图 -->
         <activity
             android:name=".demo.other.act.GitHubContributionActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+            <!--  所有app -->
+        <activity
+            android:name=".demo.allapp.AllAppActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
 
@@ -340,8 +345,6 @@
             android:name=".demo.handler.act.HelloHandler02"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
-
 
     </application>
 

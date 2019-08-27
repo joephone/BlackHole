@@ -1,5 +1,6 @@
 package com.transcendence.blackhole.base;
 
+import com.transcendence.blackhole.demo.allapp.AllAppActivity;
 import com.transcendence.blackhole.demo.handler.act.HandlerMainActivity;
 import com.transcendence.blackhole.demo.lottery.act.LotteryOneActivity;
 import com.transcendence.blackhole.demo.lottery.act.LotteryThreeActivity;
@@ -91,7 +92,7 @@ public interface AppConstantValue {
      * 7
      */
     Class[] otherIndex = {ScrollLayoutTwoActivity.class,OverKeyBoardActivity.class,
-                            GitHubContributionActivity.class};
+                            GitHubContributionActivity.class, AllAppActivity.class};
 
     Class[] voiceIndex = {};
 }
