@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
 
-        <com.transcendence.blackhole.ui.lottery.view.LotteryViewTwo
+        <com.transcendence.blackhole.demo.lottery.view.LotteryViewTwo
             android:id="@+id/lotteryview"
             android:layout_margin="16dp"
             android:padding="4dp"

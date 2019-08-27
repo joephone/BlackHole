@@ -4,18 +4,17 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.ui.paint.PaintActivity;
+import com.transcendence.blackhole.base.activity.TitleBarActivity;
 import com.transcendence.blackhole.ui.widget.button.JianbianButtonActivity;
 import com.transcendence.blackhole.ui.widget.button.WaterButtonBlueActivity;
-import com.transcendence.blackhole.ui.widget.edittext.AutoClearEditActivity;
 import com.transcendence.blackhole.ui.widget.custom.StandardLayoutActivity;
-import com.transcendence.blackhole.base.activity.BaseActivity;
+import com.transcendence.blackhole.ui.widget.edittext.AutoClearEditActivity;
 import com.transcendence.blackhole.widget.custom.StandardLayout;
 
 /**
  * @author Joephone
  */
-public class MainActivity extends BaseActivity implements View.OnClickListener{
+public class MainActivity extends TitleBarActivity implements View.OnClickListener{
 
     private StandardLayout standardLayout;
     private StandardLayout paint;
@@ -32,6 +31,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
     @Override
     public void init() {
+        setTitle("主页面");
         standardLayout = findViewById(R.id.standardLayout);
         paint = findViewById(R.id.paintView);
         edittext = findViewById(R.id.edittext);
@@ -48,7 +48,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.paintView:
-                startActivity(PaintActivity.class);
+//                startActivity(PaintActivity.class);
                 break;
             case R.id.standardLayout:
                 startActivity(StandardLayoutActivity.class);

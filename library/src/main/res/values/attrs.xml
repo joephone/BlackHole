@@ -121,4 +121,10 @@
         <attr name="pv_progressMode"/>
     </declare-styleable>
     <!-- end dialog -->
+
+
+    <declare-styleable name="TabView">
+        <attr name="tabTextSize" format="reference|integer"/>
+
+    </declare-styleable>
 </resources>

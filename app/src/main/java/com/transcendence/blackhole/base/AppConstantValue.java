@@ -1,5 +1,13 @@
 package com.transcendence.blackhole.base;
 
+import com.transcendence.blackhole.demo.handler.act.HandlerMainActivity;
+import com.transcendence.blackhole.demo.lottery.act.LotteryOneActivity;
+import com.transcendence.blackhole.demo.lottery.act.LotteryThreeActivity;
+import com.transcendence.blackhole.demo.lottery.act.LotteryTwoActivity;
+import com.transcendence.blackhole.demo.mvp.act.MvpBeautyListActivity;
+import com.transcendence.blackhole.demo.mvp.act.MvpLoginActivity;
+import com.transcendence.blackhole.demo.other.act.GitHubContributionActivity;
+import com.transcendence.blackhole.demo.other.act.OverKeyBoardActivity;
 import com.transcendence.blackhole.index.BaseIndexActivity;
 import com.transcendence.blackhole.index.ImageIndexActivity;
 import com.transcendence.blackhole.index.LotteryIndexActivity;
@@ -9,34 +17,23 @@ import com.transcendence.blackhole.index.OtherIndexActivity;
 import com.transcendence.blackhole.index.ScrollIndexActivity;
 import com.transcendence.blackhole.index.VoiceIndexActivity;
 import com.transcendence.blackhole.ui.base.act.FirstEventActivity;
-import com.transcendence.blackhole.ui.base.act.LaunchModeActivity;
+import com.transcendence.blackhole.ui.base.act.LaunchModeInfoActivity;
 import com.transcendence.blackhole.ui.base.act.LifeCycleActivity;
 import com.transcendence.blackhole.ui.base.act.LockerHomeActivity;
 import com.transcendence.blackhole.ui.base.act.RetrofitIntroActivity;
 import com.transcendence.blackhole.ui.base.act.ScreenKeyDownActivity;
 import com.transcendence.blackhole.ui.base.act.TelephoneInfoActivity;
-import com.transcendence.blackhole.ui.gallery.act.JGalleryMainActivity;
-import com.transcendence.blackhole.ui.handler.act.HandlerMainActivity;
-import com.transcendence.blackhole.ui.hardware.act.IsTwoSdCardActivity;
+import com.transcendence.blackhole.ui.gallery.act.JgalleryMainActivity;
+import com.transcendence.blackhole.ui.gallery.act.ZgalleryMainActivity;
 import com.transcendence.blackhole.ui.image.act.ImageLoadActivity;
 import com.transcendence.blackhole.ui.image.act.WxImagePickerActivity;
-import com.transcendence.blackhole.ui.lottery.act.LotteryOneActivity;
-import com.transcendence.blackhole.ui.lottery.act.LotteryThreeActivity;
-import com.transcendence.blackhole.ui.lottery.act.LotteryTwoActivity;
-import com.transcendence.blackhole.ui.mvp.act.MvpBeautyListActivity;
-import com.transcendence.blackhole.ui.mvp.act.MvpLoginActivity;
-import com.transcendence.blackhole.ui.other.act.OverKeyBoardActivity;
-import com.transcendence.blackhole.ui.other.act.TableScheActivity;
-import com.transcendence.blackhole.ui.other.photowaterfall.act.WaterFallOneActivity;
+import com.transcendence.blackhole.ui.rvmonitor.act.RvMonitorActivity;
 import com.transcendence.blackhole.ui.scroll.xiaohuoshu.act.XiaohongshuActivity;
 import com.transcendence.blackhole.ui.toast.ToastActivity;
-import com.transcendence.blackhole.ui.voice.act.RecordActivity;
-import com.transcendence.blackhole.ui.voice.act.RecordActivity2;
 import com.transcendence.blackhole.ui.widget.custom.AutoScrollActivity;
 import com.transcendence.blackhole.ui.widget.marquee.MarqueeTextOneActivity;
 import com.transcendence.blackhole.ui.widget.marquee.MarqueeTextTwoActivity;
 import com.transcendence.blackhole.ui.widget.scroll.ScrollLayoutTwoActivity;
-
 
 /**
  * @author Joephone on 2019/5/27 11:45
@@ -47,37 +44,54 @@ import com.transcendence.blackhole.ui.widget.scroll.ScrollLayoutTwoActivity;
  */
 
 public interface AppConstantValue {
-    Class[] appIndex = {BaseIndexActivity.class, ImageIndexActivity.class,LotteryIndexActivity.class,MarqueeIndexActivity.class, MvpIndexActivity.class,
+    /**
+     * 0
+     */
+    Class[] appIndex = {MainActivity.class,BaseIndexActivity.class,
+            ImageIndexActivity.class,LotteryIndexActivity.class,
+            MarqueeIndexActivity.class,
+            MvpIndexActivity.class,
             ScrollIndexActivity.class,
             OtherIndexActivity.class,VoiceIndexActivity.class,
-                        MainActivity.class,AutoScrollActivity.class,ToastActivity.class,RetrofitIntroActivity.class};
+                        AutoScrollActivity.class,ToastActivity.class,RetrofitIntroActivity.class};
 
-    //1
-    Class[] baseIndex = {LifeCycleActivity.class, LaunchModeActivity.class,ScreenKeyDownActivity.class,LockerHomeActivity.class,
+    /**
+     * 1
+     */
+    Class[] baseIndex = {LifeCycleActivity.class, LaunchModeInfoActivity.class,ScreenKeyDownActivity.class,LockerHomeActivity.class,
             TelephoneInfoActivity.class, HandlerMainActivity.class, FirstEventActivity.class};
 
-
+    /**
+     * 2
+     */
     Class[] imageIndex = {WxImagePickerActivity.class,ImageLoadActivity.class,
-                            JGalleryMainActivity.class};
+                            JgalleryMainActivity.class, ZgalleryMainActivity.class};
 
-
+    /**
+     * 3
+     */
     Class[] lotteryIndex = {LotteryOneActivity.class,LotteryTwoActivity.class,LotteryThreeActivity.class};
 
-    //5
-    Class[] mvpIndex = {MvpLoginActivity.class,MvpBeautyListActivity.class};
-    //6
-    Class[] scrollIndex = {XiaohongshuActivity.class,MvpBeautyListActivity.class};
-
+    /**
+     * 4
+     */
     Class[] marqueeIndex = {MarqueeTextOneActivity.class,MarqueeTextTwoActivity.class};
 
+    /**
+     * 5
+     */
+    Class[] mvpIndex = {MvpLoginActivity.class,MvpBeautyListActivity.class};
 
-    Class[] voiceIndex = {RecordActivity.class,RecordActivity2.class};
+    /**
+     * 6
+     */
+    Class[] scrollIndex = {XiaohongshuActivity.class,RvMonitorActivity.class};
 
+    /**
+     * 7
+     */
+    Class[] otherIndex = {ScrollLayoutTwoActivity.class,OverKeyBoardActivity.class,
+                            GitHubContributionActivity.class};
 
-
-
-    Class[] otherIndex = {ScrollLayoutTwoActivity.class,
-            IsTwoSdCardActivity.class, TableScheActivity.class, WaterFallOneActivity.class, OverKeyBoardActivity.class};
-
-
+    Class[] voiceIndex = {};
 }

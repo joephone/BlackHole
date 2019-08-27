@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <com.transcendence.blackhole.ui.lottery.view.LotteryViewOne
+    <com.transcendence.blackhole.demo.lottery.view.LotteryViewOne
         android:id="@+id/nl"
         android:layout_centerInParent="true"
         android:layout_margin="10dp"

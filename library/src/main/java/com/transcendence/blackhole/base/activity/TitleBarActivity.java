@@ -37,20 +37,26 @@ public abstract class TitleBarActivity extends BaseActivity {
         prepareContentView(layoutResID, mHasBack);
     }
 
-    public void setContentView(int layoutResID, boolean hasTitle) {
-        prepareContentView(layoutResID, hasTitle);
+    public void setContentView(int layoutResID, boolean hasBack) {
+        prepareContentView(layoutResID, hasBack);
     }
 
-    public void setContentView(boolean hasTitle) {
-        prepareContentView(0, hasTitle);
+    public void setContentView(boolean hasBack) {
+        prepareContentView(0, hasBack);
     }
 
-    private void prepareContentView(int layoutResID, boolean hasTitle) {
+    public void setContentView(boolean hasBack,boolean hasTitle) {
+        L.d("setContentView");
+        mHasTitle = hasTitle;
+        prepareContentView(0, hasBack);
+    }
+
+    private void prepareContentView(int layoutResID, boolean hasBack) {
         L.d("title bar prepareContentView");
         LinearLayout parent = new LinearLayout(this);
         parent.setOrientation(LinearLayout.VERTICAL);
         titleBar = getLayoutInflater().inflate(R.layout.title, parent, false);
-        if (hasTitle) {
+        if (mHasTitle) {
             parent.addView(titleBar);
             initTitle();
 
@@ -69,6 +75,7 @@ public abstract class TitleBarActivity extends BaseActivity {
                 super.setContentView(parent);
             }
         }else {
+            L.d("titleBar.setVisibility(View.GONE)");
             titleBar.setVisibility(View.GONE);
         }
 
@@ -103,6 +110,15 @@ public abstract class TitleBarActivity extends BaseActivity {
 
     protected void setTitle(boolean showBackButton,String title) {
         setTitle(showBackButton, title, null);
+    }
+
+
+    protected void setTitle(boolean hasBack,boolean hasTitle) {
+        mHasTitle = hasTitle;
+        if(!mHasTitle && titleBar!=null){
+            titleBar.setVisibility(View.GONE);
+        }
+        setTitle(hasBack, "", null);
     }
 
     protected void setTitle(boolean hasTitle) {

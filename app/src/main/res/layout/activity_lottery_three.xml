@@ -15,7 +15,7 @@
         android:text="加入了freeline"
         />
 
-    <com.transcendence.blackhole.ui.lottery.view.luckyboard.LuckyBoard
+    <com.transcendence.blackhole.demo.lottery.view.luckyboard.LuckyBoard
         android:id="@+id/luckyboard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

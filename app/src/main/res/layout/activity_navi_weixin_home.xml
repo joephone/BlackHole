@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--
+    ViewPager 简介
+
+    ViewPager 是 android 扩展包 v4 包中的类，这个类可以让用户左右切换当前的 view
+    ViewPager 直接继承了 ViewGroup，所有它是一个容器类，可以在其中添加其他的 view 类。
+    ViewPager 需要一个 PagerAdapter 适配器类给它提供数据。
+    ViewPager 经常和 Fragment 一起使用，并且提供了专门的 FragmentPagerAdapter 和 FragmentStatePagerAdapter 类供 Fragment 中的 ViewPager 使用。
+
+    当数据量大时，可以选择 FragmentStatePagerAdapter，用户界面只有少量固定的 fragment 时，可以选择 FragmentPagerAdapter。
+    -->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vpMain"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+    <View style="@style/Line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <com.transcendence.blackhole.widget.custom.TabView
+            android:id="@+id/tabOne"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:tabTextSize="11"
+            />
+        <com.transcendence.blackhole.widget.custom.TabView
+            android:id="@+id/tabTwo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
+        <com.transcendence.blackhole.widget.custom.TabView
+            android:id="@+id/tabThree"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
+        <com.transcendence.blackhole.widget.custom.TabView
+            android:id="@+id/tabFour"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

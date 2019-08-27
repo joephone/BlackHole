@@ -8,7 +8,7 @@
         android:label="@string/app_structure_name"
         android:theme="@style/NoTitleAppTheme">
         <activity
-            android:name=".StructureMainActivity"
+            android:name=".main.StructureSplashActivity"
             android:screenOrientation="portrait"
             >
             <intent-filter>
@@ -17,11 +17,17 @@
             </intent-filter>
         </activity>
 
+
+        <activity
+            android:name=".main.StructureMainActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"/>
+
         <activity
             android:name=".activity.setting.SettingActivity"
             android:screenOrientation="portrait"
+            android:launchMode="singleTask"
             />
-
     </application>
 
 </manifest>

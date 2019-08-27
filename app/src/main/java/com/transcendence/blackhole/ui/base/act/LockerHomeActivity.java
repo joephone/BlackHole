@@ -1,7 +1,6 @@
 package com.transcendence.blackhole.ui.base.act;
 
 import android.view.KeyEvent;
-import android.view.WindowManager;
 
 import com.transcendence.blackhole.R;
 import com.transcendence.blackhole.base.activity.TitleBarActivity;
@@ -21,8 +20,9 @@ public class LockerHomeActivity extends TitleBarActivity {
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_main;
+        return R.layout.activity_index;
     }
+
 
     @Override
     public void init() {
@@ -41,12 +41,10 @@ public class LockerHomeActivity extends TitleBarActivity {
 
 
     @Override
-
     public void onAttachedToWindow() {
         //TYPE_KEYGUARD
-        this.getWindow().setType(WindowManager.LayoutParams.TYPE_KEYGUARD_DIALOG);
+//        this.getWindow().setType(WindowManager.LayoutParams.TYPE_KEYGUARD_DIALOG);
         super.onAttachedToWindow();
-
     }
 
 }

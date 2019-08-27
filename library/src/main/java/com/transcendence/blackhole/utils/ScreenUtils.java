@@ -71,6 +71,13 @@ public class ScreenUtils {
         return dp * context.getApplicationContext().getResources().getDisplayMetrics().density;
     }
 
+    public static float dp2px(Context context, float dp) {
+        if (context == null) {
+            return -1;
+        }
+        return dp * context.getApplicationContext().getResources().getDisplayMetrics().density;
+    }
+
     public static float pxToDp(Context context, float px) {
         if (context == null) {
             return -1;

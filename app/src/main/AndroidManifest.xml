@@ -63,7 +63,7 @@
         android:supportsRtl="true"
         android:theme="@style/NoTitleAppTheme">
         <activity
-            android:name=".index.AppIndexActivity"
+            android:name=".base.LauncherActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -72,9 +72,22 @@
         </activity>
 
         <activity
-            android:name=".base.LauncherActivity"
+            android:name=".ui.weixinnavigation.act.WeixinHomeActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            />
+
+        <!-- 微信导航 -->
+        <activity
+            android:name=".ui.widget.custom.qq.QqSlidingMenuActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".index.AppIndexActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name=".base.WeChatMainActivity"
             android:launchMode="singleTask"
@@ -90,17 +103,17 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
-
         <activity
-            android:name=".ui.guide.GuideActivity"
+            android:name=".demo.guide.GuideActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
-        <!-- 画板 -->
+        <!-- 序列Random   万能序列 -->
         <activity
-            android:name=".ui.paint.PaintActivity"
+            android:name=".index.AllPurposeIndexActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"/>
+
 
         <!-- 自动删除输入框 -->
         <activity
@@ -136,21 +149,9 @@
             android:screenOrientation="portrait" />
 
 
-
-        <activity
-            android:name=".ui.hardware.act.IsTwoSdCardActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
-
-            <!-- apk bus top frame -->
+        <!-- apk bus top frame -->
         <activity
             android:name=".ui.base.act.TelephoneInfoActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
-
-        <!-- Gallery-->
-        <activity
-            android:name=".ui.gallery.act.JGalleryMainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
@@ -173,7 +174,7 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.base.act.LaunchModeActivity"
+            android:name=".ui.base.act.LaunchModeInfoActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
@@ -214,7 +215,15 @@
             android:name=".ui.image.act.PictruePreviewActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
+                <!-- Gallery-->
+        <activity
+            android:name=".ui.gallery.act.JgalleryMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.gallery.act.ZgalleryMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
 
 
@@ -225,17 +234,17 @@
             android:screenOrientation="portrait"/>
                 <!-- 抽奖一 -->
         <activity
-            android:name=".ui.lottery.act.LotteryOneActivity"
+            android:name=".demo.lottery.act.LotteryOneActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
                 <!-- 抽奖二 -->
         <activity
-            android:name=".ui.lottery.act.LotteryTwoActivity"
+            android:name=".demo.lottery.act.LotteryTwoActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
                 <!-- 抽奖三 -->
         <activity
-            android:name=".ui.lottery.act.LotteryThreeActivity"
+            android:name=".demo.lottery.act.LotteryThreeActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
@@ -264,12 +273,12 @@
             android:screenOrientation="portrait"/>
              <!-- Mvp 测试Login -->
         <activity
-            android:name=".ui.mvp.act.MvpLoginActivity"
+            android:name=".demo.mvp.act.MvpLoginActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
             <!-- Mvp 美女列表 -->
         <activity
-            android:name=".ui.mvp.act.MvpBeautyListActivity"
+            android:name=".demo.mvp.act.MvpBeautyListActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
@@ -285,20 +294,15 @@
             android:name=".ui.scroll.xiaohuoshu.act.XiaohongshuActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
-
+            <!-- Rv Monitor -->
+        <activity
+            android:name=".ui.rvmonitor.act.RvMonitorActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
 
         <!-- 序列   录音 序列 -->
         <activity
             android:name=".index.VoiceIndexActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
-
-        <activity
-            android:name=".ui.voice.act.RecordActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".ui.voice.act.RecordActivity2"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
 
@@ -308,41 +312,34 @@
             android:name=".index.OtherIndexActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
-            <!-- 课程表 -->
-        <activity
-            android:name=".ui.other.act.TableScheActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
-            <!-- 瀑布流 -->
-        <activity
-            android:name=".ui.other.photowaterfall.act.WaterFallOneActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
             <!-- 解决软键盘遮挡输入框 -->
         <activity
-            android:name=".ui.other.act.OverKeyBoardActivity"
+            android:name=".demo.other.act.OverKeyBoardActivity"
             android:launchMode="singleTask"
             android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="portrait"/>
+            <!--  -->
+        <activity
+            android:name=".demo.other.act.GitHubContributionActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
 
 
         <!-- 序列   基础  handler -->
         <activity
-            android:name=".ui.handler.act.HandlerMainActivity"
+            android:name=".demo.handler.act.HandlerMainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
             <!-- 定时切换背景 -->
         <activity
-            android:name=".ui.handler.act.HelloHandler01"
+            android:name=".demo.handler.act.HelloHandler01"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
             <!-- handler sendMessage -->
         <activity
-            android:name=".ui.handler.act.HelloHandler02"
+            android:name=".demo.handler.act.HelloHandler02"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
-
 
 
 

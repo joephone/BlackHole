@@ -17,15 +17,15 @@
 
 <resources>
     <string-array name="app_index_item">
-        <item>开发基础</item>
-        <item>图片序列</item>
-        <item>抽奖</item>
-        <item>跑马灯序列</item>
+        <item>0 Main</item>
+        <item>1 开发基础</item>
+        <item>2 图片序列</item>
+        <item>3 抽奖</item>
+        <item>4 跑马灯序列</item>
         <item>5 Mvp序列</item>
         <item>6 滑动序列</item>
-        <item>其他序列</item>
-        <item>Video序列</item>
-        <item>Main</item>
+        <item>7 其他序列</item>
+        <item>8 Video序列</item>
         <item>鸣谢</item>
         <item>Toast</item>
         <item>Retrofit</item>
@@ -47,6 +47,7 @@
         <item>仿微信imagePicker</item>
         <item>imageLoad</item>
         <item>jGallery</item>
+        <item>zGallery</item>
     </string-array>
 
     <!-- index 3-->
@@ -73,15 +74,14 @@
     <!-- index 6-->
     <string-array name="scroll_index_item">
         <item>小红书</item>
-        <item>MvpBeautyRv</item>
+        <item>RecyclerView监听滑动</item>
     </string-array>
 
+    <!-- index 7-->
     <string-array name="other_index_item">
         <item>仿地图上拉控件</item>
-        <item>判断双SD卡</item>
-        <item>课程表</item>
-        <item>瀑布流</item>
         <item>解决软键盘遮挡输入框</item>
+        <item>仿GitHub的提交活跃表格</item>
     </string-array>
 
 

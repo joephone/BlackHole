@@ -6,6 +6,13 @@ import android.widget.ImageView;
 
 import com.transcendence.blackhole.R;
 import com.transcendence.blackhole.base.activity.BaseActivity;
+import com.transcendence.blackhole.demo.guide.GuideActivity;
+import com.transcendence.blackhole.global.Global;
+import com.transcendence.blackhole.index.AppIndexActivity;
+import com.transcendence.blackhole.utils.GlideUtils;
+import com.transcendence.blackhole.utils.SPUtils;
+
+import java.util.Random;
 
 /**
  * @author Joephone on 2019/5/8 10:45
@@ -16,7 +23,7 @@ import com.transcendence.blackhole.base.activity.BaseActivity;
 public class LauncherActivity extends BaseActivity implements Animation.AnimationListener {
     private ImageView ivLauncher;
 
-    private final int ANIM_DURATION_TIME = 1000;
+    private final int ANIM_DURATION_TIME = 5000;
 
     @Override
     public int getLayoutId() {
@@ -30,6 +37,9 @@ public class LauncherActivity extends BaseActivity implements Animation.Animatio
     @Override
     public void init() {
         ivLauncher = findViewById(R.id.ivLauncher);
+        int [] ids = Global.mLauncherIds;
+        int index =new Random().nextInt(ids.length);
+        GlideUtils.getInstance().loadMipmap(mActivity,ids[index],ivLauncher);
         initStartAnim();
     }
 
@@ -60,7 +70,15 @@ public class LauncherActivity extends BaseActivity implements Animation.Animatio
 
     @Override
     public void onAnimationEnd(Animation animation) {
-        startActivity(MainActivity.class);
+        if(SPUtils.getInstance(Global.TAG).getBoolean(Global.SP_KEY.APP_FIRST_START,true)){
+            SPUtils.getInstance(Global.TAG).put(Global.SP_KEY.APP_FIRST_START,false);
+            startActivity(GuideActivity.class);
+            finish();
+        }else {
+            startActivity(AppIndexActivity.class);
+            finish();
+        }
+
     }
 
     @Override

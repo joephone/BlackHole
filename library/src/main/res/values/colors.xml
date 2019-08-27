@@ -42,13 +42,9 @@
     <color name="colorGitHubGreen">#31C754</color>
     <color name="colorGitHubGreenPress">#208738</color>
 
-    <!-- paintView -->
-    <color name="paintview_panel_bg">#000000</color>
-    <color name="paintview_panel_bg_pressed">#222222</color>
-    <color name="paint_color_blue">#41c6ff</color>
-    <color name="paint_color_red">#ff4141</color>
 
-
+    <!-- Weixin -->
+    <color name="colorWeiXinGray">#999999</color>
 
 
 

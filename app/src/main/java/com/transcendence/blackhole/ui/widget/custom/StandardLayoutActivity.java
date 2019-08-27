@@ -3,7 +3,7 @@ package com.transcendence.blackhole.ui.widget.custom;
 import android.view.View;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.ui.guide.GuideActivity;
+import com.transcendence.blackhole.demo.guide.GuideActivity;
 import com.transcendence.blackhole.base.activity.BaseActivity;
 import com.transcendence.blackhole.widget.custom.StandardLayout;
 

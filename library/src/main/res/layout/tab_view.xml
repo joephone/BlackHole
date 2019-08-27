@@ -1,22 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_gravity="center_horizontal"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    >
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/ivTab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/tvTab"
+    <FrameLayout
+        android:layout_marginTop="6dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="选项卡"
-        />
+        android:layout_gravity="center_horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/ivTab"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+
+        <ImageView
+            android:id="@+id/ivTabSelect"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/ic_navi_me_normal" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="6dp"
+        >
+        <TextView
+            android:id="@+id/tvTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWeiXinGray"
+            android:textSize="11sp"
+            tools:text="我的"
+            />
+        <TextView
+            android:id="@+id/tvTabSelect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorGitHubGreen"
+            android:textSize="11sp"
+            tools:text="我的"
+            />
+    </FrameLayout>
+
 
 </LinearLayout>

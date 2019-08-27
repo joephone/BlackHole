@@ -12,6 +12,7 @@ import android.widget.ImageView;
 
 import com.transcendence.blackhole.R;
 import com.transcendence.blackhole.base.activity.TitleBarActivity;
+import com.transcendence.blackhole.global.Global;
 import com.transcendence.blackhole.ui.gallery.adp.JbottomAdapter;
 import com.transcendence.blackhole.utils.GlideUtils;
 
@@ -26,8 +27,7 @@ import java.util.List;
  * @EditionHistory
  */
 
-public class JGalleryMainActivity extends TitleBarActivity implements ViewPager.OnPageChangeListener,JbottomAdapter.ZbottomEvent{
-
+public class JgalleryMainActivity extends TitleBarActivity implements ViewPager.OnPageChangeListener,JbottomAdapter.ZbottomEvent{
     private ViewPager mVpMain;
     private JbottomAdapter adapter;
     private RecyclerView mRv;
@@ -35,15 +35,6 @@ public class JGalleryMainActivity extends TitleBarActivity implements ViewPager.
 
     private List<View> mPageViews = new ArrayList<>();
     private List<View> mRvViews = new ArrayList<>();
-    private int[] mImageIds = new int[]{R.mipmap.beauty01,
-                                        R.mipmap.beauty02,
-                                        R.mipmap.beauty03,
-                                        R.mipmap.beauty04,
-                                        R.mipmap.beauty05,
-                                        R.mipmap.beauty06,
-                                        R.mipmap.beauty07,
-                                        R.mipmap.beauty08,
-                                        R.mipmap.beauty09,};
 
     @Override
     public int getLayoutId() {
@@ -55,7 +46,7 @@ public class JGalleryMainActivity extends TitleBarActivity implements ViewPager.
         setTitle("jGallery");
         mVpMain = findViewById(R.id.viewPager);
         mRv = findViewById(R.id.rv);
-        adapter = new JbottomAdapter(mActivity,mImageIds);
+        adapter = new JbottomAdapter(mActivity, Global.mBeautyIds);
 
         setRv();
         setVP();
@@ -68,16 +59,17 @@ public class JGalleryMainActivity extends TitleBarActivity implements ViewPager.
         mLinearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         mRv.setLayoutManager(mLinearLayoutManager);
         mRv.setAdapter(adapter);
+
         adapter.setListener(this);
     }
 
     private void setVP() {
-        for (int i = 0; i < mImageIds.length; i++) {
+        for (int i = 0; i < Global.mBeautyIds.length; i++) {
             ImageView iv = new ImageView(this);
             iv.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.MATCH_PARENT));
 
-            GlideUtils.getInstance().loadMipmap(mActivity,mImageIds[i],iv);
+            GlideUtils.getInstance().loadMipmap(mActivity,Global.mBeautyIds[i],iv);
 
             iv.setScaleType(ImageView.ScaleType.FIT_XY);
             mPageViews.add(iv);
@@ -90,7 +82,7 @@ public class JGalleryMainActivity extends TitleBarActivity implements ViewPager.
     private PagerAdapter pagerAdapter = new PagerAdapter() {
         @Override
         public int getCount() {
-            return mImageIds.length;
+            return Global.mBeautyIds.length;
         }
 
         @Override
@@ -102,7 +94,6 @@ public class JGalleryMainActivity extends TitleBarActivity implements ViewPager.
         public void destroyItem(ViewGroup container, int position,
                                 Object object) {
             container.removeView(mPageViews.get(position));
-
         }
 
         @Override
@@ -111,6 +102,7 @@ public class JGalleryMainActivity extends TitleBarActivity implements ViewPager.
         }
 
         @Override
+
         public CharSequence getPageTitle(int position) {
             return "title";
         }
@@ -145,7 +137,6 @@ public class JGalleryMainActivity extends TitleBarActivity implements ViewPager.
     @Override
     public void onRvImageClick(View v,int position) {
         mVpMain.setCurrentItem(position);
-
         if(isVisible(position)){
             scrollToMiddleW(v,position);
         }
@@ -156,8 +147,6 @@ public class JGalleryMainActivity extends TitleBarActivity implements ViewPager.
     public void addRvView(View v) {
         mRvViews.add(v);
     }
-
-
 
 
     /**
@@ -171,10 +160,7 @@ public class JGalleryMainActivity extends TitleBarActivity implements ViewPager.
         //最后一个可见的Item 位置值
         final int lastPosition = mLinearLayoutManager.findLastVisibleItemPosition();
         return position <= lastPosition && position >= firstPosition;
-
     }
-
-
 
 
     /**
