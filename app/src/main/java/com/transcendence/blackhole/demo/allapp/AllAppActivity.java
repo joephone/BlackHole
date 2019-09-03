@@ -15,7 +15,6 @@ import com.transcendence.blackhole.demo.allapp.fragment.AllAppFragment;
 public class AllAppActivity extends SingleFragmentActivity {
 
 
-
     @Override
     protected Fragment createFragment() {
         return AllAppFragment.newInstance();

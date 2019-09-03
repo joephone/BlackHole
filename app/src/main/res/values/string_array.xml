@@ -112,4 +112,14 @@
         <item name="qq_gongzai">QQ公仔</item>
         <item name="thank_take_part_in">谢谢参与</item> <!-- don't modified the text length, draw text need four text length -->
     </string-array>
+
+    <string-array name="cricle_view_array">
+        <!-- circle list items -->
+        <item name="main_sample">Sample Circle menu</item>
+        <item name="main_no_rotation">No rotation</item>
+        <item name="main_attributes">XML attributes</item>
+        <item name="main_dynamic_attributes">Dynamic attributes</item>
+        <item name="main_any_view">Any view</item>
+        <item name="main_dynamic_children">Dynamic children</item>
+    </string-array>
 </resources>

@@ -14,19 +14,15 @@ public class L {
 
     //如果打包  就将isTest设置为false
     public static void logI(String content) {
-
-            Log.i(Global.TAG, content);
-
+        Log.i(Global.TAG, content);
     }
 
     public static void logE(String content) {
-
-            Log.e(Global.TAG, content);
-
+        Log.e(Global.TAG, content);
     }
 
     public static void d(String content) {
-            Log.d(Global.TAG, content);
+        Log.d(Global.TAG, content);
     }
 
 }

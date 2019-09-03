@@ -7,22 +7,17 @@
         <attr name="leftHint" format="string"/>
             <!-- color：颜色值。 -->
         <attr name="leftColor" format="color" />
-
         <!-- 左图 -->
             <!-- reference：参考某一资源ID。 -->
         <attr name="leftIcon" format="integer"/>
-
-
         <!-- 右文 -->
         <attr name="rightText" format="string"/>
         <attr name="rightHint" format="string"/>
         <!-- color：颜色值。 -->
         <attr name="rightColor" format="color" />
-
         <!-- 右图 -->
-        <!-- reference：参考某一资源ID。 -->
+            <!-- reference：参考某一资源ID。 -->
         <attr name="rightIcon" format="reference"/>
-
     </declare-styleable>
 
     <!--<declare-styleable name="SettingBar" >-->
@@ -60,17 +55,14 @@
             <enum name="up" value="0" />
             <enum name="down" value="1" />
         </attr>
-
     </declare-styleable>
+
 
     <declare-styleable name="VerticalScrollLayout">
         <attr name="vsl_animDuration" format="integer" />
         <attr name="vsl_sleepTime" format="integer" />
         <attr name="vsl_isCusDuration" format="boolean" />
     </declare-styleable>
-
-
-
 
 
     <declare-styleable name="ScrollLayout">
@@ -85,9 +77,6 @@
         <attr name="allowHorizontalScroll" format="boolean"/>
         <attr name="isSupportExit" format="boolean"/>
     </declare-styleable>
-
-
-
 
     <!-- dialog -->
     <declare-styleable name="LoopView">
@@ -125,6 +114,25 @@
 
     <declare-styleable name="TabView">
         <attr name="tabTextSize" format="reference|integer"/>
-
     </declare-styleable>
+
+
+    <!-- CircleImageView -->
+    <declare-styleable name="CircleLayout">
+        <attr name="isRotating" format="boolean" />
+        <attr name="radius" format="dimension" />
+        <attr name="speed" format="integer" />
+        <attr name="firstChildPosition">
+            <enum name="East" value="0" />
+            <enum name="South" value="90" />
+            <enum name="West" value="180" />
+            <enum name="North" value="270" />
+        </attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="CircleImageView">
+        <attr name="name" format="string" />
+    </declare-styleable>
+    <!-- end CircleImageView -->
 </resources>

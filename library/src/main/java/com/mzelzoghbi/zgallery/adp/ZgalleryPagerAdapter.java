@@ -22,13 +22,13 @@ import java.util.ArrayList;
  * @EditionHistory
  */
 
-public class ZgalleryAdapter extends PagerAdapter {
+public class ZgalleryPagerAdapter extends PagerAdapter {
 
     Activity mActivity;
     LayoutInflater mLayoutInflater;
     ArrayList<String> images;
 
-    public ZgalleryAdapter(Activity activity,ArrayList<String> images) {
+    public ZgalleryPagerAdapter(Activity activity, ArrayList<String> images) {
         this.mActivity = activity;
         mLayoutInflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         this.images = images;
@@ -37,11 +37,12 @@ public class ZgalleryAdapter extends PagerAdapter {
     @Override
     public int getCount() {
         return images.size();
+
     }
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        View itemView = mLayoutInflater.inflate(R.layout.activity_z_gallary_vp_item, container, false);
+        View itemView = mLayoutInflater.inflate(R.layout.activity_z_gallery_vp_item, container, false);
         ImageView iv = itemView.findViewById(R.id.iv);
 
         GlideUtils.getInstance().loadImageFromNew(mActivity,images.get(position),iv);

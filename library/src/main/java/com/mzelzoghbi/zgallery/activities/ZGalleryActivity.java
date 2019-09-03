@@ -21,7 +21,7 @@ public class ZGalleryActivity extends TitleBarActivity {
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_z_gallary_main_vp;
+        return R.layout.activity_z_gallery_main_vp;
     }
 
     @Override

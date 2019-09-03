@@ -17,6 +17,7 @@ public class Global {
     public static boolean isTest = false;
     public static int maxImgCount = 9;
 
+
     public static String ABSOLUTE_PATH =  Environment.getExternalStorageDirectory().getAbsolutePath() + "/blackhole";
 
 
@@ -48,8 +49,11 @@ public class Global {
 
 
     public final class PUBLIC_INTENT_KEY {
-
+        public static final String ITEMS = "items";
+        public static final String LAYOUT = "layout";
+        public static final String TITLE = "title";
     }
+
 
     public final class SP_KEY {
         public static final String APP_FIRST_START = "appFirstStart";

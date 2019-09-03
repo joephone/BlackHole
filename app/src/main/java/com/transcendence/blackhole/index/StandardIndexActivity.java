@@ -22,11 +22,12 @@ import java.util.List;
  * @EditionHistory
  */
 
-public class AllPurposeIndexActivity extends TitleBarActivity implements AdapterView.OnItemClickListener {
+public class StandardIndexActivity extends TitleBarActivity implements AdapterView.OnItemClickListener {
     private ArrayAdapter<String> adapter;
     private ListView lvIndex;
     private List<String> items;
-
+    private int layout;
+    private String title;
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -38,12 +39,14 @@ public class AllPurposeIndexActivity extends TitleBarActivity implements Adapter
 
     @Override
     public void init() {
-        setTitle("多用途序列");
         lvIndex = findViewById(R.id.lvIndex);
 
         Bundle bundle = getIntent().getExtras();
         if(null!=bundle){
-            List<String> items = bundle.getStringArrayList(Global.ABSOLUTE_PATH.toUpperCase());
+            items = bundle.getStringArrayList(Global.PUBLIC_INTENT_KEY.ITEMS);
+            layout = bundle.getInt(Global.PUBLIC_INTENT_KEY.LAYOUT);
+            title = bundle.getString(Global.PUBLIC_INTENT_KEY.TITLE);
+            setTitle(title);
         }
 
 
@@ -55,6 +58,6 @@ public class AllPurposeIndexActivity extends TitleBarActivity implements Adapter
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_index;
+        return layout;
     }
 }

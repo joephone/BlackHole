@@ -110,7 +110,7 @@
 
         <!-- 序列Random   万能序列 -->
         <activity
-            android:name=".index.AllPurposeIndexActivity"
+            android:name=".index.StandardIndexActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
 
