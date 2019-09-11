@@ -33,7 +33,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     /**
      * Activity 在活动界面中的全局变量，用来代替this，在基类中定义是为了省去每个集成此类的 Activity 都定义一次
      */
-    public BaseActivity mActivity;
+    protected BaseActivity mActivity;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -62,13 +62,13 @@ public abstract class BaseActivity extends AppCompatActivity {
      *
      * @return 视图id
      */
-    public abstract int getLayoutId();
+    protected abstract int getLayoutId();
 
 
     /**
      * 初始化View后代码写在这个方法中
      */
-    public abstract void init();
+    protected abstract void init();
 
 
     /**
@@ -95,14 +95,14 @@ public abstract class BaseActivity extends AppCompatActivity {
     /**
      * 通过Class跳转界面
      **/
-    public void startActivity(Class<?> cls) {
+    protected void startActivity(Class<?> cls) {
         startActivity(cls, null);
     }
 
     /**
      * 含有Bundle通过Class跳转界面
      **/
-    public void startActivity(Class<?> cls, Bundle bundle) {
+    protected void startActivity(Class<?> cls, Bundle bundle) {
         Intent intent = new Intent();
         intent.setClass(mActivity, cls);
         if (bundle != null) {
@@ -114,14 +114,14 @@ public abstract class BaseActivity extends AppCompatActivity {
     /**
      * 通过Class跳转界面
      **/
-    public void startActivityForResult(Class<?> cls, int requestCode) {
+    protected void startActivityForResult(Class<?> cls, int requestCode) {
         startActivityForResult(cls, null, requestCode);
     }
 
     /**
      * 含有Bundle通过Class跳转界面
      **/
-    public void startActivityForResult(Class<?> cls, Bundle bundle, int requestCode) {
+    protected void startActivityForResult(Class<?> cls, Bundle bundle, int requestCode) {
         Intent intent = new Intent();
         intent.setClass(mActivity, cls);
         if (bundle != null) {
@@ -131,9 +131,9 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
 
-    public static final int MIN_CLICK_DELAY_TIME = 600;    // 连点最短时间
-    public long lastClickTime1 = 0;  // 记录点击时间
-    public long lastClickTime2 = 0;  // 记录点击时间
+    protected static final int MIN_CLICK_DELAY_TIME = 600;    // 连点最短时间
+    protected long lastClickTime1 = 0;  // 记录点击时间
+    protected long lastClickTime2 = 0;  // 记录点击时间
 
     /**
      * 主要的方法，重写dispatchTouchEvent
@@ -180,7 +180,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @param permissionName    权限名称
      *                          int requestCode, String[] permissions, int[] grantResults
      */
-    public void onPermissionRequest(@PermissionPool.PermissionCode int permissionCode, @PermissionPool.PermissionName String permissionName){
+    protected void onPermissionRequest(@PermissionPool.PermissionCode int permissionCode, @PermissionPool.PermissionName String permissionName){
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             L.logI("22以下");
             onPermissionsGranted(permissionCode);
@@ -250,7 +250,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      * 获取InputMethodManager，隐藏软键盘
      * @param token
      */
-    public void hideKeyboard(IBinder token) {
+    protected void hideKeyboard(IBinder token) {
         if (token != null) {
 //            InputMethodManager im = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 //            im.hideSoftInputFromWindow(token, InputMethodManager.HIDE_NOT_ALWAYS);

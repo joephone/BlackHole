@@ -8,4 +8,9 @@ package com.transcendence.blackhole.base.app;
 
 public class AppAplication extends LibApplication {
 
+//    @Override
+//    public void onCreate() {
+//        super.onCreate();
+//    }
+
 }

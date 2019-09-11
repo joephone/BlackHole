@@ -296,7 +296,7 @@
             android:screenOrientation="portrait"/>
             <!-- Rv Monitor -->
         <activity
-            android:name=".ui.rvmonitor.act.RvMonitorActivity"
+            android:name=".demo.rvmonitor.act.RvMonitorActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
 

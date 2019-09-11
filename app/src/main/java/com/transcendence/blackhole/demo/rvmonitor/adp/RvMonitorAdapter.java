@@ -1,4 +1,4 @@
-package com.transcendence.blackhole.ui.rvmonitor.adp;
+package com.transcendence.blackhole.demo.rvmonitor.adp;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.ui.rvmonitor.act.RvMonitorBean;
+import com.transcendence.blackhole.demo.rvmonitor.act.RvMonitorBean;
 
 import java.util.List;
 

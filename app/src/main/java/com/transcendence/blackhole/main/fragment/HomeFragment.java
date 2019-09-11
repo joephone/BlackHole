@@ -32,7 +32,6 @@ public class HomeFragment extends BlankFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 //        Logs.logE("onCreateView");
         View view = inflater.inflate(R.layout.fragment_main_home, container, false);
-
         init(view);
         return view;
 

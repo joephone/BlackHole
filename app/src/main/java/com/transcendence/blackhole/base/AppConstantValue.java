@@ -28,7 +28,7 @@ import com.transcendence.blackhole.ui.gallery.act.JgalleryMainActivity;
 import com.transcendence.blackhole.ui.gallery.act.ZgalleryMainActivity;
 import com.transcendence.blackhole.ui.image.act.ImageLoadActivity;
 import com.transcendence.blackhole.ui.image.act.WxImagePickerActivity;
-import com.transcendence.blackhole.ui.rvmonitor.act.RvMonitorActivity;
+import com.transcendence.blackhole.demo.rvmonitor.act.RvMonitorActivity;
 import com.transcendence.blackhole.ui.scroll.xiaohuoshu.act.XiaohongshuActivity;
 import com.transcendence.blackhole.ui.toast.ToastActivity;
 import com.transcendence.blackhole.ui.widget.custom.AutoScrollActivity;

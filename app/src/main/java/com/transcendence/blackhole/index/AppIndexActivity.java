@@ -30,6 +30,7 @@ public class AppIndexActivity extends TitleBarActivity implements AdapterView.On
         Intent intent = new Intent();
         intent.setClass(mActivity, AppConstantValue.appIndex[position]);
         startActivity(intent);
+
     }
 
 
@@ -44,6 +45,7 @@ public class AppIndexActivity extends TitleBarActivity implements AdapterView.On
                 android.R.layout.simple_list_item_1, items);
         lvIndex.setAdapter(adapter);
         lvIndex.setOnItemClickListener(this);
+
     }
 
 

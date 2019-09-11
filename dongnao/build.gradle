@@ -47,8 +47,6 @@ dependencies {
 
     implementation project(':library')
 
-    implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
-    implementation "com.android.support:design:$rootProject.ext.supportLibraryVersion"
 
     implementation 'org.aspectj:aspectjrt:1.9.4'
 

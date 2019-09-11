@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="热门搜索"
+        android:textColor="@color/colorGitHubGreen"
+        android:textSize="@dimen/standard_padding" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvHot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:overScrollMode="never"
+        android:paddingLeft="11dp"
+        android:paddingRight="11dp"
+        android:scrollbars="none"
+        tools:itemCount="9"
+        tools:layoutManager="GridLayoutManager"
+        tools:listitem="@layout/fragment_search_history_rv_searchhot_item"
+        tools:spanCount="3" />
+
+    <LinearLayout
+        android:id="@+id/ll_history"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_gravity="center_vertical"
+                android:text="历史搜索"
+                android:textColor="@color/colorGitHubGreen"
+                android:textSize="@dimen/standard_padding" />
+
+            <TextView
+                android:id="@+id/tvClean"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="16dp"
+                android:text="清除"
+                android:textColor="@color/colorGray"
+                android:textSize="@dimen/small_text" />
+
+        </FrameLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvHistory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            tools:itemCount="9"
+            tools:layoutManager="LinearLayoutManager"
+            tools:listitem="@layout/fragment_search_history_rv_searchhistory_item" />
+
+    </LinearLayout>
+
+</LinearLayout>

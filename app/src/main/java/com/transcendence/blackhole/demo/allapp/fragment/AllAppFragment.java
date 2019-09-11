@@ -31,21 +31,21 @@ import java.util.List;
 
 public class AllAppFragment extends Fragment {
 
-    private RecyclerView mRecyclerView;
+    private RecyclerView mRv;
     private List<ResolveInfo> activities;//每个应用启动Activity的信息
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_other_all_app, container,false);
-        mRecyclerView  = view.findViewById(R.id.rv);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        mRv  = view.findViewById(R.id.rv);
+        mRv.setLayoutManager(new LinearLayoutManager(getContext()));
         setupAdapter();
         return view;
     }
 
     private void setupAdapter() {
-//根据启动条件获取Activity
+        //根据启动条件获取Activity
         Intent startIntent =new Intent(Intent.ACTION_MAIN);
         startIntent.addCategory(Intent.CATEGORY_LAUNCHER);
         final PackageManager pm=getActivity().getPackageManager();
@@ -59,7 +59,7 @@ public class AllAppFragment extends Fragment {
                 );
             }
         });
-        mRecyclerView.setAdapter(new ActivityAdapter(activities));
+        mRv.setAdapter(new ActivityAdapter(activities));
         Log.e("毛麒添", "Found " + activities.size() + " activities.");
     }
 

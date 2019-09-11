@@ -1,16 +1,11 @@
-def butterknifeVersion = "8.5.1"
-
 ext {
     isStructureApplication = false
     isDoudouApplication = false
-    isDongnaoApplication = true
+    isDongnaoApplication = false
+    isWanApplication = true;
 
     // Google Support
-    supportLibraryVersion = '28.0.0'
-    constraintLayoutVersion = '1.1.3'
     glideSdkVersion         = "3.7.0"
-    photoViewVersion         = "1.3.1"
-    butterknifeVersion       = "8.5.1"
     dagger2Version           = "2.10"
 
     android = [
@@ -23,32 +18,47 @@ ext {
     ]
 
     version = [
-            androidSupportSdkVersion: "28.0.0",  //compile 'com.github.bumptech.glide:glide:3.5.2'  26.1.0  28.0.0
-            glideSdkVersion         : "4.8.0",
+            supportSdkVersion               : "28.0.0",  //compile 'com.github.bumptech.glide:glide:3.5.2'  26.1.0  28.0.0
+            constraintLayoutVersion         : "1.1.3",
+            glideSdkVersion                 : "3.7.0",   //4.8.0
+            gson                            : "2.5",
+            butterknifeVersion              : "8.5.1",
+
+            jLog                            : "1.0.2",
     ]
 
 
     dependencies = [
             //support
-            "appcompat-v7"             : "com.android.support:appcompat-v7:${version["androidSupportSdkVersion"]}",
-            "design"                   : "com.android.support:design:${version["androidSupportSdkVersion"]}",
-            "palette"                  : "com.android.support:palette-v7:${version["androidSupportSdkVersion"]}",
-            "support-v4"               : "com.android.support:support-v4:${version["androidSupportSdkVersion"]}",
+            appcompatv7                     : "com.android.support:appcompat-v7:$version.supportSdkVersion",
+            "design"                        : "com.android.support:design:$version.supportSdkVersion",
+            "palette"                       : "com.android.support:palette-v7:$version.supportSdkVersion",
+            supportv4                       : "com.android.support:support-v4:$version.supportSdkVersion",
             //image
-            "glide"                    : "com.github.bumptech.glide:glide:${version["glideSdkVersion"]}",
+            "glide"                         : "com.github.bumptech.glide:glide:$version.glideSdkVersion",
+            //gson
+            gson                            : "com.google.code.gson:gson:$version.gson",
+
+            "constraint-layout"             : "com.android.support.constraint:constraint-layout:$version.constraintLayoutVersion",
+
+            butterknife                     : "com.jakewharton:butterknife:$version.butterknifeVersion",
+            butterknifeCompiler             : "com.jakewharton:butterknife-compiler:$version.butterknifeVersion",
+
+
+            //日志
+            jLog                            : "com.github.joephone:jLog:$version.jLog",
 
             //router
-            "router"                      : "com.alibaba:arouter-api:1.4.1",
-            "router-compiler"             : "com.alibaba:arouter-compiler:1.2.2",
+            "router"                        : "com.alibaba:arouter-api:1.4.1",
+            "router-compiler"               : "com.alibaba:arouter-compiler:1.2.2",
     ]
 
 
-    supportAppcompatV7 = "com.android.support:appcompat-v7:${version["androidSupportSdkVersion"]}"
-    supportDesign = "com.android.support:design:${version["androidSupportSdkVersion"]}"
-    roughikeBottomBar = "com.roughike:bottom-bar:2.3.1"
 
 
-    butterknife = "com.jakewharton:butterknife:${butterknifeVersion}"
-    butterknifeCompiler = "com.jakewharton:butterknife-compiler:${butterknifeVersion}"
+    compileOptions = [
+            sourceCompatibility: JavaVersion.VERSION_1_8,
+            targetCompatibility: JavaVersion.VERSION_1_8,
+    ]
 
 }

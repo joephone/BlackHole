@@ -33,8 +33,8 @@ class GlideHandler implements LoadHandler {
     public void loadImage(Context context, ImageView imageView, String url) {
         Glide.with(context)
                 .load(url)
-                .placeholder(mPlaceholder)
-                .error(mError)
+//                .placeholder(mPlaceholder)
+//                .error(mError)
                 .into(imageView);
     }
 
@@ -42,50 +42,50 @@ class GlideHandler implements LoadHandler {
     public void loadImage(Context context, ImageView imageView, int resourceId) {
         Glide.with(context)
                 .load(resourceId)
-                .placeholder(mPlaceholder)
-                .error(mError)
+//                .placeholder(mPlaceholder)
+//                .error(mError)
                 .into(imageView);
     }
 
 
     @Override
     public void loadCircleImage(Context context, ImageView imageView, String url) {
-        Glide.with(context)
-                .load(url)
-                .asBitmap() // 转换成Bitmap
-                .placeholder(mPlaceholder)
-                .error(mError)
-                .into(new CircleBitmapImageView(imageView));
+//        Glide.with(context)
+//                .load(url)
+//                .asBitmap() // 转换成Bitmap
+//                .placeholder(mPlaceholder)
+//                .error(mError)
+//                .into(new CircleBitmapImageView(imageView));
     }
 
     @Override
     public void loadCircleImage(Context context, ImageView imageView, int resourceId) {
-        Glide.with(context)
-                .load(resourceId)
-                .asBitmap() // 转换成Bitmap
-                .placeholder(mPlaceholder)
-                .error(mError)
-                .into(new CircleBitmapImageView(imageView));
+//        Glide.with(context)
+//                .load(resourceId)
+//                .asBitmap() // 转换成Bitmap
+//                .placeholder(mPlaceholder)
+//                .error(mError)
+//                .into(new CircleBitmapImageView(imageView));
     }
 
     @Override
     public void loadRoundImage(Context context, ImageView imageView, String url, float cornerRadius) {
-        Glide.with(context)
-                .load(url)
-                .asBitmap() // 转换成Bitmap
-                .placeholder(mPlaceholder)
-                .error(mError)
-                .into(new RoundBitmapImageView(imageView, cornerRadius));
+//        Glide.with(context)
+//                .load(url)
+//                .asBitmap() // 转换成Bitmap
+//                .placeholder(mPlaceholder)
+//                .error(mError)
+//                .into(new RoundBitmapImageView(imageView, cornerRadius));
     }
 
     @Override
     public void loadRoundImage(Context context, ImageView imageView, int resourceId, float cornerRadius) {
-        Glide.with(context)
-                .load(resourceId)
-                .asBitmap() // 转换成Bitmap
-                .placeholder(mPlaceholder)
-                .error(mError)
-                .into(new RoundBitmapImageView(imageView, cornerRadius));
+//        Glide.with(context)
+//                .load(resourceId)
+//                .asBitmap() // 转换成Bitmap
+//                .placeholder(mPlaceholder)
+//                .error(mError)
+//                .into(new RoundBitmapImageView(imageView, cornerRadius));
     }
 
     /**

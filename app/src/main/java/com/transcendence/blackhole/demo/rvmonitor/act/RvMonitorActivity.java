@@ -1,4 +1,4 @@
-package com.transcendence.blackhole.ui.rvmonitor.act;
+package com.transcendence.blackhole.demo.rvmonitor.act;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
@@ -6,7 +6,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.transcendence.blackhole.R;
 import com.transcendence.blackhole.base.activity.TitleBarActivity;
-import com.transcendence.blackhole.ui.rvmonitor.adp.RvMonitorAdapter;
+import com.transcendence.blackhole.demo.rvmonitor.adp.RvMonitorAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +20,10 @@ import java.util.List;
  */
 
 public class RvMonitorActivity extends TitleBarActivity {
+
     private RvMonitorAdapter adapter;
     private RecyclerView mRv;
+
     @Override
     public int getLayoutId() {
         return R.layout.activity_recyclerview_monitor_main;
@@ -44,17 +46,15 @@ public class RvMonitorActivity extends TitleBarActivity {
             list.add(new RvMonitorBean(1));
         }
         adapter = new RvMonitorAdapter(list);
-
     }
 
     private void setRv() {
         LinearLayoutManager manager = new LinearLayoutManager(mActivity);
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         mRv.setLayoutManager(manager);
-
         mRv.setAdapter(adapter);
-
         mRv.addOnScrollListener(new RecyclerView.OnScrollListener() {
+
             @Override
             public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
