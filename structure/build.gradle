@@ -1,21 +1,15 @@
 if (rootProject.ext.isStructureApplication) {
     apply plugin: 'com.android.application'
+    apply from: '../basic.gradle'
 } else {
     apply plugin: 'com.android.library'
+    apply from: '../basic.gradle'
 }
 
 android {
-    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
-    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
-
-
 
 
     defaultConfig {
-        minSdkVersion rootProject.ext.android["minSdkVersion"]
-        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
-        versionCode rootProject.ext.android["versionCode"]
-        versionName rootProject.ext.android["versionName"]
 
         if (rootProject.ext.isStructureApplication){
             //组件模式下设置applicationId
@@ -24,17 +18,6 @@ android {
 
     }
 
-    buildTypes {
-        release {
-            postprocessing {
-                removeUnusedCode false
-                removeUnusedResources false
-                obfuscate false
-                optimizeCode false
-                proguardFile 'proguard-rules.pro'
-            }
-        }
-    }
 
 
     sourceSets {

@@ -5,11 +5,11 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.ImageView;
 
-import com.alibaba.android.arouter.launcher.ARouter;
 import com.transcendence.blackhole.R;
 import com.transcendence.blackhole.base.activity.BaseActivity;
 import com.transcendence.blackhole.demo.guide.GuideActivity;
 import com.transcendence.blackhole.global.Global;
+import com.transcendence.blackhole.index.AppIndexActivity;
 import com.transcendence.blackhole.utils.GlideUtils;
 import com.transcendence.blackhole.utils.SPUtils;
 
@@ -78,10 +78,10 @@ public class LauncherActivity extends BaseActivity implements Animation.Animatio
             finish();
         }else {
             // AppIndexActivity
-//            startActivity(AppIndexActivity.class);
-//            finish();
-            ARouter.getInstance().build("/wan/WanMainActivity").navigation();
+            startActivity(AppIndexActivity.class);
             finish();
+//            ARouter.getInstance().build("/wan/WanMainActivity").navigation();
+//            finish();
 
             /**
              * // 2. Jump with parameters

@@ -1,31 +1,15 @@
 if (rootProject.ext.isWanApplication) {
     apply plugin: 'com.android.application'
+    apply from: '../basic.gradle'
 } else {
     apply plugin: 'com.android.library'
+    apply from: '../basic.gradle'
 }
 android {
-    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
-    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
-
-
-
-
     defaultConfig {
-        minSdkVersion rootProject.ext.android["minSdkVersion"]
-        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
-        versionCode rootProject.ext.android["versionCode"]
-        versionName rootProject.ext.android["versionName"]
-
-        if (rootProject.ext.isStructureApplication){
+        if (rootProject.ext.isWanApplication){
             //组件模式下设置applicationId
             applicationId "com.transcendence.wan"
-        }
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName()]
-            }
         }
     }
 
