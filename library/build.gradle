@@ -12,11 +12,10 @@ dependencies {
     api rootProject.ext.dependencies.supportv4
     api rootProject.ext.dependencies["constraint-layout"]
 
-    api rootProject.ext.dependencies["glide"]
+    api rootProject.ext.dependencies.glide
 
     api rootProject.ext.dependencies.router
     api rootProject.ext.dependencies.gson
-
 
 
     //友盟分析

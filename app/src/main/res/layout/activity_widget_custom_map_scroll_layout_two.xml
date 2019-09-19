@@ -52,6 +52,7 @@
             android:id="@+id/scroll_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            tools:listitem="@layout/activity_widget_custom_map_scroll_layout_two_item"
             android:background="#ffffff" />
 
 
@@ -59,7 +60,6 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:alpha="0.92"
-
             >
 
 

@@ -24,18 +24,18 @@ public class MvpBeautyListAdapter extends RecyclerView.Adapter{
 
     private LayoutInflater mLayoutInflater;
     private Context mContext;
-    private List<Beauty> beautyList;
-    private int selectedItem = 0;
+    private List<Beauty> mBeautyList;
+    private int mSelectedItem = 0;
 
     public MvpBeautyListAdapter(Context context, List<Beauty> beautyList) {
-        mContext = context;
-        this.beautyList = beautyList;
-        mLayoutInflater = LayoutInflater.from(context);
+        this.mContext = context;
+        this.mBeautyList = beautyList;
+        this.mLayoutInflater = LayoutInflater.from(context);
     }
 
 
     public void setSelectedItem(int selectedItem) {
-        this.selectedItem = selectedItem;
+        this.mSelectedItem = selectedItem;
     }
 
     @NonNull
@@ -47,12 +47,12 @@ public class MvpBeautyListAdapter extends RecyclerView.Adapter{
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, final int position) {
         final MvpBeautyListHoldView holder = (MvpBeautyListHoldView) viewHolder;
-        GlideUtils.getInstance().loadMipmap(mContext,beautyList.get(position).getImageId(),holder.iv);
+        GlideUtils.getInstance().loadMipmap(mContext,mBeautyList.get(position).getImageId(),holder.iv);
     }
 
     @Override
     public int getItemCount() {
-        return beautyList.size();
+        return mBeautyList.size();
     }
 
 

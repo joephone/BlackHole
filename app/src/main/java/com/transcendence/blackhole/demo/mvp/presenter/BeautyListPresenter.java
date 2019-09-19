@@ -33,12 +33,15 @@ public class BeautyListPresenter <T extends IBeautyListView> extends BasePresent
 
 
 
-    //4 执行
+    /**
+     *  4 执行
+     */
     public void presenter(){
         if (mViewWeakRef.get() != null) {
             mViewWeakRef.get().onShowLoading();
             if (iBeautyModel != null) {
                 iBeautyModel.onLoadBeautyList(new IBeautyListModel.IBeautyListListener() {
+
                     @Override
                     public void onComplete(List<Beauty> beautyList) {
                         L.d("onComplete");

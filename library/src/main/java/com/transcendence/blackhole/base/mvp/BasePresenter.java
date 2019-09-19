@@ -13,18 +13,23 @@ import java.lang.ref.WeakReference;
  */
 
 public class BasePresenter<T> {
+
     /**
      * 弱引用
      */
     protected WeakReference<T> mViewWeakRef;
 
-    //进行绑定
+    /**
+     * 进行绑定
+     */
     public void onAttach(T view){
         L.d("onAttach");
         mViewWeakRef = new WeakReference<>(view);
     }
 
-    //进行解绑
+    /**
+     * 进行解绑
+     */
     public void onDetach(){
         L.d("onDetach");
         mViewWeakRef.clear();
