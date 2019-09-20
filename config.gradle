@@ -5,8 +5,8 @@ ext {
     isWanApplication = true
 
     // Google Support
-    glideSdkVersion         = "3.7.0"
-    dagger2Version           = "2.10"
+//    glideSdkVersion         = "3.7.0"
+//    dagger2Version          = "2.10"
 
     android = [
             compileSdkVersion       : 28,
@@ -24,6 +24,9 @@ ext {
             gson                            : "2.5",
             butterknifeVersion              : "8.5.1",
 
+            router                          : "1.4.1",
+            routerCompiler                  : "1.2.2",
+
             jLog                            : "1.0.2",
     ]
 
@@ -35,7 +38,7 @@ ext {
             "palette"                       : "com.android.support:palette-v7:$version.supportSdkVersion",
             supportv4                       : "com.android.support:support-v4:$version.supportSdkVersion",
             //image
-            glide                         : "com.github.bumptech.glide:glide:$version.glideSdkVersion",
+            glide                           : "com.github.bumptech.glide:glide:$version.glideSdkVersion",
             //gson
             gson                            : "com.google.code.gson:gson:$version.gson",
 
@@ -49,8 +52,8 @@ ext {
             jLog                            : "com.github.joephone:jLog:$version.jLog",
 
             //router
-            "router"                        : "com.alibaba:arouter-api:1.4.1",
-            "router-compiler"               : "com.alibaba:arouter-compiler:1.2.2",
+            "router"                        : "com.alibaba:arouter-api:$version.router",
+            "router-compiler"               : "com.alibaba:arouter-compiler:$version.routerCompiler",
     ]
 
 

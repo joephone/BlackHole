@@ -1,44 +1,19 @@
 if (rootProject.ext.isDongnaoApplication) {
     apply plugin: 'com.android.application'
+    apply from: '../basic.gradle'
 } else {
     apply plugin: 'com.android.library'
+    apply from: '../basic.gradle'
 }
 
+
 android {
-    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
-    buildToolsVersion rootProject.ext.android["buildToolsVersion"]
-
     defaultConfig {
-
-        minSdkVersion rootProject.ext.android["minSdkVersion"]
-        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
-        versionCode rootProject.ext.android["versionCode"]
-        versionName rootProject.ext.android["versionName"]
-
-        if (rootProject.ext.isDongnaoApplication){
+        if (rootProject.ext.isDongnaoApplication) {
             //组件模式下设置applicationId
             applicationId "com.transcendence.dongnao"
         }
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
-    }
-
-    buildTypes {
-        release {
-            postprocessing {
-                removeUnusedCode false
-                removeUnusedResources false
-                obfuscate false
-                optimizeCode false
-                proguardFile 'proguard-rules.pro'
-            }
-        }
-    }
-
-    compileOptions {
-        targetCompatibility 1.8
-        sourceCompatibility 1.8
     }
 }
 
