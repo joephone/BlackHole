@@ -9,6 +9,8 @@ import com.transcendence.blackhole.demo.mvp.act.MvpBeautyListActivity;
 import com.transcendence.blackhole.demo.mvp.act.MvpLoginActivity;
 import com.transcendence.blackhole.demo.other.act.GitHubContributionActivity;
 import com.transcendence.blackhole.demo.other.act.OverKeyBoardActivity;
+import com.transcendence.blackhole.demo.rvmonitor.act.RvMonitorActivity;
+import com.transcendence.blackhole.demo.translationbehavior.act.BehaviorActivity;
 import com.transcendence.blackhole.index.BaseIndexActivity;
 import com.transcendence.blackhole.index.ImageIndexActivity;
 import com.transcendence.blackhole.index.LotteryIndexActivity;
@@ -28,7 +30,6 @@ import com.transcendence.blackhole.ui.gallery.act.JgalleryMainActivity;
 import com.transcendence.blackhole.ui.gallery.act.ZgalleryMainActivity;
 import com.transcendence.blackhole.ui.image.act.ImageLoadActivity;
 import com.transcendence.blackhole.ui.image.act.WxImagePickerActivity;
-import com.transcendence.blackhole.demo.rvmonitor.act.RvMonitorActivity;
 import com.transcendence.blackhole.ui.scroll.xiaohuoshu.act.XiaohongshuActivity;
 import com.transcendence.blackhole.ui.toast.ToastActivity;
 import com.transcendence.blackhole.ui.widget.custom.AutoScrollActivity;
@@ -92,7 +93,7 @@ public interface AppConstantValue {
      * 7
      */
     Class[] otherIndex = {ScrollLayoutTwoActivity.class,OverKeyBoardActivity.class,
-                            GitHubContributionActivity.class, AllAppActivity.class};
+                            GitHubContributionActivity.class, AllAppActivity.class, BehaviorActivity.class};
 
     Class[] voiceIndex = {};
 }

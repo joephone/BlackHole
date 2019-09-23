@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!--
+        这里使用AppBarLayout包裹ToolBar ，里边也可以放一些子控件，比如折叠控件
+        app:layout_scrollFlags="scroll|enterAlways"：
+        这个属性必须要有，否则滑动列表头布局和底部FloatingActionButton没反应
+    -->
+    <LinearLayout
+        android:id="@+id/bottom_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <com.transcendence.blackhole.widget.custom.TabView
+            android:id="@+id/tabOne"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:tabTextSize="11" />
+
+        <com.transcendence.blackhole.widget.custom.TabView
+            android:id="@+id/tabTwo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <com.transcendence.blackhole.widget.custom.TabView
+            android:id="@+id/tabThree"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <com.transcendence.blackhole.widget.custom.TabView
+            android:id="@+id/tabFour"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+
+            />
+
+    </LinearLayout>
+
+
+    <!-- layout_behavior 这个属性必须要有，否则RecyclerView会顶到ToolBar顶部 -->
+    <View style="@style/Line" />
+
+
+    <!-- layout_behavior 这个属性必须要有，否则FloatingActionButton 位置不对-->
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:title="知乎首页"
+            app:titleTextColor="#FFFFFF" />
+
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <!-- layout_behavior 这个属性必须要有，否则底部四个button会跑到顶部的 -->
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="70dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:src="@mipmap/ic_launcher_round"
+        app:layout_behavior="com.transcendence.blackhole.demo.translationbehavior.view.TranslationBehavior"
+        app:layout_scrollFlags="scroll|enterAlways|snap" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+</android.support.design.widget.CoordinatorLayout>
