@@ -57,9 +57,9 @@
     <application
         android:name=".base.app.AppAplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_deer"
+        android:icon="@mipmap/ic_ten"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_swan"
+        android:roundIcon="@mipmap/ic_ten"
         android:supportsRtl="true"
         android:theme="@style/NoTitleAppTheme">
         <activity
@@ -308,6 +308,18 @@
             android:name=".demo.rvmonitor.act.RvMonitorActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
+            <!--  仿美团滑动layout  -->
+        <activity
+            android:name=".ui.scroll.meituantop.act.MeiTuanMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+            <!--  PullToZoom  -->
+        <activity
+            android:name=".ui.scroll.pulltozoom.act.PullToZoomAct"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            />
+
             <!-- 序列   录音 序列 -->
         <activity
             android:name=".index.VoiceIndexActivity"
@@ -342,11 +354,7 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             />
-            <!--  仿美团滑动layout  -->
-        <activity
-            android:name=".ui.scroll.meituantop.act.MeiTuanMainActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
+
 
         <!-- 序列   基础  handler -->
         <activity

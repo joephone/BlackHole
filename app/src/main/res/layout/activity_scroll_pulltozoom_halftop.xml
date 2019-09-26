@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:jiyi="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layoutHead"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/ivHead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/scrollview_pulltozoom_bg_halftop" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <FrameLayout
+                android:id="@+id/layoutIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true" >
+
+                <ImageView
+                    android:id="@+id/ivPersonalIcon"
+                    android:layout_width="@dimen/dp_70"
+                    android:layout_height="@dimen/dp_70"                 
+                    android:layout_marginTop="@dimen/dp_55"
+                    android:src="@drawable/icon_default" />
+
+                <ImageView
+                    android:id="@+id/ivV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:src="@drawable/icon_v"
+                    android:visibility="gone"
+                    />
+            </FrameLayout>
+
+           
+        </RelativeLayout>
+    </LinearLayout>
+
+</FrameLayout>

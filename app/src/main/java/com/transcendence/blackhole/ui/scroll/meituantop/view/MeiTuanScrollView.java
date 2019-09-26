@@ -48,14 +48,9 @@ public class MeiTuanScrollView extends ScrollView {
         }
     }
 
-
-
-
-
     /**
      *
      * 滚动的回调接口
-     *
      * @author xiaanming
      *
      */

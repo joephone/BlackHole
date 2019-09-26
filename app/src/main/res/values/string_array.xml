@@ -78,6 +78,7 @@
         <item>LF仿地图上拉控件</item>
         <item>仿地图上拉控件</item>
         <item>美团锚定控件</item>
+        <item>PullToZoom</item>
     </string-array>
 
     <!-- index 7-->

@@ -31,6 +31,7 @@ import com.transcendence.blackhole.ui.gallery.act.ZgalleryMainActivity;
 import com.transcendence.blackhole.ui.image.act.ImageLoadActivity;
 import com.transcendence.blackhole.ui.image.act.WxImagePickerActivity;
 import com.transcendence.blackhole.ui.scroll.meituantop.act.MeiTuanMainActivity;
+import com.transcendence.blackhole.ui.scroll.pulltozoom.act.PullToZoomAct;
 import com.transcendence.blackhole.ui.scroll.xiaohuoshu.act.XiaohongshuActivity;
 import com.transcendence.blackhole.ui.toast.ToastActivity;
 import com.transcendence.blackhole.ui.widget.custom.AutoScrollActivity;
@@ -92,7 +93,7 @@ public interface AppConstantValue {
      */
     Class[] scrollIndex = {XiaohongshuActivity.class,RvMonitorActivity.class,
                             LfScrollLayoutActivity.class,ScrollLayoutTwoActivity.class,
-                            MeiTuanMainActivity.class};
+                            MeiTuanMainActivity.class, PullToZoomAct.class};
 
     /**
      * 7

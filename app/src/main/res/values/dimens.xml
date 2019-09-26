@@ -11,4 +11,10 @@
     <dimen name="lotteryview_inner_card_text_size">12sp</dimen>
     <dimen name="lotteryview_inner_card_big_text_size">20dp</dimen>
     <dimen name="lotteryview_outer_small_circle_radius">4dp</dimen>
+
+
+
+
+    <dimen name="dp_55">55dp</dimen>
+    <dimen name="dp_70">70dp</dimen>
 </resources>
