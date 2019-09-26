@@ -30,6 +30,7 @@ import com.transcendence.blackhole.ui.gallery.act.JgalleryMainActivity;
 import com.transcendence.blackhole.ui.gallery.act.ZgalleryMainActivity;
 import com.transcendence.blackhole.ui.image.act.ImageLoadActivity;
 import com.transcendence.blackhole.ui.image.act.WxImagePickerActivity;
+import com.transcendence.blackhole.ui.rv.mi.act.XiaoMIAct;
 import com.transcendence.blackhole.ui.scroll.meituantop.act.MeiTuanMainActivity;
 import com.transcendence.blackhole.ui.scroll.pulltozoom.act.PullToZoomAct;
 import com.transcendence.blackhole.ui.scroll.xiaohuoshu.act.XiaohongshuActivity;
@@ -100,7 +101,7 @@ public interface AppConstantValue {
      */
     Class[] otherIndex = {OverKeyBoardActivity.class,
                             GitHubContributionActivity.class, AllAppActivity.class, BehaviorActivity.class,
-                            IosSegmentViewActivity.class};
+                            IosSegmentViewActivity.class, XiaoMIAct.class};
 
     Class[] voiceIndex = {};
 }

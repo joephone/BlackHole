@@ -372,6 +372,11 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
+            <!-- mi -->
+        <activity
+            android:name=".ui.rv.mi.act.XiaoMIAct"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
 
 
     </application>

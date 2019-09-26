@@ -20,6 +20,6 @@ public class PullToZoomAct extends TitleBarActivity {
 
     @Override
     protected void init() {
-
+        setTitle("PullToZoom");
     }
 }
