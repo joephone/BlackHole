@@ -23,7 +23,7 @@ public class XiaohongshuAdapter extends RecyclerView.Adapter<XiaohongshuAdapter.
     @NonNull
     @Override
     public XiaohuoshuViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int position) {
-        View viewHolder = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_xiaohuoshu_scroll_image,viewGroup,false);
+        View viewHolder = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_scroll_xiaohongshu_main_item,viewGroup,false);
         return new XiaohuoshuViewHolder(viewHolder);
     }
 

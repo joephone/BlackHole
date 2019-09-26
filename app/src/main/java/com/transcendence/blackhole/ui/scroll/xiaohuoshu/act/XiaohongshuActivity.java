@@ -23,7 +23,7 @@ public class XiaohongshuActivity extends TitleBarActivity {
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_xiaohongshu_main;
+        return R.layout.activity_scroll_xiaohongshu_main;
     }
 
     @Override

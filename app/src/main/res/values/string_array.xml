@@ -75,15 +75,18 @@
     <string-array name="scroll_index_item">
         <item>小红书</item>
         <item>RecyclerView监听滑动</item>
+        <item>LF仿地图上拉控件</item>
+        <item>仿地图上拉控件</item>
+        <item>美团锚定控件</item>
     </string-array>
 
     <!-- index 7-->
     <string-array name="other_index_item">
-        <item>仿地图上拉控件</item>
         <item>解决软键盘遮挡输入框</item>
         <item>仿GitHub的提交活跃表格</item>
         <item>全APP</item>
         <item>Behavior</item>
+        <item>Segment</item>
     </string-array>
 
 

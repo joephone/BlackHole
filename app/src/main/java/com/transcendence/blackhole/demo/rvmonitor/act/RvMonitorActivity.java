@@ -26,7 +26,7 @@ public class RvMonitorActivity extends TitleBarActivity {
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_recyclerview_monitor_main;
+        return R.layout.activity_scroll_recyclerview_monitor_main;
     }
 
     @Override

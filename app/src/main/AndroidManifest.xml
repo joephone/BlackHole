@@ -108,40 +108,49 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
-        <!-- 序列Random   万能序列 -->
+            <!-- 序列Random   万能序列 -->
         <activity
             android:name=".index.StandardIndexActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
-
-
-        <!-- 自动删除输入框 -->
+            <!-- 自动删除输入框 -->
         <activity
             android:name=".ui.widget.edittext.AutoClearEditActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-        <!-- 渐变 -->
+            <!-- 渐变 -->
         <activity
             android:name=".ui.widget.button.JianbianButtonActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-        <!-- 蓝色风格 -->
+            <!-- 蓝色风格 -->
         <activity
             android:name=".ui.widget.button.WaterButtonBlueActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
-
-        <!-- 自动滑动展示页 -->
+            <!-- SegmentView -->
+        <activity
+            android:name=".ui.widget.custom.segmentview.IosSegmentViewActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+            <!-- 自动滑动展示页 -->
         <activity
             android:name=".ui.widget.custom.AutoScrollActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
+            <!-- Lf 做的滑动窗口  -->
+        <activity
+            android:name=".ui.widget.scroll.LfScrollLayoutActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.widget.scroll.ScrollLayoutTwoActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
+
+
 
         <activity
             android:name=".ui.toast.ToastActivity"
@@ -299,8 +308,7 @@
             android:name=".demo.rvmonitor.act.RvMonitorActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
-
-        <!-- 序列   录音 序列 -->
+            <!-- 序列   录音 序列 -->
         <activity
             android:name=".index.VoiceIndexActivity"
             android:launchMode="singleTask"
@@ -334,7 +342,11 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             />
-
+            <!--  仿美团滑动layout  -->
+        <activity
+            android:name=".ui.scroll.meituantop.act.MeiTuanMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
 
         <!-- 序列   基础  handler -->
         <activity
@@ -351,6 +363,7 @@
             android:name=".demo.handler.act.HelloHandler02"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
+
 
 
     </application>

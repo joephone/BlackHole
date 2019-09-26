@@ -30,7 +30,7 @@ public class RvMonitorAdapter extends RecyclerView.Adapter<RvMonitorAdapter.RvMo
     @NonNull
     @Override
     public RvMonitorHolderView onCreateViewHolder(@NonNull ViewGroup viewGroup, int position) {
-        View viewHolder = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_recyclerview_monitor_item,viewGroup,false);
+        View viewHolder = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.activity_scroll_recyclerview_monitor_item,viewGroup,false);
         return new RvMonitorHolderView(viewHolder);
     }
 
