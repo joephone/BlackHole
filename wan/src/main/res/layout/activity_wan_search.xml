@@ -6,6 +6,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <per.goweii.actionbarex.common.ActionBarSearch
+        android:id="@+id/abs"
+        style="@style/ActionBar"
+        app:abs_leftIconClickToFinish="true"
+        app:abs_leftIconColor="@color/white"
+        app:abs_leftIconPadding="13dp"
+        app:abs_leftIconRes="@drawable/ic_back"
+        app:abs_rightText="搜索"
+        app:abs_rightTextColor="@color/white"
+        app:abs_rightTextPaddingRight="16dp"
+        app:abs_titleBgRes="@drawable/action_search_bg"
+        app:abs_titleHintColor="@color/white_alpha"
+        app:abs_titleHintText="用空格隔开多个关键词"
+        app:abs_titleMarginVertical="6dp"
+        app:abs_titlePaddingHorizontal="15dp"
+        app:abs_titleTextColor="@color/text_white"
+        app:abs_titleTextSize="@dimen/text_content" />
 
     <FrameLayout
         android:id="@+id/fl"

@@ -10,7 +10,7 @@ import com.transcendence.blackhole.demo.mvp.act.MvpLoginActivity;
 import com.transcendence.blackhole.demo.other.act.GitHubContributionActivity;
 import com.transcendence.blackhole.demo.other.act.OverKeyBoardActivity;
 import com.transcendence.blackhole.demo.rvmonitor.act.RvMonitorActivity;
-import com.transcendence.blackhole.demo.translationbehavior.act.BehaviorActivity;
+import com.transcendence.blackhole.demo.translationbehavior.act.ZhihuBehaviorActivity;
 import com.transcendence.blackhole.index.BaseIndexActivity;
 import com.transcendence.blackhole.index.ImageIndexActivity;
 import com.transcendence.blackhole.index.LotteryIndexActivity;
@@ -100,7 +100,7 @@ public interface AppConstantValue {
      * 7
      */
     Class[] otherIndex = {OverKeyBoardActivity.class,
-                            GitHubContributionActivity.class, AllAppActivity.class, BehaviorActivity.class,
+                            GitHubContributionActivity.class, AllAppActivity.class, ZhihuBehaviorActivity.class,
                             IosSegmentViewActivity.class, XiaoMIAct.class};
 
     Class[] voiceIndex = {};

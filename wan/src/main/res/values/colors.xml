@@ -6,4 +6,15 @@
 
 
 
+    <!--主题色-->
+    <color name="main">#4282f4</color>
+    <color name="accent">#f86734</color>
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffff</color>
+    <color name="white_alpha">#ccffffff</color>
+    <color name="black_pure">#000000</color>
+    <color name="black">#333333</color>
+    <color name="black_alpha">#22000000</color>
+    <color name="gray_dark">#666666</color>
+    <color name="gray_light">#999999</color>
 </resources>

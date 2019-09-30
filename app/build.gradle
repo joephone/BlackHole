@@ -14,8 +14,5 @@ dependencies {
     implementation project(':library')
     implementation project(':imagepicker')
 
-    // 图片宽度充满屏幕、高度按原始比例自适应控件
-//    implementation 'com.shizhefei:LargeImageView:1.1.0'
-
 
 }

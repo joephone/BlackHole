@@ -17,7 +17,7 @@ public class MeiTuanMainActivity extends TitleBarActivity implements MeiTuanScro
     /**
      * 自定义的MyScrollView
      */
-    private MeiTuanScrollView myScrollView;
+    private MeiTuanScrollView mScrollView;
     /**
      * 在MyScrollView里面的购买布局
      */
@@ -36,11 +36,11 @@ public class MeiTuanMainActivity extends TitleBarActivity implements MeiTuanScro
     @Override
     protected void init() {
         setTitle("美团锚定");
-        myScrollView = (MeiTuanScrollView) findViewById(R.id.scrollView);
+        mScrollView = (MeiTuanScrollView) findViewById(R.id.scrollView);
         mBuyLayout = (LinearLayout) findViewById(R.id.buy);
         mTopBuyLayout = (LinearLayout) findViewById(R.id.top_buy_layout);
 
-        myScrollView.setOnScrollListener(this);
+        mScrollView.setOnScrollListener(this);
 
         // 当布局的状态或者控件的可见性发生改变回调的接口
         findViewById(R.id.parent_layout).getViewTreeObserver()
@@ -49,15 +49,12 @@ public class MeiTuanMainActivity extends TitleBarActivity implements MeiTuanScro
                     @Override
                     public void onGlobalLayout() {
                         // 这一步很重要，使得上面的购买布局和下面的购买布局重合
-                        onScroll(myScrollView.getScrollY());
+                        onScroll(mScrollView.getScrollY());
 
-                        System.out.println(myScrollView.getScrollY());
+                        System.out.println(mScrollView.getScrollY());
                     }
                 });
     }
-
-
-
 
 
     @Override

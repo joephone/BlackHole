@@ -5,6 +5,7 @@ if (rootProject.ext.isWanApplication) {
     apply plugin: 'com.android.library'
     apply from: '../basic.gradle'
 }
+
 android {
     defaultConfig {
         if (rootProject.ext.isWanApplication){
@@ -13,25 +14,19 @@ android {
         }
     }
 
-
-    buildTypes {
-        release {
-            postprocessing {
-                removeUnusedCode false
-                removeUnusedResources false
-                obfuscate false
-                optimizeCode false
-                proguardFile 'proguard-rules.pro'
-            }
-        }
-    }
-
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    annotationProcessor rootProject.ext.dependencies["router-compiler"]
+
+    api rootProject.ext.dependencies.actionBarEx
+    api rootProject.ext.dependencies.materialProgressBar
+
     implementation project(':library')
 
 
+
+    
 }

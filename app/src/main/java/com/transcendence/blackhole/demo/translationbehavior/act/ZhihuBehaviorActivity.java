@@ -17,7 +17,7 @@ import com.transcendence.blackhole.widget.custom.TabView;
  *  自定义Behavior，并且使用MD实现仿知乎中向上滑菜单底部FloatingActionBar消失，向下滑动菜单底部FloatingActionBar显示上来
  */
 
-public class BehaviorActivity extends AppCompatActivity {
+public class ZhihuBehaviorActivity extends AppCompatActivity {
 
     TabView mTabOne;
     TabView mTabTwo;
@@ -43,8 +43,8 @@ public class BehaviorActivity extends AppCompatActivity {
             public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
                 // 下边这两种写法都是可以的
-                View itemView = LayoutInflater.from(BehaviorActivity.this).inflate(R.layout.activity_demo_behavior_item, parent, false) ;
-//                View itemView = View.inflate(BehaviorActivity.this , R.layout.item_behavior , null) ;
+                View itemView = LayoutInflater.from(ZhihuBehaviorActivity.this).inflate(R.layout.activity_demo_behavior_item, parent, false) ;
+//                View itemView = View.inflate(ZhihuBehaviorActivity.this , R.layout.item_behavior , null) ;
 
                 ViewHolder holder = new ViewHolder(itemView) ;
 

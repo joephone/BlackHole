@@ -1,4 +1,4 @@
-package com.transcendence.wan.fragment;
+package com.transcendence.wan.search.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -26,6 +26,9 @@ public class SearchHistoryFragment extends BaseFragment {
      * 缓存Fragment view
      */
     private View rootView;
+
+
+//    private BaseQuickAdapter<String, BaseViewHolder> mHotAdapter;
 
     @Nullable
     @Override
@@ -56,5 +59,10 @@ public class SearchHistoryFragment extends BaseFragment {
     private void init(View rootView) {
         mRvHot = rootView.findViewById(R.id.rvHot);
         mRvHistory = rootView.findViewById(R.id.rvHistory);
+    }
+
+
+    public static SearchHistoryFragment getInstance() {
+        return new SearchHistoryFragment();
     }
 }

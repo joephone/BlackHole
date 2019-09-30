@@ -47,7 +47,6 @@ public class PullToZoomScrollView extends ScrollView {
         wm.getDefaultDisplay().getMetrics(metrics);
         mScreenHeight=metrics.heightPixels;
         mTopViewHeight=mScreenHeight/2-(int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 90, context.getResources().getDisplayMetrics());
-
     }
 
     /**

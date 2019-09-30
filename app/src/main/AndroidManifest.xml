@@ -350,7 +350,7 @@
             android:screenOrientation="portrait"/>
             <!--  自定义Behavior，并且使用MD实现仿知乎中向上滑菜单底部FloatingActionBar消失，向下滑动菜单底部FloatingActionBar显示上来 -->
         <activity
-            android:name=".demo.translationbehavior.act.BehaviorActivity"
+            android:name=".demo.translationbehavior.act.ZhihuBehaviorActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             />

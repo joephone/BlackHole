@@ -7,17 +7,13 @@ if (rootProject.ext.isStructureApplication) {
 }
 
 android {
-
-
     defaultConfig {
 
         if (rootProject.ext.isStructureApplication){
             //组件模式下设置applicationId
             applicationId "com.transcendence.structure"
         }
-
     }
-
 
 
     sourceSets {
