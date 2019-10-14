@@ -1,4 +1,4 @@
-package com.transcendence.blackhole.ui.widget.scroll;
+package com.transcendence.blackhole.ui.scroll;
 
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;

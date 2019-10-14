@@ -27,13 +27,11 @@ public class SearchHistoryFragment extends BaseFragment {
      */
     private View rootView;
 
-
-//    private BaseQuickAdapter<String, BaseViewHolder> mHotAdapter;
+    //    private BaseQuickAdapter<String, BaseViewHolder> mHotAdapter;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
         if(rootView==null){
             rootView = inflater.inflate(R.layout.fragment_search_history, container, false);
             init(rootView);
@@ -45,8 +43,6 @@ public class SearchHistoryFragment extends BaseFragment {
         }
         return rootView;
     }
-
-
 
 
     @Override

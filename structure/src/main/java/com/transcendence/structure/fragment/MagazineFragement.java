@@ -95,6 +95,6 @@ public class MagazineFragement extends BaseFragment implements Overview.RecentsV
 //        intent.putExtra("id",articles.get(position).getId());
 //        startActivity(intent);
 //        //设置切换动画，从右边进入，左边退出
-//        getActivity().overridePendingTransition(R.anim.slde_in, R.anim.slde_out);
+//        getActivity().overridePendingTransition(R.demo_didi_anim.slde_in, R.demo_didi_anim.slde_out);
     }
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/demo_didi_ic_logo">
+
+    <target
+        android:animation="@animator/demo_didi_anim_bar_fill"
+        android:name="logo"/>
+
+</animated-vector>

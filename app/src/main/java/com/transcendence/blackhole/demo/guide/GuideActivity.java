@@ -125,7 +125,7 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void gotoLoginActivity() {
-//        startActivity(MainActivity.class);
+//        startActivity(AppIndexActivity.class);
     }
 
 

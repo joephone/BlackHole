@@ -268,7 +268,7 @@
 //            Intent intent = new Intent(context, MagazinePhotoActivity.class);
 //            intent.putExtra("url",img);
 //            context.startActivity(intent);
-//            overridePendingTransition(0, R.anim.slide_finish);
+//            overridePendingTransition(0, R.demo_didi_anim.slide_finish);
 //            EventBus.getDefault().postSticky(photos);
 //        }
 //

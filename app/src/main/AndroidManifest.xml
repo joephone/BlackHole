@@ -141,12 +141,12 @@
             android:screenOrientation="portrait" />
             <!-- Lf 做的滑动窗口  -->
         <activity
-            android:name=".ui.widget.scroll.LfScrollLayoutActivity"
+            android:name=".ui.scroll.LfScrollLayoutActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".ui.widget.scroll.ScrollLayoutTwoActivity"
+            android:name=".ui.scroll.ScrollLayoutTwoActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
@@ -317,8 +317,11 @@
         <activity
             android:name=".ui.scroll.pulltozoom.act.PullToZoomAct"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
+            <!--  Catches 项目  -->
+        <activity android:name=".ui.scroll.catchesmap.act.CatchesMapActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
 
             <!-- 序列   录音 序列 -->
         <activity
@@ -354,7 +357,12 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             />
-
+            <!--  打车 -->
+        <activity
+            android:name=".demo.didi.act.DidiMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            />
 
         <!-- 序列   基础  handler -->
         <activity
@@ -377,6 +385,7 @@
             android:name=".ui.rv.mi.act.XiaoMIAct"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
+
 
 
     </application>

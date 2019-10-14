@@ -10,6 +10,7 @@ import com.transcendence.blackhole.demo.mvp.act.MvpLoginActivity;
 import com.transcendence.blackhole.demo.other.act.GitHubContributionActivity;
 import com.transcendence.blackhole.demo.other.act.OverKeyBoardActivity;
 import com.transcendence.blackhole.demo.rvmonitor.act.RvMonitorActivity;
+import com.transcendence.blackhole.demo.didi.act.DidiMainActivity;
 import com.transcendence.blackhole.demo.translationbehavior.act.ZhihuBehaviorActivity;
 import com.transcendence.blackhole.index.BaseIndexActivity;
 import com.transcendence.blackhole.index.ImageIndexActivity;
@@ -31,6 +32,7 @@ import com.transcendence.blackhole.ui.gallery.act.ZgalleryMainActivity;
 import com.transcendence.blackhole.ui.image.act.ImageLoadActivity;
 import com.transcendence.blackhole.ui.image.act.WxImagePickerActivity;
 import com.transcendence.blackhole.ui.rv.mi.act.XiaoMIAct;
+import com.transcendence.blackhole.ui.scroll.catchesmap.act.CatchesMapActivity;
 import com.transcendence.blackhole.ui.scroll.meituantop.act.MeiTuanMainActivity;
 import com.transcendence.blackhole.ui.scroll.pulltozoom.act.PullToZoomAct;
 import com.transcendence.blackhole.ui.scroll.xiaohuoshu.act.XiaohongshuActivity;
@@ -39,8 +41,8 @@ import com.transcendence.blackhole.ui.widget.custom.AutoScrollActivity;
 import com.transcendence.blackhole.ui.widget.custom.segmentview.IosSegmentViewActivity;
 import com.transcendence.blackhole.ui.widget.marquee.MarqueeTextOneActivity;
 import com.transcendence.blackhole.ui.widget.marquee.MarqueeTextTwoActivity;
-import com.transcendence.blackhole.ui.widget.scroll.LfScrollLayoutActivity;
-import com.transcendence.blackhole.ui.widget.scroll.ScrollLayoutTwoActivity;
+import com.transcendence.blackhole.ui.scroll.LfScrollLayoutActivity;
+import com.transcendence.blackhole.ui.scroll.ScrollLayoutTwoActivity;
 
 /**
  * @author Joephone on 2019/5/27 11:45
@@ -94,14 +96,15 @@ public interface AppConstantValue {
      */
     Class[] scrollIndex = {XiaohongshuActivity.class,RvMonitorActivity.class,
                             LfScrollLayoutActivity.class,ScrollLayoutTwoActivity.class,
-                            MeiTuanMainActivity.class, PullToZoomAct.class};
+                            MeiTuanMainActivity.class, PullToZoomAct.class,
+                            CatchesMapActivity.class};
 
     /**
      * 7
      */
     Class[] otherIndex = {OverKeyBoardActivity.class,
                             GitHubContributionActivity.class, AllAppActivity.class, ZhihuBehaviorActivity.class,
-                            IosSegmentViewActivity.class, XiaoMIAct.class};
+                            IosSegmentViewActivity.class, XiaoMIAct.class, DidiMainActivity.class};
 
     Class[] voiceIndex = {};
 }

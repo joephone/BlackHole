@@ -16,4 +16,8 @@
     <string name="home_four">home4</string>
     <string name="home_five">home5</string>
     <string name="home_six">home6</string>
+
+    <string name="splash_title">打车出行</string>
+    <string name="splash_message">美好一天，平安出行 </string>
+
 </resources>

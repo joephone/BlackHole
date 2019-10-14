@@ -59,5 +59,10 @@ public class Global {
         public static final String APP_FIRST_START = "appFirstStart";
     }
 
+    public final class PDF {
+        String url = "http://hotelpodlipou.sk/uploads/files/sample.pdf";
+        String url2 = "http://livedoor.4.blogimg.jp/nikoneko55-hogehoge/imgs/9/9/9937d147.gif";
+    }
+
 
 }
