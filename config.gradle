@@ -3,6 +3,7 @@ ext {
     isDoudouApplication = false
     isDongnaoApplication = false
     isWanApplication = true
+    isMapApplication = true
 
 
     android = [

@@ -7,9 +7,15 @@
 
 
     <!-- 元色 -->
-    <color name="white">#ffffff</color>
     <color name="transparent">#00000000</color>
     <color name="colorTheme">#273535</color>
+    <color name="grey"> #ebebeb</color>
+    <color name="black"> #000000</color>
+    <color name="darkgrey"> #999999</color>
+    <color name="white"> #FFFFFF</color>
+    <color name="red"> #FF0000</color>
+    <color name="blue">#4c90f9</color>
+    <color name="gary">#898989</color>
 
     <!-- 分割线的颜色 -->
     <color name="colorLine">#ECECEC</color>
@@ -47,8 +53,6 @@
     <color name="colorDarkGray">#868686</color>
     <color name="colorYellow">#feef50</color>
     <color name="avatarGray">#b2525252</color>
-    <color name="blue">#77c7d5</color>
-    <color name="black">#000000</color>
 
     <!-- github -->
     <color name="colorGitHubBlack">#24292E</color>

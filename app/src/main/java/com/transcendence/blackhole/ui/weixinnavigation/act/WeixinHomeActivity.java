@@ -55,6 +55,8 @@ public class WeixinHomeActivity extends TitleBarActivity implements View.OnClick
         initTabs();
 
         initVp();
+
+
     }
 
     private void initViews() {

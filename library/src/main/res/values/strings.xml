@@ -4,6 +4,10 @@
     <string name="app_douya_name">豆芽</string>
     <string name="app_wan_name">玩</string>
 
+    <!-- general -->
+    <string name="cancel">取消</string>
+    <string name="OK">确定</string>
+
     <!-- home tab -->
     <string name="tab_one">工作平台</string>
     <string name="tab_two">消息列表</string>

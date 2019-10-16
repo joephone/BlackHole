@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <fragment
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        class="com.amap.api.maps2d.SupportMapFragment" />
+
+    <include layout="@layout/new_map_control" />
+
+    <com.transcendence.map.catches.view.ScrollLayoutLiuF
+        android:id="@+id/scrollLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.transcendence.map.catches.view.ScrollLayoutLiuF>
+
+</RelativeLayout>

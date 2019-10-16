@@ -21,7 +21,6 @@ import android.widget.Toast;
 
 import com.transcendence.blackhole.R;
 import com.transcendence.blackhole.base.activity.TitleBarActivity;
-import com.transcendence.blackhole.utils.permission.PermissionPool;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -65,7 +64,7 @@ public class TelephoneInfoActivity extends TitleBarActivity {
         makeinfoapps = (ImageView) findViewById(R.id.imageView);
         sdk = android.os.Build.VERSION.SDK_INT;
 
-        onPermissionRequest(PermissionPool.READ_PHONE_STATE,Manifest.permission.READ_PHONE_STATE);
+
 
 
     }

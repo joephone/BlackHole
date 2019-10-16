@@ -386,6 +386,7 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
 
+        <!-- 序列8 地图  -->
 
 
     </application>

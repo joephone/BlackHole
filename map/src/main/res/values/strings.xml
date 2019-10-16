@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">map</string>
+
+
+
+    <!-- index 8-->
+    <string-array name="amap_index_item">
+        <item name="basic_map">基本地图</item>
+        <item name="basic_map">SupportMapFragment创建地图</item>
+        <item name="basic_map">Location定位</item>
+        <item name="basic_map">Location小蓝点功能</item>
+        <item name="basic_map">Catches</item>
+    </string-array>
+</resources>

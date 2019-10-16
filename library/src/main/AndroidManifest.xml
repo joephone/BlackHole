@@ -1,4 +1,5 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.transcendence.blackhole.library" >
 
     <meta-data android:value="5ab31ca8a40fa350d6000dff" android:name="UMENG_APPKEY"/>
@@ -10,5 +11,12 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             />
+
+
+
+
+
+
     </application>
+
 </manifest>

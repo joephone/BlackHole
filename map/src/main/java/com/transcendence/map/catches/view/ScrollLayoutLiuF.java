@@ -1,4 +1,4 @@
-package com.transcendence.blackhole.ui.scroll.catchesmap.view;
+package com.transcendence.map.catches.view;
 
 import android.app.Activity;
 import android.content.Context;

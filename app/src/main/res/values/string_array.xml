@@ -25,7 +25,8 @@
         <item>5 Mvp序列</item>
         <item>6 滑动序列</item>
         <item>7 其他序列</item>
-        <item>8 Video序列</item>
+        <item>8 Amap序列</item>
+        <item>9 Video序列</item>
         <item>鸣谢</item>
         <item>Toast</item>
         <item>Retrofit</item>
@@ -63,7 +64,6 @@
         <item>跑马灯2</item>
         <item>跑马灯3</item>
     </string-array>
-
 
     <!-- index 5-->
     <string-array name="mvp_index_item">
