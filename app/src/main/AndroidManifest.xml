@@ -140,10 +140,6 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
             <!-- Lf 做的滑动窗口  -->
-        <activity
-            android:name=".ui.scroll.LfScrollLayoutActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".ui.scroll.ScrollLayoutTwoActivity"
@@ -219,21 +215,35 @@
             android:name=".ui.image.act.ImageLoadActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-                <!-- 单图预览 -->
+
+            <!-- 单图预览 -->
         <activity
             android:name=".ui.image.act.PictruePreviewActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-                <!-- Gallery-->
+
+            <!-- Gallery-->
         <activity
             android:name=".ui.gallery.act.JgalleryMainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
+
+            <!-- zGallery-->
         <activity
             android:name=".ui.gallery.act.ZgalleryMainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
+            <!-- 仿微信QQ 上传头像 -->
+        <activity
+            android:name=".ui.image.headcliper.act.HeadCliperMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+            <!-- 仿微信QQ 上传头像 裁剪-->
+        <activity
+            android:name=".ui.image.headcliper.act.HeadCliperActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
 
 
         <!-- 序列3   抽奖 序列 -->
@@ -241,17 +251,17 @@
             android:name=".index.LotteryIndexActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
-                <!-- 抽奖一 -->
+            <!-- 抽奖一 -->
         <activity
             android:name=".demo.lottery.act.LotteryOneActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-                <!-- 抽奖二 -->
+            <!-- 抽奖二 -->
         <activity
             android:name=".demo.lottery.act.LotteryTwoActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-                <!-- 抽奖三 -->
+            <!-- 抽奖三 -->
         <activity
             android:name=".demo.lottery.act.LotteryThreeActivity"
             android:launchMode="singleTask"
@@ -318,10 +328,7 @@
             android:name=".ui.scroll.pulltozoom.act.PullToZoomAct"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-            <!--  Catches 项目  -->
-        <activity android:name=".ui.scroll.catchesmap.act.CatchesMapActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
+
 
             <!-- 序列   录音 序列 -->
         <activity
@@ -385,6 +392,8 @@
             android:name=".ui.rv.mi.act.XiaoMIAct"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
+
+
 
         <!-- 序列8 地图  -->
 

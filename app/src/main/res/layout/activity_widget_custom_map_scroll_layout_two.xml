@@ -77,8 +77,9 @@
                 android:layout_width="35dp"
                 android:layout_height="7dp"
                 android:layout_centerInParent="true"
-                android:background="@drawable/shape_area_weather_map_mul_bg" />
-
+                android:background="@color/bg_dark"
+              />
+                <!--    android:background="@drawable/shape_area_weather_map_mul_bg" -->
         </RelativeLayout>
 
     </com.transcendence.blackhole.widget.custom.scroll.ScrollLayout>

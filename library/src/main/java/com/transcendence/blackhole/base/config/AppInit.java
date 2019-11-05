@@ -6,6 +6,7 @@ import com.alibaba.android.arouter.launcher.ARouter;
 import com.hjq.image.ImageLoader;
 import com.hjq.toast.ToastUtils;
 import com.hjq.toast.style.ToastBlackStyle;
+
 /**
  * @author Joephone on 2019/6/25 10:10
  * @E-Mail Address：joephonechen@gmail.com
@@ -13,8 +14,7 @@ import com.hjq.toast.style.ToastBlackStyle;
  * @Edition 1.0
  * @EditionHistory
  */
-
-public enum AppConfig {
+public enum AppInit {
 
     //对象
     INSTANCE;

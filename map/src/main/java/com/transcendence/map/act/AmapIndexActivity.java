@@ -13,8 +13,8 @@ import com.transcendence.blackhole.utils.permission.PermissionPool;
 import com.transcendence.map.R;
 import com.transcendence.map.catches.act.CatchesMapActivity;
 import com.transcendence.map.fragment.BasicAmapFragmentActivity;
+import com.transcendence.map.weinxinloc.act.WeixinLocActivity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,17 +22,20 @@ import java.util.List;
  * @E-Mail Address：joephonechen@gmail.com
  * @Desc Amap序列
  */
-
 public class AmapIndexActivity extends TitleBarActivity implements AdapterView.OnItemClickListener {
+
     private ArrayAdapter<String> adapter;
     private ListView lvIndex;
-    private List<String> items = new ArrayList<>();
+
     Class[] amapIndex = {
             BasicAmapFragmentActivity.class,
             BasicAmapActivity.class,
             AmapLocationActivity.class,
             AmapLocationSourceActivity.class,
-            CatchesMapActivity.class};
+            CatchesMapActivity.class,
+            WeixinLocActivity.class
+    };
+
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -59,7 +62,6 @@ public class AmapIndexActivity extends TitleBarActivity implements AdapterView.O
                 android.R.layout.simple_list_item_1, items);
         lvIndex.setAdapter(adapter);
         lvIndex.setOnItemClickListener(this);
-
     }
 
 

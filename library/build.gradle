@@ -8,18 +8,21 @@ dependencies {
     annotationProcessor rootProject.ext.dependencies["router-compiler"]
 
     api rootProject.ext.dependencies.appcompatv7
-    api rootProject.ext.dependencies["design"]
+    api rootProject.ext.dependencies.design
     api rootProject.ext.dependencies.supportv4
-    api rootProject.ext.dependencies["constraint-layout"]
+    api rootProject.ext.dependencies.constraintLayout
 
     api rootProject.ext.dependencies.glide
 
     api rootProject.ext.dependencies.router
     api rootProject.ext.dependencies.gson
 
-
     //友盟分析
-    implementation "com.umeng.analytics:analytics:latest.integration"
+    api rootProject.ext.dependencies.umeng
+
+    api rootProject.ext.dependencies.okhttp
+
+    testImplementation 'junit:junit:4.12'
 
     //注入
 //    implementation 'com.github.joephone:jIoC:1.0.2'

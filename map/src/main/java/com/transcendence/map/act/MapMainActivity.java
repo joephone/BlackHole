@@ -1,4 +1,4 @@
-package com.transcendence.map;
+package com.transcendence.map.act;
 
 import android.content.Intent;
 import android.os.Bundle;

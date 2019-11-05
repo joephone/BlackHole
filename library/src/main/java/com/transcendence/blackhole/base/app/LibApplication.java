@@ -3,14 +3,13 @@ package com.transcendence.blackhole.base.app;
 import android.app.Application;
 import android.content.Context;
 
-import com.transcendence.blackhole.base.config.AppConfig;
+import com.transcendence.blackhole.base.config.AppInit;
 
 /**
  * @author Joephone on 2019/5/6 11:42
  * @E-Mail Address：joephonechen@gmail.com
  * @Desc 全局
  */
-
 public class LibApplication extends Application {
 
     private static Context applicationContext;
@@ -26,7 +25,7 @@ public class LibApplication extends Application {
         instance = this;
         applicationContext = getApplicationContext();
 
-        AppConfig.INSTANCE.initConfig(this);
+        AppInit.INSTANCE.initConfig(this);
 
 
     }

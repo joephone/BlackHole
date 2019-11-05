@@ -27,8 +27,10 @@ import java.util.List;
  */
 
 public class WxImagePickerActivity extends TitleBarActivity implements ImagePickerAdapter.OnRecyclerViewItemClickListener {
-
-    public static final int IMAGE_ITEM_ADD = -1;    //已添加的照片数量
+    /**
+     * 已添加的照片数量
+     */
+    public static final int IMAGE_ITEM_ADD = -1;
     public static final int REQUEST_CODE_SELECT = 100;
     public static final int REQUEST_CODE_PREVIEW = 101;
 

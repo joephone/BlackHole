@@ -31,10 +31,9 @@ import com.transcendence.blackhole.ui.gallery.act.JgalleryMainActivity;
 import com.transcendence.blackhole.ui.gallery.act.ZgalleryMainActivity;
 import com.transcendence.blackhole.ui.image.act.ImageLoadActivity;
 import com.transcendence.blackhole.ui.image.act.WxImagePickerActivity;
+import com.transcendence.blackhole.ui.image.headcliper.act.HeadCliperMainActivity;
 import com.transcendence.blackhole.ui.rv.mi.act.XiaoMIAct;
-import com.transcendence.blackhole.ui.scroll.LfScrollLayoutActivity;
 import com.transcendence.blackhole.ui.scroll.ScrollLayoutTwoActivity;
-import com.transcendence.blackhole.ui.scroll.catchesmap.act.CatchesMapActivity;
 import com.transcendence.blackhole.ui.scroll.meituantop.act.MeiTuanMainActivity;
 import com.transcendence.blackhole.ui.scroll.pulltozoom.act.PullToZoomAct;
 import com.transcendence.blackhole.ui.scroll.xiaohuoshu.act.XiaohongshuActivity;
@@ -51,7 +50,6 @@ import com.transcendence.blackhole.ui.widget.marquee.MarqueeTextTwoActivity;
  * @Edition 1.0
  * @EditionHistory
  */
-
 public interface AppConstantValue {
     /**
      * 0
@@ -65,7 +63,6 @@ public interface AppConstantValue {
             ScrollIndexActivity.class,
             OtherIndexActivity.class,
             //8
-            AmapIndexActivity.class,
             VoiceIndexActivity.class,
                         AutoScrollActivity.class,ToastActivity.class,RetrofitIntroActivity.class};
 
@@ -79,7 +76,8 @@ public interface AppConstantValue {
      * 2
      */
     Class[] imageIndex = {WxImagePickerActivity.class,ImageLoadActivity.class,
-                            JgalleryMainActivity.class, ZgalleryMainActivity.class};
+                            JgalleryMainActivity.class, ZgalleryMainActivity.class,
+                                HeadCliperMainActivity.class};
 
     /**
      * 3
@@ -100,9 +98,8 @@ public interface AppConstantValue {
      * 6
      */
     Class[] scrollIndex = {XiaohongshuActivity.class,RvMonitorActivity.class,
-                            LfScrollLayoutActivity.class,ScrollLayoutTwoActivity.class,
-                            MeiTuanMainActivity.class, PullToZoomAct.class,
-                            CatchesMapActivity.class};
+                            ScrollLayoutTwoActivity.class,
+                            MeiTuanMainActivity.class, PullToZoomAct.class};
 
     /**
      * 7

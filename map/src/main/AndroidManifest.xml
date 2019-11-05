@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MapMainActivity" />
+        <activity android:name=".act.MapMainActivity" />
         <!-- -->
         <activity
             android:name=".act.BasicAmapActivity"
@@ -48,8 +48,12 @@
         <activity
             android:name=".catches.act.CatchesMapActivity"
             android:screenOrientation="portrait"/>
+
         <activity android:name=".catches.fragment.AmapFragmentActivity" />
         <activity android:name=".catches.act.FatherActivity" />
+
+
+        <activity android:name=".weinxinloc.act.WeixinLocActivity" />
 
 
         <!-- 高德地图  -->

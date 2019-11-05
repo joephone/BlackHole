@@ -147,7 +147,7 @@ public class AmapLocationActivity extends AppCompatActivity implements View.OnCl
 
     private void updateDistrictLocation(AMapLocation aMapLocation) {
         mCurAMapLocation =  aMapLocation;
-//        Toast.makeText(MainActivity.this,aMapLocation.getAddress(),Toast.LENGTH_SHORT).show();
+//        Toast.makeText(TogetherMainActivity.this,aMapLocation.getAddress(),Toast.LENGTH_SHORT).show();
         tv.setText("详细定位地址"+aMapLocation.getAddress());
         //详细定位地址
         L.d("updateDistrictLocation: "+aMapLocation.getAddress());

@@ -14,5 +14,4 @@ dependencies {
     implementation project(':library')
     implementation project(':imagepicker')
 
-
 }
