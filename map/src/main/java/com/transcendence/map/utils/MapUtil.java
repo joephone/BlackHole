@@ -1,6 +1,8 @@
 package com.transcendence.map.utils;
 
-import android.app.Activity;
+import android.content.Context;
+
+import com.amap.api.maps2d.AMap;
 
 /**
  * @author Joephone on 2019/10/17 16:24
@@ -9,12 +11,13 @@ import android.app.Activity;
  * @Edition 1.0
  * @EditionHistory
  */
-public class MapUtil {
+public class MapUtil{
 
-    Activity activity;
 
-    public MapUtil(Activity activity) {
-        this.activity = activity;
+    public void initMap(AMap aMap,Context context){
+        if (aMap != null) {
+            AmapUtil.init(aMap,context);
+        }
     }
 
 }

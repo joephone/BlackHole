@@ -1,4 +1,4 @@
-package com.transcendence.map.act;
+package com.transcendence.map.base.act;
 
 import android.graphics.Color;
 import android.os.Bundle;

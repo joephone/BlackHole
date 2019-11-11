@@ -9,6 +9,7 @@
 
 
     <application
+        android:name=".base.app.MapApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/NoTitleAppTheme">
 
-        <activity android:name=".act.AmapIndexActivity">
+        <activity android:name=".base.act.AmapIndexActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,10 +25,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".act.MapMainActivity" />
+        <activity android:name=".base.act.MapMainActivity" />
         <!-- -->
         <activity
-            android:name=".act.BasicAmapActivity"
+            android:name=".base.act.BasicAmapActivity"
             android:screenOrientation="portrait"/>
 
         <!-- -->
@@ -37,23 +38,32 @@
 
         <!-- -->
         <activity
-            android:name=".act.AmapLocationActivity"
+            android:name=".base.act.AmapLocationActivity"
             android:screenOrientation="portrait"/>
 
         <!-- -->
         <activity
-            android:name=".act.AmapLocationSourceActivity"
+            android:name=".base.act.AmapLocationSourceActivity"
             android:screenOrientation="portrait"/>
 
         <activity
             android:name=".catches.act.CatchesMapActivity"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".catches.fragment.AmapFragmentActivity" />
         <activity android:name=".catches.act.FatherActivity" />
 
-
         <activity android:name=".weinxinloc.act.WeixinLocActivity" />
+
+        <activity
+            android:name=".mobike.main.act.AppStartActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".mobike.personal.act.PersonalActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".mobike.main.act.MobikeMainActivity" />
 
 
         <!-- 高德地图  -->

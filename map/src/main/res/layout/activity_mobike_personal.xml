@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.transcendence.map.mobike.view.HeadZoomScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_public"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <RelativeLayout
+            android:id="@+id/rlBg"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/colorPrimary">
+
+            <ImageView
+                android:id="@+id/ivBg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+            <com.transcendence.map.mobike.view.CircleImageView
+                android:id="@+id/iv"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@mipmap/ic_avatar_default"
+                android:layout_centerInParent="true"
+                app:border_width="2dp"
+                app:border_color="@color/white"
+                />
+
+        </RelativeLayout>
+
+        <com.transcendence.blackhole.widget.custom.StandardLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGray"
+            app:leftText="姓名"
+            app:rightText="乔峰"
+            />
+
+        <com.transcendence.blackhole.widget.custom.StandardLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGray"
+            app:leftText="性别"
+            app:rightText="请选择"
+            />
+
+        <com.transcendence.blackhole.widget.custom.StandardLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGray"
+            app:leftText="生日"
+            app:rightHint="请选择"
+            />
+
+        <com.transcendence.blackhole.widget.custom.StandardLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGray"
+            android:layout_marginTop="20dp"
+            app:leftText="手机号"
+            app:rightHint="请填写"
+            />
+
+        <com.transcendence.blackhole.widget.custom.StandardLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGray"
+            app:leftText="资质"
+            app:rightHint="黑洞管理员"
+            app:rightIcon="0"
+            />
+
+    </LinearLayout>
+
+
+
+</com.transcendence.map.mobike.view.HeadZoomScrollView>

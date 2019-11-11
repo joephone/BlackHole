@@ -17,7 +17,7 @@
         <attr name="rightColor" format="color" />
         <!-- 右图 -->
             <!-- reference：参考某一资源ID。 -->
-        <attr name="rightIcon" format="reference"/>
+        <attr name="rightIcon" format="integer"/>
     </declare-styleable>
 
     <!--<declare-styleable name="SettingBar" >-->

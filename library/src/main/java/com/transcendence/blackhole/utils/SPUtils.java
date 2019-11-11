@@ -53,7 +53,11 @@ public class SPUtils {
     }
 
     private SPUtils(String spName) {
-        sp = LibApplication.getAppContext().getSharedPreferences(spName, mode);
+        if (LibApplication.getAppContext() != null) {
+            sp = LibApplication.getAppContext().getSharedPreferences(spName, mode);
+        }else {
+            L.d("LibApplication.getAppContext() == null");
+        }
     }
 
     /**

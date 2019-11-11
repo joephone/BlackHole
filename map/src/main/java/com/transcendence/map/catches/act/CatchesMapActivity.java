@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.transcendence.map.R;
-import com.transcendence.map.catches.fragment.AmapFragmentActivity;
 import com.transcendence.map.catches.view.ScrollLayoutLiuF;
+import com.transcendence.map.mobike.main.act.MobikeFatherActivity;
 
 /**
  * @author Joephone on 2019/10/15 16:17
@@ -14,7 +14,7 @@ import com.transcendence.map.catches.view.ScrollLayoutLiuF;
  * @Edition 1.0
  * @EditionHistory
  */
-public class CatchesMapActivity extends AmapFragmentActivity {
+public class CatchesMapActivity extends MobikeFatherActivity {
 
     private ScrollLayoutLiuF mScrollLayout;
 

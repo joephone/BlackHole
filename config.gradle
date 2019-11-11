@@ -30,7 +30,7 @@ ext {
             router                          : "1.4.1",
             routerCompiler                  : "1.2.2",
 
-            okhttp                          :"3.5.0",
+            okhttp                          : "3.5.0",
 
             jLog                            : "1.0.2",
     ]

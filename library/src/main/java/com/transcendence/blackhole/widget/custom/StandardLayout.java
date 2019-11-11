@@ -159,7 +159,7 @@ public class StandardLayout extends FrameLayout {
         if (iconId > 0) {
             ivRight.setImageResource(iconId);
         }else {
-            ivRight.setVisibility(GONE);
+            ivRight.setVisibility(INVISIBLE);
         }
     }
 

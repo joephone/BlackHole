@@ -1,4 +1,4 @@
-package com.transcendence.map.act;
+package com.transcendence.map.base.act;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

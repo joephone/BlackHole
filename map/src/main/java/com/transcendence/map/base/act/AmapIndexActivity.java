@@ -1,4 +1,4 @@
-package com.transcendence.map.act;
+package com.transcendence.map.base.act;
 
 import android.Manifest;
 import android.content.Intent;
@@ -13,6 +13,7 @@ import com.transcendence.blackhole.utils.permission.PermissionPool;
 import com.transcendence.map.R;
 import com.transcendence.map.catches.act.CatchesMapActivity;
 import com.transcendence.map.fragment.BasicAmapFragmentActivity;
+import com.transcendence.map.mobike.main.act.MobikeMainActivity;
 import com.transcendence.map.weinxinloc.act.WeixinLocActivity;
 
 import java.util.List;
@@ -33,7 +34,8 @@ public class AmapIndexActivity extends TitleBarActivity implements AdapterView.O
             AmapLocationActivity.class,
             AmapLocationSourceActivity.class,
             CatchesMapActivity.class,
-            WeixinLocActivity.class
+            WeixinLocActivity.class,
+            MobikeMainActivity.class
     };
 
 

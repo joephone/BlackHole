@@ -64,5 +64,18 @@ public class Global {
         String url2 = "http://livedoor.4.blogimg.jp/nikoneko55-hogehoge/imgs/9/9/9937d147.gif";
     }
 
+    public final class MAP {
+        public static final  int SMALL_ZOOM =12;
+        public static final  int MID_ZOOM =13;
+        public static final  int BIG_ZOOM =15;
+        public static final  String DEFAULT_LAT ="defaultLan";
+        public static final  String DEFAULT_LON ="defaultLon";
+    }
+
+
+    public static int standardZoom(){
+        return MAP.SMALL_ZOOM;
+    }
+
 
 }

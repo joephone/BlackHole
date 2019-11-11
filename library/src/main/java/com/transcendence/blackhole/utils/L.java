@@ -21,6 +21,10 @@ public class L {
         Log.e(Global.TAG, content);
     }
 
+    /**
+     * 调试通用日志
+     * @param content
+     */
     public static void d(String content) {
         Log.d(Global.TAG, content);
     }

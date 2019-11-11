@@ -1,10 +1,8 @@
-package com.transcendence.map.act;
+package com.transcendence.map.base.act;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-
-import com.transcendence.map.act.AmapLocationSourceActivity;
 
 
 /**
