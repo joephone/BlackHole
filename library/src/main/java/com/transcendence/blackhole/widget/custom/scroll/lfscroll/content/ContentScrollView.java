@@ -30,6 +30,10 @@ import com.transcendence.blackhole.widget.custom.scroll.ScrollLayout;
 import com.transcendence.blackhole.widget.custom.scroll.lfscroll.LfScrollLayout;
 
 
+/**
+ * @author Administrator
+ */
+
 public class ContentScrollView extends ScrollView {
 
     public interface OnScrollChangedListener {

@@ -10,7 +10,7 @@ ext {
     android = [
             compileSdkVersion       : 28,
             buildToolsVersion       : "28.0.3",
-            minSdkVersion           : 24,
+            minSdkVersion           : 22,
             targetSdkVersion        : 28,
             versionCode             : 61,   //版本更新了几次，第一版应用是1，以后每更新一次加1
             versionName             : "3.5.7",

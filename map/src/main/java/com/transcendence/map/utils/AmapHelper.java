@@ -8,18 +8,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.animation.DecelerateInterpolator;
 
 import com.amap.api.location.AMapLocation;
-import com.amap.api.maps2d.AMap;
-import com.amap.api.maps2d.CameraUpdateFactory;
-import com.amap.api.maps2d.model.BitmapDescriptor;
-import com.amap.api.maps2d.model.BitmapDescriptorFactory;
-import com.amap.api.maps2d.model.CameraPosition;
-import com.amap.api.maps2d.model.LatLng;
-import com.amap.api.maps2d.model.Marker;
-import com.amap.api.maps2d.model.MarkerOptions;
+import com.amap.api.maps.AMap;
+import com.amap.api.maps.CameraUpdateFactory;
+import com.amap.api.maps.MapView;
+import com.amap.api.maps.UiSettings;
+import com.amap.api.maps.model.BitmapDescriptor;
+import com.amap.api.maps.model.BitmapDescriptorFactory;
+import com.amap.api.maps.model.CameraPosition;
+import com.amap.api.maps.model.LatLng;
+import com.amap.api.maps.model.Marker;
+import com.amap.api.maps.model.MarkerOptions;
+import com.amap.api.maps.model.animation.ScaleAnimation;
 import com.transcendence.blackhole.global.Global;
 import com.transcendence.blackhole.utils.L;
 import com.transcendence.blackhole.utils.SPUtils;
-import com.transcendence.blackhole.utils.ScreenUtils;
 import com.transcendence.blackhole.utils.StringUtils;
 import com.transcendence.map.R;
 import com.transcendence.map.listener.LocListener;
@@ -46,9 +48,18 @@ public class AmapHelper extends AppCompatActivity implements
      */
     protected Context mContext;
     /**
+     *  高德地图View对象
+     */
+    protected MapView aMapView;
+
+    /**
      *  高德地图对象
      */
     protected AMap aMap;
+    /**
+     * 定义一个UiSettings对象
+     */
+    private UiSettings mUiSettings;
     /**
      *  绘制点标记 可移动、圆点、点击
      */
@@ -72,12 +83,28 @@ public class AmapHelper extends AppCompatActivity implements
 
     protected void initHelper() {
         if (aMap != null) {
+            setAmap();
             moveToDefaultPosition();
             aMap.setOnCameraChangeListener(this);
         }
 
         initLocation();
         initBitmap();
+    }
+
+    /**
+     * 设置高德地图
+     */
+    private void setAmap() {
+        //实例化UiSettings类对象
+        mUiSettings = aMap.getUiSettings();
+        //是否允许显示缩放按钮
+        mUiSettings.setZoomControlsEnabled(false);
+        //控制比例尺控件是否显示
+        mUiSettings.setScaleControlsEnabled(false);
+        //高德地图的 logo 默认在左下角显示，不可以移除，但支持调整到固定位置。
+        //mUiSettings.setLogoPosition(int position);//设置logo位置
+//        mUiSettings.
     }
 
     @Override
@@ -89,8 +116,8 @@ public class AmapHelper extends AppCompatActivity implements
     public void onCameraChangeFinish(CameraPosition cameraPosition) {
         L.d("onCameraChangeFinish");
         if(mIsFirst) {
+            createLocMarker(cameraPosition.target.latitude,cameraPosition.target.longitude);
             createMovingMarker();
-//        startAnim(mMoveMark);
             mIsFirst = false;
         }
         animMarker();
@@ -130,13 +157,11 @@ public class AmapHelper extends AppCompatActivity implements
 
     @Override
     public void onLocSuc(AMapLocation target) {
-        createLocMarker(target.getLatitude(),target.getLongitude());
         //存用户默认的经纬点
         SPUtils.getInstance().put(Global.MAP.DEFAULT_LAT,target.getLatitude()+"");
         SPUtils.getInstance().put(Global.MAP.DEFAULT_LON,target.getLongitude()+"");
         LatLng pos = new LatLng(target.getLatitude(),target.getLongitude());
         aMap.moveCamera(CameraUpdateFactory.newLatLngZoom(pos,Global.standardZoom()));
-//        moveToPointCenter(aMap,target.getLatitude(),target.getLongitude(), Global.standardZoom());
     }
 
     /**
@@ -150,6 +175,7 @@ public class AmapHelper extends AppCompatActivity implements
         markerOptions.icon(initBitmap);
         mInitMark = aMap.addMarker(markerOptions);
 //        mInitialMark.setClickable(false);
+        startAnim(mInitMark);
     }
 
     /**
@@ -162,18 +188,20 @@ public class AmapHelper extends AppCompatActivity implements
         markerOptions.position(new LatLng(0, 0));
         markerOptions.icon(moveBitmap);
         mMoveMark = aMap.addMarker(markerOptions);
-        mMoveMark.setPositionByPixels(ScreenUtils.getScreenWidth(mContext) / 2,
-                (ScreenUtils.getScreenHeight(mContext) / 2)-25);
+        mMoveMark.setPositionByPixels(aMapView.getWidth() / 2,
+                (aMapView.getHeight() / 2)-75);
 //        mMoveMark.setClickable(false);
     }
 
 
-//    private void startAnim(Marker marker1) {
-//        ScaleAnimation anim = new ScaleAnimation(1.0f, 1.3f, 1.0f, 1.3f);
-//        anim.setDuration(300);
-//        marker1.setAnimation(anim);
-//        marker1.startAnimation(anim);
-//    }
+    private void startAnim(Marker marker) {
+        ScaleAnimation anim = new ScaleAnimation(1.0f, 1.3f, 1.0f, 1.3f);
+        anim.setDuration(1000);
+        anim.setRepeatCount(5);
+        marker.setAnimation(anim);
+        marker.startAnimation();
+    }
+
 
 
     @Override
@@ -189,7 +217,7 @@ public class AmapHelper extends AppCompatActivity implements
             animator.start();
             return;
         }
-        animator = ValueAnimator.ofFloat(ScreenUtils.getScreenHeight(mContext)/2, ScreenUtils.getScreenHeight(mContext)/2 - 30);
+        animator = ValueAnimator.ofFloat(aMapView.getHeight()/2, aMapView.getHeight()/2 - 30);
         animator.setInterpolator(new DecelerateInterpolator());
         animator.setDuration(150);
         animator.setRepeatCount(1);
@@ -198,7 +226,7 @@ public class AmapHelper extends AppCompatActivity implements
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 Float value = (Float) animation.getAnimatedValue();
-                mMoveMark.setPositionByPixels(ScreenUtils.getScreenWidth(mContext) / 2, Math.round(value));
+                mMoveMark.setPositionByPixels(aMapView.getWidth() / 2, Math.round(value));
             }
         });
         animator.addListener(new AnimatorListenerAdapter() {

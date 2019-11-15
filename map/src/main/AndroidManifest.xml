@@ -11,48 +11,56 @@
     <application
         android:name=".base.app.MapApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_github"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_github"
         android:supportsRtl="true"
         android:theme="@style/NoTitleAppTheme">
 
         <activity android:name=".base.act.AmapIndexActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".base.act.MapMainActivity" />
+        <activity
+            android:name=".base.act.MapMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
         <!-- -->
         <activity
             android:name=".base.act.BasicAmapActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
 
         <!-- -->
         <activity
             android:name=".fragment.BasicAmapFragmentActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
 
         <!-- -->
         <activity
             android:name=".base.act.AmapLocationActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
 
         <!-- -->
         <activity
             android:name=".base.act.AmapLocationSourceActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
 
         <activity
             android:name=".catches.act.CatchesMapActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".catches.act.FatherActivity" />
-
-        <activity android:name=".weinxinloc.act.WeixinLocActivity" />
+        <activity android:name=".weinxinloc.act.WeixinLocActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
 
         <activity
             android:name=".mobike.main.act.AppStartActivity"
@@ -60,10 +68,16 @@
             android:screenOrientation="portrait"/>
 
         <activity
+            android:name=".mobike.main.act.MobikeMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
+        <activity
             android:name=".mobike.personal.act.PersonalActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
-        <activity android:name=".mobike.main.act.MobikeMainActivity" />
+        <activity android:name=".mobike.main.act.SlidingUpPanelActivity" />
+        <activity android:name=".mobike.main.act.SlidingUpPanelTestActivity" />
 
 
         <!-- 高德地图  -->

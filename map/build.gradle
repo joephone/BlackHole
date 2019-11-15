@@ -7,19 +7,24 @@ if (rootProject.ext.isMapApplication) {
 }
 
 android {
-
     defaultConfig {
         applicationId "com.transcendence.map"
-    }
 
+        ndk {
+            //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）   高德地图使用的ndk
+            abiFilters "armeabi", "armeabi-v7a", "arm64-v8a", "x86","x86_64"
+        }
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(':library')
-
-    implementation files('libs/AMap_Location_V4.7.0_20190708.jar')
-    implementation files('libs/AMap_Search_V6.9.2_20190709.jar')
-    implementation files('libs/Amap_2DMap_V5.2.0_20170627.jar')
+    //3D地图so及jar
+    implementation 'com.amap.api:3dmap:latest.integration'
+    //定位功能
+    implementation 'com.amap.api:location:latest.integration'
+    //搜索功能
+    implementation 'com.amap.api:search:latest.integration'
 }

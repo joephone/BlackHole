@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.amap.api.maps2d.AMap;
-import com.amap.api.maps2d.MapView;
+import com.amap.api.maps.AMap;
+import com.amap.api.maps.MapView;
 import com.transcendence.map.R;
 
 /**
@@ -15,11 +15,10 @@ import com.transcendence.map.R;
  * @Edition 1.0
  * @EditionHistory
  */
-public class BasicAmapActivity extends AppCompatActivity implements View.OnClickListener{
+public class BasicAmapActivity extends AppCompatActivity implements View.OnClickListener {
 
     private MapView mapView;
     private AMap aMap;
-
 
 
     @Override

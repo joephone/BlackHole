@@ -7,10 +7,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     
-    <com.amap.api.maps2d.MapView
+    <fragment
         android:id="@+id/map"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:name="com.transcendence.map.view.MapViewFragment"
         android:layout_weight="0.5"
         />
 

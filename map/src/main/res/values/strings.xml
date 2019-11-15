@@ -12,6 +12,8 @@
         <item name="basic_map">Catches</item>
         <item name="basic_map">使用高德地图仿最新版微信发送位置实现</item>
         <item name="basic_map">摩拜开场</item>
+        <item name="basic_map">地图滑动层</item>
+        <item name="basic_map">滑动层</item>
     </string-array>
 
 
@@ -35,4 +37,11 @@
     <string name="SpotHome_Create_Create">创建新钓点</string>
     <string name="SpotHome_Create_NewSpot">新建钓点</string>
     <string name="SpotHome_MarkedLocation_Marked">已标记位置</string>
+
+
+
+    <!-- scrolllayout -->
+    <string name="expense_item0">菜单1</string>
+    <string name="expense_item1">菜单2</string>
+    <string name="expense_item2">菜单3</string>
 </resources>

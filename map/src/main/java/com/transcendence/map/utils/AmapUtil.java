@@ -2,7 +2,8 @@ package com.transcendence.map.utils;
 
 import android.content.Context;
 
-import com.amap.api.maps2d.AMap;
+import com.amap.api.maps.AMap;
+import com.amap.api.maps.MapView;
 import com.transcendence.blackhole.utils.L;
 
 /**
@@ -16,17 +17,21 @@ import com.transcendence.blackhole.utils.L;
 public class AmapUtil extends AmapHelper {
 
 
-    public AmapUtil(AMap paramAmap, Context context){
+    public AmapUtil(AMap paramAmap, MapView aMapView, Context context){
         L.d("子类构造");
         this.aMap = paramAmap;
         this.mContext = context;
+        this.aMapView = aMapView;
         initHelper();
     }
 
 
-    public static void init(AMap aMap, Context context) {
-        new AmapUtil(aMap,context);
+
+
+    public static void init(AMap aMap, MapView aMapView, Context context) {
+        new AmapUtil(aMap,aMapView,context);
     }
+
 
 
 

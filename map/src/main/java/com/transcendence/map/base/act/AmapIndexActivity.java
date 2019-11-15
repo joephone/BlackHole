@@ -14,6 +14,8 @@ import com.transcendence.map.R;
 import com.transcendence.map.catches.act.CatchesMapActivity;
 import com.transcendence.map.fragment.BasicAmapFragmentActivity;
 import com.transcendence.map.mobike.main.act.MobikeMainActivity;
+import com.transcendence.map.mobike.main.act.SlidingUpPanelActivity;
+import com.transcendence.map.mobike.main.act.SlidingUpPanelTestActivity;
 import com.transcendence.map.weinxinloc.act.WeixinLocActivity;
 
 import java.util.List;
@@ -35,7 +37,9 @@ public class AmapIndexActivity extends TitleBarActivity implements AdapterView.O
             AmapLocationSourceActivity.class,
             CatchesMapActivity.class,
             WeixinLocActivity.class,
-            MobikeMainActivity.class
+            MobikeMainActivity.class,
+            SlidingUpPanelActivity.class,
+            SlidingUpPanelTestActivity.class,
     };
 
 

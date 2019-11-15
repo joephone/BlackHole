@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.transcendence.map.R;
-import com.transcendence.map.catches.view.ScrollLayoutLiuF;
-import com.transcendence.map.mobike.main.act.MobikeFatherActivity;
 
 /**
  * @author Joephone on 2019/10/15 16:17
@@ -14,16 +12,23 @@ import com.transcendence.map.mobike.main.act.MobikeFatherActivity;
  * @Edition 1.0
  * @EditionHistory
  */
-public class CatchesMapActivity extends MobikeFatherActivity {
+public class CatchesMapActivity extends ScollLayoutActivity {
 
-    private ScrollLayoutLiuF mScrollLayout;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_catches);
 
         mScrollLayout = findViewById(R.id.scrollLayout);
+        mRlRoot = findViewById(R.id.rlRoot);
+
+        initScrollLayoutView();
+
     }
+
+
 
 
 }

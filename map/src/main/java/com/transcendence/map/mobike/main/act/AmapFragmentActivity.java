@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import com.amap.api.maps2d.AMap;
+import com.amap.api.maps.AMap;
 import com.transcendence.blackhole.utils.L;
 import com.transcendence.map.R;
 import com.transcendence.map.utils.MapUtil;
@@ -13,12 +13,12 @@ import com.transcendence.map.view.MapViewFragment;
 /**
  * @author Joephone on 2019/11/8 15:40
  * @E-Mail Address：joephonechen@gmail.com
- * @Desc
+ * @Desc 高德地图父类
  * @Edition 1.0
  * @EditionHistory
  */
 
-public class MobikeFatherActivity extends AppCompatActivity {
+public class AmapFragmentActivity extends AppCompatActivity {
 
     protected AMap mMap;
     protected MapUtil mapUtil;

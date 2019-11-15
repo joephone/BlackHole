@@ -36,6 +36,7 @@ public class ScrollLayoutLiuF extends FrameLayout {
     private static final float SCROLL_TO_EXIT_OFFSET_FACTOR = 0.8f;
     private final GestureDetector.OnGestureListener gestureListener =
             new GestureDetector.SimpleOnGestureListener() {
+
                 @Override
                 public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
                     if (velocityY > FLING_VELOCITY_SLOP) {

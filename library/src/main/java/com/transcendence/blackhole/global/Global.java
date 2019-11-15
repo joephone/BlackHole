@@ -65,7 +65,7 @@ public class Global {
     }
 
     public final class MAP {
-        public static final  int SMALL_ZOOM =12;
+        public static final  int SMALL_ZOOM =17;
         public static final  int MID_ZOOM =13;
         public static final  int BIG_ZOOM =15;
         public static final  String DEFAULT_LAT ="defaultLan";

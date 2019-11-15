@@ -13,18 +13,17 @@ import com.transcendence.map.R;
  * @EditionHistory
  */
 
-public class MobikeMainActivity extends MobikeFatherActivity {
-
+public class MobikeMainActivity extends AmapFragmentActivity {
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mobike_main);
-
         //初始化地图控件
         initMapViewFragment();
     }
+
 
     @Override
     protected void onResume() {

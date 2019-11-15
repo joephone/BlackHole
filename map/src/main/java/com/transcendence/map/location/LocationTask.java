@@ -45,7 +45,7 @@ public class LocationTask implements AMapLocationListener{
         locationOption = new AMapLocationClientOption();
         // 设置定位监听
         locationClient.setLocationListener(this);
-        // 设置定位模式为高精度模式
+        // 设置定位模式为高精度模式  Hight_Accuracy(高精度)、Battery_Saving(低功耗)、Device_Sensors(仅设备)
         locationOption.setLocationMode(AMapLocationClientOption.AMapLocationMode.Hight_Accuracy);
 //        //设置定位间隔时间
 //        locationOption.setInterval(2000);

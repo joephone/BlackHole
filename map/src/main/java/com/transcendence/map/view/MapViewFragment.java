@@ -8,8 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.amap.api.maps2d.AMap;
-import com.amap.api.maps2d.MapView;
+import com.amap.api.maps.AMap;
+import com.amap.api.maps.MapView;
 import com.transcendence.map.R;
 import com.transcendence.map.utils.MapUtil;
 
@@ -28,10 +28,9 @@ public class MapViewFragment extends Fragment {
     /**
      * g地图view
      */
-    private View gView;
+    private View viewMap;
 
     private MapView aMapView;
-    private View aView;
     private AMap aMap;
 
     @Nullable
@@ -39,19 +38,19 @@ public class MapViewFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mapUtil = new MapUtil();
         if(mapService==0){
-            if (aView == null) {
-                aView = inflater.inflate(R.layout.activity_amap, null);
-                aMapView = aView.findViewById(R.id.aMapView);
+            if (viewMap == null) {
+                viewMap = inflater.inflate(R.layout.activity_amap, null);
+                aMapView = viewMap.findViewById(R.id.aMapView);
                 if (aMap == null) {
                     aMap = aMapView.getMap();
-                    mapUtil.initMap(aMap,getActivity());
+                    mapUtil.initMap(aMap,aMapView,getActivity());
                 }
                 // 此方法必须重写
                 aMapView.onCreate(savedInstanceState);
             }
-            return aView;
+            return viewMap;
         }else {
-            return gView;
+            return viewMap;
         }
     }
 

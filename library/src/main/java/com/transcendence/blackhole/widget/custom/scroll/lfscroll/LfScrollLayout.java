@@ -637,7 +637,6 @@ public class LfScrollLayout extends FrameLayout {
 
     /**
      * 获取屏幕内容高度
-     *
      * @return
      */
     public int getScreenHeight() {

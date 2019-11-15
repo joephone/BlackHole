@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.amap.api.maps2d.MapView
+<com.amap.api.maps.MapView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/aMapView"
     android:layout_width="match_parent"

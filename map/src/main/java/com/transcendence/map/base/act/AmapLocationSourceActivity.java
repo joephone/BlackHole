@@ -10,11 +10,11 @@ import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationClientOption.AMapLocationMode;
 import com.amap.api.location.AMapLocationListener;
-import com.amap.api.maps2d.AMap;
-import com.amap.api.maps2d.LocationSource;
-import com.amap.api.maps2d.MapView;
-import com.amap.api.maps2d.model.BitmapDescriptorFactory;
-import com.amap.api.maps2d.model.MyLocationStyle;
+import com.amap.api.maps.AMap;
+import com.amap.api.maps.LocationSource;
+import com.amap.api.maps.MapView;
+import com.amap.api.maps.model.BitmapDescriptorFactory;
+import com.amap.api.maps.model.MyLocationStyle;
 import com.transcendence.map.R;
 
 /**
@@ -33,7 +33,8 @@ public class AmapLocationSourceActivity extends AppCompatActivity implements Loc
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_map_amap_locationsource);
 		mapView = (MapView) findViewById(R.id.map);
-		mapView.onCreate(savedInstanceState);// 此方法必须重写
+		// 此方法必须重写
+		mapView.onCreate(savedInstanceState);
 		initAmap();
 
 	}
