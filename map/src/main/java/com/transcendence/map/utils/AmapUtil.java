@@ -16,7 +16,6 @@ import com.transcendence.blackhole.utils.L;
 
 public class AmapUtil extends AmapHelper {
 
-
     public AmapUtil(AMap paramAmap, MapView aMapView, Context context){
         L.d("子类构造");
         this.aMap = paramAmap;
@@ -26,13 +25,8 @@ public class AmapUtil extends AmapHelper {
     }
 
 
-
-
-    public static void init(AMap aMap, MapView aMapView, Context context) {
+    public static void getInstance(AMap aMap, MapView aMapView, Context context) {
         new AmapUtil(aMap,aMapView,context);
     }
-
-
-
 
 }

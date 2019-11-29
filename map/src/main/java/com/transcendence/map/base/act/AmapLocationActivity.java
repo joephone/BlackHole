@@ -21,9 +21,6 @@ import com.transcendence.map.R;
  */
 public class AmapLocationActivity extends AppCompatActivity implements View.OnClickListener ,AMapLocationListener {
 
-//    private MapView mapView;
-//    private AMap aMap;
-
     private AMapLocationClient locationClient = null;
     private AMapLocationClientOption locationOption = null;
     private AMapLocation mCurAMapLocation;
@@ -35,9 +32,6 @@ public class AmapLocationActivity extends AppCompatActivity implements View.OnCl
         setContentView(R.layout.activity_map_amap_location);
 
         tv= (TextView) findViewById(R.id.tv);
-//        mapView = (MapView) findViewById(R.id.map);
-//        // 此方法必须重写
-//        mapView.onCreate(savedInstanceState);
         initAmap();
         startLocation();
 
@@ -53,10 +47,6 @@ public class AmapLocationActivity extends AppCompatActivity implements View.OnCl
      * 初始化AMap对象
      */
     private void initAmap() {
-//        if (aMap == null) {
-//            aMap = mapView.getMap();
-//        }
-
         locationClient = new AMapLocationClient(this.getApplicationContext());
         locationOption = new AMapLocationClientOption();
         // 设置定位监听
@@ -88,7 +78,6 @@ public class AmapLocationActivity extends AppCompatActivity implements View.OnCl
     @Override
     protected void onResume() {
         super.onResume();
-//        mapView.onResume();
     }
 
     /**
@@ -97,7 +86,6 @@ public class AmapLocationActivity extends AppCompatActivity implements View.OnCl
     @Override
     protected void onPause() {
         super.onPause();
-//        mapView.onPause();
     }
 
     /**
@@ -106,7 +94,6 @@ public class AmapLocationActivity extends AppCompatActivity implements View.OnCl
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-//        mapView.onSaveInstanceState(outState);
     }
 
     /**
@@ -115,7 +102,6 @@ public class AmapLocationActivity extends AppCompatActivity implements View.OnCl
     @Override
     protected void onDestroy() {
         super.onDestroy();
-//        mapView.onDestroy();
     }
 
     @Override

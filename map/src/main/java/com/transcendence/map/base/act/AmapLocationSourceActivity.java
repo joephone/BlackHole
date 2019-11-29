@@ -11,14 +11,19 @@ import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationClientOption.AMapLocationMode;
 import com.amap.api.location.AMapLocationListener;
 import com.amap.api.maps.AMap;
+import com.amap.api.maps.CameraUpdateFactory;
 import com.amap.api.maps.LocationSource;
 import com.amap.api.maps.MapView;
 import com.amap.api.maps.model.BitmapDescriptorFactory;
+import com.amap.api.maps.model.LatLng;
 import com.amap.api.maps.model.MyLocationStyle;
+import com.transcendence.blackhole.global.Global;
+import com.transcendence.blackhole.utils.L;
 import com.transcendence.map.R;
 
 /**
  * AMapV1地图中简单介绍显示定位小蓝点
+ * @author Administrator
  */
 public class AmapLocationSourceActivity extends AppCompatActivity implements LocationSource,
         AMapLocationListener {
@@ -32,6 +37,7 @@ public class AmapLocationSourceActivity extends AppCompatActivity implements Loc
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_map_amap_locationsource);
+		L.d("onCreate");
 		mapView = (MapView) findViewById(R.id.map);
 		// 此方法必须重写
 		mapView.onCreate(savedInstanceState);
@@ -65,6 +71,7 @@ public class AmapLocationSourceActivity extends AppCompatActivity implements Loc
 		aMap.setMyLocationStyle(myLocationStyle);
 		aMap.setLocationSource(this);// 设置定位监听
 		aMap.getUiSettings().setMyLocationButtonEnabled(true);// 设置默认定位按钮是否显示
+
 		aMap.setMyLocationEnabled(true);// 设置为true表示显示定位层并可触发定位，false表示隐藏定位层并不可触发定位，默认是false
 	   // aMap.setMyLocationType()
 	}
@@ -111,10 +118,13 @@ public class AmapLocationSourceActivity extends AppCompatActivity implements Loc
 	 */
 	@Override
 	public void onLocationChanged(AMapLocation amapLocation) {
+		L.d("onLocationChanged");
 		if (mListener != null && amapLocation != null) {
 			if (amapLocation != null
 					&& amapLocation.getErrorCode() == 0) {
 				mListener.onLocationChanged(amapLocation);// 显示系统小蓝点
+				LatLng pos = new LatLng(amapLocation.getLatitude(),amapLocation.getLongitude());
+				aMap.moveCamera(CameraUpdateFactory.newLatLngZoom(pos, Global.standardZoom()));
 			} else {
 				String errText = "定位失败," + amapLocation.getErrorCode()+ ": " + amapLocation.getErrorInfo();
 				Log.e("AmapErr",errText);
@@ -127,6 +137,7 @@ public class AmapLocationSourceActivity extends AppCompatActivity implements Loc
 	 */
 	@Override
 	public void activate(OnLocationChangedListener listener) {
+		L.d("activate");
 		mListener = listener;
 		if (mlocationClient == null) {
 			mlocationClient = new AMapLocationClient(this);
@@ -150,6 +161,7 @@ public class AmapLocationSourceActivity extends AppCompatActivity implements Loc
 	 */
 	@Override
 	public void deactivate() {
+		L.d("deactivate");
 		mListener = null;
 		if (mlocationClient != null) {
 			mlocationClient.stopLocation();

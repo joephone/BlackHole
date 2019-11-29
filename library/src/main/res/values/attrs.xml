@@ -20,6 +20,22 @@
         <attr name="rightIcon" format="integer"/>
     </declare-styleable>
 
+    <declare-styleable name="GoweiiActionBarEx">
+        <!--沉浸式-->
+        <attr name="ab_autoImmersion" format="boolean" />
+        <!--主体层-->
+        <attr name="ab_statusBarVisible" format="boolean|reference" />
+        <attr name="ab_statusBarColor" format="color|reference" />
+        <!--<attr name="ab_statusBarMode" format="enum">-->
+            <!--<enum name="light" value="0" />-->
+            <!--<enum name="dark" value="1" />-->
+        <!--</attr>-->
+            <!-- reference：参考某一资源ID。 -->
+        <attr name="ab_titleBarLayout" format="reference" />
+        <attr name="ab_titleBarHeight" format="dimension|reference" />
+
+    </declare-styleable>
+
     <!--<declare-styleable name="SettingBar" >-->
         <!--&lt;!&ndash; 左边 &ndash;&gt;-->
         <!--<attr name="bar_leftText" format="string"/>-->

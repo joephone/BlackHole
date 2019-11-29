@@ -2,9 +2,11 @@ package com.transcendence.blackhole.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.SystemClock;
+import android.support.annotation.Nullable;
 import android.view.inputmethod.InputMethodManager;
 
 import java.util.Random;
@@ -110,4 +112,23 @@ public class AppUtils {
         long duration = System.currentTimeMillis() - begin;
         L.d(tvName + "-检查性能耗时:"+duration);
     }
+
+
+    /**
+     * 从当前上下文获取Activity
+     */
+    @Nullable
+    public Activity getActivity(Context context) {
+        if (context instanceof Activity) {
+            return (Activity) context;
+        }
+        if (context instanceof ContextWrapper) {
+            Context baseContext = ((ContextWrapper) context).getBaseContext();
+            if (baseContext instanceof Activity) {
+                return (Activity) baseContext;
+            }
+        }
+        return null;
+    }
+
 }

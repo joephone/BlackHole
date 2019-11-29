@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/title_head"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:name="地址"
+        />
+
+
+    <TextView
+        android:id="@+id/tvAddressDetail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/title_vice"
+        android:textSize="14sp"
+        tools:name="地址详情"
+        />
+
+</android.support.constraint.ConstraintLayout>

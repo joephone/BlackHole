@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/WanAppTheme">
         <activity
-            android:name=".search.act.WanSearchActivity"
+            android:name=".main.WanMainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             >
@@ -26,7 +26,7 @@
             android:screenOrientation="portrait"
             />
         <activity
-            android:name=".main.WanMainActivity"
+            android:name=".search.act.WanSearchActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             />

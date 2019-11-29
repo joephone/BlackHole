@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.MapView;
+import com.transcendence.blackhole.utils.L;
 import com.transcendence.map.R;
 import com.transcendence.map.utils.MapUtil;
 
@@ -36,7 +37,8 @@ public class MapViewFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mapUtil = new MapUtil();
+        L.d("MapViewFragment onCreateView");
+        mapUtil = MapUtil.getInstance();
         if(mapService==0){
             if (viewMap == null) {
                 viewMap = inflater.inflate(R.layout.activity_amap, null);

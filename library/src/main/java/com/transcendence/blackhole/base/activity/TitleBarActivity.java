@@ -33,7 +33,7 @@ public abstract class TitleBarActivity extends BaseActivity {
 
     @Override
     public void setContentView(int layoutResID) {
-        L.d("title bar setContentView");
+//        L.d("title bar setContentView");
         prepareContentView(layoutResID, mHasBack);
     }
 
@@ -46,13 +46,13 @@ public abstract class TitleBarActivity extends BaseActivity {
     }
 
     public void setContentView(boolean hasBack,boolean hasTitle) {
-        L.d("setContentView");
+//        L.d("setContentView");
         mHasTitle = hasTitle;
         prepareContentView(0, hasBack);
     }
 
     private void prepareContentView(int layoutResID, boolean hasBack) {
-        L.d("title bar prepareContentView");
+//        L.d("title bar prepareContentView");
         LinearLayout parent = new LinearLayout(this);
         parent.setOrientation(LinearLayout.VERTICAL);
         titleBar = getLayoutInflater().inflate(R.layout.title, parent, false);
@@ -77,6 +77,7 @@ public abstract class TitleBarActivity extends BaseActivity {
         }else {
             L.d("titleBar.setVisibility(View.GONE)");
             titleBar.setVisibility(View.GONE);
+            super.setContentView(parent);
         }
 
     }

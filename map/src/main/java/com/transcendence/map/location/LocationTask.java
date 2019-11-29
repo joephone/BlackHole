@@ -6,6 +6,8 @@ import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
+import com.amap.api.location.AMapLocationClientOption.AMapLocationMode;
+import com.amap.api.maps.LocationSource;
 import com.transcendence.blackhole.utils.L;
 import com.transcendence.map.listener.LocListener;
 
@@ -17,14 +19,15 @@ import com.transcendence.map.listener.LocListener;
  * @EditionHistory
  */
 
-public class LocationTask implements AMapLocationListener{
+public class LocationTask implements LocationSource,AMapLocationListener{
 
     private static LocationTask INSTANCE;
     private LocListener listener;
     private Context mContext;
 
-    private AMapLocationClient locationClient = null;
-    private AMapLocationClientOption locationOption = null;
+    private AMapLocationClient mlocationClient = null;
+    private AMapLocationClientOption mLocationOption = null;
+    private OnLocationChangedListener mListener;
 
 
     public LocationTask(Context context) {
@@ -41,31 +44,31 @@ public class LocationTask implements AMapLocationListener{
     }
 
     private void initAmap(Context context) {
-        locationClient = new AMapLocationClient(context);
-        locationOption = new AMapLocationClientOption();
+        mlocationClient = new AMapLocationClient(context);
+        mLocationOption = new AMapLocationClientOption();
         // 设置定位监听
-        locationClient.setLocationListener(this);
+        mlocationClient.setLocationListener(this);
         // 设置定位模式为高精度模式  Hight_Accuracy(高精度)、Battery_Saving(低功耗)、Device_Sensors(仅设备)
-        locationOption.setLocationMode(AMapLocationClientOption.AMapLocationMode.Hight_Accuracy);
+        mLocationOption.setLocationMode(AMapLocationClientOption.AMapLocationMode.Hight_Accuracy);
 //        //设置定位间隔时间
 //        locationOption.setInterval(2000);
         // 设置定位参数
-        locationClient.setLocationOption(locationOption);
+        mlocationClient.setLocationOption(mLocationOption);
     }
 
     /**
      * 启动定位
      */
     public void startLocation()   {
-        locationClient.startLocation();
+        mlocationClient.startLocation();
     }
 
     /**
      * 停止定位,定位成功后调用
      */
     protected void stopLocation() {
-        if (locationClient.isStarted()) {
-            locationClient.stopLocation();
+        if (mlocationClient.isStarted()) {
+            mlocationClient.stopLocation();
         }
     }
 
@@ -110,5 +113,31 @@ public class LocationTask implements AMapLocationListener{
 
     public void setListener(LocListener listener) {
         this.listener = listener;
+    }
+
+    @Override
+    public void activate(OnLocationChangedListener onLocationChangedListener) {
+        mListener = onLocationChangedListener;
+        if (mlocationClient == null) {
+            mlocationClient = new AMapLocationClient(mContext);
+            mLocationOption = new AMapLocationClientOption();
+            //设置定位监听
+            mlocationClient.setLocationListener(this);
+            //设置为高精度定位模式
+            mLocationOption.setLocationMode(AMapLocationMode.Hight_Accuracy);
+            //设置定位参数
+            mlocationClient.setLocationOption(mLocationOption);
+            // 此方法为每隔固定时间会发起一次定位请求，为了减少电量消耗或网络流量消耗，
+            // 注意设置合适的定位时间的间隔（最小间隔支持为2000ms），并且在合适时间调用stopLocation()方法来取消定位请求
+            // 在定位结束后，在合适的生命周期调用onDestroy()方法
+            // 在单次定位情况下，定位无论成功与否，都无需调用stopLocation()方法移除请求，定位sdk内部会移除
+            mlocationClient.startLocation();
+        }
+
+    }
+
+    @Override
+    public void deactivate() {
+
     }
 }

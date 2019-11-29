@@ -29,7 +29,7 @@ public class AnimationSplashActivity extends TitleBarActivity implements Adapter
 
     @Override
     public int getLayoutId() {
-        mHasTitle = false;
+//        mHasTitle = false;
         return R.layout.activity_animation_splash;
     }
 

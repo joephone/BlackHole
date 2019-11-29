@@ -56,6 +56,7 @@ public class AmapIndexActivity extends TitleBarActivity implements AdapterView.O
         setTitle("Amap序列");
         lvIndex = findViewById(R.id.lvIndex);
 
+        onPermissionRequest(PermissionPool.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION);
         onPermissionRequest(PermissionPool.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION);
     }
 

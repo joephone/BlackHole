@@ -32,6 +32,9 @@
     <color name="text_66">#666666</color>
     <color name="text_99">#999999</color>
 
+    <color name="title_head">#4a4a4a</color>
+    <color name="title_vice">#a2a2a2</color>
+
     <!--文字颜色-->
     <color name="text_main">@color/colorGitHubGreen</color>
     <color name="text_accent">@color/colorAccent</color>
@@ -73,5 +76,8 @@
 
 
     <color name="selector_bg">#d9d9d9</color>
+
+
+
 
 </resources>

@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.MapView;
+import com.transcendence.blackhole.utils.L;
 
 /**
  * @author Joephone on 2019/10/17 16:24
@@ -14,11 +15,35 @@ import com.amap.api.maps.MapView;
  */
 public class MapUtil{
 
+    AmapUtil amapUtil;
+
+    private static MapUtil instance;
+
+    private MapUtil() {
+    }
+
+    public static MapUtil getInstance() {
+        if (instance == null) {
+            synchronized (MapUtil.class) {
+                if (instance == null) {
+                    instance = new MapUtil();
+                }
+            }
+        }
+        return instance;
+    }
 
     public void initMap(AMap aMap, MapView aMapView, Context context){
         if (aMap != null) {
-            AmapUtil.init(aMap,aMapView,context);
+            amapUtil = new AmapUtil(aMap,aMapView,context);
         }
     }
 
+    public void onMyLoc() {
+        if (amapUtil != null) {
+            amapUtil.onMyLoc();
+        }else {
+            L.d("amapUtil == null");
+        }
+    }
 }

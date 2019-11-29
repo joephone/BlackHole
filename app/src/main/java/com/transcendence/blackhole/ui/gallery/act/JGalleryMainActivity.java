@@ -27,7 +27,7 @@ import java.util.List;
  * @EditionHistory
  */
 
-public class JgalleryMainActivity extends TitleBarActivity implements ViewPager.OnPageChangeListener,JbottomAdapter.ZbottomEvent{
+public class JGalleryMainActivity extends TitleBarActivity implements ViewPager.OnPageChangeListener,JbottomAdapter.ZbottomEvent{
     private ViewPager mVpMain;
     private JbottomAdapter adapter;
     private RecyclerView mRv;

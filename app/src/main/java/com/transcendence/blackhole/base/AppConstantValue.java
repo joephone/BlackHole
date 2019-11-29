@@ -27,7 +27,7 @@ import com.transcendence.blackhole.ui.base.act.LockerHomeActivity;
 import com.transcendence.blackhole.ui.base.act.RetrofitIntroActivity;
 import com.transcendence.blackhole.ui.base.act.ScreenKeyDownActivity;
 import com.transcendence.blackhole.ui.base.act.TelephoneInfoActivity;
-import com.transcendence.blackhole.ui.gallery.act.JgalleryMainActivity;
+import com.transcendence.blackhole.ui.gallery.act.JGalleryMainActivity;
 import com.transcendence.blackhole.ui.gallery.act.ZgalleryMainActivity;
 import com.transcendence.blackhole.ui.image.act.ImageLoadActivity;
 import com.transcendence.blackhole.ui.image.act.WxImagePickerActivity;
@@ -76,7 +76,7 @@ public interface AppConstantValue {
      * 2
      */
     Class[] imageIndex = {WxImagePickerActivity.class,ImageLoadActivity.class,
-                            JgalleryMainActivity.class, ZgalleryMainActivity.class,
+                            JGalleryMainActivity.class, ZgalleryMainActivity.class,
                                 HeadCliperMainActivity.class};
 
     /**
@@ -110,8 +110,4 @@ public interface AppConstantValue {
 
     Class[] voiceIndex = {};
 
-    /**
-     * 8
-     */
-    Class[] amapIndex = {};
 }

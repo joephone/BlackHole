@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import com.transcendence.blackhole.global.Global;
 import com.transcendence.blackhole.utils.GlideUtils;
 import com.transcendence.wan.R;
-import com.transcendence.wan.base.WanBaseActivity;
+import com.transcendence.wan.base.act.WanBaseActivity;
 
 import java.util.Random;
 

@@ -3,7 +3,7 @@
     package="com.transcendence.dongnao">
 
     <application
-        android:name=".DouyaApplication"
+        android:name=".base.app.DouyaApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_douya"
         android:label="@string/app_douya_name"
@@ -11,13 +11,16 @@
         android:supportsRtl="true"
         android:theme="@style/NoTitleAppTheme">
         <activity
-            android:name=".DouyaMainActivity"
+            android:name=".zee.lsn13.act.MaterialDesignActivity"
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".base.app.DouyaMainActivity" />
+        <!--<activity android:name=".zee.lsn14.act.MaterialDesignActivity" />-->
     </application>
 
 </manifest>

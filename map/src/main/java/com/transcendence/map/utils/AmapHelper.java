@@ -19,12 +19,17 @@ import com.amap.api.maps.model.LatLng;
 import com.amap.api.maps.model.Marker;
 import com.amap.api.maps.model.MarkerOptions;
 import com.amap.api.maps.model.animation.ScaleAnimation;
+import com.amap.api.services.core.LatLonPoint;
+import com.amap.api.services.core.PoiItem;
+import com.amap.api.services.poisearch.PoiResult;
+import com.amap.api.services.poisearch.PoiSearch;
 import com.transcendence.blackhole.global.Global;
 import com.transcendence.blackhole.utils.L;
 import com.transcendence.blackhole.utils.SPUtils;
 import com.transcendence.blackhole.utils.StringUtils;
 import com.transcendence.map.R;
 import com.transcendence.map.listener.LocListener;
+import com.transcendence.map.listener.PoiSearchListener;
 import com.transcendence.map.location.LocationTask;
 
 /**
@@ -38,7 +43,12 @@ import com.transcendence.map.location.LocationTask;
 public class AmapHelper extends AppCompatActivity implements
         AMap.OnCameraChangeListener,
         AMap.OnMarkerClickListener,
+        PoiSearch.OnPoiSearchListener,
         LocListener{
+
+    private PoiSearch           mPoiSearch;
+    private PoiSearch.Query     mQuery;
+    private PoiSearchListener   mOnPoiSearchListener;
     /**
      *  高德地图异步定位
      */
@@ -75,10 +85,14 @@ public class AmapHelper extends AppCompatActivity implements
     /**
      *
      */
+    private LatLng mLatLng;
+    /**
+     * 是否第一次加载
+     */
     private boolean mIsFirst = true;
 
     public AmapHelper(){
-        L.d("父类构造");
+//        L.d("父类构造");
     }
 
     protected void initHelper() {
@@ -101,20 +115,19 @@ public class AmapHelper extends AppCompatActivity implements
         //是否允许显示缩放按钮
         mUiSettings.setZoomControlsEnabled(false);
         //控制比例尺控件是否显示
-        mUiSettings.setScaleControlsEnabled(false);
+        mUiSettings.setScaleControlsEnabled(true);
         //高德地图的 logo 默认在左下角显示，不可以移除，但支持调整到固定位置。
         //mUiSettings.setLogoPosition(int position);//设置logo位置
-//        mUiSettings.
     }
 
     @Override
     public void onCameraChange(CameraPosition cameraPosition) {
-        L.d("onCameraChange");
+//        L.d("onCameraChange");
     }
 
     @Override
     public void onCameraChangeFinish(CameraPosition cameraPosition) {
-        L.d("onCameraChangeFinish");
+//        L.d("onCameraChangeFinish");
         if(mIsFirst) {
             createLocMarker(cameraPosition.target.latitude,cameraPosition.target.longitude);
             createMovingMarker();
@@ -160,8 +173,37 @@ public class AmapHelper extends AppCompatActivity implements
         //存用户默认的经纬点
         SPUtils.getInstance().put(Global.MAP.DEFAULT_LAT,target.getLatitude()+"");
         SPUtils.getInstance().put(Global.MAP.DEFAULT_LON,target.getLongitude()+"");
-        LatLng pos = new LatLng(target.getLatitude(),target.getLongitude());
-        aMap.moveCamera(CameraUpdateFactory.newLatLngZoom(pos,Global.standardZoom()));
+        mLatLng = new LatLng(target.getLatitude(),target.getLongitude());
+        aMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mLatLng,Global.standardZoom()));
+        onStartPoiSearch(true, "", target.getCity(), new LatLonPoint(target.getLatitude(), target.getLongitude()));
+    }
+
+
+    /**
+     * 定位成功后查询周围地位列表
+     * @param isRefresh
+     * @param keyWord
+     * @param city
+     * @param latLonPoint
+     */
+    private void onStartPoiSearch(boolean isRefresh, String keyWord, String city, LatLonPoint latLonPoint) {
+        //第一个参数表示搜索字符串，第二个参数表示poi搜索类型，第三个参数表示poi搜索区域（空字符串代表全国）
+        mQuery = new PoiSearch.Query(keyWord, "", city);
+        // 设置每页最多返回多少条poiitem
+        mQuery.setPageSize(30);
+        // 设置查第一页
+        mQuery.setPageNum(0);
+
+
+        mPoiSearch = new PoiSearch(this, mQuery);
+
+        mPoiSearch.setOnPoiSearchListener(this);
+        if (latLonPoint != null) {
+            //该范围的中心点-----半径，单位：米-----是否按照距离排序
+            mPoiSearch.setBound(new PoiSearch.SearchBound(latLonPoint, 10000, true));
+        }
+        // 异步搜索
+        mPoiSearch.searchPOIAsyn();
     }
 
     /**
@@ -241,6 +283,41 @@ public class AmapHelper extends AppCompatActivity implements
     protected void endAnim() {
         if (animator != null && animator.isRunning()){
             animator.end();
+        }
+    }
+
+    @Override
+    public void onPoiSearched(PoiResult result, int i) {
+        L.d("onPoiSearched");
+        if (i == 1000) {
+            // 搜索poi的结果
+            if (result != null && result.getQuery() != null) {
+                if (mOnPoiSearchListener != null) {
+                    L.d("mOnPoiSearchListener != null");
+                    mOnPoiSearchListener.onPoiSearchList(result);
+                }else {
+                    L.d("mOnPoiSearchListener == null");
+                }
+            }
+        }
+    }
+
+    @Override
+    public void onPoiItemSearched(PoiItem poiItem, int i) {
+
+    }
+
+    public void setOnPoiSearchListener(PoiSearchListener onPoiSearchListener) {
+        this.mOnPoiSearchListener = onPoiSearchListener;
+    }
+
+
+    /**
+     *  回定位
+     */
+    protected void onMyLoc(){
+        if (aMap != null && mLatLng != null) {
+            aMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mLatLng,Global.standardZoom()));
         }
     }
 }

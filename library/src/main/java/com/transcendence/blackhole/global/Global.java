@@ -13,7 +13,7 @@ import com.transcendence.blackhole.library.R;
  */
 
 public class Global {
-    public static final String TAG = "blackhole";
+    public static final String TAG = "BlackHole";
     public static boolean isTest = false;
     public static int maxImgCount = 9;
 
@@ -65,7 +65,8 @@ public class Global {
     }
 
     public final class MAP {
-        public static final  int SMALL_ZOOM =17;
+        //比例尺 100
+        public static final  int SMALL_ZOOM =18;
         public static final  int MID_ZOOM =13;
         public static final  int BIG_ZOOM =15;
         public static final  String DEFAULT_LAT ="defaultLan";

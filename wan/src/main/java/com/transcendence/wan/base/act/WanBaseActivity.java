@@ -1,6 +1,8 @@
-package com.transcendence.wan.base;
+package com.transcendence.wan.base.act;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -27,6 +29,11 @@ public abstract class WanBaseActivity extends AppCompatActivity {
         StatusBarUtils.with(mActivity).init();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+    }
 
     protected void startAct(Class<?> target) {
         Intent intent = new Intent(mActivity, target);
