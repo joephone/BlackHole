@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="160dp"
         android:src="@drawable/ic_qzone_header_fk"
-
+        android:scaleType="centerCrop"
         />
 
     <ImageView
