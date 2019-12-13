@@ -79,4 +79,9 @@ public class Global {
     }
 
 
+    public static class BASE_URL{
+        public static final  String WAN_API_HOST ="https://www.wanandroid.com/";
+    }
+
+
 }

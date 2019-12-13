@@ -24,6 +24,8 @@ dependencies {
     api rootProject.ext.dependencies.actionBarEx
     api rootProject.ext.dependencies.materialProgressBar
 
+    annotationProcessor rootProject.ext.dependencies.butterknifeCompiler
+
     implementation project(':library')
 
 

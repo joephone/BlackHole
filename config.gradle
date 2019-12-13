@@ -32,12 +32,14 @@ ext {
             butterknifeVersion              : "8.5.1",
             eventbus                        : "3.1.1",
 
+
             actionBarEx                     : "3.2.1",
             materialProgressBar             : "1.4.2",
 
             router                          : "1.4.1",
             routerCompiler                  : "1.2.2",
 
+            retrofit                        : "2.2.0",
             okhttp                          : "3.5.0",
 
             jLog                            : "1.0.2",
@@ -58,7 +60,7 @@ ext {
             glide                           : "com.github.bumptech.glide:glide:$version.glideSdkVersion",
             //gson
             gson                            : "com.google.code.gson:gson:$version.gson",
-
+            eventbus                        : "org.greenrobot:eventbus:$version.eventbus",
 
 
             butterknife                     : "com.jakewharton:butterknife:$version.butterknifeVersion",
@@ -67,12 +69,18 @@ ext {
             actionBarEx                     : "com.github.goweii:ActionBarEx:$version.actionBarEx",
             materialProgressBar             : "me.zhanghai.android.materialprogressbar:library:$version.materialProgressBar",
 
+
+
+            //http
+            retrofit                        : "com.squareup.retrofit2:retrofit:$version.retrofit",
+            converterScalars                : "com.squareup.retrofit2:converter-scalars:$version.retrofit",
+            okhttp                          : "com.squareup.okhttp3:okhttp:$version.okhttp",
+
+
             //日志
             jLog                            : "com.github.joephone:jLog:$version.jLog",
             //umeng
             umeng                           : "com.umeng.analytics:analytics:latest.integration",
-            //okhttp
-            okhttp                          : "com.squareup.okhttp3:okhttp:$version.okhttp",
     ]
 
 

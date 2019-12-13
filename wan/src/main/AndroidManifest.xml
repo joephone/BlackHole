@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.transcendence.wan">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".base.app.WanApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_wan"
         android:label="@string/app_wan_name"
@@ -10,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/WanAppTheme">
         <activity
-            android:name=".main.WanMainActivity"
+            android:name=".main.act.WanMainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             >
@@ -21,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".main.WanSplashActivity"
+            android:name=".main.act.WanSplashActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             />

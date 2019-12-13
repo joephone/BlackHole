@@ -2,7 +2,7 @@ package com.transcendence.blackhole.demo.mvp.presenter;
 
 import android.text.TextUtils;
 
-import com.transcendence.blackhole.base.mvp.BaseView;
+import com.transcendence.blackhole.base.mvp.LibBaseView;
 import com.transcendence.blackhole.demo.mvp.bean.User;
 
 /**
@@ -18,7 +18,7 @@ public class LoginPresenterImpl implements LoginPresenter.Presenter{
     private LoginPresenter.View logView;
 
     @Override
-    public void attachView(BaseView v) {
+    public void attachView(LibBaseView v) {
         //绑定的时候把view置进来
         this.logView = (LoginPresenter.View) v;
     }

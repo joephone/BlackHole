@@ -12,7 +12,7 @@ import java.lang.ref.WeakReference;
  * @EditionHistory
  */
 
-public class BasePresenter<T> {
+public class LibBasePresenter<T> {
 
     /**
      * 弱引用

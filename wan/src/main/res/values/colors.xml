@@ -17,4 +17,10 @@
     <color name="black_alpha">#22000000</color>
     <color name="gray_dark">#666666</color>
     <color name="gray_light">#999999</color>
+
+
+    <!--loading dialog背景颜色-->
+    <color name="basic_ui_dialog_loading_rectangle">@color/transparent</color>
+    <!--loading dialog圆圈颜色-->
+    <color name="basic_ui_dialog_loading_circle">@color/colorTheme</color>
 </resources>

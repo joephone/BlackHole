@@ -4,6 +4,7 @@
     <dimen name="action_bar_height">44dp</dimen>
     <dimen name="action_bar_bottom_line_height">1dp</dimen>
     <dimen name="bottom_bar_height">49dp</dimen>
+    <dimen name="button_height">44dp</dimen>
 
     <!--==========================文字大小============================-->
     <dimen name="text_headline">22sp</dimen>

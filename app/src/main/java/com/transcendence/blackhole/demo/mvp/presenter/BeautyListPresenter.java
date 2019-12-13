@@ -1,6 +1,6 @@
 package com.transcendence.blackhole.demo.mvp.presenter;
 
-import com.transcendence.blackhole.base.mvp.BasePresenter;
+import com.transcendence.blackhole.base.mvp.LibBasePresenter;
 import com.transcendence.blackhole.demo.mvp.bean.Beauty;
 import com.transcendence.blackhole.demo.mvp.model.IBeautyListModel;
 import com.transcendence.blackhole.demo.mvp.model.IBeautyListModelImpl;
@@ -17,7 +17,7 @@ import java.util.List;
  * @EditionHistory
  */
 
-public class BeautyListPresenter <T extends IBeautyListView> extends BasePresenter<T>{
+public class BeautyListPresenter <T extends IBeautyListView> extends LibBasePresenter<T> {
     //1 左手  view 层引用
     IBeautyListView iBeautyView;    //强引用
     //2 右手   model层引用

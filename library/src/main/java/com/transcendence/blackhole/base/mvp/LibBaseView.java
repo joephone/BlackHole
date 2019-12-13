@@ -8,6 +8,6 @@ package com.transcendence.blackhole.base.mvp;
  * @EditionHistory
  */
 
-public interface BaseView {
+public interface LibBaseView {
 
 }

@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 
 import com.transcendence.blackhole.base.config.AppInit;
+import com.transcendence.blackhole.base.config.ProjectInit;
+import com.transcendence.blackhole.global.Global;
 
 /**
  * @author Joephone on 2019/5/6 11:42
@@ -25,8 +27,12 @@ public class LibApplication extends Application {
         instance = this;
         applicationContext = getApplicationContext();
 
-        AppInit.INSTANCE.initConfig(this);
 
+        ProjectInit.init(this)
+                .withApiHost(Global.BASE_URL.WAN_API_HOST)
+                .configurator();
+
+        AppInit.INSTANCE.initConfig(this);
 
     }
 

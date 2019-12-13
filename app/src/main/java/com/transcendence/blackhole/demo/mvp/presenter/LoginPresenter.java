@@ -1,6 +1,6 @@
 package com.transcendence.blackhole.demo.mvp.presenter;
 
-import com.transcendence.blackhole.base.mvp.BaseView;
+import com.transcendence.blackhole.base.mvp.LibBaseView;
 import com.transcendence.blackhole.demo.mvp.bean.User;
 
 /**
@@ -13,7 +13,7 @@ import com.transcendence.blackhole.demo.mvp.bean.User;
 
 public interface LoginPresenter {
 
-    interface View extends BaseView {
+    interface View extends LibBaseView {
         void showToast(String msg) ;
         void loginSuccess(String msg) ;
         void loginFailed(String msg) ;
@@ -21,7 +21,7 @@ public interface LoginPresenter {
 
     interface Presenter {
         //绑定view | 由原理图可知，presenter需要绑定View才行
-        void attachView(BaseView v);
+        void attachView(LibBaseView v);
 
         void detachView();
 

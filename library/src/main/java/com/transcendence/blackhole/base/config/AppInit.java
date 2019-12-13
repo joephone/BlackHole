@@ -1,6 +1,7 @@
 package com.transcendence.blackhole.base.config;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.hjq.image.ImageLoader;
@@ -10,7 +11,7 @@ import com.hjq.toast.style.ToastBlackStyle;
 /**
  * @author Joephone on 2019/6/25 10:10
  * @E-Mail Address：joephonechen@gmail.com
- * @Desc
+ * @Desc 链式调度 中转  给用户的接口
  * @Edition 1.0
  * @EditionHistory
  */
@@ -29,9 +30,15 @@ public enum AppInit {
 
         //
         initARouter(application);
+
     }
 
     private void initARouter(Application application) {
         ARouter.init(application);
     }
+
+
+
+
+
 }

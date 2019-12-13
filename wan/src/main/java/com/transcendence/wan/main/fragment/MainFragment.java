@@ -1,8 +1,9 @@
-package com.transcendence.wan.base.fragment;
+package com.transcendence.wan.main.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +21,7 @@ import com.transcendence.wan.R;
  * @EditionHistory
  */
 
-public class KnowledgeNavigationFragment extends WanBaseFragment {
+public class MainFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_SHOW_TEXT = "text";
 
@@ -49,11 +50,16 @@ public class KnowledgeNavigationFragment extends WanBaseFragment {
 
     private void initVP() {
         //预加载
-        mVp.setOffscreenPageLimit(1);
+        mVp.setOffscreenPageLimit(4);
         adapter = new GoweiiFragmentPagerAdapter(getChildFragmentManager());
-        adapter.setFragments(BlankFragment.newInstance("知识一"), BlankFragment.newInstance("知识二"));
+        adapter.setFragments(HomeFragment.newInstance("主页面")
+                , KnowledgeNavigationFragment.newInstance("碎片一")
+                , BlankFragment.newInstance("碎片二")
+                , BlankFragment.newInstance("碎片三")
+                , BlankFragment.newInstance("碎片四"));
         mVp.setAdapter(adapter);
     }
+
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -61,8 +67,8 @@ public class KnowledgeNavigationFragment extends WanBaseFragment {
      * @param title Parameter 1.
      * @return A new instance of fragment .
      */
-    public static KnowledgeNavigationFragment newInstance(String title) {
-        KnowledgeNavigationFragment fragment = new KnowledgeNavigationFragment();
+    public static MainFragment newInstance(String title) {
+        MainFragment fragment = new MainFragment();
         Bundle args = new Bundle();
         args.putString(ARG_SHOW_TEXT, title);
         fragment.setArguments(args);

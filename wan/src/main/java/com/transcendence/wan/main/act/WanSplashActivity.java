@@ -1,4 +1,4 @@
-package com.transcendence.wan.main;
+package com.transcendence.wan.main.act;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

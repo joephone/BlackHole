@@ -23,7 +23,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.transcendence.blackhole.base.mvp.BasePresenter;
+import com.transcendence.blackhole.base.mvp.LibBasePresenter;
 import com.transcendence.blackhole.library.R;
 import com.transcendence.blackhole.utils.AppUtils;
 import com.transcendence.blackhole.utils.L;
@@ -37,7 +37,7 @@ import com.umeng.analytics.MobclickAgent;
  * @Desc
  */
 
-public abstract class BaseMvpActivity<V,T extends BasePresenter<V>> extends AppCompatActivity {
+public abstract class BaseMvpActivity<V,T extends LibBasePresenter<V>> extends AppCompatActivity {
     /**
      * Activity 在活动界面中的全局变量，用来代替this，在基类中定义是为了省去每个集成此类的 Activity 都定义一次
      */

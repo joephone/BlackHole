@@ -1,6 +1,6 @@
 package com.transcendence.blackhole.demo.mvp.view;
 
-import com.transcendence.blackhole.base.mvp.BaseView;
+import com.transcendence.blackhole.base.mvp.LibBaseView;
 import com.transcendence.blackhole.demo.mvp.bean.Beauty;
 
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.List;
  * @EditionHistory
  */
 
-public interface IBeautyListView extends BaseView {
+public interface IBeautyListView extends LibBaseView {
 
     /**
      * 加载程度条

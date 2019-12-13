@@ -1,15 +1,14 @@
-package com.transcendence.wan.main;
+package com.transcendence.wan.main.act;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.transcendence.blackhole.adapter.GoweiiFragmentPagerAdapter;
-import com.transcendence.blackhole.fragment.BlankFragment;
 import com.transcendence.wan.R;
 import com.transcendence.wan.base.act.WanBaseActivity;
-import com.transcendence.wan.base.fragment.DamaFragment;
-import com.transcendence.wan.base.fragment.MainFragment;
+import com.transcendence.wan.main.fragment.DamaFragment;
+import com.transcendence.wan.main.fragment.MainFragment;
 
 import java.util.ArrayList;
 import java.util.Arrays;
