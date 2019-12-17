@@ -28,6 +28,7 @@
                 android:id="@+id/flBack"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
+                android:visibility="gone"
                 android:background="@drawable/selector_back">
 
                 <ImageView
@@ -50,7 +51,7 @@
                 android:layout_centerInParent="true"
                 android:ellipsize="end"
                 android:maxLines="1"
-                tools:text="首页"
+                tools:text="知识二"
                 android:textColor="@color/white"
                 android:textSize="@dimen/title_size" />
 
@@ -59,6 +60,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginRight="@dimen/standard_padding"
+                android:visibility="gone"
                 android:layout_alignParentRight="true">
 
                 <ImageView
@@ -76,39 +78,16 @@
     </LinearLayout>
 
 
-    <net.soulwolf.widget.ratiolayout.widget.RatioFrameLayout
-        android:id="@+id/home_ratio"
-        android:layout_width="match_parent"
+
+
+    <TextView
+        android:id="@+id/tvContent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:datumRatio="datumWidth"
-        app:heightRatio="9"
-        app:widthRatio="16">
-
-        <com.transcendence.blackhole.widget.custom.banner.BannerLayout
-            android:id="@+id/banner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/pic_404"
-            app:autoPlayDuration="5000"
-            app:defaultImage="@drawable/pic_404"
-            app:indicatorMargin="8dp"
-            app:indicatorMarginBottom="15dp"
-            app:indicatorPosition="rightBottom"
-            app:indicatorShape="oval"
-            app:indicatorSpace="3dp"
-            app:scrollDuration="375"
-            app:selectedIndicatorColor="@color/white"
-            app:selectedIndicatorHeight="7dp"
-            app:selectedIndicatorWidth="7dp"
-            app:unSelectedIndicatorColor="#80fffffe"
-            app:unSelectedIndicatorHeight="7dp"
-            app:unSelectedIndicatorWidth="7dp" />
-    </net.soulwolf.widget.ratiolayout.widget.RatioFrameLayout>
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_gravity="center"
+        android:text="hello world"
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
 
 
 

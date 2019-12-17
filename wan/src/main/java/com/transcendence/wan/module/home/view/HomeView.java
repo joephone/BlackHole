@@ -1,6 +1,6 @@
-package com.transcendence.wan.home.view;
+package com.transcendence.wan.module.home.view;
 
-import com.transcendence.wan.home.model.BannerBean;
+import com.transcendence.wan.module.home.model.BannerBean;
 
 import java.util.List;
 

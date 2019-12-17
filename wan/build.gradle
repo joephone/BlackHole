@@ -26,6 +26,8 @@ dependencies {
 
     annotationProcessor rootProject.ext.dependencies.butterknifeCompiler
 
+    implementation 'net.soulwolf.widget:ratiolayout:1.0.0'
+
     implementation project(':library')
 
 

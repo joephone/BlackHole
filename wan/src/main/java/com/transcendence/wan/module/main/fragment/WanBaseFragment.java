@@ -1,4 +1,4 @@
-package com.transcendence.wan.main.fragment;
+package com.transcendence.wan.module.main.fragment;
 
 import com.transcendence.wan.mvp.MvpFragment;
 import com.transcendence.wan.mvp.WanBasePresenter;

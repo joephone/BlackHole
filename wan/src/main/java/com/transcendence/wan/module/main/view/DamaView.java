@@ -1,4 +1,4 @@
-package com.transcendence.wan.main.view;
+package com.transcendence.wan.module.main.view;
 
 import com.transcendence.wan.mvp.WanBaseView;
 

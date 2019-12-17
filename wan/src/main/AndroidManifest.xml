@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/WanAppTheme">
         <activity
-            android:name=".main.act.WanMainActivity"
+            android:name=".module.main.act.WanMainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             >
@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".main.act.WanSplashActivity"
+            android:name=".module.main.act.WanSplashActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             />
@@ -33,6 +33,7 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             />
+        <activity android:name=".module.mine.act.RankActivity" />
     </application>
 
 </manifest>

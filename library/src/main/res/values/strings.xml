@@ -15,6 +15,14 @@
     <string name="tab_three">联系人</string>
     <string name="tab_four">个人中心</string>
 
+
+    <!-- wan tab -->
+    <string name="wan_tab_one">首页</string>
+    <string name="wan_tab_two">体系</string>
+    <string name="wan_tab_three">公众号</string>
+    <string name="wan_tab_four">项目</string>
+    <string name="wan_tab_five">我的</string>
+
     <!-- 最美底 nav bar -->
     <string name="home_exit_hint">再按一次退出</string>
     <string name="zuimei_home_nav_one">首页</string>

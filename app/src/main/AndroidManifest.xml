@@ -63,7 +63,7 @@
         android:supportsRtl="true"
         android:theme="@style/NoTitleAppTheme">
         <activity
-            android:name=".base.LauncherActivity"
+            android:name=".ui.weixinnavigation.act.WeixinHomeActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -72,7 +72,7 @@
         </activity>
 
         <activity
-            android:name=".ui.weixinnavigation.act.WeixinHomeActivity"
+            android:name=".base.LauncherActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             />
@@ -223,10 +223,10 @@
             android:screenOrientation="portrait" />
 
             <!-- Gallery-->
-        <activity
-            android:name=".ui.gallery.act.JgalleryMainActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
+        <!--<activity-->
+            <!--android:name=".ui.gallery.act.JgalleryMainActivity"-->
+            <!--android:launchMode="singleTask"-->
+            <!--android:screenOrientation="portrait" />-->
 
             <!-- zGallery-->
         <activity

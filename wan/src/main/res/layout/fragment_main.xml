@@ -7,12 +7,52 @@
     android:background="@color/bg_public"
     android:orientation="vertical">
 
-
-
     <android.support.v4.view.ViewPager
         android:id="@+id/vp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
 
+    <View style="@style/Line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@color/colorTheme"
+        android:orientation="horizontal">
+
+        <com.transcendence.blackhole.widget.custom.TabView
+            android:id="@+id/tabOne"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:tabTextSize="11"
+            />
+        <com.transcendence.blackhole.widget.custom.TabView
+            android:id="@+id/tabTwo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
+        <com.transcendence.blackhole.widget.custom.TabView
+            android:id="@+id/tabThree"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
+        <com.transcendence.blackhole.widget.custom.TabView
+            android:id="@+id/tabFour"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
+        <com.transcendence.blackhole.widget.custom.TabView
+            android:id="@+id/tabFive"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
 
 </LinearLayout>

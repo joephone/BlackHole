@@ -1,4 +1,4 @@
-package com.transcendence.wan.home.model;
+package com.transcendence.wan.module.home.model;
 
 import com.transcendence.wan.base.bean.WanResponseBean;
 

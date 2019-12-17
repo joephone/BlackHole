@@ -1,21 +1,12 @@
-package com.transcendence.wan.main.fragment;
+package com.transcendence.wan.module.dama.fragment;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.transcendence.wan.R;
-import com.transcendence.wan.main.presenter.DamaPresenter;
-import com.transcendence.wan.main.view.DamaView;
-import com.transcendence.wan.ui.utils.MultiStateUtils;
-import com.transcendence.wan.ui.utils.SimpleListener;
-import com.transcendence.wan.ui.view.MultiStateView;
-
-import butterknife.BindView;
-import per.goweii.actionbarex.common.ActionBarCommon;
+import com.transcendence.wan.module.main.fragment.WanBaseFragment;
+import com.transcendence.wan.module.main.presenter.DamaPresenter;
+import com.transcendence.wan.module.main.view.DamaView;
 
 /**
  * @author Joephone on 2019/11/27 11:50

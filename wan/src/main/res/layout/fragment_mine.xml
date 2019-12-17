@@ -10,18 +10,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/transparent"
         android:orientation="vertical">
 
         <View
             android:id="@+id/title_status"
             android:layout_width="match_parent"
-            android:layout_height="22dp"
-            android:background="@color/colorGitHubBlack" />
+            android:layout_height="22dp" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:background="@color/colorGitHubBlack"
             >
 
             <FrameLayout
@@ -38,7 +37,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="@dimen/dp_10"
                     android:gravity="center"
-                    android:src="@mipmap/ic_article"
+                    android:src="@drawable/ic_rank"
                     />
             </FrameLayout>
 
@@ -50,7 +49,7 @@
                 android:layout_centerInParent="true"
                 android:ellipsize="end"
                 android:maxLines="1"
-                tools:text="首页"
+                tools:text="知识二"
                 android:textColor="@color/white"
                 android:textSize="@dimen/title_size" />
 
@@ -68,47 +67,13 @@
                     android:layout_centerVertical="true"
                     android:layout_gravity="center_vertical"
                     android:gravity="center"
-                    android:src="@mipmap/ic_search"
-                    />
+                    android:src="@drawable/ic_share" />
+
             </FrameLayout>
 
         </RelativeLayout>
     </LinearLayout>
 
-
-    <net.soulwolf.widget.ratiolayout.widget.RatioFrameLayout
-        android:id="@+id/home_ratio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:datumRatio="datumWidth"
-        app:heightRatio="9"
-        app:widthRatio="16">
-
-        <com.transcendence.blackhole.widget.custom.banner.BannerLayout
-            android:id="@+id/banner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/pic_404"
-            app:autoPlayDuration="5000"
-            app:defaultImage="@drawable/pic_404"
-            app:indicatorMargin="8dp"
-            app:indicatorMarginBottom="15dp"
-            app:indicatorPosition="rightBottom"
-            app:indicatorShape="oval"
-            app:indicatorSpace="3dp"
-            app:scrollDuration="375"
-            app:selectedIndicatorColor="@color/white"
-            app:selectedIndicatorHeight="7dp"
-            app:selectedIndicatorWidth="7dp"
-            app:unSelectedIndicatorColor="#80fffffe"
-            app:unSelectedIndicatorHeight="7dp"
-            app:unSelectedIndicatorWidth="7dp" />
-    </net.soulwolf.widget.ratiolayout.widget.RatioFrameLayout>
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
 
 
 

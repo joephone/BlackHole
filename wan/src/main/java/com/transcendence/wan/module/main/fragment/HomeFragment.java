@@ -1,4 +1,4 @@
-package com.transcendence.wan.main.fragment;
+package com.transcendence.wan.module.main.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -20,8 +20,8 @@ import com.transcendence.blackhole.utils.L;
 import com.transcendence.blackhole.utils.ScreenUtils;
 import com.transcendence.blackhole.widget.custom.banner.BannerLayout;
 import com.transcendence.wan.R;
-import com.transcendence.wan.home.model.BannerBean;
-import com.transcendence.wan.main.act.WanMainActivity;
+import com.transcendence.wan.module.home.model.BannerBean;
+import com.transcendence.wan.module.main.act.WanMainActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -48,7 +48,7 @@ public class HomeFragment extends Fragment implements BannerLayout.OnBannerItemC
     private GoweiiFragmentPagerAdapter adapter;
 
     private List<BannerBean.DataBean> mBannerBeans;
-
+    private List<String> mBannerUrls;
 
     @Nullable
     @Override
@@ -56,7 +56,7 @@ public class HomeFragment extends Fragment implements BannerLayout.OnBannerItemC
         View rootView =  inflater.inflate(R.layout.fragment_home, container, false);
         initView(rootView);
         initBannerData();
-        createHeaderBanner();
+//        createHeaderBanner();
         return rootView;
     }
 
@@ -68,6 +68,8 @@ public class HomeFragment extends Fragment implements BannerLayout.OnBannerItemC
     }
 
     private void initView(View rootView) {
+        mBanner = rootView.findViewById(R.id.banner);
+        mBanner.setOnBannerItemClickListener(this);
         mRv = rootView.findViewById(R.id.rv);
         ivLeft = rootView.findViewById(R.id.ivLeft);
         ivRight = rootView.findViewById(R.id.ivRight);
@@ -128,16 +130,13 @@ public class HomeFragment extends Fragment implements BannerLayout.OnBannerItemC
                          Gson gson = new Gson();
                          BannerBean model = gson.fromJson(response,BannerBean.class);
                          mBannerBeans = model.getData();
-                         List<String> urls = new ArrayList<>(model.getData().size());
+                         mBannerUrls = new ArrayList<>(model.getData().size());
                          List<String> titles = new ArrayList<>(model.getData().size());
                          for (BannerBean.DataBean bean : model.getData()) {
-                             urls.add(bean.getImagePath());
+                             mBannerUrls.add(bean.getImagePath());
                              titles.add(bean.getTitle());
                          }
-
-
-                         mBanner.setViewUrls(urls);
-
+                         mBanner.setViewUrls(mBannerUrls);
                      }
                  })
                 .failure(new IFailure() {

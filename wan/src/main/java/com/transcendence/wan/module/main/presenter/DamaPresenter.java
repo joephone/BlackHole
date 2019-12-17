@@ -1,6 +1,6 @@
-package com.transcendence.wan.main.presenter;
+package com.transcendence.wan.module.main.presenter;
 
-import com.transcendence.wan.main.view.DamaView;
+import com.transcendence.wan.module.main.view.DamaView;
 import com.transcendence.wan.mvp.WanBasePresenter;
 
 /**
