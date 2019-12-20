@@ -46,6 +46,10 @@ public class BannerBean extends WanResponseBean {
         private int type;
         private String url;
 
+        private String link;
+        private boolean collect;
+        private int originId;
+
         public String getDesc() {
             return desc;
         }
@@ -108,6 +112,31 @@ public class BannerBean extends WanResponseBean {
 
         public void setUrl(String url) {
             this.url = url;
+        }
+
+
+        public String getLink() {
+            return link;
+        }
+
+        public void setLink(String link) {
+            this.link = link;
+        }
+
+        public boolean isCollect() {
+            return collect;
+        }
+
+        public void setCollect(boolean collect) {
+            this.collect = collect;
+        }
+
+        public int getOriginId() {
+            return originId;
+        }
+
+        public void setOriginId(int originId) {
+            this.originId = originId;
         }
     }
 }

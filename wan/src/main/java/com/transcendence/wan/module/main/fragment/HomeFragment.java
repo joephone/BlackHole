@@ -22,6 +22,7 @@ import com.transcendence.blackhole.widget.custom.banner.BannerLayout;
 import com.transcendence.wan.R;
 import com.transcendence.wan.module.home.model.BannerBean;
 import com.transcendence.wan.module.main.act.WanMainActivity;
+import com.transcendence.wan.module.main.act.WanWebActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -97,22 +98,11 @@ public class HomeFragment extends Fragment implements BannerLayout.OnBannerItemC
             mBanner = new BannerLayout(getContext());
             int height = (int) (ScreenUtils.getScreenWidth(getContext()) * (9F / 16F));
             mBanner.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height));
-
             mBanner.setOnBannerItemClickListener(this);
-//            mBanner.setViewUrls();
-
-
-//            mBanner.setIndicatorGravity(BannerConfig.CENTER);
-//            mBanner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);
-//            mBanner.setBannerAnimation(Transformer.Default);
             mBanner.startAutoPlay();
 
         }
-//        if (SettingUtils.getInstance().isShowBanner()) {
-//            mBanner.setVisibility(View.VISIBLE);
-//        } else {
-//            mBanner.setVisibility(View.GONE);
-//        }
+
     }
 
 
@@ -161,7 +151,10 @@ public class HomeFragment extends Fragment implements BannerLayout.OnBannerItemC
 
     @Override
     public void onItemClick(int position) {
-
+        BannerBean.DataBean item = mBannerBeans.get(position);
+        if (item != null) {
+            WanWebActivity.start(getContext(), item);
+        }
     }
 
     @Override

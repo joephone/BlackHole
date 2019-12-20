@@ -23,4 +23,7 @@
     <color name="basic_ui_dialog_loading_rectangle">@color/transparent</color>
     <!--loading dialog圆圈颜色-->
     <color name="basic_ui_dialog_loading_circle">@color/colorTheme</color>
+
+    <color name="bottom_bar_overlay">@color/bg_alpha</color>
+
 </resources>

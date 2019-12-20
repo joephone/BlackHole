@@ -6,9 +6,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.transcendence.blackhole.R;
+import com.transcendence.blackhole.arouter.ARouterConstant;
+import com.transcendence.blackhole.arouter.ARouterUtils;
 import com.transcendence.blackhole.base.AppConstantValue;
 import com.transcendence.blackhole.base.activity.TitleBarActivity;
+import com.transcendence.blackhole.utils.L;
 import com.transcendence.blackhole.utils.StringUtils;
 
 import java.util.List;
@@ -19,6 +23,7 @@ import java.util.List;
  * @Desc
  */
 
+@Route(path = ARouterConstant.APP_MAIN)
 public class AppIndexActivity extends TitleBarActivity implements AdapterView.OnItemClickListener {
     private ArrayAdapter<String> adapter;
     private ListView lvIndex;
@@ -27,9 +32,13 @@ public class AppIndexActivity extends TitleBarActivity implements AdapterView.On
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent = new Intent();
-        intent.setClass(mActivity, AppConstantValue.appIndex[position]);
-        startActivity(intent);
+        L.d("position--"+position);
+        ARouterUtils.navigation(ARouterConstant.WAN_MAIN);
+
+
+//        Intent intent = new Intent();
+//        intent.setClass(mActivity, AppConstantValue.appIndex[position]);
+//        startActivity(intent);
 
     }
 

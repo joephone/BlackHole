@@ -14,4 +14,6 @@ dependencies {
     implementation project(':library')
     implementation project(':imagepicker')
 
+    //注解器
+    annotationProcessor rootProject.ext.dependencies["router-compiler"]
 }

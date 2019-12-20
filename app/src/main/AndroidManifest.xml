@@ -63,7 +63,7 @@
         android:supportsRtl="true"
         android:theme="@style/NoTitleAppTheme">
         <activity
-            android:name=".ui.weixinnavigation.act.WeixinHomeActivity"
+            android:name=".index.AppIndexActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -84,7 +84,7 @@
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".index.AppIndexActivity"
+            android:name=".ui.weixinnavigation.act.WeixinHomeActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 

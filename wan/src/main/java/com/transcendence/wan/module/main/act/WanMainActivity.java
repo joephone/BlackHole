@@ -5,6 +5,8 @@ import android.support.v4.view.ViewPager;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.transcendence.blackhole.adapter.GoweiiFragmentPagerAdapter;
+import com.transcendence.blackhole.arouter.ARouterConstant;
+import com.transcendence.blackhole.arouter.ARouterUtils;
 import com.transcendence.wan.R;
 import com.transcendence.wan.base.act.WanBaseActivity;
 import com.transcendence.wan.module.dama.fragment.DamaFragment;
@@ -13,7 +15,8 @@ import com.transcendence.wan.module.home.fragment.MainFragment;
 /**
  * @author Administrator
  */
-@Route(path = "/wan/WanMainActivity")
+
+@Route(path = ARouterConstant.WAN_MAIN ,group = "wan")
 public class WanMainActivity extends WanBaseActivity {
 
 
@@ -37,7 +40,7 @@ public class WanMainActivity extends WanBaseActivity {
 
     private void initView() {
         mVp = findViewById(R.id.vp);
-
+        ARouterUtils.injectActivity(this);
     }
 
 

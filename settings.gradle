@@ -1,1 +1,1 @@
-include ':app', ':library', ':structure',':stackOverView', ':animation', ':imagepicker', ':dongnao', ':wan', ':map'
+include ':app', ':library', ':structure',':stackOverView', ':animation', ':imagepicker', ':dongnao', ':wan', ':map', ':music'
