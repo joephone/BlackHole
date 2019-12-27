@@ -63,7 +63,7 @@
         android:supportsRtl="true"
         android:theme="@style/NoTitleAppTheme">
         <activity
-            android:name=".index.AppIndexActivity"
+            android:name=".index.IndexActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -73,6 +73,12 @@
 
         <activity
             android:name=".base.LauncherActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".index.AppIndexActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             />

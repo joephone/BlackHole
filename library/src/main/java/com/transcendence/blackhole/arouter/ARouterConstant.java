@@ -14,4 +14,7 @@ public class ARouterConstant {
 
     public static final String WAN_MAIN ="/wan/WanMainActivity";
 
+    public static final String MUSIC_MAIN ="/music/MusicMainActivity";
+
+
 }

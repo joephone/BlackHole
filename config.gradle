@@ -3,9 +3,9 @@ ext {
     isStructureApplication = false
     isDoudouApplication = false
     isDongnaoApplication = true
-    isWanApplication = true
+    isWanApplication = false
     isMapApplication = true
-    isMusicApplication = true
+    isMusicApplication = false
 
 
     android = [

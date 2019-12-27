@@ -12,6 +12,24 @@ android {
             //组件模式下设置applicationId
             applicationId "com.transcendence.wan"
         }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+
+    sourceSets {
+        main {
+            if (rootProject.ext.isWanApplication) {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/java/com/transcendence/wan/base/AndroidManifest.xml'
+            }
+            jniLibs.srcDirs = ['libs']
+        }
     }
 
 }
@@ -31,6 +49,4 @@ dependencies {
     implementation project(':library')
 
 
-
-    
 }

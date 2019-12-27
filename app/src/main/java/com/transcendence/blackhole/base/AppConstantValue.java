@@ -1,5 +1,6 @@
 package com.transcendence.blackhole.base;
 
+import com.transcendence.blackhole.arouter.ARouterConstant;
 import com.transcendence.blackhole.demo.allapp.AllAppActivity;
 import com.transcendence.blackhole.demo.didi.act.DidiMainActivity;
 import com.transcendence.blackhole.demo.handler.act.HandlerMainActivity;
@@ -51,6 +52,12 @@ import com.transcendence.blackhole.ui.widget.marquee.MarqueeTextTwoActivity;
  * @EditionHistory
  */
 public interface AppConstantValue {
+
+    String [] mainIndex = {
+            ARouterConstant.APP_MAIN,
+            ARouterConstant.WAN_MAIN,
+                            };
+
     /**
      * 0
      */

@@ -22,7 +22,6 @@ import com.transcendence.blackhole.widget.custom.banner.BannerLayout;
 import com.transcendence.wan.R;
 import com.transcendence.wan.module.home.model.BannerBean;
 import com.transcendence.wan.module.main.act.WanMainActivity;
-import com.transcendence.wan.module.main.act.WanWebActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -153,7 +152,7 @@ public class HomeFragment extends Fragment implements BannerLayout.OnBannerItemC
     public void onItemClick(int position) {
         BannerBean.DataBean item = mBannerBeans.get(position);
         if (item != null) {
-            WanWebActivity.start(getContext(), item);
+//            WanWebActivity.start(getContext(), item);
         }
     }
 

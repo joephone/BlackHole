@@ -16,7 +16,7 @@ import com.transcendence.wan.module.home.fragment.MainFragment;
  * @author Administrator
  */
 
-@Route(path = ARouterConstant.WAN_MAIN ,group = "wan")
+@Route(path = ARouterConstant.WAN_MAIN)
 public class WanMainActivity extends WanBaseActivity {
 
 

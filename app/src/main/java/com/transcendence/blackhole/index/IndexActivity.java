@@ -18,13 +18,13 @@ import com.transcendence.blackhole.utils.StringUtils;
 import java.util.List;
 
 /**
- * @author Joephone on 2019/5/24 11:55
+ * @author Joephone on 2019/12/27 14:50
  * @E-Mail Address：joephonechen@gmail.com
  * @Desc
  */
 
-@Route(path = ARouterConstant.APP_MAIN)
-public class AppIndexActivity extends TitleBarActivity implements AdapterView.OnItemClickListener {
+
+public class IndexActivity extends TitleBarActivity implements AdapterView.OnItemClickListener {
     private ArrayAdapter<String> adapter;
     private ListView lvIndex;
     private List<String> items;
@@ -33,9 +33,8 @@ public class AppIndexActivity extends TitleBarActivity implements AdapterView.On
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         L.d("position--"+position);
-        Intent intent = new Intent();
-        intent.setClass(mActivity, AppConstantValue.appIndex[position]);
-        startActivity(intent);
+        ARouterUtils.navigation(AppConstantValue.mainIndex[position]);
+
     }
 
 
@@ -45,7 +44,7 @@ public class AppIndexActivity extends TitleBarActivity implements AdapterView.On
         setTitle(false,"序列");
         lvIndex = findViewById(R.id.lvIndex);
 
-        List<String> items = StringUtils.getStringList(mActivity,R.array.app_index_item);
+        List<String> items = StringUtils.getStringList(mActivity,R.array.index_item);
         adapter = new ArrayAdapter<>(mActivity,
                 android.R.layout.simple_list_item_1, items);
         lvIndex.setAdapter(adapter);

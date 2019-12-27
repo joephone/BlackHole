@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
 apply from: "../basic.gradle"
 
+def config = rootProject.ext
+
 android {
 
     defaultConfig {
@@ -13,6 +15,10 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':library')
     implementation project(':imagepicker')
+
+    if(!config.isWanApplication){  //isWanApplication
+        implementation project(':wan')
+    }
 
     //注解器
     annotationProcessor rootProject.ext.dependencies["router-compiler"]

@@ -158,22 +158,21 @@ public class MainFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.tabOne:
-                setCurrentTabs(0);
-                break;
-            case R.id.tabTwo:
-                setCurrentTabs(1);
-                break;
-            case R.id.tabThree:
-                setCurrentTabs(2);
-                break;
-            case R.id.tabFour:
-                setCurrentTabs(3);
-                break;
-            case R.id.tabFive:
-                setCurrentTabs(4);
-                break;
+        int i = v.getId();
+        if (i == R.id.tabOne) {
+            setCurrentTabs(0);
+        } else if (i == R.id.tabTwo) {
+            setCurrentTabs(1);
+
+        } else if (i == R.id.tabThree) {
+            setCurrentTabs(2);
+
+        } else if (i == R.id.tabFour) {
+            setCurrentTabs(3);
+
+        } else if (i == R.id.tabFive) {
+            setCurrentTabs(4);
+
         }
     }
 }
