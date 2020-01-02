@@ -11,12 +11,14 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
 
+import com.hjq.toast.ToastUtils;
 import com.transcendence.blackhole.utils.AppUtils;
 import com.transcendence.blackhole.utils.L;
 import com.transcendence.blackhole.utils.permission.PermissionPool;
@@ -288,5 +290,26 @@ public abstract class BaseActivity extends AppCompatActivity {
     public void finish() {
         super.finish();
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+    }
+
+
+    //记录用户首次点击返回键的时间
+    private long firstTime=0;
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        switch (keyCode){
+            case KeyEvent.KEYCODE_BACK:
+                long secondPress = System.currentTimeMillis();
+                if(secondPress-firstTime>2000){
+                    firstTime = secondPress;
+                    ToastUtils.show("莫按莫按，再按就退出克鸟");
+                    return false;
+                }else {
+                    System.exit(0);
+                }
+                break;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }

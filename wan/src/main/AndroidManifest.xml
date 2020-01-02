@@ -20,21 +20,23 @@
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".module.main.act.WanSplashActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             />
+
         <activity
             android:name=".search.act.WanSearchActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".module.mine.act.RankActivity"
+        <activity
+            android:name=".module.mine.act.RankActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
     </application>
