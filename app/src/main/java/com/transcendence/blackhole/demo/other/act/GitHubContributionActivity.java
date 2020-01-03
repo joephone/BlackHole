@@ -33,5 +33,8 @@ public class GitHubContributionActivity extends TitleBarActivity {
         table.setData(2016,12,13,3);
         table.setData(2016,12,14,3);
         table.setData(2017,2,15,4);
+
+        TestFinalActivity fi = new TestFinalActivity();
+        fi.test();
     }
 }
