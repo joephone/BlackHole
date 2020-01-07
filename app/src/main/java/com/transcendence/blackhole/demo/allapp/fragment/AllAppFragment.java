@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.transcendence.blackhole.R;
+import com.transcendence.blackhole.utils.L;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -60,7 +61,7 @@ public class AllAppFragment extends Fragment {
             }
         });
         mRv.setAdapter(new ActivityAdapter(activities));
-        Log.e("毛麒添", "Found " + activities.size() + " activities.");
+        L.d("Found " + activities.size() + " activities.");
     }
 
 

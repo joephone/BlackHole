@@ -55,6 +55,7 @@ ext {
             design                          : "com.android.support:design:$version.supportSdkVersion",
             constraintLayout                : "com.android.support.constraint:constraint-layout:$version.constraintLayout",
             "palette"                       : "com.android.support:palette-v7:$version.supportSdkVersion",
+
             supportv4                       : "com.android.support:support-v4:$version.supportSdkVersion",
             //image
             glide                           : "com.github.bumptech.glide:glide:$version.glideSdkVersion",
