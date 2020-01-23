@@ -16,10 +16,14 @@ dependencies {
     implementation project(':library')
     implementation project(':imagepicker')
 
-    if(!config.isWanApplication){  //isWanApplication
+    if(!config.isWanApplication){  //arouter 必加
         implementation project(':wan')
     }
 
+    if(!config.isMapApplication){  //arouter 必加
+        implementation project(':map')
+    }
+
     //注解器
-    annotationProcessor rootProject.ext.dependencies["router-compiler"]
+    annotationProcessor config.dependencies["router-compiler"]
 }

@@ -63,24 +63,23 @@ public class WeixinLocActivity extends AmapFragmentActivity implements View.OnCl
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.back:
-                finish();
-                break;
-            case R.id.ivSearch:
-                Intent intent = new Intent(WeixinLocActivity.this,WeixinLocSearchActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.ivMyLoc:
-                if (mapUtil != null) {
-                    L.d("mapUtil != null");
-                    mapUtil.onMyLoc();
-                }else {
-                    L.d("mapUtil == null");
-                }
-                break;
-            case R.id.tvSend:
-                break;
+        if(v.getId() == R.id.back){
+            finish();
+        }
+        if(v.getId() == R.id.ivSearch){
+            Intent intent = new Intent(WeixinLocActivity.this,WeixinLocSearchActivity.class);
+            startActivity(intent);
+        }
+        if(v.getId() == R.id.ivMyLoc){
+            if (mapUtil != null) {
+                L.d("mapUtil != null");
+                mapUtil.onMyLoc();
+            }else {
+                L.d("mapUtil == null");
+            }
+        }
+        if(v.getId() == R.id.tvSend){
+
         }
     }
 

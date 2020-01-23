@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.transcendence.map">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 使用定位功能所需权限 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+
+    <application>
+
+        <activity android:name=".base.act.AmapIndexActivity">
+
+        </activity>
+
+        <activity
+            android:name=".base.act.MapMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- -->
+        <activity
+            android:name=".base.act.BasicAmapActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
+        <!-- -->
+        <activity
+            android:name=".fragment.BasicAmapFragmentActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
+        <!-- -->
+        <activity
+            android:name=".base.act.AmapLocationActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
+        <!-- -->
+        <activity
+            android:name=".base.act.AmapLocationSourceActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".catches.act.CatchesMapActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".weinxinloc.act.WeixinLocActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".weinxinloc.act.WeixinLocSearchActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".mobike.main.act.AppStartActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".mobike.main.act.MobikeMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".mobike.personal.act.PersonalActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".mobike.main.act.SlidingUpPanelActivity" />
+        <activity android:name=".mobike.main.act.SlidingUpPanelTestActivity" />
+        <activity android:name=".base.act.AmapLocationSourceTwoActivity" />
+
+
+        <!-- 高德地图  -->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="66a408e855e5382e8a9920f7cbd72bbf" />
+
+        <service
+            android:name="com.amap.api.location.APSService" />
+
+    </application>
+
+
+
+
+</manifest>

@@ -8,8 +8,7 @@ import android.widget.ListView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.arouter.ARouterConstant;
-import com.transcendence.blackhole.arouter.ARouterUtils;
+import com.transcendence.blackhole.arouter.ARouterController;
 import com.transcendence.blackhole.base.AppConstantValue;
 import com.transcendence.blackhole.base.activity.TitleBarActivity;
 import com.transcendence.blackhole.utils.L;
@@ -23,7 +22,7 @@ import java.util.List;
  * @Desc
  */
 
-@Route(path = ARouterConstant.APP_MAIN)
+@Route(path = ARouterController.APP_MAIN)
 public class AppIndexActivity extends TitleBarActivity implements AdapterView.OnItemClickListener {
     private ArrayAdapter<String> adapter;
     private ListView lvIndex;

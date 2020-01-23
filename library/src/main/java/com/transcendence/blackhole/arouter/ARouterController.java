@@ -8,7 +8,7 @@ package com.transcendence.blackhole.arouter;
  * @EditionHistory
  */
 
-public class ARouterConstant {
+public class ARouterController {
 
     public static final String APP_MAIN ="/app/MainActivity";
 
@@ -16,5 +16,5 @@ public class ARouterConstant {
 
     public static final String MUSIC_MAIN ="/music/MusicMainActivity";
 
-
+    public static final String AMAP_MAIN ="/map/AmapIndexActivity";
 }

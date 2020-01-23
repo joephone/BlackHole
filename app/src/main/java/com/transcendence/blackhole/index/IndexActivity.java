@@ -1,14 +1,11 @@
 package com.transcendence.blackhole.index;
 
-import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.alibaba.android.arouter.facade.annotation.Route;
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.arouter.ARouterConstant;
 import com.transcendence.blackhole.arouter.ARouterUtils;
 import com.transcendence.blackhole.base.AppConstantValue;
 import com.transcendence.blackhole.base.activity.TitleBarActivity;

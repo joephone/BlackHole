@@ -3,16 +3,27 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BlackHole.iml" filepath="$PROJECT_DIR$/BlackHole.iml" />
+      <module fileurl="file://E:\OneDrive - OBA GG\GitHub\joephone\BlackHole\BlackHole.iml" filepath="E:\OneDrive - OBA GG\GitHub\joephone\BlackHole\BlackHole.iml" />
       <module fileurl="file://$PROJECT_DIR$/animation/animation.iml" filepath="$PROJECT_DIR$/animation/animation.iml" />
+      <module fileurl="file://E:\OneDrive - OBA GG\GitHub\joephone\BlackHole\animation\animation.iml" filepath="E:\OneDrive - OBA GG\GitHub\joephone\BlackHole\animation\animation.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://E:\OneDrive - OBA GG\GitHub\joephone\BlackHole\app\app.iml" filepath="E:\OneDrive - OBA GG\GitHub\joephone\BlackHole\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/dongnao/dongnao.iml" filepath="$PROJECT_DIR$/dongnao/dongnao.iml" />
+      <module fileurl="file://E:\OneDrive - OBA GG\GitHub\joephone\BlackHole\dongnao\dongnao.iml" filepath="E:\OneDrive - OBA GG\GitHub\joephone\BlackHole\dongnao\dongnao.iml" />
       <module fileurl="file://$PROJECT_DIR$/imagepicker/imagepicker.iml" filepath="$PROJECT_DIR$/imagepicker/imagepicker.iml" />
+      <module fileurl="file://E:\OneDrive - OBA GG\GitHub\joephone\BlackHole\imagepicker\imagepicker.iml" filepath="E:\OneDrive - OBA GG\GitHub\joephone\BlackHole\imagepicker\imagepicker.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://E:\OneDrive - OBA GG\GitHub\joephone\BlackHole\library\library.iml" filepath="E:\OneDrive - OBA GG\GitHub\joephone\BlackHole\library\library.iml" />
       <module fileurl="file://$PROJECT_DIR$/map/map.iml" filepath="$PROJECT_DIR$/map/map.iml" />
+      <module fileurl="file://E:\OneDrive - OBA GG\GitHub\joephone\BlackHole\map\map.iml" filepath="E:\OneDrive - OBA GG\GitHub\joephone\BlackHole\map\map.iml" />
       <module fileurl="file://$PROJECT_DIR$/music/music.iml" filepath="$PROJECT_DIR$/music/music.iml" />
+      <module fileurl="file://E:\OneDrive - OBA GG\GitHub\joephone\BlackHole\music\music.iml" filepath="E:\OneDrive - OBA GG\GitHub\joephone\BlackHole\music\music.iml" />
       <module fileurl="file://$PROJECT_DIR$/stackOverView/stackOverView.iml" filepath="$PROJECT_DIR$/stackOverView/stackOverView.iml" />
+      <module fileurl="file://E:\OneDrive - OBA GG\GitHub\joephone\BlackHole\stackOverView\stackOverView.iml" filepath="E:\OneDrive - OBA GG\GitHub\joephone\BlackHole\stackOverView\stackOverView.iml" />
       <module fileurl="file://$PROJECT_DIR$/structure/structure.iml" filepath="$PROJECT_DIR$/structure/structure.iml" />
+      <module fileurl="file://E:\OneDrive - OBA GG\GitHub\joephone\BlackHole\structure\structure.iml" filepath="E:\OneDrive - OBA GG\GitHub\joephone\BlackHole\structure\structure.iml" />
       <module fileurl="file://$PROJECT_DIR$/wan/wan.iml" filepath="$PROJECT_DIR$/wan/wan.iml" />
+      <module fileurl="file://E:\OneDrive - OBA GG\GitHub\joephone\BlackHole\wan\wan.iml" filepath="E:\OneDrive - OBA GG\GitHub\joephone\BlackHole\wan\wan.iml" />
     </modules>
   </component>
 </project>

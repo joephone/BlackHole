@@ -42,11 +42,8 @@ public class WeixinLocSearchActivity extends AppCompatActivity implements View.O
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.back:
-                finish();
-                break;
-
+        if(v.getId() == R.id.back){
+            finish();
         }
     }
 }

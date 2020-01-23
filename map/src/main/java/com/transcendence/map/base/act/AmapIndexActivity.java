@@ -7,6 +7,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.transcendence.blackhole.arouter.ARouterController;
 import com.transcendence.blackhole.base.activity.TitleBarActivity;
 import com.transcendence.blackhole.utils.StringUtils;
 import com.transcendence.blackhole.utils.permission.PermissionPool;
@@ -25,6 +27,7 @@ import java.util.List;
  * @E-Mail Address：joephonechen@gmail.com
  * @Desc Amap序列
  */
+@Route(path = ARouterController.AMAP_MAIN)
 public class AmapIndexActivity extends TitleBarActivity implements AdapterView.OnItemClickListener {
 
     private ArrayAdapter<String> adapter;

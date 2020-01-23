@@ -293,23 +293,23 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
 
-    //记录用户首次点击返回键的时间
-    private long firstTime=0;
-
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        switch (keyCode){
-            case KeyEvent.KEYCODE_BACK:
-                long secondPress = System.currentTimeMillis();
-                if(secondPress-firstTime>2000){
-                    firstTime = secondPress;
-                    ToastUtils.show("莫按莫按，再按就退出克鸟");
-                    return false;
-                }else {
-                    System.exit(0);
-                }
-                break;
-        }
-        return super.onKeyDown(keyCode, event);
-    }
+//    //记录用户首次点击返回键的时间
+//    private long firstTime=0;
+//
+//    @Override
+//    public boolean onKeyDown(int keyCode, KeyEvent event) {
+//        switch (keyCode){
+//            case KeyEvent.KEYCODE_BACK:
+//                long secondPress = System.currentTimeMillis();
+//                if(secondPress-firstTime>2000){
+//                    firstTime = secondPress;
+//                    ToastUtils.show("莫按莫按，再按就退出克鸟");
+//                    return false;
+//                }else {
+//                    System.exit(0);
+//                }
+//                break;
+//        }
+//        return super.onKeyDown(keyCode, event);
+//    }
 }
