@@ -15,6 +15,7 @@ import android.widget.RelativeLayout;
 
 import com.transcendence.blackhole.R;
 import com.transcendence.blackhole.global.Global;
+import com.transcendence.blackhole.index.IndexActivity;
 
 /**
  * @author Joephone on 2019/5/10 18:08
@@ -125,7 +126,7 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void gotoLoginActivity() {
-//        startActivity(AppIndexActivity.class);
+//        startActivity(IndexActivity.class);
     }
 
 

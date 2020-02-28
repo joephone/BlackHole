@@ -79,6 +79,7 @@
     <color name="selector_bg">#d9d9d9</color>
 
 
-
-
+    <!-- loopView -->
+    <color name="btn_cancel_color">#999999</color>
+    <color name="btn_confirm_color">#303F9F</color>
 </resources>

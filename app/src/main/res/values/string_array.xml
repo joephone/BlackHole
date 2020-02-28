@@ -85,6 +85,7 @@
         <item>仿地图上拉控件</item>
         <item>美团锚定控件</item>
         <item>PullToZoom</item>
+        <item>个人中心可拉伸背景</item>
     </string-array>
 
     <!-- index 7-->
@@ -96,6 +97,7 @@
         <item>Segment</item>
         <item>XiaoMI</item>
         <item>滴滴Splash</item>
+        <item>日期选择器</item>
     </string-array>
 
 

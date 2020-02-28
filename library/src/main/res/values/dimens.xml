@@ -127,4 +127,10 @@
     <dimen name="dp_500">500dp</dimen>
     <dimen name="dp_600">600dp</dimen>
     <dimen name="dp_topic_80">80dp</dimen>
+
+
+
+    <!-- loopView -->
+    <dimen name="btn_text_size">16sp</dimen>
+    <dimen name="view_text_size">10sp</dimen>
 </resources>

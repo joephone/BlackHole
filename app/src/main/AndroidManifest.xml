@@ -335,8 +335,21 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
+        <!--  个人中心可拉伸背景  -->
+        <activity
+            android:name=".ui.scroll.personalscroll.act.PersonalScrollMainAct"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.scroll.personalscroll.act.PersonalScrollStretchViewActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.scroll.personalscroll.act.PersonalScrollPulldownViewActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
 
-            <!-- 序列   录音 序列 -->
+
+
+        <!-- 序列   录音 序列 -->
         <activity
             android:name=".index.VoiceIndexActivity"
             android:launchMode="singleTask"
@@ -376,6 +389,10 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             />
+            <!--  选择器 -->
+        <activity android:name=".demo.loopview.LoopViewActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
 
         <!-- 序列   基础  handler -->
         <activity
@@ -398,7 +415,6 @@
             android:name=".ui.rv.mi.act.XiaoMIAct"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
-
 
 
         <!-- 序列8 地图  -->

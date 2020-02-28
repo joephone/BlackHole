@@ -29,4 +29,14 @@ public class L {
         Log.d(Global.TAG, content);
     }
 
+
+    public static void w(String content) {
+        Log.w(Global.TAG, content);
+    }
+
+    public static void w(Throwable content) {
+        Log.w(Global.TAG, content);
+    }
+
+
 }

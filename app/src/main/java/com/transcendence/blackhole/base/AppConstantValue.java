@@ -4,6 +4,7 @@ import com.transcendence.blackhole.arouter.ARouterController;
 import com.transcendence.blackhole.demo.allapp.AllAppActivity;
 import com.transcendence.blackhole.demo.didi.act.DidiMainActivity;
 import com.transcendence.blackhole.demo.handler.act.HandlerMainActivity;
+import com.transcendence.blackhole.demo.loopview.LoopViewActivity;
 import com.transcendence.blackhole.demo.lottery.act.LotteryOneActivity;
 import com.transcendence.blackhole.demo.lottery.act.LotteryThreeActivity;
 import com.transcendence.blackhole.demo.lottery.act.LotteryTwoActivity;
@@ -36,6 +37,7 @@ import com.transcendence.blackhole.ui.image.headcliper.act.HeadCliperMainActivit
 import com.transcendence.blackhole.ui.rv.mi.act.XiaoMIAct;
 import com.transcendence.blackhole.ui.scroll.ScrollLayoutTwoActivity;
 import com.transcendence.blackhole.ui.scroll.meituantop.act.MeiTuanMainActivity;
+import com.transcendence.blackhole.ui.scroll.personalscroll.act.PersonalScrollMainAct;
 import com.transcendence.blackhole.ui.scroll.pulltozoom.act.PullToZoomAct;
 import com.transcendence.blackhole.ui.scroll.xiaohuoshu.act.XiaohongshuActivity;
 import com.transcendence.blackhole.ui.toast.ToastActivity;
@@ -107,14 +109,15 @@ public interface AppConstantValue {
      */
     Class[] scrollIndex = {XiaohongshuActivity.class,RvMonitorActivity.class,
                             ScrollLayoutTwoActivity.class,
-                            MeiTuanMainActivity.class, PullToZoomAct.class};
+                            MeiTuanMainActivity.class, PullToZoomAct.class,
+                            PersonalScrollMainAct.class};
 
     /**
      * 7
      */
     Class[] otherIndex = {OverKeyBoardActivity.class,
                             GitHubContributionActivity.class, AllAppActivity.class, ZhihuBehaviorActivity.class,
-                            IosSegmentViewActivity.class, XiaoMIAct.class, DidiMainActivity.class};
+                            IosSegmentViewActivity.class, XiaoMIAct.class, DidiMainActivity.class, LoopViewActivity.class};
 
     Class[] voiceIndex = {};
 
