@@ -1,0 +1,10 @@
+apply plugin: 'com.android.library'
+apply from: '../basic.gradle'
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+
+    api rootProject.ext.dependencies.supportv4
+
+    implementation files('libs/weiboSDKCore_3.1.2.jar')
+}

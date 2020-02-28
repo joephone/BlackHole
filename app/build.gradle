@@ -4,11 +4,9 @@ apply from: "../basic.gradle"
 def config = rootProject.ext
 
 android {
-
     defaultConfig {
         applicationId "com.transcendence.blackhole"
     }
-
 }
 
 dependencies {

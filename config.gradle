@@ -6,6 +6,7 @@ ext {
     isWanApplication = false
     isMapApplication = false
     isMusicApplication = false
+    isWeiboApplication = true
 
 
     android = [
