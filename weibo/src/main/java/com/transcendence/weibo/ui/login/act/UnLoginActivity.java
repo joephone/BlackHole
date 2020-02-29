@@ -1,6 +1,7 @@
 package com.transcendence.weibo.ui.login.act;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
@@ -14,7 +15,11 @@ import android.widget.RelativeLayout;
 import com.sina.weibo.sdk.auth.Oauth2AccessToken;
 import com.transcendence.weibo.R;
 import com.transcendence.weibo.base.api.Constants;
-import com.transcendence.weibo.ui.home.fragment.HomeFragment;
+import com.transcendence.weibo.ui.login.fragment.UnLoginDiscoverFragment;
+import com.transcendence.weibo.ui.login.fragment.UnLoginHomeFragment;
+import com.transcendence.weibo.ui.login.fragment.UnLoginMessageFragment;
+import com.transcendence.weibo.ui.login.fragment.UnLoginProfileFragment;
+import com.transcendence.weibo.ui.webview.act.WebViewActivity;
 import com.transcendence.weibo.utils.ToastUtil;
 
 /**
@@ -30,10 +35,10 @@ public class UnLoginActivity extends AppCompatActivity {
 
     private int mCurrentIndex;
     private Context mContext;
-    private HomeFragment mHomeFragment;
-//    private MessageFragment mMessageFragment;
-//    private DiscoverFragment mDiscoverFragment;
-//    private ProfileFragment mProfileFragment;
+    private UnLoginHomeFragment mHomeFragment;
+    private UnLoginMessageFragment mMessageFragment;
+    private UnLoginDiscoverFragment mDiscoverFragment;
+    private UnLoginProfileFragment mProfileFragment;
 
 
     private FragmentManager mFragmentManager;
@@ -71,7 +76,7 @@ public class UnLoginActivity extends AppCompatActivity {
                 case HOME_FRAGMENT:
                     mHomeTab.setSelected(true);
                     if (mHomeFragment == null) {
-                        mHomeFragment = new HomeFragment();
+                        mHomeFragment = new UnLoginHomeFragment();
                         transaction.add(R.id.main_content_fl, mHomeFragment);
                     } else {
                         transaction.show(mHomeFragment);
@@ -80,33 +85,33 @@ public class UnLoginActivity extends AppCompatActivity {
                     break;
                 case MESSAGE_FRAGMENT:
                     mMessageTab.setSelected(true);
-//                    if (mMessageFragment == null) {
-//                        mMessageFragment = new MessageFragment();
-//                        transaction.add(R.id.main_content_fl, mMessageFragment);
-//                    } else {
-//                        transaction.show(mMessageFragment);
-//                    }
+                    if (mMessageFragment == null) {
+                        mMessageFragment = new UnLoginMessageFragment();
+                        transaction.add(R.id.main_content_fl, mMessageFragment);
+                    } else {
+                        transaction.show(mMessageFragment);
+                    }
                     mCurrentIndex = MESSAGE_FRAGMENT;
                     break;
 
                 case DISCOVERY_FRAGMENT:
                     mDiscoeryTab.setSelected(true);
-//                    if (mDiscoverFragment == null) {
-//                        mDiscoverFragment = new DiscoverFragment();
-//                        transaction.add(R.id.main_content_fl, mDiscoverFragment);
-//                    } else {
-//                        transaction.show(mDiscoverFragment);
-//                    }
+                    if (mDiscoverFragment == null) {
+                        mDiscoverFragment = new UnLoginDiscoverFragment();
+                        transaction.add(R.id.main_content_fl, mDiscoverFragment);
+                    } else {
+                        transaction.show(mDiscoverFragment);
+                    }
                     mCurrentIndex = DISCOVERY_FRAGMENT;
                     break;
                 case PROFILE_FRAGMENT:
                     mProfile.setSelected(true);
-//                    if (mProfileFragment == null) {
-//                        mProfileFragment = new ProfileFragment();
-//                        transaction.add(R.id.main_content_fl, mProfileFragment);
-//                    } else {
-//                        transaction.show(mProfileFragment);
-//                    }
+                    if (mProfileFragment == null) {
+                        mProfileFragment = new UnLoginProfileFragment();
+                        transaction.add(R.id.main_content_fl, mProfileFragment);
+                    } else {
+                        transaction.show(mProfileFragment);
+                    }
                     mCurrentIndex = PROFILE_FRAGMENT;
                     break;
             }
@@ -121,20 +126,20 @@ public class UnLoginActivity extends AppCompatActivity {
         if (mHomeFragment != null) {
             transaction.hide(mHomeFragment);
         }
-//        if (mMessageFragment != null) {
-//            transaction.hide(mMessageFragment);
-//        }
-//
-//        if (mDiscoverFragment != null) {
-//            transaction.hide(mDiscoverFragment);
-//        }
-//        if (mProfileFragment != null) {
-//            transaction.hide(mProfileFragment);
-//        }
-//        mHomeTab.setSelected(false);
-//        mMessageTab.setSelected(false);
-//        mDiscoeryTab.setSelected(false);
-//        mProfile.setSelected(false);
+        if (mMessageFragment != null) {
+            transaction.hide(mMessageFragment);
+        }
+
+        if (mDiscoverFragment != null) {
+            transaction.hide(mDiscoverFragment);
+        }
+        if (mProfileFragment != null) {
+            transaction.hide(mProfileFragment);
+        }
+        mHomeTab.setSelected(false);
+        mMessageTab.setSelected(false);
+        mDiscoeryTab.setSelected(false);
+        mProfile.setSelected(false);
     }
 
     private void setUpListener() {
@@ -178,9 +183,9 @@ public class UnLoginActivity extends AppCompatActivity {
                 + "&key_hash=" + Constants.AppSecret + (TextUtils.isEmpty(Constants.PackageName) ? "" : "&packagename=" + Constants.PackageName)
                 + "&display=mobile" + "&scope=" + Constants.SCOPE;
 
-//        Intent intent = new Intent(mContext, WebViewActivity.class);
-//        intent.putExtra("url", authurl);
-//        startActivity(intent);
-//        finish();
+        Intent intent = new Intent(mContext, WebViewActivity.class);
+        intent.putExtra("url", authurl);
+        startActivity(intent);
+        finish();
     }
 }

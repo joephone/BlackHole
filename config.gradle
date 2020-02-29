@@ -7,7 +7,7 @@ ext {
     isMapApplication = false
     isMusicApplication = false
     isWeiboApplication = true
-
+    isWeChatApplication = true
 
     android = [
             compileSdkVersion       : 28,

@@ -29,7 +29,7 @@ public class WeiboWelcomeActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_welcome_layout);
+        setContentView(R.layout.activity_welcome);
 
         if (AccessTokenKeeper.readAccessToken(this).isSessionValid()) {
             mStartIntent = new Intent(WeiboWelcomeActivity.this, WeiboMainActivity.class);

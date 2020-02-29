@@ -10,6 +10,7 @@ import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
+import com.transcendence.weibo.ui.login.act.BackgroundActivity;
 import com.transcendence.weibo.utils.SharedPreferencesUtil;
 import com.wenming.library.LogReport;
 import com.wenming.library.save.imp.CrashWriter;
@@ -75,16 +76,16 @@ public class WeiboApp extends Application implements Application.ActivityLifecyc
         }
     }
 
-//    public void recreateForNightMode() {
-//        for (Activity activity : mActivityList) {
-//            if (activity instanceof BackgroundActivity) {
-//                return;
-//            }
-//            if (!activity.isFinishing()) {
-//                activity.recreate();
-//            }
-//        }
-//    }
+    public void recreateForNightMode() {
+        for (Activity activity : mActivityList) {
+            if (activity instanceof BackgroundActivity) {
+                return;
+            }
+            if (!activity.isFinishing()) {
+                activity.recreate();
+            }
+        }
+    }
 
     @Override
     public void onActivityCreated(Activity activity, Bundle savedInstanceState) {

@@ -36,14 +36,20 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility config.compileOptions.sourceCompatibility
+        targetCompatibility config.compileOptions.targetCompatibility
+    }
+
 }
 
 
 
 dependencies {
-
-
     api fileTree(include: ['*.jar'], dir: 'libs')
+
+    //注解器
+//    annotationProcessor rootProject.ext.dependencies["router-compiler"]
 
     api config.dependencies.appcompatv7
     api config.dependencies.design
@@ -51,6 +57,7 @@ dependencies {
     api config.dependencies.constraintLayout
 
     api config.dependencies.gson
+    api config.dependencies.eventbus
 
 
     implementation project(':weiboSDK')
@@ -60,6 +67,6 @@ dependencies {
 
     implementation 'com.github.wenmingvs:LogReport:1.0.3'
 
-
+    implementation 'de.hdodenhof:circleimageview:2.0.0'
 
 }

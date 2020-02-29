@@ -8,6 +8,11 @@ import android.text.TextUtils;
 
 public interface Constants {
 
+    public static final String  Sina_App_Key ="2098724670";
+    public static final String  Sina_App_Secret = "29ec8b5887a91a6cc9b7ec4fb61266ef";
+    public static final String  Signature = "4fbeb93bdde0b10b724667ab5353957c";
+
+
     public static final String APP_KEY = "211160679";
     public static final String REDIRECT_URL = "http://oauth.weico.cc";
     public static final String SCOPE = "email,direct_messages_read,direct_messages_write,friendships_groups_read,friendships_groups_write,statuses_to_me_read,follow_app_official_microblog,invitation_write";

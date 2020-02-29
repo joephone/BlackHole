@@ -1,0 +1,56 @@
+def config = rootProject.ext
+
+if (config.isWeChatApplication) {
+    apply plugin: 'com.android.application'
+    apply from: '../basic.gradle'
+} else {
+    apply plugin: 'com.android.library'
+    apply from: '../basic.gradle'
+}
+
+android {
+    defaultConfig {
+        if (config.isWeChatApplication){
+            //组件模式下设置applicationId
+            applicationId "com.transcendence.wechat"
+        }
+
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+
+    sourceSets {
+        main {
+            if (config.isWeChatApplication) {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/java/com/transcendence/wechat/base/AndroidManifest.xml'
+            }
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility config.compileOptions.sourceCompatibility
+        targetCompatibility config.compileOptions.targetCompatibility
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    api config.dependencies.appcompatv7
+    api config.dependencies.design
+    api config.dependencies.supportv4
+    api config.dependencies.constraintLayout
+
+
+    implementation 'com.android.support:multidex:1.0.1'
+
+}
