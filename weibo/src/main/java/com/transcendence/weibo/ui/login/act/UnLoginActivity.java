@@ -20,7 +20,6 @@ import com.transcendence.weibo.ui.login.fragment.UnLoginHomeFragment;
 import com.transcendence.weibo.ui.login.fragment.UnLoginMessageFragment;
 import com.transcendence.weibo.ui.login.fragment.UnLoginProfileFragment;
 import com.transcendence.weibo.ui.webview.act.WebViewActivity;
-import com.transcendence.weibo.utils.ToastUtil;
 
 /**
  * Created by wenmingvs on 16/5/9.
@@ -159,7 +158,9 @@ public class UnLoginActivity extends AppCompatActivity {
         mPostTab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToastUtil.showShort(mContext, "请先登录");
+                Intent intent = new Intent(UnLoginActivity.this, PostSwipeActivity.class);
+                startActivity(intent);
+//                ToastUtil.showShort(mContext, "请先登录");
             }
         });
         mDiscoeryTab.setOnClickListener(new View.OnClickListener() {

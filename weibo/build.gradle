@@ -69,4 +69,6 @@ dependencies {
 
     implementation 'de.hdodenhof:circleimageview:2.0.0'
 
+    implementation 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+
 }

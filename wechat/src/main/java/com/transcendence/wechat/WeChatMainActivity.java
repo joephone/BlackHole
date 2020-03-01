@@ -8,6 +8,6 @@ public class WeChatMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(transcendence.wechat.R.layout.activity_wechat_main);
+        setContentView(R.layout.activity_wechat_main);
     }
 }
