@@ -1,4 +1,4 @@
-package com.transcendence.wan.search.utils;
+package com.transcendence.wan.module.search.utils;
 
 import android.text.TextUtils;
 

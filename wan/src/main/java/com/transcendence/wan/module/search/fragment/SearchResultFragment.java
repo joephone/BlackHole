@@ -1,4 +1,4 @@
-package com.transcendence.wan.search.fragment;
+package com.transcendence.wan.module.search.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

@@ -1,6 +1,6 @@
-package com.transcendence.wan.search.presenter;
+package com.transcendence.wan.module.search.presenter;
 
-import com.transcendence.wan.search.utils.SearchHistoryUtils;
+import com.transcendence.wan.module.search.utils.SearchHistoryUtils;
 
 import java.util.List;
 

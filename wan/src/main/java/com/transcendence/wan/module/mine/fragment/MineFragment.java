@@ -1,6 +1,5 @@
 package com.transcendence.wan.module.mine.fragment;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -9,9 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.transcendence.wan.R;
-import com.transcendence.wan.module.main.act.WanMainActivity;
+import com.transcendence.wan.utils.UserUtils;
 
 /**
  * @author Joephone on 2019/12/17 14:41
@@ -21,11 +21,13 @@ import com.transcendence.wan.module.main.act.WanMainActivity;
  * @EditionHistory
  */
 
-public class MineFragment extends Fragment {
+public class MineFragment extends Fragment implements View.OnClickListener{
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_SHOW_TEXT = "text";
     private String mContentText;
     private ImageView ivLeft,ivRight;
+
+    private RelativeLayout rlUserInfo;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,22 +52,15 @@ public class MineFragment extends Fragment {
     }
 
     private void initView(View rootView) {
-        ivLeft = rootView.findViewById(R.id.ivLeft);
         ivRight = rootView.findViewById(R.id.ivRight);
-        ivLeft.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Activity activity = getActivity();
-                if(activity instanceof WanMainActivity){
-                }
-            }
-        });
         ivRight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
+        rlUserInfo = rootView.findViewById(R.id.rlUserInfo);
+        rlUserInfo.setOnClickListener(this);
     }
 
 
@@ -84,4 +79,12 @@ public class MineFragment extends Fragment {
         return fragment;
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.rlUserInfo:
+                UserUtils.getInstance().doIfLogin(getContext());
+                break;
+        }
+    }
 }

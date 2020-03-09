@@ -5,10 +5,10 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 
 import com.transcendence.blackhole.utils.StatusBarUtils;
 import com.transcendence.wan.R;
+import com.transcendence.wan.core.mvp.WanMvpActivity;
 
 /**
  * @author Joephone on 2019/9/5 16:16
@@ -18,7 +18,7 @@ import com.transcendence.wan.R;
  * @EditionHistory
  */
 
-public abstract class WanBaseActivity extends AppCompatActivity {
+public abstract class WanBaseActivity extends WanMvpActivity {
 
     protected WanBaseActivity mActivity;
 

@@ -43,4 +43,7 @@
         <item name="msv_viewState">content</item>
     </style>
 
+    <integer name="swipeback_activity_duration">300</integer>
+
+
 </resources>

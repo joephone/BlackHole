@@ -1,7 +1,5 @@
-package com.transcendence.wan.search.act;
+package com.transcendence.wan.module.search.act;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -9,8 +7,8 @@ import android.widget.FrameLayout;
 
 import com.transcendence.wan.R;
 import com.transcendence.wan.base.act.WanBaseActivity;
-import com.transcendence.wan.search.fragment.SearchHistoryFragment;
-import com.transcendence.wan.search.fragment.SearchResultFragment;
+import com.transcendence.wan.module.search.fragment.SearchHistoryFragment;
+import com.transcendence.wan.module.search.fragment.SearchResultFragment;
 
 /**
  * @Author Joephone on 2019/9/6 14:42
@@ -28,10 +26,12 @@ public class WanSearchActivity extends WanBaseActivity {
     private FragmentManager mFm;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wan_search);
+    protected int getLayoutId() {
+        return R.layout.activity_wan_search;
+    }
 
+    @Override
+    protected void initView() {
         mFl = findViewById(R.id.fl);
         mFm = getSupportFragmentManager();
 
@@ -55,6 +55,12 @@ public class WanSearchActivity extends WanBaseActivity {
         t.show(mSearchHistoryFragment);
         t.hide(mSearchResultFragment);
         t.commit();
+    }
+
+    @Override
+    protected void loadData() {
 
     }
+
+
 }

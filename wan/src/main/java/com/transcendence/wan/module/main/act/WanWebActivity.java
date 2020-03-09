@@ -1,18 +1,6 @@
 package com.transcendence.wan.module.main.act;
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.webkit.WebView;
-import android.widget.ImageView;
-
-import com.transcendence.wan.R;
-import com.transcendence.wan.base.act.WanBaseActivity;
-import com.transcendence.wan.module.home.model.BannerBean;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
+import android.support.v7.app.AppCompatActivity;
 
 /**
  * @author Joephone on 2019/12/17 18:24
@@ -22,7 +10,7 @@ import butterknife.ButterKnife;
  * @EditionHistory
  */
 
-public class WanWebActivity extends WanBaseActivity {
+public class WanWebActivity extends AppCompatActivity {
 
 //    @BindView(R.id.webView)
 //    WebView webView;

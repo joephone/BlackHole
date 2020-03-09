@@ -29,6 +29,7 @@ import com.transcendence.blackhole.ui.base.act.LockerHomeActivity;
 import com.transcendence.blackhole.ui.base.act.RetrofitIntroActivity;
 import com.transcendence.blackhole.ui.base.act.ScreenKeyDownActivity;
 import com.transcendence.blackhole.ui.base.act.TelephoneInfoActivity;
+import com.transcendence.blackhole.ui.base.act.TouchEventActivity;
 import com.transcendence.blackhole.ui.gallery.act.JGalleryMainActivity;
 import com.transcendence.blackhole.ui.gallery.act.ZgalleryMainActivity;
 import com.transcendence.blackhole.ui.image.act.ImageLoadActivity;
@@ -80,7 +81,7 @@ public interface AppConstantValue {
      * 1
      */
     Class[] baseIndex = {LifeCycleActivity.class, LaunchModeInfoActivity.class,ScreenKeyDownActivity.class,LockerHomeActivity.class,
-            TelephoneInfoActivity.class, HandlerMainActivity.class, FirstEventActivity.class};
+            TelephoneInfoActivity.class, HandlerMainActivity.class, FirstEventActivity.class,TouchEventActivity.class};
 
     /**
      * 2

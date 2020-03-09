@@ -204,7 +204,10 @@
             android:name=".ui.base.act.RetrofitIntroActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
+            <!-- 监听滑动手势 -->
+        <activity android:name=".ui.base.act.TouchEventActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
 
 
 
@@ -415,6 +418,7 @@
             android:name=".ui.rv.mi.act.XiaoMIAct"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
+
 
 
         <!-- 序列8 地图  -->

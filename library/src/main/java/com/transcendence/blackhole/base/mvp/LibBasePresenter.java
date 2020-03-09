@@ -12,17 +12,17 @@ import java.lang.ref.WeakReference;
  * @EditionHistory
  */
 
-public class LibBasePresenter<T> {
+public class LibBasePresenter<V> {
 
     /**
      * 弱引用
      */
-    protected WeakReference<T> mViewWeakRef;
+    protected WeakReference<V> mViewWeakRef;
 
     /**
      * 进行绑定
      */
-    public void onAttach(T view){
+    public void onAttach(V view){
         L.d("onAttach");
         mViewWeakRef = new WeakReference<>(view);
     }

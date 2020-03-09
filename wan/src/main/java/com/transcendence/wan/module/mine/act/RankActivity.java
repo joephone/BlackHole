@@ -2,8 +2,6 @@ package com.transcendence.wan.module.mine.act;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 
 import com.transcendence.wan.base.act.WanBaseActivity;
 
@@ -18,10 +16,19 @@ import com.transcendence.wan.base.act.WanBaseActivity;
 public class RankActivity extends WanBaseActivity {
 
 
+    @Override
+    protected int getLayoutId() {
+        return 0;
+    }
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void initView() {
+
+    }
+
+    @Override
+    protected void loadData() {
+
     }
 
 

@@ -16,7 +16,7 @@
             android:screenOrientation="portrait"
             />
         <activity
-            android:name=".search.act.WanSearchActivity"
+            android:name=".module.search.act.WanSearchActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
 

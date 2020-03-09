@@ -6,6 +6,9 @@ if (rootProject.ext.isWanApplication) {
     apply from: '../basic.gradle'
 }
 
+
+def config = rootProject.ext
+
 android {
     defaultConfig {
         if (rootProject.ext.isWanApplication){
@@ -39,14 +42,23 @@ dependencies {
     //注解器
     annotationProcessor rootProject.ext.dependencies["router-compiler"]
 
-    api rootProject.ext.dependencies.actionBarEx
-    api rootProject.ext.dependencies.materialProgressBar
+    api config.dependencies.actionBarEx
+    api config.dependencies.materialProgressBar
+    api config.dependencies.appcompatv7
+    api config.dependencies.design
+    api config.dependencies.supportv4
+
+    api config.dependencies.eventbus
 
     annotationProcessor rootProject.ext.dependencies.butterknifeCompiler
 
     implementation 'net.soulwolf.widget:ratiolayout:1.0.0'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
+    implementation  'com.github.goweii:RxHttp:2.2.9'
 
     implementation project(':library')
 
 
+    //Awesome 项目引用的库
 }

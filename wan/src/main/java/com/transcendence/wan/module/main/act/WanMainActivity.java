@@ -1,6 +1,5 @@
 package com.transcendence.wan.module.main.act;
 
-import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -19,7 +18,6 @@ import com.transcendence.wan.module.home.fragment.MainFragment;
 @Route(path = ARouterController.WAN_MAIN)
 public class WanMainActivity extends WanBaseActivity {
 
-
     private ViewPager mVp;
 
     /**
@@ -27,20 +25,25 @@ public class WanMainActivity extends WanBaseActivity {
      */
     private GoweiiFragmentPagerAdapter adapter;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wan_main);
 
-        initView();
+
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_wan_main;
+    }
+
+    @Override
+    protected void initView() {
+        ARouterUtils.injectActivity(mActivity);
+
+        mVp = findViewById(R.id.vp);
         initVP();
     }
 
+    @Override
+    protected void loadData() {
 
-
-    private void initView() {
-        mVp = findViewById(R.id.vp);
-        ARouterUtils.injectActivity(this);
     }
 
 
@@ -59,4 +62,7 @@ public class WanMainActivity extends WanBaseActivity {
     public void slideToDama(){
         mVp.setCurrentItem(0);
     }
+
+
+
 }

@@ -15,7 +15,6 @@ import java.io.Serializable;
 
 public class WanBaseBean implements Serializable {
 
-
     public String toJson() {
         return new Gson().toJson(this);
     }
