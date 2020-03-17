@@ -34,18 +34,7 @@ public class Global {
 
 
     public static int[] mLauncherIds = new int[]{
-            R.mipmap.bg_launcher_animation,
-            R.mipmap.bg_launcher_bieyoudongtian,
-            R.mipmap.beauty01,
-            R.mipmap.beauty02,
-            R.mipmap.beauty03,
-            R.mipmap.beauty04,
-            R.mipmap.beauty05,
-            R.mipmap.beauty06,
-            R.mipmap.beauty07,
-            R.mipmap.beauty08,
-            R.mipmap.beauty09,
-            R.mipmap.beauty10,};
+            R.drawable.ic_life_cycle,};
 
 
     public final class PUBLIC_INTENT_KEY {

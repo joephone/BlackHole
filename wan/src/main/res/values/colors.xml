@@ -37,8 +37,8 @@
 
 
 
-    <!--通用颜色-->
-    <color name="main">#4282f4</color>
+    <!--通用颜色  #4282f4-->
+    <color name="main">@color/colorTheme</color>
     <color name="assist">#3cdc86</color>
     <color name="accent">#f86734</color>
     <color name="transparent">#00000000</color>
@@ -71,5 +71,11 @@
     <color name="text_invert">#ffffff</color>
     <color name="text_invert_alpha">#88ffffff</color>
     <color name="text_on_main">#ffffff</color>
+
+
+
+    <color name="ripple_dark">#11000000</color>
+    <color name="ripple_light">#11ffffff</color>
+
 
 </resources>

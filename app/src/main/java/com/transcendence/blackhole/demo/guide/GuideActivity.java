@@ -1,5 +1,6 @@
 package com.transcendence.blackhole.demo.guide;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.PagerAdapter;
@@ -126,7 +127,9 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void gotoLoginActivity() {
-//        startActivity(IndexActivity.class);
+        Intent intent = new Intent(GuideActivity.this,IndexActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 

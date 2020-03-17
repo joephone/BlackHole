@@ -55,7 +55,7 @@
 
 
     <application
-        android:name=".base.app.AppAplication"
+        android:name=".base.app.ApbApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_ten"
         android:label="@string/app_name"
@@ -63,7 +63,7 @@
         android:supportsRtl="true"
         android:theme="@style/NoTitleAppTheme">
         <activity
-            android:name=".index.IndexActivity"
+            android:name=".base.LauncherActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -72,7 +72,8 @@
         </activity>
 
         <activity
-            android:name=".base.LauncherActivity"
+
+            android:name=".index.IndexActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             />
@@ -141,24 +142,17 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
             <!-- 自动滑动展示页 -->
-        <activity
-            android:name=".ui.widget.custom.AutoScrollActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
-            <!-- Lf 做的滑动窗口  -->
 
+        <!-- Lf 做的滑动窗口  -->
         <activity
             android:name=".ui.scroll.ScrollLayoutTwoActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
-
-
         <activity
             android:name=".ui.toast.ToastActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
 
         <!-- apk bus top frame -->
         <activity
@@ -322,11 +316,7 @@
             android:name=".ui.scroll.xiaohuoshu.act.XiaohongshuActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
-            <!-- Rv Monitor -->
-        <activity
-            android:name=".demo.rvmonitor.act.RvMonitorActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
+
             <!--  仿美团滑动layout  -->
         <activity
             android:name=".ui.scroll.meituantop.act.MeiTuanMainActivity"
@@ -337,18 +327,6 @@
             android:name=".ui.scroll.pulltozoom.act.PullToZoomAct"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
-        <!--  个人中心可拉伸背景  -->
-        <activity
-            android:name=".ui.scroll.personalscroll.act.PersonalScrollMainAct"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.scroll.personalscroll.act.PersonalScrollStretchViewActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.scroll.personalscroll.act.PersonalScrollPulldownViewActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
 
 
 
@@ -384,18 +362,18 @@
         <activity
             android:name=".demo.translationbehavior.act.ZhihuBehaviorActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait"/>
             <!--  打车 -->
         <activity
             android:name=".demo.didi.act.DidiMainActivity"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait"
-            />
-            <!--  选择器 -->
-        <activity android:name=".demo.loopview.LoopViewActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
+            <!--  雷达 -->
+        <activity
+            android:name=".demo.scan.act.MengJianNanActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
 
         <!-- 序列   基础  handler -->
         <activity
@@ -413,12 +391,13 @@
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
+
+
             <!-- mi -->
         <activity
             android:name=".ui.rv.mi.act.XiaoMIAct"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
-
 
 
         <!-- 序列8 地图  -->

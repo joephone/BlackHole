@@ -5,6 +5,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.hjq.toast.ToastUtils;
 import com.transcendence.blackhole.R;
 import com.transcendence.blackhole.arouter.ARouterUtils;
 import com.transcendence.blackhole.base.AppConstantValue;
@@ -30,8 +31,11 @@ public class IndexActivity extends TitleBarActivity implements AdapterView.OnIte
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         L.d("position--"+position);
+        if(position > AppConstantValue.mainIndex.length){
+            ToastUtils.show("暂未开放");
+            return;
+        }
         ARouterUtils.navigation(AppConstantValue.mainIndex[position]);
-
     }
 
 

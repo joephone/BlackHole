@@ -27,18 +27,14 @@
         <item>1 开发基础</item>
         <item>2 图片序列</item>
         <item>3 抽奖</item>
-        <item>4 跑马灯序列</item>
-        <item>5 Mvp序列</item>
-        <item>6 滑动序列</item>
-        <item>7 其他序列</item>
-        <item>8 Amap序列</item>
-        <item>9 Video序列</item>
-        <item>鸣谢</item>
+        <item>4 Mvp序列</item>
+        <item>5 滑动序列</item>
+        <item>6 其他序列</item>
+        <item>7 Video序列</item>
         <item>Toast</item>
-        <item>Retrofit</item>
     </string-array>
 
-    <!-- index 1-->
+    <!-- index 1  <item>鸣谢</item> -->
     <string-array name="base_index_item">
         <item>Activity的生命周期</item>
         <item>启动模式</item>
@@ -48,6 +44,7 @@
         <item>什么是Handler</item>
         <item>第一事件</item>
         <item>监听滑动手势</item>
+        <item>Retrofit介绍</item>
     </string-array>
 
     <!-- index 2-->
@@ -67,30 +64,22 @@
     </string-array>
 
     <!-- index 4-->
-    <string-array name="marquee_index_item">
-        <item>跑马灯1</item>
-        <item>跑马灯2</item>
-        <item>跑马灯3</item>
-    </string-array>
-
-    <!-- index 5-->
     <string-array name="mvp_index_item">
         <item>MvpLogin</item>
         <item>MvpBeautyRv</item>
     </string-array>
 
-    <!-- index 6-->
+    <!-- index 5-->
     <string-array name="scroll_index_item">
         <item>小红书</item>
-        <item>RecyclerView监听滑动</item>
         <item>仿地图上拉控件</item>
         <item>美团锚定控件</item>
         <item>PullToZoom</item>
-        <item>个人中心可拉伸背景</item>
     </string-array>
 
-    <!-- index 7-->
+    <!-- index 6-->
     <string-array name="other_index_item">
+        <item>0 跑马灯序列</item>
         <item>解决软键盘遮挡输入框</item>
         <item>仿GitHub的提交活跃表格</item>
         <item>全APP</item>
@@ -98,7 +87,15 @@
         <item>Segment</item>
         <item>XiaoMI</item>
         <item>滴滴Splash</item>
-        <item>日期选择器</item>
+        <item>全屏雷达扫描</item>
+    </string-array>
+
+
+    <!-- index 6.1-->
+    <string-array name="marquee_index_item">
+        <item>跑马灯1</item>
+        <item>跑马灯2</item>
+        <item>跑马灯3</item>
     </string-array>
 
 

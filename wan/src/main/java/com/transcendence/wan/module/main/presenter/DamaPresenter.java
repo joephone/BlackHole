@@ -1,6 +1,6 @@
 package com.transcendence.wan.module.main.presenter;
 
-import com.transcendence.wan.module.main.view.DamaView;
+import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
 
 /**
  * @author Joephone on 2019/12/11 16:13
@@ -10,7 +10,7 @@ import com.transcendence.wan.module.main.view.DamaView;
  * @EditionHistory
  */
 
-public class DamaPresenter extends WanBasePresenter<DamaView>{
+public class DamaPresenter extends WanBasePresenter {
 
 
 

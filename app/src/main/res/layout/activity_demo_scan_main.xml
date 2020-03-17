@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.transcendence.blackhole.demo.scan.view.MengJianNanScanView
+        android:id="@+id/scan"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="70dp"/>
+    <Button
+        android:id="@+id/start"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:text="Start"
+        android:textSize="30sp"/>
+    <Button
+        android:id="@+id/stop"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:text="Stop"
+        android:layout_alignParentRight="true"
+        android:textSize="30sp"/>
+</RelativeLayout>

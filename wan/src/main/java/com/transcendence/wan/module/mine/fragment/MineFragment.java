@@ -4,14 +4,16 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.NestedScrollView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.transcendence.blackhole.utils.L;
 import com.transcendence.wan.R;
-import com.transcendence.wan.utils.UserUtils;
+import com.transcendence.wan.module.mine.act.SettingActivity;
 
 /**
  * @author Joephone on 2019/12/17 14:41
@@ -27,6 +29,7 @@ public class MineFragment extends Fragment implements View.OnClickListener{
     private String mContentText;
     private ImageView ivLeft,ivRight;
 
+    private NestedScrollView nsv;
     private RelativeLayout rlUserInfo;
 
     @Override
@@ -53,14 +56,32 @@ public class MineFragment extends Fragment implements View.OnClickListener{
 
     private void initView(View rootView) {
         ivRight = rootView.findViewById(R.id.ivRight);
+        rlUserInfo = rootView.findViewById(R.id.rlUserInfo);
+        rlUserInfo.setOnClickListener(this);
+        nsv = rootView.findViewById(R.id.nsv);
+
+        init();
+    }
+
+    private void init() {
         ivRight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
-        rlUserInfo = rootView.findViewById(R.id.rlUserInfo);
-        rlUserInfo.setOnClickListener(this);
+        nsv.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
+
+            @Override
+            public void onScrollChange(NestedScrollView nestedScrollView, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                L.d("scrollY-"+scrollY);
+                L.d("oldScrollY-"+oldScrollY);
+                setIvBlurHeight(oldScrollY);
+            }
+        });
+    }
+
+    private void setIvBlurHeight(int height) {
     }
 
 
@@ -83,7 +104,9 @@ public class MineFragment extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.rlUserInfo:
-                UserUtils.getInstance().doIfLogin(getContext());
+//                UserUtils.getInstance().doIfLogin(getContext());
+
+                SettingActivity.start(getActivity());
                 break;
         }
     }

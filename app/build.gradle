@@ -25,4 +25,6 @@ dependencies {
 
     //注解器
     annotationProcessor config.dependencies["router-compiler"]
+
+
 }
