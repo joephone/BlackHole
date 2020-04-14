@@ -93,7 +93,7 @@
         android:clickable="true"
         app:leftText="画版"
         app:rightText="右"
-        app:leftIcon="@mipmap/ic_swan"
+        app:leftIcon="@mipmap/ic_app_swan"
         />
 
     <com.transcendence.blackhole.widget.custom.StandardLayout
@@ -104,7 +104,7 @@
         android:clickable="true"
         app:leftText="标准栏"
         app:rightText="右"
-        app:leftIcon="@mipmap/ic_swan"
+        app:leftIcon="@mipmap/ic_app_swan"
         />
 
     <com.transcendence.blackhole.widget.custom.StandardLayout

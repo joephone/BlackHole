@@ -3,6 +3,9 @@ package com.transcendence.blackhole.base.activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.Paint;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -11,14 +14,12 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
 
-import com.hjq.toast.ToastUtils;
 import com.transcendence.blackhole.utils.AppUtils;
 import com.transcendence.blackhole.utils.L;
 import com.transcendence.blackhole.utils.permission.PermissionPool;
@@ -258,6 +259,17 @@ public abstract class BaseActivity extends AppCompatActivity {
 //            im.hideSoftInputFromWindow(token, InputMethodManager.HIDE_NOT_ALWAYS);
             AppUtils.hideInputMethod(BaseActivity.this);
         }
+    }
+
+    /**
+     * 实现界面黑白化配置
+     */
+    protected void setLayerType(){
+        Paint paint = new Paint();
+        ColorMatrix cm = new ColorMatrix();
+        cm.setSaturation(0);
+        paint.setColorFilter(new ColorMatrixColorFilter(cm));
+        getWindow().getDecorView().setLayerType(View.LAYER_TYPE_HARDWARE,paint);
     }
 
 

@@ -17,7 +17,7 @@ import java.util.List;
  * @EditionHistory
  */
 
-public class BeautyListPresenter <T extends IBeautyListView> extends LibBasePresenter<T> {
+public class BeautyListPresenter <V extends IBeautyListView> extends LibBasePresenter<V> {
     //1 左手  view 层引用
     IBeautyListView iBeautyView;    //强引用
     //2 右手   model层引用
@@ -46,9 +46,22 @@ public class BeautyListPresenter <T extends IBeautyListView> extends LibBasePres
                     public void onComplete(List<Beauty> beautyList) {
                         L.d("onComplete");
                         if (mViewWeakRef.get() != null) {
-                            L.d("onShowBeautyList"+beautyList.size());
                             mViewWeakRef.get().onShowBeautyList(beautyList);
                             mViewWeakRef.get().onDismissLoading();
+//                            new Thread(new Runnable() {
+//                                @Override
+//                                public void run() {
+//                                    try {
+////                                        Thread.sleep(2000);
+//                                        L.d("onShowBeautyList"+beautyList.size());
+//
+//                                    } catch (Exception e) {
+//                                        e.printStackTrace();
+//                                    }
+//
+//                                }
+//                            }).start();
+
                         }
                     }
 

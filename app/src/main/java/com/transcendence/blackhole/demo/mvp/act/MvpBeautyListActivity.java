@@ -2,6 +2,8 @@ package com.transcendence.blackhole.demo.mvp.act;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.TextView;
 
 import com.hjq.toast.ToastUtils;
 import com.transcendence.blackhole.R;
@@ -25,6 +27,8 @@ import java.util.List;
 public class MvpBeautyListActivity extends BaseMvpActivity<IBeautyListView,BeautyListPresenter<IBeautyListView>> implements IBeautyListView {
 
     RecyclerView mRv;
+    TextView mTv;
+    String test;
 
     @Override
     public int getLayoutId() {
@@ -36,7 +40,14 @@ public class MvpBeautyListActivity extends BaseMvpActivity<IBeautyListView,Beaut
     public void init() {
         setTitle("老张的期待");
         mRv = findViewById(R.id.rv);
-        basePresenter.presenter();
+        mTv = findViewById(R.id.tv);
+        mTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                basePresenter.presenter();
+            }
+        });
+
     }
 
 
@@ -81,4 +92,6 @@ public class MvpBeautyListActivity extends BaseMvpActivity<IBeautyListView,Beaut
     protected void onDestroy() {
         super.onDestroy();
     }
+
+
 }

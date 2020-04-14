@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/bg_public"
+    android:padding="@dimen/all_width_height"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_marginTop="@dimen/standard_padding"
+        android:gravity="center"
+        android:text="@string/down_load"
+        style="@style/standardGreenButton"
+        />
+
+
+    <ImageView
+        android:id="@+id/ivImg"
+        android:layout_marginTop="@dimen/standard_padding"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+
+
+</LinearLayout>

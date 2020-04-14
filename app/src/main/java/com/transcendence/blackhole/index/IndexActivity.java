@@ -1,9 +1,11 @@
 package com.transcendence.blackhole.index;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.graphics.PointF;
+import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+import android.widget.ImageView;
 
 import com.hjq.toast.ToastUtils;
 import com.transcendence.blackhole.R;
@@ -11,8 +13,9 @@ import com.transcendence.blackhole.arouter.ARouterUtils;
 import com.transcendence.blackhole.base.AppConstantValue;
 import com.transcendence.blackhole.base.activity.TitleBarActivity;
 import com.transcendence.blackhole.utils.L;
-import com.transcendence.blackhole.utils.StringUtils;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,40 +25,120 @@ import java.util.List;
  */
 
 
-public class IndexActivity extends TitleBarActivity implements AdapterView.OnItemClickListener {
-    private ArrayAdapter<String> adapter;
-    private ListView lvIndex;
-    private List<String> items;
+public class IndexActivity extends TitleBarActivity implements View.OnClickListener {
+    private ImageView mIvAdd,mIvMap,mIvWan,mIvApp,mIvGreenStar,mIvMusic,mIvSwan,mIvDou,mIvChe;
+    private List<ImageView> ivList = new ArrayList<>();
 
 
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        L.d("position--"+position);
-        if(position > AppConstantValue.mainIndex.length){
-            ToastUtils.show("暂未开放");
-            return;
-        }
-        ARouterUtils.navigation(AppConstantValue.mainIndex[position]);
-    }
-
-
+    private final int radius2 = 300;
 
     @Override
     public void init() {
         setTitle(false,"序列");
-        lvIndex = findViewById(R.id.lvIndex);
+        mIvAdd = findViewById(R.id.ivAdd);
+        mIvMap = findViewById(R.id.ivMap);
+        mIvWan = findViewById(R.id.ivWan);
+        mIvApp = findViewById(R.id.ivApp);
+        mIvGreenStar = findViewById(R.id.ivGreenStar);
+        mIvMusic = findViewById(R.id.ivMusic);
+        mIvSwan = findViewById(R.id.ivSwan);
+        mIvDou = findViewById(R.id.ivDou);
+        mIvChe = findViewById(R.id.ivChe);
 
-        List<String> items = StringUtils.getStringList(mActivity,R.array.index_item);
-        adapter = new ArrayAdapter<>(mActivity,
-                android.R.layout.simple_list_item_1, items);
-        lvIndex.setAdapter(adapter);
-        lvIndex.setOnItemClickListener(this);
+        ivList.add(mIvApp);
+        ivList.add(mIvWan);
+        ivList.add(mIvMap);
+        ivList.add(mIvGreenStar);
+        ivList.add(mIvMusic);
+        ivList.add(mIvSwan);
+        ivList.add(mIvDou);
+        ivList.add(mIvChe);
 
+        for (int i = 0; i < ivList.size(); i++) {
+            ivList.get(i).setOnClickListener(this);
+        }
+
+
+        showCircleMenu();
+    }
+
+    private void showCircleMenu() {
+        for (int i = 0; i < ivList.size(); i++) {
+            final int ang = i;
+
+            PointF point = new PointF();
+            int avgAngle = (360 / (ivList.size() ));
+            int angle = avgAngle * ang;
+            L.d("angle=" + angle);
+            point.x = (float) Math.cos(angle * (Math.PI / 180)) * radius2;
+            point.y = (float) Math.sin(angle * (Math.PI / 180)) * radius2;
+            L.d(point.toString());
+
+
+
+            ObjectAnimator objectAnimatorX = ObjectAnimator.ofFloat(ivList.get(ang), "translationX", 0, point.x);
+            ObjectAnimator objectAnimatorY = ObjectAnimator.ofFloat(ivList.get(ang), "translationY", 0, point.y);
+
+            AnimatorSet animatorSet = new AnimatorSet();
+            animatorSet.setDuration(1000);
+            animatorSet.play(objectAnimatorX).with(objectAnimatorY);
+
+            animatorSet.start();
+
+            SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Log.i("CircleMenu","time-----"+dateformat.format(System.currentTimeMillis()));
+        }
+    }
+
+    private void closeCircleMenu() {
+        for (int i = 0; i < ivList.size(); i++) {
+            PointF point = new PointF();
+            int avgAngle = (360 / (ivList.size() ));
+            int angle = avgAngle * i;
+            L.d( "angle=" + angle);
+            point.x = (float) Math.cos(angle * (Math.PI / 180)) * radius2;
+            point.y = (float) Math.sin(angle * (Math.PI / 180)) * radius2;
+
+            L.d( point.toString());
+            ObjectAnimator objectAnimatorX = ObjectAnimator.ofFloat(ivList.get(i), "translationX", point.x, 0);
+            ObjectAnimator objectAnimatorY = ObjectAnimator.ofFloat(ivList.get(i), "translationY", point.y, 0);
+            AnimatorSet animatorSet = new AnimatorSet();
+            animatorSet.setDuration(500);
+            animatorSet.play(objectAnimatorX).with(objectAnimatorY);
+            animatorSet.start();
+        }
     }
 
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_index;
+        return R.layout.activity_arouter;
     }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == mIvAdd.getId()) {
+//            Boolean isShowing = (Boolean) iv11.getTag();
+//            if (null == isShowing || isShowing == false) {
+//                iv11.setTag(true);
+//            } else {
+//                iv11.setTag(false);
+//                ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(iv11, "rotation", 45, 0);
+//                objectAnimator.setDuration(500);
+//                objectAnimator.start();
+//                closeCircleMenu();
+//            }
+        } else {
+            L.d("position--"+ivList.indexOf(v));
+            if(ivList.indexOf(v) >= AppConstantValue.mainIndex.length){
+                ToastUtils.show("暂未开放");
+                return;
+            }
+            ARouterUtils.navigation(AppConstantValue.mainIndex[ivList.indexOf(v)]);
+//            Toast.makeText(this, "点击了第" + (imageViews.indexOf(v) == -1 ? ivList.indexOf(v) : imageViews.indexOf(v)) + "个", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+
 }

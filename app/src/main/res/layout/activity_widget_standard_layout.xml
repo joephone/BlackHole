@@ -16,6 +16,6 @@
         android:layout_marginTop="@dimen/standard_padding"
         android:clickable="true"
         app:leftText="左"
-        app:leftIcon="@mipmap/ic_swan"
+        app:leftIcon="@mipmap/ic_app_swan"
         />
 </LinearLayout>

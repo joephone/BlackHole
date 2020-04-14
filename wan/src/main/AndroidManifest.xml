@@ -9,9 +9,9 @@
     <application
         android:name=".base.app.WanApp"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_wan"
+        android:icon="@mipmap/ic_app_wan"
         android:label="@string/app_wan_name"
-        android:roundIcon="@mipmap/ic_wan"
+        android:roundIcon="@mipmap/ic_app_wan"
         android:supportsRtl="true"
         android:theme="@style/WanAppTheme">
 

@@ -6,6 +6,7 @@ ext {
     isWanApplication = true
     isMapApplication = false
     isMusicApplication = false
+    isNewsApplication = true
     isWeiboApplication = true
     isWeChatApplication = true
 
@@ -77,7 +78,12 @@ ext {
             //http
             retrofit                        : "com.squareup.retrofit2:retrofit:$version.retrofit",
             converterScalars                : "com.squareup.retrofit2:converter-scalars:$version.retrofit",
+            converterGson                   : "com.squareup.retrofit2:converter-gson:$version.retrofit",
+            retrofit2rxjava                 : "com.squareup.retrofit2:adapter-rxjava:$version.retrofit",
             okhttp                          : "com.squareup.okhttp3:okhttp:$version.okhttp",
+
+            //rx
+            reactivex                       : "io.reactivex:rxandroid:1.2.0",
 
 
             //日志

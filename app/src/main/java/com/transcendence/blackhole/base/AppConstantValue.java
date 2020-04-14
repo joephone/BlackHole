@@ -2,6 +2,7 @@ package com.transcendence.blackhole.base;
 
 import com.transcendence.blackhole.arouter.ARouterController;
 import com.transcendence.blackhole.demo.allapp.AllAppActivity;
+import com.transcendence.blackhole.demo.calc.act.XiaoMiCalcActivity;
 import com.transcendence.blackhole.demo.didi.act.DidiMainActivity;
 import com.transcendence.blackhole.demo.handler.act.HandlerMainActivity;
 import com.transcendence.blackhole.demo.lottery.act.LotteryOneActivity;
@@ -31,6 +32,7 @@ import com.transcendence.blackhole.ui.base.act.TelephoneInfoActivity;
 import com.transcendence.blackhole.ui.base.act.TouchEventActivity;
 import com.transcendence.blackhole.ui.gallery.act.JGalleryMainActivity;
 import com.transcendence.blackhole.ui.gallery.act.ZgalleryMainActivity;
+import com.transcendence.blackhole.ui.image.act.HandlerDownLoadActivity;
 import com.transcendence.blackhole.ui.image.act.ImageLoadActivity;
 import com.transcendence.blackhole.ui.image.act.WxImagePickerActivity;
 import com.transcendence.blackhole.ui.image.headcliper.act.HeadCliperMainActivity;
@@ -76,8 +78,11 @@ public interface AppConstantValue {
     /**
      * 1
      */
-    Class[] baseIndex = {LifeCycleActivity.class, LaunchModeInfoActivity.class,ScreenKeyDownActivity.class,LockerHomeActivity.class,
-            TelephoneInfoActivity.class, HandlerMainActivity.class, FirstEventActivity.class,TouchEventActivity.class
+    Class[] baseIndex = {
+            LifeCycleActivity.class, LaunchModeInfoActivity.class,
+            ScreenKeyDownActivity.class,LockerHomeActivity.class,
+            TelephoneInfoActivity.class, HandlerMainActivity.class,
+            FirstEventActivity.class,TouchEventActivity.class
             ,RetrofitIntroActivity.class};
 
     /**
@@ -85,7 +90,7 @@ public interface AppConstantValue {
      */
     Class[] imageIndex = {WxImagePickerActivity.class,ImageLoadActivity.class,
                             JGalleryMainActivity.class, ZgalleryMainActivity.class,
-                                HeadCliperMainActivity.class};
+                                HeadCliperMainActivity.class, HandlerDownLoadActivity.class};
 
     /**
      * 3
@@ -113,7 +118,7 @@ public interface AppConstantValue {
                             OverKeyBoardActivity.class,
                             GitHubContributionActivity.class, AllAppActivity.class, ZhihuBehaviorActivity.class,
                             IosSegmentViewActivity.class, XiaoMIAct.class, DidiMainActivity.class
-                            ,MengJianNanActivity.class};
+                            ,MengJianNanActivity.class,XiaoMiCalcActivity.class};
 
     Class[] voiceIndex = {};
 

@@ -57,10 +57,11 @@
     <application
         android:name=".base.app.ApbApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_ten"
+        android:icon="@mipmap/ic_app_ten"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_ten"
+        android:roundIcon="@mipmap/ic_app_ten"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/NoTitleAppTheme">
         <activity
             android:name=".base.LauncherActivity"
@@ -373,7 +374,10 @@
             android:name=".demo.scan.act.MengJianNanActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
+            <!--  仿小米计算器 -->
+        <activity android:name=".demo.calc.act.XiaoMiCalcActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
         <!-- 序列   基础  handler -->
         <activity
@@ -398,6 +402,8 @@
             android:name=".ui.rv.mi.act.XiaoMIAct"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
+        <activity android:name=".ui.image.act.HandlerDownLoadActivity" />
+
 
 
         <!-- 序列8 地图  -->

@@ -51,7 +51,7 @@
             android:layout_width="1dp"
             android:layout_height="0dp"/>
 
-        <com.example.viewlibrary.view.JinyunView
+        <com.transcendence.viewlibrary.view.JinyunView
             android:id="@+id/sv_bg"
             android:layout_width="match_parent"
             android:layout_height="0dp"

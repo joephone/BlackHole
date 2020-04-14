@@ -1,1 +1,1 @@
-include ':app', ':library', ':structure',':stackOverView', ':animation', ':imagepicker', ':dongnao', ':wan', ':map', ':music', ':weibo', ':shareSDK', ':weiboSDK', ':wechat'
+include ':app', ':library', ':structure',':stackOverView', ':animation', ':imagepicker', ':dongnao', ':wan', ':map', ':music', ':weibo', ':shareSDK', ':weiboSDK', ':wechat', ':news'

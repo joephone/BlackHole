@@ -8,6 +8,9 @@
     <string name="cancel">取消</string>
     <string name="OK">确定</string>
     <string name="send">发送</string>
+    <string name="down_load">下载</string>
+    <string name="load">加载</string>
+
 
     <!-- home tab -->
     <string name="tab_one">工作平台</string>
