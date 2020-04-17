@@ -3,7 +3,6 @@ package com.transcendence.blackhole.index;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.graphics.PointF;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -69,10 +68,10 @@ public class IndexActivity extends TitleBarActivity implements View.OnClickListe
             PointF point = new PointF();
             int avgAngle = (360 / (ivList.size() ));
             int angle = avgAngle * ang;
-            L.d("angle=" + angle);
+//            L.d("angle=" + angle);
             point.x = (float) Math.cos(angle * (Math.PI / 180)) * radius2;
             point.y = (float) Math.sin(angle * (Math.PI / 180)) * radius2;
-            L.d(point.toString());
+//            L.d(point.toString());
 
 
 
@@ -86,7 +85,7 @@ public class IndexActivity extends TitleBarActivity implements View.OnClickListe
             animatorSet.start();
 
             SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            Log.i("CircleMenu","time-----"+dateformat.format(System.currentTimeMillis()));
+//            L.d("time-----"+dateformat.format(System.currentTimeMillis()));
         }
     }
 
@@ -95,7 +94,7 @@ public class IndexActivity extends TitleBarActivity implements View.OnClickListe
             PointF point = new PointF();
             int avgAngle = (360 / (ivList.size() ));
             int angle = avgAngle * i;
-            L.d( "angle=" + angle);
+//            L.d( "angle=" + angle);
             point.x = (float) Math.cos(angle * (Math.PI / 180)) * radius2;
             point.y = (float) Math.sin(angle * (Math.PI / 180)) * radius2;
 

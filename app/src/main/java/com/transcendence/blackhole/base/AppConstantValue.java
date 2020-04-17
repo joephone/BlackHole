@@ -15,12 +15,14 @@ import com.transcendence.blackhole.demo.other.act.OverKeyBoardActivity;
 import com.transcendence.blackhole.demo.scan.act.MengJianNanActivity;
 import com.transcendence.blackhole.demo.translationbehavior.act.ZhihuBehaviorActivity;
 import com.transcendence.blackhole.index.BaseIndexActivity;
-import com.transcendence.blackhole.index.ImageIndexActivity;
 import com.transcendence.blackhole.index.LotteryIndexActivity;
 import com.transcendence.blackhole.index.MarqueeIndexActivity;
 import com.transcendence.blackhole.index.MvpIndexActivity;
 import com.transcendence.blackhole.index.OtherIndexActivity;
 import com.transcendence.blackhole.index.ScrollIndexActivity;
+import com.transcendence.blackhole.index.UIIndexActivity;
+import com.transcendence.blackhole.index.UIRvIndexActivity;
+import com.transcendence.blackhole.index.UIimageIndexActivity;
 import com.transcendence.blackhole.index.VoiceIndexActivity;
 import com.transcendence.blackhole.ui.base.act.FirstEventActivity;
 import com.transcendence.blackhole.ui.base.act.LaunchModeInfoActivity;
@@ -36,6 +38,7 @@ import com.transcendence.blackhole.ui.image.act.HandlerDownLoadActivity;
 import com.transcendence.blackhole.ui.image.act.ImageLoadActivity;
 import com.transcendence.blackhole.ui.image.act.WxImagePickerActivity;
 import com.transcendence.blackhole.ui.image.headcliper.act.HeadCliperMainActivity;
+import com.transcendence.blackhole.ui.rv.freshloadmore.act.RvFreshAndLoadMoreActivity;
 import com.transcendence.blackhole.ui.rv.mi.act.XiaoMIAct;
 import com.transcendence.blackhole.ui.scroll.ScrollLayoutTwoActivity;
 import com.transcendence.blackhole.ui.scroll.meituantop.act.MeiTuanMainActivity;
@@ -67,7 +70,7 @@ public interface AppConstantValue {
     Class[] appIndex = {
             MainActivity.class,
             BaseIndexActivity.class,
-            ImageIndexActivity.class,
+            UIIndexActivity.class,
             LotteryIndexActivity.class,
             MvpIndexActivity.class,
             ScrollIndexActivity.class,
@@ -84,13 +87,22 @@ public interface AppConstantValue {
             TelephoneInfoActivity.class, HandlerMainActivity.class,
             FirstEventActivity.class,TouchEventActivity.class
             ,RetrofitIntroActivity.class};
-
     /**
      * 2
+     */
+    Class[] uiIndex = {UIimageIndexActivity.class,UIRvIndexActivity.class};
+
+    /**
+     * 2.1
      */
     Class[] imageIndex = {WxImagePickerActivity.class,ImageLoadActivity.class,
                             JGalleryMainActivity.class, ZgalleryMainActivity.class,
                                 HeadCliperMainActivity.class, HandlerDownLoadActivity.class};
+
+    /**
+     * 2.2
+     */
+    Class[] rvIndex = {XiaoMiCalcActivity.class, RvFreshAndLoadMoreActivity.class};
 
     /**
      * 3
@@ -118,7 +130,7 @@ public interface AppConstantValue {
                             OverKeyBoardActivity.class,
                             GitHubContributionActivity.class, AllAppActivity.class, ZhihuBehaviorActivity.class,
                             IosSegmentViewActivity.class, XiaoMIAct.class, DidiMainActivity.class
-                            ,MengJianNanActivity.class,XiaoMiCalcActivity.class};
+                            ,MengJianNanActivity.class};
 
     Class[] voiceIndex = {};
 

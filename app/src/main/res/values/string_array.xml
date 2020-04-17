@@ -25,7 +25,7 @@
     <string-array name="app_index_item">
         <item>0 Main</item>
         <item>1 开发基础</item>
-        <item>2 图片序列</item>
+        <item>2 UI序列</item>
         <item>3 抽奖</item>
         <item>4 Mvp序列</item>
         <item>5 滑动序列</item>
@@ -47,7 +47,13 @@
         <item>Retrofit介绍</item>
     </string-array>
 
-    <!-- index 2-->
+    <!-- 2 UI index -->
+    <string-array name="ui_index_item">
+        <item>图片</item>
+        <item>RecyclerView</item>
+    </string-array>
+
+    <!-- 2.1 image -->
     <string-array name="image_index_item">
         <item>仿微信imagePicker</item>
         <item>imageLoad</item>
@@ -57,14 +63,20 @@
         <item>Handler异步加载图片</item>
     </string-array>
 
-    <!-- index 3-->
+    <!-- 2.2 rv -->
+    <string-array name="rv_index_item">
+        <item>小米</item>
+        <item>上拉刷新下拉加载更多</item>
+    </string-array>
+
+    <!-- 3 index -->
     <string-array name="lottery_index_item">
         <item>抽奖1</item>
         <item>抽奖2</item>
         <item>抽奖3</item>
     </string-array>
 
-    <!-- index 4-->
+    <!-- 4 index -->
     <string-array name="mvp_index_item">
         <item>MvpLogin</item>
         <item>MvpBeautyRv</item>

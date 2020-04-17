@@ -11,10 +11,21 @@ package com.transcendence.wan.utils;
 public class JsonFormatUtils {
 
 
+    private static JsonFormatUtils instance;
+
+    private JsonFormatUtils(){}
+
+    public static JsonFormatUtils getInstance(){
+        if(instance == null){
+            instance = new JsonFormatUtils();
+        }
+        return instance;
+    }
+
     /**
      * 对json字符串格式化输出
      */
-    public static String format(String jsonStr) {
+    public String format(String jsonStr) {
         if (null == jsonStr || "".equals(jsonStr)) {
             return "";
         }
@@ -58,7 +69,7 @@ public class JsonFormatUtils {
     /**
      * 添加space
      */
-    private static void addIndentBlank(StringBuilder sb, int indent) {
+    private void addIndentBlank(StringBuilder sb, int indent) {
         for (int i = 0; i < indent; i++) {
             sb.append('\t');
         }

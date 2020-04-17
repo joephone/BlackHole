@@ -206,9 +206,15 @@
 
 
 
-        <!-- 序列二   图片 序列 -->
+        <!-- 序列二   UI 序列 -->
         <activity
-            android:name=".index.ImageIndexActivity"
+            android:name=".index.UIIndexActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            />
+            <!-- 序列2.1   图片 序列 -->
+        <activity
+            android:name=".index.UIimageIndexActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
         <activity
@@ -219,14 +225,18 @@
             android:name=".ui.image.act.ImageLoadActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
             <!-- 单图预览 -->
         <activity
             android:name=".ui.image.act.PictruePreviewActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
-            <!-- Gallery-->
+        <activity android:name=".ui.image.act.HandlerDownLoadActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
+
+        <!-- UI  Gallery-->
         <!--<activity-->
             <!--android:name=".ui.gallery.act.JgalleryMainActivity"-->
             <!--android:launchMode="singleTask"-->
@@ -248,6 +258,22 @@
             android:name=".ui.image.headcliper.act.HeadCliperActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
+
+        <!-- 序列2.2 UI Rv -->
+        <activity android:name=".index.UIRvIndexActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+            <!-- mi -->
+        <activity
+            android:name=".ui.rv.mi.act.XiaoMIAct"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+            <!-- 上拉刷新 下拉加载更多-->
+        <activity android:name=".ui.rv.freshloadmore.act.RvFreshAndLoadMoreActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            />
+
 
 
         <!-- 序列3   抽奖 序列 -->
@@ -394,15 +420,6 @@
             android:name=".demo.handler.act.HelloHandler02"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-
-
-
-            <!-- mi -->
-        <activity
-            android:name=".ui.rv.mi.act.XiaoMIAct"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ui.image.act.HandlerDownLoadActivity" />
 
 
 

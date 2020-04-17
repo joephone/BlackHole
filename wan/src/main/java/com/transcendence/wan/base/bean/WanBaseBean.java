@@ -20,7 +20,7 @@ public class WanBaseBean implements Serializable {
     }
 
     public String toFormatJson() {
-        return JsonFormatUtils.format(toJson());
+        return JsonFormatUtils.getInstance().format(toJson());
     }
 
 }
