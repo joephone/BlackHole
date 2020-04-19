@@ -1,10 +1,8 @@
 package com.transcendence.wan.core.mvp.presenter;
 
-import com.transcendence.wan.core.mvp.view.BaseView;
-import com.transcendence.wan.mvp.MvpPresenter;
+import android.content.Context;
 
-import io.reactivex.disposables.Disposable;
-import per.goweii.rxhttp.core.RxLife;
+import com.transcendence.wan.core.mvp.WanBaseView;
 
 /**
  * 描述：
@@ -13,30 +11,29 @@ import per.goweii.rxhttp.core.RxLife;
  * @date 2019/3/29
  */
 
-public class WanBasePresenter<V extends BaseView> extends MvpPresenter<V> {
+public class WanBasePresenter<V extends WanBaseView> {
 
-    private RxLife rxLife;
+    protected Context context;
+    private V wanBaseView;
 
-    @Override
+
+
     public void attach(V baseView) {
-        super.attach(baseView);
-        rxLife = RxLife.create();
+        this.wanBaseView = baseView;
+        context = baseView.getContext();
     }
 
-    @Override
+    public boolean isAttach() {
+        return wanBaseView != null;
+    }
+
     public void detach() {
-        super.detach();
-        rxLife.destroy();
-        rxLife = null;
+        wanBaseView = null;
+        context = null;
     }
 
-    public RxLife getRxLife() {
-        return rxLife;
+    public V getWanBaseView() {
+        return wanBaseView;
     }
 
-    public void addToRxLife(Disposable disposable) {
-        if (rxLife != null) {
-            rxLife.add(disposable);
-        }
-    }
 }

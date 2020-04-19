@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+// freeline
+apply plugin: 'com.antfortune.freeline'
 apply from: "../basic.gradle"
 
 def config = rootProject.ext

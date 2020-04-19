@@ -82,4 +82,10 @@
     <!-- loopView -->
     <color name="btn_cancel_color">#999999</color>
     <color name="btn_confirm_color">#303F9F</color>
+
+
+    <!--下拉刷新控件的颜色值-->
+    <color name="srflone">#269943</color>
+    <color name="srfltwo">#FF9600</color>
+    <color name="srflthree">#3F51B5</color>
 </resources>

@@ -15,6 +15,8 @@ public abstract class ApApplication extends LibApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+
+
         configInterceptor(interceptors);
     }
 

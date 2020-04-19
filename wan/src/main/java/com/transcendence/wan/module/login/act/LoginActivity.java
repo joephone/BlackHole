@@ -9,7 +9,7 @@ import android.support.v4.view.ViewPager;
 import com.transcendence.blackhole.adapter.GoweiiFragmentPagerAdapter;
 import com.transcendence.wan.R;
 import com.transcendence.wan.base.act.WanBaseActivity;
-import com.transcendence.wan.module.login.fragment.LoginFragment;
+import com.transcendence.wan.module.login.fragment.LoginFragmentWanBaseFragment;
 import com.transcendence.wan.module.login.fragment.RegisterFragment;
 import com.transcendence.wan.utils.SoftInputHelper;
 
@@ -66,7 +66,7 @@ public class LoginActivity extends WanBaseActivity {
         GoweiiFragmentPagerAdapter adapter = new GoweiiFragmentPagerAdapter(getSupportFragmentManager());
         adapter.setTitles("登录","注册");
         adapter.setFragments(
-                LoginFragment.newInstance("登录"),
+                LoginFragmentWanBaseFragment.newInstance("登录"),
                 RegisterFragment.newInstance("注册"));
         mVp.setAdapter(adapter);
         mVp.setCurrentItem(0);

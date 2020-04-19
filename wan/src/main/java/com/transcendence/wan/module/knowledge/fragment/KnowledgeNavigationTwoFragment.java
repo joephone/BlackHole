@@ -39,7 +39,7 @@ public class KnowledgeNavigationTwoFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView =  inflater.inflate(R.layout.fragment_knowledge_navi_two, container, false);
+        View rootView =  inflater.inflate(R.layout.fragment_navi_knowledge_two, container, false);
         initView(rootView);
         return rootView;
     }

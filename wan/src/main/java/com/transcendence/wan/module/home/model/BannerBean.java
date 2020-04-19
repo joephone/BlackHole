@@ -1,6 +1,6 @@
 package com.transcendence.wan.module.home.model;
 
-import com.transcendence.wan.base.bean.WanResponseBean;
+import com.transcendence.wan.base.bean.WanBaseBean;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import java.util.List;
  * @EditionHistory
  */
 
-public class BannerBean extends WanResponseBean {
+public class BannerBean extends WanBaseBean {
 
 
     private List<DataBean> data;

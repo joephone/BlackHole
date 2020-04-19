@@ -38,7 +38,7 @@ import com.transcendence.blackhole.ui.image.act.HandlerDownLoadActivity;
 import com.transcendence.blackhole.ui.image.act.ImageLoadActivity;
 import com.transcendence.blackhole.ui.image.act.WxImagePickerActivity;
 import com.transcendence.blackhole.ui.image.headcliper.act.HeadCliperMainActivity;
-import com.transcendence.blackhole.ui.rv.freshloadmore.act.RvFreshAndLoadMoreActivity;
+import com.transcendence.blackhole.ui.rv.freshloadmore.act.RvLoadMoreActivity;
 import com.transcendence.blackhole.ui.rv.mi.act.XiaoMIAct;
 import com.transcendence.blackhole.ui.scroll.ScrollLayoutTwoActivity;
 import com.transcendence.blackhole.ui.scroll.meituantop.act.MeiTuanMainActivity;
@@ -102,7 +102,7 @@ public interface AppConstantValue {
     /**
      * 2.2
      */
-    Class[] rvIndex = {XiaoMiCalcActivity.class, RvFreshAndLoadMoreActivity.class};
+    Class[] rvIndex = {XiaoMiCalcActivity.class, RvLoadMoreActivity.class};
 
     /**
      * 3

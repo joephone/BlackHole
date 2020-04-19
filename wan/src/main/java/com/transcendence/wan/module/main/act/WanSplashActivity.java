@@ -25,7 +25,7 @@ import java.util.Random;
 public class WanSplashActivity extends WanBaseActivity implements Animation.AnimationListener {
 
     private final int count = 5;
-    private final int ANIM_DURATION_TIME = 1000;
+    private final int ANIM_DURATION_TIME = 100;
     private ImageView ivLauncher;
     private ConstraintLayout clContainer;
 

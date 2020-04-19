@@ -1,7 +1,5 @@
 package com.transcendence.wan.module.login.model;
 
-import com.transcendence.wan.base.bean.WanResponseBean;
-
 import java.util.List;
 
 /**

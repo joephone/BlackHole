@@ -1,5 +1,6 @@
 package com.transcendence.blackhole.base.app;
 
+import com.antfortune.freeline.FreelineCore;
 import com.transcendence.blackhole.demo.LoginInterceptor.act.Interceptors;
 
 /**
@@ -10,6 +11,12 @@ import com.transcendence.blackhole.demo.LoginInterceptor.act.Interceptors;
 
 public class ApbApplication extends ApApplication {
 
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        FreelineCore.init(this);
+    }
 
     @Override
     public void configInterceptor(Interceptors interceptors) {

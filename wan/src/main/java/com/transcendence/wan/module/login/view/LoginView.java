@@ -1,6 +1,6 @@
 package com.transcendence.wan.module.login.view;
 
-import com.transcendence.wan.core.mvp.view.BaseView;
+import com.transcendence.wan.core.mvp.WanBaseView;
 import com.transcendence.wan.module.login.model.LoginBean;
 
 /**
@@ -11,7 +11,7 @@ import com.transcendence.wan.module.login.model.LoginBean;
  * GitHub: https://github.com/goweii
  */
 
-public interface LoginView extends BaseView {
+public interface LoginView extends WanBaseView {
 
     void loginSuccess(int code, LoginBean data);
     void loginFailed(int code, String msg);

@@ -595,8 +595,8 @@ public class LfScrollLayout extends FrameLayout {
 
         }
     };
-//    private final AbsListView.OnScrollListener recyclerViewOnScrollListener =
-//            new AbsListView.OnScrollListener() {
+//    private final AbsListView.OnMyScrollListener recyclerViewOnScrollListener =
+//            new AbsListView.OnMyScrollListener() {
 //                @Override
 //                public void onScrollStateChanged(AbsListView view, int scrollState) {
 //                    updateListViewScrollState(view);

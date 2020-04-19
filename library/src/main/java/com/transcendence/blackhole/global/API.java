@@ -47,4 +47,24 @@ public class API {
         public final static String GIRLS = API_GANK_IO + "v2/data/category/Girl/type/Girl/page/1/count/2";
     }
 
+
+    public static class WAN {
+
+
+        public final static String WX_ARTICLE_LIST = API_WAN_ANDROID +"wxarticle/list/{id}/{page}/json";
+
+        /**
+         * 获取公众号列表
+         * get
+         */
+        public final static String WX_ARTICLE_CHAPTER = API_WAN_ANDROID + "wxarticle/chapters/json";
+
+        public final static String DAMA_ARTICLE_LIST  = API_WAN_ANDROID +  "user_article/list/page/json";   //{page}
+
+
+        public static String damaArticleList(int page){
+            return API_WAN_ANDROID +  "user_article/list/"+page+"/json";
+        }
+    }
+
 }

@@ -2,13 +2,11 @@ package com.transcendence.blackhole.base.app;
 
 import android.app.Application;
 import android.content.Context;
-import android.util.Log;
 
 import com.transcendence.blackhole.arouter.ARouterUtils;
 import com.transcendence.blackhole.base.config.AppInit;
 import com.transcendence.blackhole.base.config.ProjectInit;
 import com.transcendence.blackhole.global.API;
-import com.transcendence.blackhole.global.Global;
 import com.transcendence.blackhole.utils.L;
 
 /**
