@@ -1,8 +1,6 @@
 package com.transcendence.wan.module.dama.fragment;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.View;
 
 import com.transcendence.blackhole.utils.L;
 import com.transcendence.ui.recyclerview.adapter.BaseAbsAdapter;
@@ -14,7 +12,6 @@ import com.transcendence.wan.module.dama.model.DamaBean;
 import com.transcendence.wan.module.dama.presenter.DamaPresenter;
 import com.transcendence.wan.module.dama.view.DamaView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -28,23 +25,18 @@ import java.util.List;
 public class DamaFragment extends WanBaseFragment<DamaPresenter> implements DamaView,RefreshLayout.RefreshCallback {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_SHOW_TEXT = "text";
-
     private static int PAGE = 0;
 
-    private View emptyView;
+//    private View emptyView;
     private RefreshLayout mRefreshLayout;
     private BaseAbsAdapter mAdapter;
     private boolean isLoadMore;
-    private List<DamaBean.DataBean.DatasBean> sourceList = new ArrayList<>();
-
-
 
     @Override
     protected int getLayoutRes() {
         return R.layout.fragment_navi_dama;
     }
 
-    @Nullable
     @Override
     protected DamaPresenter initPresenter() {
         return new DamaPresenter();
@@ -66,14 +58,6 @@ public class DamaFragment extends WanBaseFragment<DamaPresenter> implements Dama
         onViewRefresh();
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param title Parameter 1.
-     * @return A new instance of fragment .
-     */
-
     public static DamaFragment newInstance(String title) {
         DamaFragment fragment = new DamaFragment();
         Bundle args = new Bundle();
@@ -82,7 +66,6 @@ public class DamaFragment extends WanBaseFragment<DamaPresenter> implements Dama
         return fragment;
     }
 
-
     @Override
     public void getUserArticleListSuccess(int code, List<DamaBean.DataBean.DatasBean> data) {
         if(isLoadMore){
@@ -90,8 +73,6 @@ public class DamaFragment extends WanBaseFragment<DamaPresenter> implements Dama
         }else {
             mRefreshLayout.onRefresh(data);
         }
-
-
     }
 
     @Override
@@ -99,12 +80,9 @@ public class DamaFragment extends WanBaseFragment<DamaPresenter> implements Dama
         mRefreshLayout.stopSrfl();
     }
 
-
-
-
-
     @Override
     public void onViewRefresh() {
+        L.d("onViewRefresh");
         PAGE = 0;
         isLoadMore = false;
         presenter.getArticleList(PAGE);
@@ -112,6 +90,7 @@ public class DamaFragment extends WanBaseFragment<DamaPresenter> implements Dama
 
     @Override
     public void onViewLoadMore() {
+        L.d("onViewLoadMore");
         PAGE ++;
         isLoadMore = true;
         presenter.getArticleList(PAGE);

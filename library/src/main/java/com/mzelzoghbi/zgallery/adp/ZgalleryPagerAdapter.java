@@ -45,7 +45,7 @@ public class ZgalleryPagerAdapter extends PagerAdapter {
         View itemView = mLayoutInflater.inflate(R.layout.activity_z_gallery_vp_item, container, false);
         ImageView iv = itemView.findViewById(R.id.iv);
 
-        GlideUtils.getInstance().loadImageFromNew(mActivity,images.get(position),iv);
+        GlideUtils.getInstance().loadImageFromUrl(images.get(position),iv);
         container.addView(itemView);
         return itemView;
     }

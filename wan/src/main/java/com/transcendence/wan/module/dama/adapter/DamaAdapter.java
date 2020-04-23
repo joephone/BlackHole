@@ -35,9 +35,8 @@ public class DamaAdapter extends BaseAbsAdapter<DamaBean.DataBean.DatasBean> {
         super(context);
     }
 
-    private View emptyView;
 
-    @NonNull
+
     @Override
     public DamaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         mContext = parent.getContext();
@@ -70,8 +69,7 @@ public class DamaAdapter extends BaseAbsAdapter<DamaBean.DataBean.DatasBean> {
                 }
                 holder.tv_time.setText(item.getNiceDate());
                 if (!TextUtils.isEmpty(item.getEnvelopePic())) {
-//                ImageLoader.image(holder.iv_img, item.geopePic());
-                    GlideUtils.getInstance().loadImageFromNew(mContext, item.getEnvelopePic(), holder.iv_img);
+                    GlideUtils.getInstance().loadImageFromUrl(item.getEnvelopePic(), holder.iv_img);
                     holder.iv_img.setVisibility(View.VISIBLE);
                 } else {
                     holder.iv_img.setVisibility(View.GONE);

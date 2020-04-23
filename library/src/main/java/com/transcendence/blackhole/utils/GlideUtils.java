@@ -1,10 +1,9 @@
 package com.transcendence.blackhole.utils;
 
-import android.content.Context;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.transcendence.blackhole.base.app.LibApplication;
+import com.transcendence.blackhole.library.R;
 
 /**
  * @author Joephone on 2019/5/7 17:09
@@ -24,6 +23,7 @@ import com.transcendence.blackhole.base.app.LibApplication;
 public class GlideUtils {
     private static GlideUtils instance;
 
+    private GlideUtils(){}
 
     public static GlideUtils getInstance() {
         if (instance == null) {
@@ -35,15 +35,24 @@ public class GlideUtils {
     /**
      *  1 默认加载
      */
-    public void loadImageFromNew(Context mContext, String path, ImageView mImageView) {
-        Glide.with(mContext).load(path).into(mImageView);
+    public void loadImageFromUrl(String path, ImageView imageView) {
+        Glide.with(imageView.getContext())
+                .load(path)
+                .error(R.drawable.pic_404)
+                .placeholder(R.drawable.pic_404)
+                .into(imageView);
+
     }
 
     /**
      *  2 加载本地
      */
-    public void loadMipmap(Context mContext, int resourceId, ImageView mImageView) {
-        Glide.with(mContext).load(resourceId).into(mImageView);
+    public void loadImageFromLocal(int resourceId, ImageView imageView) {
+        Glide.with(imageView.getContext())
+                .load(resourceId)
+                .error(R.drawable.pic_404)
+                .placeholder(R.drawable.pic_404)
+                .into(imageView);
     }
 
 }

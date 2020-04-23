@@ -59,13 +59,13 @@ public class API {
          */
         public final static String WX_ARTICLE_CHAPTER = API_WAN_ANDROID + "wxarticle/chapters/json";
 
-        public final static String DAMA_ARTICLE_LIST  = API_WAN_ANDROID +  String.format("user_article/list/%d/json",0);   //{page}
+        public final static String DAMA_ARTICLE_LIST  = "user_article/list/%d/json";
 
 
-
-        public static String shortDamaArticleList(int page){
-            return "user_article/list/"+page+"/json";
+        public static String DAMA_ARTICLE_LIST(int page) {
+            return String.format(DAMA_ARTICLE_LIST, page);
         }
+
 
         /**
          * 5. 登录与注册

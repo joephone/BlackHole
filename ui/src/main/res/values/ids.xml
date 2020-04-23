@@ -2,4 +2,5 @@
 <resources>
     <item name="id_recyclerView" type="id"/>
     <item name="id_swipeRefreshLayout" type="id"/>
+    <item name="id_emptyView" type="id"/>
 </resources>

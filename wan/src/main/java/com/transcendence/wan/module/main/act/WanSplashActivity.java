@@ -40,7 +40,7 @@ public class WanSplashActivity extends WanBaseActivity implements Animation.Anim
         clContainer = findViewById(R.id.clContainer);
         int [] ids = Global.mLauncherIds;
         int index =new Random().nextInt(ids.length);
-        GlideUtils.getInstance().loadMipmap(this,ids[index],ivLauncher);
+        GlideUtils.getInstance().loadImageFromLocal(ids[index],ivLauncher);
         initStartAnim();
     }
 

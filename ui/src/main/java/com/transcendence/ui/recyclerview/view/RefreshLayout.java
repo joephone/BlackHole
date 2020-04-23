@@ -7,6 +7,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -28,10 +29,11 @@ import java.util.List;
 
 public class RefreshLayout<T> extends LinearLayout{
 
-    private RecyclerView mRv;
+    private MyRecyclerView mRv;
     private SwipeRefreshLayout mSrfl;
     private ReFreshAndLoadMoreWrapper<T> mAdapter;
     private boolean mIsSlidingUp = false;   //是否正在向上滑动
+    private View emptyView;
 
 
     public RefreshLayout(@NonNull Context context) {
@@ -40,17 +42,22 @@ public class RefreshLayout<T> extends LinearLayout{
 
     public RefreshLayout(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-//        LayoutInflater.from(context).inflate(R.layout.activity_srf_rv, this, true);
-        View view = LayoutInflater.from(context).inflate(R.layout.activity_srf_rv, this, true);
-//        View.inflate(context,R.layout.activity_srf_rv,this);
+//        LayoutInflater.from(context).inflate(R.layout.activity_srf_rv_new, this, true);
+        View view = LayoutInflater.from(context).inflate(R.layout.activity_srf_rv_new, this, true);
+//        View.inflate(context,R.layout.activity_srf_rv_new,this);
         mRv = view.findViewById(R.id.id_recyclerView);
         mSrfl = view.findViewById(R.id.id_swipeRefreshLayout);
+        emptyView = view.findViewById(R.id.id_emptyView);
     }
 
 
     public void setAdapter(BaseAbsAdapter adapter, Context context){
         mAdapter = new ReFreshAndLoadMoreWrapper<>(context,adapter);
+        if(mRv ==null){
+            Log.d("BlackHole","mRv ==null");
+        }
         mRv.setLayoutManager(new LinearLayoutManager(context));
+        mRv.setEmptyView(emptyView);
         mRv.setAdapter(mAdapter);
     }
 
@@ -135,6 +142,10 @@ public class RefreshLayout<T> extends LinearLayout{
             mAdapter.onLoadMore(list);
             mAdapter.setLoadState(LoadingState.LOADING_COMPLETE);
         }
+    }
+
+    public void setEmptyView(View emptyView) {
+        this.emptyView = emptyView;
     }
 
     public interface RefreshCallback {

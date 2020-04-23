@@ -1,7 +1,5 @@
 package com.transcendence.wan.core.mvp;
 
-import android.content.Context;
-
 /**
  * @author Joephone on 2019/12/10 11:21
  * @E-Mail Address：joephonechen@gmail.com
@@ -10,6 +8,6 @@ import android.content.Context;
  * @EditionHistory
  */
 
-public interface WanBaseView  {
-    Context getContext();
+public interface WanBaseView extends WanMvpView {
+
 }

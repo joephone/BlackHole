@@ -24,12 +24,11 @@ import java.util.Map;
 public class DamaPresenter extends WanBasePresenter<DamaView> {
 
     public void getArticleList(int page){
-        L.d("getArticleList"+API.WAN.shortDamaArticleList(page));
         Map<String,Object> map = new HashMap<>();
         map.put("page",page);
 
         RetrofitClient.create()
-                .url(API.WAN.shortDamaArticleList(page))
+                .url(API.WAN.DAMA_ARTICLE_LIST(page))
                 .params(map)
                 .success(new ISuccess() {
                     @Override

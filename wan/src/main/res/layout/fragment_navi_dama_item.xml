@@ -93,7 +93,6 @@
             android:layout_marginRight="10dp"
             android:background="@color/background"
             android:scaleType="centerCrop"
-            android:visibility="gone"
             app:riv_corner_radius="@dimen/round_radius_small"
             app:riv_mutate_background="true"
             tools:src="@drawable/pic_404"
