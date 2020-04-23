@@ -1,0 +1,13 @@
+apply plugin: 'com.android.library'
+apply from: '../basic.gradle'
+
+def config = rootProject.ext
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    api config.dependencies.appcompatv7
+    api config.dependencies.design
+    api config.dependencies.supportv4
+}

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import com.transcendence.blackhole.base.app.ApApplication;
+import com.transcendence.blackhole.core.app.ApApplication;
 
 /**
  * @Author Joephone on 2020/3/16 1:39

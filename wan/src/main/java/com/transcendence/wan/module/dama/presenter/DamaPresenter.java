@@ -1,19 +1,17 @@
 package com.transcendence.wan.module.dama.presenter;
 
-import com.transcendence.blackhole.global.API;
 import com.transcendence.blackhole.utils.GsonUtils;
 import com.transcendence.blackhole.utils.L;
+import com.transcendence.global.API;
+import com.transcendence.network.jett.callback.IFailure;
+import com.transcendence.network.jett.callback.ISuccess;
+import com.transcendence.network.jett.retrofit.RetrofitClient;
 import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
 import com.transcendence.wan.module.dama.model.DamaBean;
 import com.transcendence.wan.module.dama.view.DamaView;
 
-import java.io.IOException;
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Joephone on 2019/12/11 16:13
@@ -26,30 +24,35 @@ import okhttp3.Response;
 public class DamaPresenter extends WanBasePresenter<DamaView> {
 
     public void getArticleList(int page){
-        OkHttpClient client = new OkHttpClient.Builder().build();
+        L.d("getArticleList"+API.WAN.shortDamaArticleList(page));
+        Map<String,Object> map = new HashMap<>();
+        map.put("page",page);
 
+        RetrofitClient.create()
+                .url(API.WAN.shortDamaArticleList(page))
+                .params(map)
+                .success(new ISuccess() {
+                    @Override
+                    public void onSuccess(String response) {
+                        L.d(" Dama onResponse"+response);
+                        DamaBean damaBean = GsonUtils.getInstance().json2Cls(response, DamaBean.class);
+                        if(isAttach()){
+                            getWanBaseView().getUserArticleListSuccess(200,damaBean.getData().getDatas());
+                        }
+                    }
+                })
+                .failure(new IFailure() {
+                    @Override
+                    public void onFailure() {
+                        L.d(" Dama onFailure");
+                        if(isAttach()){
+                            getWanBaseView().getUserArticleListFailed(200,"请求失败");
+                        }
+                    }
+                })
+                .build()
+                .get();
 
-        Request request = new Request.Builder().url(API.WAN.damaArticleList(page)).get().build();
-        client.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                L.d("onFailure");
-//                Message message = Message.obtain();
-//                message.what =1;
-//                mHandler.sendMessageDelayed(message,3000);
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                String json = response.body().string();
-                L.d(" Dama onResponse"+json);
-                DamaBean damaBean = GsonUtils.getInstance().json2Cls(json, DamaBean.class);
-                if(isAttach()){
-                    getWanBaseView().getUserArticleListSuccess(200,damaBean.getData().getDatas());
-                }
-
-            }
-        });
     }
 
 

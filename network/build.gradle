@@ -8,4 +8,12 @@ def config = rootProject.ext
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    //retrofit2
+    api config.dependencies.retrofit
+    api config.dependencies.converterScalars
+    //okhttp3
+    api config.dependencies.okhttp
+
+
+
 }

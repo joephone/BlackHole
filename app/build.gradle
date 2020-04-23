@@ -16,6 +16,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':library')
     implementation project(':imagepicker')
+    implementation project(':network')
 
     if(!config.isWanApplication){  //arouter 必加
         implementation project(':wan')

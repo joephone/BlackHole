@@ -75,7 +75,7 @@
         </RelativeLayout>
     </LinearLayout>
 
-    <include layout="@layout/activity_srf_rv" />
+    <include layout="@layout/activity_srf_rv_old" />
 
 
 

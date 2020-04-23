@@ -9,7 +9,7 @@ import android.widget.ListView;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.transcendence.blackhole.R;
 import com.transcendence.blackhole.arouter.ARouterController;
-import com.transcendence.blackhole.base.AppConstantValue;
+import com.transcendence.blackhole.core.AppConstantValue;
 import com.transcendence.blackhole.base.activity.TitleBarActivity;
 import com.transcendence.blackhole.utils.L;
 import com.transcendence.blackhole.utils.StringUtils;

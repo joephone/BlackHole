@@ -9,29 +9,25 @@ dependencies {
 
     annotationProcessor rootProject.ext.dependencies["router-compiler"]
 
-    api rootProject.ext.dependencies.appcompatv7
-    api rootProject.ext.dependencies.design
-    api rootProject.ext.dependencies.supportv4
-    api rootProject.ext.dependencies.constraintLayout
+    api config.dependencies.appcompatv7
+    api config.dependencies.design
+    api config.dependencies.supportv4
+    api config.dependencies.constraintLayout
 
 
-    api rootProject.ext.dependencies.router
+    api config.dependencies.router
 
 
-    api rootProject.ext.dependencies.glide
-    api rootProject.ext.dependencies.gson
-    api rootProject.ext.dependencies.eventbus
+    api config.dependencies.glide
+    api config.dependencies.gson
+    api config.dependencies.eventbus
 
     //友盟分析
     api rootProject.ext.dependencies.umeng
 
     api rootProject.ext.dependencies.butterknife
 
-    //retrofit2
-    api rootProject.ext.dependencies.retrofit
-    api rootProject.ext.dependencies.converterScalars
-    //okhttp3
-    api rootProject.ext.dependencies.okhttp
+
 
     testImplementation 'junit:junit:4.12'
 

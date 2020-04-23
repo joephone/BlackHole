@@ -9,9 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.transcendence.blackhole.global.API;
 import com.transcendence.blackhole.utils.GsonUtils;
 import com.transcendence.blackhole.utils.L;
+import com.transcendence.global.API;
 import com.transcendence.wan.R;
 import com.transcendence.wan.module.wxpublic.model.WxChapter;
 

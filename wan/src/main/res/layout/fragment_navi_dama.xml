@@ -21,8 +21,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:background="@color/colorGitHubBlack"
-            >
+            android:background="@color/colorGitHubBlack">
 
             <FrameLayout
                 android:id="@+id/flBack"
@@ -39,8 +38,8 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="@dimen/dp_10"
                     android:gravity="center"
-                    android:src="@mipmap/ic_article"
-                    />
+                    android:src="@mipmap/ic_article" />
+
             </FrameLayout>
 
 
@@ -77,9 +76,10 @@
     </LinearLayout>
 
 
-
-    <include layout="@layout/activity_srf_rv" />
-
+    <com.transcendence.ui.recyclerview.view.RefreshLayout
+        android:id="@+id/refreshView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 
 </LinearLayout>

@@ -47,6 +47,13 @@
         <item>Retrofit介绍</item>
     </string-array>
 
+    <!-- index 1.1  启动模式序列 -->
+    <string-array name="launch_mode_index_item">
+        <item>singleTop</item>
+        <item>singleTask</item>
+        <item>singleInstance</item>
+    </string-array>
+
     <!-- 2 UI index -->
     <string-array name="ui_index_item">
         <item>图片</item>
@@ -61,6 +68,8 @@
         <item>zGallery</item>
         <item>头像上传图片裁剪</item>
         <item>Handler异步加载图片</item>
+        <item>背景循环一</item>
+        <item>背景循环二</item>
     </string-array>
 
     <!-- 2.2 rv -->

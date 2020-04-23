@@ -17,7 +17,6 @@
 
         <activity
             android:name=".module.main.act.WanSplashActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"
            >
             <intent-filter>
@@ -28,36 +27,30 @@
 
         <activity
             android:name=".module.main.act.WanMainActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"
             />
 
         <activity
             android:name=".module.search.act.WanSearchActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
 
 
 
         <activity android:name=".module.login.act.LoginActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"
             />
 
         <activity android:name=".module.main.act.WanWebActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"
             />
 
 
         <activity
             android:name=".module.mine.act.RankActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
 
         <activity
             android:name=".module.mine.act.SettingActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
     </application>
 

@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import com.hjq.toast.ToastUtils;
 import com.transcendence.blackhole.R;
 import com.transcendence.blackhole.arouter.ARouterUtils;
-import com.transcendence.blackhole.base.AppConstantValue;
+import com.transcendence.blackhole.core.AppConstantValue;
 import com.transcendence.blackhole.base.activity.TitleBarActivity;
 import com.transcendence.blackhole.utils.L;
 

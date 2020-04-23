@@ -58,6 +58,8 @@ dependencies {
     implementation  'com.github.goweii:RxHttp:2.2.9'
 
     implementation project(':library')
+    implementation project(':network')
+    implementation project(':ui')
 
 
     //Awesome 项目引用的库

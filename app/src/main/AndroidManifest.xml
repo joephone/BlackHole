@@ -55,7 +55,7 @@
 
 
     <application
-        android:name=".base.app.ApbApplication"
+        android:name=".core.app.ApbApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_app_ten"
         android:label="@string/app_name"
@@ -64,7 +64,7 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/NoTitleAppTheme">
         <activity
-            android:name=".base.LauncherActivity"
+            android:name=".core.LauncherActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -73,7 +73,6 @@
         </activity>
 
         <activity
-
             android:name=".index.IndexActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
@@ -81,45 +80,37 @@
 
         <activity
             android:name=".index.AppIndexActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"
             />
 
         <!-- 微信导航 -->
         <activity
             android:name=".ui.widget.custom.qq.QqSlidingMenuActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
         <activity
             android:name=".ui.weixinnavigation.act.WeixinHomeActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".base.WeChatMainActivity"
-            android:launchMode="singleTask"
+            android:name=".core.WeChatMainActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".base.MainActivity"
-            android:launchMode="singleTask"
+            android:name=".core.MainActivity"
             android:screenOrientation="portrait" />
 
         <activity
             android:name=".ui.widget.custom.StandardLayoutActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
         <activity
             android:name=".demo.guide.GuideActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
             <!-- 序列Random   万能序列 -->
         <activity
             android:name=".index.StandardIndexActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
             <!-- 自动删除输入框 -->
         <activity
@@ -134,31 +125,26 @@
             <!-- 蓝色风格 -->
         <activity
             android:name=".ui.widget.button.WaterButtonBlueActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
             <!-- SegmentView -->
         <activity
             android:name=".ui.widget.custom.segmentview.IosSegmentViewActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
             <!-- 自动滑动展示页 -->
 
         <!-- Lf 做的滑动窗口  -->
         <activity
             android:name=".ui.scroll.ScrollLayoutTwoActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
         <activity
             android:name=".ui.toast.ToastActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
         <!-- apk bus top frame -->
         <activity
             android:name=".ui.base.act.TelephoneInfoActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
 
@@ -167,41 +153,29 @@
         <!-- 序列一   开发基础 序列 -->
         <activity
             android:name=".index.BaseIndexActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
             <!-- 开发基础 之生命周期 -->
         <activity
             android:name=".ui.base.act.LifeCycleActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
             <!-- 开发基础 之生命周期 -->
         <activity
             android:name=".ui.base.act.LifeCycleTwoActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.base.act.LaunchModeInfoActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.base.act.ScreenKeyDownActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.base.act.LockerHomeActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.base.act.FirstEventActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.base.act.RetrofitIntroActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
             <!-- 监听滑动手势 -->
         <activity android:name=".ui.base.act.TouchEventActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
 
 
@@ -209,32 +183,30 @@
         <!-- 序列二   UI 序列 -->
         <activity
             android:name=".index.UIIndexActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
             <!-- 序列2.1   图片 序列 -->
         <activity
             android:name=".index.UIimageIndexActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.image.act.WxImagePickerActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.image.act.ImageLoadActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
             <!-- 单图预览 -->
         <activity
             android:name=".ui.image.act.PictruePreviewActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
         <activity android:name=".ui.image.act.HandlerDownLoadActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
-
+            <!-- 背景循环一 -->
+        <activity android:name=".ui.image.act.ImageAutoCycleOneActivity"
+            android:screenOrientation="portrait" />
+            <!-- 背景循环二 -->
+        <activity android:name=".ui.image.act.ImageAutoCycleTwoActivity"
+            android:screenOrientation="portrait" />
 
         <!-- UI  Gallery-->
         <!--<activity-->
@@ -251,66 +223,53 @@
             <!-- 仿微信QQ 上传头像 -->
         <activity
             android:name=".ui.image.headcliper.act.HeadCliperMainActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
             <!-- 仿微信QQ 上传头像 裁剪-->
         <activity
             android:name=".ui.image.headcliper.act.HeadCliperActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
 
         <!-- 序列2.2 UI Rv -->
         <activity android:name=".index.UIRvIndexActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
             <!-- mi -->
         <activity
             android:name=".ui.rv.mi.act.XiaoMIAct"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
             <!-- 上拉刷新 下拉加载更多-->
         <activity android:name=".ui.rv.freshloadmore.act.RvLoadMoreActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
 
 
 
         <!-- 序列3   抽奖 序列 -->
         <activity
             android:name=".index.LotteryIndexActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
             <!-- 抽奖一 -->
         <activity
             android:name=".demo.lottery.act.LotteryOneActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
             <!-- 抽奖二 -->
         <activity
             android:name=".demo.lottery.act.LotteryTwoActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
             <!-- 抽奖三 -->
         <activity
             android:name=".demo.lottery.act.LotteryThreeActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
         <!-- 序列4  跑马灯 序列 -->
         <activity
             android:name=".index.MarqueeIndexActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
             <!-- 跑马灯一 -->
         <activity
             android:name=".ui.widget.marquee.MarqueeTextOneActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
             <!-- 跑马灯二 -->
         <activity
             android:name=".ui.widget.marquee.MarqueeTextTwoActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
 
@@ -318,17 +277,14 @@
         <!-- 序列5  mvp 序列 -->
         <activity
             android:name=".index.MvpIndexActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
              <!-- Mvp 测试Login -->
         <activity
             android:name=".demo.mvp.act.MvpLoginActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
             <!-- Mvp 美女列表 -->
         <activity
             android:name=".demo.mvp.act.MvpBeautyListActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
 
@@ -336,23 +292,19 @@
         <!-- 序列6  滚动序列 -->
         <activity
             android:name=".index.ScrollIndexActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
             <!-- Mvp 小红书 -->
         <activity
             android:name=".ui.scroll.xiaohuoshu.act.XiaohongshuActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
 
             <!--  仿美团滑动layout  -->
         <activity
             android:name=".ui.scroll.meituantop.act.MeiTuanMainActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
             <!--  PullToZoom  -->
         <activity
             android:name=".ui.scroll.pulltozoom.act.PullToZoomAct"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
 
@@ -360,70 +312,73 @@
         <!-- 序列   录音 序列 -->
         <activity
             android:name=".index.VoiceIndexActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
 
 
         <!-- 序列   其他 课程表 -->
         <activity
             android:name=".index.OtherIndexActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
             <!-- 解决软键盘遮挡输入框 -->
         <activity
             android:name=".demo.other.act.OverKeyBoardActivity"
-            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustResize"
             android:screenOrientation="portrait"/>
             <!--  贡献图 -->
         <activity
             android:name=".demo.other.act.GitHubContributionActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
             <!--  所有app -->
         <activity
             android:name=".demo.allapp.AllAppActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
             <!--  自定义Behavior，并且使用MD实现仿知乎中向上滑菜单底部FloatingActionBar消失，向下滑动菜单底部FloatingActionBar显示上来 -->
         <activity
             android:name=".demo.translationbehavior.act.ZhihuBehaviorActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
             <!--  打车 -->
         <activity
             android:name=".demo.didi.act.DidiMainActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
             <!--  雷达 -->
         <activity
             android:name=".demo.scan.act.MengJianNanActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
             <!--  仿小米计算器 -->
         <activity android:name=".demo.calc.act.XiaoMiCalcActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
         <!-- 序列   基础  handler -->
         <activity
             android:name=".demo.handler.act.HandlerMainActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
             <!-- 定时切换背景 -->
         <activity
             android:name=".demo.handler.act.HelloHandler01"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
             <!-- handler sendMessage -->
         <activity
             android:name=".demo.handler.act.HelloHandler02"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait" />
 
-
-
         <!-- 序列8 地图  -->
+
+
+        <!-- 序列1.1   启动模式序列 -->
+        <activity
+            android:name=".index.LaunchModeIndexActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.base.act.LaunchModeInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".base.launchmode.act.SingleTaskFirstActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".base.launchmode.act.SingleTaskSecondActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait" />
+        <activity android:name=".base.launchmode.act.SingleTaskThirdActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.gallery.act.JGalleryMainActivity" />
 
 
     </application>

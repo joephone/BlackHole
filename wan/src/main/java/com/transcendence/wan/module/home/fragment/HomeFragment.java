@@ -13,10 +13,10 @@ import android.widget.ImageView;
 
 import com.google.gson.Gson;
 import com.transcendence.blackhole.adapter.GoweiiFragmentPagerAdapter;
-import com.transcendence.blackhole.network.callback.IFailure;
-import com.transcendence.blackhole.network.callback.ISuccess;
-import com.transcendence.blackhole.network.retrofit.RetrofitClient;
 import com.transcendence.blackhole.utils.L;
+import com.transcendence.network.jett.callback.IFailure;
+import com.transcendence.network.jett.callback.ISuccess;
+import com.transcendence.network.jett.retrofit.RetrofitClient;
 import com.transcendence.wan.R;
 import com.transcendence.wan.module.home.model.BannerBean;
 import com.transcendence.wan.module.main.act.WanMainActivity;
@@ -106,8 +106,6 @@ public class HomeFragment extends Fragment {  // implements BannerLayout.OnBanne
 
     private void initBannerData() {
         Map<String, Object> map = new HashMap<>();  //ParamApi.getInstance().listPage(1, 10);
-
-
         RetrofitClient.create()
                 .url("banner/json")
                 .params(map)

@@ -5,8 +5,6 @@ import android.content.Context;
 
 import com.transcendence.blackhole.arouter.ARouterUtils;
 import com.transcendence.blackhole.base.config.AppInit;
-import com.transcendence.blackhole.base.config.ProjectInit;
-import com.transcendence.blackhole.global.API;
 import com.transcendence.blackhole.utils.L;
 
 /**
@@ -28,11 +26,6 @@ public class LibApplication extends Application {
         super.onCreate();
         instance = this;
         applicationContext = getApplicationContext();
-
-
-        ProjectInit.init(this)
-                .withApiHost(API.API_WAN_ANDROID)
-                .configurator();
 
         AppInit.INSTANCE.initConfig(this);
 

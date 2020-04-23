@@ -1,6 +1,8 @@
 package com.transcendence.wan.base.app;
 
 import com.transcendence.blackhole.base.app.LibApplication;
+import com.transcendence.config.ProjectInit;
+import com.transcendence.global.API;
 
 /**
  * @author Joephone on 2019/12/9 16:00
@@ -12,4 +14,12 @@ import com.transcendence.blackhole.base.app.LibApplication;
 
 public class WanApp extends LibApplication {
 
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        ProjectInit.init(this)
+                .withApiHost(API.API_WAN_ANDROID)
+                .configurator();
+    }
 }

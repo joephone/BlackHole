@@ -1,5 +1,7 @@
 package com.transcendence.wan.module.login.model;
 
+import com.transcendence.wan.base.bean.WanBaseBean;
+
 import java.util.List;
 
 /**
@@ -9,7 +11,7 @@ import java.util.List;
  * E-mail: goweii@163.com
  * GitHub: https://github.com/goweii
  */
-public class LoginBean extends WanResponseBean {
+public class LoginBean extends WanBaseBean {
 
     private String email;
     private String icon;
