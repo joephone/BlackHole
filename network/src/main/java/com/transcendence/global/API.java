@@ -98,6 +98,32 @@ public class API {
          */
         public final static String SEARCH_ARTICLE_BY_KEYWORD ="article/query/0/json";
 
+        /**
+         *  9.积分 API 2019-08-25
+         积分排行榜接口
+         https://www.wanandroid.com/coin/rank/1/json
+         */
+        public final static String COIN_RANK_LIST ="coin/rank/%d/json";
+
+        public static String COIN_RANK_LIST(int page) {
+            return String.format(COIN_RANK_LIST, page);
+        }
+
+        /**
+         *  9.积分 
+          我的积分排行榜接口
+         */
+        public final static String MY_COIN ="lg/coin/userinfo/json";
+
+        /**
+         *
+         */
+        public final static String MY_COIN_LIST ="lg/coin/list/%d/json";
+
+        public static String MY_COIN_LIST(int page) {
+            return String.format(MY_COIN_LIST, page);
+        }
+
     }
 
 }

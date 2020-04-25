@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/title_status"
+            android:layout_width="match_parent"
+            android:background="@color/colorTheme"
+            android:layout_height="22dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:background="@color/colorTheme"
+            android:layout_height="45dp">
+
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_size"
+                android:text="关于我" />
+
+
+            <FrameLayout
+                android:id="@+id/fl_right"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:visibility="gone"
+                android:layout_marginRight="@dimen/standard_padding">
+
+                <ImageView
+                    android:id="@+id/ivRight"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:src="@drawable/ic_rank" />
+
+            </FrameLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <com.transcendence.ui.scroll.autoscroll.AutoScrollView
+        android:id="@+id/autoScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/beauty01"
+                />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/beauty02"
+                />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/beauty03"
+                />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/beauty04"
+                />
+
+        </LinearLayout>
+
+
+    </com.transcendence.ui.scroll.autoscroll.AutoScrollView>
+
+
+</LinearLayout>

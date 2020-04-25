@@ -4,6 +4,7 @@ import android.content.Context;
 import android.text.TextUtils;
 
 import com.google.gson.Gson;
+import com.transcendence.blackhole.utils.GsonUtils;
 import com.transcendence.blackhole.utils.SPUtils;
 import com.transcendence.wan.module.login.act.LoginActivity;
 import com.transcendence.wan.module.login.model.LoginBean;
@@ -37,10 +38,24 @@ public class UserUtils {
                 try {
                     mLoginBean = new Gson().fromJson(json, LoginBean.class);
                 } catch (Exception ignore) {
+
                 }
             }
         }
         return mLoginBean;
+    }
+
+
+
+    public void login(LoginBean loginBean){
+        mLoginBean = loginBean;
+        String json = GsonUtils.cls2Json(loginBean); //GsonUtils.getInstance().cls2Json(LoginBean.class);
+        SPUtils.getInstance().save(KEY_LOGIN_BEAN,json);
+    }
+
+    public void logout(){
+        mLoginBean = null;
+        SPUtils.getInstance().clear();
     }
 
     public boolean isLogin() {
@@ -54,7 +69,15 @@ public class UserUtils {
         return false;
     }
 
-    public boolean doIfLogin(Context context) {
+    public int getUserId(){
+        LoginBean loginBean = getLoginBean();
+        if(loginBean ==null){
+            return 0;
+        }
+        return loginBean.getId();
+    }
+
+    public boolean toDoIfLogin(Context context) {
         if (isLogin()) {
             return true;
         } else {
@@ -62,6 +85,4 @@ public class UserUtils {
             return false;
         }
     }
-
-
 }

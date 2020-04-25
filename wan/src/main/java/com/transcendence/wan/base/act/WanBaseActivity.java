@@ -1,5 +1,7 @@
 package com.transcendence.wan.base.act;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -9,6 +11,7 @@ import android.support.annotation.Nullable;
 import com.transcendence.blackhole.utils.StatusBarUtils;
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanMvpActivity;
+import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
 
 /**
  * @author Joephone on 2019/9/5 16:16
@@ -18,9 +21,10 @@ import com.transcendence.wan.core.mvp.WanMvpActivity;
  * @EditionHistory
  */
 
-public abstract class WanBaseActivity extends WanMvpActivity {
+public abstract class WanBaseActivity<P extends WanBasePresenter> extends WanMvpActivity<P> {
 
     protected WanBaseActivity mActivity;
+    private Dialog mDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,5 +43,39 @@ public abstract class WanBaseActivity extends WanMvpActivity {
         Intent intent = new Intent(mActivity, target);
         startActivity(intent);
         overridePendingTransition(R.anim.wan_zoom_small_in, R.anim.wan_zoom_small_out);
+    }
+
+
+    @Override
+    public Context getContext() {
+        return this;
+    }
+
+    @Override
+    public void showLoadingDialog() {
+//        if (mDialog == null) {
+//            mDialog = LoadingDialog.with(getContext());
+//        }
+//        mDialog.show();
+    }
+
+    @Override
+    public void dismissLoadingDialog() {
+        if (mDialog != null) {
+            mDialog.dismiss();
+        }
+    }
+
+    @Override
+    public void clearLoading() {
+//        if (mLoadingBarManager != null) {
+//            mLoadingBarManager.clear();
+//            mLoadingBarManager.detach();
+//        }
+//        mLoadingBarManager = null;
+//        if (mLoadingDialog != null) {
+//            mLoadingDialog.clear();
+//        }
+//        mLoadingDialog = null;
     }
 }

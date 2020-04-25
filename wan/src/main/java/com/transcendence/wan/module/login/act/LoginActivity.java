@@ -4,12 +4,14 @@ import android.animation.AnimatorSet;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 
 import com.transcendence.blackhole.adapter.GoweiiFragmentPagerAdapter;
 import com.transcendence.wan.R;
 import com.transcendence.wan.base.act.WanBaseActivity;
-import com.transcendence.wan.module.login.fragment.LoginFragmentWanBaseFragment;
+import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
+import com.transcendence.wan.module.login.fragment.LoginFragment;
 import com.transcendence.wan.module.login.fragment.RegisterFragment;
 import com.transcendence.wan.utils.SoftInputHelper;
 
@@ -31,7 +33,8 @@ public class LoginActivity extends WanBaseActivity {
     private SoftInputHelper mSoftInputHelper;
 
 
-    public static void start(Context context) {
+    public static void
+    start(Context context) {
         Intent intent = new Intent(context, LoginActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
@@ -45,6 +48,12 @@ public class LoginActivity extends WanBaseActivity {
     @Override
     protected int getLayoutId() {
         return R.layout.activity_wan_login;
+    }
+
+    @Nullable
+    @Override
+    protected WanBasePresenter initPresenter() {
+        return null;
     }
 
     @Override
@@ -66,7 +75,7 @@ public class LoginActivity extends WanBaseActivity {
         GoweiiFragmentPagerAdapter adapter = new GoweiiFragmentPagerAdapter(getSupportFragmentManager());
         adapter.setTitles("登录","注册");
         adapter.setFragments(
-                LoginFragmentWanBaseFragment.newInstance("登录"),
+                LoginFragment.newInstance("登录"),
                 RegisterFragment.newInstance("注册"));
         mVp.setAdapter(adapter);
         mVp.setCurrentItem(0);
@@ -77,4 +86,23 @@ public class LoginActivity extends WanBaseActivity {
     }
 
 
+    @Override
+    public Context getContext() {
+        return null;
+    }
+
+    @Override
+    public void showLoadingDialog() {
+
+    }
+
+    @Override
+    public void dismissLoadingDialog() {
+
+    }
+
+    @Override
+    public void clearLoading() {
+
+    }
 }

@@ -7,10 +7,10 @@ import com.transcendence.network.jett.callback.IFailure;
 import com.transcendence.network.jett.callback.ISuccess;
 import com.transcendence.network.jett.retrofit.RetrofitClient;
 import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
+import com.transcendence.wan.core.service.ParamMap;
 import com.transcendence.wan.module.dama.model.DamaBean;
 import com.transcendence.wan.module.dama.view.DamaView;
 
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -24,8 +24,7 @@ import java.util.Map;
 public class DamaPresenter extends WanBasePresenter<DamaView> {
 
     public void getArticleList(int page){
-        Map<String,Object> map = new HashMap<>();
-        map.put("page",page);
+        Map<String,Object> map = ParamMap.getInstance().page(page);
 
         RetrofitClient.create()
                 .url(API.WAN.DAMA_ARTICLE_LIST(page))

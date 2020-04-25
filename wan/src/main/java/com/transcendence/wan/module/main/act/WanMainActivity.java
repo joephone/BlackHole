@@ -1,5 +1,7 @@
 package com.transcendence.wan.module.main.act;
 
+import android.content.Context;
+import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -8,6 +10,7 @@ import com.transcendence.blackhole.arouter.ARouterController;
 import com.transcendence.blackhole.arouter.ARouterUtils;
 import com.transcendence.wan.R;
 import com.transcendence.wan.base.act.WanBaseActivity;
+import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
 import com.transcendence.wan.module.dama.fragment.DamaFragment;
 import com.transcendence.wan.module.home.fragment.MainFragment;
 
@@ -31,6 +34,12 @@ public class WanMainActivity extends WanBaseActivity {
     @Override
     protected int getLayoutId() {
         return R.layout.activity_wan_main;
+    }
+
+    @Nullable
+    @Override
+    protected WanBasePresenter initPresenter() {
+        return null;
     }
 
     @Override
@@ -64,5 +73,23 @@ public class WanMainActivity extends WanBaseActivity {
     }
 
 
+    @Override
+    public Context getContext() {
+        return null;
+    }
 
+    @Override
+    public void showLoadingDialog() {
+
+    }
+
+    @Override
+    public void dismissLoadingDialog() {
+
+    }
+
+    @Override
+    public void clearLoading() {
+
+    }
 }

@@ -43,7 +43,7 @@
     </LinearLayout>
 
     <com.transcendence.wan.widget.AccountInputView
-        android:id="@+id/piv_login_account"
+        android:id="@+id/tvAccount"
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:layout_marginLeft="60dp"
@@ -51,10 +51,10 @@
         android:layout_marginRight="60dp" />
 
     <com.transcendence.wan.widget.PasswordInputView
-        android:id="@+id/piv_login_password"
+        android:id="@+id/tvPassWord"
         android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:layout_below="@+id/piv_login_account"
+        android:layout_below="@+id/tvAccount"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="60dp" />
@@ -63,7 +63,7 @@
         android:id="@+id/sv_login"
         android:layout_width="match_parent"
         android:layout_height="44dp"
-        android:layout_below="@+id/piv_login_password"
+        android:layout_below="@+id/tvPassWord"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="60dp"

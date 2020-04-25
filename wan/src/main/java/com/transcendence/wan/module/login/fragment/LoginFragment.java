@@ -2,23 +2,24 @@ package com.transcendence.wan.module.login.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.transcendence.blackhole.adapter.GoweiiFragmentPagerAdapter;
+import com.transcendence.blackhole.utils.L;
 import com.transcendence.blackhole.widget.custom.TabView;
 import com.transcendence.wan.R;
+import com.transcendence.wan.core.mvp.WanBaseFragment;
 import com.transcendence.wan.event.LoginEvent;
 import com.transcendence.wan.module.login.act.LoginActivity;
 import com.transcendence.wan.module.login.model.LoginBean;
 import com.transcendence.wan.module.login.presenter.LoginPresenter;
 import com.transcendence.wan.module.login.view.LoginView;
-import com.transcendence.wan.core.mvp.WanBaseFragment;
+import com.transcendence.wan.widget.AccountInputView;
+import com.transcendence.wan.widget.PasswordInputView;
+import com.transcendence.wan.widget.SubmitView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,10 +32,12 @@ import java.util.List;
  * @EditionHistory
  */
 
-public class LoginFragmentWanBaseFragment extends WanBaseFragment<LoginPresenter> implements View.OnClickListener,LoginView {
+public class LoginFragment extends WanBaseFragment<LoginPresenter> implements View.OnClickListener,LoginView {
 
-
-    private LinearLayout mLlGoRegister;
+    private AccountInputView tvAccount;
+    private PasswordInputView tvPassWord;
+    private SubmitView svLogin;
+    private LinearLayout llGoRegister;
 
     private LoginActivity mActivity;
     /**
@@ -44,8 +47,8 @@ public class LoginFragmentWanBaseFragment extends WanBaseFragment<LoginPresenter
      * @param title Parameter 1.
      * @return A new instance of fragment .
      */
-    public static LoginFragmentWanBaseFragment newInstance(String title) {
-        LoginFragmentWanBaseFragment fragment = new LoginFragmentWanBaseFragment();
+    public static LoginFragment newInstance(String title) {
+        LoginFragment fragment = new LoginFragment();
         Bundle args = new Bundle();
         args.putString(ARG_SHOW_TEXT, title);
         fragment.setArguments(args);
@@ -68,44 +71,28 @@ public class LoginFragmentWanBaseFragment extends WanBaseFragment<LoginPresenter
 
     @Override
     protected int getLayoutRes() {
-        return 0;
+        return R.layout.fragment_login;
     }
 
     @Nullable
     @Override
     protected LoginPresenter initPresenter() {
-        return null;
+        return new LoginPresenter();
     }
 
     @Override
     protected void initView() {
-
+        tvAccount = findViewById(R.id.tvAccount);
+        tvPassWord = findViewById(R.id.tvPassWord);
+        llGoRegister = findViewById(R.id.llGoRegister);
+        svLogin = findViewById(R.id.sv_login);
+        llGoRegister.setOnClickListener(this);
+        svLogin.setOnClickListener(this);
     }
 
     @Override
     protected void loadData() {
 
-    }
-
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView =  inflater.inflate(R.layout.fragment_login, container, false);
-        initView(rootView);
-        return rootView;
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-
-    }
-
-
-    private void initView(View rootView) {
-        mLlGoRegister = rootView.findViewById(R.id.llGoRegister);
-        mLlGoRegister.setOnClickListener(this);
     }
 
 
@@ -115,17 +102,23 @@ public class LoginFragmentWanBaseFragment extends WanBaseFragment<LoginPresenter
         switch (v.getId()){
             case R.id.llGoRegister:
                 mActivity.changeVp(1);
+            case R.id.sv_login:
+                String username = "15171484007";//tvAccount.getText().trim();
+                String password = "123456";//tvPassWord.getText().trim();
+                presenter.login(username,password);
                 break;
         }
     }
 
     @Override
     public void loginSuccess(int code, LoginBean data) {
+        L.d("loginSuccess");
         new LoginEvent(true).post();
+        finish();
     }
 
     @Override
     public void loginFailed(int code, String msg) {
-
+        L.d("loginFailed");
     }
 }

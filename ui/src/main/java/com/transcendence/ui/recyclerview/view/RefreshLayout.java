@@ -47,7 +47,7 @@ public class RefreshLayout<T> extends LinearLayout{
 //        View.inflate(context,R.layout.activity_srf_rv_new,this);
         mRv = view.findViewById(R.id.id_recyclerView);
         mSrfl = view.findViewById(R.id.id_swipeRefreshLayout);
-        emptyView = view.findViewById(R.id.id_emptyView);
+//        emptyView = view.findViewById(R.id.id_emptyView);
     }
 
 
@@ -57,7 +57,7 @@ public class RefreshLayout<T> extends LinearLayout{
             Log.d("BlackHole","mRv ==null");
         }
         mRv.setLayoutManager(new LinearLayoutManager(context));
-        mRv.setEmptyView(emptyView);
+//        mRv.setEmptyView(emptyView);
         mRv.setAdapter(mAdapter);
     }
 

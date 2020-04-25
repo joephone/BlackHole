@@ -37,10 +37,12 @@ public class DamaFragment extends WanBaseFragment<DamaPresenter> implements Dama
         return R.layout.fragment_navi_dama;
     }
 
+
     @Override
     protected DamaPresenter initPresenter() {
         return new DamaPresenter();
     }
+
 
     @Override
     protected void initView() {

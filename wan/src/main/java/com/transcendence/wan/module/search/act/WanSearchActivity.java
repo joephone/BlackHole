@@ -1,5 +1,7 @@
 package com.transcendence.wan.module.search.act;
 
+import android.content.Context;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -7,6 +9,7 @@ import android.widget.FrameLayout;
 
 import com.transcendence.wan.R;
 import com.transcendence.wan.base.act.WanBaseActivity;
+import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
 import com.transcendence.wan.module.search.fragment.SearchHistoryFragment;
 import com.transcendence.wan.module.search.fragment.SearchResultFragment;
 
@@ -28,6 +31,12 @@ public class WanSearchActivity extends WanBaseActivity {
     @Override
     protected int getLayoutId() {
         return R.layout.activity_wan_search;
+    }
+
+    @Nullable
+    @Override
+    protected WanBasePresenter initPresenter() {
+        return null;
     }
 
     @Override
@@ -63,4 +72,23 @@ public class WanSearchActivity extends WanBaseActivity {
     }
 
 
+    @Override
+    public Context getContext() {
+        return null;
+    }
+
+    @Override
+    public void showLoadingDialog() {
+
+    }
+
+    @Override
+    public void dismissLoadingDialog() {
+
+    }
+
+    @Override
+    public void clearLoading() {
+
+    }
 }

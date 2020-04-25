@@ -1,5 +1,7 @@
 package com.transcendence.wan.module.main.act;
 
+import android.content.Context;
+import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.view.MotionEvent;
 import android.view.animation.AlphaAnimation;
@@ -11,6 +13,7 @@ import com.transcendence.blackhole.utils.GlideUtils;
 import com.transcendence.blackhole.utils.L;
 import com.transcendence.wan.R;
 import com.transcendence.wan.base.act.WanBaseActivity;
+import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
 
 import java.util.Random;
 
@@ -32,6 +35,12 @@ public class WanSplashActivity extends WanBaseActivity implements Animation.Anim
     @Override
     protected int getLayoutId() {
         return R.layout.activity_wan_splash;
+    }
+
+    @Nullable
+    @Override
+    protected WanBasePresenter initPresenter() {
+        return null;
     }
 
     @Override
@@ -120,5 +129,25 @@ public class WanSplashActivity extends WanBaseActivity implements Animation.Anim
                 break;
         }
         return super.onTouchEvent(event);
+    }
+
+    @Override
+    public Context getContext() {
+        return null;
+    }
+
+    @Override
+    public void showLoadingDialog() {
+
+    }
+
+    @Override
+    public void dismissLoadingDialog() {
+
+    }
+
+    @Override
+    public void clearLoading() {
+
     }
 }

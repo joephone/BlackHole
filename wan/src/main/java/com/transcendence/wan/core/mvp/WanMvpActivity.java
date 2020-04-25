@@ -1,16 +1,20 @@
 package com.transcendence.wan.core.mvp;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.annotation.Nullable;
+
+import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
+
+import per.goweii.swipeback.SwipeBackActivity;
 
 /**
  * Created by Administrator on 2020/3/2.
  */
 
-public abstract class WanMvpActivity extends AppCompatActivity {
+public abstract class WanMvpActivity<T extends WanBasePresenter> extends SwipeBackActivity implements WanMvpView {
 
 
-//    public P presenter;
+    protected T presenter;
 
     /**
      * 获取布局资源文件
@@ -20,8 +24,8 @@ public abstract class WanMvpActivity extends AppCompatActivity {
     /**
      * 初始化presenter
      */
-//    @Nullable
-//    protected abstract P initPresenter();
+    @Nullable
+    protected abstract T initPresenter();
 
     /**
      * 初始化控件
@@ -41,12 +45,35 @@ public abstract class WanMvpActivity extends AppCompatActivity {
         if (getLayoutId() > 0) {
             setContentView(getLayoutId());
         }
-//        presenter = initPresenter();
-//        if (presenter != null) {
-//            presenter.attach(this);
-//        }
+
+
+        attachPresenter();
+        initialize();
+    }
+
+    protected void initialize() {
         initView();
         loadData();
     }
 
+
+
+
+    private void attachPresenter() {
+        if (presenter == null) {
+            presenter = initPresenter();
+        }
+        if (presenter != null) {
+            presenter.attach(this);
+        }
+    }
+
+
+    @Override
+    public void onDestroy() {
+        if (presenter != null) {
+            presenter.detach();
+        }
+        super.onDestroy();
+    }
 }

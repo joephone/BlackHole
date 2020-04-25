@@ -18,10 +18,10 @@
 
     </android.support.v4.widget.SwipeRefreshLayout>
 
-    <ImageView
-        android:id="@id/id_emptyView"
-        android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:background="@color/colorTheme"
-        android:src="@drawable/pic_404" />
+    <!--<ImageView-->
+        <!--android:id="@id/id_emptyView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="160dp"-->
+        <!--android:background="@color/colorTheme"-->
+        <!--android:src="@drawable/pic_404" />-->
 </FrameLayout>

@@ -1,0 +1,12 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+
+
+    <!-- lotteryview two -->
+    <dimen name="layout_footer_height">70dp</dimen>
+
+
+
+
+</resources>

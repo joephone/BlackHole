@@ -18,6 +18,7 @@ public class WanBaseBean implements Serializable {
     private int errorCode;
     private String errorMsg;
 
+
     public int getErrorCode() {
         return errorCode;
     }
