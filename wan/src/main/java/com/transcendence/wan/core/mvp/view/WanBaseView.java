@@ -1,4 +1,4 @@
-package com.transcendence.wan.core.mvp;
+package com.transcendence.wan.core.mvp.view;
 
 /**
  * @author Joephone on 2019/12/10 11:21

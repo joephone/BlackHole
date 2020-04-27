@@ -1,6 +1,6 @@
 package com.transcendence.wan.core.mvp.presenter;
 
-import com.transcendence.wan.core.mvp.WanBaseView;
+import com.transcendence.wan.core.mvp.view.WanBaseView;
 
 /**
  * 描述：

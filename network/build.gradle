@@ -14,6 +14,5 @@ dependencies {
     //okhttp3
     api config.dependencies.okhttp
 
-
-
+    api config.dependencies.persistentCookieJar
 }

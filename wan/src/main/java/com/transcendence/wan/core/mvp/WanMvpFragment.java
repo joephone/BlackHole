@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.transcendence.wan.base.fragment.LazyFragment;
 import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
+import com.transcendence.wan.core.mvp.view.WanBaseView;
 import com.transcendence.wan.utils.ClickHelper;
 
 /**

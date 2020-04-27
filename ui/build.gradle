@@ -10,4 +10,6 @@ dependencies {
     api config.dependencies.appcompatv7
     api config.dependencies.design
     api config.dependencies.supportv4
+
+    implementation 'com.github.hackware1993:MagicIndicator:1.6.0'
 }

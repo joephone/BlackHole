@@ -1,5 +1,6 @@
 package com.transcendence.network.jett.retrofit;
 
+import com.franmontiel.persistentcookiejar.PersistentCookieJar;
 import com.transcendence.global.API;
 
 import java.util.concurrent.TimeUnit;
@@ -17,6 +18,13 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
  */
 
 public class RetrofitCreator {
+
+    private static PersistentCookieJar mCookieJar = null;
+
+    public static void setCookieJar(PersistentCookieJar cookieJar) {
+        RetrofitCreator.mCookieJar = cookieJar;
+    }
+
     /**
      * 产生一个全局的retrofit客户端
      */
@@ -27,10 +35,10 @@ public class RetrofitCreator {
     private static final class OkHttpHolder{
         private static final int TIME_OUT=60;
         private static final OkHttpClient OK_HTTP_CLIENT=new OkHttpClient.Builder()
+                .cookieJar(mCookieJar)
                 .connectTimeout(TIME_OUT, TimeUnit.SECONDS)
                 .build();
     }
-
 
     /**
      * 获取对象

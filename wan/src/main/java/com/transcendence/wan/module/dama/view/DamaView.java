@@ -1,6 +1,6 @@
 package com.transcendence.wan.module.dama.view;
 
-import com.transcendence.wan.core.mvp.WanBaseView;
+import com.transcendence.wan.core.mvp.view.WanBaseView;
 import com.transcendence.wan.module.dama.model.DamaBean;
 
 import java.util.List;

@@ -45,6 +45,8 @@ ext {
             retrofit                        : "2.2.0",
             okhttp                          : "3.5.0",
 
+            persistentCookieJar             : "v1.0.1",
+
             jLog                            : "1.0.2",
     ]
 
@@ -81,6 +83,9 @@ ext {
             converterGson                   : "com.squareup.retrofit2:converter-gson:$version.retrofit",
             retrofit2rxjava                 : "com.squareup.retrofit2:adapter-rxjava:$version.retrofit",
             okhttp                          : "com.squareup.okhttp3:okhttp:$version.okhttp",
+
+
+            persistentCookieJar             : "com.github.franmontiel:PersistentCookieJar:$version.persistentCookieJar",
 
             //rx
             reactivex                       : "io.reactivex:rxandroid:1.2.0",

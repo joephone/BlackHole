@@ -53,11 +53,15 @@ public class API {
 
         public final static String WX_ARTICLE_LIST = API_WAN_ANDROID +"wxarticle/list/{id}/{page}/json";
 
-        /**
+        /** 0.3
          * 获取公众号列表
          * get
+         * https://wanandroid.com/wxarticle/chapters/json
          */
-        public final static String WX_ARTICLE_CHAPTER = API_WAN_ANDROID + "wxarticle/chapters/json";
+        public final static String WX_ARTICLE_CHAPTER = "wxarticle/chapters/json";
+
+
+
 
         public final static String DAMA_ARTICLE_LIST  = "user_article/list/%d/json";
 

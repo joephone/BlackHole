@@ -41,7 +41,7 @@ public class RankAdapter extends BaseAbsAdapter<RankListBean.DatasBean>{
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
         mContext = parent.getContext();
-        View view = LayoutInflater.from(mContext).inflate(R.layout.activity_mine_rank_item,parent,false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.activity_mine_my_rank_item,parent,false);
         return new RankListViewHolder(view);
     }
 
@@ -60,7 +60,7 @@ public class RankAdapter extends BaseAbsAdapter<RankListBean.DatasBean>{
 
             doProgressAnim(holder.pb, mList.get(position).getCoinCount());
 
-            holder.tv_index.setText("" + position);
+            holder.tv_index.setText("" + (position+1));
             holder.tv_user_name.setText(mList.get(position).getUsername());
             holder.tv_coin_count.setText("" + mList.get(position).getCoinCount());
 
@@ -118,7 +118,6 @@ public class RankAdapter extends BaseAbsAdapter<RankListBean.DatasBean>{
             tv_index = view.findViewById(R.id.tv_index);
             tv_user_name = view.findViewById(R.id.tv_user_name);
             tv_coin_count = view.findViewById(R.id.tv_coin_count);
-
         }
     }
 

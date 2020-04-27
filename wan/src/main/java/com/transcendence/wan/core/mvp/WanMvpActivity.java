@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
+import com.transcendence.wan.core.mvp.view.WanMvpView;
 
 import per.goweii.swipeback.SwipeBackActivity;
 

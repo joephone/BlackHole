@@ -15,65 +15,75 @@
         <View
             android:id="@+id/title_status"
             android:layout_width="match_parent"
-            android:layout_height="22dp"
+            android:layout_height="25dp"
             android:background="@color/colorGitHubBlack" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:background="@color/colorGitHubBlack"
-            >
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="45dp"-->
+            <!--android:background="@color/colorGitHubBlack"-->
+            <!--&gt;-->
 
-            <FrameLayout
-                android:id="@+id/flBack"
-                android:layout_width="40dp"
-                android:layout_height="match_parent"
-                android:visibility="gone"
-                android:background="@drawable/selector_back">
+            <!--<FrameLayout-->
+                <!--android:id="@+id/flBack"-->
+                <!--android:layout_width="40dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:visibility="gone"-->
+                <!--android:background="@drawable/selector_back">-->
 
-                <ImageView
-                    android:id="@+id/ivLeft"
-                    android:layout_width="15dp"
-                    android:layout_height="15dp"
-                    android:layout_centerVertical="true"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="@dimen/dp_10"
-                    android:gravity="center"
-                    android:src="@mipmap/ic_article"
-                    />
-            </FrameLayout>
-
-
-            <TextView
-                android:id="@+id/tvTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:ellipsize="end"
-                android:maxLines="1"
-                tools:text="公众号"
-                android:textColor="@color/white"
-                android:textSize="@dimen/title_size" />
+                <!--<ImageView-->
+                    <!--android:id="@+id/ivLeft"-->
+                    <!--android:layout_width="15dp"-->
+                    <!--android:layout_height="15dp"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:layout_marginLeft="@dimen/dp_10"-->
+                    <!--android:gravity="center"-->
+                    <!--android:src="@mipmap/ic_article"-->
+                    <!--/>-->
+            <!--</FrameLayout>-->
 
 
-            <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginRight="@dimen/standard_padding"
-                android:layout_alignParentRight="true">
+            <!--<TextView-->
+                <!--android:id="@+id/tvTitle"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:ellipsize="end"-->
+                <!--android:maxLines="1"-->
+                <!--android:text="公众号"-->
+                <!--android:textColor="@color/white"-->
+                <!--android:textSize="@dimen/title_size" />-->
 
-                <ImageView
-                    android:id="@+id/ivRight"
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_centerVertical="true"
-                    android:layout_gravity="center_vertical"
-                    android:gravity="center"
-                    />
-            </FrameLayout>
 
-        </RelativeLayout>
+            <!--<FrameLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_marginRight="@dimen/standard_padding"-->
+                <!--android:layout_alignParentRight="true">-->
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/ivRight"-->
+                    <!--android:layout_width="18dp"-->
+                    <!--android:layout_height="18dp"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:gravity="center"-->
+                    <!--/>-->
+            <!--</FrameLayout>-->
+
+        <!--</RelativeLayout>-->
     </LinearLayout>
+
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_layout"
+        style="@style/MyCustomTabLayout"
+        android:layout_width="match_parent"
+        android:background="@color/colorTheme"
+        android:layout_height="@dimen/tab_layout_height"
+        app:tabPadding="10dp"
+        app:tabMode="scrollable"/>
 
 
     <android.support.v4.view.ViewPager

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/surface">
+    android:background="@color/white">
 
     <ProgressBar
         android:id="@+id/pb"
@@ -59,7 +59,7 @@
             android:lineSpacingExtra="0dp"
             android:textColor="@color/text_surface"
             android:textSize="@dimen/text_content"
-            tools:text="joephone" />
+            tools:text="g**eii" />
 
         <TextView
             android:id="@+id/tv_coin_count"

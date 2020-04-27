@@ -2,7 +2,7 @@ package com.transcendence.wan.core.mvp.presenter;
 
 import android.content.Context;
 
-import com.transcendence.wan.core.mvp.WanMvpView;
+import com.transcendence.wan.core.mvp.view.WanMvpView;
 
 /**
  * @Author Joephone on 2020/4/24 0:21

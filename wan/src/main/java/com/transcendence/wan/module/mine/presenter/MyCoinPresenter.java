@@ -1,5 +1,6 @@
 package com.transcendence.wan.module.mine.presenter;
 
+import com.transcendence.blackhole.utils.GsonUtils;
 import com.transcendence.blackhole.utils.L;
 import com.transcendence.global.API;
 import com.transcendence.network.jett.callback.IFailure;
@@ -8,6 +9,8 @@ import com.transcendence.network.jett.retrofit.RetrofitClient;
 import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
 import com.transcendence.wan.core.service.ParamMap;
 import com.transcendence.wan.core.service.ParamUser;
+import com.transcendence.wan.module.mine.model.MyCoinListModel;
+import com.transcendence.wan.module.mine.model.MyCoinModel;
 import com.transcendence.wan.module.mine.view.MyCoinView;
 
 import java.util.Map;
@@ -33,7 +36,11 @@ public class MyCoinPresenter extends WanBasePresenter<MyCoinView> {
                 .success(new ISuccess() {
                     @Override
                     public void onSuccess(String response) {
-                        L.d("response--"+response);
+//                        L.d("response--"+response);
+                        MyCoinModel model = GsonUtils.json2Cls(response,MyCoinModel.class);
+                        if(isAttach()){
+                            getWanBaseView().getMyCoinSuc(0,model.getData());
+                        }
                     }
                 })
                 .failure(new IFailure() {
@@ -57,7 +64,11 @@ public class MyCoinPresenter extends WanBasePresenter<MyCoinView> {
                 .success(new ISuccess() {
                     @Override
                     public void onSuccess(String response) {
-                        L.d("response--"+response);
+//                        L.d("response--"+response);
+                        MyCoinListModel model = GsonUtils.json2Cls(response, MyCoinListModel.class);
+                        if(isAttach()){
+                            getWanBaseView().getMyCoinListSuc(0,model.getData().getDatas());
+                        }
                     }
                 })
                 .failure(new IFailure() {

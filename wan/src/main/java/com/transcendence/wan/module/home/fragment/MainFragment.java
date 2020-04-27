@@ -17,7 +17,7 @@ import com.transcendence.blackhole.widget.custom.TabView;
 import com.transcendence.wan.R;
 import com.transcendence.wan.module.knowledge.fragment.KnowledgeNavigationFragment;
 import com.transcendence.wan.module.mine.fragment.MineFragment;
-import com.transcendence.wan.module.wxpublic.fragment.WxPublicAccountHeadFragment;
+import com.transcendence.wan.module.wxpublic.fragment.NaviWxPublicFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -99,7 +99,7 @@ public class MainFragment extends Fragment implements View.OnClickListener{
         adapter = new GoweiiFragmentPagerAdapter(getChildFragmentManager());
         adapter.setFragments(HomeFragment.newInstance("主页面")
                 , KnowledgeNavigationFragment.newInstance("体系")
-                , WxPublicAccountHeadFragment.newInstance("公众号")
+                , NaviWxPublicFragment.create()
                 , BlankFragment.newInstance("项目")
                 , MineFragment.newInstance("我的"));
         mVpMain.setAdapter(adapter);

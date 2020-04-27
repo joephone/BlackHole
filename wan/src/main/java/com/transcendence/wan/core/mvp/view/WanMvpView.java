@@ -1,4 +1,4 @@
-package com.transcendence.wan.core.mvp;
+package com.transcendence.wan.core.mvp.view;
 
 import android.content.Context;
 

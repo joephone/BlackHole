@@ -35,8 +35,6 @@ public class DamaAdapter extends BaseAbsAdapter<DamaBean.DataBean.DatasBean> {
         super(context);
     }
 
-
-
     @Override
     public DamaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         mContext = parent.getContext();
