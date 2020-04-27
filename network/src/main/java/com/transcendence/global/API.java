@@ -51,8 +51,6 @@ public class API {
     public static class WAN {
 
 
-        public final static String WX_ARTICLE_LIST = API_WAN_ANDROID +"wxarticle/list/{id}/{page}/json";
-
         /** 0.3
          * 获取公众号列表
          * get
@@ -61,14 +59,36 @@ public class API {
         public final static String WX_ARTICLE_CHAPTER = "wxarticle/chapters/json";
 
 
+        /**
+         * 0.4  private static final String WXARTICLE_LIST = "wxarticle/list/%d/%d/json";//id+page
+         * 查看某个公众号历史数据
+         https://wanandroid.com/wxarticle/list/408/1/json
+         方法：GET
+         参数：
+         公众号 ID：拼接在 url 中，eg:405
+         公众号页码：拼接在url 中，eg:1
+         在某个公众号中搜索历史文章
+         https://wanandroid.com/wxarticle/list/405/1/json?k=Java
+         方法：GET
+         参数 ：
+         k : 字符串，eg:Java
+         公众号 ID：拼接在 url 中，eg:405
+         公众号页码：拼接在url 中，eg:1
+         */
+        private static final String WX_CHAPTER_ARTICLE_LIST = "wxarticle/list/%d/%d/json";//id+page
 
+        public static String WX_CHAPTER_ARTICLE_LIST(int id,int page) {
+            return String.format(WX_CHAPTER_ARTICLE_LIST,id,page);
+        }
 
-        public final static String DAMA_ARTICLE_LIST  = "user_article/list/%d/json";
-
+        private final static String DAMA_ARTICLE_LIST  = "user_article/list/%d/json";
 
         public static String DAMA_ARTICLE_LIST(int page) {
             return String.format(DAMA_ARTICLE_LIST, page);
         }
+
+
+
 
 
         /**

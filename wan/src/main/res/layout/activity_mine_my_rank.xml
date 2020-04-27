@@ -6,7 +6,6 @@
     android:orientation="vertical">
 
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,8 +15,8 @@
         <View
             android:id="@+id/title_status"
             android:layout_width="match_parent"
-            android:layout_height="22dp"
-            android:background="@color/colorTheme"/>
+            android:layout_height="30dp"
+            android:background="@color/colorTheme" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -32,9 +31,9 @@
                 android:layout_centerInParent="true"
                 android:ellipsize="end"
                 android:maxLines="1"
+                android:text="我的积分"
                 android:textColor="@color/white"
-                android:textSize="@dimen/title_size"
-                android:text="我的积分" />
+                android:textSize="@dimen/title_size" />
 
 
             <FrameLayout
@@ -42,8 +41,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_alignParentRight="true"
-                android:visibility="gone"
-                android:layout_marginRight="@dimen/standard_padding">
+                android:layout_marginRight="@dimen/standard_padding"
+                android:visibility="gone">
 
                 <ImageView
                     android:id="@+id/ivRight"
@@ -60,15 +59,16 @@
     </LinearLayout>
 
     <RelativeLayout
+        android:id="@+id/rl_top"
         android:layout_width="match_parent"
-        android:layout_height="260dp"
-        android:background="@color/colorTheme"
-        >
+        android:layout_height="215dp"
+        android:background="@color/colorTheme">
 
         <TextView
             android:id="@+id/tv_coin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:gravity="center"
             android:lines="1"
             android:textColor="@color/basic_ui_action_bar_text"
@@ -80,7 +80,7 @@
     <com.transcendence.ui.recyclerview.view.LoadMoreLayout
         android:id="@+id/loadMoreLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 
 </LinearLayout>

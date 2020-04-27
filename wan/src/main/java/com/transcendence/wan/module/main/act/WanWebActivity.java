@@ -1,6 +1,20 @@
 package com.transcendence.wan.module.main.act;
 
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.transcendence.blackhole.utils.StatusBarUtils;
+import com.transcendence.wan.R;
 
 /**
  * @author Joephone on 2019/12/17 18:24
@@ -10,53 +24,92 @@ import android.support.v7.app.AppCompatActivity;
  * @EditionHistory
  */
 
-public class WanWebActivity extends AppCompatActivity {
+public class WanWebActivity extends AppCompatActivity implements View.OnClickListener{
 
-//    @BindView(R.id.webView)
-//    WebView webView;
-//    @BindView(R.id.iv_back)
-//    ImageView ivBack;
-//    @BindView(R.id.iv_menu)
-//    ImageView ivMenu;
-//    @BindView(R.id.iv_forward)
-//    ImageView ivForward;
-//
-//
-//    private int mArticleId = -1;
-//    private String mTitle = "";
-//    private String mAuthor = "";
-//    private String mUrl = "";
-//
-//    @Override
-//    protected void onCreate(@Nullable Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_webview);
-//        ButterKnife.bind(this);
-//
-//
-//        mArticleId = getIntent().getIntExtra("articleId", -1);
-//        mTitle = getIntent().getStringExtra("title");
-//        mTitle = mTitle == null ? "" : mTitle;
-//        mAuthor = getIntent().getStringExtra("author");
-//        mAuthor = mAuthor == null ? "" : mAuthor;
-//        mUrl = getIntent().getStringExtra("url");
-//        mUrl = mUrl == null ? "" : mUrl;
+
+    private WebView mWebView;
+    private ImageView ivBack;
+    private ImageView ivMenu;
+    private ImageView ivForward;
+    private TextView tvTitle;
+    private FrameLayout flBack;
+
+    private int mArticleId = -1;
+    private String mTitle = "";
+    private String mAuthor = "";
+    private String mUrl = "";
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_webview);
+
+        StatusBarUtils.with().init();
+
+        mWebView = findViewById(R.id.webView);
+        flBack = findViewById(R.id.flBack);
+        flBack.setOnClickListener(this);
+        ivBack = findViewById(R.id.iv_back);
+        ivBack.setOnClickListener(this);
+        ivMenu = findViewById(R.id.iv_menu);
+        ivMenu.setOnClickListener(this);
+        ivForward = findViewById(R.id.iv_forward);
+        ivForward.setOnClickListener(this);
+        tvTitle = findViewById(R.id.tvTitle);
+
+
+
+        mArticleId = getIntent().getIntExtra("articleId", -1);
+        mTitle = getIntent().getStringExtra("title");
+        mTitle = mTitle == null ? "" : mTitle;
+        mAuthor = getIntent().getStringExtra("author");
+        tvTitle.setText(mAuthor = mAuthor == null ? "" : mAuthor);
+        mUrl = getIntent().getStringExtra("url");
+        mUrl = mUrl == null ? "" : mUrl;
 //        boolean collected = getIntent().getBooleanExtra("collected", false);
-//        webView.loadUrl(mUrl);
-//    }
+
+        WebSettings webSettings = mWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        mWebView.setWebChromeClient(new WebChromeClient());
+
+        mWebView.loadUrl(mUrl);
+    }
 //
 //    public static void start(Context context, BannerBean.DataBean item) {
 //        int articleId = item.getOriginId() != 0 ? item.getOriginId() : item.getId();
 //        start(context, articleId, item.getTitle(), item.getLink(), item.isCollect());
 //    }
-//
-//    public static void start(Context context, int articleId, String title, String url, boolean collected) {
-//        Intent intent = new Intent(context, WanWebActivity.class);
-//        intent.putExtra("articleId", articleId);
-//        intent.putExtra("title", title);
-//        intent.putExtra("url", url);
-//        intent.putExtra("collected", collected);
-//        context.startActivity(intent);
-//
-//    }
+
+    public static void start(Context context, int articleId, String title, String url,String author, boolean collected) {
+        Intent intent = new Intent(context, WanWebActivity.class);
+        intent.putExtra("articleId", articleId);
+        intent.putExtra("title", title);
+        intent.putExtra("url", url);
+        intent.putExtra("author", author);
+        intent.putExtra("collected", collected);
+        context.startActivity(intent);
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.flBack:
+            case R.id.iv_back:
+                if (mWebView.canGoBack()) {
+                    mWebView.goBack();
+                } else {
+                    finish();
+                }
+                break;
+            case R.id.iv_menu:
+
+                break;
+            case R.id.iv_forward:
+                if (mWebView.canGoForward()) {
+                    mWebView.goForward();
+                }
+                break;
+        }
+    }
 }

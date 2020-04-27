@@ -5,6 +5,60 @@
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/title_status"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:background="@color/colorGitHubBlack"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/colorGitHubBlack">
+
+            <FrameLayout
+                android:id="@+id/flBack"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/selector_back">
+
+                <ImageView
+                    android:id="@+id/ivLeft"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:gravity="center"
+                    android:src="@mipmap/ic_back"
+                    />
+            </FrameLayout>
+
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_size"
+                android:text="标题" />
+
+
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
     <WebView
         android:id="@+id/webView"
         android:layout_width="match_parent"

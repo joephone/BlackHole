@@ -141,9 +141,7 @@ public class DamaAdapter extends BaseAbsAdapter<DamaBean.DataBean.DatasBean> {
         mList.addAll(list == null? new ArrayList<>():list);
     }
 
-
     public class DamaViewHolder extends RecyclerView.ViewHolder {
-
         TextView tv_top;
         TextView tv_new;
         TextView tv_author;
@@ -171,9 +169,4 @@ public class DamaAdapter extends BaseAbsAdapter<DamaBean.DataBean.DatasBean> {
 
         }
     }
-
-
-
-
-
 }

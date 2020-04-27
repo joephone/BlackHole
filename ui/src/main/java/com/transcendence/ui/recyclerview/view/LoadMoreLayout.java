@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -59,8 +60,6 @@ public class LoadMoreLayout<T> extends LinearLayout {
 
 
     public void addCallback(final LoadMoreCallback callback){
-
-
         mRv.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
@@ -77,6 +76,7 @@ public class LoadMoreLayout<T> extends LinearLayout {
                 boolean isEnd = manager.getItemCount() -1  == last; //滑到底
                 boolean isState = mAdapter.getLoadingState() != LoadingState.LOADING_END;
                 if(isEnd && mIsSlidingUp && isState && callback!=null){
+                    Log.d("BlackHole","到底了--");
                     mAdapter.setLoadState(LoadingState.LOADING);
                     callback.onViewLoadMore();
                 }
@@ -96,9 +96,14 @@ public class LoadMoreLayout<T> extends LinearLayout {
                 int first = manager.findFirstCompletelyVisibleItemPosition();
                 int last = manager.findLastCompletelyVisibleItemPosition();
                 int count = manager.getItemCount();
+                Log.d("BlackHole","first--"+first);
+                Log.d("BlackHole","last--"+last);
+                Log.d("BlackHole","count--"+count);
                 if(last +1 == count && first == 0){  //少于一页
+                    Log.d("BlackHole","INIT--");
                     mAdapter.setLoadState(LoadingState.INIT);
                 }else {
+                    Log.d("BlackHole","LOADING_COMPLETE--");
                     mAdapter.setLoadState(LoadingState.LOADING_COMPLETE);  //不是到底
                 }
                 // 总数据不足一页时，不显示FooterView 到底时不修改状态
@@ -109,10 +114,17 @@ public class LoadMoreLayout<T> extends LinearLayout {
 
     public void onLoadMore(List<T> list){
         if(list == null || list.size() ==0){
+            Log.d("BlackHole","onLoadMore LOADING_END--");
             mAdapter.setLoadState(LoadingState.LOADING_END);
         }else {
             mAdapter.onLoadMore(list);
-            mAdapter.setLoadState(LoadingState.LOADING_COMPLETE);
+            if(list.size()<10){
+                Log.d("BlackHole","onLoadMore INIT--");
+                mAdapter.setLoadState(LoadingState.INIT);
+            } else {
+                Log.d("BlackHole","onLoadMore LOADING_COMPLETE--");
+                mAdapter.setLoadState(LoadingState.LOADING_COMPLETE);
+            }
         }
     }
 

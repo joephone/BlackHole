@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -63,9 +64,10 @@ public class LoadMoreWrapper<T> extends BaseAbsAdapter<T>{
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        Log.d("BlackHole","onBindViewHolder--");
         if (holder instanceof LoadMoreWrapper.FooterHolder) {
             FooterHolder footerHolder = (FooterHolder) holder;
-
+            Log.d("BlackHole","footerHolder--");
             // Set loading view height.
 //            loadMoreViewHolder.rlLoadingFooter.removeAllViews();
 //            if (mLoadingViewHeight > 0) {
@@ -78,6 +80,7 @@ public class LoadMoreWrapper<T> extends BaseAbsAdapter<T>{
             // Display loading view.
             switch (mLoadingState) {
                 case INIT:
+                    Log.d("BlackHole","LoadMoreWrapper INIT--");
                     footerHolder.mLayouts[0].setVisibility(View.GONE);
                     footerHolder.mLayouts[1].setVisibility(View.GONE);
                     break;
@@ -160,6 +163,10 @@ public class LoadMoreWrapper<T> extends BaseAbsAdapter<T>{
      */
     public void setLoadState(LoadingState loadingState) {
         this.mLoadingState = loadingState;
+        if(loadingState == LoadingState.INIT){
+            Log.d("BlackHole","setLoadState--");
+        }
+        notifyDataSetChanged();
     }
 
     public LoadingState getLoadingState() {

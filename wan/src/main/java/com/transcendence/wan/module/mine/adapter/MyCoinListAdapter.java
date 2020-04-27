@@ -30,7 +30,6 @@ public class MyCoinListAdapter extends BaseAbsAdapter<MyCoinListBean>{
         super(context);
     }
 
-
     @Override
     public MyCoinListHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_mine_my_coin_list_item,parent,false);
@@ -50,7 +49,6 @@ public class MyCoinListAdapter extends BaseAbsAdapter<MyCoinListBean>{
 //                        .replace(",", "")
 //                        .replace("：", "")
 //                        .replace(" ", "");
-
 //                holder.tv_coin_count.setText(mList.get(position).getCoinCount());
 //                holder.tv_title.setText(title);
 //                holder.tv_time.setText(time);
@@ -61,9 +59,7 @@ public class MyCoinListAdapter extends BaseAbsAdapter<MyCoinListBean>{
 //                    holder.tv_coin_count.setText(mList.get(position).getCoinCount());
 //                }
             }
-
         }
-
     }
 
     @Override
@@ -84,7 +80,6 @@ public class MyCoinListAdapter extends BaseAbsAdapter<MyCoinListBean>{
 
 
     public class MyCoinListHolder extends RecyclerView.ViewHolder {
-
 //        TextView tv_coin_count;
         TextView tv_title;
 //        TextView tv_time;

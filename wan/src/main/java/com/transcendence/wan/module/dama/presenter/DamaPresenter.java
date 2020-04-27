@@ -32,7 +32,7 @@ public class DamaPresenter extends WanBasePresenter<DamaView> {
                 .success(new ISuccess() {
                     @Override
                     public void onSuccess(String response) {
-                        L.d(" Dama onResponse"+response);
+//                        L.d(" Dama onResponse"+response);
                         DamaBean damaBean = GsonUtils.getInstance().json2Cls(response, DamaBean.class);
                         if(isAttach()){
                             getWanBaseView().getUserArticleListSuccess(200,damaBean.getData().getDatas());

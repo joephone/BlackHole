@@ -25,7 +25,7 @@ import java.util.Map;
 public class NaviWxPublicPresenter extends WanBasePresenter<NaviWxPublicView> {
 
 
-//    L.d("WxPublicListFragment loadData");
+//    L.d("WxArticleListFragment loadData");
 //    OkHttpClient client = new OkHttpClient.Builder().build();
 //    Request request = new Request.Builder().url(API.WAN.WX_ARTICLE_CHAPTER).build();
 //        client.newCall(request).enqueue(new Callback() {
@@ -36,7 +36,7 @@ public class NaviWxPublicPresenter extends WanBasePresenter<NaviWxPublicView> {
 //
 //        @Override
 //        public void onResponse(Call call, Response response) throws IOException {
-////                L.d(" WxPublicListFragment onResponse"+response.body().string());
+////                L.d(" WxArticleListFragment onResponse"+response.body().string());
 //            WxChapterModel chapter =  GsonUtils.getInstance().json2Cls(response.body().string(), WxChapterModel.class);
 //        }
 //    });

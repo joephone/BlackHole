@@ -68,8 +68,7 @@ public class NaviWxPublicFragment extends WanBaseFragment<NaviWxPublicPresenter>
         int length = list.size()>=16?16:list.size();
         for (int i = 0; i < length; i++) {
             mTitleList.add(list.get(i).getName());
-            ArrayList tempList = (ArrayList) list;
-            mFragmentList.add(WxPublicListFragment.newInstance(tempList));
+            mFragmentList.add(WxArticleListFragment.newInstance(list.get(i)));
         }
 
         mTabLayout.setupWithViewPager(mVp);
