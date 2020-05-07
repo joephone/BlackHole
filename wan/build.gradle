@@ -48,8 +48,8 @@ dependencies {
     api config.dependencies.design
     api config.dependencies.supportv4
 
-
     api config.dependencies.eventbus
+    api config.dependencies.bravh
 
     annotationProcessor rootProject.ext.dependencies.butterknifeCompiler
 

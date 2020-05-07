@@ -1,7 +1,4 @@
 <resources>
-
-
-
     <declare-styleable name="MultiStateView">
         <attr name="msv_loadingView" format="reference" />
         <attr name="msv_emptyView" format="reference" />

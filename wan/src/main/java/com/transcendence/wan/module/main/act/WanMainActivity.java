@@ -65,7 +65,7 @@ public class WanMainActivity extends WanBaseActivity {
                 DamaFragment.newInstance("广场"),
                 MainFragment.newInstance("主页面"));
         mVp.setAdapter(adapter);
-        mVp.setCurrentItem(1);
+        mVp.setCurrentItem(4);
     }
 
     public void slideToDama(){

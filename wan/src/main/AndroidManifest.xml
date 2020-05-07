@@ -50,7 +50,7 @@
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".module.mine.act.SettingActivity"
+            android:name=".module.setting.act.SettingActivity"
             android:screenOrientation="portrait"/>
 
         <!-- 关于我-->

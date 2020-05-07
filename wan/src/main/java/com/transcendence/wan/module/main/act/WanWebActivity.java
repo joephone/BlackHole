@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.transcendence.blackhole.utils.StatusBarUtils;
 import com.transcendence.wan.R;
+import com.transcendence.wan.module.home.model.BannerBean;
 
 /**
  * @author Joephone on 2019/12/17 18:24
@@ -44,7 +45,7 @@ public class WanWebActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webview);
 
-        StatusBarUtils.with().init();
+        StatusBarUtils.with(WanWebActivity.this).init();
 
         mWebView = findViewById(R.id.webView);
         flBack = findViewById(R.id.flBack);
@@ -56,7 +57,6 @@ public class WanWebActivity extends AppCompatActivity implements View.OnClickLis
         ivForward = findViewById(R.id.iv_forward);
         ivForward.setOnClickListener(this);
         tvTitle = findViewById(R.id.tvTitle);
-
 
 
         mArticleId = getIntent().getIntExtra("articleId", -1);
@@ -88,8 +88,15 @@ public class WanWebActivity extends AppCompatActivity implements View.OnClickLis
         intent.putExtra("author", author);
         intent.putExtra("collected", collected);
         context.startActivity(intent);
-
     }
+
+    public static void start(Context context, BannerBean item) {
+        Intent intent = new Intent(context, WanWebActivity.class);
+        intent.putExtra("title", item.getDesc());
+        intent.putExtra("url", item.getUrl());
+        context.startActivity(intent);
+    }
+
 
     @Override
     public void onClick(View v) {
@@ -112,4 +119,6 @@ public class WanWebActivity extends AppCompatActivity implements View.OnClickLis
                 break;
         }
     }
+
+
 }

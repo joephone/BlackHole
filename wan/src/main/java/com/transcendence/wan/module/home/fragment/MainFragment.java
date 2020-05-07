@@ -10,13 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.transcendence.blackhole.adapter.GoweiiFragmentPagerAdapter;
-import com.transcendence.blackhole.fragment.BlankFragment;
-import com.transcendence.blackhole.utils.L;
 import com.transcendence.blackhole.utils.StringUtils;
 import com.transcendence.blackhole.widget.custom.TabView;
 import com.transcendence.wan.R;
 import com.transcendence.wan.module.knowledge.fragment.KnowledgeNavigationFragment;
 import com.transcendence.wan.module.mine.fragment.MineFragment;
+import com.transcendence.wan.module.mine.fragment.ScrollFragment;
 import com.transcendence.wan.module.wxpublic.fragment.NaviWxPublicFragment;
 
 import java.util.ArrayList;
@@ -65,7 +64,7 @@ public class MainFragment extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView =  inflater.inflate(R.layout.fragment_navi_main, container, false);
-        L.d("MainFragment onCreateView");
+//        L.d("MainFragment onCreateView");
         initView(rootView);
         return rootView;
     }
@@ -100,7 +99,7 @@ public class MainFragment extends Fragment implements View.OnClickListener{
         adapter.setFragments(HomeFragment.newInstance("主页面")
                 , KnowledgeNavigationFragment.newInstance("体系")
                 , NaviWxPublicFragment.create()
-                , BlankFragment.newInstance("项目")
+                , ScrollFragment.newInstance("项目")
                 , MineFragment.newInstance("我的"));
         mVpMain.setAdapter(adapter);
 

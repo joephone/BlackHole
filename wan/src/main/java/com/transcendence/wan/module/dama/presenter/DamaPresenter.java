@@ -3,6 +3,7 @@ package com.transcendence.wan.module.dama.presenter;
 import com.transcendence.blackhole.utils.GsonUtils;
 import com.transcendence.blackhole.utils.L;
 import com.transcendence.global.API;
+import com.transcendence.network.jett.callback.IError;
 import com.transcendence.network.jett.callback.IFailure;
 import com.transcendence.network.jett.callback.ISuccess;
 import com.transcendence.network.jett.retrofit.RetrofitClient;
@@ -43,8 +44,20 @@ public class DamaPresenter extends WanBasePresenter<DamaView> {
                     @Override
                     public void onFailure() {
                         L.d(" Dama onFailure");
+//                        if(isAttach()){
+//                            getWanBaseView().getUserArticleListFailed(200,"请求失败");
+//                        }
                         if(isAttach()){
                             getWanBaseView().getUserArticleListFailed(200,"请求失败");
+                        }
+                    }
+                })
+                .error(new IError() {
+                    @Override
+                    public void onError(int code, String msg) {
+                        L.d(" Dama IError");
+                        if(isAttach()){
+                            getWanBaseView().getUserArticleListFailed(200,msg);
                         }
                     }
                 })

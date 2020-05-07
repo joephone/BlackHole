@@ -46,7 +46,7 @@ public class DamaFragment extends WanBaseFragment<DamaPresenter> implements Dama
 
     @Override
     protected void initView() {
-        L.d("DamaFragment onCreateView");
+//        L.d("DamaFragment onCreateView");
         mRefreshLayout = findViewById(R.id.refreshView);
         mAdapter = new DamaAdapter(getContext());
         mRefreshLayout.setAdapter(mAdapter,getContext());
@@ -56,7 +56,7 @@ public class DamaFragment extends WanBaseFragment<DamaPresenter> implements Dama
 
     @Override
     protected void loadData() {
-        L.d("dama loadData");
+//        L.d("dama loadData");
         onViewRefresh();
     }
 

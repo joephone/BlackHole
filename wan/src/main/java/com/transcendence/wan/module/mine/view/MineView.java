@@ -12,8 +12,7 @@ import com.transcendence.wan.core.mvp.view.WanBaseView;
  */
 
 public interface MineView extends WanBaseView{
-    void logoutSuccess(int code, NewWanBaseBean data);
-    void logoutFailed(int code, String msg);
+
 
 
 }

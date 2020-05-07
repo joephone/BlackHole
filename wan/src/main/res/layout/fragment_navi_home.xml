@@ -12,11 +12,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <View
-            android:id="@+id/title_status"
-            android:layout_width="match_parent"
-            android:layout_height="22dp"
-            android:background="@color/colorGitHubBlack" />
+        <include layout="@layout/view_status" />
 
         <RelativeLayout
             android:layout_width="match_parent"

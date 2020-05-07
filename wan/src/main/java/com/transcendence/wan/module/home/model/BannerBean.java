@@ -2,8 +2,6 @@ package com.transcendence.wan.module.home.model;
 
 import com.transcendence.wan.base.bean.WanBaseBean;
 
-import java.util.List;
-
 /**
  * @author Joephone on 2019/12/6 16:34
  * @E-Mail Address：joephonechen@gmail.com
@@ -14,18 +12,6 @@ import java.util.List;
 
 public class BannerBean extends WanBaseBean {
 
-
-    private List<DataBean> data;
-
-    public List<DataBean> getData() {
-        return data;
-    }
-
-    public void setData(List<DataBean> data) {
-        this.data = data;
-    }
-
-    public class DataBean {
         /**
          * desc : 享学~
          * id : 29
@@ -138,5 +124,5 @@ public class BannerBean extends WanBaseBean {
         public void setOriginId(int originId) {
             this.originId = originId;
         }
-    }
+
 }

@@ -1,5 +1,7 @@
 package com.transcendence.wan.base.app;
 
+import android.os.Debug;
+
 import com.franmontiel.persistentcookiejar.PersistentCookieJar;
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
@@ -30,6 +32,8 @@ public class WanApp extends LibApplication {
         //登录后会在cookie中返回账号密码，只要在客户端做cookie持久化存储即可自动登录验证。
         RetrofitCreator.setCookieJar(getCookieJar());
 
+
+
     }
 
 
@@ -38,5 +42,11 @@ public class WanApp extends LibApplication {
             mCookieJar = new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(getAppContext()));
         }
         return mCookieJar;
+    }
+
+
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
     }
 }

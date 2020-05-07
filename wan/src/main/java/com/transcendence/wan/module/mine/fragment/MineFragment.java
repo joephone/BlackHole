@@ -1,22 +1,20 @@
 package com.transcendence.wan.module.mine.fragment;
 
 import android.os.Bundle;
-import android.support.v4.widget.NestedScrollView;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import com.transcendence.blackhole.utils.L;
 import com.transcendence.wan.R;
-import com.transcendence.wan.base.bean.NewWanBaseBean;
 import com.transcendence.wan.core.mvp.WanBaseFragment;
 import com.transcendence.wan.module.mine.act.AboutMeActivity;
 import com.transcendence.wan.module.mine.act.MyCoinActivity;
 import com.transcendence.wan.module.mine.act.RankActivity;
 import com.transcendence.wan.module.mine.presenter.MinePresenter;
 import com.transcendence.wan.module.mine.view.MineView;
+import com.transcendence.wan.module.setting.act.SettingActivity;
 import com.transcendence.wan.utils.UserUtils;
 
 /**
@@ -29,11 +27,12 @@ import com.transcendence.wan.utils.UserUtils;
 
 public class MineFragment extends WanBaseFragment<MinePresenter> implements View.OnClickListener,MineView {
     private static final String ARG_SHOW_TEXT = "text";
-    private ImageView ivLeft,ivRight;
+    private ImageView ivRight;
 
-    private NestedScrollView nsv;
+//    private NestedScrollView nsv;
     private RelativeLayout rlUserInfo;
-    private LinearLayout llCoin,llAbout,llPpen,llLogout;
+    private LinearLayout llCoin,llPpen,ll_setting;
+    private LinearLayout ll;
     private FrameLayout flRight;
 
     @Override
@@ -48,21 +47,24 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
 
     @Override
     protected void initView() {
+//        ll.findViewById(R.id.ll_about_author);
+//        ll.setOnClickListener(this);
+
         ivRight = findViewById(R.id.ivRight);
         rlUserInfo = findViewById(R.id.rlUserInfo);
         rlUserInfo.setOnClickListener(this);
         llCoin = findViewById(R.id.ll_coin);
         llCoin.setOnClickListener(this);
-//        llAbout.findViewById(R.id.ll_about);
-//        llAbout.setOnClickListener(this);
+
         llPpen = findViewById(R.id.ll_open);
         llPpen.setOnClickListener(this);
 
-        llLogout = findViewById(R.id.ll_logout);
-        llLogout.setOnClickListener(this);
+        ll_setting = findViewById(R.id.ll_setting);
+        ll_setting.setOnClickListener(this);
+
         flRight = findViewById(R.id.fl_right);
         flRight.setOnClickListener(this);
-        nsv = findViewById(R.id.nsv);
+//        nsv = findViewById(R.id.nsv);
         init();
     }
 
@@ -78,13 +80,13 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
                 RankActivity.start(getContext());
             }
         });
-        nsv.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
-
-            @Override
-            public void onScrollChange(NestedScrollView nestedScrollView, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                setIvBlurHeight(oldScrollY);
-            }
-        });
+//        nsv.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
+//
+//            @Override
+//            public void onScrollChange(NestedScrollView nestedScrollView, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+//                setIvBlurHeight(oldScrollY);
+//            }
+//        });
     }
 
     private void setIvBlurHeight(int height) {
@@ -107,7 +109,6 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
                 RankActivity.start(getContext());
                 break;
             case R.id.rlUserInfo:
-                RankActivity.start(getContext());
                 if(UserUtils.getInstance().toDoIfLogin(getContext())){
 //                SettingActivity.start(getActivity());
                 }
@@ -123,24 +124,11 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
 //            case R.id.ll_about:
 //                AboutMeActivity.start(getContext());
 //                break;
-            case R.id.ll_logout:
-                if(UserUtils.getInstance().toDoIfLogin(getContext())){
-                    presenter.logout();
-                }else {
-                    L.d("未登录");
-                }
+            case R.id.ll_setting:
+                SettingActivity.start(getContext());
                 break;
+
         }
     }
 
-    @Override
-    public void logoutSuccess(int code, NewWanBaseBean data) {
-        L.d("logoutSuccess");
-        UserUtils.getInstance().logout();
-    }
-
-    @Override
-    public void logoutFailed(int code, String msg) {
-
-    }
 }

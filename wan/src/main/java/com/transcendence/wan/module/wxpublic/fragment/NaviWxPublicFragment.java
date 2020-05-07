@@ -4,7 +4,6 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 
-import com.transcendence.blackhole.utils.L;
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanBaseFragment;
 import com.transcendence.wan.module.wxpublic.adapter.MultiFragmentPageAdapter;
@@ -50,7 +49,7 @@ public class NaviWxPublicFragment extends WanBaseFragment<NaviWxPublicPresenter>
 
     @Override
     protected void initView() {
-        L.d("NaviWxPublicFragment onCreateView");
+//        L.d("NaviWxPublicFragment onCreateView");
         mVp = findViewById(R.id.vp);
         mTabLayout = findViewById(R.id.tab_layout);
         mAdapter = new MultiFragmentPageAdapter(getChildFragmentManager());

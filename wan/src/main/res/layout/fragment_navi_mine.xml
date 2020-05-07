@@ -22,10 +22,7 @@
         android:background="@color/transparent"
         android:orientation="vertical">
 
-        <View
-            android:id="@+id/title_status"
-            android:layout_width="match_parent"
-            android:layout_height="22dp" />
+        <include layout="@layout/view_status" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -39,6 +36,7 @@
                 android:layout_centerInParent="true"
                 android:ellipsize="end"
                 android:maxLines="1"
+                android:visibility="gone"
                 android:textColor="@color/white"
                 android:textSize="@dimen/title_size"
                 android:text="我的" />
@@ -66,27 +64,36 @@
     </LinearLayout>
 
 
-    <android.support.v4.widget.NestedScrollView
-        android:id="@+id/nsv"
+    <!--<android.support.v4.widget.NestedScrollView-->
+        <!--android:id="@+id/nsv"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:clipToPadding="false"-->
+        <!--android:overScrollMode="never"-->
+        <!--android:paddingBottom="@dimen/bottom_bar_height"-->
+        <!--android:scrollbars="none">-->
+
+
+
+    <com.transcendence.ui.scroll.RollbackScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:overScrollMode="never"
-        android:paddingBottom="@dimen/bottom_bar_height"
-        android:scrollbars="none">
-
+        android:layout_height="match_parent">
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <include layout="@layout/layout_fragment_mine_userinfo" />
 
-            <include layout="@layout/layout_fragment_mine_userinfo" />
 
-
-            <include layout="@layout/layout_fragment_mine_layouts" />
+        <include layout="@layout/layout_fragment_mine_layouts" />
 
         </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
+
+
+    </com.transcendence.ui.scroll.RollbackScrollView>
+<!--</android.support.v4.widget.NestedScrollView>-->
+
+
 
 
 </FrameLayout>

@@ -45,6 +45,8 @@ public class WanSplashActivity extends WanBaseActivity implements Animation.Anim
 
     @Override
     protected void initView() {
+//        Debug.startMethodTracing("BlackHole");
+
         ivLauncher = findViewById(R.id.ivLauncher);
         clContainer = findViewById(R.id.clContainer);
         int [] ids = Global.mLauncherIds;
@@ -149,5 +151,11 @@ public class WanSplashActivity extends WanBaseActivity implements Animation.Anim
     @Override
     public void clearLoading() {
 
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+//        Debug.stopMethodTracing();
     }
 }

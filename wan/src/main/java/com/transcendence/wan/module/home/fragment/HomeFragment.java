@@ -2,29 +2,24 @@ package com.transcendence.wan.module.home.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.google.gson.Gson;
 import com.transcendence.blackhole.adapter.GoweiiFragmentPagerAdapter;
-import com.transcendence.blackhole.utils.L;
-import com.transcendence.network.jett.callback.IFailure;
-import com.transcendence.network.jett.callback.ISuccess;
-import com.transcendence.network.jett.retrofit.RetrofitClient;
+import com.transcendence.blackhole.utils.ScreenUtils;
+import com.transcendence.blackhole.widget.custom.banner.BannerLayout;
 import com.transcendence.wan.R;
+import com.transcendence.wan.core.mvp.WanBaseFragment;
 import com.transcendence.wan.module.home.model.BannerBean;
+import com.transcendence.wan.module.home.presenter.HomePresenter;
+import com.transcendence.wan.module.home.view.HomeView;
 import com.transcendence.wan.module.main.act.WanMainActivity;
+import com.transcendence.wan.module.main.act.WanWebActivity;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 
 /**
@@ -35,43 +30,38 @@ import java.util.Map;
  * @EditionHistory
  */
 
-public class HomeFragment extends Fragment {  // implements BannerLayout.OnBannerItemClickListener
+public class HomeFragment extends WanBaseFragment<HomePresenter> implements HomeView,BannerLayout.OnBannerItemClickListener {
 
     private static final String ARG_SHOW_TEXT = "text";
 
     private ImageView ivLeft,ivRight;
 
-//    private BannerLayout mBanner;
+    private BannerLayout mBanner;
     private RecyclerView mRv;
     private GoweiiFragmentPagerAdapter adapter;
 
-    private List<BannerBean.DataBean> mBannerBeans;
+    private List<BannerBean> mBannerBeans;
     private List<String> mBannerUrls;
 
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView =  inflater.inflate(R.layout.fragment_navi_home, container, false);
-        L.d("HomeFragment onCreateView");
-        initView(rootView);
-        initBannerData();
-//        createHeaderBanner();
-        return rootView;
+    protected int getLayoutRes() {
+        return R.layout.fragment_navi_home;
     }
 
 
-
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    protected HomePresenter initPresenter() {
+        return new HomePresenter();
     }
 
-    private void initView(View rootView) {
-//        mBanner = rootView.findViewById(R.id.banner);
-//        mBanner.setOnBannerItemClickListener(this);
-        mRv = rootView.findViewById(R.id.rv);
-        ivLeft = rootView.findViewById(R.id.ivLeft);
-        ivRight = rootView.findViewById(R.id.ivRight);
+    @Override
+    protected void initView() {
+        mBanner = findViewById(R.id.banner);
+        mBanner.setOnBannerItemClickListener(this);
+        createHeaderBanner();
+        mRv = findViewById(R.id.rv);
+        ivLeft = findViewById(R.id.ivLeft);
+        ivRight = findViewById(R.id.ivRight);
         ivLeft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,50 +80,21 @@ public class HomeFragment extends Fragment {  // implements BannerLayout.OnBanne
         });
     }
 
-
-    private void createHeaderBanner() {
-//        if (mBanner == null) {
-//            mBanner = new BannerLayout(getContext());
-//            int height = (int) (ScreenUtils.getScreenWidth(getContext()) * (9F / 16F));
-//            mBanner.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height));
-//            mBanner.setOnBannerItemClickListener(this);
-//            mBanner.startAutoPlay();
-//
-//        }
-
+    @Override
+    protected void loadData() {
+        presenter.initBannerData();
     }
 
 
-    private void initBannerData() {
-        Map<String, Object> map = new HashMap<>();  //ParamApi.getInstance().listPage(1, 10);
-        RetrofitClient.create()
-                .url("banner/json")
-                .params(map)
-                .success(new ISuccess() {
-                     @Override
-                     public void onSuccess(String response) {
-//                         L.d(response.toString());
-                         Gson gson = new Gson();
-                         BannerBean model = gson.fromJson(response,BannerBean.class);
-                         mBannerBeans = model.getData();
-                         mBannerUrls = new ArrayList<>(model.getData().size());
-                         List<String> titles = new ArrayList<>(model.getData().size());
-                         for (BannerBean.DataBean bean : model.getData()) {
-                             mBannerUrls.add(bean.getImagePath());
-                             titles.add(bean.getTitle());
-                         }
-//                         mBanner.setViewUrls(mBannerUrls);
-                     }
-                 })
-                .failure(new IFailure() {
-                    @Override
-                    public void onFailure() {
 
-                    }
-                })
-                .build()
-                .post();
-
+    private void createHeaderBanner() {
+        if (mBanner == null) {
+            mBanner = new BannerLayout(getContext());
+            int height = (int) (ScreenUtils.getScreenWidth(getContext()) * (9F / 16F));
+            mBanner.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height));
+            mBanner.setOnBannerItemClickListener(this);
+            mBanner.startAutoPlay();
+        }
     }
 
 
@@ -145,38 +106,65 @@ public class HomeFragment extends Fragment {  // implements BannerLayout.OnBanne
         return fragment;
     }
 
-//    @Override
-//    public void onItemClick(int position) {
-//        BannerBean.DataBean item = mBannerBeans.get(position);
-//        if (item != null) {
-////            WanWebActivity.start(getContext(), item);
-//        }
-//    }
-//
-//    @Override
-//    public void onScroll(int position) {
-//
-//    }
-//
-//    @Override
-//    public void onMove(int position) {
-//
-//    }
+    @Override
+    public void onItemClick(int position) {
+        BannerBean item = mBannerBeans.get(position);
+        if (item != null) {
+            WanWebActivity.start(getContext(), item);
+        }
+    }
+
+    @Override
+    public void onScroll(int position) {
+
+    }
+
+    @Override
+    public void onMove(int position) {
+
+    }
 
 
     @Override
     public void onStart() {
         super.onStart();
-//        if (mBanner != null) {
-//            mBanner.startAutoPlay();
-//        }
+        if (mBanner != null) {
+            mBanner.startAutoPlay();
+        }
     }
 
     @Override
     public void onStop() {
         super.onStop();
-//        if (mBanner != null) {
-//            mBanner.stopAutoPlay();
-//        }
+        if (mBanner != null) {
+            mBanner.stopAutoPlay();
+        }
+    }
+
+    @Override
+    public void getBannerSuccess(int code, List<BannerBean> model) {
+        mBannerBeans = model;
+        mBannerUrls = new ArrayList<>(model.size());
+        List<String> titles = new ArrayList<>(model.size());
+        for (BannerBean bean : model) {
+            mBannerUrls.add(bean.getImagePath());
+            titles.add(bean.getTitle());
+        }
+        mBanner.setViewUrls(mBannerUrls);
+    }
+
+    @Override
+    public void getBannerFail(int code, String msg) {
+
+    }
+
+    @Override
+    public void getArticleListSuccess(int code, List<BannerBean> data) {
+
+    }
+
+    @Override
+    public void getArticleListFailed(int code, String msg) {
+
     }
 }

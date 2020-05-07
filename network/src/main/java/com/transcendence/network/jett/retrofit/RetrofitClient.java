@@ -95,8 +95,9 @@ public class RetrofitClient {
                 call=service.delete(URL,PARAMS);
                 break;
             case UPLOAD:
+                final RequestBody requestBody = RequestBody.create(MultipartBody.FORM,FILE);
                 final MultipartBody.Part body= MultipartBody.Part.createFormData(
-                        "file",FILE.getName());
+                        "file",FILE.getName(),requestBody);
                 call=service.upload(URL,body);
                 break;
 

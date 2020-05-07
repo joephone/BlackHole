@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2017 Yan Zhenjie
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+
+<resources>
+    <string-array name="mine_item_left_text">
+        <item>我的积分</item>
+        <item>我的分享</item>
+        <item>我的收藏</item>
+        <item>稍后阅读</item>
+        <item>开源项目</item>
+        <item>关于作者</item>
+        <item>系统设置</item>
+        <item>我的积分</item>
+        <item>我的分享</item>
+        <item>我的收藏</item>
+        <item>稍后阅读</item>
+        <item>开源项目</item>
+        <item>关于作者</item>
+        <item>系统设置</item>
+    </string-array>
+
+    <integer-array name="mine_item_left_image">
+        <item>@drawable/ic_coin</item>
+        <item>@drawable/ic_share_article</item>
+        <item>@drawable/ic_collect</item>
+        <item>@drawable/ic_read_later</item>
+        <item>@drawable/ic_github</item>
+        <item>@drawable/ic_about</item>
+        <item>@drawable/ic_setting</item>
+        <item>@drawable/ic_coin</item>
+        <item>@drawable/ic_share_article</item>
+        <item>@drawable/ic_collect</item>
+        <item>@drawable/ic_read_later</item>
+        <item>@drawable/ic_github</item>
+        <item>@drawable/ic_about</item>
+        <item>@drawable/ic_setting</item>
+    </integer-array>
+
+
+</resources>

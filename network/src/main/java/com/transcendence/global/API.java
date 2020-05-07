@@ -87,8 +87,12 @@ public class API {
             return String.format(DAMA_ARTICLE_LIST, page);
         }
 
-
-
+        /**
+         * 1.2 首页banner
+         * https://www.wanandroid.com/banner/json
+         * 方法：GET
+         */
+        public final static String BANNER = "banner/json";
 
 
         /**

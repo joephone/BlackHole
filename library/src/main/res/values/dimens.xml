@@ -21,6 +21,8 @@
     <!-- 边界距离 -->
     <dimen name="all_width_height">15dp</dimen>
     <dimen name="standard_padding">15dp</dimen>
+
+    <dimen name="status_view_height">25dp</dimen>
     <!--  线宽或高 -->
     <dimen name="view_width">1dp</dimen>
     <!-- 编辑文字 -->

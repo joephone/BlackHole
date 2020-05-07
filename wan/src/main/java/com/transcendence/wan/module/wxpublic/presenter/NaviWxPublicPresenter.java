@@ -1,14 +1,12 @@
 package com.transcendence.wan.module.wxpublic.presenter;
 
 import com.transcendence.blackhole.utils.GsonUtils;
-import com.transcendence.blackhole.utils.L;
 import com.transcendence.global.API;
 import com.transcendence.network.jett.callback.IFailure;
 import com.transcendence.network.jett.callback.ISuccess;
 import com.transcendence.network.jett.retrofit.RetrofitClient;
 import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
 import com.transcendence.wan.core.service.ParamMap;
-import com.transcendence.wan.module.wxpublic.model.WxChapterBean;
 import com.transcendence.wan.module.wxpublic.model.WxChapterModel;
 import com.transcendence.wan.module.wxpublic.view.NaviWxPublicView;
 
@@ -43,7 +41,7 @@ public class NaviWxPublicPresenter extends WanBasePresenter<NaviWxPublicView> {
 
 
     public void getWxPublicList(){
-        L.d("getWxPublicList");
+//        L.d("getWxPublicList");
         Map<String,Object>  map = ParamMap.getInstance().page(0);
 
         RetrofitClient.create()
@@ -52,7 +50,7 @@ public class NaviWxPublicPresenter extends WanBasePresenter<NaviWxPublicView> {
                 .success(new ISuccess() {
                     @Override
                     public void onSuccess(String response) {
-                        L.d("response--"+response);
+//                        L.d("response--"+response);
                         WxChapterModel model = GsonUtils.json2Cls(response,WxChapterModel.class);
                         if(isAttach()){
                             getWanBaseView().getWxChapterSuc(0,model.getData());

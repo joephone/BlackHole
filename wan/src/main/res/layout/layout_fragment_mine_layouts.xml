@@ -173,7 +173,6 @@
             android:scaleType="fitCenter"
             android:src="@drawable/ic_back"
             android:tint="@color/third" />
-
     </LinearLayout>
 
     <!-- 第5排  开源项目 -->
@@ -212,13 +211,12 @@
             android:scaleType="fitCenter"
             android:src="@drawable/ic_back"
             android:tint="@color/third" />
-
     </LinearLayout>
 
 
     <!-- 第6排  关于作者 -->
     <LinearLayout
-        android:id="@+id/ll_about"
+        android:id="@+id/ll_about_author"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/bg_press_color_surface"
@@ -245,15 +243,6 @@
             android:textColor="@color/text_surface"
             android:textSize="@dimen/text_content" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
-            android:singleLine="true"
-            android:textColor="@color/text_accent"
-            android:textSize="@dimen/text_notes"
-            android:text="请他喝杯咖啡~" />
-
         <ImageView
             android:layout_width="13dp"
             android:layout_height="13dp"
@@ -263,6 +252,52 @@
             android:tint="@color/third" />
 
     </LinearLayout>
+    <!--<LinearLayout-->
+        <!--android:id="@+id/ll_about"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="50dp"-->
+        <!--android:background="@drawable/bg_press_color_surface"-->
+        <!--android:gravity="center"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:paddingLeft="16dp"-->
+        <!--android:paddingRight="16dp">-->
+
+        <!--<ImageView-->
+            <!--android:layout_width="18dp"-->
+            <!--android:layout_height="18dp"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:src="@drawable/ic_about"-->
+            <!--android:tint="@color/main" />-->
+
+        <!--<TextView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:singleLine="true"-->
+            <!--android:text="关于作者"-->
+            <!--android:textColor="@color/text_surface"-->
+            <!--android:textSize="@dimen/text_content" />-->
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginRight="5dp"-->
+            <!--android:singleLine="true"-->
+            <!--android:textColor="@color/text_accent"-->
+            <!--android:textSize="@dimen/text_notes"-->
+            <!--android:text="请他喝杯咖啡~" />-->
+
+        <!--<ImageView-->
+            <!--android:layout_width="13dp"-->
+            <!--android:layout_height="13dp"-->
+            <!--android:rotation="180"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:src="@drawable/ic_back"-->
+            <!--android:tint="@color/third" />-->
+
+    <!--</LinearLayout>-->
 
     <!-- 第7排  系统设置 -->
     <LinearLayout
@@ -304,44 +339,7 @@
     </LinearLayout>
 
 
-    <!-- 第8排  退出 -->
-    <LinearLayout
-        android:id="@+id/ll_logout"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/bg_press_color_surface"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp">
 
-        <ImageView
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_setting"
-            android:tint="@color/main" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:singleLine="true"
-            android:text="退出"
-            android:textColor="@color/text_surface"
-            android:textSize="@dimen/text_content" />
-
-        <ImageView
-            android:layout_width="13dp"
-            android:layout_height="13dp"
-            android:rotation="180"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_back"
-            android:tint="@color/third" />
-
-    </LinearLayout>
 
 </LinearLayout>
 
