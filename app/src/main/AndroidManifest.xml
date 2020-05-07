@@ -112,11 +112,7 @@
         <activity
             android:name=".index.StandardIndexActivity"
             android:screenOrientation="portrait"/>
-            <!-- 自动删除输入框 -->
-        <activity
-            android:name=".ui.widget.edittext.AutoClearEditActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
+
             <!-- 渐变 -->
         <activity
             android:name=".ui.widget.button.JianbianButtonActivity"
@@ -178,7 +174,21 @@
         <activity android:name=".ui.base.act.TouchEventActivity"
             android:screenOrientation="portrait"/>
 
-
+        <!-- 序列1.1   启动模式序列 -->
+        <activity
+            android:name=".index.LaunchModeIndexActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".ui.base.act.LaunchModeInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".base.launchmode.act.SingleTaskFirstActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".base.launchmode.act.SingleTaskSecondActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait" />
+        <activity android:name=".base.launchmode.act.SingleTaskThirdActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".ui.gallery.act.JGalleryMainActivity" />
 
         <!-- 序列二   UI 序列 -->
         <activity
@@ -240,6 +250,18 @@
         <activity android:name=".ui.rv.freshloadmore.act.RvLoadMoreActivity"
             android:screenOrientation="portrait" />
 
+        <!-- 序列2.3 UI Edittext -->
+        <activity android:name=".index.UIEditIndexActivity"
+            android:screenOrientation="portrait"/>
+
+            <!-- 自动删除输入框 -->
+        <activity
+            android:name=".ui.widget.edittext.AutoClearEditActivity"
+            android:screenOrientation="portrait" />
+            <!-- 软键盘挡住输入框问题 -->
+        <activity
+            android:name=".ui.widget.edittext.SoftKeyboardAdjustActivity"
+            android:screenOrientation="portrait"/>
 
 
         <!-- 序列3   抽奖 序列 -->
@@ -364,21 +386,8 @@
         <!-- 序列8 地图  -->
 
 
-        <!-- 序列1.1   启动模式序列 -->
-        <activity
-            android:name=".index.LaunchModeIndexActivity"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".ui.base.act.LaunchModeInfoActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".base.launchmode.act.SingleTaskFirstActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".base.launchmode.act.SingleTaskSecondActivity"
-            android:launchMode="singleInstance"
-            android:screenOrientation="portrait" />
-        <activity android:name=".base.launchmode.act.SingleTaskThirdActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name=".ui.gallery.act.JGalleryMainActivity" />
+
+
 
 
     </application>

@@ -58,6 +58,7 @@
     <string-array name="ui_index_item">
         <item>图片</item>
         <item>RecyclerView</item>
+        <item>EditText</item>
     </string-array>
 
     <!-- 2.1 image -->
@@ -76,6 +77,13 @@
     <string-array name="rv_index_item">
         <item>小米</item>
         <item>上拉刷新下拉加载更多</item>
+    </string-array>
+
+
+    <!-- 2.3 edit -->
+    <string-array name="ui_edittext_index_item">
+        <item>AutoClearEdit</item>
+        <item>软键盘挡住输入框问题</item>
     </string-array>
 
     <!-- 3 index -->

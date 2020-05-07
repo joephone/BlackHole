@@ -41,7 +41,7 @@ public class LauncherActivity extends BaseActivity implements Animation.Animatio
         clContainer = findViewById(R.id.clContainer);
         int [] ids = Global.mLauncherIds;
         int index =new Random().nextInt(ids.length);
-        GlideUtils.getInstance().loadMipmap(mActivity,ids[index],ivLauncher);
+        GlideUtils.getInstance().loadImageFromLocal(ids[index],ivLauncher);
         initStartAnim();
     }
 

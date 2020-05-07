@@ -47,7 +47,7 @@ public class MvpBeautyListAdapter extends RecyclerView.Adapter{
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, final int position) {
         final MvpBeautyListHoldView holder = (MvpBeautyListHoldView) viewHolder;
-        GlideUtils.getInstance().loadMipmap(mContext,mBeautyList.get(position).getImageId(),holder.iv);
+        GlideUtils.getInstance().loadImageFromLocal(mBeautyList.get(position).getImageId(),holder.iv);
     }
 
     @Override

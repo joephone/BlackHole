@@ -49,7 +49,7 @@ public class JbottomAdapter extends RecyclerView.Adapter{
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, final int position) {
         final JbottomHoldView holder = (JbottomHoldView) viewHolder;
-        GlideUtils.getInstance().loadMipmap(mContext,mIvList[position],holder.iv);
+        GlideUtils.getInstance().loadImageFromLocal(mIvList[position],holder.iv);
         if(selectedItem!=position){
             holder.iv.setAlpha(0.5f);
         }else {

@@ -33,7 +33,7 @@ public class IndexActivity extends TitleBarActivity implements View.OnClickListe
 
     @Override
     public void init() {
-        setTitle(false,"序列");
+        setTitle(false,"总序列");
         mIvAdd = findViewById(R.id.ivAdd);
         mIvMap = findViewById(R.id.ivMap);
         mIvWan = findViewById(R.id.ivWan);

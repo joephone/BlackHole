@@ -22,6 +22,7 @@ import com.transcendence.blackhole.index.MarqueeIndexActivity;
 import com.transcendence.blackhole.index.MvpIndexActivity;
 import com.transcendence.blackhole.index.OtherIndexActivity;
 import com.transcendence.blackhole.index.ScrollIndexActivity;
+import com.transcendence.blackhole.index.UIEditIndexActivity;
 import com.transcendence.blackhole.index.UIIndexActivity;
 import com.transcendence.blackhole.index.UIRvIndexActivity;
 import com.transcendence.blackhole.index.UIimageIndexActivity;
@@ -49,6 +50,8 @@ import com.transcendence.blackhole.ui.scroll.pulltozoom.act.PullToZoomAct;
 import com.transcendence.blackhole.ui.scroll.xiaohuoshu.act.XiaohongshuActivity;
 import com.transcendence.blackhole.ui.toast.ToastActivity;
 import com.transcendence.blackhole.ui.widget.custom.segmentview.IosSegmentViewActivity;
+import com.transcendence.blackhole.ui.widget.edittext.AutoClearEditActivity;
+import com.transcendence.blackhole.ui.widget.edittext.SoftKeyboardAdjustActivity;
 import com.transcendence.blackhole.ui.widget.marquee.MarqueeTextOneActivity;
 import com.transcendence.blackhole.ui.widget.marquee.MarqueeTextTwoActivity;
 
@@ -97,7 +100,7 @@ public interface AppConstantValue {
     /**
      * 2
      */
-    Class[] uiIndex = {UIimageIndexActivity.class,UIRvIndexActivity.class};
+    Class[] uiIndex = {UIimageIndexActivity.class,UIRvIndexActivity.class, UIEditIndexActivity.class};
 
     /**
      * 2.1
@@ -111,6 +114,11 @@ public interface AppConstantValue {
      * 2.2
      */
     Class[] rvIndex = {XiaoMiCalcActivity.class, RvLoadMoreActivity.class};
+
+    /**
+     * 2.3
+     */
+    Class[] etIndex = {AutoClearEditActivity.class, SoftKeyboardAdjustActivity.class};
 
     /**
      * 3

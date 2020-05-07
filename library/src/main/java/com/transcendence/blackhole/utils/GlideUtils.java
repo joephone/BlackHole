@@ -55,4 +55,16 @@ public class GlideUtils {
                 .into(imageView);
     }
 
+
+
+//    /**
+//     *  2 加载本地
+//     */
+//    public static void loadImageFromLocal(int resourceId, ImageView imageView) {
+//        Glide.with(imageView.getContext())
+//                .load(resourceId)
+//                .error(R.drawable.pic_404)
+//                .placeholder(R.drawable.pic_404)
+//                .into(imageView);
+//    }
 }

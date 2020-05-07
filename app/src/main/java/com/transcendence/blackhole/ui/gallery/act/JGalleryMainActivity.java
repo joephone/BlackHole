@@ -69,7 +69,7 @@ public class JGalleryMainActivity extends TitleBarActivity implements ViewPager.
             iv.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.MATCH_PARENT));
 
-            GlideUtils.getInstance().loadMipmap(mActivity,Global.mBeautyIds[i],iv);
+            GlideUtils.getInstance().loadImageFromLocal(Global.mBeautyIds[i],iv);
 
             iv.setScaleType(ImageView.ScaleType.FIT_XY);
             mPageViews.add(iv);
