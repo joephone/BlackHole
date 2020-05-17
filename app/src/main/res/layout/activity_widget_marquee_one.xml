@@ -12,7 +12,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="@dimen/standard_padding"
         android:gravity="center"
-        android:background="@drawable/water_standard_green_selector"
+        android:background="@drawable/water_effect_green_selector"
         android:onClick="start"
         android:text="走起" />
 
@@ -22,7 +22,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="@dimen/standard_padding"
         android:gravity="center"
-        android:background="@drawable/water_standard_green_selector"
+        android:background="@drawable/water_effect_green_selector"
         android:onClick="stop"
         android:text="停止" />
 
@@ -32,7 +32,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="@dimen/standard_padding"
         android:gravity="center"
-        android:background="@drawable/water_standard_green_selector"
+        android:background="@drawable/water_effect_green_selector"
         android:onClick="startFor0"
         android:text="从头开始" />
 

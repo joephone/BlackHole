@@ -13,11 +13,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <RelativeLayout
-            android:background="@drawable/ic_header_fk"
-            android:layout_width="match_parent"
-            android:scaleType="fitXY"
-            android:layout_height="wrap_content" />
+       <include layout="@layout/layout_fragment_mine_userinfo" />
 
 
         <android.support.v7.widget.RecyclerView

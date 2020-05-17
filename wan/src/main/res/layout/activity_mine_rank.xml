@@ -6,57 +6,7 @@
 
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/transparent"
-        android:orientation="vertical">
-
-        <View
-            android:id="@+id/title_status"
-            android:layout_width="match_parent"
-            android:layout_height="22dp"
-            android:background="@color/colorGitHubBlack"/>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:background="@color/colorGitHubBlack">
-
-
-            <TextView
-                android:id="@+id/tvTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:textColor="@color/white"
-                android:textSize="@dimen/title_size"
-                android:text="积分排行榜" />
-
-
-            <FrameLayout
-                android:id="@+id/fl_right"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentRight="true"
-                android:visibility="gone"
-                android:layout_marginRight="@dimen/standard_padding">
-
-                <ImageView
-                    android:id="@+id/ivRight"
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_centerVertical="true"
-                    android:layout_gravity="center_vertical"
-                    android:gravity="center"
-                    android:src="@drawable/ic_rank" />
-
-            </FrameLayout>
-
-        </RelativeLayout>
-    </LinearLayout>
+    <include layout="@layout/title"  />
 
     <com.transcendence.ui.recyclerview.view.LoadMoreLayout
         android:id="@+id/loadMoreLayout"

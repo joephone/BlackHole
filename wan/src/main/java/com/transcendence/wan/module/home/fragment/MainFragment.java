@@ -10,10 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.transcendence.blackhole.adapter.GoweiiFragmentPagerAdapter;
+import com.transcendence.blackhole.fragment.BlankFragment;
 import com.transcendence.blackhole.utils.StringUtils;
 import com.transcendence.blackhole.widget.custom.TabView;
 import com.transcendence.wan.R;
-import com.transcendence.wan.module.knowledge.fragment.KnowledgeNavigationFragment;
 import com.transcendence.wan.module.mine.fragment.MineFragment;
 import com.transcendence.wan.module.mine.fragment.ScrollFragment;
 import com.transcendence.wan.module.wxpublic.fragment.NaviWxPublicFragment;
@@ -97,7 +97,7 @@ public class MainFragment extends Fragment implements View.OnClickListener{
         mVpMain.setOffscreenPageLimit(5);
         adapter = new GoweiiFragmentPagerAdapter(getChildFragmentManager());
         adapter.setFragments(HomeFragment.newInstance("主页面")
-                , KnowledgeNavigationFragment.newInstance("体系")
+                , BlankFragment.newInstance("体系")
                 , NaviWxPublicFragment.create()
                 , ScrollFragment.newInstance("项目")
                 , MineFragment.newInstance("我的"));

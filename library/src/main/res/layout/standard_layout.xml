@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:clickable="true"
-        android:background="@drawable/water_standard_selector"
+        android:background="@drawable/water_effect_selector"
         android:orientation="horizontal">
 
         <ImageView

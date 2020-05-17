@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp_5"
             android:layout_weight="1"
-            android:background="@drawable/water_standard_green_selector"
+            android:background="@drawable/water_effect_green_selector"
             android:gravity="center"
             android:paddingBottom="@dimen/dp_10"
             android:paddingTop="@dimen/dp_10"

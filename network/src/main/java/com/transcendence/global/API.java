@@ -94,7 +94,21 @@ public class API {
          */
         public final static String BANNER = "banner/json";
 
+        /**
+         * 2. 体系
+         * 2.1 体系数据
+         * https://www.wanandroid.com/tree/json
+         * 方法：GET
+         */
+        public final static String TREE ="tree/json";
 
+        /**
+         * 3. 导航
+         * 3.1 导航数据
+         * https://www.wanandroid.com/navi/json
+         * 方法：GET
+         */
+        public final static String NAVI ="navi/json";
         /**
          * 5. 登录与注册
          * 5.1 登录

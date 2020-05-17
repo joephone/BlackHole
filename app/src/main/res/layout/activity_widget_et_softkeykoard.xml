@@ -4,12 +4,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
 
         <RelativeLayout
             android:id="@+id/rl"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <EditText
                 android:id="@+id/etPwd"
                 android:layout_width="match_parent"
@@ -21,8 +26,7 @@
                 android:paddingRight="@dimen/all_width_height" />
         </RelativeLayout>
 
-
-
+    </ScrollView>
 
 
 </RelativeLayout>

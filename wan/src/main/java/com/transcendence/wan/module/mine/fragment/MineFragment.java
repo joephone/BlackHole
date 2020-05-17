@@ -12,6 +12,7 @@ import com.transcendence.wan.core.mvp.WanBaseFragment;
 import com.transcendence.wan.module.mine.act.AboutMeActivity;
 import com.transcendence.wan.module.mine.act.MyCoinActivity;
 import com.transcendence.wan.module.mine.act.RankActivity;
+import com.transcendence.wan.module.mine.model.MyCoinBean;
 import com.transcendence.wan.module.mine.presenter.MinePresenter;
 import com.transcendence.wan.module.mine.view.MineView;
 import com.transcendence.wan.module.setting.act.SettingActivity;
@@ -131,4 +132,8 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
         }
     }
 
+    @Override
+    public void getMyCoinSuc(int code, MyCoinBean bean) {
+
+    }
 }

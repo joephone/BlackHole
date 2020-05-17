@@ -62,7 +62,8 @@ dependencies {
 
     implementation project(':library')
     implementation project(':network')
-    implementation project(':ui')
+    implementation project(':basic_ui')
+    implementation project(':basic_res')
 
 
     //Awesome 项目引用的库

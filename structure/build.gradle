@@ -33,5 +33,5 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(':library')
-    implementation project(':stackOverView')
+    implementation project(':basic_utils')
 }

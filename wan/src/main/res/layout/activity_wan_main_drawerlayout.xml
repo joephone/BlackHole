@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:orientation="vertical">
+
+        <include layout="@layout/view_status" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/colorGitHubBlack">
+
+            <FrameLayout
+                android:id="@+id/flBack"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/selector_back">
+
+                <ImageView
+                    android:id="@+id/ivLeft"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:gravity="center"
+                    android:src="@mipmap/ic_back" />
+            </FrameLayout>
+
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="主页"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_size" />
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/white"
+            />
+
+
+
+<!--        <android.support.design.widget.BottomNavigationView-->
+<!--            android:id="@+id/bottom_navigation_view"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="bottom"-->
+<!--             />-->
+
+
+<!--        android:background="@color/bottom_nav_bg"-->
+<!--        app:elevation="16dp"-->
+<!--        app:itemIconTint="@drawable/nav_item_color_selector"-->
+<!--        app:itemTextColor="@drawable/nav_item_color_selector"-->
+<!--        app:labelVisibilityMode="labeled"-->
+<!--        app:layout_behavior="@string/bye_burger_bottom_behavior"-->
+<!--        app:menu="@menu/bottom_navigation"-->
+
+
+        <!--            app:headerLayout="@layout/nav_header"-->
+        <!--            app:insetForeground="@android:color/transparent"-->
+        <!--            app:itemIconTint="@color/nav_item_color_ic"-->
+        <!--            app:itemTextColor="@color/nav_item_color_tv"-->
+        <!--            app:menu="@menu/nav_menu"-->
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/bg_public"
+
+
+            >
+
+        </android.support.design.widget.NavigationView>
+
+    </android.support.v4.widget.DrawerLayout>
+
+</LinearLayout>
+
+

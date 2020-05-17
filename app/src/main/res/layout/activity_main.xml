@@ -19,7 +19,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:clickable="true"
-            android:background="@drawable/water_standard_selector"
+            android:background="@drawable/water_effect_selector"
             android:text="Hello World!" />
         <TextView
             android:layout_width="0dp"
@@ -27,7 +27,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:clickable="true"
-            android:background="@drawable/water_standard_selector"
+            android:background="@drawable/water_effect_selector"
             android:text="Hello World!" />
         <TextView
             android:layout_width="0dp"
@@ -35,7 +35,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:clickable="true"
-            android:background="@drawable/water_standard_selector"
+            android:background="@drawable/water_effect_selector"
             android:text="Hello World!" />
         <TextView
             android:layout_width="0dp"
@@ -43,7 +43,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:clickable="true"
-            android:background="@drawable/water_standard_selector"
+            android:background="@drawable/water_effect_selector"
             android:text="Hello World!" />
     </LinearLayout>
 
@@ -70,7 +70,7 @@
         android:layout_marginRight="@dimen/standard_padding"
         android:gravity="center"
         android:clickable="true"
-        android:background="@drawable/water_standard_selector"
+        android:background="@drawable/water_effect_selector"
         android:text="方法二 正常 ripple" />
 
     <TextView

@@ -1,6 +1,8 @@
 package com.transcendence.wan.module.dama.fragment;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.FrameLayout;
 
 import com.transcendence.blackhole.utils.L;
 import com.transcendence.ui.recyclerview.adapter.BaseAbsAdapter;
@@ -11,6 +13,7 @@ import com.transcendence.wan.module.dama.adapter.DamaAdapter;
 import com.transcendence.wan.module.dama.model.DamaBean;
 import com.transcendence.wan.module.dama.presenter.DamaPresenter;
 import com.transcendence.wan.module.dama.view.DamaView;
+import com.transcendence.wan.module.mine.act.ToDoActivity;
 
 import java.util.List;
 
@@ -22,7 +25,7 @@ import java.util.List;
  * @EditionHistory
  */
 
-public class DamaFragment extends WanBaseFragment<DamaPresenter> implements DamaView,RefreshLayout.RefreshCallback {
+public class DamaFragment extends WanBaseFragment<DamaPresenter> implements DamaView,RefreshLayout.RefreshCallback, View.OnClickListener {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_SHOW_TEXT = "text";
     private static int PAGE = 0;
@@ -31,6 +34,8 @@ public class DamaFragment extends WanBaseFragment<DamaPresenter> implements Dama
     private RefreshLayout mRefreshLayout;
     private BaseAbsAdapter mAdapter;
     private boolean isLoadMore;
+
+    private FrameLayout flRight;
 
     @Override
     protected int getLayoutRes() {
@@ -52,6 +57,9 @@ public class DamaFragment extends WanBaseFragment<DamaPresenter> implements Dama
         mRefreshLayout.setAdapter(mAdapter,getContext());
         mRefreshLayout.schemeColors();
         mRefreshLayout.addCallback(this);
+
+        flRight = findViewById(R.id.fl_right);
+        flRight.setOnClickListener(this);
     }
 
     @Override
@@ -96,5 +104,15 @@ public class DamaFragment extends WanBaseFragment<DamaPresenter> implements Dama
         PAGE ++;
         isLoadMore = true;
         presenter.getArticleList(PAGE);
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.fl_right:
+                ToDoActivity.start(getContext());
+                break;
+        }
     }
 }

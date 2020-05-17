@@ -17,7 +17,8 @@ dependencies {
     implementation project(':library')
     implementation project(':imagepicker')
     implementation project(':network')
-    implementation project(':ui')
+    implementation project(':basic_ui')
+    implementation project(':basic_res')
 
     if(!config.isWanApplication){  //arouter 必加
         implementation project(':wan')

@@ -12,24 +12,19 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <View
-            android:id="@+id/title_status"
-            android:layout_width="match_parent"
-            android:layout_height="22dp"
-            android:background="@color/colorGitHubBlack" />
+        <include layout="@layout/view_status" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:background="@color/colorGitHubBlack"
-            >
+            android:background="@color/colorGitHubBlack">
 
             <FrameLayout
                 android:id="@+id/flBack"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
-                android:visibility="gone"
-                android:background="@drawable/selector_back">
+                android:background="@drawable/selector_back"
+                android:visibility="gone">
 
                 <ImageView
                     android:id="@+id/ivLeft"
@@ -39,8 +34,7 @@
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="@dimen/dp_10"
                     android:gravity="center"
-                    android:src="@mipmap/ic_article"
-                    />
+                    android:src="@mipmap/ic_article" />
             </FrameLayout>
 
 
@@ -51,7 +45,7 @@
                 android:layout_centerInParent="true"
                 android:ellipsize="end"
                 android:maxLines="1"
-                tools:text="知识二"
+                android:text="体系"
                 android:textColor="@color/white"
                 android:textSize="@dimen/title_size" />
 
@@ -59,9 +53,9 @@
             <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
                 android:layout_marginRight="@dimen/standard_padding"
-                android:visibility="gone"
-                android:layout_alignParentRight="true">
+                android:visibility="gone">
 
                 <ImageView
                     android:id="@+id/ivRight"
@@ -70,25 +64,33 @@
                     android:layout_centerVertical="true"
                     android:layout_gravity="center_vertical"
                     android:gravity="center"
-                    android:src="@mipmap/ic_search"
-                    />
+                    android:src="@mipmap/ic_search" />
             </FrameLayout>
 
         </RelativeLayout>
     </LinearLayout>
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/white" />
 
-    <TextView
-        android:id="@+id/tvContent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="hello world"
-        android:textColor="@android:color/black"
-        android:textSize="24sp" />
-
+        <FrameLayout
+            android:id="@+id/fl_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="3"
+            android:background="@color/white" />
+    </LinearLayout>
 
 
 </LinearLayout>

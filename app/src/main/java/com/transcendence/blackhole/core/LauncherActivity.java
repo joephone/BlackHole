@@ -9,7 +9,7 @@ import com.transcendence.blackhole.R;
 import com.transcendence.blackhole.base.activity.BaseActivity;
 import com.transcendence.blackhole.demo.guide.GuideActivity;
 import com.transcendence.blackhole.global.Global;
-import com.transcendence.blackhole.index.IndexActivity;
+import com.transcendence.blackhole.ui.widget.custom.qq.QqSlidingMenuActivity;
 import com.transcendence.blackhole.utils.GlideUtils;
 import com.transcendence.blackhole.utils.SPUtils;
 
@@ -78,7 +78,7 @@ public class LauncherActivity extends BaseActivity implements Animation.Animatio
             finish();
         }else {
             // AppIndexActivity
-            startActivity(IndexActivity.class);
+            startActivity(QqSlidingMenuActivity.class);
             finish();
 //            ARouter.getInstance().build("/wan/WanMainActivity").navigation();
 //            finish();

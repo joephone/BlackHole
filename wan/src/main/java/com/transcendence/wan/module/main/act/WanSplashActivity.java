@@ -2,20 +2,24 @@ package com.transcendence.wan.module.main.act;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
-import android.support.constraint.ConstraintLayout;
 import android.view.MotionEvent;
+import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.transcendence.blackhole.global.Global;
 import com.transcendence.blackhole.utils.GlideUtils;
 import com.transcendence.blackhole.utils.L;
+import com.transcendence.ui.textview.kugoo.CountDownTextView;
 import com.transcendence.wan.R;
 import com.transcendence.wan.base.act.WanBaseActivity;
-import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
+import com.transcendence.wan.module.main.presenter.SplashPresenter;
 
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * @author Joephone on 2019/9/5 15:19
@@ -25,12 +29,14 @@ import java.util.Random;
  * @EditionHistory
  */
 
-public class WanSplashActivity extends WanBaseActivity implements Animation.AnimationListener {
+public class WanSplashActivity extends WanBaseActivity<SplashPresenter> implements Animation.AnimationListener, View.OnClickListener {
 
     private final int count = 5;
-    private final int ANIM_DURATION_TIME = 100;
+    private final int ANIM_DURATION_TIME = 10000;
     private ImageView ivLauncher;
-    private ConstraintLayout clContainer;
+    private RelativeLayout clContainer;
+    private CountDownTextView mTvSkip;
+    private Timer mTimer;
 
     @Override
     protected int getLayoutId() {
@@ -39,8 +45,8 @@ public class WanSplashActivity extends WanBaseActivity implements Animation.Anim
 
     @Nullable
     @Override
-    protected WanBasePresenter initPresenter() {
-        return null;
+    protected SplashPresenter initPresenter() {
+        return new SplashPresenter();
     }
 
     @Override
@@ -49,10 +55,15 @@ public class WanSplashActivity extends WanBaseActivity implements Animation.Anim
 
         ivLauncher = findViewById(R.id.ivLauncher);
         clContainer = findViewById(R.id.clContainer);
+        mTvSkip = findViewById(R.id.tv_skip);
+        mTvSkip.setOnClickListener(this);
+        mTvSkip.setDuration(ANIM_DURATION_TIME);
         int [] ids = Global.mLauncherIds;
         int index =new Random().nextInt(ids.length);
         GlideUtils.getInstance().loadImageFromLocal(ids[index],ivLauncher);
-        initStartAnim();
+//        initStartAnim();
+        CountDown();
+        mTvSkip.start();
     }
 
     @Override
@@ -77,8 +88,7 @@ public class WanSplashActivity extends WanBaseActivity implements Animation.Anim
 
     @Override
     public void onAnimationEnd(Animation animation) {
-        startAct(WanMainActivity.class);
-        finish();
+        startMain();
     }
 
     @Override
@@ -157,5 +167,32 @@ public class WanSplashActivity extends WanBaseActivity implements Animation.Anim
     public void onDestroy() {
         super.onDestroy();
 //        Debug.stopMethodTracing();
+    }
+
+    public void CountDown(){
+        mTimer = new Timer();
+        mTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                startMain();
+            }
+        },ANIM_DURATION_TIME);
+
+    }
+
+    private void startMain() {
+        startAct(WanMainActivity.class);
+        finish();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.tv_skip:
+                mTvSkip.stop();
+                mTimer.cancel();
+                startMain();
+                break;
+        }
     }
 }

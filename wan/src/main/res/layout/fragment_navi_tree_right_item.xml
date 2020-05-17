@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_press_color_surface"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/all_width_height"
+        android:textColor="@color/text_66"
+        android:textSize="@dimen/text_content"
+        android:maxLines="1"
+        android:ellipsize="end"
+        tools:text="公众号文章列表强势上线" />
+
+   <!--<View-->
+       <!--android:layout_width="match_parent"-->
+       <!--android:layout_height="0.5dp"-->
+       <!--android:background="@color/gary"/>-->
+
+</LinearLayout>

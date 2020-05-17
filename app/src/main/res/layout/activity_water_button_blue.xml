@@ -20,7 +20,7 @@
         android:layout_marginRight="@dimen/standard_padding"
         android:gravity="center"
         android:clickable="true"
-        android:background="@drawable/water_standard_blue_selector"
+        android:background="@drawable/water_effect_blue_selector"
         android:text="蓝色 water" />
 
 

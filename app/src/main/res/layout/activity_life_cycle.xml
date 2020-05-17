@@ -41,7 +41,7 @@
             android:layout_height="40dp"
             android:gravity="center"
             android:clickable="true"
-            android:background="@drawable/water_standard_green_selector"
+            android:background="@drawable/water_effect_green_selector"
             android:text="走一遍生命周期" />
 
     </LinearLayout>

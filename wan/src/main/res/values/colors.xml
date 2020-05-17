@@ -77,5 +77,6 @@
     <color name="ripple_dark">#11000000</color>
     <color name="ripple_light">#11ffffff</color>
 
-
+    <color name="login_bg_end_1">#FF8519</color>
+    <color name="tablayout_tv_gray">#999999</color>
 </resources>

@@ -6,6 +6,7 @@ import android.view.View;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.transcendence.wan.R;
+import com.transcendence.wan.listener.OnMyItemClickListener;
 import com.transcendence.wan.module.mine.model.MineBean;
 
 import java.util.List;
@@ -32,7 +33,7 @@ public class MineAdapter extends BaseQuickAdapter<MineBean,BaseViewHolder> {
             @Override
             public void onClick(View v) {
                 if(listener!=null){
-                    listener.OnItemClick(helper.getAdapterPosition());
+                    listener.onItemClick(helper.getAdapterPosition());
                 }
             }
         });
@@ -41,14 +42,11 @@ public class MineAdapter extends BaseQuickAdapter<MineBean,BaseViewHolder> {
         helper.setImageResource(R.id.iv_left,mContext.getResources().obtainTypedArray(R.array.mine_item_left_image).getResourceId(helper.getAdapterPosition(), 0));
     }
 
-    private OnItemClickListener listener;
+    private OnMyItemClickListener listener;
 
-    public void setListener(OnItemClickListener listener) {
+    public void setListener(OnMyItemClickListener listener) {
         this.listener = listener;
     }
 
 
-    public interface OnItemClickListener{
-        void OnItemClick(int position);
-    }
 }

@@ -2,7 +2,6 @@ package com.transcendence.wan.module.setting.act;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -37,7 +36,6 @@ public class SettingActivity extends WanBaseActivity<SettingPresenter> implement
         return R.layout.activity_wan_setting;
     }
 
-    @Nullable
     @Override
     protected SettingPresenter initPresenter() {
         return new SettingPresenter();

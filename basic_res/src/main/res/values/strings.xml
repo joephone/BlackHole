@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">黑洞</string>
+    <string name="app_structure_name">黑洞结构</string>
+    <string name="app_douya_name">豆芽</string>
+    <string name="app_wan_name">玩</string>
+
+    <!-- general -->
+    <string name="cancel">取消</string>
+    <string name="OK">确定</string>
+    <string name="send">发送</string>
+    <string name="down_load">下载</string>
+    <string name="load">加载</string>
+    <string name="complete">完成</string>
+    <string name="plan">计划</string>
+
+    <!-- home tab -->
+    <string name="tab_one">工作平台</string>
+    <string name="tab_two">消息列表</string>
+    <string name="tab_three">联系人</string>
+    <string name="tab_four">个人中心</string>
+
+
+    <!-- wan tab -->
+    <string name="wan_tab_one">首页</string>
+    <string name="wan_tab_two">体系</string>
+    <string name="wan_tab_three">公众号</string>
+    <string name="wan_tab_four">项目</string>
+    <string name="wan_tab_five">我的</string>
+
+    <!-- 最美底 nav bar -->
+    <string name="home_exit_hint">再按一次退出</string>
+    <string name="zuimei_home_nav_one">首页</string>
+    <string name="zuimei_home_nav_two">发现</string>
+    <string name="zuimei_home_nav_three">消息</string>
+    <string name="zuimei_home_nav_four">我的</string>
+
+
+
+    <string name="menu_title_share">Share</string>
+    <string name="title_share">Share To</string>
+
+    <!-- base handler -->
+    <string name="handler_question_1">1、Handler是什么？</string>
+    <string name="handler_answer_1">Handler就Android给我提供用来更新UI的一套机制，也是一套消息处理的机制，我们可以发送消息，也可以通过它处理消息。</string>
+    <string name="handler_question_2">2、为什么要用handler？</string>
+    <string name="handler_answer_2">Android在设计的时候，就封装了一套消息创建、传递、处理机制，如果不遵循这样的机制的就没有办法更新UI信息的，就会抛出异常信息。</string>
+    <string name="handler_question_5">5、为什么要用handler更新UI？</string>
+    <string name="handler_answer_5">解决多线程并发问题</string>
+    <string name="handler_question_6">6、Handler Looper MessageQueue之间的关系？</string>
+    <string name="handler_answer_6">Looper只是一个轮询器，它不断轮询messageQueue里面是否有消息，没有消息则处于等待状态，如果有消息，就从messageQueue抽取消息，交给Handler去处理。真正处理消息的是Handlerl对象里面的handlerMessage()方法。不间断的从 MessageQueue中抽取消息, 判断对应的handler，进行回传调用handlerMessager方法,来处理消息</string>
+
+
+    <string name="auto_scroll_question_1">1、横向自动滚动的TextView，跑马灯效果</string>
+    <string name="auto_scrol_answer_1">小火车开来啦...呜呜开...呜呜呜...呜呜呜...</string>
+</resources>

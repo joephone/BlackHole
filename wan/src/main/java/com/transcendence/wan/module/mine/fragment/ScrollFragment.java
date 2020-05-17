@@ -9,6 +9,7 @@ import com.transcendence.blackhole.utils.L;
 import com.transcendence.ui.scroll.RollbackScrollView;
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanBaseFragment;
+import com.transcendence.wan.listener.OnMyItemClickListener;
 import com.transcendence.wan.module.mine.adapter.MineAdapter;
 import com.transcendence.wan.module.mine.model.MineBean;
 import com.transcendence.wan.module.project.presenter.ScrollFragmentPresenter;
@@ -24,7 +25,7 @@ import java.util.List;
  * @EditionHistory
  */
 
-public class ScrollFragment extends WanBaseFragment<ScrollFragmentPresenter> implements ScrollFragmentView,RollbackScrollView.OnRollBackListener,MineAdapter.OnItemClickListener{
+public class ScrollFragment extends WanBaseFragment<ScrollFragmentPresenter> implements ScrollFragmentView,RollbackScrollView.OnRollBackListener{
     private static final String ARG_SHOW_TEXT = "text";
 
     private RollbackScrollView mRollbackScrollView;
@@ -82,15 +83,20 @@ public class ScrollFragment extends WanBaseFragment<ScrollFragmentPresenter> imp
     public void inflateItemSuc(List<MineBean> list) {
         mAdapter = new MineAdapter(list);
         mRv.setAdapter(mAdapter);
-        mAdapter.setListener(this);
+        mAdapter.setListener(new OnMyItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                L.d("我的积分");
+            }
+        });
     }
 
-    @Override
-    public void OnItemClick(int position) {
-        switch (position){
-            case 0:
-                L.d("我的积分");
-                break;
-        }
-    }
+//    @Override
+//    public void OnItemClick(int position) {
+//        switch (position){
+//            case 0:
+//
+//                break;
+//        }
+//    }
 }
