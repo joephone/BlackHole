@@ -2,16 +2,23 @@ package com.transcendence.blackhole.index;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.PointF;
+import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.hjq.toast.ToastUtils;
 import com.transcendence.blackhole.R;
 import com.transcendence.blackhole.arouter.ARouterUtils;
-import com.transcendence.blackhole.core.AppConstantValue;
 import com.transcendence.blackhole.base.activity.TitleBarActivity;
+import com.transcendence.blackhole.core.AppConstantValue;
 import com.transcendence.blackhole.utils.L;
+import com.transcendence.blackhole.utils.StringUtils;
+import com.transcendence.core.permission.PermissionPool;
+import com.transcendence.core.permission.PermissionUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -30,6 +37,7 @@ public class IndexActivity extends TitleBarActivity implements View.OnClickListe
 
 
     private final int radius2 = 300;
+    private boolean mUnLocFirstClick;
 
     @Override
     public void init() {
@@ -68,11 +76,9 @@ public class IndexActivity extends TitleBarActivity implements View.OnClickListe
             PointF point = new PointF();
             int avgAngle = (360 / (ivList.size() ));
             int angle = avgAngle * ang;
-//            L.d("angle=" + angle);
+
             point.x = (float) Math.cos(angle * (Math.PI / 180)) * radius2;
             point.y = (float) Math.sin(angle * (Math.PI / 180)) * radius2;
-//            L.d(point.toString());
-
 
 
             ObjectAnimator objectAnimatorX = ObjectAnimator.ofFloat(ivList.get(ang), "translationX", 0, point.x);
@@ -85,7 +91,6 @@ public class IndexActivity extends TitleBarActivity implements View.OnClickListe
             animatorSet.start();
 
             SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//            L.d("time-----"+dateformat.format(System.currentTimeMillis()));
         }
     }
 
@@ -133,11 +138,81 @@ public class IndexActivity extends TitleBarActivity implements View.OnClickListe
                 ToastUtils.show("暂未开放");
                 return;
             }
+
+            if(ivList.indexOf(v)==2){
+                if(mUnLocFirstClick){
+                    showSystemPermissionsSettingDialog(mActivity);
+                }else {
+                    PermissionUtils.getInstance().checkPermissions(IndexActivity.this, PermissionPool.LOCATION,permissionResult);
+                }
+                return;
+            }
             ARouterUtils.navigation(AppConstantValue.mainIndex[ivList.indexOf(v)]);
 //            Toast.makeText(this, "点击了第" + (imageViews.indexOf(v) == -1 ? ivList.indexOf(v) : imageViews.indexOf(v)) + "个", Toast.LENGTH_SHORT).show();
         }
     }
 
+    PermissionUtils.IPermissionsResult permissionResult = new PermissionUtils.IPermissionsResult() {
+        @Override
+        public void onGranted() {
+            L.d("可以去");
+            ARouterUtils.navigation(AppConstantValue.mainIndex[2]);
+        }
 
+        @Override
+        public void onDenied() {
+            L.d("不通过");
+            mUnLocFirstClick = true;
+        }
+    };
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        PermissionUtils.getInstance().onRequestPermissionsResult(this,requestCode,permissions,grantResults);
+    }
+
+
+    /**
+     * 不再提示权限时的展示对话框
+     * String.format("%s需要获得%s权限才能正常使用此功能,请允许！", appLabel, permissionName);
+     */
+    AlertDialog mPermissionDialog;
+
+    private void showSystemPermissionsSettingDialog(final Activity context) {
+        final String mPackName = context.getPackageName();
+        if (mPermissionDialog == null) {
+            mPermissionDialog = new AlertDialog.Builder(context)
+                    .setMessage(String.format("%s需要获得%s权限才能正常使用此功能,请允许！", StringUtils.getString(R.string.app_name), "定位"))
+                    .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            cancelPermissionDialog();
+                            mUnLocFirstClick = false;
+                            PermissionUtils.getInstance().checkPermissions(IndexActivity.this, PermissionPool.LOCATION,permissionResult);
+                        }
+                    })
+                    .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            //关闭页面或者做其他操作
+                            cancelPermissionDialog();
+                            //mContext.finish();
+                        }
+                    })
+                    .create();
+        }
+        mPermissionDialog.show();
+    }
+
+    //关闭对话框
+    private void cancelPermissionDialog() {
+        if (mPermissionDialog != null) {
+            mPermissionDialog.cancel();
+            mPermissionDialog = null;
+        }
+
+    }
 
 }

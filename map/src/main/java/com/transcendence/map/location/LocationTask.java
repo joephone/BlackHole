@@ -1,6 +1,8 @@
 package com.transcendence.map.location;
 
 import android.content.Context;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
@@ -74,11 +76,11 @@ public class LocationTask implements LocationSource,AMapLocationListener{
 
 
     @Override
-    public void onLocationChanged(AMapLocation aMapLocation) {
+    public void onLocationChanged(AMapLocation aMapLoc) {
         L.d("获取位置");
-        if (aMapLocation != null   && aMapLocation.getErrorCode() == 0) {
+        if (aMapLoc != null && aMapLoc.getErrorCode() == 0) {
             L.d("获取位置成功");
-            updateDistrictLocation(aMapLocation);
+            updateDistrictLocation(aMapLoc);
         } else {
             L.d("获取位置失败");
 //            tv.setText("获取位置失败");
@@ -87,10 +89,17 @@ public class LocationTask implements LocationSource,AMapLocationListener{
         stopLocation();
     }
 
-    private void updateDistrictLocation(AMapLocation aMapLocation) {
-        L.d("updateDistrictLocation: "+aMapLocation.getAddress());
+    private void updateDistrictLocation(AMapLocation loc) {
+        L.d("updateDistrictLocation: "+loc.getAddress());
         if (listener != null) {
-            listener.onLocSuc(aMapLocation);
+            listener.onLocSuc(loc);
+        } else {
+            //定位失败时，可通过ErrCode（错误码）信息来确定失败的原因，errInfo是错误信息，详见错误码表。
+            showToastWithErrorInfo(loc.getErrorCode());
+            Log.e("AmapError", "location Error, ErrCode:"
+                    + loc.getErrorCode() + ", errInfo:"
+                    + loc.getErrorInfo());
+
         }
         //          location.getLocationType();//获取当前定位结果来源，如网络定位结果，详见定位类型表
         //          location.getLatitude();//获取纬度
@@ -139,5 +148,28 @@ public class LocationTask implements LocationSource,AMapLocationListener{
     @Override
     public void deactivate() {
 
+    }
+
+
+    private void showToastWithErrorInfo(int error) {
+        String tips = "定位错误码：" + error;
+        switch (error) {
+            case 4:
+                tips = "请检查设备网络是否通畅，检查通过接口设置的网络访问超时时间，建议采用默认的30秒。";
+                break;
+            case 7:
+                tips = "请仔细检查key绑定的sha1值与apk签名sha1值是否对应。";
+                break;
+            case 12:
+                tips = "请在设备的设置中开启app的定位权限。";
+                break;
+            case 18:
+                tips = "建议手机关闭飞行模式，并打开WIFI开关";
+                break;
+            case 19:
+                tips = "建议手机插上sim卡，打开WIFI开关";
+                break;
+        }
+        Toast.makeText(mContext.getApplicationContext(), tips, Toast.LENGTH_LONG).show();
     }
 }

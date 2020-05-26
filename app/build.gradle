@@ -14,11 +14,12 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(':library')
+    implementation project(':basic_core')
     implementation project(':imagepicker')
     implementation project(':network')
     implementation project(':basic_ui')
     implementation project(':basic_res')
+    implementation project(':basic_utils')
 
     if(!config.isWanApplication){  //arouter 必加
         implementation project(':wan')

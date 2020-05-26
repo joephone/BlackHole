@@ -21,6 +21,9 @@ import com.amap.api.maps.model.MarkerOptions;
 import com.amap.api.maps.model.animation.ScaleAnimation;
 import com.amap.api.services.core.LatLonPoint;
 import com.amap.api.services.core.PoiItem;
+import com.amap.api.services.geocoder.GeocodeSearch;
+import com.amap.api.services.geocoder.RegeocodeQuery;
+import com.amap.api.services.geocoder.RegeocodeResult;
 import com.amap.api.services.poisearch.PoiResult;
 import com.amap.api.services.poisearch.PoiSearch;
 import com.transcendence.blackhole.global.Global;
@@ -44,11 +47,15 @@ public class AmapHelper extends AppCompatActivity implements
         AMap.OnCameraChangeListener,
         AMap.OnMarkerClickListener,
         PoiSearch.OnPoiSearchListener,
+//        GeocodeSearch.OnGeocodeSearchListener,
         LocListener{
 
+    private RegeocodeResult     mRegeocodeResult;
+    private PoiItem             mSelectPoiItem;
     private PoiSearch           mPoiSearch;
     private PoiSearch.Query     mQuery;
     private PoiSearchListener   mOnPoiSearchListener;
+    private GeocodeSearch.OnGeocodeSearchListener mOnGeocodeSearchListener;
     /**
      *  高德地图异步定位
      */
@@ -134,6 +141,7 @@ public class AmapHelper extends AppCompatActivity implements
             mIsFirst = false;
         }
         animMarker();
+        getAddressInfoByLatLong(cameraPosition.target.latitude,cameraPosition.target.longitude);
     }
 
 
@@ -175,7 +183,31 @@ public class AmapHelper extends AppCompatActivity implements
         SPUtils.getInstance().put(Global.MAP.DEFAULT_LON,target.getLongitude()+"");
         mLatLng = new LatLng(target.getLatitude(),target.getLongitude());
         aMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mLatLng,Global.standardZoom()));
+
         onStartPoiSearch(true, "", target.getCity(), new LatLonPoint(target.getLatitude(), target.getLongitude()));
+
+        getAddressInfoByLatLong(target.getLatitude(),target.getLongitude());
+
+    }
+
+
+    /**
+     * 通过经纬度获取当前地址详细信息，逆地址编码
+     *
+     * @param latitude
+     * @param longitude
+     */
+    private void getAddressInfoByLatLong(double latitude, double longitude) {
+        L.d("getAddressInfoByLatLong");
+        GeocodeSearch geocodeSearch = new GeocodeSearch(this);
+        /*
+        point - 要进行逆地理编码的地理坐标点。
+        radius - 查找范围。默认值为1000，取值范围1-3000，单位米。
+        latLonType - 输入参数坐标类型。包含GPS坐标和高德坐标。 可以参考RegeocodeQuery.setLatLonType(String)
+        */
+        RegeocodeQuery query = new RegeocodeQuery(new LatLonPoint(latitude, longitude), 3000, GeocodeSearch.AMAP);
+        geocodeSearch.getFromLocationAsyn(query);
+        geocodeSearch.setOnGeocodeSearchListener(mOnGeocodeSearchListener);
     }
 
 
@@ -320,4 +352,18 @@ public class AmapHelper extends AppCompatActivity implements
             aMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mLatLng,Global.standardZoom()));
         }
     }
+
+
+
+    /**
+     *  逆地址搜索监听器  RegeocodeResult regeocodeResult
+     */
+    protected RegeocodeResult regeocodeResult(){
+        if(mRegeocodeResult!=null){
+            return mRegeocodeResult;
+        }
+        return null;
+    }
+
+
 }

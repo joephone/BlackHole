@@ -14,7 +14,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Scroller;
 
-import com.transcendence.blackhole.library.R;
+import com.transcendence.core.R;
 import com.transcendence.blackhole.utils.L;
 import com.transcendence.blackhole.widget.custom.scroll.lfscroll.content.ContentScrollView;
 

@@ -5,9 +5,9 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.amap.api.maps.AMap;
+import com.amap.api.services.geocoder.RegeocodeResult;
 import com.transcendence.blackhole.utils.L;
 import com.transcendence.map.R;
-import com.transcendence.map.listener.PoiSearchListener;
 import com.transcendence.map.utils.MapUtil;
 import com.transcendence.map.view.MapViewFragment;
 
@@ -24,7 +24,6 @@ public class AmapFragmentActivity extends AppCompatActivity {
     protected AMap mMap;
     protected MapUtil mapUtil;
     protected MapViewFragment mFragment;
-    protected PoiSearchListener poiListener;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -38,7 +37,13 @@ public class AmapFragmentActivity extends AppCompatActivity {
         if (mMap != null) {
             L.d("mMap != null");
             mapUtil = MapUtil.getInstance();
+        } else {
+            L.d("mMap == null");
         }
+    }
+
+    protected RegeocodeResult regeocodeResult(){
+        return mapUtil.regeocodeResult();
     }
 
 }

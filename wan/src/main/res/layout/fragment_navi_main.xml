@@ -19,7 +19,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="52dp"
-        android:background="@color/colorTheme"
         android:orientation="horizontal">
 
         <com.transcendence.blackhole.widget.custom.TabView
@@ -27,30 +26,35 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/water_effect_github_black_selector"
             app:tabTextSize="11"
             />
         <com.transcendence.blackhole.widget.custom.TabView
             android:id="@+id/tabTwo"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:background="@drawable/water_effect_github_black_selector"
             android:layout_weight="1"
             />
         <com.transcendence.blackhole.widget.custom.TabView
             android:id="@+id/tabThree"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:background="@drawable/water_effect_github_black_selector"
             android:layout_weight="1"
             />
         <com.transcendence.blackhole.widget.custom.TabView
             android:id="@+id/tabFour"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:background="@drawable/water_effect_github_black_selector"
             android:layout_weight="1"
             />
         <com.transcendence.blackhole.widget.custom.TabView
             android:id="@+id/tabFive"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:background="@drawable/water_effect_github_black_selector"
             android:layout_weight="1"
             />
     </LinearLayout>

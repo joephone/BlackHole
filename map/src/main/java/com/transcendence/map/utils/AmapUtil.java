@@ -25,8 +25,6 @@ public class AmapUtil extends AmapHelper {
     }
 
 
-    public static void getInstance(AMap aMap, MapView aMapView, Context context) {
-        new AmapUtil(aMap,aMapView,context);
-    }
+
 
 }

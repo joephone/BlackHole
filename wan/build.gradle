@@ -60,10 +60,11 @@ dependencies {
     implementation 'com.github.goweii:SwipeBack:1.1.0'
 
 
-    implementation project(':library')
+    implementation project(':basic_core')
     implementation project(':network')
     implementation project(':basic_ui')
     implementation project(':basic_res')
+    implementation project(':basic_utils')
 
 
     //Awesome 项目引用的库

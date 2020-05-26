@@ -4,7 +4,7 @@ ext {
     isDoudouApplication = false
     isDongnaoApplication = true
     isWanApplication = true
-    isMapApplication = false
+    isMapApplication = true
     isMusicApplication = false
     isNewsApplication = true
     isWeiboApplication = true

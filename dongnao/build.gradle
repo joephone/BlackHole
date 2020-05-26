@@ -20,7 +20,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation project(':library')
+    implementation project(':basic_core')
 
 
     implementation 'org.aspectj:aspectjrt:1.9.4'

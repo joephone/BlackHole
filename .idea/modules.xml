@@ -5,12 +5,12 @@
       <module fileurl="file://$PROJECT_DIR$/BlackHole.iml" filepath="$PROJECT_DIR$/BlackHole.iml" />
       <module fileurl="file://$PROJECT_DIR$/animation/animation.iml" filepath="$PROJECT_DIR$/animation/animation.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basic_core/basic_core.iml" filepath="$PROJECT_DIR$/basic_core/basic_core.iml" />
       <module fileurl="file://$PROJECT_DIR$/basic_res/basic_res.iml" filepath="$PROJECT_DIR$/basic_res/basic_res.iml" />
       <module fileurl="file://$PROJECT_DIR$/basic_ui/basic_ui.iml" filepath="$PROJECT_DIR$/basic_ui/basic_ui.iml" />
       <module fileurl="file://$PROJECT_DIR$/basic_utils/basic_utils.iml" filepath="$PROJECT_DIR$/basic_utils/basic_utils.iml" />
       <module fileurl="file://$PROJECT_DIR$/dongnao/dongnao.iml" filepath="$PROJECT_DIR$/dongnao/dongnao.iml" />
       <module fileurl="file://$PROJECT_DIR$/imagepicker/imagepicker.iml" filepath="$PROJECT_DIR$/imagepicker/imagepicker.iml" />
-      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
       <module fileurl="file://$PROJECT_DIR$/map/map.iml" filepath="$PROJECT_DIR$/map/map.iml" />
       <module fileurl="file://$PROJECT_DIR$/music/music.iml" filepath="$PROJECT_DIR$/music/music.iml" />
       <module fileurl="file://$PROJECT_DIR$/network/network.iml" filepath="$PROJECT_DIR$/network/network.iml" />

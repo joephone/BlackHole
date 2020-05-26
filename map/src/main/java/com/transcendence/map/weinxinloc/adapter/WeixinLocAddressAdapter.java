@@ -3,6 +3,7 @@ package com.transcendence.map.weinxinloc.adapter;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
@@ -35,18 +36,49 @@ public class WeixinLocAddressAdapter extends RecyclerView.Adapter<WeixinLocAddre
 
     @NonNull
     @Override
-    public AddressHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int position) {
-        return null;
+    public AddressHolder onCreateViewHolder(@NonNull ViewGroup parent, int position) {
+        AddressHolder myHolder = new AddressHolder(LayoutInflater.from(mContext).inflate(R.layout.activity_weixin_loc_item, parent, false));
+        return myHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AddressHolder addressHolder, int position) {
+    public void onBindViewHolder(@NonNull AddressHolder holder, int position) {
+        holder.itemView.setTag(position);
+        PoiItem poiItem = mList.get(position);
+        if (position == selectPosition) {
+            holder.mCheckBox.setChecked(true);
+        } else {
+            holder.mCheckBox.setChecked(false);
+        }
+        holder.mTvTitle.setText(poiItem.getTitle());
+        holder.mTvAddressDetail.setText(poiItem.getProvinceName() + poiItem.getCityName() + poiItem.getAdName() + poiItem.getSnippet());
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int position = (Integer) view.getTag();
+                setSelectPosition(position);
+//                if (null != mOnItemClickLisenter) {
+//                    mOnItemClickLisenter.onItemClick(position);
+//                }
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return mList.size();
+    }
+
+    public void setList(List<PoiItem> list) {
+        this.mList = list;
+        selectPosition = -1;
+        notifyDataSetChanged();
+    }
+
+    public void setSelectPosition(int position) {
+        this.selectPosition = position;
+        notifyDataSetChanged();
     }
 
     public class AddressHolder extends RecyclerView.ViewHolder {
@@ -57,9 +89,9 @@ public class WeixinLocAddressAdapter extends RecyclerView.Adapter<WeixinLocAddre
 
         public AddressHolder(View itemView) {
             super(itemView);
-            mTvTitle = (TextView) itemView.findViewById(R.id.tvAddress);
-            mTvAddressDetail = (TextView) itemView.findViewById(R.id.tvAddressDetail);
-//            mCheckBox = (CheckBox) itemView.findViewById(R.id.checkBox);
+            mTvTitle = (TextView) itemView.findViewById(R.id.tv_title);
+            mTvAddressDetail = (TextView) itemView.findViewById(R.id.tv_message);
+            mCheckBox = (CheckBox) itemView.findViewById(R.id.checkBox);
         }
     }
 }

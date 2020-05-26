@@ -1,5 +1,6 @@
 package com.transcendence.wan.module.main.act;
 
+import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
 
@@ -8,6 +9,9 @@ import com.hjq.toast.ToastUtils;
 import com.transcendence.blackhole.adapter.GoweiiFragmentPagerAdapter;
 import com.transcendence.blackhole.arouter.ARouterController;
 import com.transcendence.blackhole.arouter.ARouterUtils;
+import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.permission.PermissionPool;
+import com.transcendence.core.permission.PermissionUtils;
 import com.transcendence.wan.R;
 import com.transcendence.wan.base.act.WanBaseActivity;
 import com.transcendence.wan.module.dama.fragment.DamaFragment;
@@ -61,7 +65,23 @@ public class WanMainActivity extends WanBaseActivity<WanMainPresenter> implement
                 MainFragment.newInstance("主页面"));
         mVp.setAdapter(adapter);
         mVp.setCurrentItem(4);
+
+        PermissionUtils.getInstance().checkPermissions(WanMainActivity.this,PermissionPool.STORAGE,permissionResult);
     }
+
+    PermissionUtils.IPermissionsResult permissionResult = new PermissionUtils.IPermissionsResult() {
+        @Override
+        public void onGranted() {
+            L.d("可以下载");
+        }
+
+        @Override
+        public void onDenied() {
+            L.d("不通过");
+        }
+    };
+
+
 
     public void slideToDama(){
         mVp.setCurrentItem(0);
@@ -90,5 +110,14 @@ public class WanMainActivity extends WanBaseActivity<WanMainPresenter> implement
         }
         return super.onKeyUp(keyCode, event);
     }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        PermissionUtils.getInstance().onRequestPermissionsResult(this,requestCode,permissions,grantResults);
+    }
+
+
 
 }

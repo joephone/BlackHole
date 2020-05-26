@@ -78,4 +78,6 @@ public abstract class WanBaseActivity<P extends WanBasePresenter> extends WanMvp
 //        }
 //        mLoadingDialog = null;
     }
+
+
 }

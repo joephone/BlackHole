@@ -61,13 +61,14 @@ public class AmapLocationActivity extends AppCompatActivity implements View.OnCl
     }
 
     protected void startLocation()   {
-
+        L.d("开始定位");
         // 启动定位
         locationClient.startLocation();
     }
 
     protected void stopLocation()   {
-        if   (locationClient.isStarted()) {
+        L.d("停止定位");
+        if (locationClient.isStarted()) {
             locationClient.stopLocation();
         }
     }

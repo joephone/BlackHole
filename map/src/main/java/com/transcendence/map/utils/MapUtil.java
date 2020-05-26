@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.MapView;
+import com.amap.api.services.geocoder.RegeocodeResult;
 import com.transcendence.blackhole.utils.L;
 
 /**
@@ -40,10 +41,18 @@ public class MapUtil{
     }
 
     public void onMyLoc() {
+        L.d("MapUtil onMyLoc");
         if (amapUtil != null) {
             amapUtil.onMyLoc();
         }else {
             L.d("amapUtil == null");
         }
     }
+
+    public RegeocodeResult regeocodeResult(){
+        return amapUtil.regeocodeResult();
+    }
+
+
+
 }
