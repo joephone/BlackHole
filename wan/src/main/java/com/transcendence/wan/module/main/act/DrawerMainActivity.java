@@ -6,7 +6,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.View;
 
 import com.transcendence.wan.R;
-import com.transcendence.wan.base.act.WanBaseActivity;
+import com.transcendence.wan.core.mvp.WanBaseActivity;
 import com.transcendence.wan.module.main.presenter.WanMainPresenter;
 import com.transcendence.wan.module.main.view.WanMainView;
 

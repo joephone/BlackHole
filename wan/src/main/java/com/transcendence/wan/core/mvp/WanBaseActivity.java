@@ -1,4 +1,4 @@
-package com.transcendence.wan.base.act;
+package com.transcendence.wan.core.mvp;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -10,7 +10,6 @@ import android.support.annotation.Nullable;
 
 import com.transcendence.blackhole.utils.StatusBarUtils;
 import com.transcendence.wan.R;
-import com.transcendence.wan.core.mvp.WanMvpActivity;
 import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
 
 /**

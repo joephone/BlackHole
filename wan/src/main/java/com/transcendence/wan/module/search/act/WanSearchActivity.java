@@ -8,7 +8,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.widget.FrameLayout;
 
 import com.transcendence.wan.R;
-import com.transcendence.wan.base.act.WanBaseActivity;
+import com.transcendence.wan.core.mvp.WanBaseActivity;
 import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
 import com.transcendence.wan.module.search.fragment.SearchHistoryFragment;
 import com.transcendence.wan.module.search.fragment.SearchResultFragment;

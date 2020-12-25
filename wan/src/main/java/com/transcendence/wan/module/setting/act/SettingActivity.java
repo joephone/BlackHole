@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.transcendence.blackhole.utils.L;
 import com.transcendence.wan.R;
-import com.transcendence.wan.base.act.WanBaseActivity;
+import com.transcendence.wan.core.mvp.WanBaseActivity;
 import com.transcendence.wan.base.bean.NewWanBaseBean;
 import com.transcendence.wan.event.LoginEvent;
 import com.transcendence.wan.module.setting.presenter.SettingPresenter;

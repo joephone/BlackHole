@@ -10,7 +10,7 @@ import android.widget.RadioGroup;
 
 import com.transcendence.blackhole.fragment.BlankFragment;
 import com.transcendence.wan.R;
-import com.transcendence.wan.base.act.WanBaseActivity;
+import com.transcendence.wan.core.mvp.WanBaseActivity;
 import com.transcendence.wan.module.mine.adapter.FragmentTabAdapter;
 import com.transcendence.wan.module.mine.presenter.ToDoPresenter;
 

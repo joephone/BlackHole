@@ -45,11 +45,17 @@ dependencies {
     annotationProcessor config.dependencies["router-compiler"]
 
     implementation project(':basic_core')
+    implementation project(':basic_ui')
+    implementation project(':basic_res')
+    implementation project(':basic_utils')
+
     //3D地图so及jar
     implementation 'com.amap.api:3dmap:latest.integration'
     //定位功能
     implementation 'com.amap.api:location:latest.integration'
     //搜索功能
     implementation 'com.amap.api:search:latest.integration'
+
+    implementation 'com.github.goweii:SwipeBack:1.1.0'
 
 }

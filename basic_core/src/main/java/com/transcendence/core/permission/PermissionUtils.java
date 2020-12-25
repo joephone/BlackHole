@@ -15,6 +15,15 @@ import android.support.v4.content.ContextCompat;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * @author Joephone on 2020/5/25 19:45
+ * @E-Mail Address：joephonechen@gmail.com
+ * @Desc
+ * @Edition 1.0
+ * @EditionHistory
+ */
+
 public class PermissionUtils {
 
     private final int mRequestCode = 100;//权限请求码

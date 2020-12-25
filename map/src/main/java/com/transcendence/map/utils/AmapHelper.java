@@ -182,7 +182,7 @@ public class AmapHelper extends AppCompatActivity implements
         SPUtils.getInstance().put(Global.MAP.DEFAULT_LAT,target.getLatitude()+"");
         SPUtils.getInstance().put(Global.MAP.DEFAULT_LON,target.getLongitude()+"");
         mLatLng = new LatLng(target.getLatitude(),target.getLongitude());
-        aMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mLatLng,Global.standardZoom()));
+        aMap.animateCamera(CameraUpdateFactory.newLatLngZoom(mLatLng,Global.standardZoom()));
 
         onStartPoiSearch(true, "", target.getCity(), new LatLonPoint(target.getLatitude(), target.getLongitude()));
 

@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.support.annotation.Nullable;
 
 import com.transcendence.wan.R;
-import com.transcendence.wan.base.act.WanBaseActivity;
+import com.transcendence.wan.core.mvp.WanBaseActivity;
 import com.transcendence.wan.module.mine.presenter.AboutMePresenter;
 import com.transcendence.wan.module.mine.view.AboutMeView;
 

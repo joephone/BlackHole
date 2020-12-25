@@ -14,7 +14,7 @@ import com.transcendence.blackhole.utils.GlideUtils;
 import com.transcendence.blackhole.utils.L;
 import com.transcendence.ui.textview.kugoo.CountDownTextView;
 import com.transcendence.wan.R;
-import com.transcendence.wan.base.act.WanBaseActivity;
+import com.transcendence.wan.core.mvp.WanBaseActivity;
 import com.transcendence.wan.module.main.presenter.SplashPresenter;
 
 import java.util.Random;

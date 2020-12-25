@@ -17,12 +17,19 @@
         android:supportsRtl="true"
         android:theme="@style/NoTitleAppTheme">
 
-        <activity android:name=".base.act.AmapIndexActivity">
+        <activity android:name=".weinxinloc.act.WeixinLocOriAct">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".weinxinloc.act.WeixinLocActivity"
+
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".base.act.AmapIndexActivity" />
 
         <activity
             android:name=".base.act.MapMainActivity"
@@ -50,18 +57,13 @@
         <!-- -->
         <activity
             android:name=".base.act.AmapLocationSourceActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
 
         <activity
             android:name=".catches.act.CatchesMapActivity"
-            android:launchMode="singleTask"
             android:screenOrientation="portrait"/>
 
-        <activity
-            android:name=".weinxinloc.act.WeixinLocActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
+
 
         <activity
             android:name=".weinxinloc.act.WeixinLocSearchActivity"
@@ -85,6 +87,7 @@
         <activity android:name=".mobike.main.act.SlidingUpPanelActivity" />
         <activity android:name=".mobike.main.act.SlidingUpPanelTestActivity" />
         <activity android:name=".base.act.AmapLocationSourceTwoActivity" />
+
 
 
         <!-- 高德地图  -->

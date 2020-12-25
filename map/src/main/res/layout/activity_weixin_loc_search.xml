@@ -25,18 +25,28 @@
 
         <EditText
             android:id="@+id/etSearch"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginBottom="4dp"
             android:layout_marginRight="8dp"
             android:layout_marginTop="4dp"
-
+            android:layout_weight="1"
             android:drawableLeft="@mipmap/ic_search"
             android:drawablePadding="8dp"
             android:textColor="@android:color/white"
             android:textSize="16sp"/>
 
             <!-- android:background="@drawable/weixin_loc_layer_edittext_green" -->
+
+        <ImageView
+            android:id="@+id/iv_right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:src="@drawable/ic_standard_menu"/>
+
     </LinearLayout>
 
 

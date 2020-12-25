@@ -9,7 +9,7 @@ import com.transcendence.blackhole.utils.L;
 import com.transcendence.ui.recyclerview.adapter.BaseAbsAdapter;
 import com.transcendence.ui.recyclerview.view.LoadMoreLayout;
 import com.transcendence.wan.R;
-import com.transcendence.wan.base.act.WanBaseActivity;
+import com.transcendence.wan.core.mvp.WanBaseActivity;
 import com.transcendence.wan.module.mine.adapter.MyCoinListAdapter;
 import com.transcendence.wan.module.mine.model.MyCoinBean;
 import com.transcendence.wan.module.mine.model.MyCoinListBean;

@@ -13,7 +13,7 @@ import com.transcendence.blackhole.utils.L;
 import com.transcendence.core.permission.PermissionPool;
 import com.transcendence.core.permission.PermissionUtils;
 import com.transcendence.wan.R;
-import com.transcendence.wan.base.act.WanBaseActivity;
+import com.transcendence.wan.core.mvp.WanBaseActivity;
 import com.transcendence.wan.module.dama.fragment.DamaFragment;
 import com.transcendence.wan.module.home.fragment.MainFragment;
 import com.transcendence.wan.module.main.presenter.WanMainPresenter;

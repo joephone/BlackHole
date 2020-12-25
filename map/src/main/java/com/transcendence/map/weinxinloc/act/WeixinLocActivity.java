@@ -64,8 +64,6 @@ public class WeixinLocActivity extends AmapFragmentActivity implements View.OnCl
         ivMyLoc.setOnClickListener(this);
         tvSend.setOnClickListener(this);
 
-
-
         initRv();
     }
 

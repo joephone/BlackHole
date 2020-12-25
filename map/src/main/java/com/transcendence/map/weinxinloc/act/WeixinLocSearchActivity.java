@@ -1,6 +1,5 @@
 package com.transcendence.map.weinxinloc.act;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -20,7 +19,7 @@ import com.transcendence.map.R;
 
 public class WeixinLocSearchActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private ImageView back,ivSearch;
+    private ImageView back,ivSearch,ivMore;
     private RecyclerView mRv;
 
 
@@ -35,15 +34,23 @@ public class WeixinLocSearchActivity extends AppCompatActivity implements View.O
 
     private void initView() {
         back = findViewById(R.id.back);
+        ivMore = findViewById(R.id.iv_right);
         mRv = findViewById(R.id.rv);
         back.setOnClickListener(this);
+        ivMore.setOnClickListener(this);
     }
 
 
     @Override
     public void onClick(View v) {
-        if(v.getId() == R.id.back){
-            finish();
+        switch (v.getId()){
+            case R.id.back:
+                finish();
+                break;
+            case R.id.iv_right:
+                WeixinLocOriAct.start(this);
+                break;
         }
+
     }
 }

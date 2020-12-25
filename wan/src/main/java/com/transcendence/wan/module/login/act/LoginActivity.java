@@ -9,7 +9,7 @@ import android.support.v4.view.ViewPager;
 
 import com.transcendence.blackhole.adapter.GoweiiFragmentPagerAdapter;
 import com.transcendence.wan.R;
-import com.transcendence.wan.base.act.WanBaseActivity;
+import com.transcendence.wan.core.mvp.WanBaseActivity;
 import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
 import com.transcendence.wan.module.login.fragment.LoginFragment;
 import com.transcendence.wan.module.login.fragment.RegisterFragment;
