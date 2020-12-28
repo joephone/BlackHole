@@ -59,7 +59,7 @@
             android:lineSpacingExtra="0dp"
             android:textColor="@color/text_surface"
             android:textSize="@dimen/text_content"
-            tools:text="g**eii" />
+            tools:text="joe" />
 
         <TextView
             android:id="@+id/tv_coin_count"

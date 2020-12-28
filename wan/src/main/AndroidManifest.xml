@@ -20,8 +20,7 @@
         android:theme="@style/WanAppTheme">
 
         <activity
-            android:name=".module.main.act.WanSplashActivity"
-            android:screenOrientation="portrait">
+            android:name=".module.main.act.WanSplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -30,51 +29,40 @@
 
 
         <activity
-            android:name=".module.mine.act.BounceActivity"
-            />
+            android:name=".module.mine.act.BounceActivity"/>
 
         <activity
-            android:name=".module.main.act.DrawerMainActivity"
-            android:screenOrientation="portrait"/>
+            android:name=".module.main.act.DrawerMainActivity"/>
 
         <activity
-            android:name=".module.login.act.LoginActivity"
-            android:screenOrientation="portrait" />
+            android:name=".module.login.act.LoginActivity" />
 
         <activity
-            android:name=".module.search.act.WanSearchActivity"
-            android:screenOrientation="portrait"/>
+            android:name=".module.search.act.WanSearchActivity"/>
 
         <activity
-            android:name=".module.main.act.WanMainActivity"
-            android:screenOrientation="portrait" />
+            android:name=".module.main.act.WanMainActivity" />
 
-        <activity android:name=".module.main.act.WanWebActivity"
-            android:screenOrientation="portrait" />
+        <activity android:name=".module.main.act.WanWebActivity" />
 
         <!-- 积分榜-->
         <activity
-            android:name=".module.mine.act.RankActivity"
-            android:screenOrientation="portrait"/>
+            android:name=".module.mine.act.RankActivity"/>
 
         <!-- 我的积分-->
         <activity
-            android:name=".module.mine.act.MyCoinActivity"
-            android:screenOrientation="portrait"/>
+            android:name=".module.mine.act.MyCoinActivity"/>
 
         <activity
-            android:name=".module.setting.act.SettingActivity"
-            android:screenOrientation="portrait"/>
+            android:name=".module.setting.act.SettingActivity"/>
 
         <!-- 关于我-->
         <activity
-            android:name=".module.mine.act.AboutMeActivity"
-            android:screenOrientation="portrait"/>
+            android:name=".module.mine.act.AboutMeActivity"/>
 
         <!-- ToDo-->
         <activity
-            android:name=".module.mine.act.ToDoActivity"
-            android:screenOrientation="portrait"/>
+            android:name=".module.mine.act.ToDoActivity"/>
 
 
 

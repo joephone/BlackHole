@@ -62,6 +62,7 @@
         android:roundIcon="@mipmap/ic_app_ten"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
+        tools:ignore="LockedOrientationActivity"
         android:theme="@style/NoTitleAppTheme">
         <activity
             android:name=".core.LauncherActivity"

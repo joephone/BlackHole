@@ -15,7 +15,6 @@ import com.transcendence.blackhole.utils.StringUtils;
 import com.transcendence.blackhole.widget.custom.TabView;
 import com.transcendence.wan.R;
 import com.transcendence.wan.module.mine.fragment.MineFragment;
-import com.transcendence.wan.module.mine.fragment.ScrollFragment;
 import com.transcendence.wan.module.wxpublic.fragment.NaviWxPublicFragment;
 
 import java.util.ArrayList;
@@ -83,23 +82,22 @@ public class MainFragment extends Fragment implements View.OnClickListener{
         mTabTwo = rootView.findViewById(R.id.tabTwo);
         mTabThree = rootView.findViewById(R.id.tabThree);
         mTabFour = rootView.findViewById(R.id.tabFour);
-        mTabFive = rootView.findViewById(R.id.tabFive);
+//        mTabFive = rootView.findViewById(R.id.tabFive);
         mTabOne.setOnClickListener(this);
         mTabTwo.setOnClickListener(this);
         mTabThree.setOnClickListener(this);
         mTabFour.setOnClickListener(this);
-        mTabFive.setOnClickListener(this);
+//        mTabFive.setOnClickListener(this);
     }
 
 
     private void initVP() {
-        //预加载
+        //预加载   , ScrollFragment.newInstance("项目")
         mVpMain.setOffscreenPageLimit(5);
         adapter = new GoweiiFragmentPagerAdapter(getChildFragmentManager());
         adapter.setFragments(HomeFragment.newInstance("主页面")
                 , BlankFragment.newInstance("体系")
                 , NaviWxPublicFragment.create()
-                , ScrollFragment.newInstance("项目")
                 , MineFragment.newInstance("我的"));
         mVpMain.setAdapter(adapter);
 
@@ -136,12 +134,12 @@ public class MainFragment extends Fragment implements View.OnClickListener{
 
 
     private void initTabs() {
-        mTabOne.setIconAndText(R.drawable.ic_bottom_bar_home,R.mipmap.ic_navi_message_press,StringUtils.getString(R.string.wan_tab_one));
-        mTabTwo.setIconAndText(R.drawable.ic_bottom_bar_navi,R.mipmap.ic_navi_contacts_press,StringUtils.getString(R.string.wan_tab_two));
-        mTabThree.setIconAndText(R.drawable.ic_bottom_bar_wechat,R.mipmap.ic_navi_discovery_press,StringUtils.getString(R.string.wan_tab_three));
-        mTabFour.setIconAndText(R.drawable.ic_bottom_bar_project,R.mipmap.ic_navi_contacts_press,StringUtils.getString(R.string.wan_tab_four));
-        mTabFive.setIconAndText(R.drawable.ic_bottom_bar_mine,R.mipmap.ic_navi_me_press,StringUtils.getString(R.string.wan_tab_five));
-        mTabs.add(mTabOne); mTabs.add(mTabTwo);mTabs.add(mTabThree);mTabs.add(mTabFour);mTabs.add(mTabFive);
+        mTabOne.setIconAndText(R.drawable.ic_home_white_24dp,R.drawable.ic_home_github_green_24dp,StringUtils.getString(R.string.wan_tab_one));
+        mTabTwo.setIconAndText(R.drawable.ic_tixi_white_24dp,R.drawable.ic_tixi_githubgreen_24dp,StringUtils.getString(R.string.wan_tab_two));
+        mTabThree.setIconAndText(R.drawable.ic_wx_public_white_24dp,R.drawable.ic_wx_public_githubgreen_24dp,StringUtils.getString(R.string.wan_tab_three));
+//        mTabFour.setIconAndText(R.drawable.ic_bottom_bar_project,R.mipmap.ic_navi_contacts_press,StringUtils.getString(R.string.wan_tab_four));
+        mTabFour.setIconAndText(R.drawable.ic_person_white_24dp,R.drawable.ic_person_githubgreen_24dp,StringUtils.getString(R.string.wan_tab_five));
+        mTabs.add(mTabOne); mTabs.add(mTabTwo);mTabs.add(mTabThree);mTabs.add(mTabFour);  //mTabs.add(mTabFive);
         setCurrentTabs(0);
     }
 
@@ -170,9 +168,9 @@ public class MainFragment extends Fragment implements View.OnClickListener{
         } else if (i == R.id.tabFour) {
             setCurrentTabs(3);
 
-        } else if (i == R.id.tabFive) {
-            setCurrentTabs(4);
-
         }
+//        else if (i == R.id.tabFive) {
+//            setCurrentTabs(4);
+//        }
     }
 }

@@ -12,7 +12,7 @@
         app:abs_leftIconClickToFinish="true"
         app:abs_leftIconColor="@color/white"
         app:abs_leftIconPadding="13dp"
-        app:abs_leftIconRes="@drawable/ic_back"
+        app:abs_leftIconRes="@drawable/ic_back_white_24dp"
         app:abs_rightText="搜索"
         app:abs_rightTextColor="@color/white"
         app:abs_rightTextPaddingRight="16dp"

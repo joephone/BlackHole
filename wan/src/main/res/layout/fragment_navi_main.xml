@@ -50,13 +50,13 @@
             android:background="@drawable/water_effect_github_black_selector"
             android:layout_weight="1"
             />
-        <com.transcendence.blackhole.widget.custom.TabView
-            android:id="@+id/tabFive"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:background="@drawable/water_effect_github_black_selector"
-            android:layout_weight="1"
-            />
+<!--        <com.transcendence.blackhole.widget.custom.TabView-->
+<!--            android:id="@+id/tabFive"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@drawable/water_effect_github_black_selector"-->
+<!--            android:layout_weight="1"-->
+<!--            />-->
     </LinearLayout>
 
 </LinearLayout>

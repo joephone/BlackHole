@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.transcendence.blackhole.adapter.GoweiiFragmentPagerAdapter;
+import com.transcendence.blackhole.utils.L;
 import com.transcendence.blackhole.utils.ScreenUtils;
 import com.transcendence.blackhole.widget.custom.banner.BannerLayout;
 import com.transcendence.wan.R;
@@ -56,6 +57,7 @@ public class HomeFragment extends WanBaseFragment<HomePresenter> implements Home
 
     @Override
     protected void initView() {
+        L.d("initView");
         mBanner = findViewById(R.id.banner);
         mBanner.setOnBannerItemClickListener(this);
         createHeaderBanner();
@@ -82,6 +84,7 @@ public class HomeFragment extends WanBaseFragment<HomePresenter> implements Home
 
     @Override
     protected void loadData() {
+        L.d("loadData");
         presenter.initBannerData();
     }
 
@@ -143,6 +146,7 @@ public class HomeFragment extends WanBaseFragment<HomePresenter> implements Home
 
     @Override
     public void getBannerSuccess(int code, List<BannerBean> model) {
+        L.d("getBannerSuccess");
         mBannerBeans = model;
         mBannerUrls = new ArrayList<>(model.size());
         List<String> titles = new ArrayList<>(model.size());
