@@ -13,6 +13,7 @@
     <dimen name="lotteryview_outer_small_circle_radius">4dp</dimen>
 
 
-
-
+    <!-- pdf down -->
+    <dimen name="fab_margin">16dp</dimen>
+    <!-- pdf down end-->
 </resources>

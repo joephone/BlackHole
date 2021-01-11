@@ -282,6 +282,8 @@
             android:name=".demo.lottery.act.LotteryThreeActivity"
             android:screenOrientation="portrait" />
 
+
+
         <!-- 序列4  跑马灯 序列 -->
         <activity
             android:name=".index.MarqueeIndexActivity"
@@ -370,6 +372,15 @@
             <!--  仿小米计算器 -->
         <activity android:name=".demo.calc.act.XiaoMiCalcActivity"
             android:screenOrientation="portrait" />
+            <!--  java h5 -->
+        <activity
+            android:name=".demo.other.act.JavaH5Activity"
+            android:screenOrientation="portrait" />
+            <!--  pdf下载 -->
+        <activity android:name=".demo.pdfdownload.PDFdownMainActivity"
+            android:screenOrientation="portrait" />
+
+
 
         <!-- 序列   基础  handler -->
         <activity
@@ -383,6 +394,7 @@
         <activity
             android:name=".demo.handler.act.HelloHandler02"
             android:screenOrientation="portrait" />
+
 
         <!-- 序列8 地图  -->
 

@@ -37,4 +37,8 @@
         <item name="android:layout_height">0px</item>
     </style>
 
+
+    <style parent="ThemeOverlay.AppCompat.Dark.ActionBar" name="AppTheme.AppBarOverlay"/>
+    <style parent="ThemeOverlay.AppCompat.Light" name="AppTheme.PopupOverlay"/>
+
 </resources>

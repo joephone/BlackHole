@@ -12,7 +12,9 @@ import com.transcendence.blackhole.demo.lottery.act.LotteryTwoActivity;
 import com.transcendence.blackhole.demo.mvp.act.MvpBeautyListActivity;
 import com.transcendence.blackhole.demo.mvp.act.MvpLoginActivity;
 import com.transcendence.blackhole.demo.other.act.GitHubContributionActivity;
+import com.transcendence.blackhole.demo.other.act.JavaH5Activity;
 import com.transcendence.blackhole.demo.other.act.OverKeyBoardActivity;
+import com.transcendence.blackhole.demo.pdfdownload.PDFdownMainActivity;
 import com.transcendence.blackhole.demo.scan.act.MengJianNanActivity;
 import com.transcendence.blackhole.demo.translationbehavior.act.ZhihuBehaviorActivity;
 import com.transcendence.blackhole.index.BaseIndexActivity;
@@ -68,7 +70,7 @@ public interface AppConstantValue {
             ARouterController.APP_MAIN,
             ARouterController.WAN_MAIN,
             ARouterController.AMAP_MAIN,
-                            };
+    };
 
     /**
      * 0
@@ -82,7 +84,7 @@ public interface AppConstantValue {
             ScrollIndexActivity.class,
             OtherIndexActivity.class,
             VoiceIndexActivity.class,
-                        ToastActivity.class};
+            ToastActivity.class};
 
     /**
      * 1
@@ -106,9 +108,9 @@ public interface AppConstantValue {
      * 2.1
      */
     Class[] imageIndex = {WxImagePickerActivity.class,ImageLoadActivity.class,
-                            JGalleryMainActivity.class, ZgalleryMainActivity.class,
-                                HeadCliperMainActivity.class, HandlerDownLoadActivity.class,
-                            ImageAutoCycleOneActivity.class, ImageAutoCycleTwoActivity.class};
+            JGalleryMainActivity.class, ZgalleryMainActivity.class,
+            HeadCliperMainActivity.class, HandlerDownLoadActivity.class,
+            ImageAutoCycleOneActivity.class, ImageAutoCycleTwoActivity.class};
 
     /**
      * 2.2
@@ -136,17 +138,24 @@ public interface AppConstantValue {
      * 5
      */
     Class[] scrollIndex = {XiaohongshuActivity.class,
-                            ScrollLayoutTwoActivity.class,
-                            MeiTuanMainActivity.class, PullToZoomAct.class};
+            ScrollLayoutTwoActivity.class,
+            MeiTuanMainActivity.class, PullToZoomAct.class};
 
     /**
      * 6
      */
     Class[] otherIndex = {MarqueeIndexActivity.class,
-                            OverKeyBoardActivity.class,
-                            GitHubContributionActivity.class, AllAppActivity.class, ZhihuBehaviorActivity.class,
-                            IosSegmentViewActivity.class, XiaoMIAct.class, DidiMainActivity.class
-                            ,MengJianNanActivity.class};
+            OverKeyBoardActivity.class,
+            GitHubContributionActivity.class,
+            AllAppActivity.class,
+            ZhihuBehaviorActivity.class,
+            IosSegmentViewActivity.class,
+            XiaoMIAct.class,
+            DidiMainActivity.class,
+            MengJianNanActivity.class,
+            XiaoMiCalcActivity.class,
+            JavaH5Activity.class,
+            PDFdownMainActivity.class};    //PDFdownMainActivity
 
     Class[] voiceIndex = {};
 
