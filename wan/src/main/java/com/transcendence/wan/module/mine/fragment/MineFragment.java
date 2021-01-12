@@ -30,9 +30,9 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
     private static final String ARG_SHOW_TEXT = "text";
     private ImageView ivRight;
 
-//    private NestedScrollView nsv;
-    private RelativeLayout rlUserInfo;
-    private LinearLayout llCoin,llPpen,ll_setting;
+
+//    private RelativeLayout rlUserInfo;
+//    private LinearLayout llCoin,llPpen,ll_setting;
     private LinearLayout ll;
     private FrameLayout flRight;
 
@@ -51,20 +51,20 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
 //        ll.findViewById(R.id.ll_about_author);
 //        ll.setOnClickListener(this);
 
-        ivRight = findViewById(R.id.ivRight);
-        rlUserInfo = findViewById(R.id.rlUserInfo);
-        rlUserInfo.setOnClickListener(this);
-        llCoin = findViewById(R.id.ll_coin);
-        llCoin.setOnClickListener(this);
+//        ivRight = findViewById(R.id.ivRight);
+//        rlUserInfo = findViewById(R.id.rlUserInfo);
+//        rlUserInfo.setOnClickListener(this);
+//        llCoin = findViewById(R.id.ll_coin);
+//        llCoin.setOnClickListener(this);
+//
+//        llPpen = findViewById(R.id.ll_open);
+//        llPpen.setOnClickListener(this);
+//
+//        ll_setting = findViewById(R.id.ll_setting);
+//        ll_setting.setOnClickListener(this);
 
-        llPpen = findViewById(R.id.ll_open);
-        llPpen.setOnClickListener(this);
-
-        ll_setting = findViewById(R.id.ll_setting);
-        ll_setting.setOnClickListener(this);
-
-        flRight = findViewById(R.id.fl_right);
-        flRight.setOnClickListener(this);
+//        flRight = findViewById(R.id.fl_right);
+//        flRight.setOnClickListener(this);
 //        nsv = findViewById(R.id.nsv);
         init();
     }
@@ -75,12 +75,12 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
     }
 
     private void init() {
-        ivRight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                RankActivity.start(getContext());
-            }
-        });
+//        ivRight.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                RankActivity.start(getContext());
+//            }
+//        });
 //        nsv.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
 //
 //            @Override

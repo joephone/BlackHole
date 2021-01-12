@@ -1,99 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.transcendence.ui.scroll.HeaderZoomLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_public"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/bg_public">
 
 
-    <ImageView
-        android:id="@+id/iv_blur"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="260dp"
-        android:background="@color/colorTheme"
-        android:scaleType="centerCrop"
-        android:tint="@color/mine_blur_overlay" />
+        android:layout_height="wrap_content">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/transparent"
-        android:orientation="vertical">
 
-        <include layout="@layout/view_status" />
 
-        <RelativeLayout
+
+
+        <!--头部背景-->
+        <ImageView
+            android:id="@+id/iv_bg"
             android:layout_width="match_parent"
-            android:layout_height="45dp">
+            android:layout_height="180dp"
+            android:background="@color/colorTheme"
+            />
 
+
+
+
+        <!--头部用户信息-->
+        <LinearLayout
+            android:id="@+id/ll_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@mipmap/ic_avatar_default"/>
 
             <TextView
-                android:id="@+id/tvTitle"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:visibility="gone"
+                android:text="ChayChan"
                 android:textColor="@color/white"
-                android:textSize="@dimen/title_size"
-                android:text="我的" />
+                android:textSize="16.0sp"/>
 
-
-            <FrameLayout
-                android:id="@+id/fl_right"
+            <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="@dimen/standard_padding">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@mipmap/ic_back"
+                />
 
-                <ImageView
-                    android:id="@+id/ivRight"
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_centerVertical="true"
-                    android:layout_gravity="center_vertical"
-                    android:gravity="center"
-                    android:src="@drawable/ic_rank" />
-
-            </FrameLayout>
-
-        </RelativeLayout>
-    </LinearLayout>
-
-
-    <!--<android.support.v4.widget.NestedScrollView-->
-        <!--android:id="@+id/nsv"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:clipToPadding="false"-->
-        <!--android:overScrollMode="never"-->
-        <!--android:paddingBottom="@dimen/bottom_bar_height"-->
-        <!--android:scrollbars="none">-->
-
-
-
-    <com.transcendence.ui.scroll.RollbackScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <include layout="@layout/layout_fragment_mine_userinfo" />
-
-
-        <include layout="@layout/layout_fragment_mine_layouts" />
 
         </LinearLayout>
 
 
-    </com.transcendence.ui.scroll.RollbackScrollView>
-<!--</android.support.v4.widget.NestedScrollView>-->
+<!--            <LinearLayout-->
+<!--                android:id="@+id/ll_user_id"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/tv_user_name"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:alpha="0.8"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textColor="@color/basic_ui_action_bar_text"-->
+<!--                    android:textSize="@dimen/text_notes"-->
+<!--                    android:text="ID:" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tv_user_id"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:textColor="@color/basic_ui_action_bar_text"-->
+<!--                    android:textSize="@dimen/text_notes"-->
+<!--                    android:text="-&#45;&#45;&#45;&#45;" />-->
+
+<!--            </LinearLayout>-->
+
+
+<!--            <com.makeramen.roundedimageview.RoundedImageView-->
+<!--                android:id="@+id/civ_user_icon"-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="80dp"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:layout_marginTop="80dp"-->
+<!--                android:background="@color/surface_mask"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                app:riv_corner_radius="80dp"-->
+<!--                app:riv_mutate_background="true" />-->
+
+<!--            <include layout="@layout/layout_fragment_mine_userinfo" />-->
+
+
+<!--            <include layout="@layout/layout_fragment_mine_layouts" />-->
 
 
 
 
-</FrameLayout>
+
+    </RelativeLayout>
+</com.transcendence.ui.scroll.HeaderZoomLayout>

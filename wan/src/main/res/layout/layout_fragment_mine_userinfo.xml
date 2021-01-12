@@ -5,7 +5,7 @@
     android:id="@+id/rlUserInfo"
     android:background="@color/colorTheme"
     android:layout_width="match_parent"
-    android:layout_height="260dp">
+    android:layout_height="wrap_content">
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/civ_user_icon"
@@ -95,6 +95,7 @@
             android:id="@+id/ll_user_ranking"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
             android:orientation="horizontal">
 
             <TextView

@@ -14,6 +14,7 @@ import com.transcendence.blackhole.fragment.BlankFragment;
 import com.transcendence.blackhole.utils.StringUtils;
 import com.transcendence.blackhole.widget.custom.TabView;
 import com.transcendence.wan.R;
+import com.transcendence.wan.module.mine.fragment.FiveFragment;
 import com.transcendence.wan.module.mine.fragment.MineFragment;
 import com.transcendence.wan.module.wxpublic.fragment.NaviWxPublicFragment;
 
