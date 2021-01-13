@@ -168,4 +168,28 @@
         <item name="main_any_view">Any view</item>
         <item name="main_dynamic_children">Dynamic children</item>
     </string-array>
+
+
+    <string-array name="circle_menu_text">
+        <item name="app_ten">主项目</item>
+        <item name="app_wan">玩安卓</item>
+        <item name="app_map">地图</item>
+        <item name="app_green_star">绿星</item>
+        <item name="app_music">音乐</item>
+        <item name="app_swan">天鹅</item>
+        <item name="app_doudou">豆豆</item>
+        <item name="app_che">车</item>
+    </string-array>
+
+    <string-array name="circle_menu_drawable">
+        <item name="app_ten">@mipmap/ic_app_ten</item>
+        <item name="app_wan">@mipmap/ic_app_wan</item>
+        <item name="app_map">@mipmap/ic_app_map</item>
+        <item name="app_green_star">@mipmap/ic_app_green_star</item>
+        <item name="app_music">@mipmap/ic_app_music</item>
+        <item name="app_swan">@mipmap/ic_app_swan</item>
+        <item name="app_doudou">@mipmap/ic_app_doudou</item>
+        <item name="app_che">@mipmap/ic_app_che</item>
+    </string-array>
+
 </resources>

@@ -7,6 +7,8 @@ def config = rootProject.ext
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    implementation project(':basic_utils')
+
     api config.dependencies.appcompatv7
     api config.dependencies.design
     api config.dependencies.supportv4
