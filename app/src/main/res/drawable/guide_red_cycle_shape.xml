@@ -2,7 +2,9 @@
 <shape
     android:shape="oval"
     xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/white"/>
+    <size android:width="@dimen/guide_circle_shape" android:height="@dimen/guide_circle_shape"/>
+    <stroke android:width="0.5dp" android:color="@color/colorGitHubGreen"/>
 
-    <solid android:color="#f00"/>
-    <size android:width="10dp" android:height="10dp"/>
+
 </shape>

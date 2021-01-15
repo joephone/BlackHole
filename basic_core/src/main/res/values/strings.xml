@@ -27,7 +27,6 @@
     <string name="wan_tab_five">我的</string>
 
     <!-- 最美底 nav bar -->
-    <string name="home_exit_hint">再按一次退出</string>
     <string name="zuimei_home_nav_one">首页</string>
     <string name="zuimei_home_nav_two">发现</string>
     <string name="zuimei_home_nav_three">消息</string>

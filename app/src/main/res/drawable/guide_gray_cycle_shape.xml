@@ -4,6 +4,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <!--小灰点-->
     <solid android:color="#cccccc"/>
-    <size android:width="10dp" android:height="10dp"/>
+    <size android:width="@dimen/guide_circle_shape" android:height="@dimen/guide_circle_shape"/>
 
 </shape>

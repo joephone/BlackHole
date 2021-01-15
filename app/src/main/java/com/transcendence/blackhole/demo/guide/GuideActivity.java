@@ -13,8 +13,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.transcendence.blackhole.R;
+import com.transcendence.blackhole.base.activity.TitleBarActivity;
 import com.transcendence.blackhole.global.Global;
 import com.transcendence.blackhole.index.IndexActivity;
 
@@ -24,28 +26,28 @@ import com.transcendence.blackhole.index.IndexActivity;
  * @Desc
  */
 
-public class GuideActivity extends AppCompatActivity implements View.OnClickListener{
+public class GuideActivity extends TitleBarActivity implements View.OnClickListener{
 
     private ViewPager mViewPager;
     private LinearLayout llContainer;
     private ImageView ivGuidePoint;
     private int mPaintDis;
-    private Button btnStart;
+    private TextView mTvStart;
+
+
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_guide);
-
-        init();
+    protected int getLayoutId() {
+        return R.layout.activity_guide;
     }
 
-    private void init() {
+    public void init() {
+        setTitle(false);
         mViewPager = findViewById(R.id.vpGuide);
-        btnStart = findViewById(R.id.btnStart);
+        mTvStart = findViewById(R.id.tvStart);
         ivGuidePoint = findViewById(R.id.ivGuidePoint);
         llContainer = findViewById(R.id.llContainer);
-        btnStart.setOnClickListener(this);
+        mTvStart.setOnClickListener(this);
         mViewPager.setAdapter(new GuideAdapter());
 
         for (int i = 0; i< Global.mBeautyIds.length; i++){
@@ -63,7 +65,7 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
             if (i>0){
                 //当添加的小圆点的个数超过一个的时候就设置当前小圆点的左边距为10dp;
-                params.leftMargin=10;
+                params.leftMargin=18;
             }
             //设置小灰点的宽高包裹内容
             pointView.setLayoutParams(params);
@@ -103,9 +105,9 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
             public void onPageSelected(int position) {
                 System.out.println("position:"+position);
                 if (position==Global.mBeautyIds.length-1){
-                    btnStart.setVisibility(View.VISIBLE);
+                    mTvStart.setVisibility(View.VISIBLE);
                 }else{
-                    btnStart.setVisibility(View.INVISIBLE);
+                    mTvStart.setVisibility(View.INVISIBLE);
                 }
 
             }
@@ -120,7 +122,7 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.btnStart:
+            case R.id.tvStart:
                 gotoLoginActivity();
                 break;
         }

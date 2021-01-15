@@ -11,14 +11,14 @@
         android:layout_height="match_parent"
         />
 
-    <Button
+    <TextView
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="70dp"
         android:padding="10dp"
-        android:id="@+id/btnStart"
-        android:textColor="@color/colorTheme"
-        android:background="@drawable/water_effect_green_selector"
+        android:id="@+id/tvStart"
+        android:textColor="@color/colorGitHubGreen"
+        android:background="@drawable/water_effect_green_border_white_solid_selector"
         android:text="开始体验黑洞"
         android:textSize="@dimen/standard_text"
         android:visibility="invisible"

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ripple xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="@color/colorGray">  <!-- 点击后水波纹的颜色效果 -->
-    <item android:drawable="@drawable/shape_button_jianbian_sweep">   <!-- 正常效果 -->
-     </item>
-</ripple>
