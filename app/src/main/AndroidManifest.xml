@@ -249,6 +249,8 @@
             <!-- 上拉刷新 下拉加载更多-->
         <activity android:name=".ui.rv.freshloadmore.act.RvLoadMoreActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".ui.rv.pullloadmorerecyclerviewsample.PullLoadMoreRvMainActivity"
+            />
 
         <!-- 序列2.3 UI Edittext -->
         <activity android:name=".index.UIEditIndexActivity"

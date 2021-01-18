@@ -77,6 +77,7 @@
     <string-array name="rv_index_item">
         <item>小米</item>
         <item>上拉刷新下拉加载更多</item>
+        <item>上拉刷新下拉加载更多2</item>
     </string-array>
 
 
