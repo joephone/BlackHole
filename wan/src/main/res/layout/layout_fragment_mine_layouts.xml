@@ -2,6 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_layouts"
+    android:layout_below="@id/rlUserInfo"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -177,7 +179,7 @@
 
     <!-- 第5排  开源项目 -->
     <LinearLayout
-        android:id="@+id/ll_open"
+        android:id="@+id/ll_open_project"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/bg_press_color_surface"

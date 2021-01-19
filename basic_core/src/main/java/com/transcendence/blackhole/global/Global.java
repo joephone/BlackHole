@@ -16,7 +16,8 @@ public class Global {
     public static final String TAG = "BlackHole";
     public static boolean isTest = false;
     public static int maxImgCount = 9;
-
+    public static String GITHUB_AUTHOR = "https://github.com/joephone";
+    public static String GITHUB_AUTHOR_MAIN_PROJECT = "https://github.com/joephone/BlackHole";
 
     public static String ABSOLUTE_PATH =  Environment.getExternalStorageDirectory().getAbsolutePath() + "/blackhole";
 

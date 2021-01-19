@@ -21,7 +21,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(':basic_core')
-
+    implementation project(':basic_ui')
+    implementation project(':basic_res')
 
     implementation 'org.aspectj:aspectjrt:1.9.4'
 

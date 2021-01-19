@@ -1,5 +1,7 @@
 package com.transcendence.wan.module.mine.fragment;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -7,8 +9,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import com.transcendence.blackhole.global.Global;
+import com.transcendence.blackhole.utils.L;
+import com.transcendence.ui.scroll.HeaderZoomLayout;
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanBaseFragment;
+import com.transcendence.wan.module.main.act.WanWebActivity;
 import com.transcendence.wan.module.mine.act.AboutMeActivity;
 import com.transcendence.wan.module.mine.act.MyCoinActivity;
 import com.transcendence.wan.module.mine.act.RankActivity;
@@ -26,15 +32,16 @@ import com.transcendence.wan.utils.UserUtils;
  * @EditionHistory
  */
 
-public class MineFragment extends WanBaseFragment<MinePresenter> implements View.OnClickListener,MineView {
+public class MineFragment extends WanBaseFragment<MinePresenter> implements View.OnClickListener,MineView, HeaderZoomLayout.OnScrollListener {
     private static final String ARG_SHOW_TEXT = "text";
     private ImageView ivRight;
 
 
 //    private RelativeLayout rlUserInfo;
-//    private LinearLayout llCoin,llPpen,ll_setting;
+    private LinearLayout llCoin,llPpen,ll_setting,llAboutAuthor;
     private LinearLayout ll;
     private FrameLayout flRight;
+    private HeaderZoomLayout mScroll;
 
     @Override
     protected int getLayoutRes() {
@@ -57,8 +64,8 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
 //        llCoin = findViewById(R.id.ll_coin);
 //        llCoin.setOnClickListener(this);
 //
-//        llPpen = findViewById(R.id.ll_open);
-//        llPpen.setOnClickListener(this);
+        llPpen = findViewById(R.id.ll_open_project);
+        llPpen.setOnClickListener(this);
 //
 //        ll_setting = findViewById(R.id.ll_setting);
 //        ll_setting.setOnClickListener(this);
@@ -66,6 +73,15 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
 //        flRight = findViewById(R.id.fl_right);
 //        flRight.setOnClickListener(this);
 //        nsv = findViewById(R.id.nsv);
+        llAboutAuthor = findViewById(R.id.ll_about_author);
+        llAboutAuthor.setOnClickListener(this);
+        mScroll = findViewById(R.id.scrollView);
+        mScroll.setOnScrollListener(new HeaderZoomLayout.OnScrollListener() {
+            @Override
+            public void onScroll(int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                L.d("onScroll");
+            }
+        });
         init();
     }
 
@@ -119,12 +135,12 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
                     MyCoinActivity.start(getContext());
                 }
                 break;
-            case R.id.ll_open:
+            case R.id.ll_open_project:
+                WanWebActivity.start(getContext(), Global.GITHUB_AUTHOR_MAIN_PROJECT);
+                break;
+            case R.id.ll_about_author:
                 AboutMeActivity.start(getContext());
                 break;
-//            case R.id.ll_about:
-//                AboutMeActivity.start(getContext());
-//                break;
             case R.id.ll_setting:
                 SettingActivity.start(getContext());
                 break;
@@ -135,5 +151,13 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
     @Override
     public void getMyCoinSuc(int code, MyCoinBean bean) {
 
+    }
+
+    @Override
+    public void onScroll(int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+        L.d("onScroll");
+        if(Math.abs(scrollY - oldScrollY)>50){
+            L.d("此处调用刷新");
+        }
     }
 }

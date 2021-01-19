@@ -90,12 +90,21 @@ public class WanWebActivity extends AppCompatActivity implements View.OnClickLis
         context.startActivity(intent);
     }
 
+
+    public static void start(Context context, String url) {
+        Intent intent = new Intent(context, WanWebActivity.class);
+        intent.putExtra("url", url);
+        context.startActivity(intent);
+    }
+
     public static void start(Context context, BannerBean item) {
         Intent intent = new Intent(context, WanWebActivity.class);
         intent.putExtra("title", item.getDesc());
         intent.putExtra("url", item.getUrl());
         context.startActivity(intent);
     }
+
+
 
 
     @Override

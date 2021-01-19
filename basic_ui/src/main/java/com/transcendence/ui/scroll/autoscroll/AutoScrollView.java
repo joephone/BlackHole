@@ -36,7 +36,7 @@ public class AutoScrollView extends ScrollView {
 
     private void init() {
         timer = new Timer();
-        timer.schedule(timeTask, 1000,100);
+        timer.schedule(timeTask, 100,30);      //period 速率
     }
 
     private TimerTask timeTask = new TimerTask() {

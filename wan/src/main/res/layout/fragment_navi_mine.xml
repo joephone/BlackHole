@@ -2,117 +2,46 @@
 <com.transcendence.ui.scroll.HeaderZoomLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/bg_public">
+    android:background="@color/bg_public"
+    android:orientation="vertical">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
-
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
 
         <!--头部背景-->
         <ImageView
             android:id="@+id/iv_bg"
             android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:background="@color/colorTheme"
-            />
+            android:layout_height="260dp"
+            android:background="@drawable/ic_bg_mine_head" />
 
 
-
-
-        <!--头部用户信息-->
         <LinearLayout
             android:id="@+id/ll_top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            >
+            android:layout_alignBottom="@id/iv_bg"
+            android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:src="@mipmap/ic_avatar_default"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                android:layout_weight="1"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:text="ChayChan"
-                android:textColor="@color/white"
-                android:textSize="16.0sp"/>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@mipmap/ic_back"
-                />
-
-
+            <include layout="@layout/layout_fragment_mine_userinfo" />
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/ll_layouts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_top"
+            android:orientation="vertical">
 
-<!--            <LinearLayout-->
-<!--                android:id="@+id/ll_user_id"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_below="@+id/tv_user_name"-->
-<!--                android:layout_centerHorizontal="true"-->
-<!--                android:layout_marginTop="5dp"-->
-<!--                android:alpha="0.8"-->
-<!--                android:orientation="horizontal">-->
-
-<!--                <TextView-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:textColor="@color/basic_ui_action_bar_text"-->
-<!--                    android:textSize="@dimen/text_notes"-->
-<!--                    android:text="ID:" />-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/tv_user_id"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:textColor="@color/basic_ui_action_bar_text"-->
-<!--                    android:textSize="@dimen/text_notes"-->
-<!--                    android:text="-&#45;&#45;&#45;&#45;" />-->
-
-<!--            </LinearLayout>-->
-
-
-<!--            <com.makeramen.roundedimageview.RoundedImageView-->
-<!--                android:id="@+id/civ_user_icon"-->
-<!--                android:layout_width="80dp"-->
-<!--                android:layout_height="80dp"-->
-<!--                android:layout_centerHorizontal="true"-->
-<!--                android:layout_marginTop="80dp"-->
-<!--                android:background="@color/surface_mask"-->
-<!--                android:scaleType="centerCrop"-->
-<!--                app:riv_corner_radius="80dp"-->
-<!--                app:riv_mutate_background="true" />-->
-
-<!--            <include layout="@layout/layout_fragment_mine_userinfo" />-->
-
-
-<!--            <include layout="@layout/layout_fragment_mine_layouts" />-->
-
-
-
-
+            <include layout="@layout/layout_fragment_mine_layouts" />
+        </LinearLayout>
 
     </RelativeLayout>
 </com.transcendence.ui.scroll.HeaderZoomLayout>

@@ -22,7 +22,6 @@
     <Button
         android:id="@+id/bt"
         android:layout_marginTop="@dimen/all_width_height"
-        style="@style/standardGreenButton"
         android:text="跳转"
         />
 

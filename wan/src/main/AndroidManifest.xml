@@ -18,7 +18,7 @@
         android:roundIcon="@mipmap/ic_app_wan"
         android:supportsRtl="true"
         android:theme="@style/WanAppTheme">
-
+<!--        //ZoomHeaderActivity WanSplashActivity-->
         <activity
             android:name=".module.main.act.WanSplashActivity">
             <intent-filter>

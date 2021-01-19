@@ -15,7 +15,6 @@
         android:layout_marginTop="@dimen/standard_padding"
         android:gravity="center"
         android:text="第一事件"
-        style="@style/standardGreenButton"
         />
 
 </LinearLayout>

@@ -93,15 +93,14 @@ public class WanMainActivity extends WanBaseActivity<WanMainPresenter> implement
     }
 
     //记录用户首次点击返回键的时间
-    private long firstTime=0;
+    private long mExitTime=0;
     @Override
-    public boolean onKeyUp(int keyCode, KeyEvent event) {
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
         switch (keyCode) {
             case KeyEvent.KEYCODE_BACK:
-                long secondTime = System.currentTimeMillis();
-                if (secondTime - firstTime > 2000) {
+                if (System.currentTimeMillis() - mExitTime > 2000) {
                     ToastUtils.show("再按一次返回键退出程序");
-                    firstTime = secondTime;
+                    mExitTime = System.currentTimeMillis();
                     return true;
                 } else {
                     System.exit(0);

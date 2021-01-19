@@ -44,8 +44,8 @@ public class MagazineAdapter extends OverviewAdapter<ViewHolder,MagazineEntity.D
         title.setText(bean.getAuthorName()+"期待");
         tvName.setText(bean.getAuthorName());
 //        subTitle.setText(bean.getSub_title());
-        GlideUtils.getInstance().loadMipmap(mContext,R.mipmap.zuimei_ic_mine_portrait,ivAvatar);
-        GlideUtils.getInstance().loadMipmap(mContext,bean.getResId(),image);
+        GlideUtils.getInstance().loadImageFromLocal(R.mipmap.zuimei_ic_mine_portrait,ivAvatar);
+        GlideUtils.getInstance().loadImageFromLocal(bean.getResId(),image);
 
 //        Glide.with(avatar.getContext()).load(bean.getAuthor().getAvatar_url()).centerCrop().diskCacheStrategy(DiskCacheStrategy.ALL).into(avatar);
 //        Glide.with(image.getContext()).load(bean.getImage_url()).centerCrop().diskCacheStrategy(DiskCacheStrategy.ALL).into(image);
