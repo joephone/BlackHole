@@ -10,8 +10,10 @@ import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.hjq.toast.ToastUtils;
 import com.transcendence.blackhole.R;
+import com.transcendence.blackhole.arouter.ARouterController;
 import com.transcendence.blackhole.arouter.ARouterUtils;
 import com.transcendence.blackhole.base.activity.TitleBarActivity;
 import com.transcendence.blackhole.core.AppConstantValue;
@@ -30,7 +32,7 @@ import java.util.List;
  * @Desc
  */
 
-
+@Route(path = ARouterController.APP_MAIN)
 public class IndexActivity extends TitleBarActivity implements View.OnClickListener {
     private ImageView mIvAdd,mIvMap,mIvWan,mIvApp,mIvGreenStar,mIvMusic,mIvSwan,mIvDou,mIvChe;
     private List<ImageView> ivList = new ArrayList<>();

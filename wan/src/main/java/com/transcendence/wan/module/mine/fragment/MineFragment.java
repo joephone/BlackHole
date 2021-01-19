@@ -7,8 +7,9 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
+import com.transcendence.blackhole.arouter.ARouterController;
+import com.transcendence.blackhole.arouter.ARouterUtils;
 import com.transcendence.blackhole.global.Global;
 import com.transcendence.blackhole.utils.L;
 import com.transcendence.ui.scroll.HeaderZoomLayout;
@@ -38,7 +39,7 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
 
 
 //    private RelativeLayout rlUserInfo;
-    private LinearLayout llCoin,llPpen,ll_setting,llAboutAuthor;
+    private LinearLayout llCoin,llPpen,ll_setting,llAboutAuthor,llReadLater;
     private LinearLayout ll;
     private FrameLayout flRight;
     private HeaderZoomLayout mScroll;
@@ -66,6 +67,9 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
 //
         llPpen = findViewById(R.id.ll_open_project);
         llPpen.setOnClickListener(this);
+        llReadLater = findViewById(R.id.ll_read_later);
+        llReadLater.setOnClickListener(this);
+
 //
 //        ll_setting = findViewById(R.id.ll_setting);
 //        ll_setting.setOnClickListener(this);
@@ -135,11 +139,14 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
                     MyCoinActivity.start(getContext());
                 }
                 break;
+            case R.id.ll_read_later:
+                ARouterUtils.navigation(ARouterController.APP_MAIN);
+                break;
             case R.id.ll_open_project:
                 WanWebActivity.start(getContext(), Global.GITHUB_AUTHOR_MAIN_PROJECT);
                 break;
             case R.id.ll_about_author:
-                AboutMeActivity.start(getContext());
+                AboutMeActivity.start(getContext());  // ARouterUtils.navigation(AppConstantValue.mainIndex[2]);
                 break;
             case R.id.ll_setting:
                 SettingActivity.start(getContext());
