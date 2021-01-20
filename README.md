@@ -1,5 +1,9 @@
 # BlackHole
 
+v1.6.8
+
+调整Core Project依赖
+
 v1.6.7
 
 ZoomHeader 1.0
