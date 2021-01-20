@@ -39,6 +39,7 @@ ext {
 
             actionBarEx                     : "3.2.1",
             materialProgressBar             : "1.4.2",
+            swipeBack                       : "1.1.0",
 
             router                          : "1.4.1",
             routerCompiler                  : "1.2.2",
@@ -47,6 +48,7 @@ ext {
             okhttp                          : "3.5.0",
 
             persistentCookieJar             : "v1.0.1",
+            leakcanaryVersion               : "1.6.3",
 
             jLog                            : "1.0.2",
     ]
@@ -71,6 +73,7 @@ ext {
 
 
             bravh                           : "com.github.CymChad:BaseRecyclerViewAdapterHelper:$version.bravh",
+            swipeBack                       : "com.github.goweii:SwipeBack:$version.swipeBack",
 
 
             butterknife                     : "com.jakewharton:butterknife:$version.butterknifeVersion",
@@ -95,12 +98,27 @@ ext {
             reactivex                       : "io.reactivex:rxandroid:1.2.0",
 
 
+            debugImplementation             : "com.squareup.leakcanary:leakcanary-android:$version.leakcanaryVersion",
+            releaseImplementation           : "com.squareup.leakcanary:leakcanary-android-no-op:$version.leakcanaryVersion",
+            testImplementation              : "com.squareup.leakcanary:leakcanary-android-no-op:$version.leakcanaryVersion",
             //日志
             jLog                            : "com.github.joephone:jLog:$version.jLog",
             //umeng
             umeng                           : "com.umeng.analytics:analytics:latest.integration",
     ]
 
+
+//    debugImplementationExcludes = [
+//            "com.squareup.leakcanary:leakcanary-android:$version.leakcanaryVersion"
+//    ]
+//
+//    releaseImplementationExcludes = [
+//            "com.squareup.leakcanary:leakcanary-android-no-op:$version.leakcanaryVersion"
+//    ]
+//
+//    testImplementationExcludes = [
+//            "com.squareup.leakcanary:leakcanary-android-no-op:$version.leakcanaryVersion"
+//    ]
 
 
 

@@ -5,6 +5,7 @@ import android.os.Debug;
 import com.franmontiel.persistentcookiejar.PersistentCookieJar;
 import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
+import com.squareup.leakcanary.LeakCanary;
 import com.transcendence.blackhole.base.app.LibApplication;
 import com.transcendence.config.ProjectInit;
 import com.transcendence.global.API;
@@ -32,9 +33,17 @@ public class WanApp extends LibApplication {
         //登录后会在cookie中返回账号密码，只要在客户端做cookie持久化存储即可自动登录验证。
         RetrofitCreator.setCookieJar(getCookieJar());
 
-
+        setupLeakCanary();
 
     }
+
+    protected void setupLeakCanary() {
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            return;
+        }
+        LeakCanary.install(this);
+    }
+
 
 
     public static PersistentCookieJar getCookieJar() {

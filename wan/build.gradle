@@ -44,20 +44,18 @@ dependencies {
 
     api config.dependencies.actionBarEx
     api config.dependencies.materialProgressBar
-    api config.dependencies.appcompatv7
-    api config.dependencies.design
-    api config.dependencies.supportv4
 
-    api config.dependencies.eventbus
+
     api config.dependencies.bravh
 
-    annotationProcessor rootProject.ext.dependencies.butterknifeCompiler
+
+
+    annotationProcessor config.dependencies.butterknifeCompiler
 
     implementation 'net.soulwolf.widget:ratiolayout:1.0.0'
     implementation 'com.makeramen:roundedimageview:2.3.0'
 
     implementation 'com.github.goweii:RxHttp:2.2.9'
-    implementation 'com.github.goweii:SwipeBack:1.1.0'
 
 
     implementation project(':basic_core')
