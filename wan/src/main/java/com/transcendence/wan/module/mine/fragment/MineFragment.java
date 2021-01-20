@@ -3,10 +3,12 @@ package com.transcendence.wan.module.mine.fragment;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.transcendence.blackhole.arouter.ARouterController;
 import com.transcendence.blackhole.arouter.ARouterUtils;
@@ -15,6 +17,8 @@ import com.transcendence.blackhole.utils.L;
 import com.transcendence.ui.scroll.HeaderZoomLayout;
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanBaseFragment;
+import com.transcendence.wan.event.LoginEvent;
+import com.transcendence.wan.module.login.model.LoginBean;
 import com.transcendence.wan.module.main.act.WanWebActivity;
 import com.transcendence.wan.module.mine.act.AboutMeActivity;
 import com.transcendence.wan.module.mine.act.MyCoinActivity;
@@ -24,6 +28,9 @@ import com.transcendence.wan.module.mine.presenter.MinePresenter;
 import com.transcendence.wan.module.mine.view.MineView;
 import com.transcendence.wan.module.setting.act.SettingActivity;
 import com.transcendence.wan.utils.UserUtils;
+
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 /**
  * @author Joephone on 2019/12/17 14:41
@@ -40,9 +47,13 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
 
 //    private RelativeLayout rlUserInfo;
     private LinearLayout llCoin,llPpen,ll_setting,llAboutAuthor,llReadLater;
-    private LinearLayout ll;
+    private LinearLayout ll_user_level,ll_user_id;
     private FrameLayout flRight;
     private HeaderZoomLayout mScroll;
+    private TextView tvName,tvId,tvRanking,tvLevel,tvMyCoinCount;
+
+
+
 
     @Override
     protected int getLayoutRes() {
@@ -54,25 +65,31 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
         return new MinePresenter();
     }
 
+
     @Override
     protected void initView() {
-//        ll.findViewById(R.id.ll_about_author);
-//        ll.setOnClickListener(this);
+        tvName = findViewById(R.id.tvName);
+        tvId = findViewById(R.id.tvId);
+        tvRanking = findViewById(R.id.tvRanking);
+        tvLevel = findViewById(R.id.tvLevel);
+        tvMyCoinCount = findViewById(R.id.tvMyCoinCount);
+        ll_user_level = findViewById(R.id.ll_user_level);
+        ll_user_id = findViewById(R.id.ll_user_level);
 
 //        ivRight = findViewById(R.id.ivRight);
 //        rlUserInfo = findViewById(R.id.rlUserInfo);
 //        rlUserInfo.setOnClickListener(this);
-//        llCoin = findViewById(R.id.ll_coin);
-//        llCoin.setOnClickListener(this);
-//
+        llCoin = findViewById(R.id.ll_coin);
+        llCoin.setOnClickListener(this);
+
         llPpen = findViewById(R.id.ll_open_project);
         llPpen.setOnClickListener(this);
         llReadLater = findViewById(R.id.ll_read_later);
         llReadLater.setOnClickListener(this);
 
-//
-//        ll_setting = findViewById(R.id.ll_setting);
-//        ll_setting.setOnClickListener(this);
+
+        ll_setting = findViewById(R.id.ll_setting);
+        ll_setting.setOnClickListener(this);
 
 //        flRight = findViewById(R.id.fl_right);
 //        flRight.setOnClickListener(this);
@@ -80,18 +97,13 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
         llAboutAuthor = findViewById(R.id.ll_about_author);
         llAboutAuthor.setOnClickListener(this);
         mScroll = findViewById(R.id.scrollView);
-        mScroll.setOnScrollListener(new HeaderZoomLayout.OnScrollListener() {
-            @Override
-            public void onScroll(int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                L.d("onScroll");
-            }
-        });
+        mScroll.setOnScrollListener(this);
         init();
     }
 
     @Override
     protected void loadData() {
-
+        loadUserInfo();
     }
 
     private void init() {
@@ -131,7 +143,7 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
                 break;
             case R.id.rlUserInfo:
                 if(UserUtils.getInstance().toDoIfLogin(getContext())){
-//                SettingActivity.start(getActivity());
+                    SettingActivity.start(getActivity());
                 }
                 break;
             case R.id.ll_coin:
@@ -157,14 +169,71 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
 
     @Override
     public void getMyCoinSuc(int code, MyCoinBean bean) {
-
+        setMyCoinInfo(bean);
     }
+
 
     @Override
     public void onScroll(int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-        L.d("onScroll");
         if(Math.abs(scrollY - oldScrollY)>50){
-            L.d("此处调用刷新");
+            loadUserInfo();
         }
+    }
+
+
+    private void loadUserInfo() {
+        if (UserUtils.getInstance().isLogin()) {
+            presenter.getCoin();
+        }
+        if (UserUtils.getInstance().isLogin()) {
+            LoginBean bean = UserUtils.getInstance().getLoginBean();
+//            ImageLoader.userIcon(civ_user_icon, UserInfoUtils.getInstance().getIcon());
+//            ImageLoader.userBlur(iv_blur, UserInfoUtils.getInstance().getBg());
+            if(!TextUtils.isEmpty(bean.getUsername())){
+                tvName.setText(bean.getUsername());
+            }
+            if(bean.getId()>=0){
+                tvId.setText(bean.getId()+"");
+            }
+            ll_user_id.setVisibility(View.VISIBLE);
+            ll_user_level.setVisibility(View.VISIBLE);
+            tvMyCoinCount.setText("");
+        } else {
+//            civ_user_icon.setImageResource(R.color.transparent);
+//            iv_blur.setImageResource(R.color.transparent);
+            tvName.setText("去登录");
+            ll_user_id.setVisibility(View.INVISIBLE);
+            ll_user_level.setVisibility(View.INVISIBLE);
+            tvMyCoinCount.setText("");
+        }
+    }
+
+    private void setMyCoinInfo(MyCoinBean bean) {
+        if(bean.getLevel()>=0){
+            tvLevel.setText("Level:"+bean.getLevel()+"");
+        }
+        if(bean.getRank()>=0){
+            tvRanking.setText("Rank："+bean.getRank()+"");
+        }
+        if(bean.getCoinCount()>=0){
+            tvMyCoinCount.setText(bean.getCoinCount()+"");
+        }
+    }
+
+
+
+    @Override
+    protected boolean isRegisterEventBus() {
+        return true;
+    }
+
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onLoginEvent(LoginEvent event) {
+        L.d("onLoginEvent");
+        if (isDetached()) {
+            return;
+        }
+        loadUserInfo();
     }
 }

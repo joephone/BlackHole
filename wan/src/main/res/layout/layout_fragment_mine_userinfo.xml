@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rlUserInfo"
     android:layout_above="@id/ll_layouts"
+    android:background="@drawable/bg_mine_head"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -19,7 +20,7 @@
         app:riv_mutate_background="true" />
 
     <TextView
-        android:id="@+id/tv_user_name"
+        android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/civ_user_icon"
@@ -33,7 +34,7 @@
         android:id="@+id/ll_user_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_user_name"
+        android:layout_below="@+id/tvName"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         android:alpha="0.8"
@@ -47,16 +48,17 @@
             tools:text="ID:" />
 
         <TextView
-            android:id="@+id/tv_user_id"
+            android:id="@+id/tvId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/basic_ui_action_bar_text"
             android:textSize="@dimen/text_notes"
-            tools:text="-----" />
+            tools:text="007" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/ll_user_level"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ll_user_id"
@@ -65,7 +67,6 @@
         android:alpha="0.8">
 
         <LinearLayout
-            android:id="@+id/ll_user_level"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -78,7 +79,7 @@
                 tools:text="等级:" />
 
             <TextView
-                android:id="@+id/tv_user_level"
+                android:id="@+id/tvLevel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/basic_ui_action_bar_text"
@@ -106,7 +107,7 @@
                 tools:text="排名:" />
 
             <TextView
-                android:id="@+id/tv_user_ranking"
+                android:id="@+id/tvRanking"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/basic_ui_action_bar_text"

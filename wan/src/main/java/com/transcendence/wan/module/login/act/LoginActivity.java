@@ -15,6 +15,8 @@ import com.transcendence.wan.module.login.fragment.LoginFragment;
 import com.transcendence.wan.module.login.fragment.RegisterFragment;
 import com.transcendence.wan.utils.SoftInputHelper;
 
+import per.goweii.swipeback.SwipeBackDirection;
+
 /**
  * @author CuiZhen
  * @date 2019/5/15
@@ -104,5 +106,10 @@ public class LoginActivity extends WanBaseActivity {
     @Override
     public void clearLoading() {
 
+    }
+
+    @Override
+    protected int swipeBackDirection() {
+        return SwipeBackDirection.FROM_TOP;
     }
 }

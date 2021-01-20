@@ -49,6 +49,9 @@ public class SettingActivity extends WanBaseActivity<SettingPresenter> implement
         ll_cache.setOnClickListener(this);
         llLogout = findViewById(R.id.ll_logout);
         llLogout.setOnClickListener(this);
+        if(!UserUtils.getInstance().isLogin()){
+            llLogout.setVisibility(View.INVISIBLE);
+        }
     }
 
     @Override
@@ -88,6 +91,7 @@ public class SettingActivity extends WanBaseActivity<SettingPresenter> implement
         L.d("logoutSuccess");
         UserUtils.getInstance().logout();
         new LoginEvent(false).post();
+        finish();
     }
 
     @Override

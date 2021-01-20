@@ -26,12 +26,9 @@ public class LibApplication extends Application {
     private static Handler mHandler;//主线程Handler
 
 
-
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
-
-
     }
 
 

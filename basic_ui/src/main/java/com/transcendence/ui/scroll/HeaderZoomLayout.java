@@ -91,6 +91,7 @@ public class HeaderZoomLayout extends ScrollView {
             case MotionEvent.ACTION_UP:
                 mIsPulling = false;
                 replyView();
+                onScrollChanged(getScrollX(),getScrollY(),(int)ev.getX(),(int)ev.getY());
                 break;
         }
         return super.onTouchEvent(ev);

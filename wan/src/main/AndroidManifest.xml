@@ -43,7 +43,8 @@
         <activity
             android:name=".module.main.act.WanMainActivity" />
 
-        <activity android:name=".module.main.act.WanWebActivity" />
+        <activity
+            android:name=".module.main.act.WanWebActivity" />
 
         <!-- 积分榜-->
         <activity

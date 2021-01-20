@@ -31,7 +31,7 @@ public class SettingPresenter extends WanBasePresenter<SettingView>{
                 .success(new ISuccess() {
                     @Override
                     public void onSuccess(String response) {
-                        L.d(""+response);
+                        L.d("logoutSuccess:"+response);
                         if (isAttach()) {
                             getWanBaseView().logoutSuccess(0, null);
                         }
