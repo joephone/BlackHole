@@ -19,9 +19,10 @@
         <ImageView
             android:id="@+id/iv_bg"
             android:layout_width="match_parent"
+            android:background="@drawable/bg_mine_head"
             android:layout_height="260dp"/>
 
-
+        <!--关键代码 layout_alignBottom -->
         <LinearLayout
             android:id="@+id/ll_top"
             android:layout_width="match_parent"

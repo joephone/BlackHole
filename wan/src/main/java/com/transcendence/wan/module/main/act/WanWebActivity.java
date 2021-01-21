@@ -63,7 +63,7 @@ public class WanWebActivity extends AppCompatActivity implements View.OnClickLis
         mTitle = getIntent().getStringExtra("title");
         mTitle = mTitle == null ? "" : mTitle;
         mAuthor = getIntent().getStringExtra("author");
-        tvTitle.setText(mAuthor = mAuthor == null ? "" : mAuthor);
+        tvTitle.setText(mTitle = mTitle == null ? "" : mTitle);
         mUrl = getIntent().getStringExtra("url");
         mUrl = mUrl == null ? "" : mUrl;
 //        boolean collected = getIntent().getBooleanExtra("collected", false);
@@ -92,7 +92,12 @@ public class WanWebActivity extends AppCompatActivity implements View.OnClickLis
 
 
     public static void start(Context context, String url) {
+        start(context,url,"");
+    }
+
+    public static void start(Context context, String url,String title) {
         Intent intent = new Intent(context, WanWebActivity.class);
+        intent.putExtra("title", title);
         intent.putExtra("url", url);
         context.startActivity(intent);
     }

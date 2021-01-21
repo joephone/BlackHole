@@ -27,6 +27,7 @@ dependencies {
 
     api config.dependencies.butterknife
     api config.dependencies.swipeBack
+    api config.dependencies.smartRefreshLayout
 
     debugApi config.dependencies.debugImplementation
     releaseApi config.dependencies.releaseImplementation

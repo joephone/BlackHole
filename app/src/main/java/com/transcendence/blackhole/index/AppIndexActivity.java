@@ -22,7 +22,7 @@ import java.util.List;
  * @Desc
  */
 
-
+@Route(path = ARouterController.APP_MAIN)
 public class AppIndexActivity extends TitleBarActivity implements AdapterView.OnItemClickListener {
     private ArrayAdapter<String> adapter;
     private ListView lvIndex;

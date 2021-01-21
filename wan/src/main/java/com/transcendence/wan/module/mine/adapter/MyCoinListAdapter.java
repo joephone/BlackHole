@@ -4,12 +4,14 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.transcendence.ui.recyclerview.adapter.BaseAbsAdapter;
+import com.transcendence.utils.DateUtil;
 import com.transcendence.wan.R;
 import com.transcendence.wan.module.mine.model.MyCoinListBean;
 
@@ -41,22 +43,14 @@ public class MyCoinListAdapter extends BaseAbsAdapter<MyCoinListBean>{
         if(viewHolder instanceof MyCoinListHolder){
             MyCoinListHolder holder = (MyCoinListHolder)viewHolder;
             if(mList.get(position)!=null) {
-//                String desc = mList.get(position).getDesc();
-//                int firstSpace = desc.indexOf(" ");
-//                int secondSpace = desc.indexOf(" ", firstSpace + 1);
-//                String time = desc.substring(0, secondSpace);
-//                String title = desc.substring(secondSpace + 1)
-//                        .replace(",", "")
-//                        .replace("：", "")
-//                        .replace(" ", "");
-//                holder.tv_coin_count.setText(mList.get(position).getCoinCount());
-//                holder.tv_title.setText(title);
-//                holder.tv_time.setText(time);
                 if(!TextUtils.isEmpty(mList.get(position).getReason())){
-                    holder.tv_title.setText(mList.get(position).getReason());
+                    holder.tvTitle.setText(mList.get(position).getReason());
                 }
-//                if(mList.get(position).getCoinCount()>=0){
-//                    holder.tv_coin_count.setText(mList.get(position).getCoinCount());
+                if(mList.get(position).getCoinCount()>=0){
+                    holder.tvCoinCount.setText(mList.get(position).getCoinCount());
+                }
+//                if(mList.get(position).getDate()>0){
+//                    holder.tvCreateTime.setText(DateUtil.timeStamp2Date(mList.get(position).getDate()));
 //                }
             }
         }
@@ -80,18 +74,18 @@ public class MyCoinListAdapter extends BaseAbsAdapter<MyCoinListBean>{
 
 
     public class MyCoinListHolder extends RecyclerView.ViewHolder {
-//        TextView tv_coin_count;
-        TextView tv_title;
-//        TextView tv_time;
+
+        TextView tvTitle;
+        TextView tvCoinCount;
+//        TextView tvCreateTime;
 
 //        CollectView cv_collect;
 
         MyCoinListHolder(View view) {
             super(view);
-
-//            tv_coin_count = view.findViewById(R.id.tv_coin_count);
-            tv_title = view.findViewById(R.id.tv_title);
-//            tv_time = view.findViewById(R.id.tv_time);
+            tvTitle = view.findViewById(R.id.tvTitle);
+            tvCoinCount = view.findViewById(R.id.tvCoinCount);
+//            tvCreateTime = view.findViewById(R.id.tvCreateTime);
         }
     }
 

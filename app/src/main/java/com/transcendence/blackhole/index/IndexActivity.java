@@ -32,7 +32,6 @@ import java.util.List;
  * @Desc
  */
 
-@Route(path = ARouterController.APP_MAIN)
 public class IndexActivity extends TitleBarActivity implements View.OnClickListener {
     private ImageView mIvAdd,mIvMap,mIvWan,mIvApp,mIvGreenStar,mIvMusic,mIvSwan,mIvDou,mIvChe;
     private List<ImageView> ivList = new ArrayList<>();

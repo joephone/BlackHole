@@ -64,7 +64,7 @@ public class MyCoinPresenter extends WanBasePresenter<MyCoinView> {
                 .success(new ISuccess() {
                     @Override
                     public void onSuccess(String response) {
-//                        L.d("response--"+response);
+                        L.d("response-getMyCoinList-"+response);
                         MyCoinListModel model = GsonUtils.json2Cls(response, MyCoinListModel.class);
                         if(isAttach()){
                             getWanBaseView().getMyCoinListSuc(0,model.getData().getDatas());

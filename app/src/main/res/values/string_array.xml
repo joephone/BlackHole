@@ -78,6 +78,7 @@
         <item>小米</item>
         <item>上拉刷新下拉加载更多</item>
         <item>上拉刷新下拉加载更多2</item>
+        <item>SwipeRecyclerView</item>
     </string-array>
 
 

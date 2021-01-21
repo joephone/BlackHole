@@ -3,4 +3,6 @@
 
     <string name="navigation_drawer_open">Open drawer</string>
     <string name="navigation_drawer_close">Close drawer</string>
+
+    <string name="rank_list">RankList</string>
 </resources>

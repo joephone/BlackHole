@@ -40,6 +40,7 @@ ext {
             actionBarEx                     : "3.2.1",
             materialProgressBar             : "1.4.2",
             swipeBack                       : "1.1.0",
+            smartRefreshLayout              : "1.1.0",
 
             router                          : "1.4.1",
             routerCompiler                  : "1.2.2",
@@ -74,6 +75,7 @@ ext {
 
             bravh                           : "com.github.CymChad:BaseRecyclerViewAdapterHelper:$version.bravh",
             swipeBack                       : "com.github.goweii:SwipeBack:$version.swipeBack",
+            smartRefreshLayout              : "com.scwang.smartrefresh:SmartRefreshLayout:$version.smartRefreshLayout",
 
 
             butterknife                     : "com.jakewharton:butterknife:$version.butterknifeVersion",

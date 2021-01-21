@@ -252,6 +252,10 @@
         <activity android:name=".ui.rv.pullloadmorerecyclerviewsample.PullLoadMoreRvMainActivity"
             />
 
+        <activity android:name=".ui.rv.SwipeRecyclerViewMainActivity"
+            />
+
+
         <!-- 序列2.3 UI Edittext -->
         <activity android:name=".index.UIEditIndexActivity"
             android:screenOrientation="portrait"/>

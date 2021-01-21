@@ -40,6 +40,8 @@
     <!-- 大文字 -->
     <dimen name="big_text">16dp</dimen>
 
+    <dimen name="big_text_x">18dp</dimen>
+
     <!-- 12 标准文字大小 -->
     <dimen name="small_text">12dp</dimen>
 

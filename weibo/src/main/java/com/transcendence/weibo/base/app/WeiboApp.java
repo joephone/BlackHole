@@ -12,10 +12,6 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.transcendence.weibo.ui.login.act.BackgroundActivity;
 import com.transcendence.weibo.utils.SharedPreferencesUtil;
-import com.wenming.library.LogReport;
-import com.wenming.library.save.imp.CrashWriter;
-import com.wenming.library.upload.email.EmailReporter;
-import com.wenming.library.util.LogUtil;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -48,7 +44,7 @@ public class WeiboApp extends Application implements Application.ActivityLifecyc
 //        initCrashReport();    //崩溃日志上传框架
         //使用亮色(light)主题，不使用夜间模式
         boolean setNightMode = (boolean) SharedPreferencesUtil.get(this, "setNightMode", false);
-        LogUtil.d("setNightMode = " + setNightMode);
+//        LogUtil.d("setNightMode = " + setNightMode);
         if (setNightMode) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         } else {
@@ -58,13 +54,13 @@ public class WeiboApp extends Application implements Application.ActivityLifecyc
 
     private void initCrashReport() {
         initEmailReporter();
-        LogReport.getInstance()
-                .setCacheSize(30 * 1024 * 1024)//支持设置缓存大小，超出后清空
-                .setLogDir(getApplicationContext(), "sdcard/" + this.getString(this.getApplicationInfo().labelRes) + "/")//定义路径为：sdcard/[app name]/
-                .setWifiOnly(true)//设置只在Wifi状态下上传，设置为false为Wifi和移动网络都上传
-                .setLogSaver(new CrashWriter(getApplicationContext()))//支持自定义保存崩溃信息的样式
-                //.setEncryption(new AESEncode()) //支持日志到AES加密或者DES加密，默认不开启
-                .init(getApplicationContext());
+//        LogReport.getInstance()
+//                .setCacheSize(30 * 1024 * 1024)//支持设置缓存大小，超出后清空
+//                .setLogDir(getApplicationContext(), "sdcard/" + this.getString(this.getApplicationInfo().labelRes) + "/")//定义路径为：sdcard/[app name]/
+//                .setWifiOnly(true)//设置只在Wifi状态下上传，设置为false为Wifi和移动网络都上传
+//                .setLogSaver(new CrashWriter(getApplicationContext()))//支持自定义保存崩溃信息的样式
+//                //.setEncryption(new AESEncode()) //支持日志到AES加密或者DES加密，默认不开启
+//                .init(getApplicationContext());
     }
 
 
@@ -89,7 +85,7 @@ public class WeiboApp extends Application implements Application.ActivityLifecyc
 
     @Override
     public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-        LogUtil.d("OnCreate = " + activity.getLocalClassName());
+//        LogUtil.d("OnCreate = " + activity.getLocalClassName());
         mActivityList.add(activity);
     }
 
@@ -120,8 +116,8 @@ public class WeiboApp extends Application implements Application.ActivityLifecyc
 
     @Override
     public void onActivityDestroyed(Activity activity) {
-        LogUtil.d("OnDestroyed = " + activity.getLocalClassName());
-        mActivityList.remove(activity);
+//        LogUtil.d("OnDestroyed = " + activity.getLocalClassName());
+//        mActivityList.remove(activity);
     }
 
 
@@ -129,12 +125,12 @@ public class WeiboApp extends Application implements Application.ActivityLifecyc
      * 使用EMAIL发送日志
      */
     private void initEmailReporter() {
-        EmailReporter email = new EmailReporter(this);
-        email.setReceiver("270136049@qq.com");//收件人
-        email.setSender("joephone@163.com");//发送人邮箱
-        email.setSendPassword("baggio83");//用于登录第三方的邮件授权码
-        email.setSMTPHost("smtp.163.com");//SMTP地址
-        email.setPort("465");//SMTP 端口
-        LogReport.getInstance().setUploadType(email);
+//        EmailReporter email = new EmailReporter(this);
+//        email.setReceiver("270136049@qq.com");//收件人
+//        email.setSender("joephone@163.com");//发送人邮箱
+//        email.setSendPassword("baggio83");//用于登录第三方的邮件授权码
+//        email.setSMTPHost("smtp.163.com");//SMTP地址
+//        email.setPort("465");//SMTP 端口
+//        LogReport.getInstance().setUploadType(email);
     }
 }

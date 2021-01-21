@@ -27,6 +27,7 @@ import com.transcendence.wan.module.mine.model.MyCoinBean;
 import com.transcendence.wan.module.mine.presenter.MinePresenter;
 import com.transcendence.wan.module.mine.view.MineView;
 import com.transcendence.wan.module.setting.act.SettingActivity;
+import com.transcendence.wan.utils.AnimatorUtils;
 import com.transcendence.wan.utils.UserUtils;
 
 import org.greenrobot.eventbus.Subscribe;
@@ -46,7 +47,7 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
 
 
 //    private RelativeLayout rlUserInfo;
-    private LinearLayout llCoin,llPpen,ll_setting,llAboutAuthor,llReadLater;
+    private LinearLayout llCoin,llShare,llPpen,llSetting,llAboutAuthor,llReadLater;
     private LinearLayout ll_user_level,ll_user_id;
     private FrameLayout flRight;
     private HeaderZoomLayout mScroll;
@@ -81,15 +82,16 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
 //        rlUserInfo.setOnClickListener(this);
         llCoin = findViewById(R.id.ll_coin);
         llCoin.setOnClickListener(this);
-
+        llShare= findViewById(R.id.ll_share);
+        llShare.setOnClickListener(this);
         llPpen = findViewById(R.id.ll_open_project);
         llPpen.setOnClickListener(this);
         llReadLater = findViewById(R.id.ll_read_later);
         llReadLater.setOnClickListener(this);
 
 
-        ll_setting = findViewById(R.id.ll_setting);
-        ll_setting.setOnClickListener(this);
+        llSetting = findViewById(R.id.ll_setting);
+        llSetting.setOnClickListener(this);
 
 //        flRight = findViewById(R.id.fl_right);
 //        flRight.setOnClickListener(this);
@@ -151,11 +153,16 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
                     MyCoinActivity.start(getContext());
                 }
                 break;
+            case R.id.ll_share:
+                if(UserUtils.getInstance().toDoIfLogin(getContext())){
+                    RankActivity.start(getContext());
+                }
+                break;
             case R.id.ll_read_later:
                 ARouterUtils.navigation(ARouterController.APP_MAIN);
                 break;
             case R.id.ll_open_project:
-                WanWebActivity.start(getContext(), Global.GITHUB_AUTHOR_MAIN_PROJECT);
+                WanWebActivity.start(getContext(), Global.GITHUB_AUTHOR_MAIN_PROJECT,"开源项目");
                 break;
             case R.id.ll_about_author:
                 AboutMeActivity.start(getContext());  // ARouterUtils.navigation(AppConstantValue.mainIndex[2]);
@@ -193,7 +200,7 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
                 tvName.setText(bean.getUsername());
             }
             if(bean.getId()>=0){
-                tvId.setText(bean.getId()+"");
+                tvId.setText("Id："+bean.getId()+"");
             }
             ll_user_id.setVisibility(View.VISIBLE);
             ll_user_level.setVisibility(View.VISIBLE);
@@ -205,18 +212,20 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
             ll_user_id.setVisibility(View.INVISIBLE);
             ll_user_level.setVisibility(View.INVISIBLE);
             tvMyCoinCount.setText("");
+            tvId.setText("");
         }
     }
 
     private void setMyCoinInfo(MyCoinBean bean) {
         if(bean.getLevel()>=0){
-            tvLevel.setText("Level:"+bean.getLevel()+"");
+
+            tvLevel.setText("Level："+bean.getLevel()+"");
         }
         if(bean.getRank()>=0){
             tvRanking.setText("Rank："+bean.getRank()+"");
         }
         if(bean.getCoinCount()>=0){
-            tvMyCoinCount.setText(bean.getCoinCount()+"");
+            AnimatorUtils.doIntAnim(tvMyCoinCount, bean.getCoinCount(), 300);
         }
     }
 

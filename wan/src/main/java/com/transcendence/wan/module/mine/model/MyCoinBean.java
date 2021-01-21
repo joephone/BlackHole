@@ -16,6 +16,7 @@ public class MyCoinBean {
      * rank : 8880
      * userId : 60527
      * username : 1**71484007
+     *
      */
 
     private int coinCount;
