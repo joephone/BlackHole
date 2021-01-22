@@ -35,7 +35,7 @@
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:singleLine="true"
-            android:text="我的积分"
+            android:text="@string/my_coin"
             android:textColor="@color/text_surface"
             android:textSize="@dimen/text_content" />
 
@@ -86,7 +86,7 @@
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:singleLine="true"
-            android:text="我的分享"
+            android:text="@string/my_share"
             android:textColor="@color/text_surface"
             android:textSize="@dimen/text_content" />
 
@@ -126,7 +126,7 @@
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:singleLine="true"
-            android:text="我的收藏"
+            android:text="@string/my_coin"
             android:textColor="@color/text_surface"
             android:textSize="@dimen/text_content" />
 
@@ -165,7 +165,7 @@
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:singleLine="true"
-            android:text="稍后阅读"
+            android:text="@string/read_later"
             android:textColor="@color/text_surface"
             android:textSize="@dimen/text_content" />
 
@@ -203,7 +203,7 @@
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:singleLine="true"
-            android:text="开源项目"
+            android:text="@string/my_open_source"
             android:textColor="@color/text_surface"
             android:textSize="@dimen/text_content" />
 
@@ -242,7 +242,7 @@
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:singleLine="true"
-            android:text="关于作者"
+            android:text="@string/about_me"
             android:textColor="@color/text_surface"
             android:textSize="@dimen/text_content" />
 
@@ -327,7 +327,7 @@
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:singleLine="true"
-            android:text="系统设置"
+            android:text="@string/system_setting"
             android:textColor="@color/text_surface"
             android:textSize="@dimen/text_content" />
 

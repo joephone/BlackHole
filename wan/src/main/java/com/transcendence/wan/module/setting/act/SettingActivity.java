@@ -27,8 +27,8 @@ import com.transcendence.wan.utils.UserUtils;
 public class SettingActivity extends WanBaseActivity<SettingPresenter> implements SettingView,View.OnClickListener {
 
 
-    TextView tv_cache;
-    private LinearLayout ll_cache,llLogout;
+    TextView tvCache;
+    private LinearLayout llLanguage,llCache,llLogout;
 
 
     @Override
@@ -44,9 +44,11 @@ public class SettingActivity extends WanBaseActivity<SettingPresenter> implement
 
     @Override
     protected void initView() {
-        tv_cache = findViewById(R.id.tv_cache);
-        ll_cache = findViewById(R.id.ll_cache);
-        ll_cache.setOnClickListener(this);
+        tvCache = findViewById(R.id.tv_cache);
+        llLanguage = findViewById(R.id.ll_language);
+        llLanguage.setOnClickListener(this);
+        llCache = findViewById(R.id.ll_cache);
+        llCache.setOnClickListener(this);
         llLogout = findViewById(R.id.ll_logout);
         llLogout.setOnClickListener(this);
         if(!UserUtils.getInstance().isLogin()){
@@ -72,6 +74,9 @@ public class SettingActivity extends WanBaseActivity<SettingPresenter> implement
 //            case R.id.fl_right:
 //
 //                break;
+            case R.id.ll_language:
+                LanguageActivity.start(getContext());
+                break;
             case R.id.ll_cache:
                 presenter.clearCache();
                 break;
@@ -101,6 +106,6 @@ public class SettingActivity extends WanBaseActivity<SettingPresenter> implement
 
     @Override
     public void getCacheSizeSuccess(String size) {
-        tv_cache.setText(TextUtils.isEmpty(size)?"":size);
+        tvCache.setText(TextUtils.isEmpty(size)?"":size);
     }
 }

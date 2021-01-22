@@ -11,6 +11,7 @@ import com.transcendence.blackhole.adapter.GoweiiFragmentPagerAdapter;
 import com.transcendence.blackhole.utils.L;
 import com.transcendence.blackhole.utils.ScreenUtils;
 import com.transcendence.blackhole.widget.custom.banner.BannerLayout;
+import com.transcendence.ui.recyclerview.adapter.BaseAbsAdapter;
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanBaseFragment;
 import com.transcendence.wan.module.home.model.BannerBean;
@@ -39,8 +40,7 @@ public class HomeFragment extends WanBaseFragment<HomePresenter> implements Home
 
     private BannerLayout mBanner;
     private RecyclerView mRv;
-    private GoweiiFragmentPagerAdapter adapter;
-
+    private BaseAbsAdapter mAdapter;
     private List<BannerBean> mBannerBeans;
     private List<String> mBannerUrls;
 

@@ -3,6 +3,26 @@
 
     <string name="navigation_drawer_open">Open drawer</string>
     <string name="navigation_drawer_close">Close drawer</string>
-
+    <!-- common -->
+    <string name="exit">Exit</string>
+    <!-- 4 tab -->
+    <string name="tab_home">Home</string>
+    <string name="tab_hierarchy">Hierarchy</string>
+    <string name="tab_wx_public_account">PublicAccount</string>
+    <string name="tab_me">Me</string>
+    <!--  me -->
+    <string name="my_coin">MyCoin</string>
+    <string name="my_share">MyShare</string>
+    <string name="my_collection">MyCollection</string>
+    <string name="read_later">ReadLater</string>
+    <string name="my_open_source">OpenSource</string>
+    <string name="about_me">AboutMe</string>
+    <string name="system_setting">SystemSetting</string>
+    <!--  title -->
+    <string name="home">Home</string>
     <string name="rank_list">RankList</string>
+    <string name="setting">Setting</string>
+    <string name="setting_language">Language</string>
+    <string name="simplified_chinese">SimplifiedChinese</string>
+    <string name="america_english">America English</string>
 </resources>

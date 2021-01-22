@@ -28,14 +28,11 @@
         </activity>
 
 
-        <activity
-            android:name=".module.mine.act.BounceActivity"/>
+        <activity android:name=".module.mine.act.BounceActivity"/>
 
-        <activity
-            android:name=".module.main.act.DrawerMainActivity"/>
-
-        <activity
-            android:name=".module.login.act.LoginActivity" />
+        <activity android:name=".module.main.act.DrawerMainActivity"/>
+        <!-- 登录 -->
+        <activity android:name=".module.login.act.LoginActivity" />
 
         <activity
             android:name=".module.search.act.WanSearchActivity"/>
@@ -43,19 +40,15 @@
         <activity
             android:name=".module.main.act.WanMainActivity" />
 
-        <activity
-            android:name=".module.main.act.WanWebActivity" />
-
+        <activity android:name=".module.main.act.WanWebActivity" />
         <!-- 积分榜-->
-        <activity
-            android:name=".module.mine.act.RankActivity"/>
-
+        <activity android:name=".module.mine.act.RankActivity"/>
         <!-- 我的积分-->
-        <activity
-            android:name=".module.mine.act.MyCoinActivity"/>
-
-        <activity
-            android:name=".module.setting.act.SettingActivity"/>
+        <activity android:name=".module.mine.act.MyCoinActivity"/>
+        <!-- 设置-->
+        <activity android:name=".module.setting.act.SettingActivity"/>
+        <!-- setting language-->
+        <activity android:name=".module.setting.act.LanguageActivity"/>
 
         <!-- 关于我-->
         <activity
