@@ -43,22 +43,17 @@ public class API {
          获取Android干货列表
          https://gank.io/api/v2/data/category/GanHuo/type/Android/page/1/count/10
          */
-
         public final static String GIRLS = API_GANK_IO + "v2/data/category/Girl/type/Girl/page/1/count/2";
     }
 
 
     public static class WAN {
-
-
         /** 0.3
          * 获取公众号列表
          * get
          * https://wanandroid.com/wxarticle/chapters/json
          */
         public final static String WX_ARTICLE_CHAPTER = "wxarticle/chapters/json";
-
-
         /**
          * 0.4  private static final String WXARTICLE_LIST = "wxarticle/list/%d/%d/json";//id+page
          * 查看某个公众号历史数据
@@ -81,12 +76,20 @@ public class API {
             return String.format(WX_CHAPTER_ARTICLE_LIST,id,page);
         }
 
-        private final static String DAMA_ARTICLE_LIST  = "user_article/list/%d/json";
+        private final static String ARTICLE_LIST_DAMA  = "user_article/list/%d/json";
 
-        public static String DAMA_ARTICLE_LIST(int page) {
-            return String.format(DAMA_ARTICLE_LIST, page);
+        public static String ARTICLE_LIST_DAMA(int page) {
+            return String.format(ARTICLE_LIST_DAMA, page);
         }
 
+        /**
+         * 1.1 首页 article list
+         */
+        public final static String ARTICLE_LIST_HOME = "article/list/%d/json";
+
+        public static String ARTICLE_LIST_HOME(int page) {
+            return String.format(ARTICLE_LIST_HOME, page);
+        }
         /**
          * 1.2 首页banner
          * https://www.wanandroid.com/banner/json

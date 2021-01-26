@@ -1,4 +1,4 @@
-package com.transcendence.wan.module.dama.adapter;
+package com.transcendence.wan.module.main.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.transcendence.blackhole.utils.GlideUtils;
 import com.transcendence.ui.recyclerview.adapter.BaseAbsAdapter;
 import com.transcendence.wan.R;
-import com.transcendence.wan.module.dama.model.DamaBean;
+import com.transcendence.wan.module.main.bean.ArticleListBean;
 import com.transcendence.wan.ui.utils.OnClickListener2;
 
 import java.util.ArrayList;
@@ -28,26 +28,26 @@ import java.util.List;
  * @EditionHistory
  */
 
-public class DamaAdapter extends BaseAbsAdapter<DamaBean.DataBean.DatasBean> {
+public class ArticleListAdapter extends BaseAbsAdapter<ArticleListBean.DataBean.DatasBean> {
 
     private Context mContext;
-    public DamaAdapter(Context context){
+    public ArticleListAdapter(Context context){
         super(context);
     }
 
     @Override
-    public DamaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ArticleListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         mContext = parent.getContext();
-        View view = LayoutInflater.from(mContext).inflate(R.layout.fragment_navi_dama_item,parent,false);
-        return new DamaViewHolder(view);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.fragment_navi_main_article_list_item,parent,false);
+        return new ArticleListViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
-        if(viewHolder instanceof DamaViewHolder){
-            DamaViewHolder holder = (DamaViewHolder)viewHolder;
+        if(viewHolder instanceof ArticleListViewHolder){
+            ArticleListViewHolder holder = (ArticleListViewHolder)viewHolder;
             if(mList.get(position)!=null) {
-                DamaBean.DataBean.DatasBean item = mList.get(position);
+                ArticleListBean.DataBean.DatasBean item = mList.get(position);
                 if (item.isTop()) {
                     holder.tv_top.setVisibility(View.VISIBLE);
                 } else {
@@ -126,22 +126,22 @@ public class DamaAdapter extends BaseAbsAdapter<DamaBean.DataBean.DatasBean> {
     }
 
 
-    public void setList(List<DamaBean.DataBean.DatasBean> list) {
+    public void setList(List<ArticleListBean.DataBean.DatasBean> list) {
         mList = list;
     }
 
     @Override
-    public void onRefresh(List<DamaBean.DataBean.DatasBean> list) {
+    public void onRefresh(List<ArticleListBean.DataBean.DatasBean> list) {
         mList.clear();
         mList.addAll(list == null? mList:list);
     }
 
     @Override
-    public void onLoadMore(List<DamaBean.DataBean.DatasBean> list) {
+    public void onLoadMore(List<ArticleListBean.DataBean.DatasBean> list) {
         mList.addAll(list == null? new ArrayList<>():list);
     }
 
-    public class DamaViewHolder extends RecyclerView.ViewHolder {
+    public class ArticleListViewHolder extends RecyclerView.ViewHolder {
         TextView tv_top;
         TextView tv_new;
         TextView tv_author;
@@ -153,7 +153,7 @@ public class DamaAdapter extends BaseAbsAdapter<DamaBean.DataBean.DatasBean> {
         TextView tv_chapter_name ;
 //        CollectView cv_collect;
 
-        DamaViewHolder(View view) {
+        ArticleListViewHolder(View view) {
             super(view);
 //            tvItem = itemView.findViewById(R.id.tv_item);
              tv_top = view.findViewById(R.id.tv_top);

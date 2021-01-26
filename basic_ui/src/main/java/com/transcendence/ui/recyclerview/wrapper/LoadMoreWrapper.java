@@ -158,7 +158,6 @@ public class LoadMoreWrapper<T> extends BaseAbsAdapter<T>{
 
     /**
      * Set the pull-up state.
-     *
      * @param loadingState 0.Loading 1.Loading done 2.Loading end
      */
     public void setLoadState(LoadingState loadingState) {

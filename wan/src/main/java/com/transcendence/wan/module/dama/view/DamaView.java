@@ -1,7 +1,7 @@
 package com.transcendence.wan.module.dama.view;
 
 import com.transcendence.wan.core.mvp.view.WanBaseView;
-import com.transcendence.wan.module.dama.model.DamaBean;
+import com.transcendence.wan.module.main.bean.ArticleListBean;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import java.util.List;
  */
 public interface DamaView extends WanBaseView {
 
-    void getUserArticleListSuccess(int code, List<DamaBean.DataBean.DatasBean> data);
+    void getUserArticleListSuccess(int code, List<ArticleListBean.DataBean.DatasBean> data);
 
     void getUserArticleListFailed(int code, String msg);
 }

@@ -3,6 +3,8 @@
 
     <string name="navigation_drawer_open">Open drawer</string>
     <string name="navigation_drawer_close">Close drawer</string>
+    <!-- system -->
+    <string name="request_fail">RequestFail</string>
     <!-- common -->
     <string name="exit">Exit</string>
     <!-- 4 tab -->

@@ -12,6 +12,7 @@ import com.transcendence.blackhole.utils.L;
 import com.transcendence.blackhole.utils.ScreenUtils;
 import com.transcendence.blackhole.widget.custom.banner.BannerLayout;
 import com.transcendence.ui.recyclerview.adapter.BaseAbsAdapter;
+import com.transcendence.ui.recyclerview.view.LoadMoreLayout;
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanBaseFragment;
 import com.transcendence.wan.module.home.model.BannerBean;
@@ -19,6 +20,9 @@ import com.transcendence.wan.module.home.presenter.HomePresenter;
 import com.transcendence.wan.module.home.view.HomeView;
 import com.transcendence.wan.module.main.act.WanMainActivity;
 import com.transcendence.wan.module.main.act.WanWebActivity;
+import com.transcendence.wan.module.main.adapter.ArticleListAdapter;
+import com.transcendence.wan.module.main.bean.ArticleListBean;
+import com.transcendence.wan.module.mine.adapter.MyCoinListAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,14 +36,14 @@ import java.util.List;
  * @EditionHistory
  */
 
-public class HomeFragment extends WanBaseFragment<HomePresenter> implements HomeView,BannerLayout.OnBannerItemClickListener {
+public class HomeFragment extends WanBaseFragment<HomePresenter> implements HomeView,BannerLayout.OnBannerItemClickListener,LoadMoreLayout.LoadMoreCallback {
 
     private static final String ARG_SHOW_TEXT = "text";
-
+    private static int PAGE = 0;
     private ImageView ivLeft,ivRight;
 
     private BannerLayout mBanner;
-    private RecyclerView mRv;
+    private LoadMoreLayout mLoadMoreLayout;
     private BaseAbsAdapter mAdapter;
     private List<BannerBean> mBannerBeans;
     private List<String> mBannerUrls;
@@ -61,7 +65,6 @@ public class HomeFragment extends WanBaseFragment<HomePresenter> implements Home
         mBanner = findViewById(R.id.banner);
         mBanner.setOnBannerItemClickListener(this);
         createHeaderBanner();
-        mRv = findViewById(R.id.rv);
         ivLeft = findViewById(R.id.ivLeft);
         ivRight = findViewById(R.id.ivRight);
         ivLeft.setOnClickListener(new View.OnClickListener() {
@@ -80,12 +83,14 @@ public class HomeFragment extends WanBaseFragment<HomePresenter> implements Home
 
             }
         });
+        initRv();
     }
+
 
     @Override
     protected void loadData() {
-        L.d("loadData");
         presenter.initBannerData();
+        presenter.getArticleList(PAGE);
     }
 
 
@@ -99,6 +104,15 @@ public class HomeFragment extends WanBaseFragment<HomePresenter> implements Home
             mBanner.startAutoPlay();
         }
     }
+
+    private void initRv() {
+        mLoadMoreLayout = findViewById(R.id.loadMoreLayout);
+        mAdapter = new ArticleListAdapter(getContext());
+        mLoadMoreLayout.setAdapter(mAdapter,getContext());
+        mLoadMoreLayout.addCallback(this);
+
+    }
+
 
 
     public static HomeFragment newInstance(String title) {
@@ -163,12 +177,19 @@ public class HomeFragment extends WanBaseFragment<HomePresenter> implements Home
     }
 
     @Override
-    public void getArticleListSuccess(int code, List<BannerBean> data) {
+    public void getArticleListHomeSuccess(int code, List<ArticleListBean.DataBean.DatasBean> data) {
+        L.d("getArticleListSuccess");
+        mLoadMoreLayout.onLoadMore(data);
+    }
+
+    @Override
+    public void getArticleListHomeFailed(int code, String msg) {
 
     }
 
     @Override
-    public void getArticleListFailed(int code, String msg) {
-
+    public void onViewLoadMore() {
+        PAGE ++;
+        presenter.getArticleList(PAGE);
     }
 }

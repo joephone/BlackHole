@@ -9,7 +9,7 @@ import com.transcendence.network.jett.callback.ISuccess;
 import com.transcendence.network.jett.retrofit.RetrofitClient;
 import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
 import com.transcendence.wan.core.service.ParamMap;
-import com.transcendence.wan.module.dama.model.DamaBean;
+import com.transcendence.wan.module.main.bean.ArticleListBean;
 import com.transcendence.wan.module.dama.view.DamaView;
 
 import java.util.Map;
@@ -28,15 +28,15 @@ public class DamaPresenter extends WanBasePresenter<DamaView> {
         Map<String,Object> map = ParamMap.getInstance().page(page);
 
         RetrofitClient.create()
-                .url(API.WAN.DAMA_ARTICLE_LIST(page))
+                .url(API.WAN.ARTICLE_LIST_DAMA(page))
                 .params(map)
                 .success(new ISuccess() {
                     @Override
                     public void onSuccess(String response) {
 //                        L.d(" Dama onResponse"+response);
-                        DamaBean damaBean = GsonUtils.getInstance().json2Cls(response, DamaBean.class);
+                        ArticleListBean articleListBean = GsonUtils.getInstance().json2Cls(response, ArticleListBean.class);
                         if(isAttach()){
-                            getWanBaseView().getUserArticleListSuccess(200,damaBean.getData().getDatas());
+                            getWanBaseView().getUserArticleListSuccess(200, articleListBean.getData().getDatas());
                         }
                     }
                 })

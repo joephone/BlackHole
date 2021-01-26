@@ -55,7 +55,6 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
 
 
 
-
     @Override
     protected int getLayoutRes() {
         return R.layout.fragment_navi_mine;
@@ -128,7 +127,6 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
 
     }
 
-
     public static MineFragment newInstance(String title) {
         MineFragment fragment = new MineFragment();
         Bundle args = new Bundle();
@@ -187,7 +185,6 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
         }
     }
 
-
     private void loadUserInfo() {
         if (UserUtils.getInstance().isLogin()) {
             presenter.getCoin();
@@ -218,7 +215,6 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
 
     private void setMyCoinInfo(MyCoinBean bean) {
         if(bean.getLevel()>=0){
-
             tvLevel.setText("Level："+bean.getLevel()+"");
         }
         if(bean.getRank()>=0){
@@ -228,7 +224,6 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
             AnimatorUtils.doIntAnim(tvMyCoinCount, bean.getCoinCount(), 300);
         }
     }
-
 
 
     @Override

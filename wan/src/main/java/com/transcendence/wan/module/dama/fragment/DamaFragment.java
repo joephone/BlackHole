@@ -9,8 +9,8 @@ import com.transcendence.ui.recyclerview.adapter.BaseAbsAdapter;
 import com.transcendence.ui.recyclerview.view.RefreshLayout;
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanBaseFragment;
-import com.transcendence.wan.module.dama.adapter.DamaAdapter;
-import com.transcendence.wan.module.dama.model.DamaBean;
+import com.transcendence.wan.module.main.adapter.ArticleListAdapter;
+import com.transcendence.wan.module.main.bean.ArticleListBean;
 import com.transcendence.wan.module.dama.presenter.DamaPresenter;
 import com.transcendence.wan.module.dama.view.DamaView;
 import com.transcendence.wan.module.mine.act.ToDoActivity;
@@ -53,7 +53,7 @@ public class DamaFragment extends WanBaseFragment<DamaPresenter> implements Dama
     protected void initView() {
 //        L.d("DamaFragment onCreateView");
         mRefreshLayout = findViewById(R.id.refreshView);
-        mAdapter = new DamaAdapter(getContext());
+        mAdapter = new ArticleListAdapter(getContext());
         mRefreshLayout.setAdapter(mAdapter,getContext());
         mRefreshLayout.schemeColors();
         mRefreshLayout.addCallback(this);
@@ -77,7 +77,7 @@ public class DamaFragment extends WanBaseFragment<DamaPresenter> implements Dama
     }
 
     @Override
-    public void getUserArticleListSuccess(int code, List<DamaBean.DataBean.DatasBean> data) {
+    public void getUserArticleListSuccess(int code, List<ArticleListBean.DataBean.DatasBean> data) {
         if(isLoadMore){
             mRefreshLayout.onLoadMore(data);
         }else {

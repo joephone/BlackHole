@@ -25,7 +25,9 @@ import java.util.Map;
 
 public class MyCoinPresenter extends WanBasePresenter<MyCoinView> {
 
-
+    /**
+     *  fetch coin
+     */
     public void getCoin() {
         L.d("getCoin");
         Map<String,Object> map = ParamUser.getInstance().logout();
@@ -53,7 +55,10 @@ public class MyCoinPresenter extends WanBasePresenter<MyCoinView> {
     }
 
 
-
+    /**
+     *  fetch coin list 
+     * @param page
+     */
     public void getMyCoinList(int page) {
         L.d("getMyCoinList");
         Map<String,Object> map = ParamMap.getInstance().page(page);

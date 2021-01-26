@@ -100,8 +100,8 @@
             app:unSelectedIndicatorWidth="7dp" />
     </net.soulwolf.widget.ratiolayout.widget.RatioFrameLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv"
+    <com.transcendence.ui.recyclerview.view.LoadMoreLayout
+        android:id="@+id/loadMoreLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
