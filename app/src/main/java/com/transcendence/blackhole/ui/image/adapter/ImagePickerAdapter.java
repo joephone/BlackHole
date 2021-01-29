@@ -12,7 +12,7 @@ import com.lzy.imagepicker.ImagePicker;
 import com.lzy.imagepicker.bean.ImageItem;
 import com.transcendence.blackhole.R;
 import com.transcendence.blackhole.ui.image.act.WxImagePickerActivity;
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.utils.L;
 
 import java.util.ArrayList;
 import java.util.List;

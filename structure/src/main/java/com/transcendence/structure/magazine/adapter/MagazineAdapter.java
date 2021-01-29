@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.transcendence.blackhole.utils.GlideUtils;
+import com.transcendence.core.utils.GlideUtils;
 import com.transcendence.structure.R;
 import com.transcendence.structure.magazine.bean.MagazineEntity;
 import com.wirelesspienetwork.overview.model.OverviewAdapter;

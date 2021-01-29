@@ -1,6 +1,7 @@
 package com.transcendence.wan.module.mine.presenter;
 
 import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
+import com.transcendence.wan.core.mvp.presenter.WanTitlebarPresenter;
 import com.transcendence.wan.module.mine.view.AboutMeView;
 
 /**
@@ -11,6 +12,6 @@ import com.transcendence.wan.module.mine.view.AboutMeView;
  * @EditionHistory
  */
 
-public class AboutMePresenter extends WanBasePresenter<AboutMeView> {
+public class AboutMePresenter extends WanTitlebarPresenter<AboutMeView> {
 
 }

@@ -9,9 +9,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.BaseActivity;
-import com.transcendence.blackhole.fragment.BlankFragment;
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.base.activity.BaseActivity;
+import com.transcendence.core.fragment.BlankFragment;
+import com.transcendence.core.utils.L;
 
 import java.util.ArrayList;
 import java.util.Arrays;

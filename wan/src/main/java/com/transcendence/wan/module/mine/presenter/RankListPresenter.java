@@ -1,11 +1,11 @@
 package com.transcendence.wan.module.mine.presenter;
 
-import com.transcendence.blackhole.utils.GsonUtils;
+import com.transcendence.core.utils.GsonUtils;
 import com.transcendence.global.API;
 import com.transcendence.network.jett.callback.IFailure;
 import com.transcendence.network.jett.callback.ISuccess;
 import com.transcendence.network.jett.retrofit.RetrofitClient;
-import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
+import com.transcendence.wan.core.mvp.presenter.WanTitlebarPresenter;
 import com.transcendence.wan.core.service.ParamMap;
 import com.transcendence.wan.module.mine.model.RankListModel;
 import com.transcendence.wan.module.mine.view.RankView;
@@ -20,7 +20,7 @@ import java.util.Map;
  * @EditionHistory
  */
 
-public class RankListPresenter extends WanBasePresenter<RankView>{
+public class RankListPresenter extends WanTitlebarPresenter<RankView> {
 
     public void rankList(int page){
         Map<String,Object> map = ParamMap.getInstance().page(page);

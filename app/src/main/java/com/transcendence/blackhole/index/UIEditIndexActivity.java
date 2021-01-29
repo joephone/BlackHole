@@ -7,9 +7,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
+import com.transcendence.core.base.activity.TitleBarActivity;
 import com.transcendence.blackhole.core.AppConstantValue;
-import com.transcendence.blackhole.utils.StringUtils;
+import com.transcendence.core.utils.StringUtils;
 
 import java.util.List;
 

@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.hjq.toast.ToastUtils;
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.BaseMvpActivity;
+import com.transcendence.core.base.activity.BaseMvpActivity;
 import com.transcendence.blackhole.demo.mvp.adp.MvpBeautyListAdapter;
 import com.transcendence.blackhole.demo.mvp.bean.Beauty;
 import com.transcendence.blackhole.demo.mvp.presenter.BeautyListPresenter;

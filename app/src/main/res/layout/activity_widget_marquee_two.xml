@@ -6,7 +6,7 @@
     android:padding="@dimen/standard_padding"
     android:addStatesFromChildren="true">
 
-    <com.transcendence.blackhole.widget.custom.autoscroll.MarqueTextViewTwo
+    <com.transcendence.core.widget.custom.autoscroll.MarqueTextViewTwo
         android:id="@+id/tv"
         android:singleLine="true"
         android:ellipsize="marquee"

@@ -1,6 +1,6 @@
 package com.transcendence.blackhole.demo.mvp.view;
 
-import com.transcendence.blackhole.base.mvp.LibBaseView;
+import com.transcendence.core.base.mvp.LibBaseView;
 import com.transcendence.blackhole.demo.mvp.bean.Beauty;
 
 import java.util.List;

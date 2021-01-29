@@ -3,8 +3,8 @@ package com.transcendence.blackhole.ui.widget.marquee;
 import android.view.View;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
-import com.transcendence.blackhole.widget.custom.autoscroll.MarqueeText;
+import com.transcendence.core.base.activity.TitleBarActivity;
+import com.transcendence.core.widget.custom.autoscroll.MarqueeText;
 
 /**
  * @author Joephone on 2019/6/17 10:27

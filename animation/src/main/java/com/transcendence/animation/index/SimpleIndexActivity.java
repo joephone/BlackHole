@@ -9,8 +9,8 @@ import android.widget.ListView;
 
 import com.transcendence.animation.AnimConstantValue;
 import com.transcendence.animation.R;
-import com.transcendence.blackhole.base.activity.BaseActivity;
-import com.transcendence.blackhole.utils.StringUtils;
+import com.transcendence.core.base.activity.BaseActivity;
+import com.transcendence.core.utils.StringUtils;
 
 import java.util.List;
 

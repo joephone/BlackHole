@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.widget.FrameLayout;
 
-import com.transcendence.blackhole.adapter.GoweiiFragmentPagerAdapter;
+import com.transcendence.core.adapter.GoweiiFragmentPagerAdapter;
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanBaseFragment;
 import com.transcendence.wan.module.knowledge.model.NaviBean;

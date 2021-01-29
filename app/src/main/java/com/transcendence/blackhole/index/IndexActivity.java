@@ -10,15 +10,13 @@ import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.alibaba.android.arouter.facade.annotation.Route;
 import com.hjq.toast.ToastUtils;
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.arouter.ARouterController;
-import com.transcendence.blackhole.arouter.ARouterUtils;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
+import com.transcendence.core.arouter.ARouterUtils;
+import com.transcendence.core.base.activity.TitleBarActivity;
 import com.transcendence.blackhole.core.AppConstantValue;
-import com.transcendence.blackhole.utils.L;
-import com.transcendence.blackhole.utils.StringUtils;
+import com.transcendence.core.utils.L;
+import com.transcendence.core.utils.StringUtils;
 import com.transcendence.core.permission.PermissionPool;
 import com.transcendence.core.permission.PermissionUtils;
 

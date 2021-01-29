@@ -5,8 +5,8 @@ import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
-import com.transcendence.blackhole.base.app.LibApplication;
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.base.app.LibApplication;
+import com.transcendence.core.utils.L;
 import com.transcendence.map.listener.LocListener;
 
 /**

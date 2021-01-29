@@ -11,6 +11,4 @@ import com.transcendence.wan.core.mvp.view.WanBaseView;
 
 public class WanBasePresenter<V extends WanBaseView> extends WanMvpPresenter<V> {
 
-
-
 }

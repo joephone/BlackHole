@@ -3,7 +3,7 @@ package com.transcendence.blackhole.ui.base.act;
 import android.widget.TextView;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
+import com.transcendence.core.base.activity.TitleBarActivity;
 
 /**
  * @author Joephone on 2019/6/6 17:05

@@ -4,8 +4,8 @@ import android.content.Context;
 import android.text.TextUtils;
 
 import com.google.gson.Gson;
-import com.transcendence.blackhole.utils.GsonUtils;
-import com.transcendence.blackhole.utils.SPUtils;
+import com.transcendence.core.utils.GsonUtils;
+import com.transcendence.core.utils.SPUtils;
 import com.transcendence.wan.module.login.act.LoginActivity;
 import com.transcendence.wan.module.login.model.LoginBean;
 

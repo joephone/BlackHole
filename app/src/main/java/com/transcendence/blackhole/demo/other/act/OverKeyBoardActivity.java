@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
+import com.transcendence.core.base.activity.TitleBarActivity;
 import com.transcendence.blackhole.demo.other.view.LinearLayoutView;
 
 /**

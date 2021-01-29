@@ -4,7 +4,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.bumptech.glide.Glide;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
+import com.transcendence.core.base.activity.TitleBarActivity;
 import com.transcendence.map.R;
 import com.transcendence.map.mobike.transformation.BlurTransformation;
 

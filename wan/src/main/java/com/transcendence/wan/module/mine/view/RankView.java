@@ -1,6 +1,7 @@
 package com.transcendence.wan.module.mine.view;
 
 import com.transcendence.wan.core.mvp.view.WanBaseView;
+import com.transcendence.wan.core.mvp.view.WanTitleBarView;
 import com.transcendence.wan.module.mine.model.RankListBean;
 
 import java.util.List;
@@ -13,7 +14,7 @@ import java.util.List;
  * @EditionHistory
  */
 
-public interface RankView extends WanBaseView {
+public interface RankView extends WanTitleBarView {
 
     void getRankListSuc(int code, List<RankListBean.DatasBean> data);
 

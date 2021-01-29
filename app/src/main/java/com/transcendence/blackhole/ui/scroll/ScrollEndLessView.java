@@ -6,7 +6,7 @@ import android.os.Message;
 import android.util.AttributeSet;
 import android.widget.ScrollView;
 
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.utils.L;
 
 /**
  * @Author Joephone on 2020/4/21 23:38

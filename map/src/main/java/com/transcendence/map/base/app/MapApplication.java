@@ -1,6 +1,6 @@
 package com.transcendence.map.base.app;
 
-import com.transcendence.blackhole.base.app.LibApplication;
+import com.transcendence.core.base.app.LibApplication;
 
 /**
  * @author Joephone on 2019/11/8 14:23

@@ -1,8 +1,6 @@
 package com.transcendence.blackhole.ui.rv;
 
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
+import com.transcendence.core.base.activity.TitleBarActivity;
 import com.transcendence.ui.recyclerview.swiperecyclerview.SwipeRecyclerView;
 
 import java.util.ArrayList;

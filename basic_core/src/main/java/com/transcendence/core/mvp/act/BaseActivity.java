@@ -8,7 +8,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.transcendence.blackhole.utils.StatusBarUtils;
+import com.transcendence.core.utils.StatusBarUtils;
 import com.transcendence.core.R;
 import com.transcendence.core.mvp.presenter.BasePresenter;
 

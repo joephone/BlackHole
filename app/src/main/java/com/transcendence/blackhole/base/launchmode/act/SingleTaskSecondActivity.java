@@ -5,8 +5,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.base.activity.TitleBarActivity;
+import com.transcendence.core.utils.L;
 
 /**
  * @Author Joephone on 2020/4/21 16:58

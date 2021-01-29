@@ -3,26 +3,25 @@ package com.transcendence.wan.module.setting.act;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.TextView;
 
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.utils.L;
 import com.transcendence.ui.recyclerview.view.LoadMoreLayout;
 import com.transcendence.wan.R;
-import com.transcendence.wan.core.mvp.WanBaseActivity;
+import com.transcendence.wan.core.mvp.WanTitleBarActivity;
 import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
-import com.transcendence.wan.module.mine.adapter.RankAdapter;
 import com.transcendence.wan.module.setting.adapter.LanguageSetAdapter;
 import com.transcendence.wan.module.setting.bean.LanguageBean;
+import com.transcendence.wan.utils.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class LanguageActivity extends WanBaseActivity {
+public class LanguageActivity extends WanTitleBarActivity {
 
     private RecyclerView mRv;
     private TextView tvLanguage;
@@ -43,6 +42,7 @@ public class LanguageActivity extends WanBaseActivity {
 
     @Override
     protected void initView() {
+        setTitle(StringUtils.getString(R.string.setting_language));
         mRv = findViewById(R.id.rv);
         tvLanguage = findViewById(R.id.tv_language);
     }

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.transcendence.blackhole.widget.custom.StandardLayout
+    <com.transcendence.core.widget.custom.StandardLayout
         android:id="@+id/slClearCache"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

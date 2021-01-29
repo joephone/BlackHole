@@ -2,7 +2,7 @@ package com.transcendence.blackhole.demo.lottery.act;
 
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
+import com.transcendence.core.base.activity.TitleBarActivity;
 import com.transcendence.blackhole.demo.lottery.view.LotteryViewTwo;
 
 /**

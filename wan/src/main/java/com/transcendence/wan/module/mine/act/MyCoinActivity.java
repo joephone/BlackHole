@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.widget.TextView;
 
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.utils.L;
 import com.transcendence.ui.recyclerview.adapter.BaseAbsAdapter;
 import com.transcendence.ui.recyclerview.view.LoadMoreLayout;
 import com.transcendence.wan.R;

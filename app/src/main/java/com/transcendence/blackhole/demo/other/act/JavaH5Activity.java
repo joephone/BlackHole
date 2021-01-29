@@ -1,24 +1,16 @@
 package com.transcendence.blackhole.demo.other.act;
 
 import android.annotation.SuppressLint;
-import android.net.Uri;
 import android.os.Build;
-import android.text.TextUtils;
 import android.view.View;
 import android.webkit.JavascriptInterface;
 import android.webkit.ValueCallback;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
-import com.transcendence.blackhole.utils.L;
-
-import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Set;
+import com.transcendence.core.base.activity.TitleBarActivity;
+import com.transcendence.core.utils.L;
 
 public class JavaH5Activity extends TitleBarActivity {
 

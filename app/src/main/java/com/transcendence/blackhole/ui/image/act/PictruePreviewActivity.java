@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import com.hjq.image.ImageLoader;
 import com.lzy.imagepicker.bean.ImageItem;
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
+import com.transcendence.core.base.activity.TitleBarActivity;
 
 /**
  * @author Joephone on 2019/6/19 14:18

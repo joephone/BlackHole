@@ -3,7 +3,7 @@ package com.mzelzoghbi.zgallery.activities;
 import android.support.v7.widget.RecyclerView;
 
 import com.mzelzoghbi.zgallery.CustomViewPager;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
+import com.transcendence.core.base.activity.TitleBarActivity;
 import com.transcendence.core.R;
 
 /**

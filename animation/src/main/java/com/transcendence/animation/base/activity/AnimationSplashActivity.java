@@ -12,8 +12,8 @@ import com.transcendence.animation.R;
 import com.transcendence.animation.index.ComplexIndexActivity;
 import com.transcendence.animation.index.HighCopyIndexActivity;
 import com.transcendence.animation.index.SimpleIndexActivity;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
-import com.transcendence.blackhole.utils.StringUtils;
+import com.transcendence.core.base.activity.TitleBarActivity;
+import com.transcendence.core.utils.StringUtils;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package com.transcendence.wan.module.mine.model;
 
-import com.transcendence.wan.base.bean.WanBaseBean;
+import com.transcendence.wan.core.bean.WanBaseBean;
 
 /**
  * @Author Joephone on 2020/5/6 22:23

@@ -17,8 +17,8 @@ import com.amap.api.maps.MapView;
 import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.amap.api.maps.model.LatLng;
 import com.amap.api.maps.model.MyLocationStyle;
-import com.transcendence.blackhole.global.Global;
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.global.Global;
+import com.transcendence.core.utils.L;
 import com.transcendence.map.R;
 
 /**

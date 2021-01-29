@@ -3,15 +3,16 @@ package com.transcendence.wan.module.mine.act;
 import android.content.Context;
 import android.content.Intent;
 
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.utils.L;
 import com.transcendence.ui.recyclerview.adapter.BaseAbsAdapter;
 import com.transcendence.ui.recyclerview.view.LoadMoreLayout;
 import com.transcendence.wan.R;
-import com.transcendence.wan.core.mvp.WanBaseActivity;
+import com.transcendence.wan.core.mvp.WanTitleBarActivity;
 import com.transcendence.wan.module.mine.adapter.RankAdapter;
 import com.transcendence.wan.module.mine.model.RankListBean;
 import com.transcendence.wan.module.mine.presenter.RankListPresenter;
 import com.transcendence.wan.module.mine.view.RankView;
+import com.transcendence.wan.utils.StringUtils;
 
 import java.util.List;
 
@@ -23,7 +24,7 @@ import java.util.List;
  * @EditionHistory
  */
 
-public class RankActivity extends WanBaseActivity<RankListPresenter> implements RankView,LoadMoreLayout.LoadMoreCallback {
+public class RankActivity extends WanTitleBarActivity<RankListPresenter> implements RankView,LoadMoreLayout.LoadMoreCallback {
 
     private static int PAGE = 1;
     private boolean isLoadMore;
@@ -40,9 +41,9 @@ public class RankActivity extends WanBaseActivity<RankListPresenter> implements 
         return new RankListPresenter();
     }
 
-
     @Override
     protected void initView() {
+        setTitle(StringUtils.getString(R.string.rank_list));
         mLoadMoreLayout = findViewById(R.id.loadMoreLayout);
         mAdapter = new RankAdapter(getContext());
         mLoadMoreLayout.setAdapter(mAdapter,getContext());

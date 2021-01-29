@@ -21,7 +21,7 @@ import com.lht.paintview.pojo.SerializablePaint;
 import com.lht.paintview.pojo.SerializablePath;
 import com.lht.paintview.util.BitmapUtil;
 import com.lht.paintview.util.Constant;
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.utils.L;
 
 import java.util.ArrayList;
 

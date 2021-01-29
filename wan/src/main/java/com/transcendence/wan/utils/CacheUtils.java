@@ -1,6 +1,6 @@
 package com.transcendence.wan.utils;
 
-import com.transcendence.blackhole.base.app.LibApplication;
+import com.transcendence.core.base.app.LibApplication;
 
 import java.io.File;
 

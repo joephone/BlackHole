@@ -4,7 +4,7 @@ import android.content.Context;
 
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.MapView;
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.utils.L;
 
 /**
  * @author Joephone on 2019/11/7 17:29

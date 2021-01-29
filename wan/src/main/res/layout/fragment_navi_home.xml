@@ -10,6 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="invisible"
         android:orientation="vertical">
 
         <include layout="@layout/view_status" />
@@ -46,7 +47,7 @@
                 android:layout_centerInParent="true"
                 android:ellipsize="end"
                 android:maxLines="1"
-                tools:text="@string/home"
+                android:text="@string/home"
                 android:textColor="@color/white"
                 android:textSize="@dimen/title_size" />
 
@@ -80,7 +81,7 @@
         app:heightRatio="9"
         app:widthRatio="16">
 
-        <com.transcendence.blackhole.widget.custom.banner.BannerLayout
+        <com.transcendence.core.widget.custom.banner.BannerLayout
             android:id="@+id/banner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -1,6 +1,6 @@
 package com.transcendence.wan.module.wxpublic.presenter;
 
-import com.transcendence.blackhole.utils.GsonUtils;
+import com.transcendence.core.utils.GsonUtils;
 import com.transcendence.global.API;
 import com.transcendence.network.jett.callback.IFailure;
 import com.transcendence.network.jett.callback.ISuccess;

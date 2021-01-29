@@ -1,6 +1,7 @@
 package com.transcendence.wan.module.home.view;
 
 import com.transcendence.wan.core.mvp.view.WanBaseView;
+import com.transcendence.wan.core.mvp.view.WanTitleBarView;
 import com.transcendence.wan.module.home.model.BannerBean;
 import com.transcendence.wan.module.main.bean.ArticleListBean;
 
@@ -14,7 +15,7 @@ import java.util.List;
  * @EditionHistory
  */
 
-public interface HomeView extends WanBaseView {
+public interface HomeView extends WanTitleBarView {
     void getBannerSuccess(int code, List<BannerBean> data);
     void getBannerFail(int code, String msg);
 

@@ -1,7 +1,7 @@
 package com.transcendence.wan.module.knowledge.presenter;
 
-import com.transcendence.blackhole.utils.GsonUtils;
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.utils.GsonUtils;
+import com.transcendence.core.utils.L;
 import com.transcendence.global.API;
 import com.transcendence.network.jett.callback.IFailure;
 import com.transcendence.network.jett.callback.ISuccess;

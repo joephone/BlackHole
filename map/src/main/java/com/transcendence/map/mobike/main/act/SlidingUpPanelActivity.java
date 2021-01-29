@@ -24,7 +24,7 @@ import android.widget.RelativeLayout;
 
 import com.amap.api.maps.CameraUpdateFactory;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.utils.L;
 import com.transcendence.map.R;
 
 

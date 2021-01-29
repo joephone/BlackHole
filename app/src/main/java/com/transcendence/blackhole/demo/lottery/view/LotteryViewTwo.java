@@ -21,7 +21,7 @@ import android.view.View;
 import android.view.WindowManager;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.utils.L;
 
 import java.util.ArrayList;
 import java.util.Random;

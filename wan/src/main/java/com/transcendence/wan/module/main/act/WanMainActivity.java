@@ -6,10 +6,10 @@ import android.view.KeyEvent;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.hjq.toast.ToastUtils;
-import com.transcendence.blackhole.adapter.GoweiiFragmentPagerAdapter;
-import com.transcendence.blackhole.arouter.ARouterController;
-import com.transcendence.blackhole.arouter.ARouterUtils;
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.adapter.GoweiiFragmentPagerAdapter;
+import com.transcendence.core.arouter.ARouterController;
+import com.transcendence.core.arouter.ARouterUtils;
+import com.transcendence.core.utils.L;
 import com.transcendence.core.permission.PermissionPool;
 import com.transcendence.core.permission.PermissionUtils;
 import com.transcendence.wan.R;
@@ -18,6 +18,7 @@ import com.transcendence.wan.module.dama.fragment.DamaFragment;
 import com.transcendence.wan.module.home.fragment.MainFragment;
 import com.transcendence.wan.module.main.presenter.WanMainPresenter;
 import com.transcendence.wan.module.main.view.WanMainView;
+import com.transcendence.wan.ui.dialog.PrivacyPolicyDialog;
 
 /**
  * @author Administrator
@@ -45,7 +46,6 @@ public class WanMainActivity extends WanBaseActivity<WanMainPresenter> implement
     @Override
     protected void initView() {
         ARouterUtils.injectActivity(mActivity);
-
         mVp = findViewById(R.id.vp);
         initVP();
     }
@@ -66,8 +66,10 @@ public class WanMainActivity extends WanBaseActivity<WanMainPresenter> implement
         mVp.setAdapter(adapter);
         mVp.setCurrentItem(4);
 
+        showPrivacyPolicyDialog();
         PermissionUtils.getInstance().checkPermissions(WanMainActivity.this,PermissionPool.STORAGE,permissionResult);
     }
+
 
     PermissionUtils.IPermissionsResult permissionResult = new PermissionUtils.IPermissionsResult() {
         @Override
@@ -81,6 +83,29 @@ public class WanMainActivity extends WanBaseActivity<WanMainPresenter> implement
         }
     };
 
+    /**
+     * Show Private Policy
+     * Must run on UIThread
+     */
+    private void showPrivacyPolicyDialog() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        L.d("showPrivacyPolicyDialog");
+                        PrivacyPolicyDialog.showIfFirst(getContext(), new PrivacyPolicyDialog.CompleteCallback() {
+                            @Override
+                            public void onComplete() {
+
+                            }
+                        });
+                    }
+                });
+            }
+        }).start();
+    }
 
 
     public void slideToDama(){

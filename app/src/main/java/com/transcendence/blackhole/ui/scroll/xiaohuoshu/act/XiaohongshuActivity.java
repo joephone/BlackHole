@@ -4,7 +4,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
+import com.transcendence.core.base.activity.TitleBarActivity;
 import com.transcendence.blackhole.ui.scroll.xiaohuoshu.adp.XiaohongshuAdapter;
 import com.transcendence.blackhole.ui.scroll.xiaohuoshu.scroll.ScollLinearLayoutManager;
 

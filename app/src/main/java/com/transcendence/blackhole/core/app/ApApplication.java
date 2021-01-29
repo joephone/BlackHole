@@ -1,6 +1,6 @@
 package com.transcendence.blackhole.core.app;
 
-import com.transcendence.blackhole.base.app.LibApplication;
+import com.transcendence.core.base.app.LibApplication;
 import com.transcendence.blackhole.demo.LoginInterceptor.act.Interceptors;
 
 /**

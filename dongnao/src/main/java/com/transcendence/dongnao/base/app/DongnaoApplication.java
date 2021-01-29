@@ -8,7 +8,7 @@ package com.transcendence.dongnao.base.app;
 import android.os.Build;
 import android.webkit.WebView;
 
-import com.transcendence.blackhole.base.app.LibApplication;
+import com.transcendence.core.base.app.LibApplication;
 import com.transcendence.dongnao.BuildConfig;
 
 

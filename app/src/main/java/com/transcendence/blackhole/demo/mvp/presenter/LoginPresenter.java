@@ -1,6 +1,6 @@
 package com.transcendence.blackhole.demo.mvp.presenter;
 
-import com.transcendence.blackhole.base.mvp.LibBaseView;
+import com.transcendence.core.base.mvp.LibBaseView;
 import com.transcendence.blackhole.demo.mvp.bean.User;
 
 /**

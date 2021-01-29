@@ -11,10 +11,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
-import com.transcendence.blackhole.global.Global;
+import com.transcendence.core.base.activity.TitleBarActivity;
+import com.transcendence.core.global.Global;
 import com.transcendence.blackhole.ui.gallery.adp.JbottomAdapter;
-import com.transcendence.blackhole.utils.GlideUtils;
+import com.transcendence.core.utils.GlideUtils;
 
 import java.util.ArrayList;
 import java.util.List;

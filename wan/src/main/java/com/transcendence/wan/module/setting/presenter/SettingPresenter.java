@@ -1,11 +1,11 @@
 package com.transcendence.wan.module.setting.presenter;
 
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.utils.L;
 import com.transcendence.global.API;
 import com.transcendence.network.jett.callback.IFailure;
 import com.transcendence.network.jett.callback.ISuccess;
 import com.transcendence.network.jett.retrofit.RetrofitClient;
-import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
+import com.transcendence.wan.core.mvp.presenter.WanTitlebarPresenter;
 import com.transcendence.wan.core.service.ParamUser;
 import com.transcendence.wan.module.setting.view.SettingView;
 import com.transcendence.wan.utils.CacheUtils;
@@ -20,7 +20,7 @@ import java.util.Map;
  * @EditionHistory
  */
 
-public class SettingPresenter extends WanBasePresenter<SettingView>{
+public class SettingPresenter extends WanTitlebarPresenter<SettingView> {
 
     public void logout(){
         Map<String,Object> map = ParamUser.getInstance().logout();

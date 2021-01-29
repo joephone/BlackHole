@@ -41,6 +41,8 @@ ext {
             materialProgressBar             : "1.4.2",
             swipeBack                       : "1.1.0",
             smartRefreshLayout              : "1.1.0",
+            anyDialog                       : "3.0.3",
+            anyLayer                        : "3.0.0",
 
             router                          : "1.4.1",
             routerCompiler                  : "1.2.2",
@@ -83,7 +85,8 @@ ext {
 
             actionBarEx                     : "com.github.goweii:ActionBarEx:$version.actionBarEx",
             materialProgressBar             : "me.zhanghai.android.materialprogressbar:library:$version.materialProgressBar",
-
+            anyLayer                        : "com.github.goweii:AnyLayer:$version.anyLayer",
+            anyDialog                       : "com.github.goweii:AnyDialog:$version.anyDialog",
 
 
             //http

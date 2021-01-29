@@ -52,6 +52,8 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <!-- 加权限禁止Home键 -->
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <!-- 杀后台进程权限  float ball -->
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
 
 
     <application
@@ -384,7 +386,9 @@
             <!--  pdf下载 -->
         <activity android:name=".demo.pdfdownload.PDFdownMainActivity"
             android:screenOrientation="portrait" />
-
+            <!--  360悬浮球 -->
+        <activity android:name=".demo.animation360.activity.FloatViewMainActivity"
+            android:screenOrientation="portrait" />
 
 
         <!-- 序列   基础  handler -->

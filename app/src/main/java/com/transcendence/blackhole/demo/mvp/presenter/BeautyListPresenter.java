@@ -1,11 +1,11 @@
 package com.transcendence.blackhole.demo.mvp.presenter;
 
-import com.transcendence.blackhole.base.mvp.LibBasePresenter;
+import com.transcendence.core.base.mvp.LibBasePresenter;
 import com.transcendence.blackhole.demo.mvp.bean.Beauty;
 import com.transcendence.blackhole.demo.mvp.model.IBeautyListModel;
 import com.transcendence.blackhole.demo.mvp.model.IBeautyListModelImpl;
 import com.transcendence.blackhole.demo.mvp.view.IBeautyListView;
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.utils.L;
 
 import java.util.List;
 

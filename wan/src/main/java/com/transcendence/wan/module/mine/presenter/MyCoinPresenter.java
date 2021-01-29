@@ -1,7 +1,7 @@
 package com.transcendence.wan.module.mine.presenter;
 
-import com.transcendence.blackhole.utils.GsonUtils;
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.utils.GsonUtils;
+import com.transcendence.core.utils.L;
 import com.transcendence.global.API;
 import com.transcendence.network.jett.callback.IFailure;
 import com.transcendence.network.jett.callback.ISuccess;
@@ -56,7 +56,7 @@ public class MyCoinPresenter extends WanBasePresenter<MyCoinView> {
 
 
     /**
-     *  fetch coin list 
+     *  fetch coin list
      * @param page
      */
     public void getMyCoinList(int page) {

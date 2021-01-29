@@ -15,7 +15,7 @@ import android.view.SurfaceHolder.Callback;
 import android.view.SurfaceView;
 
 import com.transcendence.blackhole.demo.lottery.bean.Prize;
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.utils.L;
 
 import java.util.List;
 import java.util.Random;

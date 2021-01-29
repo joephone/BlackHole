@@ -5,8 +5,6 @@
     android:orientation="vertical">
 
 
-    <include layout="@layout/title"  />
-
     <com.transcendence.ui.scroll.autoscroll.AutoScrollView
         android:id="@+id/autoScrollView"
         android:layout_width="match_parent"
@@ -36,6 +34,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/beauty04"
+                />
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ic_alipay"
                 />
 
         </LinearLayout>

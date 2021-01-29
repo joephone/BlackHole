@@ -12,7 +12,7 @@
         android:background="@mipmap/map"
         android:scaleType="centerCrop" />
 
-    <com.transcendence.blackhole.widget.custom.scroll.ScrollLayout
+    <com.transcendence.core.widget.custom.scroll.ScrollLayout
         android:id="@+id/scroll_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -50,7 +50,7 @@
         </LinearLayout>
 
 
-        <com.transcendence.blackhole.widget.custom.scroll.ScrollRecyclerView
+        <com.transcendence.core.widget.custom.scroll.ScrollRecyclerView
             android:id="@+id/scroll_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
             >
 
 
-            <com.transcendence.blackhole.widget.custom.scroll.ScrollTextView
+            <com.transcendence.core.widget.custom.scroll.ScrollTextView
                 android:id="@+id/scroll_bottom"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -82,7 +82,7 @@
                 <!--    android:background="@drawable/shape_area_weather_map_mul_bg" -->
         </RelativeLayout>
 
-    </com.transcendence.blackhole.widget.custom.scroll.ScrollLayout>
+    </com.transcendence.core.widget.custom.scroll.ScrollLayout>
 
 
 </FrameLayout>

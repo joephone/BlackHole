@@ -36,7 +36,7 @@
         android:onClick="startFor0"
         android:text="从头开始" />
 
-    <com.transcendence.blackhole.widget.custom.autoscroll.MarqueeText
+    <com.transcendence.core.widget.custom.autoscroll.MarqueeText
         android:id="@+id/tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -48,7 +48,7 @@
         android:text="这才是真正的文字跑马灯效果这才是真正的字跑马灯效果这才是真正的"
         android:textColor="@color/colorGitHubBlack"
         android:textSize="@dimen/standard_text" >
-    </com.transcendence.blackhole.widget.custom.autoscroll.MarqueeText>
+    </com.transcendence.core.widget.custom.autoscroll.MarqueeText>
 
 
 </LinearLayout>

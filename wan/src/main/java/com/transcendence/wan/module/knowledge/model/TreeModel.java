@@ -1,6 +1,6 @@
 package com.transcendence.wan.module.knowledge.model;
 
-import com.transcendence.wan.base.bean.WanBaseBean;
+import com.transcendence.wan.core.bean.WanBaseBean;
 
 import java.util.List;
 

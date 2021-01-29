@@ -7,13 +7,14 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.utils.L;
 import com.transcendence.wan.R;
-import com.transcendence.wan.core.mvp.WanBaseActivity;
-import com.transcendence.wan.base.bean.NewWanBaseBean;
+import com.transcendence.wan.core.bean.NewWanBaseBean;
+import com.transcendence.wan.core.mvp.WanTitleBarActivity;
 import com.transcendence.wan.event.LoginEvent;
 import com.transcendence.wan.module.setting.presenter.SettingPresenter;
 import com.transcendence.wan.module.setting.view.SettingView;
+import com.transcendence.wan.utils.StringUtils;
 import com.transcendence.wan.utils.UserUtils;
 
 /**
@@ -24,7 +25,7 @@ import com.transcendence.wan.utils.UserUtils;
  * @EditionHistory
  */
 
-public class SettingActivity extends WanBaseActivity<SettingPresenter> implements SettingView,View.OnClickListener {
+public class SettingActivity extends WanTitleBarActivity<SettingPresenter> implements SettingView,View.OnClickListener {
 
 
     TextView tvCache;
@@ -44,6 +45,7 @@ public class SettingActivity extends WanBaseActivity<SettingPresenter> implement
 
     @Override
     protected void initView() {
+        setTitle(StringUtils.getString(R.string.setting));
         tvCache = findViewById(R.id.tv_cache);
         llLanguage = findViewById(R.id.ll_language);
         llLanguage.setOnClickListener(this);

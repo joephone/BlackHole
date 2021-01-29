@@ -34,7 +34,7 @@ public abstract class WanMvpActivity<T extends WanBasePresenter> extends SwipeBa
     protected abstract void initView();
 
     /**
-     * 绑定数据
+     * 加载数据
      */
     protected abstract void loadData();
 
@@ -47,7 +47,6 @@ public abstract class WanMvpActivity<T extends WanBasePresenter> extends SwipeBa
             setContentView(getLayoutId());
         }
 
-
         attachPresenter();
         initialize();
     }
@@ -56,8 +55,6 @@ public abstract class WanMvpActivity<T extends WanBasePresenter> extends SwipeBa
         initView();
         loadData();
     }
-
-
 
 
     private void attachPresenter() {

@@ -1,7 +1,7 @@
 package com.transcendence.blackhole.ui.image.headcliper.act;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
+import com.transcendence.core.base.activity.TitleBarActivity;
 
 /**
  * @author Joephone on 2019/11/5 11:37

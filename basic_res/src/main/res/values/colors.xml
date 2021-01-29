@@ -7,6 +7,45 @@
 
     <!-- 元色 -->
     <color name="transparent">#00000000</color>
+    <!--白色透明度-->
+    <color name="transparent_white_05">#f2ffffff</color>
+    <color name="transparent_white_10">#e6ffffff</color>
+    <color name="transparent_white_15">#d9ffffff</color>
+    <color name="transparent_white_20">#ccffffff</color>
+    <color name="transparent_white_25">#bfffffff</color>
+    <color name="transparent_white_30">#b3ffffff</color>
+    <color name="transparent_white_35">#a6ffffff</color>
+    <color name="transparent_white_40">#99ffffff</color>
+    <color name="transparent_white_45">#8cffffff</color>
+    <color name="transparent_white_50">#80ffffff</color>
+    <color name="transparent_white_55">#73ffffff</color>
+    <color name="transparent_white_60">#66ffffff</color>
+    <color name="transparent_white_65">#59ffffff</color>
+    <color name="transparent_white_70">#4dffffff</color>
+    <color name="transparent_white_75">#40ffffff</color>
+    <color name="transparent_white_80">#33ffffff</color>
+    <color name="transparent_white_90">#26ffffff</color>
+    <color name="transparent_white_95">#0dffffff</color>
+
+    <!--黑色透明度-->
+    <color name="transparent_black_05">#f2000000</color>
+    <color name="transparent_black_10">#e6000000</color>
+    <color name="transparent_black_15">#d9000000</color>
+    <color name="transparent_black_20">#cc000000</color>
+    <color name="transparent_black_25">#bf000000</color>
+    <color name="transparent_black_30">#b3000000</color>
+    <color name="transparent_black_35">#a6000000</color>
+    <color name="transparent_black_40">#99000000</color>
+    <color name="transparent_black_45">#8c000000</color>
+    <color name="transparent_black_50">#80000000</color>
+    <color name="transparent_black_55">#73000000</color>
+    <color name="transparent_black_60">#66000000</color>
+    <color name="transparent_black_65">#59000000</color>
+    <color name="transparent_black_70">#4d000000</color>
+    <color name="transparent_black_75">#40000000</color>
+    <color name="transparent_black_80">#33000000</color>
+    <color name="transparent_black_90">#26000000</color>
+    <color name="transparent_black_95">#0d000000</color>
 
     <color name="grey"> #ebebeb</color>
     <color name="black"> #000000</color>
@@ -36,14 +75,43 @@
     <color name="title_vice">#a2a2a2</color>
 
     <!--文字颜色-->
-    <color name="text_main">@color/colorGitHubGreen</color>
-    <color name="text_accent">@color/colorAccent</color>
     <color name="text_white">#ffffff</color>
     <color name="text_white_alpha">#88ffffff</color>
     <color name="text_white_dark">#cccccc</color>
     <color name="text_gray_light">#999999</color>
     <color name="text_gray_dark">#666666</color>
     <color name="text_black">#333333</color>
+
+
+    <color name="text_main">@color/colorTheme</color>
+    <color name="text_surface">#333333</color>
+    <color name="text_surface_alpha">#88333333</color>
+    <color name="text_second">#666666</color>
+    <color name="text_third">#999999</color>
+    <color name="text_fourth">#cccccc</color>
+    <color name="text_invert">#ffffff</color>
+    <color name="text_invert_alpha">#88ffffff</color>
+    <color name="text_on_main">#ffffff</color>
+    <dimen name="text_headline">22sp</dimen>
+    <dimen name="text_title">18sp</dimen>
+    <dimen name="text_subtitle">17sp</dimen>
+    <dimen name="text_content">15sp</dimen>
+    <dimen name="text_auxiliary">13sp</dimen>
+    <dimen name="text_notes">12sp</dimen>
+    <dimen name="text_time">11sp</dimen>
+
+    <!--surface颜色-->
+    <color name="surface">#ffffff</color>
+    <color name="surface_alpha">#ccffffff</color>
+    <color name="surface_mask">#ccffffff</color>
+    <color name="surface_top">#f5f5f5</color>
+    <color name="surface_top_alpha">#ccf5f5f5</color>
+    <color name="surface_top_mask">#11000000</color>
+    <color name="invert">#333333</color>
+    <color name="invert_alpha">#11000000</color>
+    <color name="second">#666666</color>
+    <color name="third">#999999</color>
+    <color name="fourth">#cccccc</color>
 
 
     <!-- 最美有物 -->
@@ -77,6 +145,7 @@
 
 
     <color name="selector_bg">#d9d9d9</color>
+    <color name="scrollbar">#22000000</color>
 
 
     <!-- loopView -->

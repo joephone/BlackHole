@@ -2,9 +2,9 @@ package com.transcendence.structure.activity.setting;
 
 import android.view.View;
 
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
-import com.transcendence.blackhole.utils.CacheDataManager;
-import com.transcendence.blackhole.widget.custom.StandardLayout;
+import com.transcendence.core.base.activity.TitleBarActivity;
+import com.transcendence.core.utils.CacheDataManager;
+import com.transcendence.core.widget.custom.StandardLayout;
 import com.transcendence.structure.R;
 
 /**

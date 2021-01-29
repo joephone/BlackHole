@@ -4,8 +4,8 @@ import android.view.View;
 
 import com.transcendence.blackhole.R;
 import com.transcendence.blackhole.demo.guide.GuideActivity;
-import com.transcendence.blackhole.base.activity.BaseActivity;
-import com.transcendence.blackhole.widget.custom.StandardLayout;
+import com.transcendence.core.base.activity.BaseActivity;
+import com.transcendence.core.widget.custom.StandardLayout;
 
 /**
  * @author Joephone

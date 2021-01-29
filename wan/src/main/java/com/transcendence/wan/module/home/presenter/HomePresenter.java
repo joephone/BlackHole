@@ -1,14 +1,14 @@
 package com.transcendence.wan.module.home.presenter;
 
-import com.transcendence.blackhole.utils.GsonUtils;
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.utils.GsonUtils;
+import com.transcendence.core.utils.L;
 import com.transcendence.global.API;
 import com.transcendence.network.jett.callback.IError;
 import com.transcendence.network.jett.callback.IFailure;
 import com.transcendence.network.jett.callback.ISuccess;
 import com.transcendence.network.jett.retrofit.RetrofitClient;
 import com.transcendence.wan.R;
-import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
+import com.transcendence.wan.core.mvp.presenter.WanTitlebarPresenter;
 import com.transcendence.wan.core.service.ParamMap;
 import com.transcendence.wan.module.home.model.BannerModel;
 import com.transcendence.wan.module.home.view.HomeView;
@@ -26,7 +26,7 @@ import java.util.Map;
  * @EditionHistory
  */
 
-public class HomePresenter extends WanBasePresenter<HomeView>{
+public class HomePresenter extends WanTitlebarPresenter<HomeView> {
     /**
      *   fetch banner data
      */

@@ -7,9 +7,9 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.transcendence.blackhole.adapter.GoweiiFragmentPagerAdapter;
-import com.transcendence.blackhole.utils.L;
-import com.transcendence.blackhole.widget.custom.TabView;
+import com.transcendence.core.adapter.GoweiiFragmentPagerAdapter;
+import com.transcendence.core.utils.L;
+import com.transcendence.core.widget.custom.TabView;
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanBaseFragment;
 import com.transcendence.wan.event.LoginEvent;

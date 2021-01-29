@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.transcendence.core.R;
-import com.transcendence.blackhole.utils.GlideUtils;
+import com.transcendence.core.utils.GlideUtils;
 
 import java.util.ArrayList;
 

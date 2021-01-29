@@ -85,7 +85,7 @@
         android:background="@drawable/water_jianbian_selector"
         android:text="方法二 渐变 ripple" />
 
-    <com.transcendence.blackhole.widget.custom.StandardLayout
+    <com.transcendence.core.widget.custom.StandardLayout
         android:id="@+id/paintView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -96,7 +96,7 @@
         app:leftIcon="@mipmap/ic_app_swan"
         />
 
-    <com.transcendence.blackhole.widget.custom.StandardLayout
+    <com.transcendence.core.widget.custom.StandardLayout
         android:id="@+id/standardLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -107,7 +107,7 @@
         app:leftIcon="@mipmap/ic_app_swan"
         />
 
-    <com.transcendence.blackhole.widget.custom.StandardLayout
+    <com.transcendence.core.widget.custom.StandardLayout
         android:id="@+id/edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -117,7 +117,7 @@
         app:rightText="右"
         />
 
-    <com.transcendence.blackhole.widget.custom.StandardLayout
+    <com.transcendence.core.widget.custom.StandardLayout
         android:id="@+id/slBlueThemeWaterButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

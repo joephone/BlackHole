@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanBaseActivity;
+import com.transcendence.wan.core.mvp.WanTitleBarActivity;
 import com.transcendence.wan.module.mine.presenter.AboutMePresenter;
 import com.transcendence.wan.module.mine.view.AboutMeView;
 
@@ -17,7 +18,7 @@ import com.transcendence.wan.module.mine.view.AboutMeView;
  * @EditionHistory
  */
 
-public class AboutMeActivity extends WanBaseActivity<AboutMePresenter> implements AboutMeView {
+public class AboutMeActivity extends WanTitleBarActivity<AboutMePresenter> implements AboutMeView {
 
     public static void start(Context context) {
         Intent intent = new Intent(context, AboutMeActivity.class);
@@ -37,7 +38,7 @@ public class AboutMeActivity extends WanBaseActivity<AboutMePresenter> implement
 
     @Override
     protected void initView() {
-
+        setTitle("欣赏完请他抽支华子呗");
     }
 
     @Override

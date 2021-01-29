@@ -2,15 +2,13 @@ package com.transcendence.wan.module.home.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.transcendence.blackhole.adapter.GoweiiFragmentPagerAdapter;
-import com.transcendence.blackhole.utils.L;
-import com.transcendence.blackhole.utils.ScreenUtils;
-import com.transcendence.blackhole.widget.custom.banner.BannerLayout;
+import com.transcendence.core.utils.L;
+import com.transcendence.core.utils.ScreenUtils;
+import com.transcendence.core.widget.custom.banner.BannerLayout;
 import com.transcendence.ui.recyclerview.adapter.BaseAbsAdapter;
 import com.transcendence.ui.recyclerview.view.LoadMoreLayout;
 import com.transcendence.wan.R;
@@ -22,7 +20,6 @@ import com.transcendence.wan.module.main.act.WanMainActivity;
 import com.transcendence.wan.module.main.act.WanWebActivity;
 import com.transcendence.wan.module.main.adapter.ArticleListAdapter;
 import com.transcendence.wan.module.main.bean.ArticleListBean;
-import com.transcendence.wan.module.mine.adapter.MyCoinListAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +33,9 @@ import java.util.List;
  * @EditionHistory
  */
 
-public class HomeFragment extends WanBaseFragment<HomePresenter> implements HomeView,BannerLayout.OnBannerItemClickListener,LoadMoreLayout.LoadMoreCallback {
+public class HomeFragment extends WanBaseFragment<HomePresenter> implements HomeView,
+                                                                    BannerLayout.OnBannerItemClickListener,
+                                                                    LoadMoreLayout.LoadMoreCallback {
 
     private static final String ARG_SHOW_TEXT = "text";
     private static int PAGE = 0;

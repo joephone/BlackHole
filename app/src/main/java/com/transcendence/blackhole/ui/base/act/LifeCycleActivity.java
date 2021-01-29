@@ -19,8 +19,8 @@ import com.lzy.imagepicker.imageloader.GlideImageLoader;
 import com.lzy.imagepicker.ui.ImagePreviewActivity;
 import com.lzy.imagepicker.view.CropImageView;
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.base.activity.TitleBarActivity;
+import com.transcendence.core.utils.L;
 
 import java.util.ArrayList;
 import java.util.List;

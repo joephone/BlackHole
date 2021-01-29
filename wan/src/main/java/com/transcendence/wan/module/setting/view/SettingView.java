@@ -1,7 +1,8 @@
 package com.transcendence.wan.module.setting.view;
 
-import com.transcendence.wan.base.bean.NewWanBaseBean;
+import com.transcendence.wan.core.bean.NewWanBaseBean;
 import com.transcendence.wan.core.mvp.view.WanBaseView;
+import com.transcendence.wan.core.mvp.view.WanTitleBarView;
 
 /**
  * @Author Joephone on 2020/4/28 14:31
@@ -11,7 +12,7 @@ import com.transcendence.wan.core.mvp.view.WanBaseView;
  * @EditionHistory
  */
 
-public interface SettingView extends WanBaseView {
+public interface SettingView extends WanTitleBarView {
     void logoutSuccess(int code, NewWanBaseBean data);
     void logoutFailed(int code, String msg);
 

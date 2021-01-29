@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import com.transcendence.blackhole.utils.L;
-import com.transcendence.blackhole.utils.ScreenUtils;
+import com.transcendence.core.utils.L;
+import com.transcendence.core.utils.ScreenUtils;
 import com.transcendence.map.catches.view.ScrollLayoutLiuF;
 import com.transcendence.map.mobike.main.act.AmapFragmentActivity;
 

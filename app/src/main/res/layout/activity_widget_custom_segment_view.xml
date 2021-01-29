@@ -5,7 +5,7 @@
     android:orientation="vertical"
     >
 
-    <com.transcendence.blackhole.widget.custom.IosSegmentView
+    <com.transcendence.core.widget.custom.IosSegmentView
         android:id="@+id/rg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

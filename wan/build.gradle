@@ -29,7 +29,7 @@ android {
             if (rootProject.ext.isWanApplication) {
                 manifest.srcFile 'src/main/AndroidManifest.xml'
             } else {
-                manifest.srcFile 'src/main/java/com/transcendence/wan/base/AndroidManifest.xml'
+                manifest.srcFile 'src/main/java/com/transcendence/wan/core/AndroidManifest.xml'
             }
             jniLibs.srcDirs = ['libs']
         }

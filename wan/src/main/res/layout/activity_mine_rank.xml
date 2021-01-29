@@ -5,9 +5,6 @@
     android:orientation="vertical">
 
 
-
-    <include layout="@layout/title"  />
-
     <com.transcendence.ui.recyclerview.view.LoadMoreLayout
         android:id="@+id/loadMoreLayout"
         android:layout_width="match_parent"

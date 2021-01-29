@@ -1,7 +1,6 @@
 package com.transcendence.blackhole.demo.other.act;
 
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.utils.L;
 
 /**
  * @author Joephone on 2020/1/3 14:13

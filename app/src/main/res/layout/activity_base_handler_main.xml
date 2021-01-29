@@ -23,7 +23,7 @@
                 android:padding="12dp"
                 android:text="@string/handler_question_1" />
 
-            <com.transcendence.blackhole.widget.custom.autoscroll.MarqueeTextView
+            <com.transcendence.core.widget.custom.autoscroll.MarqueeTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="12dp"
@@ -37,7 +37,7 @@
                 android:padding="12dp"
                 android:text="@string/handler_question_2" />
 
-            <com.transcendence.blackhole.widget.custom.autoscroll.MarqueeTextView
+            <com.transcendence.core.widget.custom.autoscroll.MarqueeTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="12dp"
@@ -51,7 +51,7 @@
                 android:padding="12dp"
                 android:text="3 使用handler更新背景图片" />
 
-            <com.transcendence.blackhole.widget.custom.autoscroll.MarqueeTextView
+            <com.transcendence.core.widget.custom.autoscroll.MarqueeTextView
                 android:id="@+id/tvhandler3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -66,7 +66,7 @@
                 android:padding="12dp"
                 android:text="4 handler sendMessage" />
 
-            <com.transcendence.blackhole.widget.custom.autoscroll.MarqueeTextView
+            <com.transcendence.core.widget.custom.autoscroll.MarqueeTextView
                 android:id="@+id/tvhandler4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -81,7 +81,7 @@
                 android:padding="12dp"
                 android:text="@string/handler_question_5" />
 
-            <com.transcendence.blackhole.widget.custom.autoscroll.MarqueeTextView
+            <com.transcendence.core.widget.custom.autoscroll.MarqueeTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="12dp"
@@ -94,7 +94,7 @@
                 android:padding="12dp"
                 android:text="@string/handler_question_6" />
 
-            <com.transcendence.blackhole.widget.custom.autoscroll.MarqueeTextView
+            <com.transcendence.core.widget.custom.autoscroll.MarqueeTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="12dp"

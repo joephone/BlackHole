@@ -1,6 +1,6 @@
 package com.transcendence.wan.utils;
 
-import com.transcendence.wan.base.app.WanApp;
+import com.transcendence.wan.core.app.WanApp;
 
 /**
  * @Author Joephone on 2021/1/26 0026 上午 11:37

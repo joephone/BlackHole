@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 
 import com.transcendence.blackhole.R;
 import com.transcendence.blackhole.demo.mvp.bean.Beauty;
-import com.transcendence.blackhole.utils.GlideUtils;
+import com.transcendence.core.utils.GlideUtils;
 
 import java.util.List;
 

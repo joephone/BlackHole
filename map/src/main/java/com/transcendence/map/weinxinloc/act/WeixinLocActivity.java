@@ -13,7 +13,7 @@ import com.amap.api.services.core.PoiItem;
 import com.amap.api.services.geocoder.GeocodeResult;
 import com.amap.api.services.geocoder.GeocodeSearch;
 import com.amap.api.services.geocoder.RegeocodeResult;
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.utils.L;
 import com.transcendence.map.R;
 import com.transcendence.map.mobike.main.act.AmapFragmentActivity;
 import com.transcendence.map.weinxinloc.adapter.WeixinLocAddressAdapter;

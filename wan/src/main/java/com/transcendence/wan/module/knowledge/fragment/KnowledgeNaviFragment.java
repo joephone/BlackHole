@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 
-import com.transcendence.blackhole.adapter.GoweiiFragmentPagerAdapter;
+import com.transcendence.core.adapter.GoweiiFragmentPagerAdapter;
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanBaseFragment;
 import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;

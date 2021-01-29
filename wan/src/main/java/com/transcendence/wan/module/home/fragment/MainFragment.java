@@ -9,12 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.transcendence.blackhole.adapter.GoweiiFragmentPagerAdapter;
-import com.transcendence.blackhole.fragment.BlankFragment;
-import com.transcendence.blackhole.utils.StringUtils;
-import com.transcendence.blackhole.widget.custom.TabView;
+import com.transcendence.core.adapter.GoweiiFragmentPagerAdapter;
+import com.transcendence.core.fragment.BlankFragment;
+import com.transcendence.core.utils.StringUtils;
+import com.transcendence.core.widget.custom.TabView;
 import com.transcendence.wan.R;
-import com.transcendence.wan.module.mine.fragment.FiveFragment;
 import com.transcendence.wan.module.mine.fragment.MineFragment;
 import com.transcendence.wan.module.wxpublic.fragment.NaviWxPublicFragment;
 
@@ -165,13 +164,8 @@ public class MainFragment extends Fragment implements View.OnClickListener{
 
         } else if (i == R.id.tabThree) {
             setCurrentTabs(2);
-
         } else if (i == R.id.tabFour) {
             setCurrentTabs(3);
-
         }
-//        else if (i == R.id.tabFive) {
-//            setCurrentTabs(4);
-//        }
     }
 }

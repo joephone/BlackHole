@@ -23,7 +23,7 @@
                 android:padding="12dp"
                 android:text="@string/auto_scroll_question_1" />
 
-            <com.transcendence.blackhole.widget.custom.autoscroll.MarqueeTextView
+            <com.transcendence.core.widget.custom.autoscroll.MarqueeTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="12dp"

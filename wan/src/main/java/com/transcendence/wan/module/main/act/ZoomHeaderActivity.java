@@ -5,7 +5,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
 import com.transcendence.wan.R;
 
 /**

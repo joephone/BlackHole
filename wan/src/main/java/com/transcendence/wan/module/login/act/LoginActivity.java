@@ -7,13 +7,14 @@ import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v4.view.ViewPager;
 
-import com.transcendence.blackhole.adapter.GoweiiFragmentPagerAdapter;
+import com.transcendence.core.adapter.GoweiiFragmentPagerAdapter;
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanBaseActivity;
 import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
 import com.transcendence.wan.module.login.fragment.LoginFragment;
 import com.transcendence.wan.module.login.fragment.RegisterFragment;
 import com.transcendence.wan.utils.SoftInputHelper;
+import com.transcendence.wan.utils.StringUtils;
 
 import per.goweii.swipeback.SwipeBackDirection;
 
@@ -75,10 +76,10 @@ public class LoginActivity extends WanBaseActivity {
         //预加载
         mVp.setOffscreenPageLimit(1);
         GoweiiFragmentPagerAdapter adapter = new GoweiiFragmentPagerAdapter(getSupportFragmentManager());
-        adapter.setTitles("登录","注册");
+        adapter.setTitles(StringUtils.getString(R.string.login),StringUtils.getString(R.string.register));
         adapter.setFragments(
-                LoginFragment.newInstance("登录"),
-                RegisterFragment.newInstance("注册"));
+                LoginFragment.newInstance(StringUtils.getString(R.string.login)),
+                RegisterFragment.newInstance(StringUtils.getString(R.string.register)));
         mVp.setAdapter(adapter);
         mVp.setCurrentItem(0);
     }

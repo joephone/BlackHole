@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.transcendence.blackhole.utils.GlideUtils;
+import com.transcendence.core.utils.GlideUtils;
 import com.transcendence.ui.recyclerview.adapter.BaseAbsAdapter;
 import com.transcendence.wan.R;
 import com.transcendence.wan.module.main.act.WanWebActivity;

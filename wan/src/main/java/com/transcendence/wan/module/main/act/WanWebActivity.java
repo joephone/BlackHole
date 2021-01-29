@@ -13,7 +13,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.transcendence.blackhole.utils.StatusBarUtils;
+import com.transcendence.core.utils.StatusBarUtils;
 import com.transcendence.wan.R;
 import com.transcendence.wan.module.home.model.BannerBean;
 

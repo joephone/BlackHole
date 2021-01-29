@@ -5,7 +5,7 @@ import android.content.Context;
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.MapView;
 import com.amap.api.services.geocoder.RegeocodeResult;
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.utils.L;
 
 /**
  * @author Joephone on 2019/10/17 16:24

@@ -2,8 +2,8 @@ package com.transcendence.structure.fragment;
 
 import android.view.View;
 
-import com.transcendence.blackhole.base.activity.BaseFragment;
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.base.activity.BaseFragment;
+import com.transcendence.core.utils.L;
 import com.transcendence.structure.magazine.adapter.MagazineAdapter;
 import com.transcendence.structure.magazine.bean.MagazineEntity;
 import com.wirelesspienetwork.overview.views.Overview;

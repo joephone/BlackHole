@@ -3,6 +3,8 @@ package com.transcendence.wan.module.main.bean;
 import java.io.Serializable;
 import java.util.List;
 
+import per.goweii.rxhttp.request.base.BaseBean;
+
 /**
  * @Author Joephone on 2020/4/18 14:50
  * @E-Mail Address：joephonechen@gmail.com
@@ -118,7 +120,7 @@ public class ArticleListBean implements Serializable {
             private int userId;
             private int visible;
             private int zan;
-            private List<?> tags;
+            private List<TagsBean> tags;
 
             public String getApkLink() {
                 return apkLink;
@@ -360,11 +362,11 @@ public class ArticleListBean implements Serializable {
                 this.zan = zan;
             }
 
-            public List<?> getTags() {
+            public List<TagsBean> getTags() {
                 return tags;
             }
 
-            public void setTags(List<?> tags) {
+            public void setTags(List<TagsBean> tags) {
                 this.tags = tags;
             }
 
@@ -374,6 +376,33 @@ public class ArticleListBean implements Serializable {
 
             public void setTop(boolean top) {
                 this.top = top;
+            }
+
+
+            public class TagsBean extends BaseBean {
+                /**
+                 * name : 公众号
+                 * url : /wxarticle/list/410/1
+                 */
+
+                private String name;
+                private String url;
+
+                public String getName() {
+                    return name;
+                }
+
+                public void setName(String name) {
+                    this.name = name;
+                }
+
+                public String getUrl() {
+                    return url;
+                }
+
+                public void setUrl(String url) {
+                    this.url = url;
+                }
             }
         }
     }

@@ -5,8 +5,16 @@
     <string name="navigation_drawer_close">Close drawer</string>
     <!-- system -->
     <string name="request_fail">RequestFail</string>
+    <string name="exit_app">ExitApp</string>
+    <string name="private_policy">PrivatePolicy</string>
     <!-- common -->
     <string name="exit">Exit</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="level">Level</string>
+    <string name="accept">Accept</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
     <!-- 4 tab -->
     <string name="tab_home">Home</string>
     <string name="tab_hierarchy">Hierarchy</string>

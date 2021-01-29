@@ -8,7 +8,7 @@
     android:layout_height="match_parent">
 
 
-    <com.transcendence.blackhole.widget.edittext.EditTextAutoClear
+    <com.transcendence.core.widget.edittext.EditTextAutoClear
         android:id="@+id/etStyleOne"
         android:layout_width="match_parent"
         android:layout_height="45dp"
@@ -23,7 +23,7 @@
         android:textCursorDrawable="@drawable/color_cursor"
         android:textSize="13sp" />
 
-    <com.transcendence.blackhole.widget.edittext.ClearEditText
+    <com.transcendence.core.widget.edittext.ClearEditText
         android:id="@+id/etStyleTwo"
         android:layout_width="match_parent"
         android:layout_height="45dp"

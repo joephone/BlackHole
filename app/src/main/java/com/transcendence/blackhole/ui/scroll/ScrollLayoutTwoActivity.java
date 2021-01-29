@@ -14,10 +14,10 @@ import android.widget.Toast;
 
 import com.hjq.toast.ToastUtils;
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.BaseActivity;
-import com.transcendence.blackhole.widget.custom.scroll.ScrollLayout;
-import com.transcendence.blackhole.widget.custom.scroll.ScrollRecyclerView;
-import com.transcendence.blackhole.widget.custom.scroll.ScrollTextView;
+import com.transcendence.core.base.activity.BaseActivity;
+import com.transcendence.core.widget.custom.scroll.ScrollLayout;
+import com.transcendence.core.widget.custom.scroll.ScrollRecyclerView;
+import com.transcendence.core.widget.custom.scroll.ScrollTextView;
 
 import java.util.ArrayList;
 

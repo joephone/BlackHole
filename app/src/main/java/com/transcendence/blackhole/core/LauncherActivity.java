@@ -6,12 +6,12 @@ import android.view.animation.Animation;
 import android.widget.ImageView;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.BaseActivity;
+import com.transcendence.core.base.activity.BaseActivity;
 import com.transcendence.blackhole.demo.guide.GuideActivity;
-import com.transcendence.blackhole.global.Global;
+import com.transcendence.core.global.Global;
 import com.transcendence.blackhole.index.IndexActivity;
-import com.transcendence.blackhole.utils.GlideUtils;
-import com.transcendence.blackhole.utils.SPUtils;
+import com.transcendence.core.utils.GlideUtils;
+import com.transcendence.core.utils.SPUtils;
 
 import java.util.Random;
 

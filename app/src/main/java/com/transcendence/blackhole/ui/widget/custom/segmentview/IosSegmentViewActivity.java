@@ -5,8 +5,8 @@ import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
-import com.transcendence.blackhole.widget.custom.IosSegmentView;
+import com.transcendence.core.base.activity.TitleBarActivity;
+import com.transcendence.core.widget.custom.IosSegmentView;
 
 /**
  * @author Administrator

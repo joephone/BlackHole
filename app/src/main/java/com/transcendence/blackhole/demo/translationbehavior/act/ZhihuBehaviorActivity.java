@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.widget.custom.TabView;
+import com.transcendence.core.widget.custom.TabView;
 
 /**
  * @author JackChen 2018/3/3 09:09

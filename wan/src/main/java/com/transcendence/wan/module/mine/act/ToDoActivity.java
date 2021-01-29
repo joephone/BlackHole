@@ -8,7 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import com.transcendence.blackhole.fragment.BlankFragment;
+import com.transcendence.core.fragment.BlankFragment;
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanBaseActivity;
 import com.transcendence.wan.module.mine.adapter.FragmentTabAdapter;

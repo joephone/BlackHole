@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.transcendence.blackhole.utils.GlideUtils;
+import com.transcendence.core.utils.GlideUtils;
 import com.transcendence.ui.recyclerview.adapter.BaseAbsAdapter;
 import com.transcendence.wan.R;
 import com.transcendence.wan.module.main.bean.ArticleListBean;
@@ -60,7 +60,7 @@ public class ArticleListAdapter extends BaseAbsAdapter<ArticleListBean.DataBean.
                 }
                 holder.tv_author.setText(item.getAuthor());
                 if (item.getTags() != null && item.getTags().size() > 0) {
-//                holder.tv_tag.setText(item.getTags().get(0).getName());
+                    holder.tv_tag.setText(item.getTags().get(0).getName());
                     holder.tv_tag.setVisibility(View.VISIBLE);
                 } else {
                     holder.tv_tag.setVisibility(View.GONE);

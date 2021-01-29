@@ -7,12 +7,12 @@ import android.util.SparseArray;
 import android.view.View;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
-import com.transcendence.blackhole.fragment.BlankFragment;
+import com.transcendence.core.base.activity.TitleBarActivity;
+import com.transcendence.core.fragment.BlankFragment;
 import com.transcendence.blackhole.main.fragment.HomeFragment;
-import com.transcendence.blackhole.utils.L;
-import com.transcendence.blackhole.utils.StringUtils;
-import com.transcendence.blackhole.widget.custom.TabView;
+import com.transcendence.core.utils.L;
+import com.transcendence.core.utils.StringUtils;
+import com.transcendence.core.widget.custom.TabView;
 
 import java.util.ArrayList;
 import java.util.Arrays;

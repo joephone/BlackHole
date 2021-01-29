@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.amap.api.maps.AMap;
 import com.amap.api.services.geocoder.RegeocodeResult;
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.utils.L;
 import com.transcendence.map.R;
 import com.transcendence.map.utils.MapUtil;
 import com.transcendence.map.view.MapViewFragment;

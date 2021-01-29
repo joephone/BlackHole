@@ -13,7 +13,7 @@ import android.view.View;
 
 import com.transcendence.blackhole.demo.activation.bean.DateFactory;
 import com.transcendence.blackhole.demo.activation.bean.Day;
-import com.transcendence.blackhole.utils.ScreenUtils;
+import com.transcendence.core.utils.ScreenUtils;
 
 import java.util.List;
 

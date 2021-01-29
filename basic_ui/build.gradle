@@ -14,5 +14,8 @@ dependencies {
     api config.dependencies.design
     api config.dependencies.supportv4
 
+    api config.dependencies.anyLayer
+    api config.dependencies.anyDialog
+
     implementation 'com.github.hackware1993:MagicIndicator:1.6.0'
 }

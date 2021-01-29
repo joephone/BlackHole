@@ -6,9 +6,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
-import com.transcendence.blackhole.utils.L;
-import com.transcendence.blackhole.utils.StringUtils;
+import com.transcendence.core.base.activity.TitleBarActivity;
+import com.transcendence.core.utils.L;
+import com.transcendence.core.utils.StringUtils;
 import com.transcendence.dongnao.R;
 
 import java.util.List;

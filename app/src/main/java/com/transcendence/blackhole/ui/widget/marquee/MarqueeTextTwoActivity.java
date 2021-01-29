@@ -1,8 +1,8 @@
 package com.transcendence.blackhole.ui.widget.marquee;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
-import com.transcendence.blackhole.widget.custom.autoscroll.MarqueTextViewTwo;
+import com.transcendence.core.base.activity.TitleBarActivity;
+import com.transcendence.core.widget.custom.autoscroll.MarqueTextViewTwo;
 
 public class MarqueeTextTwoActivity extends TitleBarActivity {
 

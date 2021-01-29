@@ -3,7 +3,7 @@ package com.transcendence.blackhole.demo.calc.act;
 import android.widget.TextView;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
+import com.transcendence.core.base.activity.TitleBarActivity;
 
 /**
  * @Author Joephone on 2020/4/5 23:46

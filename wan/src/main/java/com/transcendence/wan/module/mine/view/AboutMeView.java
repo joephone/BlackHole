@@ -1,6 +1,6 @@
 package com.transcendence.wan.module.mine.view;
 
-import com.transcendence.wan.core.mvp.view.WanBaseView;
+import com.transcendence.wan.core.mvp.view.WanTitleBarView;
 
 /**
  * @Author Joephone on 2020/4/25 15:30
@@ -10,6 +10,6 @@ import com.transcendence.wan.core.mvp.view.WanBaseView;
  * @EditionHistory
  */
 
-public interface AboutMeView extends WanBaseView {
+public interface AboutMeView extends WanTitleBarView {
 
 }

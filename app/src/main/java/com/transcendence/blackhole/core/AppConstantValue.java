@@ -1,6 +1,7 @@
 package com.transcendence.blackhole.core;
 
-import com.transcendence.blackhole.arouter.ARouterController;
+import com.transcendence.blackhole.demo.animation360.activity.FloatViewMainActivity;
+import com.transcendence.core.arouter.ARouterController;
 import com.transcendence.blackhole.base.launchmode.act.SingleTaskFirstActivity;
 import com.transcendence.blackhole.demo.allapp.AllAppActivity;
 import com.transcendence.blackhole.demo.calc.act.XiaoMiCalcActivity;
@@ -159,7 +160,8 @@ public interface AppConstantValue {
             MengJianNanActivity.class,
             XiaoMiCalcActivity.class,
             JavaH5Activity.class,
-            PDFdownMainActivity.class};    //PDFdownMainActivity
+            PDFdownMainActivity.class,
+            FloatViewMainActivity.class};    //PDFdownMainActivity
 
     Class[] voiceIndex = {};
 

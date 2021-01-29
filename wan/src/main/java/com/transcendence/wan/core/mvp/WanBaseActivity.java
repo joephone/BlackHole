@@ -7,10 +7,8 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.view.KeyEvent;
-import android.widget.Toast;
 
-import com.transcendence.blackhole.utils.StatusBarUtils;
+import com.transcendence.core.utils.StatusBarUtils;
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
 

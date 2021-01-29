@@ -3,7 +3,7 @@ package com.transcendence.blackhole.ui.image.act;
 import android.util.DisplayMetrics;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
+import com.transcendence.core.base.activity.TitleBarActivity;
 import com.transcendence.blackhole.ui.scroll.ScrollEndLessView;
 
 /**

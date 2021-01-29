@@ -1,7 +1,5 @@
 package com.transcendence.wan.module.mine.fragment;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -10,10 +8,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.transcendence.blackhole.arouter.ARouterController;
-import com.transcendence.blackhole.arouter.ARouterUtils;
-import com.transcendence.blackhole.global.Global;
-import com.transcendence.blackhole.utils.L;
+import com.makeramen.roundedimageview.RoundedImageView;
+import com.transcendence.core.global.Global;
+import com.transcendence.core.utils.L;
+import com.transcendence.ui.dialog.TipDialog;
+import com.transcendence.ui.dialog.listener.SimpleCallback;
 import com.transcendence.ui.scroll.HeaderZoomLayout;
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanBaseFragment;
@@ -52,6 +51,7 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
     private FrameLayout flRight;
     private HeaderZoomLayout mScroll;
     private TextView tvName,tvId,tvRanking,tvLevel,tvMyCoinCount;
+    private RoundedImageView userIcon;
 
 
 
@@ -68,7 +68,10 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
 
     @Override
     protected void initView() {
+        userIcon = findViewById(R.id.civ_user_icon);
+        userIcon.setOnClickListener(this);
         tvName = findViewById(R.id.tvName);
+        tvName.setOnClickListener(this);
         tvId = findViewById(R.id.tvId);
         tvRanking = findViewById(R.id.tvRanking);
         tvLevel = findViewById(R.id.tvLevel);
@@ -138,6 +141,16 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            case R.id.civ_user_icon:
+                if(UserUtils.getInstance().toDoIfLogin(getContext())){
+
+                }
+                break;
+            case R.id.tv_name:
+                if(UserUtils.getInstance().toDoIfLogin(getContext())){
+
+                }
+                break;
             case R.id.fl_right:
                 RankActivity.start(getContext());
                 break;
@@ -157,7 +170,16 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
                 }
                 break;
             case R.id.ll_read_later:
-                ARouterUtils.navigation(ARouterController.APP_MAIN);
+//                ARouterUtils.navigation(ARouterController.APP_MAIN);
+                //        if (Build.VERSION.SDK_INT < 30) {
+                TipDialog.with(getActivity()).message("此应用专为新版本Android设备打造，感谢您的使用")
+                        .onYes(new SimpleCallback<Void>() {
+                            @Override
+                            public void onResult(Void data) {
+                                finish();
+                            }
+                        }).show();
+//        }
                 break;
             case R.id.ll_open_project:
                 WanWebActivity.start(getContext(), Global.GITHUB_AUTHOR_MAIN_PROJECT,"开源项目");
@@ -191,7 +213,7 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
         }
         if (UserUtils.getInstance().isLogin()) {
             LoginBean bean = UserUtils.getInstance().getLoginBean();
-//            ImageLoader.userIcon(civ_user_icon, UserInfoUtils.getInstance().getIcon());
+//            ImageLoader.userIcon(civ_user_icon, UserUtils.getInstance().getLoginBean().getIcon());
 //            ImageLoader.userBlur(iv_blur, UserInfoUtils.getInstance().getBg());
             if(!TextUtils.isEmpty(bean.getUsername())){
                 tvName.setText(bean.getUsername());
@@ -205,7 +227,7 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
         } else {
 //            civ_user_icon.setImageResource(R.color.transparent);
 //            iv_blur.setImageResource(R.color.transparent);
-            tvName.setText("去登录");
+            tvName.setText(R.string.login);
             ll_user_id.setVisibility(View.INVISIBLE);
             ll_user_level.setVisibility(View.INVISIBLE);
             tvMyCoinCount.setText("");

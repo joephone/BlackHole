@@ -6,7 +6,7 @@ import android.widget.TextView;
 
 import com.hjq.toast.ToastUtils;
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
+import com.transcendence.core.base.activity.TitleBarActivity;
 import com.transcendence.blackhole.demo.mvp.bean.User;
 import com.transcendence.blackhole.demo.mvp.presenter.LoginPresenter;
 import com.transcendence.blackhole.demo.mvp.presenter.LoginPresenterImpl;

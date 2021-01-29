@@ -10,11 +10,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
+import com.transcendence.core.base.activity.TitleBarActivity;
 import com.transcendence.blackhole.ui.rv.freshloadmore.adapter.RvLoadMoreAdapter;
 import com.transcendence.blackhole.ui.rv.freshloadmore.bean.RvLoadMoreBean;
-import com.transcendence.blackhole.utils.GsonUtils;
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.utils.GsonUtils;
+import com.transcendence.core.utils.L;
 import com.transcendence.global.API;
 
 import java.io.IOException;

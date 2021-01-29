@@ -9,9 +9,9 @@ import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.transcendence.blackhole.global.Global;
-import com.transcendence.blackhole.utils.GlideUtils;
-import com.transcendence.blackhole.utils.L;
+import com.transcendence.core.global.Global;
+import com.transcendence.core.utils.GlideUtils;
+import com.transcendence.core.utils.L;
 import com.transcendence.ui.textview.kugoo.CountDownTextView;
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanBaseActivity;
@@ -52,7 +52,6 @@ public class WanSplashActivity extends WanBaseActivity<SplashPresenter> implemen
     @Override
     protected void initView() {
 //        Debug.startMethodTracing("BlackHole");
-
         ivLauncher = findViewById(R.id.ivLauncher);
         clContainer = findViewById(R.id.clContainer);
         mTvSkip = findViewById(R.id.tv_skip);
@@ -64,6 +63,12 @@ public class WanSplashActivity extends WanBaseActivity<SplashPresenter> implemen
 //        initStartAnim();
         CountDown();
         mTvSkip.start();
+
+
+
+
+
+
     }
 
     @Override

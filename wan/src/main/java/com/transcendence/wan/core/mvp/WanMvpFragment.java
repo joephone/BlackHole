@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.transcendence.wan.base.fragment.LazyFragment;
+import com.transcendence.wan.core.fragment.LazyFragment;
 import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
 import com.transcendence.wan.core.mvp.view.WanBaseView;
 import com.transcendence.wan.utils.ClickHelper;
@@ -67,10 +67,6 @@ public abstract class WanMvpFragment<T extends WanBasePresenter> extends LazyFra
     protected void onClick2(final View v){
     }
 
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 
     @Nullable
     @Override

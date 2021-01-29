@@ -1,7 +1,7 @@
 package com.transcendence.blackhole.demo.other.act;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
+import com.transcendence.core.base.activity.TitleBarActivity;
 import com.transcendence.blackhole.demo.activation.view.GitHubContributionView;
 
 /**

@@ -5,7 +5,7 @@ import android.os.Build;
 import android.widget.ImageView;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
+import com.transcendence.core.base.activity.TitleBarActivity;
 
 
 /**

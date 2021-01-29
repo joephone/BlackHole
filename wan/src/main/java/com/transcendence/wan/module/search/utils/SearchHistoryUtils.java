@@ -4,7 +4,7 @@ import android.text.TextUtils;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.transcendence.blackhole.utils.SPUtils;
+import com.transcendence.core.utils.SPUtils;
 
 import java.util.List;
 

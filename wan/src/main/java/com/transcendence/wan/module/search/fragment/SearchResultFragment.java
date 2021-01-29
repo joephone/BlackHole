@@ -7,7 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.transcendence.blackhole.base.activity.BaseFragment;
+import com.transcendence.core.base.activity.BaseFragment;
 import com.transcendence.wan.R;
 
 /**

@@ -9,8 +9,8 @@ import android.widget.ListView;
 
 import com.transcendence.blackhole.R;
 import com.transcendence.blackhole.core.AppConstantValue;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
-import com.transcendence.blackhole.global.Global;
+import com.transcendence.core.base.activity.TitleBarActivity;
+import com.transcendence.core.global.Global;
 
 import java.util.List;
 

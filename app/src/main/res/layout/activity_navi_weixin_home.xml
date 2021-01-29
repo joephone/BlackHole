@@ -31,26 +31,26 @@
         android:background="@color/white"
         android:orientation="horizontal">
 
-        <com.transcendence.blackhole.widget.custom.TabView
+        <com.transcendence.core.widget.custom.TabView
             android:id="@+id/tabOne"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             app:tabTextSize="11"
             />
-        <com.transcendence.blackhole.widget.custom.TabView
+        <com.transcendence.core.widget.custom.TabView
             android:id="@+id/tabTwo"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             />
-        <com.transcendence.blackhole.widget.custom.TabView
+        <com.transcendence.core.widget.custom.TabView
             android:id="@+id/tabThree"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             />
-        <com.transcendence.blackhole.widget.custom.TabView
+        <com.transcendence.core.widget.custom.TabView
             android:id="@+id/tabFour"
             android:layout_width="0dp"
             android:layout_height="match_parent"

@@ -38,7 +38,7 @@
 
         </RelativeLayout>
 
-        <com.transcendence.blackhole.widget.custom.StandardLayout
+        <com.transcendence.core.widget.custom.StandardLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorGray"
@@ -46,7 +46,7 @@
             app:rightText="乔峰"
             />
 
-        <com.transcendence.blackhole.widget.custom.StandardLayout
+        <com.transcendence.core.widget.custom.StandardLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorGray"
@@ -54,7 +54,7 @@
             app:rightText="请选择"
             />
 
-        <com.transcendence.blackhole.widget.custom.StandardLayout
+        <com.transcendence.core.widget.custom.StandardLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorGray"
@@ -62,7 +62,7 @@
             app:rightHint="请选择"
             />
 
-        <com.transcendence.blackhole.widget.custom.StandardLayout
+        <com.transcendence.core.widget.custom.StandardLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorGray"
@@ -71,7 +71,7 @@
             app:rightHint="请填写"
             />
 
-        <com.transcendence.blackhole.widget.custom.StandardLayout
+        <com.transcendence.core.widget.custom.StandardLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorGray"

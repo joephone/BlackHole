@@ -4,7 +4,7 @@ import android.view.MotionEvent;
 import android.widget.Toast;
 
 import com.transcendence.blackhole.R;
-import com.transcendence.blackhole.base.activity.TitleBarActivity;
+import com.transcendence.core.base.activity.TitleBarActivity;
 
 /**
  * @author Joephone on 2019/6/21 17:59

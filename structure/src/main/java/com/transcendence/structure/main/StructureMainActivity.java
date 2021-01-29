@@ -8,9 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.transcendence.blackhole.adapter.MyFragmentPagerAdapter;
-import com.transcendence.blackhole.fragment.BlankFragment;
-import com.transcendence.blackhole.widget.viewpager.NoScrollViewPager;
+import com.transcendence.core.adapter.MyFragmentPagerAdapter;
+import com.transcendence.core.fragment.BlankFragment;
+import com.transcendence.core.widget.viewpager.NoScrollViewPager;
 import com.transcendence.structure.R;
 import com.transcendence.structure.fragment.MagazineFragement;
 import com.transcendence.structure.fragment.StructureMineFragment;
