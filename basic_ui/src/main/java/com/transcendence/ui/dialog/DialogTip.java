@@ -21,7 +21,7 @@ import per.goweii.anylayer.Layer;
  * @Edition 1.0
  * @EditionHistory
  */
-public class TipDialog {
+public class DialogTip {
 
     private Context mContext;
     private CharSequence title;
@@ -36,11 +36,11 @@ public class TipDialog {
     private DialogLayer mDialogLayer;
 
 
-    public static TipDialog with(Context context) {
-        return new TipDialog(context);
+    public static DialogTip with(Context context) {
+        return new DialogTip(context);
     }
     //
-    private TipDialog(Context context) {
+    private DialogTip(Context context) {
         this.mContext = context;
         mDialogLayer = AnyLayer.dialog(context);
         mDialogLayer.contentView(R.layout.basic_ui_dialog_tip)
@@ -116,67 +116,67 @@ public class TipDialog {
                 }, R.id.basic_ui_tv_dialog_tip_no);
     }
 
-    public TipDialog yesText(CharSequence yesText) {
+    public DialogTip yesText(CharSequence yesText) {
         this.yesText = yesText;
         return this;
     }
 
-    public TipDialog yesText( int yesText) {
+    public DialogTip yesText(int yesText) {
         this.yesText = mContext.getString(yesText);
         return this;
     }
 
-    public TipDialog noText(CharSequence noText) {
+    public DialogTip noText(CharSequence noText) {
         this.noText = noText;
         return this;
     }
 
-    public TipDialog noText(int noText) {
+    public DialogTip noText(int noText) {
         this.noText = mContext.getString(noText);
         return this;
     }
 
-    public TipDialog title(CharSequence title) {
+    public DialogTip title(CharSequence title) {
         this.title = title;
         return this;
     }
 
-    public TipDialog title( int title) {
+    public DialogTip title(int title) {
         this.title = mContext.getString(title);
         return this;
     }
 
-    public TipDialog message(CharSequence msg) {
+    public DialogTip message(CharSequence msg) {
         this.msg = msg;
         return this;
     }
 
-    public TipDialog message( int msg) {
+    public DialogTip message(int msg) {
         this.msg = mContext.getString(msg);
         return this;
     }
 
-    public TipDialog singleYesBtn() {
+    public DialogTip singleYesBtn() {
         singleBtnYes = true;
         return this;
     }
 
-    public TipDialog cancelable(boolean cancelable) {
+    public DialogTip cancelable(boolean cancelable) {
         this.cancelable = cancelable;
         return this;
     }
 
-    public TipDialog onYes(SimpleCallback<Void> callback) {
+    public DialogTip onYes(SimpleCallback<Void> callback) {
         callbackYes = callback;
         return this;
     }
 
-    public TipDialog onNo(SimpleCallback<Void> callback) {
+    public DialogTip onNo(SimpleCallback<Void> callback) {
         callbackNo = callback;
         return this;
     }
 
-    public TipDialog onDismissListener(SimpleCallback<Void> onDismissListener) {
+    public DialogTip onDismissListener(SimpleCallback<Void> onDismissListener) {
         this.onDismissListener = onDismissListener;
         return this;
     }

@@ -21,14 +21,14 @@ import java.io.IOException;
  * Created by yyh on 2016/10/17.
  */
 public class FloatCircleView extends View {
-    public int width=100;
-    public int heigth=100;
+    public int width = 100;
+    public int heigth = 100;
     private Paint circlePaint;//画圆
     private Paint textPaint; //画字
     private float availMemory; //已用内存
     private float totalMemory; //总内存
     private String text;   //显示的已用内存百分比
-    private boolean isDraging=false; //是否在拖动状态。
+    private boolean isDraging = false; //是否在拖动状态。
     private Bitmap src;
     private Bitmap scaledBitmap; //缩放后的图片。
 
@@ -40,6 +40,7 @@ public class FloatCircleView extends View {
     public FloatCircleView(Context context) {
         this(context, null);
     }
+
     public FloatCircleView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
@@ -58,11 +59,11 @@ public class FloatCircleView extends View {
         textPaint.setFakeBoldText(true);
         textPaint.setAntiAlias(true);
 
-        src = BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher);
+        src = BitmapFactory.decodeResource(getResources(), R.drawable.icon_v);
         scaledBitmap = Bitmap.createScaledBitmap(src, width, heigth, true);
-        availMemory= (float) getAvailMemory(getContext());
-        totalMemory= (float) getTotalMemory(getContext());
-        text=(int)((availMemory/totalMemory)*100)+"%";
+        availMemory = (float) getAvailMemory(getContext());
+        totalMemory = (float) getTotalMemory(getContext());
+        text = (int) ((availMemory / totalMemory) * 100) + "%";
 
     }
 
@@ -75,14 +76,15 @@ public class FloatCircleView extends View {
 
     /**
      * 画小球及文字。如果小球是在拖动状态就显示android图标，如果不是拖动状态就显示小球。
+     *
      * @param canvas
      */
     @Override
     protected void onDraw(Canvas canvas) {
 
-        if (isDraging){
-            canvas.drawBitmap(scaledBitmap,0,0,null);
-        }else {
+        if (isDraging) {
+            canvas.drawBitmap(scaledBitmap, 0, 0, null);
+        } else {
 
             //1.画圆
             canvas.drawCircle(width / 2, heigth / 2, width / 2, circlePaint);
@@ -100,17 +102,17 @@ public class FloatCircleView extends View {
         }
 
 
-
     }
-    public boolean setDrageState(boolean flag){
-        isDraging=flag;
+
+    public boolean setDrageState(boolean flag) {
+        isDraging = flag;
         invalidate();
 
 
         return flag;
     }
-    public long getAvailMemory(Context context)
-    {
+
+    public long getAvailMemory(Context context) {
         // 获取android当前可用内存大小
         ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
         ActivityManager.MemoryInfo mi = new ActivityManager.MemoryInfo();
@@ -118,16 +120,15 @@ public class FloatCircleView extends View {
         //mi.availMem; 当前系统的可用内存
         //return Formatter.formatFileSize(context, mi.availMem);// 将获取的内存大小规格化
 
-        return mi.availMem/(1024*1024);
+        return mi.availMem / (1024 * 1024);
     }
-    public long getTotalMemory(Context context)
-    {
+
+    public long getTotalMemory(Context context) {
         String str1 = "/proc/meminfo";// 系统内存信息文件
         String str2;
         String[] arrayOfString;
         long initial_memory = 0;
-        try
-        {
+        try {
             FileReader localFileReader = new FileReader(str1);
             BufferedReader localBufferedReader = new BufferedReader(
                     localFileReader, 8192);
@@ -142,7 +143,7 @@ public class FloatCircleView extends View {
         }
         //return Formatter.formatFileSize(context, initial_memory);// Byte转换为KB或者MB，内存大小规格化
 
-        return initial_memory/(1024*1024);
+        return initial_memory / (1024 * 1024);
     }
 
 }

@@ -2,6 +2,8 @@ package com.transcendence.blackhole.demo.animation360.activity;
 
 
 import android.content.Intent;
+import android.os.Build;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -26,9 +28,21 @@ public class FloatViewMainActivity extends TitleBarActivity {
     }
 
     public void startService(View view){
-        Intent intent=new Intent(this, MyFloatService.class);
-        startService(intent);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (Settings.canDrawOverlays(FloatViewMainActivity.this)) {
+                Intent intent = new Intent(FloatViewMainActivity.this, MyFloatService.class);
+                startService(intent);
+            } else {
+                //若没有权限，提示获取.
+                Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION);
+//                Toast.makeText(MainActivity.this,"需要取得权限以使用悬浮窗",Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
 
-
+        }else {
+            //SDK在23以下，不用管.
+            Intent intent = new Intent(FloatViewMainActivity.this, MyFloatService.class);
+            startService(intent);
+        }
     }
 }

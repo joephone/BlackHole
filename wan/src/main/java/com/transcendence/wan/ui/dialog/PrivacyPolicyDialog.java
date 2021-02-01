@@ -11,9 +11,13 @@ import android.text.style.ClickableSpan;
 import android.view.View;
 import android.widget.TextView;
 
+import com.transcendence.core.global.Global;
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.app.WanApp;
+import com.transcendence.wan.module.main.act.WanWebActivity;
 import com.transcendence.wan.utils.GuideSPUtils;
+import com.transcendence.wan.utils.StringUtils;
+import com.transcendence.wan.utils.UrlOpenUtils;
 
 import per.goweii.anylayer.DialogLayer;
 import per.goweii.anylayer.Layer;
@@ -25,7 +29,10 @@ import per.goweii.anylayer.Layer;
  */
 public class PrivacyPolicyDialog extends DialogLayer {
 
+    public static Context mContext;
+
     public static void showIfFirst(Context context, CompleteCallback callback) {
+        mContext = context;
         if (GuideSPUtils.getInstance().isPrivacyPolicyShown()) {
             if (callback != null) {
                 callback.onComplete();
@@ -37,6 +44,7 @@ public class PrivacyPolicyDialog extends DialogLayer {
 
     private PrivacyPolicyDialog(Context context, CompleteCallback callback) {
         super(context);
+        mContext = context;
         onDismissListener(new Layer.OnDismissListener() {
             @Override
             public void onDismissing(Layer layer) {
@@ -82,6 +90,7 @@ public class PrivacyPolicyDialog extends DialogLayer {
 //                UrlOpenUtils.Companion
 //                        .with("file:///android_asset/privacy_policy.html")
 //                        .open(getActivity());
+                WanWebActivity.start(mContext, Global.WAN_PRIVATE_POLICY, StringUtils.getString(R.string.privacy_policy_content_link));
             }
         }), start, end, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         content.setText(new SpannableStringBuilder().append(spannableString));
@@ -102,7 +111,7 @@ public class PrivacyPolicyDialog extends DialogLayer {
 
         @Override
         public void updateDrawState(TextPaint ds) {
-            ds.setColor(getActivity().getResources().getColor(R.color.main));
+            ds.setColor(getActivity().getResources().getColor(R.color.colorGitHubGreen));
             ds.setUnderlineText(false);
         }
     }
