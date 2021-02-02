@@ -21,15 +21,13 @@ public abstract class SingleFragmentActivity extends TitleBarActivity {
     protected abstract Fragment createFragment();
 
     //允许子类使用自己的布局来覆盖父类布局
-    @LayoutRes//该注解表示任何时候，该实 现方法都应该返回有效的布局资源ID
-    protected int getLayoutResId(){
-        return  R.layout.activity_fragment;
-    }
+//    @LayoutRes//该注解表示任何时候，该实 现方法都应该返回有效的布局资源ID
+//    protected abstract int getLayoutResId();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getLayoutResId());
+        setContentView(getLayoutId());
 
         FragmentManager fm=getSupportFragmentManager();
 

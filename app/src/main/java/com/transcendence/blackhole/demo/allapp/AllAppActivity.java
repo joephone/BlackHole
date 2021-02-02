@@ -2,6 +2,7 @@ package com.transcendence.blackhole.demo.allapp;
 
 import android.support.v4.app.Fragment;
 
+import com.transcendence.blackhole.R;
 import com.transcendence.blackhole.demo.allapp.fragment.AllAppFragment;
 
 /**
@@ -22,7 +23,7 @@ public class AllAppActivity extends SingleFragmentActivity {
 
     @Override
     public int getLayoutId() {
-        return 0;
+        return  R.layout.activity_fragment;
     }
 
     @Override
