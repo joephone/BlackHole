@@ -10,7 +10,7 @@ import java.util.Date;
  * @Edition 1.0
  * @EditionHistory
  */
-public class DateUtil {
+public class DateUtils {
 
     /**
      * 时间戳转换成日期格式字符串

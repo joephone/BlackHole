@@ -1,14 +1,13 @@
 package com.transcendence.wan.module.mine.adapter;
 
 import android.support.annotation.Nullable;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.transcendence.utils.DateUtil;
+import com.transcendence.utils.DateUtils;
 import com.transcendence.wan.R;
 import com.transcendence.wan.module.mine.model.MyCoinListBean;
 
@@ -35,7 +34,7 @@ public class MineCoinListAdapter extends BaseQuickAdapter<MyCoinListBean, MineCo
         }
 
         if(item.getDate()>0){
-            helper.tvCreateTime.setText(DateUtil.timeStamp2Date(item.getDate()));
+            helper.tvCreateTime.setText(DateUtils.timeStamp2Date(item.getDate()));
         }
 
 //        if(item.getCoinCount()>=0){

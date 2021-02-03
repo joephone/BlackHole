@@ -1,4 +1,4 @@
-package com.transcendence.utils;
+package com.yukon.utils;
 
 import android.os.Build;
 
@@ -13,7 +13,7 @@ import android.os.Build;
  * @version: 1.0.0
  */
 
-public class AndroidVersionCheckUtil {
+public class AndroidVersionCheckUtils {
     /**
      * 是否在2.2版本及以上
      *
@@ -93,6 +93,15 @@ public class AndroidVersionCheckUtil {
      */
     public static boolean isKitkat() {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
+    }
+
+    /**
+     * 是否在4.4.2版本及以上
+     *
+     * @return 是否在4.4.2版本及以下
+     */
+    public static boolean isKitkatUnder() {
+        return Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT;
     }
 
     /**

@@ -4,14 +4,12 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
-import android.text.format.DateUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.transcendence.ui.recyclerview.adapter.BaseAbsAdapter;
-import com.transcendence.utils.DateUtil;
 import com.transcendence.wan.R;
 import com.transcendence.wan.module.mine.model.MyCoinListBean;
 
