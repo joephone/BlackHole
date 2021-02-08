@@ -19,6 +19,10 @@ public class BaseFragment extends Fragment {
 
     protected Activity mActivity;
     protected BaseFragment mFragment;
+    /**
+     * 缓存Fragment view
+     */
+    protected View mRootView;
 
     @Nullable
     @Override

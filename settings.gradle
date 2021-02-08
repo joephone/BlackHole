@@ -1,2 +1,4 @@
 include ':app', ':basic_core', ':structure', ':basic_utils', ':animation', ':imagepicker', ':dongnao', ':wan', ':map', ':music', ':weibo', ':shareSDK', ':weiboSDK', ':wechat', ':news', ':network', ':basic_ui', ':basic_res'
-
+include ':security'
+include ':security'
+include ':security'

@@ -3,9 +3,7 @@ apply from: '../basic.gradle'
 
 def config = rootProject.ext
 
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
     api config.dependencies.supportv4
 }

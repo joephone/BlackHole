@@ -15,13 +15,13 @@
       <module fileurl="file://$PROJECT_DIR$/music/BlackHole-music.iml" filepath="$PROJECT_DIR$/music/BlackHole-music.iml" group="BlackHole/music" />
       <module fileurl="file://$PROJECT_DIR$/network/BlackHole-network.iml" filepath="$PROJECT_DIR$/network/BlackHole-network.iml" group="BlackHole/network" />
       <module fileurl="file://$PROJECT_DIR$/news/BlackHole-news.iml" filepath="$PROJECT_DIR$/news/BlackHole-news.iml" group="BlackHole/news" />
+      <module fileurl="file://$PROJECT_DIR$/security/BlackHole-security.iml" filepath="$PROJECT_DIR$/security/BlackHole-security.iml" group="BlackHole/security" />
       <module fileurl="file://$PROJECT_DIR$/shareSDK/BlackHole-shareSDK.iml" filepath="$PROJECT_DIR$/shareSDK/BlackHole-shareSDK.iml" group="BlackHole/shareSDK" />
       <module fileurl="file://$PROJECT_DIR$/structure/BlackHole-structure.iml" filepath="$PROJECT_DIR$/structure/BlackHole-structure.iml" group="BlackHole/structure" />
       <module fileurl="file://$PROJECT_DIR$/wan/BlackHole-wan.iml" filepath="$PROJECT_DIR$/wan/BlackHole-wan.iml" group="BlackHole/wan" />
       <module fileurl="file://$PROJECT_DIR$/wechat/BlackHole-wechat.iml" filepath="$PROJECT_DIR$/wechat/BlackHole-wechat.iml" group="BlackHole/wechat" />
       <module fileurl="file://$PROJECT_DIR$/weibo/BlackHole-weibo.iml" filepath="$PROJECT_DIR$/weibo/BlackHole-weibo.iml" group="BlackHole/weibo" />
       <module fileurl="file://$PROJECT_DIR$/weiboSDK/BlackHole-weiboSDK.iml" filepath="$PROJECT_DIR$/weiboSDK/BlackHole-weiboSDK.iml" group="BlackHole/weiboSDK" />
-      <module fileurl="file://$PROJECT_DIR$/GitHub-BlackHole.iml" filepath="$PROJECT_DIR$/GitHub-BlackHole.iml" group="BlackHole" />
       <module fileurl="file://$PROJECT_DIR$/animation/animation.iml" filepath="$PROJECT_DIR$/animation/animation.iml" group="BlackHole/animation" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="BlackHole/app" />
       <module fileurl="file://$PROJECT_DIR$/basic_core/basic_core.iml" filepath="$PROJECT_DIR$/basic_core/basic_core.iml" group="BlackHole/basic_core" />
@@ -30,10 +30,12 @@
       <module fileurl="file://$PROJECT_DIR$/basic_utils/basic_utils.iml" filepath="$PROJECT_DIR$/basic_utils/basic_utils.iml" group="BlackHole/basic_utils" />
       <module fileurl="file://$PROJECT_DIR$/dongnao/dongnao.iml" filepath="$PROJECT_DIR$/dongnao/dongnao.iml" group="BlackHole/dongnao" />
       <module fileurl="file://$PROJECT_DIR$/imagepicker/imagepicker.iml" filepath="$PROJECT_DIR$/imagepicker/imagepicker.iml" group="BlackHole/imagepicker" />
+      <module fileurl="file://$PROJECT_DIR$/joephone-BlackHole.iml" filepath="$PROJECT_DIR$/joephone-BlackHole.iml" group="BlackHole" />
       <module fileurl="file://$PROJECT_DIR$/map/map.iml" filepath="$PROJECT_DIR$/map/map.iml" group="BlackHole/map" />
       <module fileurl="file://$PROJECT_DIR$/music/music.iml" filepath="$PROJECT_DIR$/music/music.iml" group="BlackHole/music" />
       <module fileurl="file://$PROJECT_DIR$/network/network.iml" filepath="$PROJECT_DIR$/network/network.iml" group="BlackHole/network" />
       <module fileurl="file://$PROJECT_DIR$/news/news.iml" filepath="$PROJECT_DIR$/news/news.iml" group="BlackHole/news" />
+      <module fileurl="file://$PROJECT_DIR$/security/security.iml" filepath="$PROJECT_DIR$/security/security.iml" group="BlackHole/security" />
       <module fileurl="file://$PROJECT_DIR$/shareSDK/shareSDK.iml" filepath="$PROJECT_DIR$/shareSDK/shareSDK.iml" group="BlackHole/shareSDK" />
       <module fileurl="file://$PROJECT_DIR$/structure/structure.iml" filepath="$PROJECT_DIR$/structure/structure.iml" group="BlackHole/structure" />
       <module fileurl="file://$PROJECT_DIR$/wan/wan.iml" filepath="$PROJECT_DIR$/wan/wan.iml" group="BlackHole/wan" />
