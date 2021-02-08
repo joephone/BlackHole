@@ -29,6 +29,7 @@
       <module fileurl="file://$PROJECT_DIR$/basic_ui/basic_ui.iml" filepath="$PROJECT_DIR$/basic_ui/basic_ui.iml" group="BlackHole/basic_ui" />
       <module fileurl="file://$PROJECT_DIR$/basic_utils/basic_utils.iml" filepath="$PROJECT_DIR$/basic_utils/basic_utils.iml" group="BlackHole/basic_utils" />
       <module fileurl="file://$PROJECT_DIR$/dongnao/dongnao.iml" filepath="$PROJECT_DIR$/dongnao/dongnao.iml" group="BlackHole/dongnao" />
+      <module fileurl="file://$PROJECT_DIR$/guard/guard.iml" filepath="$PROJECT_DIR$/guard/guard.iml" group="BlackHole/guard" />
       <module fileurl="file://$PROJECT_DIR$/imagepicker/imagepicker.iml" filepath="$PROJECT_DIR$/imagepicker/imagepicker.iml" group="BlackHole/imagepicker" />
       <module fileurl="file://$PROJECT_DIR$/joephone-BlackHole.iml" filepath="$PROJECT_DIR$/joephone-BlackHole.iml" group="BlackHole" />
       <module fileurl="file://$PROJECT_DIR$/map/map.iml" filepath="$PROJECT_DIR$/map/map.iml" group="BlackHole/map" />
