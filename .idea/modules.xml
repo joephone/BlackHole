@@ -32,6 +32,7 @@
       <module fileurl="file://$PROJECT_DIR$/guard/guard.iml" filepath="$PROJECT_DIR$/guard/guard.iml" group="BlackHole/guard" />
       <module fileurl="file://$PROJECT_DIR$/imagepicker/imagepicker.iml" filepath="$PROJECT_DIR$/imagepicker/imagepicker.iml" group="BlackHole/imagepicker" />
       <module fileurl="file://$PROJECT_DIR$/joephone-BlackHole.iml" filepath="$PROJECT_DIR$/joephone-BlackHole.iml" group="BlackHole" />
+      <module fileurl="file://$PROJECT_DIR$/security/joephone-BlackHole-security.iml" filepath="$PROJECT_DIR$/security/joephone-BlackHole-security.iml" group="BlackHole/security" />
       <module fileurl="file://$PROJECT_DIR$/map/map.iml" filepath="$PROJECT_DIR$/map/map.iml" group="BlackHole/map" />
       <module fileurl="file://$PROJECT_DIR$/music/music.iml" filepath="$PROJECT_DIR$/music/music.iml" group="BlackHole/music" />
       <module fileurl="file://$PROJECT_DIR$/network/network.iml" filepath="$PROJECT_DIR$/network/network.iml" group="BlackHole/network" />

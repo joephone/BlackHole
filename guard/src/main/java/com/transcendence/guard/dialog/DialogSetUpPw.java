@@ -32,7 +32,7 @@ public class DialogSetUpPw extends Dialog implements View.OnClickListener{
         super(context, R.style.dialog_custum);
     }
 
-    public void setmCallBack(XUtilCallBack callBack) {
+    public void setCallBack(XUtilCallBack callBack) {
         this.mCallBack = callBack;
     }
 
