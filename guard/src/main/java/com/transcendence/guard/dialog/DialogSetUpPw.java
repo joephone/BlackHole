@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.transcendence.guard.R;
+import com.transcendence.guard.listener.DialogCallBack;
 import com.transcendence.guard.listener.XUtilCallBack;
 
 /**
@@ -21,18 +22,17 @@ import com.transcendence.guard.listener.XUtilCallBack;
  */
 public class DialogSetUpPw extends Dialog implements View.OnClickListener{
 
-
     private TextView mTitle;
     private EditText mEtFirst;
     private EditText mEtSecond;
 
-    private XUtilCallBack mCallBack;
+    private DialogCallBack mCallBack;
 
     public DialogSetUpPw(@NonNull Context context) {
         super(context, R.style.dialog_custum);
     }
 
-    public void setCallBack(XUtilCallBack callBack) {
+    public void setCallBack(DialogCallBack callBack) {
         this.mCallBack = callBack;
     }
 
@@ -40,10 +40,10 @@ public class DialogSetUpPw extends Dialog implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.bt_ok:
-//                mCallBack.ok();
+                mCallBack.ok();
                 break;
             case R.id.bt_cancel:
-//                mCallBack.cancel();
+                mCallBack.cancel();
                 break;
         }
     }
@@ -52,7 +52,6 @@ public class DialogSetUpPw extends Dialog implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         init();
-
     }
 
     private void init() {
@@ -64,7 +63,7 @@ public class DialogSetUpPw extends Dialog implements View.OnClickListener{
     }
 
 
-    public void setmTitle(String title) {
+    public void setTitle(String title) {
         if(!TextUtils.isEmpty(title)){
             this.mTitle.setText(title);
         }

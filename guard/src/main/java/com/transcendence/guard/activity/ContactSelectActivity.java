@@ -24,7 +24,7 @@ import java.util.List;
  * @Edition 1.0
  * @EditionHistory
  */
-public class ContactSelectActivity extends AppCompatActivity implements View.OnClickListener{
+public class ContactSelectActivity extends GuardBaseActivity implements View.OnClickListener{
     private ListView mLv;
     private ContactAdapter mAdapter;
     private List<ContactInfo> systemContacts;
