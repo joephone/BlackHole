@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.transcendence.core.utils.L;
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanBaseFragment;
 import com.transcendence.wan.listener.OnMyItemClickListener;
@@ -63,11 +64,14 @@ public class TreeFragment extends WanBaseFragment<TreePresenter> implements Tree
 
     @Override
     public void getTreeSuc(int code, List<TreeBean> data) {
-        mAdapter = new TreeLeftAdapter(data);
+        mAdapter = new TreeLeftAdapter(data,getActivity());
         mAdapter.setListener(new OnMyItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                createFragment(data.get(position));
+                L.d("position:"+position);
+                if(position>=0){
+                    createFragment(data.get(position));
+                }
             }
         });
         mRv.setAdapter(mAdapter);

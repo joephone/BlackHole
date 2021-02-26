@@ -47,11 +47,11 @@
     <color name="transparent_black_90">#26000000</color>
     <color name="transparent_black_95">#0d000000</color>
 
-    <color name="grey"> #ebebeb</color>
-    <color name="black"> #000000</color>
-    <color name="darkgrey"> #999999</color>
-    <color name="white"> #FFFFFF</color>
-    <color name="red"> #FF0000</color>
+    <color name="grey">#ebebeb</color>
+    <color name="black">#000000</color>
+    <color name="darkgrey">#999999</color>
+    <color name="white">#FFFFFF</color>
+    <color name="red">#FF0000</color>
     <color name="blue">#4c90f9</color>
     <color name="gary">#898989</color>
     <color name="orange">#ff7116</color>

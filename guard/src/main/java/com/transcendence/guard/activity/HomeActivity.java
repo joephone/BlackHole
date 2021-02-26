@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.SlidingDrawer;
 
@@ -51,6 +53,18 @@ public class HomeActivity extends GuardBaseActivity {
         mGvHome = findViewById(R.id.gv_home);
         mHomeAdapter = new HomeAdapter(HomeActivity.this);
         mGvHome.setAdapter(mHomeAdapter);
+        mGvHome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position){
+                    case 1:
+                        startActivity(SecurityPhoneActivity.class);
+                        break;
+                }
+            }
+        });
+
+
         //1获取设备管理员
         policyManager = (DevicePolicyManager) getSystemService(DEVICE_POLICY_SERVICE);
         //申请权限

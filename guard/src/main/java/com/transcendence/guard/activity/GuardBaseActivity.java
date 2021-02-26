@@ -1,5 +1,6 @@
 package com.transcendence.guard.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.widget.Toast;
@@ -27,5 +28,10 @@ public class GuardBaseActivity extends AppCompatActivity {
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+    protected void startActivity(Class cls){
+        Intent intent = new Intent(this,cls);
+        startActivity(intent);
     }
 }

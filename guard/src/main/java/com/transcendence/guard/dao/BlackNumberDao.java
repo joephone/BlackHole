@@ -105,10 +105,15 @@ public class BlackNumberDao {
     /**
      * 删除方法
      */
-    public void deleteNumber(String number) {
+    public boolean delete(BlackNumberInfo info) {
         SQLiteDatabase db = blackNumberHelper.getWritableDatabase();
-        db.delete("blackNumber", "number=?", new String[]{number});
+        int rownumber = db.delete("blackNumber", "number=?", new String[]{info.blackNumber});
         db.close();
+        if(rownumber == 0){
+            return false;    //delete data fail
+        }else {
+            return true;
+        }
     }
 
     /**

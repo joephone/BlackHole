@@ -132,7 +132,6 @@ public class WanSplashActivity extends WanBaseActivity<SplashPresenter> implemen
 //                Toast.makeText(mActivity, "向右滑", Toast.LENGTH_SHORT).show();
 //            }
 //        }
-
         switch (event.getAction()){
             case MotionEvent.ACTION_DOWN:
                 mX = event.getX();

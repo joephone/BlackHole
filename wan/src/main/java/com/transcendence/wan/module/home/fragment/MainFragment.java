@@ -14,6 +14,7 @@ import com.transcendence.core.fragment.BlankFragment;
 import com.transcendence.core.utils.StringUtils;
 import com.transcendence.core.widget.custom.TabView;
 import com.transcendence.wan.R;
+import com.transcendence.wan.module.hierarchy.fragment.HierarchyFragment;
 import com.transcendence.wan.module.mine.fragment.MineFragment;
 import com.transcendence.wan.module.wxpublic.fragment.NaviWxPublicFragment;
 
@@ -93,10 +94,10 @@ public class MainFragment extends Fragment implements View.OnClickListener{
 
     private void initVP() {
         //预加载   , ScrollFragment.newInstance("项目")
-        mVpMain.setOffscreenPageLimit(5);
+        mVpMain.setOffscreenPageLimit(4);
         adapter = new GoweiiFragmentPagerAdapter(getChildFragmentManager());
         adapter.setFragments(HomeFragment.newInstance("主页面")
-                , BlankFragment.newInstance("体系")
+                , HierarchyFragment.newInstance("体系")
                 , NaviWxPublicFragment.create()
                 , MineFragment.newInstance("我的"));
         mVpMain.setAdapter(adapter);

@@ -1,0 +1,42 @@
+apply plugin: 'com.android.application'
+apply from: '../basic.gradle'
+
+
+def config = rootProject.ext
+
+android {
+    defaultConfig {
+        if (rootProject.ext.isWanApplication){
+            //组件模式下设置applicationId
+            applicationId "com.transcendence.device"
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+
+//    sourceSets {
+//        main {
+//            if (rootProject.ext.isWanApplication) {
+//                manifest.srcFile 'src/main/AndroidManifest.xml'
+//            } else {
+//                manifest.srcFile 'src/main/java/com/transcendence/wan/core/AndroidManifest.xml'
+//            }
+//            jniLibs.srcDirs = ['libs']
+//        }
+//    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':basic_core')
+    implementation project(':basic_ui')
+    implementation project(':basic_res')
+    implementation project(':basic_utils')
+}
