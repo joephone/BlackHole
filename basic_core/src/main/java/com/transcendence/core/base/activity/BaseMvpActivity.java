@@ -84,14 +84,12 @@ public abstract class BaseMvpActivity<V,T extends LibBasePresenter<V>> extends A
         setBar();
     }
 
-
     /**
      * 返回一个用于显示界面的布局id
      *
      * @return 视图id
      */
     public abstract int getLayoutId();
-
 
     /**
      * 初始化View后代码写在这个方法中

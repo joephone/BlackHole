@@ -25,6 +25,8 @@ import com.transcendence.core.utils.L;
 import com.transcendence.core.utils.permission.PermissionPool;
 import com.umeng.analytics.MobclickAgent;
 
+import java.util.Calendar;
+
 
 /**
  * @author Joephone on 2019/5/16 16:03
@@ -148,23 +150,22 @@ public abstract class BaseActivity extends AppCompatActivity {
     public boolean dispatchTouchEvent(MotionEvent ev) {
         switch (ev.getAction()) {
             case MotionEvent.ACTION_UP:     // 抬起
-//                long currentTime1 = Calendar.getInstance().getTimeInMillis();
-//                if (currentTime1 - lastClickTime1 > MIN_CLICK_DELAY_TIME) {
-//                    lastClickTime1 = currentTime1;
-//                } else {
-////                    L.logI("ACTION_UP 俩家慢点呃");
-//                    return true;
-//                }
+                long currentTime1 = Calendar.getInstance().getTimeInMillis();
+                if (currentTime1 - lastClickTime1 > MIN_CLICK_DELAY_TIME) {
+                    lastClickTime1 = currentTime1;
+                } else {
+//                    L.logI("ACTION_UP 俩家慢点呃");
+                    return true;
+                }
                 break;
             case MotionEvent.ACTION_DOWN:   // 按下
-//                long currentTime2 = Calendar.getInstance().getTimeInMillis();
-//                if (currentTime2 - lastClickTime2 > MIN_CLICK_DELAY_TIME) {
-//                    lastClickTime2 = currentTime2;
-//                } else {
-////                    L.logI("ACTION_DOWN 俩家慢点呃");
-//                    return true;
-//                }
-
+                long currentTime2 = Calendar.getInstance().getTimeInMillis();
+                if (currentTime2 - lastClickTime2 > MIN_CLICK_DELAY_TIME) {
+                    lastClickTime2 = currentTime2;
+                } else {
+//                    L.logI("ACTION_DOWN 俩家慢点呃");
+                    return true;
+                }
                 //点他处 软键盘自动下沉
                 View v = getCurrentFocus();
                 if (isShouldHideKeyboard(v, ev)) {
