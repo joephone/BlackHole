@@ -32,9 +32,9 @@ public class RetrofitCreator {
     /**
      * 可以单独设置的okhttp
      */
-    private static final class OkHttpHolder{
-        private static final int TIME_OUT=60;
-        private static final OkHttpClient OK_HTTP_CLIENT=new OkHttpClient.Builder()
+    private static final class OkHttpHolder {
+        private static final int TIME_OUT = 60;
+        private static final OkHttpClient OK_HTTP_CLIENT = new OkHttpClient.Builder()
                 .cookieJar(mCookieJar)
                 .connectTimeout(TIME_OUT, TimeUnit.SECONDS)
                 .build();
@@ -43,15 +43,15 @@ public class RetrofitCreator {
     /**
      * 获取对象
      */
-    public static RetrofitAPI getRetrofitAPI(){
+    public static RetrofitAPI getRetrofitAPI() {
         Retrofit retrofit = getRetrofit();
         return retrofit.create(RetrofitAPI.class);
     }
 
 
     private static Retrofit getRetrofit() {
-        final String BASE_URL= API.API_WAN_ANDROID; //ProjectInit.getConfiguratorByKey(ConfigKeys.API_HOST);
-        Retrofit client =new Retrofit.Builder()
+        final String BASE_URL = API.API_WAN_ANDROID; //ProjectInit.getConfiguratorByKey(ConfigKeys.API_HOST);
+        Retrofit client = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .client(OkHttpHolder.OK_HTTP_CLIENT)

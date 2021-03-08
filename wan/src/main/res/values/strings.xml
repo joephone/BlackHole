@@ -20,6 +20,7 @@
     <string name="tab_hierarchy">Hierarchy</string>
     <string name="tab_wx_public_account">PublicAccount</string>
     <string name="tab_me">Me</string>
+    <string name="tab_beauty">Beauty</string>
     <!--  me -->
     <string name="my_coin">MyCoin</string>
     <string name="my_share">MyShare</string>

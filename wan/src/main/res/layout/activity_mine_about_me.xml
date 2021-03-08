@@ -15,11 +15,12 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             >
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/beauty01"
-                />
+                android:src="@mipmap/beauty01" />
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -30,20 +31,119 @@
                 android:layout_height="wrap_content"
                 android:src="@mipmap/beauty03"
                 />
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/beauty04"
-                />
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@mipmap/beauty04"-->
+<!--                />-->
 
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:scaleType="fitXY"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/ic_alipay"
-                />
+<!--            <ImageView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:scaleType="fitXY"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:src="@drawable/ic_alipay"-->
+<!--                />-->
+
+
+
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentBottom="true"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal">-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="《"-->
+<!--                        android:textColor="@color/text_66"-->
+<!--                        android:textSize="13sp" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tv_douban"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="时光网"-->
+<!--                        android:textColor="@color/text_66"-->
+<!--                        android:textSize="13sp" />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="》"-->
+<!--                        android:textColor="@color/text_66"-->
+<!--                        android:textSize="13sp" />-->
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="4dp"-->
+<!--                    android:orientation="horizontal">-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="《"-->
+<!--                        android:textColor="@color/text_66"-->
+<!--                        android:textSize="13sp" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tv_wanandroid"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="鸿洋 · 玩安卓"-->
+<!--                        android:textColor="@color/text_66"-->
+<!--                        android:textSize="13sp" />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="》"-->
+<!--                        android:textColor="@color/text_66"-->
+<!--                        android:textSize="13sp" />-->
+<!--                </LinearLayout>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="4dp"-->
+<!--                    android:orientation="horizontal">-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="《"-->
+<!--                        android:textColor="@color/text_66"-->
+<!--                        android:textSize="13sp" />-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/tv_gankio"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="代码家 · 干货集中营"-->
+<!--                        android:textColor="@color/text_66"-->
+<!--                        android:textSize="13sp" />-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="》"-->
+<!--                        android:textColor="@color/text_66"-->
+<!--                        android:textSize="13sp" />-->
+<!--                </LinearLayout>-->
+
+<!--            </LinearLayout>-->
 
         </LinearLayout>
 

@@ -16,8 +16,9 @@ import java.util.TimerTask;
  */
 
 public class AutoScrollView extends ScrollView {
+
     public AutoScrollView(Context context, AttributeSet attrs,
-                                int defStyle) {
+                          int defStyle) {
         super(context, attrs, defStyle);
         init();
     }
@@ -36,15 +37,15 @@ public class AutoScrollView extends ScrollView {
 
     private void init() {
         timer = new Timer();
-        timer.schedule(timeTask, 100,30);      //period 速率
+        timer.schedule(timeTask, 100, 30);      //period 速率
     }
 
     private TimerTask timeTask = new TimerTask() {
 
         @Override
         public void run() {
-            int S = computeVerticalScrollRange()/2+getMeasuredHeight() ;
-            int A = getScrollY() + getHeight() ;
+            int S = computeVerticalScrollRange() / 2 + getMeasuredHeight();
+            int A = getScrollY() + getHeight();
 //            L.d("S--"+S);
 //            L.d("A--"+A);
             if (S - A <= 3)

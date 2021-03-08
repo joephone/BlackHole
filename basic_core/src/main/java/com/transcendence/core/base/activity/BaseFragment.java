@@ -19,6 +19,7 @@ public class BaseFragment extends Fragment {
 
     protected Activity mActivity;
     protected BaseFragment mFragment;
+
     /**
      * 缓存Fragment view
      */
@@ -36,7 +37,6 @@ public class BaseFragment extends Fragment {
         mActivity = getActivity();
 //        mFragment = getActivity();
     }
-
 
     /**
      * 通过Class跳转界面

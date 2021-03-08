@@ -36,8 +36,7 @@ public class LoginActivity extends WanBaseActivity {
     private SoftInputHelper mSoftInputHelper;
 
 
-    public static void
-    start(Context context) {
+    public static void start(Context context) {
         Intent intent = new Intent(context, LoginActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
