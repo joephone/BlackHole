@@ -10,11 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.transcendence.core.adapter.GoweiiFragmentPagerAdapter;
-import com.transcendence.core.fragment.BlankFragment;
 import com.transcendence.core.utils.StringUtils;
 import com.transcendence.core.widget.custom.TabView;
 import com.transcendence.wan.R;
-import com.transcendence.wan.module.hierarchy.fragment.HierarchyFragment;
+import com.transcendence.wan.module.beauty.fragment.BeautyFragment;
 import com.transcendence.wan.module.mine.fragment.MineFragment;
 import com.transcendence.wan.module.wxpublic.fragment.NaviWxPublicFragment;
 
@@ -97,7 +96,7 @@ public class MainFragment extends Fragment implements View.OnClickListener{
         mVpMain.setOffscreenPageLimit(4);
         adapter = new GoweiiFragmentPagerAdapter(getChildFragmentManager());
         adapter.setFragments(HomeFragment.newInstance("主页面")
-                , HierarchyFragment.newInstance("体系")
+                , BeautyFragment.newInstance("福利社")
                 , NaviWxPublicFragment.create()
                 , MineFragment.newInstance("我的"));
         mVpMain.setAdapter(adapter);
@@ -135,11 +134,11 @@ public class MainFragment extends Fragment implements View.OnClickListener{
 
 
     private void initTabs() {
-        mTabOne.setIconAndText(R.drawable.ic_home_white_24dp,R.drawable.ic_home_github_green_24dp,StringUtils.getString(R.string.wan_tab_one));
-        mTabTwo.setIconAndText(R.drawable.ic_tixi_white_24dp,R.drawable.ic_tixi_githubgreen_24dp,StringUtils.getString(R.string.wan_tab_two));
-        mTabThree.setIconAndText(R.drawable.ic_wx_public_white_24dp,R.drawable.ic_wx_public_githubgreen_24dp,StringUtils.getString(R.string.wan_tab_three));
+        mTabOne.setIconAndText(R.drawable.ic_tab_home_white_24dp,R.drawable.ic_tab_home_github_green_24dp,StringUtils.getString(R.string.wan_tab_one));
+        mTabTwo.setIconAndText(R.drawable.ic_tab_favorite_white_24dp,R.drawable.ic_tab_favorite_github_green_24dp,StringUtils.getString(R.string.tab_beauty));
+        mTabThree.setIconAndText(R.drawable.ic_tab_wx_public_white_24dp,R.drawable.ic_tab_wx_public_githubgreen_24dp,StringUtils.getString(R.string.wan_tab_three));
 //        mTabFour.setIconAndText(R.drawable.ic_bottom_bar_project,R.mipmap.ic_navi_contacts_press,StringUtils.getString(R.string.wan_tab_four));
-        mTabFour.setIconAndText(R.drawable.ic_person_white_24dp,R.drawable.ic_person_githubgreen_24dp,StringUtils.getString(R.string.wan_tab_five));
+        mTabFour.setIconAndText(R.drawable.ic_tab_person_white_24dp,R.drawable.ic_tab_person_githubgreen_24dp,StringUtils.getString(R.string.wan_tab_five));
         mTabs.add(mTabOne); mTabs.add(mTabTwo);mTabs.add(mTabThree);mTabs.add(mTabFour);  //mTabs.add(mTabFive);
         setCurrentTabs(0);
     }

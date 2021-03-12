@@ -41,13 +41,13 @@ public class RetrofitClient {
     private final String FILENAME;
 
     public RetrofitClient(Map<String, Object> params,
-                      String url,
-                      IRequest request,
-                      ISuccess success,
-                      IFailure failure,
-                      IError error,
-                      RequestBody body,
-                      File file, String downloadDir, String extension, String filename) {
+                          String url,
+                          IRequest request,
+                          ISuccess success,
+                          IFailure failure,
+                          IError error,
+                          RequestBody body,
+                          File file, String downloadDir, String extension, String filename) {
         this.PARAMS = params;
         this.URL = url;
         this.REQUEST = request;
@@ -55,59 +55,59 @@ public class RetrofitClient {
         this.FAILURE = failure;
         this.ERROR = error;
         this.BODY = body;
-
-        this.FILE=file;
-        this.DOWNLOAD_DIR=downloadDir;  ///sdcard/XXXX.ext
-        this.EXTENSION=extension;
-        this.FILENAME=filename;
+        this.FILE = file;
+        this.DOWNLOAD_DIR = downloadDir;  //    /sdcard/XXXX.ext
+        this.EXTENSION = extension;
+        this.FILENAME = filename;
     }
 
-    public static RestClientBuilder create(){
+    public static RestClientBuilder create() {
         return new RestClientBuilder();
     }
 
-    private Callback<String> getRequestCallback(){
-        return new RequestCallbacks(REQUEST,SUCCESS,FAILURE,ERROR);
+    private Callback<String> getRequestCallback() {
+        return new RequestCallbacks(REQUEST, SUCCESS, FAILURE, ERROR);
     }
 
     /**
      * 开始真实的网络操作   参数HTTP_METHOD.GET  HTTP_METHOD.POST......
+     *
      * @param method
      */
-    private void request(HttpMethod method){
-        final RetrofitAPI service=RetrofitCreator.getRetrofitAPI();
-        Call<String> call=null;
-        if(REQUEST!=null){
+    private void request(HttpMethod method) {
+        final RetrofitAPI service = RetrofitCreator.getRetrofitAPI();
+        Call<String> call = null;
+        if (REQUEST != null) {
             REQUEST.onRequestStart();
         }
         //开始进行网络访问
-        switch (method){
+        switch (method) {
             case GET:
-                call=service.get(URL,PARAMS);
+                call = service.get(URL, PARAMS);
                 break;
             case POST:
-                call=service.post(URL,PARAMS);
+                call = service.post(URL, PARAMS);
                 break;
             case PUT:
-                call=service.put(URL,PARAMS);
+                call = service.put(URL, PARAMS);
                 break;
             case DELETE:
-                call=service.delete(URL,PARAMS);
+                call = service.delete(URL, PARAMS);
                 break;
             case UPLOAD:
-                final RequestBody requestBody = RequestBody.create(MultipartBody.FORM,FILE);
-                final MultipartBody.Part body= MultipartBody.Part.createFormData(
-                        "file",FILE.getName(),requestBody);
-                call=service.upload(URL,body);
+                final RequestBody requestBody = RequestBody.create(MultipartBody.FORM, FILE);
+                final MultipartBody.Part body = MultipartBody.Part.createFormData(
+                        "file", FILE.getName(), requestBody);
+                call = service.upload(URL, body);
                 break;
 
         }
-        if(call!=null){
+        if (call != null) {
             call.enqueue(getRequestCallback());
         }
 
         //结束网络访问
-        if(REQUEST!=null){
+        if (REQUEST != null) {
             REQUEST.onRequestEnd();
         }
 
@@ -115,25 +115,30 @@ public class RetrofitClient {
 
     //各种请求(给用户使用的)
     //各种请求
-    public final void get(){
+    public final void get() {
         request(HttpMethod.GET);
     }
-    public final void post(){
+
+    public final void post() {
         request(HttpMethod.POST);
     }
-    public final void put(){
+
+    public final void put() {
         request(HttpMethod.PUT);
     }
-    public final void delete(){
+
+    public final void delete() {
         request(HttpMethod.DELETE);
     }
-    public final void upload(){
+
+    public final void upload() {
         request(HttpMethod.UPLOAD);
     }
-    public final void download(){
-        new DownloadHandler(PARAMS,URL,REQUEST,
-                SUCCESS,FAILURE,ERROR,DOWNLOAD_DIR,
-                EXTENSION,FILENAME)
+
+    public final void download() {
+        new DownloadHandler(PARAMS, URL, REQUEST,
+                SUCCESS, FAILURE, ERROR, DOWNLOAD_DIR,
+                EXTENSION, FILENAME)
                 .handleDownload();
     }
 

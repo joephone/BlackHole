@@ -1,5 +1,7 @@
 package com.transcendence.wan.module.beauty.presenter;
 
+import com.transcendence.global.API;
+import com.transcendence.network.jett.retrofit.RetrofitClient;
 import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
 
 /**
@@ -12,7 +14,8 @@ import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
 public class BeautyPresenter extends WanBasePresenter {
 
     public void getBeautyList(){
-
+//        RetrofitClient.create()
+//                .url(API.API_GANK_IO.)
     }
 
 }

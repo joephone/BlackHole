@@ -14,7 +14,7 @@ import java.io.InputStream;
 
 import okhttp3.ResponseBody;
 
-public class SaveFileTask extends AsyncTask<Object,Void, File> {
+public class SaveFileTask extends AsyncTask<Object, Void, File> {
 
     private IRequest REQUEST;
     private ISuccess SUCCESS;
@@ -26,22 +26,21 @@ public class SaveFileTask extends AsyncTask<Object,Void, File> {
 
     @Override
     protected File doInBackground(Object... params) {
-
-        String downloadDir=(String)params[0];
-        String extension=(String)params[1];
-        ResponseBody body=(ResponseBody)params[2];
-        String name=(String)params[3];
-        InputStream is=body.byteStream();
-        if(downloadDir==null || downloadDir.equals("")){
-            downloadDir="downloads";
+        String downloadDir = (String) params[0];
+        String extension = (String) params[1];
+        ResponseBody body = (ResponseBody) params[2];
+        String name = (String) params[3];
+        InputStream is = body.byteStream();
+        if (downloadDir == null || downloadDir.equals("")) {
+            downloadDir = "downloads";
         }
-        if(extension==null){
-            extension="";
+        if (extension == null) {
+            extension = "";
         }
-        if(name==null){
-            return FileUtil.writeToDisk(is,downloadDir,extension.toUpperCase(),extension);
-        }else{
-            return FileUtil.writeToDisk(is,downloadDir,name);
+        if (name == null) {
+            return FileUtil.writeToDisk(is, downloadDir, extension.toUpperCase(), extension);
+        } else {
+            return FileUtil.writeToDisk(is, downloadDir, name);
         }
     }
 
@@ -49,10 +48,10 @@ public class SaveFileTask extends AsyncTask<Object,Void, File> {
     @Override
     protected void onPostExecute(File file) {
         super.onPostExecute(file);
-        if(SUCCESS!=null){
+        if (SUCCESS != null) {
             SUCCESS.onSuccess(file.getPath());
         }
-        if(REQUEST!=null){
+        if (REQUEST != null) {
             REQUEST.onRequestEnd();
         }
         //如果下了APK文件，就直接安装
@@ -60,11 +59,11 @@ public class SaveFileTask extends AsyncTask<Object,Void, File> {
     }
 
     private void autoInstallApk(File file) {
-        if(FileUtil.getExtension(file.getPath()).equals("apk")){
-            Intent intent=new Intent();
+        if (FileUtil.getExtension(file.getPath()).equals("apk")) {
+            Intent intent = new Intent();
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.setAction(Intent.ACTION_VIEW);
-            intent.setDataAndType(Uri.fromFile(file),"application/vnd.android.package-archive");
+            intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
             ProjectInit.getApplicationContext().startActivity(intent);
         }
     }

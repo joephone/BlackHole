@@ -26,9 +26,9 @@ public class HomeAdapter extends BaseAdapter {
     }
 
     private int[] imageId = {
-            R.drawable.ic_phone_github_green_24dp,R.drawable.ic_lock_github_green_24dp,R.drawable.ic_android_githhub_green_24dp,
-            R.drawable.ic_lock_github_green_24dp,R.drawable.ic_brush_github_green_24dp,R.drawable.ic_autorenew_github_green_24dp,
-            R.drawable.ic_local_airport_github_green_24dp,R.drawable.ic_menu_github_green_24dp,R.drawable.ic_settings_github_green_24dp};
+            R.drawable.ic_guard_phone_github_green_24dp,R.drawable.ic_guard_lock_github_green_24dp,R.drawable.ic_guard_android_githhub_green_24dp,
+            R.drawable.ic_guard_lock_github_green_24dp,R.drawable.ic_guard_brush_github_green_24dp,R.drawable.ic_guard_autorenew_github_green_24dp,
+            R.drawable.ic_guard_local_airport_github_green_24dp,R.drawable.ic_menu_github_green_24dp,R.drawable.ic_settings_github_green_24dp};
 
     private String[] names = {
             "手机防盗","通讯卫士","软件管家",
