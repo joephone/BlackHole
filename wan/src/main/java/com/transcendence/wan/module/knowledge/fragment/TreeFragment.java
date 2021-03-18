@@ -92,10 +92,6 @@ public class TreeFragment extends WanBaseFragment<TreePresenter> implements Tree
 //        mRightFragment.setListener(this);
         fragmentTransaction.add(R.id.fl_content, mRightFragment);
         fragmentTransaction.commit();
-
-
-
-
     }
 
 
