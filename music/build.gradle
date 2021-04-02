@@ -37,6 +37,11 @@ dependencies {
 
     annotationProcessor rootProject.ext.dependencies["router-compiler"]
 
+    implementation project(':basic_core')
+//    implementation project(':basic_ui')
+//    implementation project(':basic_res')
+//    implementation project(':basic_utils')
+
     api rootProject.ext.dependencies.appcompatv7
     api rootProject.ext.dependencies.design
     api rootProject.ext.dependencies.supportv4

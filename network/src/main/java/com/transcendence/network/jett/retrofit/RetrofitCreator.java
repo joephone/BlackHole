@@ -2,6 +2,7 @@ package com.transcendence.network.jett.retrofit;
 
 import com.franmontiel.persistentcookiejar.PersistentCookieJar;
 import com.transcendence.global.API;
+import com.transcendence.network.jett.ApiSource;
 
 import java.util.concurrent.TimeUnit;
 
@@ -42,15 +43,25 @@ public class RetrofitCreator {
 
     /**
      * 获取对象
+     * @param source
      */
-    public static RetrofitAPI getRetrofitAPI() {
-        Retrofit retrofit = getRetrofit();
+    public static RetrofitAPI getRetrofitAPI(ApiSource source) {
+        Retrofit retrofit = getRetrofit(source);
         return retrofit.create(RetrofitAPI.class);
     }
 
 
-    private static Retrofit getRetrofit() {
-        final String BASE_URL = API.API_WAN_ANDROID; //ProjectInit.getConfiguratorByKey(ConfigKeys.API_HOST);
+    private static Retrofit getRetrofit(ApiSource source) {
+        String BASE_URL = API.API_WAN_ANDROID; //ProjectInit.getConfiguratorByKey(ConfigKeys.API_HOST);
+        if(source!=null){
+            switch (source){
+                case WAN:
+                    break;
+                case GANK:
+                    BASE_URL = API.API_GANK_IO;
+                    break;
+            }
+        }
         Retrofit client = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(ScalarsConverterFactory.create())

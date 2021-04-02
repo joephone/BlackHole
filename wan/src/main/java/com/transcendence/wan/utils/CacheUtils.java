@@ -1,6 +1,7 @@
 package com.transcendence.wan.utils;
 
 import com.transcendence.core.base.app.LibApplication;
+import com.transcendence.core.utils.L;
 
 import java.io.File;
 
@@ -43,8 +44,10 @@ public class CacheUtils {
      */
     public static void clearAllCache() {
         FileUtils.delete(LibApplication.getAppContext().getCacheDir());
+//        L.d("getCacheDir:"+LibApplication.getAppContext().getCacheDir().getPath());
         if (FileUtils.isSDCardAlive()) {
             FileUtils.delete(LibApplication.getAppContext().getExternalCacheDir());
+//            L.d("getExternalCacheDir:"+LibApplication.getAppContext().getExternalCacheDir().getPath());
         }
     }
 }

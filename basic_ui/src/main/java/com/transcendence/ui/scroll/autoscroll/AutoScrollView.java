@@ -48,8 +48,9 @@ public class AutoScrollView extends ScrollView {
             int A = getScrollY() + getHeight();
 //            L.d("S--"+S);
 //            L.d("A--"+A);
-            if (S - A <= 3)
+            if (S - A <= 3){
                 scrollTo(0, 0);
+            }
             smoothScrollBy(0, 2);
         }
     };

@@ -1,7 +1,9 @@
 package com.transcendence.wan.module.wxpublic.presenter;
 
 import com.transcendence.core.utils.GsonUtils;
+import com.transcendence.core.utils.L;
 import com.transcendence.global.API;
+import com.transcendence.network.jett.ApiSource;
 import com.transcendence.network.jett.callback.IFailure;
 import com.transcendence.network.jett.callback.ISuccess;
 import com.transcendence.network.jett.retrofit.RetrofitClient;
@@ -41,7 +43,7 @@ public class NaviWxPublicPresenter extends WanBasePresenter<NaviWxPublicView> {
 
 
     public void getWxPublicList(){
-//        L.d("getWxPublicList");
+        L.d("getWxPublicList");
         Map<String,Object>  map = ParamMap.getInstance().page(0);
 
         RetrofitClient.create()

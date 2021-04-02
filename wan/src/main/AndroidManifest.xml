@@ -28,6 +28,9 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".module.mine.act.ImageActivity"/>
+
+        <activity android:name=".module.mine.act.ImageViewerActivity"/>
 
         <activity android:name=".module.mine.act.BounceActivity"/>
 

@@ -60,7 +60,7 @@ public class HomeFragment extends WanBaseFragment<HomePresenter> implements Home
 
     @Override
     protected void initView() {
-        L.d("initView");
+        L.d("HomeFragment initView");
         mBanner = findViewById(R.id.banner);
         mBanner.setOnBannerItemClickListener(this);
         createHeaderBanner();

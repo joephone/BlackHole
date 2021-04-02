@@ -34,10 +34,7 @@ import java.util.List;
  */
 public class PhoneUtils {
 
-    private Context mContext;
-
-    private PhoneUtils(Context context) {
-        this.mContext = context;
+    private PhoneUtils() {
         throw new UnsupportedOperationException("u can't instantiate me...");
     }
 
@@ -47,7 +44,7 @@ public class PhoneUtils {
      * @param context 上下文
      * @return {@code true}: 是<br>{@code false}: 否
      */
-    public boolean isPhone(Context context) {
+    public static boolean isPhone(Context context) {
         TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         return tm != null && tm.getPhoneType() != TelephonyManager.PHONE_TYPE_NONE;
     }
@@ -60,9 +57,9 @@ public class PhoneUtils {
      * @return IMIE码
      */
     @SuppressLint("HardwareIds")
-    public String getIMEI(Context context) {
+    public static String getIMEI(Context context) {
         TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-        if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
@@ -83,8 +80,18 @@ public class PhoneUtils {
      * @return IMIE码
      */
     @SuppressLint("HardwareIds")
-    public String getIMSI(Context context) {
+    public static String getIMSI(Context context) {
         TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return "";
+        }
         return tm != null ? tm.getSubscriberId() : null;
     }
 
@@ -177,6 +184,16 @@ public class PhoneUtils {
         TelephonyManager tm = (TelephonyManager) context
                 .getSystemService(Context.TELEPHONY_SERVICE);
         String str = "";
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return "";
+        }
         str += "DeviceId(IMEI) = " + tm.getDeviceId() + "\n";
         str += "DeviceSoftwareVersion = " + tm.getDeviceSoftwareVersion() + "\n";
         str += "Line1Number = " + tm.getLine1Number() + "\n";

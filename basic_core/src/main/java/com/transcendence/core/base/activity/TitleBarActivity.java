@@ -59,7 +59,6 @@ public abstract class TitleBarActivity extends BaseActivity {
         if (mHasTitle) {
             parent.addView(titleBar);
             initTitle();
-
             // 添加原内容
             LinearLayout.LayoutParams mainParams = new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
@@ -91,7 +90,7 @@ public abstract class TitleBarActivity extends BaseActivity {
             ivBack = (ImageView) titleBar.findViewById(R.id.iv_back);
             ivRight = (ImageView) titleBar.findViewById(R.id.iv_right);
             initStateHeigt();
-            ivBack.setVisibility(View.VISIBLE);
+//            ivBack.setVisibility(View.VISIBLE);
             flBack.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

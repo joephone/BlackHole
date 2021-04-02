@@ -22,49 +22,49 @@ public class DeviceMainActivity extends TitleBarActivity {
     }
 
 
-//    public void activityClick(View view) {
-//        startActivity(new Intent(this, ActivityActivity.class));
-//    }
+    public void activityClick(View view) {
+        startActivity(new Intent(this, AActivity.class));
+    }
 
-//    public void appClick(View view) {
-//        startActivity(new Intent(this, AppActivity.class));
-//    }
-//
-//    public void cleanClick(View view) {
-//        startActivity(new Intent(this, CleanActivity.class));
-//    }
-//
-//    public void crashClick(View view) {
-//        int err = 1 / 0;
-//    }
-//
-//    public void deviceClick(View view) {
-//        startActivity(new Intent(this, DeviceActivity.class));
-//    }
-//
-//    public void handlerClick(View view) {
-//        startActivity(new Intent(this, HandlerActivity.class));
-//    }
-//
-//    public void imageClick(View view) {
-//        startActivity(new Intent(this, ImageActivity.class));
-//    }
+    public void appClick(View view) {
+        startActivity(new Intent(this, AppActivity.class));
+    }
+
+    public void cleanClick(View view) {
+        startActivity(new Intent(this, CleanActivity.class));
+    }
+
+    public void crashClick(View view) {
+        int err = 1 / 0;
+    }
+
+    public void deviceClick(View view) {
+        startActivity(new Intent(this, DeviceActivity.class));
+    }
+
+    public void handlerClick(View view) {
+        startActivity(new Intent(this, HandlerActivity.class));
+    }
+
+    public void imageClick(View view) {
+        startActivity(new Intent(this, ImageActivity.class));
+    }
 
     public void keyboardClick(View view) {
         startActivity(new Intent(this, KeyboardActivity.class));
     }
 
-//    public void networkClick(View view) {
-//        startActivity(new Intent(this, NetworkActivity.class));
-//    }
+    public void networkClick(View view) {
+        startActivity(new Intent(this, NetworkActivity.class));
+    }
 
-//    public void phoneClick(View view) {
-//        startActivity(new Intent(this, PhoneActivity.class));
-//    }
+    public void phoneClick(View view) {
+        startActivity(new Intent(this, PhoneActivity.class));
+    }
 
-//    public void processClick(View view) {
-//        startActivity(new Intent(this, ProcessActivity.class));
-//    }
+    public void processClick(View view) {
+        startActivity(new Intent(this, ProcessActivity.class));
+    }
 
     public void sdcardClick(View view) {
         startActivity(new Intent(this, SDCardActivity.class));

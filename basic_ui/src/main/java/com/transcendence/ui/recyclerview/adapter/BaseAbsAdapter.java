@@ -42,4 +42,5 @@ public abstract class BaseAbsAdapter<T> extends RecyclerView.Adapter<RecyclerVie
      * @param list 列表
      */
     public abstract void onLoadMore(List<T> list);
+
 }

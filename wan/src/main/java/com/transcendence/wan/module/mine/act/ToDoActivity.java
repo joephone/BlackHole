@@ -56,7 +56,7 @@ public class ToDoActivity extends WanBaseActivity<ToDoPresenter> implements Frag
         fragmentList.add(BlankFragment.newInstance("计划"));
         fragmentList.add(BlankFragment.newInstance("完成"));
 
-        ((RadioButton)mRadioGroup.getChildAt(0)).setChecked(true);
+        ((RadioButton) mRadioGroup.getChildAt(0)).setChecked(true);
 
         FragmentTabAdapter pagerAdapter = new FragmentTabAdapter(this, fragmentList, R.id.fl_content, mRadioGroup, 0);
         pagerAdapter.setOnTabCheckedListener(this);
@@ -68,20 +68,16 @@ public class ToDoActivity extends WanBaseActivity<ToDoPresenter> implements Frag
     }
 
 
-    private String[] titles = {"计划","完成"};
-    private int[] colors = {R.color.login_bg_end_1,R.color.tablayout_tv_gray};
-    private int[] mipmaps = {R.drawable.ic_tabbar_order,R.drawable.ic_tabbar_mainframe};
-    private int[] mipmaphls = {R.drawable.ic_tabbar_orderhl,R.drawable.ic_tabbar_mainframehl};
-
-
+    private String[] titles = {"计划", "完成"};
+    private int[] colors = {R.color.login_bg_end_1, R.color.tablayout_tv_gray};
+    private int[] mipmaps = {R.drawable.ic_tabbar_order, R.drawable.ic_tabbar_mainframe};
+    private int[] mipmaphls = {R.drawable.ic_tabbar_orderhl, R.drawable.ic_tabbar_mainframehl};
 
 
     @Override
     protected void loadData() {
 
     }
-
-
 
 
     public static void start(Context context) {

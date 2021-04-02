@@ -5,7 +5,7 @@ ext {
     isDongnaoApplication = true
     isWanApplication = true
     isMapApplication = true
-    isMusicApplication = false
+    isMusicApplication = true
     isNewsApplication = true
     isWeiboApplication = true
     isWeChatApplication = true

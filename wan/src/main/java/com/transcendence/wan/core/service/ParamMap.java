@@ -32,4 +32,12 @@ public class ParamMap {
         return map;
     }
 
+
+    public Map<String,Object> page(int page,int count){
+        Map<String,Object> map = new HashMap<>();
+        map.put("page",page);
+        map.put("count",count);
+        return map;
+    }
+
 }

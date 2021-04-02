@@ -16,6 +16,7 @@ import com.transcendence.wan.R;
 import com.transcendence.wan.module.beauty.fragment.BeautyFragment;
 import com.transcendence.wan.module.mine.fragment.MineFragment;
 import com.transcendence.wan.module.wxpublic.fragment.NaviWxPublicFragment;
+import com.transcendence.wan.module.wxpublic.fragment.NewWxArticleListFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -92,12 +93,12 @@ public class MainFragment extends Fragment implements View.OnClickListener{
 
 
     private void initVP() {
-        //预加载   , ScrollFragment.newInstance("项目")
+        //预加载   , ScrollFragment.newInstance("项目")   //公众号
         mVpMain.setOffscreenPageLimit(4);
         adapter = new GoweiiFragmentPagerAdapter(getChildFragmentManager());
         adapter.setFragments(HomeFragment.newInstance("主页面")
                 , BeautyFragment.newInstance("福利社")
-                , NaviWxPublicFragment.create()
+                , NewWxArticleListFragment.newInstance("")
                 , MineFragment.newInstance("我的"));
         mVpMain.setAdapter(adapter);
 
@@ -161,7 +162,6 @@ public class MainFragment extends Fragment implements View.OnClickListener{
             setCurrentTabs(0);
         } else if (i == R.id.tabTwo) {
             setCurrentTabs(1);
-
         } else if (i == R.id.tabThree) {
             setCurrentTabs(2);
         } else if (i == R.id.tabFour) {

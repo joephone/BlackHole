@@ -1,5 +1,6 @@
 package com.transcendence.network.jett.retrofit;
 
+import com.transcendence.network.jett.ApiSource;
 import com.transcendence.network.jett.callback.IError;
 import com.transcendence.network.jett.callback.IFailure;
 import com.transcendence.network.jett.callback.IRequest;
@@ -35,6 +36,8 @@ public class RestClientBuilder {
     private String mDownloadDir;
     private String mExtension;
     private String mFilename;
+
+    private ApiSource mSource;
 
     RestClientBuilder() {
 
@@ -103,9 +106,16 @@ public class RestClientBuilder {
         return this;
     }
 
+    public final RestClientBuilder source(ApiSource source) {
+        this.mSource = source;
+        return this;
+    }
+
+
 
     public final RetrofitClient build() {
-        return new RetrofitClient(mParams, mUrl, mRequest, mSuccess, mFailure, mError, mBody, mFile, mDownloadDir, mExtension, mFilename);
+        return new RetrofitClient(mParams, mUrl, mRequest, mSuccess, mFailure, mError, mBody, mFile, mDownloadDir, mExtension, mFilename,mSource);
     }
+
 
 }

@@ -1,6 +1,7 @@
 package com.transcendence.network.jett.retrofit;
 
 
+import com.transcendence.network.jett.ApiSource;
 import com.transcendence.network.jett.HttpMethod;
 import com.transcendence.network.jett.callback.IError;
 import com.transcendence.network.jett.callback.IFailure;
@@ -40,6 +41,8 @@ public class RetrofitClient {
     private final String EXTENSION;
     private final String FILENAME;
 
+    private final ApiSource SOURCE;
+
     public RetrofitClient(Map<String, Object> params,
                           String url,
                           IRequest request,
@@ -47,7 +50,8 @@ public class RetrofitClient {
                           IFailure failure,
                           IError error,
                           RequestBody body,
-                          File file, String downloadDir, String extension, String filename) {
+                          File file, String downloadDir, String extension, String filename,
+                          ApiSource source) {
         this.PARAMS = params;
         this.URL = url;
         this.REQUEST = request;
@@ -59,6 +63,7 @@ public class RetrofitClient {
         this.DOWNLOAD_DIR = downloadDir;  //    /sdcard/XXXX.ext
         this.EXTENSION = extension;
         this.FILENAME = filename;
+        this.SOURCE = source;
     }
 
     public static RestClientBuilder create() {
@@ -75,7 +80,7 @@ public class RetrofitClient {
      * @param method
      */
     private void request(HttpMethod method) {
-        final RetrofitAPI service = RetrofitCreator.getRetrofitAPI();
+        final RetrofitAPI service = RetrofitCreator.getRetrofitAPI(SOURCE);
         Call<String> call = null;
         if (REQUEST != null) {
             REQUEST.onRequestStart();
@@ -138,7 +143,7 @@ public class RetrofitClient {
     public final void download() {
         new DownloadHandler(PARAMS, URL, REQUEST,
                 SUCCESS, FAILURE, ERROR, DOWNLOAD_DIR,
-                EXTENSION, FILENAME)
+                EXTENSION, FILENAME,SOURCE)
                 .handleDownload();
     }
 

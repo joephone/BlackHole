@@ -3,6 +3,7 @@ package com.transcendence.network.jett.download;
 import android.os.AsyncTask;
 
 
+import com.transcendence.network.jett.ApiSource;
 import com.transcendence.network.jett.callback.IError;
 import com.transcendence.network.jett.callback.IFailure;
 import com.transcendence.network.jett.callback.IRequest;
@@ -26,11 +27,13 @@ public class DownloadHandler {
     private final String DOWNLOAD_DIR;
     private final String EXTENSION;
     private final String FILENAME;
+    private final ApiSource SOURCE;
 
     public DownloadHandler(Map<String, Object> params, String url,
                            IRequest request, ISuccess success,
                            IFailure failure, IError error,
-                           String downloadDir, String extension, String filename) {
+                           String downloadDir, String extension, String filename,
+                           ApiSource source) {
         this.PARAMS = params;
         this.URL = url;
         this.REQUEST = request;
@@ -40,13 +43,14 @@ public class DownloadHandler {
         this.DOWNLOAD_DIR = downloadDir;
         this.EXTENSION = extension;
         this.FILENAME = filename;
+        this.SOURCE = source;
     }
 
     /**
      * 下载文件
      */
     public final void handleDownload(){
-        RetrofitCreator.getRetrofitAPI().download(URL,PARAMS)
+        RetrofitCreator.getRetrofitAPI(SOURCE).download(URL,PARAMS)
         .enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {

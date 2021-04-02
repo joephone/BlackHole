@@ -4,6 +4,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 
+import com.transcendence.core.utils.L;
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanBaseFragment;
 import com.transcendence.wan.module.wxpublic.adapter.MultiFragmentPageAdapter;
@@ -53,7 +54,6 @@ public class NaviWxPublicFragment extends WanBaseFragment<NaviWxPublicPresenter>
         mVp = findViewById(R.id.vp);
         mTabLayout = findViewById(R.id.tab_layout);
         mAdapter = new MultiFragmentPageAdapter(getChildFragmentManager());
-
     }
 
     @Override
@@ -64,7 +64,8 @@ public class NaviWxPublicFragment extends WanBaseFragment<NaviWxPublicPresenter>
 
     @Override
     public void getWxChapterSuc(int code, List<WxChapterBean> list) {
-        int length = list.size()>=16?16:list.size();
+        L.d("getWxChapterSuc");
+        int length = list.size() >= 16 ? 16 : list.size();
         for (int i = 0; i < length; i++) {
             mTitleList.add(list.get(i).getName());
             mFragmentList.add(WxArticleListFragment.newInstance(list.get(i)));
@@ -75,7 +76,7 @@ public class NaviWxPublicFragment extends WanBaseFragment<NaviWxPublicPresenter>
         mTabLayout.post(new Runnable() {
             @Override
             public void run() {
-                AppUtils.setIndicator(mTabLayout,20,20);
+                AppUtils.setIndicator(mTabLayout, 20, 20);
             }
         });
         mAdapter.setTitles(mTitleList);
