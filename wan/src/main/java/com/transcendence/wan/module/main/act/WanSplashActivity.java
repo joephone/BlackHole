@@ -63,12 +63,6 @@ public class WanSplashActivity extends WanBaseActivity<SplashPresenter> implemen
 //        initStartAnim();
         CountDown();
         mTvSkip.start();
-
-
-
-
-
-
     }
 
     @Override

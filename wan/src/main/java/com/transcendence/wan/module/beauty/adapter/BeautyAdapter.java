@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.hjq.image.ImageLoader;
 import com.transcendence.core.utils.GlideUtils;
 import com.transcendence.core.utils.L;
 import com.transcendence.ui.recyclerview.adapter.BaseAbsAdapter;
@@ -59,7 +60,8 @@ public class BeautyAdapter extends BaseAbsAdapter<BeautyBean> {
             if (mList.get(position) != null) {
 //                L.d("beauty:"+mList.get(position).getUrl());
                 if (!TextUtils.isEmpty(mList.get(position).getUrl())) {
-                    GlideUtils.getInstance().loadImageFromUrl(mList.get(position).getUrl(), holder.iv_img);
+                    GlideUtils.loadImageFromUrl1(mList.get(position).getUrl(), holder.iv_img);
+//                    ImageLoader.loadImage(holder.iv_img,mList.get(position).getUrl());
                 }
                 if(!TextUtils.isEmpty(mList.get(position).getDesc())){
                     holder.tv_name.setText(mList.get(position).getDesc());
@@ -88,7 +90,6 @@ public class BeautyAdapter extends BaseAbsAdapter<BeautyBean> {
 
     @Override
     public BeautyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        mContext = parent.getContext();
         View view = LayoutInflater.from(mContext).inflate(R.layout.fragment_navi_beauty_item,parent,false);
         return new BeautyViewHolder(view);
     }

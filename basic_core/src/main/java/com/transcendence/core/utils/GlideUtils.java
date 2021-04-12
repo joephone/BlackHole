@@ -4,6 +4,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.transcendence.core.R;
+import com.transcendence.core.base.app.LibApplication;
 
 /**
  * @author Joephone on 2019/5/7 17:09
@@ -36,7 +37,20 @@ public class GlideUtils {
      *  1 默认加载
      */
     public void loadImageFromUrl(String path, ImageView imageView) {
-        Glide.with(imageView.getContext())
+        Glide.with(LibApplication.getInstance())
+                .load(path)
+                .error(R.drawable.pic_404)
+                .placeholder(R.drawable.pic_404)
+                .into(imageView);
+
+    }
+
+
+    /**
+     *  1 默认加载
+     */
+    public static void loadImageFromUrl1(String path, ImageView imageView) {
+        Glide.with(LibApplication.getInstance())
                 .load(path)
                 .error(R.drawable.pic_404)
                 .placeholder(R.drawable.pic_404)
@@ -48,7 +62,7 @@ public class GlideUtils {
      *  2 加载本地
      */
     public void loadImageFromLocal(int resourceId, ImageView imageView) {
-        Glide.with(imageView.getContext())
+        Glide.with(LibApplication.getInstance())
                 .load(resourceId)
                 .error(R.drawable.pic_404)
                 .placeholder(R.drawable.pic_404)

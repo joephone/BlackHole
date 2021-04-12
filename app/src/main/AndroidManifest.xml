@@ -10,7 +10,6 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -22,13 +21,10 @@
     <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
     <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <!--  <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" /> -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_LOGS" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.SET_DEBUG_APP" />
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
     <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
     <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
@@ -360,6 +356,13 @@
         <activity
             android:name=".demo.other.act.GitHubContributionActivity"
             android:screenOrientation="portrait"/>
+            <!--  角标-->
+        <activity
+            android:name=".demo.other.act.badge.BadgeActivity"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".demo.other.act.badge.ZxBadgeActivity"
+            android:screenOrientation="portrait"/>
             <!--  所有app -->
         <activity
             android:name=".demo.allapp.AllAppActivity"
@@ -386,10 +389,6 @@
             <!--  pdf下载 -->
         <activity android:name=".demo.pdfdownload.PDFdownMainActivity"
             android:screenOrientation="portrait" />
-            <!--  360悬浮球 -->
-        <activity android:name=".demo.animation360.activity.FloatViewMainActivity"
-            android:screenOrientation="portrait" />
-
 
         <!-- 序列   基础  handler -->
         <activity
@@ -409,7 +408,6 @@
 
 
 
-        <service android:name=".demo.animation360.service.MyFloatService" />
 
 
     </application>

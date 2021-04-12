@@ -19,6 +19,9 @@ dependencies {
 
 
     api config.dependencies.glide
+//    api config.dependencies.glideCompiler
+//    api config.dependencies.glideOkhttp3
+
     api config.dependencies.gson
     api config.dependencies.eventbus
 
@@ -40,7 +43,7 @@ dependencies {
 
     //注入
 //    implementation 'com.github.joephone:jIoC:1.0.2'
-    implementation 'com.android.support:palette-v7:28.0.0'
+//    implementation 'com.android.support:palette-v7:28.0.0'
 
     implementation project(':basic_ui')
     implementation project(':basic_res')

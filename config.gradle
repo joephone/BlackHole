@@ -28,7 +28,7 @@ ext {
     version = [
             supportSdkVersion               : "28.0.0",  //compile 'com.github.bumptech.glide:glide:3.5.2'  26.1.0  28.0.0
             constraintLayout                : "1.1.3",
-            glideSdkVersion                 : "3.7.0",   //4.8.0
+            glideSdkVersion                 : "3.7.0",   //4.8.0   3.7.0  4.11.0
 
             //工具
             gson                            : "2.5",
@@ -70,6 +70,8 @@ ext {
             supportv4                       : "com.android.support:support-v4:$version.supportSdkVersion",
             //image
             glide                           : "com.github.bumptech.glide:glide:$version.glideSdkVersion",
+//            glideCompiler                   : "com.github.bumptech.glide:compiler:$version.glideSdkVersion",
+//            glideOkhttp3                    : "com.github.bumptech.glide:okhttp3-integration:$version.glideSdkVersion",
             //gson
             gson                            : "com.google.code.gson:gson:$version.gson",
             eventbus                        : "org.greenrobot:eventbus:$version.eventbus",
