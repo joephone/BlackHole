@@ -1,24 +1,27 @@
 package com.transcendence.wan.module.beauty.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.scwang.smart.refresh.layout.SmartRefreshLayout;
+import com.scwang.smart.refresh.layout.api.RefreshLayout;
+import com.scwang.smart.refresh.layout.listener.OnRefreshLoadMoreListener;
 import com.transcendence.core.global.Global;
 import com.transcendence.core.utils.L;
-import com.transcendence.ui.recyclerview.adapter.BaseAbsAdapter;
-import com.transcendence.ui.recyclerview.view.RefreshLayout;
+import com.transcendence.ui.recyclerview.hjq.BaseAdapter;
+import com.transcendence.ui.recyclerview.hjq.layout.WrapRecyclerView;
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanBaseFragment;
-import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
-import com.transcendence.wan.listener.OnMyItemClickListener;
 import com.transcendence.wan.module.beauty.adapter.BeautyAdapter;
 import com.transcendence.wan.module.beauty.model.BeautyBean;
 import com.transcendence.wan.module.beauty.presenter.BeautyPresenter;
 import com.transcendence.wan.module.beauty.view.BeautyView;
-import com.transcendence.wan.module.main.adapter.ArticleListAdapter;
-import com.transcendence.wan.module.mine.act.ImageViewerActivity;
+import com.transcendence.wan.album.act.ImageViewerActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,15 +33,22 @@ import java.util.List;
  * @Edition 1.0
  * @EditionHistory
  */
-public class BeautyFragment extends WanBaseFragment<BeautyPresenter> implements BeautyView,RefreshLayout.RefreshCallback,OnMyItemClickListener {
-    private static int PAGE = 0;
+public class BeautyFragment extends WanBaseFragment<BeautyPresenter> implements BeautyView,
+        OnRefreshLoadMoreListener,
+        BaseAdapter.OnItemClickListener {
+    private static int PAGE = 1;
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_SHOW_TEXT = "text";
 
-    private RefreshLayout mRefreshLayout;
-    private BaseAbsAdapter mAdapter;
+
+    private SmartRefreshLayout mRefreshLayout;
+    private WrapRecyclerView mRecyclerView;
+
+    private BeautyAdapter mAdapter;
     private boolean isLoadMore;
+    Handler mHandler = new Handler();
     private ArrayList<String> imageList = new ArrayList<>();
+    private ArrayList<String> imageTitles = new ArrayList<>();
 
     public static BeautyFragment newInstance(String title) {
         BeautyFragment fragment = new BeautyFragment();
@@ -62,12 +72,14 @@ public class BeautyFragment extends WanBaseFragment<BeautyPresenter> implements 
 
     @Override
     protected void initView() {
-        mRefreshLayout = findViewById(R.id.rv_beauty);
+        mRefreshLayout = findViewById(R.id.rl_refresh);
+        mRecyclerView = findViewById(R.id.rv_beauty);
+        GridLayoutManager manager = new GridLayoutManager(getActivity(),2);
+        mRecyclerView.setLayoutManager(manager);
         mAdapter = new BeautyAdapter(getContext());
-        mRefreshLayout.setAdapter(mAdapter,getContext());
-        mRefreshLayout.schemeColors();
-        mRefreshLayout.addCallback(this);
-        ((BeautyAdapter) mAdapter).setListener(this);
+        mAdapter.setOnItemClickListener(this);
+        mRecyclerView.setAdapter(mAdapter);
+        mRefreshLayout.setOnRefreshLoadMoreListener(this);
     }
 
     @Override
@@ -77,14 +89,31 @@ public class BeautyFragment extends WanBaseFragment<BeautyPresenter> implements 
 
     @Override
     public void getBeautyListSuc(int code, List<BeautyBean> list) {
+        imageList.clear();imageTitles.clear();
         for (int i = 0; i < list.size(); i++) {
-            L.d("list.get(i).getUrl()"+list.get(i).getUrl());
             imageList.add(list.get(i).getUrl());
+            imageTitles.add(list.get(i).getTitle());
         }
         if(isLoadMore){
-            mRefreshLayout.onLoadMore(list);
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mAdapter.addData(list);
+                    mRefreshLayout.finishLoadMore();
+                    mAdapter.setLastPage(mAdapter.getItemCount() >= 100);
+                    mRefreshLayout.setNoMoreData(mAdapter.isLastPage());
+                }
+            }, 1000);
         }else {
-            mRefreshLayout.onRefresh(list);
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mAdapter.clearData();
+                    mAdapter.addData(list);
+                    mRefreshLayout.finishRefresh();
+                }
+            }, 1000);
+
         }
     }
 
@@ -93,8 +122,19 @@ public class BeautyFragment extends WanBaseFragment<BeautyPresenter> implements 
 
     }
 
+
     @Override
-    public void onViewRefresh() {
+    public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
+        L.d("onViewLoadMore");
+        PAGE ++;
+        isLoadMore = true;
+        presenter.getBeautyList(PAGE, Global.LIMIT);
+
+
+    }
+
+    @Override
+    public void onRefresh(@NonNull RefreshLayout refreshLayout) {
         L.d("onViewRefresh");
         PAGE = 0;
         isLoadMore = false;
@@ -102,22 +142,14 @@ public class BeautyFragment extends WanBaseFragment<BeautyPresenter> implements 
     }
 
     @Override
-    public void onViewLoadMore() {
-        L.d("onViewLoadMore");
-        PAGE ++;
-        isLoadMore = true;
-        presenter.getBeautyList(PAGE, Global.LIMIT);
-    }
-
-
-    @Override
-    public void onItemClick(int position) {
+    public void onItemClick(RecyclerView recyclerView, View itemView, int position) {
         L.d("onItemClick-position:"+position);
-        Intent intent = new Intent(getActivity(), ImageViewerActivity.class);
-        Bundle bundle = new Bundle();
-        bundle.putInt("currentIndex",position);
-        bundle.putStringArrayList("imageList",imageList);
-        intent.putExtras(bundle);
-        startActivity(intent);
+//        Intent intent = new Intent(getActivity(), ImageViewerActivity.class);
+//        Bundle bundle = new Bundle();
+//        bundle.putInt("currentIndex",position);
+//        bundle.putStringArrayList("imageList",imageList);
+//        intent.putExtras(bundle);
+//        startActivity(intent);
+        ImageViewerActivity.start(getActivity(),position,imageList,imageTitles);
     }
 }

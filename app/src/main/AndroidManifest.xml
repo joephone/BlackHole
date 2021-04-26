@@ -22,7 +22,7 @@
     <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
     <!--  <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" /> -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
@@ -30,6 +30,7 @@
     <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
     <!-- 这个权限用于进行网络定位 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
@@ -137,11 +138,6 @@
             android:screenOrientation="portrait" />
 
         <!-- apk bus top frame -->
-        <activity
-            android:name=".ui.base.act.TelephoneInfoActivity"
-            android:screenOrientation="portrait" />
-
-
 
 
         <!-- 序列一   开发基础 序列 -->
@@ -242,7 +238,7 @@
             android:screenOrientation="portrait"/>
             <!-- mi -->
         <activity
-            android:name=".ui.rv.mi.act.XiaoMIAct"
+            android:name=".ui.rv.mi.act.XiaoMiAct"
             android:screenOrientation="portrait"/>
             <!-- 上拉刷新 下拉加载更多-->
         <activity android:name=".ui.rv.freshloadmore.act.RvLoadMoreActivity"
@@ -387,7 +383,7 @@
             android:name=".demo.other.act.JavaH5Activity"
             android:screenOrientation="portrait" />
             <!--  pdf下载 -->
-        <activity android:name=".demo.pdfdownload.PDFdownMainActivity"
+        <activity android:name=".demo.pdfdownload.PdfDownMainActivity"
             android:screenOrientation="portrait" />
 
         <!-- 序列   基础  handler -->

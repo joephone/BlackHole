@@ -18,11 +18,12 @@
         android:label="@string/app_wan_name"
         android:roundIcon="@mipmap/ic_app_wan"
         tools:ignore="LockedOrientationActivity"
+        android:usesCleartextTraffic="true"
         android:supportsRtl="true"
         android:theme="@style/WanAppTheme">
 <!--        //ZoomHeaderActivity WanSplashActivity-->
         <activity
-            android:name=".module.mine.act.RvActivity"
+            android:name=".module.main.act.WanSplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,11 +32,11 @@
         </activity>
 
 
-        <activity android:name=".module.main.act.WanSplashActivity"/>
+        <activity android:name=".module.mine.act.RvActivity"/>
 
-        <activity android:name=".module.mine.act.ImageActivity"/>
+        <activity android:name=".album.act.ImageActivity"/>
 
-        <activity android:name=".module.mine.act.ImageViewerActivity"/>
+        <activity android:name=".album.act.ImageViewerActivity"/>
 
         <activity android:name=".module.mine.act.BounceActivity"/>
 

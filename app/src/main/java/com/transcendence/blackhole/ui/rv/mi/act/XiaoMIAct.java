@@ -13,7 +13,7 @@ import com.transcendence.core.base.activity.TitleBarActivity;
 import com.transcendence.blackhole.ui.rv.mi.adapter.XiaomiAdapter;
 
 
-public class XiaoMIAct extends TitleBarActivity {
+public class XiaoMiAct extends TitleBarActivity {
 
     private RecyclerView mRv;
     private FrameLayout mTopContainer;
@@ -41,13 +41,13 @@ public class XiaoMIAct extends TitleBarActivity {
     }
 
     private void initData() {
-        XiaomiAdapter xiaomiAdapter = new XiaomiAdapter(this);
-        mRv.setAdapter(xiaomiAdapter);
+        XiaomiAdapter adapter = new XiaomiAdapter(this);
+        mRv.setAdapter(adapter);
     }
 
     private void bindView() {
         mRv.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dip2px(XiaoMIAct.this, 30));
+            FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dip2px(XiaoMiAct.this, 30));
             FrameLayout preView = null;
 
             @Override
@@ -59,8 +59,8 @@ public class XiaoMIAct extends TitleBarActivity {
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
                 //分别设置两个锚点
-                FrameLayout currentUpView = (FrameLayout) recyclerView.findChildViewUnder(0, dip2px(XiaoMIAct.this, 0));
-                FrameLayout currentLowView = (FrameLayout) recyclerView.findChildViewUnder(0, dip2px(XiaoMIAct.this, 30));
+                FrameLayout currentUpView = (FrameLayout) recyclerView.findChildViewUnder(0, dip2px(XiaoMiAct.this, 0));
+                FrameLayout currentLowView = (FrameLayout) recyclerView.findChildViewUnder(0, dip2px(XiaoMiAct.this, 30));
                 //初始化preView
                 if (dy == 0) {
                     preView = currentUpView;

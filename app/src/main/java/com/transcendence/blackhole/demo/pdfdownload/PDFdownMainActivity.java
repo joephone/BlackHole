@@ -12,8 +12,9 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.transcendence.blackhole.R;
+import com.transcendence.core.global.Global;
 
-public class PDFdownMainActivity extends AppCompatActivity {
+public class PdfDownMainActivity extends AppCompatActivity {
 
     private static final int STORAGE_PERMISSION_REQUEST_CODE = 1;
 
@@ -29,16 +30,19 @@ public class PDFdownMainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        setTitle("PDF");
+
         permissionUtils = new PermissionUtils();
 
         urlTextInputLayout = (TextInputLayout) findViewById(R.id.urlTextInputLayout);
         urlEditText = (EditText) findViewById(R.id.urlEditText);
+        urlEditText.setText(Global.PDF.url);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (permissionUtils.checkPermission(PDFdownMainActivity.this, STORAGE_PERMISSION_REQUEST_CODE, view)) {
+                if (permissionUtils.checkPermission(PdfDownMainActivity.this, STORAGE_PERMISSION_REQUEST_CODE, view)) {
                     if (urlEditText.getText().toString().length() > 0) {
                         try {
                             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(urlEditText.getText().toString())));

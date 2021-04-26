@@ -57,9 +57,10 @@ public class WanSplashActivity extends WanBaseActivity<SplashPresenter> implemen
         mTvSkip = findViewById(R.id.tv_skip);
         mTvSkip.setOnClickListener(this);
         mTvSkip.setDuration(ANIM_DURATION_TIME);
-        int [] ids = Global.mLauncherIds;
-        int index =new Random().nextInt(ids.length);
-        GlideUtils.getInstance().loadImageFromLocal(ids[index],ivLauncher);
+        int[] ids = Global.mLauncherIds;
+        int index = new Random().nextInt(ids.length);
+        GlideUtils.getInstance().loadImageFromLocal(ids[index], ivLauncher);
+//        GlideUtils.showImageView(mActivity,R.drawable.img_default_book,ids[index],ivLauncher);
 //        initStartAnim();
         CountDown();
         mTvSkip.start();
@@ -126,14 +127,14 @@ public class WanSplashActivity extends WanBaseActivity<SplashPresenter> implemen
 //                Toast.makeText(mActivity, "向右滑", Toast.LENGTH_SHORT).show();
 //            }
 //        }
-        switch (event.getAction()){
+        switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 mX = event.getX();
-                L.d(mX+"ACTION_DOWN");
+                L.d(mX + "ACTION_DOWN");
                 break;
             case MotionEvent.ACTION_UP:
-                L.d(event.getX()+"ACTION_UP");
-                if(event.getX()-mX>100){
+                L.d(event.getX() + "ACTION_UP");
+                if (event.getX() - mX > 100) {
                     finish();
                 }
                 break;
@@ -167,14 +168,14 @@ public class WanSplashActivity extends WanBaseActivity<SplashPresenter> implemen
 //        Debug.stopMethodTracing();
     }
 
-    public void CountDown(){
+    public void CountDown() {
         mTimer = new Timer();
         mTimer.schedule(new TimerTask() {
             @Override
             public void run() {
                 startMain();
             }
-        },ANIM_DURATION_TIME);
+        }, ANIM_DURATION_TIME);
 
     }
 

@@ -50,11 +50,12 @@ public class Global {
 
     public final class SP_KEY {
         public static final String APP_FIRST_START = "appFirstStart";
+        public static final String APP_BADGE = "appBadge";
     }
 
-    public final class PDF {
-        String url = "http://hotelpodlipou.sk/uploads/files/sample.pdf";
-        String url2 = "http://livedoor.4.blogimg.jp/nikoneko55-hogehoge/imgs/9/9/9937d147.gif";
+    public static final class PDF {
+        public static String url = "http://hotelpodlipou.sk/uploads/files/sample.pdf";
+        public static String url2 = "http://livedoor.4.blogimg.jp/nikoneko55-hogehoge/imgs/9/9/9937d147.gif";
     }
 
     public final class MAP {
@@ -70,9 +71,6 @@ public class Global {
     public static int standardZoom(){
         return MAP.SMALL_ZOOM;
     }
-
-
-
 
 
 }

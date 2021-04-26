@@ -1,5 +1,6 @@
 package com.transcendence.wan.module.mine.adapter;
 
+import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -8,11 +9,14 @@ import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
+import com.transcendence.core.base.app.LibApplication;
 import com.transcendence.core.utils.GlideUtils;
 import com.transcendence.core.utils.L;
 import com.transcendence.wan.R;
+import com.transcendence.wan.core.app.WanApp;
 import com.transcendence.wan.listener.OnMyItemClickListener;
 import com.transcendence.wan.module.beauty.model.BeautyBean;
+import com.transcendence.wan.module.mine.act.RvActivity;
 import com.transcendence.wan.module.mine.model.MineBean;
 
 import java.util.List;
@@ -26,11 +30,17 @@ import java.util.List;
  */
 public class RvImageAdapter extends BaseQuickAdapter<BeautyBean, RvImageAdapter.BeautyViewHolder> {
 
+    private Context mContext;
 
-
-    public RvImageAdapter(@Nullable List<BeautyBean> data) {
+    public RvImageAdapter(Context context, @Nullable List<BeautyBean> data) {
         super(R.layout.fragment_navi_beauty_item, data);
-        L.d("RvImageAdapter");
+        this.mContext = context;
+        if(mContext!=null){
+            L.d("mContext!=null");
+        }else {
+            L.d("mContext==null");
+        }
+
     }
 
     @Override
@@ -38,6 +48,8 @@ public class RvImageAdapter extends BaseQuickAdapter<BeautyBean, RvImageAdapter.
         L.d("convert");
         helper.tv_name.setText(item.getDesc());
         GlideUtils.loadImageFromUrl1(item.getUrl(),helper.iv_img);
+        L.d("mContext!=null"+item.getUrl());
+//        GlideUtils.showImageView(LibApplication.getInstance(),R.drawable.pic_404,item.getUrl(),helper.iv_img);
     }
 
 

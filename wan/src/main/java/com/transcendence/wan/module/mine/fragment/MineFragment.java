@@ -11,8 +11,6 @@ import android.widget.TextView;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.transcendence.core.global.Global;
 import com.transcendence.core.utils.L;
-import com.transcendence.ui.dialog.DialogTip;
-import com.transcendence.ui.dialog.listener.SimpleCallback;
 import com.transcendence.ui.scroll.HeaderZoomLayout;
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanBaseFragment;
@@ -172,13 +170,13 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
             case R.id.ll_read_later:
 //                ARouterUtils.navigation(ARouterController.APP_MAIN);
                 //        if (Build.VERSION.SDK_INT < 30) {
-                DialogTip.with(getActivity()).message("此应用专为新版本Android设备打造，感谢您的使用")
-                        .onYes(new SimpleCallback<Void>() {
-                            @Override
-                            public void onResult(Void data) {
-                                finish();
-                            }
-                        }).show();
+//                DialogTip.with(getActivity()).message("此应用专为新版本Android设备打造，感谢您的使用")
+//                        .onYes(new SimpleCallback<Void>() {
+//                            @Override
+//                            public void onResult(Void data) {
+//                                finish();
+//                            }
+//                        }).show();
 //        }
                 break;
             case R.id.ll_open_project:

@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
+        android:visibility="visible"
         android:orientation="vertical">
 
         <include layout="@layout/view_status" />
@@ -73,38 +73,48 @@
     </LinearLayout>
 
 
-    <net.soulwolf.widget.ratiolayout.widget.RatioFrameLayout
-        android:id="@+id/home_ratio"
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/rl_refresh"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:datumRatio="datumWidth"
-        app:heightRatio="9"
-        app:widthRatio="16">
+        android:layout_height="match_parent"
+        app:srlEnablePreviewInEditMode="false">
 
-        <com.transcendence.core.widget.custom.banner.BannerLayout
-            android:id="@+id/banner"
+        <net.soulwolf.widget.ratiolayout.widget.RatioFrameLayout
+            android:id="@+id/home_ratio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:autoPlayDuration="5000"
-            app:defaultImage="@drawable/pic_404"
-            app:indicatorMargin="8dp"
-            app:indicatorMarginBottom="15dp"
-            app:indicatorPosition="rightBottom"
-            app:indicatorShape="oval"
-            app:indicatorSpace="3dp"
-            app:scrollDuration="375"
-            app:selectedIndicatorColor="@color/white"
-            app:selectedIndicatorHeight="7dp"
-            app:selectedIndicatorWidth="7dp"
-            app:unSelectedIndicatorColor="#80fffffe"
-            app:unSelectedIndicatorHeight="7dp"
-            app:unSelectedIndicatorWidth="7dp" />
-    </net.soulwolf.widget.ratiolayout.widget.RatioFrameLayout>
+            app:datumRatio="datumWidth"
+            app:heightRatio="9"
+            app:widthRatio="16">
 
-    <com.transcendence.ui.recyclerview.view.LoadMoreLayout
-        android:id="@+id/loadMoreLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+            <com.transcendence.core.widget.custom.banner.BannerLayout
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:autoPlayDuration="5000"
+                app:defaultImage="@drawable/pic_404"
+                app:indicatorMargin="8dp"
+                app:indicatorMarginBottom="15dp"
+                app:indicatorPosition="centerBottom"
+                app:indicatorShape="oval"
+                app:indicatorSpace="3dp"
+                app:scrollDuration="375"
+                app:selectedIndicatorColor="@color/white"
+                app:selectedIndicatorHeight="7dp"
+                app:selectedIndicatorWidth="7dp"
+                app:unSelectedIndicatorColor="#80fffffe"
+                app:unSelectedIndicatorHeight="7dp"
+                app:unSelectedIndicatorWidth="7dp" />
+        </net.soulwolf.widget.ratiolayout.widget.RatioFrameLayout>
+
+        <com.transcendence.ui.recyclerview.hjq.layout.WrapRecyclerView
+            android:id="@+id/rv_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listCount="10" />
+
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
 
 
 

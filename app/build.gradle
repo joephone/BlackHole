@@ -19,6 +19,7 @@ dependencies {
     implementation project(':basic_ui')
     implementation project(':basic_res')
     implementation project(':basic_utils')
+    implementation project(':permissions')
 
     if(!config.isWanApplication){  //arouter 必加
         implementation project(':wan')

@@ -29,7 +29,7 @@ public class BeautyPresenter extends WanBasePresenter<BeautyView> {
 
         RetrofitClient.create()
                 .source(ApiSource.GANK)
-                .url(API.GANK_IO.GIRLS)
+                .url(API.GANK_IO.GIRLS(page,count))
                 .params(map)
                 .success(new ISuccess() {
                     @Override

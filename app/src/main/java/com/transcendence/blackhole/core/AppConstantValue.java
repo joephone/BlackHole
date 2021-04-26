@@ -15,7 +15,7 @@ import com.transcendence.blackhole.demo.mvp.act.MvpLoginActivity;
 import com.transcendence.blackhole.demo.other.act.GitHubContributionActivity;
 import com.transcendence.blackhole.demo.other.act.JavaH5Activity;
 import com.transcendence.blackhole.demo.other.act.OverKeyBoardActivity;
-import com.transcendence.blackhole.demo.pdfdownload.PDFdownMainActivity;
+import com.transcendence.blackhole.demo.pdfdownload.PdfDownMainActivity;
 import com.transcendence.blackhole.demo.scan.act.MengJianNanActivity;
 import com.transcendence.blackhole.demo.translationbehavior.act.ZhihuBehaviorActivity;
 import com.transcendence.blackhole.index.BaseIndexActivity;
@@ -35,7 +35,6 @@ import com.transcendence.blackhole.ui.base.act.LifeCycleActivity;
 import com.transcendence.blackhole.ui.base.act.LockerHomeActivity;
 import com.transcendence.blackhole.ui.base.act.RetrofitIntroActivity;
 import com.transcendence.blackhole.ui.base.act.ScreenKeyDownActivity;
-import com.transcendence.blackhole.ui.base.act.TelephoneInfoActivity;
 import com.transcendence.blackhole.ui.base.act.TouchEventActivity;
 import com.transcendence.blackhole.ui.gallery.act.JGalleryMainActivity;
 import com.transcendence.blackhole.ui.gallery.act.ZgalleryMainActivity;
@@ -47,7 +46,7 @@ import com.transcendence.blackhole.ui.image.act.WxImagePickerActivity;
 import com.transcendence.blackhole.ui.image.headcliper.act.HeadCliperMainActivity;
 import com.transcendence.blackhole.ui.rv.SwipeRecyclerViewMainActivity;
 import com.transcendence.blackhole.ui.rv.freshloadmore.act.RvLoadMoreActivity;
-import com.transcendence.blackhole.ui.rv.mi.act.XiaoMIAct;
+import com.transcendence.blackhole.ui.rv.mi.act.XiaoMiAct;
 import com.transcendence.blackhole.ui.rv.pullloadmorerecyclerviewsample.PullLoadMoreRvMainActivity;
 import com.transcendence.blackhole.ui.scroll.ScrollLayoutTwoActivity;
 import com.transcendence.blackhole.ui.scroll.meituantop.act.MeiTuanMainActivity;
@@ -93,10 +92,13 @@ public interface AppConstantValue {
      * 1
      */
     Class[] baseIndex = {
-            LifeCycleActivity.class, LaunchModeIndexActivity.class,
-            ScreenKeyDownActivity.class,LockerHomeActivity.class,
-            TelephoneInfoActivity.class, HandlerMainActivity.class,
-            FirstEventActivity.class,TouchEventActivity.class
+            LifeCycleActivity.class,
+            LaunchModeIndexActivity.class,
+            ScreenKeyDownActivity.class,
+            LockerHomeActivity.class,
+            HandlerMainActivity.class,
+            FirstEventActivity.class,
+            TouchEventActivity.class
             ,RetrofitIntroActivity.class};
     /**
      * 1.1
@@ -105,62 +107,82 @@ public interface AppConstantValue {
     /**
      * 2
      */
-    Class[] uiIndex = {UIimageIndexActivity.class,UIRvIndexActivity.class, UIEditIndexActivity.class};
+    Class[] uiIndex = {
+            UIimageIndexActivity.class,
+            UIRvIndexActivity.class,
+            UIEditIndexActivity.class};
 
     /**
      * 2.1
      */
-    Class[] imageIndex = {WxImagePickerActivity.class,ImageLoadActivity.class,
-            JGalleryMainActivity.class, ZgalleryMainActivity.class,
-            HeadCliperMainActivity.class, HandlerDownLoadActivity.class,
-            ImageAutoCycleOneActivity.class, ImageAutoCycleTwoActivity.class};
+    Class[] imageIndex =
+            {WxImagePickerActivity.class,
+            ImageLoadActivity.class,
+            JGalleryMainActivity.class,
+            ZgalleryMainActivity.class,
+            HeadCliperMainActivity.class,
+            HandlerDownLoadActivity.class,
+            ImageAutoCycleOneActivity.class,
+            ImageAutoCycleTwoActivity.class};
 
     /**
      * 2.2
      */
-    Class[] rvIndex = {XiaoMiCalcActivity.class, RvLoadMoreActivity.class,
+    Class[] rvIndex = {
+            XiaoMiCalcActivity.class,
+            RvLoadMoreActivity.class,
             PullLoadMoreRvMainActivity.class,
             SwipeRecyclerViewMainActivity.class};
 
     /**
      * 2.3
      */
-    Class[] etIndex = {AutoClearEditActivity.class, SoftKeyboardAdjustActivity.class};
+    Class[] etIndex = {
+            AutoClearEditActivity.class,
+            SoftKeyboardAdjustActivity.class};
 
     /**
      * 3
      */
-    Class[] lotteryIndex = {LotteryOneActivity.class,LotteryTwoActivity.class,LotteryThreeActivity.class};
+    Class[] lotteryIndex = {
+            LotteryOneActivity.class,
+            LotteryTwoActivity.class,
+            LotteryThreeActivity.class};
 
 
 
     /**
      * 4
      */
-    Class[] mvpIndex = {MvpLoginActivity.class,MvpBeautyListActivity.class};
+    Class[] mvpIndex = {
+            MvpLoginActivity.class,
+            MvpBeautyListActivity.class};
 
     /**
      * 5
      */
-    Class[] scrollIndex = {XiaohongshuActivity.class,
+    Class[] scrollIndex = {
+            XiaohongshuActivity.class,
             ScrollLayoutTwoActivity.class,
-            MeiTuanMainActivity.class, PullToZoomAct.class};
+            MeiTuanMainActivity.class,
+            PullToZoomAct.class};
 
     /**
      * 6
      */
-    Class[] otherIndex = {MarqueeIndexActivity.class,
+    Class[] otherIndex = {
+            MarqueeIndexActivity.class,
             OverKeyBoardActivity.class,
             GitHubContributionActivity.class,
             AllAppActivity.class,
             ZhihuBehaviorActivity.class,
             IosSegmentViewActivity.class,
-            XiaoMIAct.class,
+            XiaoMiAct.class,
             DidiMainActivity.class,
             MengJianNanActivity.class,
             XiaoMiCalcActivity.class,
             JavaH5Activity.class,
-            PDFdownMainActivity.class,
+            PdfDownMainActivity.class,
             BadgeActivity.class};    //PDFdownMainActivity
 
     Class[] voiceIndex = {};
@@ -170,6 +192,8 @@ public interface AppConstantValue {
     /**
      * 6.1
      */
-    Class[] marqueeIndex = {MarqueeTextOneActivity.class,MarqueeTextTwoActivity.class};
+    Class[] marqueeIndex = {
+            MarqueeTextOneActivity.class,
+            MarqueeTextTwoActivity.class};
 
 }

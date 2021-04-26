@@ -81,7 +81,7 @@ public class RvLoadMoreActivity extends TitleBarActivity {
         L.d("loadData");
         loadingDialog.show();
         OkHttpClient okhttpClient = new OkHttpClient.Builder().build();
-        Request request = new Request.Builder().url(API.GANK_IO.GIRLS).build();
+        Request request = new Request.Builder().url(API.GANK_IO.GIRLS_URL).build();
         okhttpClient.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {

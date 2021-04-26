@@ -57,7 +57,7 @@ public class RvActivity extends WanBaseActivity<BeautyPresenter> implements Beau
     @Override
     public void getBeautyListSuc(int code, List<BeautyBean> list) {
         L.d("getBeautyListSuc:" + code);
-        adapter = new RvImageAdapter(list);
+        adapter = new RvImageAdapter(RvActivity.this,list);
         mRv.setAdapter(adapter);
     }
 

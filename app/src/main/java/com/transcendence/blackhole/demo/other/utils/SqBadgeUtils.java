@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.graphics.BitmapFactory;
+import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -24,6 +25,8 @@ import android.widget.Toast;
 
 import com.transcendence.blackhole.R;
 import com.transcendence.blackhole.demo.other.act.badge.BadgeActivity;
+import com.transcendence.blackhole.demo.other.receiver.NotificationBroadcastReceiver;
+import com.transcendence.core.utils.L;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -45,13 +48,14 @@ public class SqBadgeUtils {
             Log.d("BRAND", Build.BRAND);
             switch (Build.BRAND.toLowerCase()) {
                 case "xiaomi":
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            setNotificationBadge(count, context);
-                        }
-                    }, 3000);
-                    Toast.makeText(context, "请切到后台，3秒后会收到通知", Toast.LENGTH_SHORT).show();
+//                    new Handler().postDelayed(new Runnable() {
+//                        @Override
+//                        public void run() {
+//                            setNotificationBadge(count, context);
+//                        }
+//                    }, 3000);
+//                    Toast.makeText(context, "请切到后台，3秒后会收到通知", Toast.LENGTH_SHORT).show();
+                    badgeXiaomi(count, context);
                     return true;
                 case "huawei":
                 case "honor":
@@ -94,9 +98,9 @@ public class SqBadgeUtils {
         Notification notification = new NotificationCompat.Builder(context, "badge")
                 .setContentTitle("应用角标")
                 .setContentText("您有" + count + "条未读消息")
-                .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.mipmap
-                        .ic_app_ten))
-                .setSmallIcon(R.mipmap.ic_launcher_round)
+//                .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.mipmap
+//                        .ic_app_ten))
+                .setSmallIcon(R.mipmap.ic_app_ten)
                 .setAutoCancel(true)
                 .setContentIntent(pendingIntent)
                 .setChannelId("badge")
@@ -104,10 +108,70 @@ public class SqBadgeUtils {
                 .setBadgeIconType(NotificationCompat.BADGE_ICON_SMALL).build();
         // 小米
         if (Build.BRAND.equalsIgnoreCase("xiaomi")) {
+            L.d("是小米啊");
             setXiaomiBadge(count, notification);
+        }else {
+            L.d("不是小米");
         }
         notificationManager.notify(notificationId++, notification);
         return true;
+    }
+
+    private static NotificationManager notificationManager;
+
+    /**
+     * 小米
+     * 小米手机如果在app内或未清理掉之前通知情况下执行添加角标操作，已显示的角标会消失
+     * 解决方案是清理掉之前发送的通知，并在app退到后台的时候执行添加角标操作
+     */
+    private static void badgeXiaomi(final int badgeCount, final Context context) {
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+        //延迟1秒是为了避免执行操作的时候还在app内，如要真正避免还是需要控制调用的时机
+        try {
+            Intent intentClick = new Intent(context, NotificationBroadcastReceiver.class);
+            intentClick.setAction("notification_clicked");
+            intentClick.putExtra(NotificationBroadcastReceiver.TYPE, "");
+            PendingIntent pendingIntentClick = PendingIntent.getBroadcast(context, 0, intentClick, PendingIntent.FLAG_ONE_SHOT);
+
+            Intent intentCancel = new Intent(context, NotificationBroadcastReceiver.class);
+            intentCancel.setAction("notification_cancelled");
+            intentCancel.putExtra(NotificationBroadcastReceiver.TYPE, "");
+            PendingIntent pendingIntentCancel = PendingIntent.getBroadcast(context, 0, intentCancel, PendingIntent.FLAG_ONE_SHOT);
+
+
+
+            Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+            NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context)
+                    .setSmallIcon(R.mipmap.ic_app_ten)
+                    .setContentTitle("通知")
+                    .setContentText("您有新消息")
+                    .setSound(defaultSoundUri)
+                    .setAutoCancel(true)
+                    .setContentIntent(pendingIntentClick)
+                    .setDeleteIntent(pendingIntentCancel);
+
+            notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.notify(11, notificationBuilder.build());  //type /* ID of notification */ 11
+            notificationManager.cancel(123);
+
+//                    Notification notification = BadgerUtil.getNotification(context, badgeCount);
+//                    Field field = notification.getClass().getDeclaredField("extraNotification");
+//                    Object extraNotification = field.get(notification);
+//                    Method method = extraNotification.getClass().getDeclaredMethod("setMessageCount", int.class);
+//                    method.invoke(extraNotification, badgeCount);
+//                    BadgerUtil.notify(notification, badgeCount);
+        } catch (Exception e) {
+            e.printStackTrace();
+            // 网上找的据说是miui 6之前的版本,没有miui6之前版本的小米手机不知道有没有效
+            Intent localIntent = new Intent("android.intent.action.APPLICATION_MESSAGE_UPDATE");
+            localIntent.putExtra("android.intent.extra.update_application_component_name", context.getPackageName() + "/" + getLauncherClassName(context));
+            localIntent.putExtra("android.intent.extra.update_application_message_text", String.valueOf(badgeCount == 0 ? "" : badgeCount));
+            context.sendBroadcast(localIntent);
+        }
+//            }
+//        }, 1000);
     }
 
     private static void setXiaomiBadge(int count, Notification notification) {

@@ -38,5 +38,8 @@ public class L {
         Log.w(Global.TAG, content);
     }
 
+    public static void e(String content) {
+        Log.e(Global.TAG, content);
+    }
 
 }

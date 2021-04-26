@@ -55,9 +55,9 @@ dependencies {
     implementation 'net.soulwolf.widget:ratiolayout:1.0.0'
     implementation 'com.makeramen:roundedimageview:2.3.0'
 
-    implementation 'com.github.chrisbanes:PhotoView:2.1.4'
 
     implementation 'com.github.goweii:RxHttp:2.2.9'
+
 
 
     implementation project(':basic_core')
@@ -65,7 +65,7 @@ dependencies {
     implementation project(':basic_ui')
     implementation project(':basic_res')
     implementation project(':basic_utils')
-
+    implementation project(':permissions')
 
     //Awesome 项目引用的库
 }

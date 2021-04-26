@@ -1,6 +1,7 @@
 package com.transcendence.core.utils;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.pm.PackageInfo;
@@ -9,6 +10,7 @@ import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.view.inputmethod.InputMethodManager;
 
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -129,6 +131,30 @@ public class AppUtils {
             }
         }
         return null;
+    }
+
+
+    /**
+     * 判断应用是否已经启动
+     * @param context 一个context
+     * @param packageName 要判断应用的包名
+     * @return boolean
+     */
+    public static boolean isAppAlive(Context context, String packageName){
+        ActivityManager activityManager =
+                (ActivityManager)context.getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningAppProcessInfo> processInfos
+                = activityManager.getRunningAppProcesses();
+        for(int i = 0; i < processInfos.size(); i++){
+            if(processInfos.get(i).processName.equals(packageName)){
+                L.logE(
+                        String.format("the %s is running, isAppAlive return true", packageName));
+                return true;
+            }
+        }
+        L.logE(
+                String.format("the %s is not running, isAppAlive return false", packageName));
+        return false;
     }
 
 }

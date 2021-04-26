@@ -17,8 +17,9 @@ import com.transcendence.core.base.activity.TitleBarActivity;
 import com.transcendence.blackhole.core.AppConstantValue;
 import com.transcendence.core.utils.L;
 import com.transcendence.core.utils.StringUtils;
-import com.transcendence.core.permission.PermissionPool;
-import com.transcendence.core.permission.PermissionUtils;
+import com.transcendence.permissions.OnPermissionCallback;
+import com.transcendence.permissions.PermissionPool;
+import com.transcendence.permissions.Permissions;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -139,11 +140,15 @@ public class IndexActivity extends TitleBarActivity implements View.OnClickListe
             }
 
             if(ivList.indexOf(v)==2){
-                if(mUnLocFirstClick){
-                    showSystemPermissionsSettingDialog(mActivity);
-                }else {
-                    PermissionUtils.getInstance().checkPermissions(IndexActivity.this, PermissionPool.LOCATION,permissionResult);
-                }
+                Permissions.with(mActivity)
+                        .permission(PermissionPool.Group.LOCATION)
+                        .request(new OnPermissionCallback() {
+                            @Override
+                            public void onGranted(List<String> permissions, boolean all) {
+                                ARouterUtils.navigation(AppConstantValue.mainIndex[2]);
+                            }
+                        });
+
                 return;
             }
             ARouterUtils.navigation(AppConstantValue.mainIndex[ivList.indexOf(v)]);
@@ -151,67 +156,6 @@ public class IndexActivity extends TitleBarActivity implements View.OnClickListe
         }
     }
 
-    PermissionUtils.IPermissionsResult permissionResult = new PermissionUtils.IPermissionsResult() {
-        @Override
-        public void onGranted() {
-            L.d("可以去");
-            ARouterUtils.navigation(AppConstantValue.mainIndex[2]);
-        }
 
-        @Override
-        public void onDenied() {
-            L.d("不通过");
-            mUnLocFirstClick = true;
-        }
-    };
-
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        PermissionUtils.getInstance().onRequestPermissionsResult(this,requestCode,permissions,grantResults);
-    }
-
-
-    /**
-     * 不再提示权限时的展示对话框
-     * String.format("%s需要获得%s权限才能正常使用此功能,请允许！", appLabel, permissionName);
-     */
-    AlertDialog mPermissionDialog;
-
-    private void showSystemPermissionsSettingDialog(final Activity context) {
-        final String mPackName = context.getPackageName();
-        if (mPermissionDialog == null) {
-            mPermissionDialog = new AlertDialog.Builder(context)
-                    .setMessage(String.format("%s需要获得%s权限才能正常使用此功能,请允许！", StringUtils.getString(R.string.app_name), "定位"))
-                    .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            cancelPermissionDialog();
-                            mUnLocFirstClick = false;
-                            PermissionUtils.getInstance().checkPermissions(IndexActivity.this, PermissionPool.LOCATION,permissionResult);
-                        }
-                    })
-                    .setNegativeButton("取消", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            //关闭页面或者做其他操作
-                            cancelPermissionDialog();
-                            //mContext.finish();
-                        }
-                    })
-                    .create();
-        }
-        mPermissionDialog.show();
-    }
-
-    //关闭对话框
-    private void cancelPermissionDialog() {
-        if (mPermissionDialog != null) {
-            mPermissionDialog.cancel();
-            mPermissionDialog = null;
-        }
-
-    }
 
 }

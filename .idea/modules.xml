@@ -40,6 +40,7 @@
       <module fileurl="file://$PROJECT_DIR$/music/music.iml" filepath="$PROJECT_DIR$/music/music.iml" group="BlackHole/music" />
       <module fileurl="file://$PROJECT_DIR$/network/network.iml" filepath="$PROJECT_DIR$/network/network.iml" group="BlackHole/network" />
       <module fileurl="file://$PROJECT_DIR$/news/news.iml" filepath="$PROJECT_DIR$/news/news.iml" group="BlackHole/news" />
+      <module fileurl="file://$PROJECT_DIR$/permissions/permissions.iml" filepath="$PROJECT_DIR$/permissions/permissions.iml" group="BlackHole/permissions" />
       <module fileurl="file://$PROJECT_DIR$/security/security.iml" filepath="$PROJECT_DIR$/security/security.iml" group="BlackHole/security" />
       <module fileurl="file://$PROJECT_DIR$/shareSDK/shareSDK.iml" filepath="$PROJECT_DIR$/shareSDK/shareSDK.iml" group="BlackHole/shareSDK" />
       <module fileurl="file://$PROJECT_DIR$/structure/structure.iml" filepath="$PROJECT_DIR$/structure/structure.iml" group="BlackHole/structure" />

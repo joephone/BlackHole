@@ -1,4 +1,4 @@
-package com.transcendence.wan.module.mine.act;
+package com.transcendence.wan.album.act;
 
 import android.widget.ImageView;
 

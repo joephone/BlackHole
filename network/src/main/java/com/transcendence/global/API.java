@@ -25,7 +25,7 @@ public class API {
     public static int per_page_more = 20;
 
 
-    public class GANK_IO {
+    public static class GANK_IO {
         /**
          * 分类数据 API
          https://gank.io/api/v2/data/category/<category>/type/<type>/page/<page>/count/<count>
@@ -43,7 +43,14 @@ public class API {
          获取Android干货列表
          https://gank.io/api/v2/data/category/GanHuo/type/Android/page/1/count/10
          */
-        public final static String GIRLS = API_GANK_IO + "v2/data/category/Girl/type/Girl/page/1/count/2";
+        public final static String GIRLS_URL = API_GANK_IO + "v2/data/category/Girl/type/Girl/page/%d/count/%d";
+
+
+//        private static final String GIRLS = "wxarticle/list/%d/%d/json";//id+page
+
+        public static String GIRLS(int count,int page) {
+            return String.format(GIRLS_URL,count,page);
+        }
     }
 
 

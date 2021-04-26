@@ -1,7 +1,13 @@
-package com.transcendence.wan.module.mine.act;
+package com.transcendence.wan.album.act;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -10,16 +16,17 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.bumptech.glide.DrawableRequestBuilder;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
-import com.github.chrisbanes.photoview.PhotoView;
 import com.transcendence.core.base.activity.TitleBarActivity;
 import com.transcendence.core.utils.L;
 import com.transcendence.wan.R;
+import com.transcendence.wan.album.MyDownloadManager;
+import com.transcendence.wan.module.publicmod.model.ImageItem;
 
 import java.util.ArrayList;
 
@@ -30,7 +37,7 @@ import java.util.ArrayList;
  * @Edition 1.0
  * @EditionHistory
  */
-public class ImageViewerActivity extends TitleBarActivity implements ViewPager.OnPageChangeListener {
+public class ImageViewerActivity extends TitleBarActivity implements ViewPager.OnPageChangeListener,View.OnClickListener {
     /**
      * 保存图片
      */
@@ -54,6 +61,7 @@ public class ImageViewerActivity extends TitleBarActivity implements ViewPager.O
     private boolean isLocal;
 
     private ArrayList<String> imageList = new ArrayList<>();
+    private ArrayList<String> imageTitles = new ArrayList<>();
 
     @Override
     protected int getLayoutId() {
@@ -62,16 +70,18 @@ public class ImageViewerActivity extends TitleBarActivity implements ViewPager.O
 
     @Override
     protected void init() {
-        setTitle("image");
         mVp = findViewById(R.id.vp);
         tvSave = findViewById(R.id.tv_save);
+        tvSave.setOnClickListener(this);
         tvCache = findViewById(R.id.tv_cache);
 
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
-            imageList = bundle.getStringArrayList("imageList");
-            currentIndex = bundle.getInt("currentIndex");
+            ImageItem itemsBean = (ImageItem) bundle.getSerializable("ImageItemsBean");
+            imageList = itemsBean.getImageList();
+            imageTitles = itemsBean.getImageTitles();
+            currentIndex = itemsBean.getCurrentPosition();
         }
 
         ViewPagerAdapter adapter = new ViewPagerAdapter();
@@ -87,7 +97,56 @@ public class ImageViewerActivity extends TitleBarActivity implements ViewPager.O
     }
 
 
+    public static void start(Context context, int position, ArrayList<String> imageList, ArrayList<String> imageTitles) {
+        Bundle bundle = new Bundle();
+        ImageItem itemsBean = new ImageItem();
+        itemsBean.setImageList(imageList);
+        itemsBean.setImageTitles(imageTitles);
+        itemsBean.setCurrentPosition(position);
+        bundle.putSerializable("ImageItemsBean",itemsBean);
+        Intent intent = new Intent(context, ImageViewerActivity.class);
+        intent.putExtras(bundle);
+        context.startActivity(intent);
+    }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.tv_save:
+                checkPermission();
+                break;
+        }
+    }
+
+
+    private void checkPermission() {
+        int result = ActivityCompat.checkSelfPermission(mActivity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        if(result == PackageManager.PERMISSION_GRANTED) {
+            downloadImage();
+        } else {
+//            dismiss();
+//            saveButtonClicked = false;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0x10);
+            }
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if(requestCode == 0x10 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            downloadImage();
+        } else {
+            Toast.makeText(mActivity, "您拒绝了访问存储设备", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    final MyDownloadManager myDownloadManager = new MyDownloadManager();
+
+    private void downloadImage() {
+        L.d("imageList.get(currentIndex):"+imageList.get(currentIndex));
+        myDownloadManager.addDownloadTask(imageList.get(currentIndex));
+    }
 
     /**
      * ViewPager的适配器
@@ -103,6 +162,8 @@ public class ImageViewerActivity extends TitleBarActivity implements ViewPager.O
         @NonNull
         @Override
         public Object instantiateItem(@NonNull ViewGroup container, int position) {
+            tvCache.setText((position + 1) + " / " + imageList.size());
+            setTitle(imageTitles.get(position));
             View view = inflater.inflate(R.layout.activity_image_viewpager_very_image, container, false);
             final ImageView zoomImageView = view.findViewById(R.id.iv_img);
             final ProgressBar progressBar = view.findViewById(R.id.loading);
@@ -187,7 +248,19 @@ public class ImageViewerActivity extends TitleBarActivity implements ViewPager.O
 
     @Override
     public void onPageScrollStateChanged(int position) {
-        tvCache.setText((position + 1) + " / " + imageList.size());
         currentIndex = position;
+    }
+
+    public static String MD5(String path)  {
+        // URL url = new URL(path);
+        //String url = path;
+
+        //String path = Environment.getExternalStorageDirectory().getAbsolutePath();
+
+        //final long startTime = System.currentTimeMillis();
+
+        //String filename=url.substring(url.lastIndexOf("/") + 1);
+        String filename ="pp.jpg";
+        return filename;
     }
 }

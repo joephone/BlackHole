@@ -10,15 +10,17 @@ import com.transcendence.core.adapter.GoweiiFragmentPagerAdapter;
 import com.transcendence.core.arouter.ARouterController;
 import com.transcendence.core.arouter.ARouterUtils;
 import com.transcendence.core.utils.L;
-import com.transcendence.core.permission.PermissionPool;
-import com.transcendence.core.permission.PermissionUtils;
+import com.transcendence.permissions.OnPermissionCallback;
+import com.transcendence.permissions.PermissionPool;
+import com.transcendence.permissions.Permissions;
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanBaseActivity;
 import com.transcendence.wan.module.dama.fragment.DamaFragment;
 import com.transcendence.wan.module.home.fragment.MainFragment;
 import com.transcendence.wan.module.main.presenter.WanMainPresenter;
 import com.transcendence.wan.module.main.view.WanMainView;
-import com.transcendence.wan.ui.dialog.PrivacyPolicyDialog;
+
+import java.util.List;
 
 /**
  * @author Administrator
@@ -67,21 +69,18 @@ public class WanMainActivity extends WanBaseActivity<WanMainPresenter> implement
         mVp.setCurrentItem(4);
 
         showPrivacyPolicyDialog();
-        PermissionUtils.getInstance().checkPermissions(WanMainActivity.this,PermissionPool.STORAGE,permissionResult);
+
+        Permissions.with(mActivity)
+                .permission(PermissionPool.GROUP.STORAGE)
+                .request(new OnPermissionCallback() {
+                    @Override
+                    public void onGranted(List<String> permissions, boolean all) {
+                        L.d("download enable");
+                    }
+                });
     }
 
 
-    PermissionUtils.IPermissionsResult permissionResult = new PermissionUtils.IPermissionsResult() {
-        @Override
-        public void onGranted() {
-            L.d("可以下载");
-        }
-
-        @Override
-        public void onDenied() {
-            L.d("不通过");
-        }
-    };
 
     /**
      * Show Private Policy
@@ -95,12 +94,12 @@ public class WanMainActivity extends WanBaseActivity<WanMainPresenter> implement
                     @Override
                     public void run() {
                         L.d("showPrivacyPolicyDialog");
-                        PrivacyPolicyDialog.showIfFirst(getContext(), new PrivacyPolicyDialog.CompleteCallback() {
-                            @Override
-                            public void onComplete() {
-
-                            }
-                        });
+//                        PrivacyPolicyDialog.showIfFirst(getContext(), new PrivacyPolicyDialog.CompleteCallback() {
+//                            @Override
+//                            public void onComplete() {
+//
+//                            }
+//                        });
                     }
                 });
             }
@@ -135,12 +134,6 @@ public class WanMainActivity extends WanBaseActivity<WanMainPresenter> implement
         return super.onKeyUp(keyCode, event);
     }
 
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        PermissionUtils.getInstance().onRequestPermissionsResult(this,requestCode,permissions,grantResults);
-    }
 
 
 

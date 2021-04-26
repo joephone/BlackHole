@@ -2,17 +2,27 @@ package com.transcendence.wan.module.home.fragment;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.annotation.NonNull;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.scwang.smart.refresh.layout.SmartRefreshLayout;
+import com.scwang.smart.refresh.layout.api.RefreshLayout;
+import com.scwang.smart.refresh.layout.listener.OnRefreshLoadMoreListener;
+import com.transcendence.core.global.Global;
 import com.transcendence.core.utils.L;
 import com.transcendence.core.utils.ScreenUtils;
 import com.transcendence.core.widget.custom.banner.BannerLayout;
 import com.transcendence.ui.recyclerview.adapter.BaseAbsAdapter;
+import com.transcendence.ui.recyclerview.hjq.BaseAdapter;
+import com.transcendence.ui.recyclerview.hjq.layout.WrapRecyclerView;
 import com.transcendence.ui.recyclerview.view.LoadMoreLayout;
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanBaseFragment;
+import com.transcendence.wan.module.beauty.adapter.BeautyAdapter;
 import com.transcendence.wan.module.home.model.BannerBean;
 import com.transcendence.wan.module.home.presenter.HomePresenter;
 import com.transcendence.wan.module.home.view.HomeView;
@@ -35,17 +45,23 @@ import java.util.List;
 
 public class HomeFragment extends WanBaseFragment<HomePresenter> implements HomeView,
                                                                     BannerLayout.OnBannerItemClickListener,
-                                                                    LoadMoreLayout.LoadMoreCallback {
+                                                                    OnRefreshLoadMoreListener,
+                                                                    BaseAdapter.OnItemClickListener  {
 
     private static final String ARG_SHOW_TEXT = "text";
     private static int PAGE = 0;
     private ImageView ivLeft,ivRight;
 
+
     private BannerLayout mBanner;
-    private LoadMoreLayout mLoadMoreLayout;
-    private BaseAbsAdapter mAdapter;
     private List<BannerBean> mBannerBeans;
     private List<String> mBannerUrls;
+
+    private SmartRefreshLayout mRefreshLayout;
+    private WrapRecyclerView mRecyclerView;
+    private ArticleListAdapter mAdapter;
+    private boolean isLoadMore;
+    Handler mHandler = new Handler();
 
     @Override
     protected int getLayoutRes() {
@@ -105,11 +121,13 @@ public class HomeFragment extends WanBaseFragment<HomePresenter> implements Home
     }
 
     private void initRv() {
-        mLoadMoreLayout = findViewById(R.id.loadMoreLayout);
+        mRefreshLayout = findViewById(R.id.rl_refresh);
         mAdapter = new ArticleListAdapter(getContext());
-        mLoadMoreLayout.setAdapter(mAdapter,getContext());
-        mLoadMoreLayout.addCallback(this);
-
+        mRecyclerView = findViewById(R.id.rv_home);
+        mAdapter.setOnItemClickListener(this);
+        mRecyclerView.setAdapter(mAdapter);
+        mRefreshLayout.setOnRefreshLoadMoreListener(this);
+        mRefreshLayout.setEnableRefresh(false);
     }
 
 
@@ -178,7 +196,27 @@ public class HomeFragment extends WanBaseFragment<HomePresenter> implements Home
     @Override
     public void getArticleListHomeSuccess(int code, List<ArticleListBean.DataBean.DatasBean> data) {
         L.d("getArticleListSuccess");
-        mLoadMoreLayout.onLoadMore(data);
+        if(isLoadMore){
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mAdapter.addData(data);
+                    mRefreshLayout.finishLoadMore();
+                    mAdapter.setLastPage(data.size()< Global.LIMIT);
+                    mRefreshLayout.setNoMoreData(mAdapter.isLastPage());
+                }
+            }, 1000);
+        }else {
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mAdapter.clearData();
+                    mAdapter.addData(data);
+                    mRefreshLayout.finishRefresh();
+                }
+            }, 1000);
+
+        }
     }
 
     @Override
@@ -186,9 +224,24 @@ public class HomeFragment extends WanBaseFragment<HomePresenter> implements Home
 
     }
 
+
+
     @Override
-    public void onViewLoadMore() {
+    public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
         PAGE ++;
+        isLoadMore = true;
         presenter.getArticleList(PAGE);
+    }
+
+    @Override
+    public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+        PAGE = 0;
+        isLoadMore = false;
+        presenter.getArticleList(PAGE);
+    }
+
+    @Override
+    public void onItemClick(RecyclerView recyclerView, View itemView, int position) {
+
     }
 }

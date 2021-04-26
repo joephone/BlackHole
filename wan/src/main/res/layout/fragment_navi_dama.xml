@@ -72,11 +72,25 @@
         </RelativeLayout>
     </LinearLayout>
 
-
-    <com.transcendence.ui.recyclerview.view.RefreshLayout
-        android:id="@+id/refreshView"
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/rl_refresh"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        app:srlEnablePreviewInEditMode="false">
+
+        <com.transcendence.ui.recyclerview.hjq.layout.WrapRecyclerView
+            android:id="@+id/rv_dama"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listCount="10" />
+
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+
+<!--    <com.transcendence.ui.recyclerview.view.RefreshLayout-->
+<!--        android:id="@+id/refreshView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"/>-->
 
 
 </LinearLayout>
