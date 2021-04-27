@@ -9,7 +9,7 @@
 
 
 
-    <!-- 第7排  setting_language -->
+    <!-- 第1排  setting_language -->
     <LinearLayout
         android:id="@+id/ll_language"
         android:layout_width="match_parent"
@@ -60,11 +60,54 @@
     </LinearLayout>
 
 
+    <!-- 第2排  setting_check -->
+    <LinearLayout
+        android:id="@+id/ll_check_update"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_press_color_surface"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:singleLine="true"
+            android:text="@string/setting_check_update"
+            android:textColor="@color/text_surface"
+            android:textSize="@dimen/text_content" />
+
+        <TextView
+            android:id="@+id/tv_new"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:paddingTop="@dimen/dp_5"
+            android:paddingBottom="@dimen/dp_5"
+            android:paddingLeft="@dimen/dp_8"
+            android:paddingRight="@dimen/dp_8"
+            android:background="@drawable/bg_new_red"
+            android:singleLine="true"
+            android:text="new"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_notes" />
+
+
+    </LinearLayout>
+
+
     <!-- 第7排  清除缓存 -->
     <LinearLayout
         android:id="@+id/ll_cache"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/bg_press_color_surface"
         android:gravity="center"
         android:orientation="horizontal"

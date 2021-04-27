@@ -35,6 +35,7 @@
     <string name="rank_list">RankList</string>
     <string name="setting">Setting</string>
     <string name="setting_language">Language</string>
+    <string name="setting_check_update">ChechUpdate</string>
     <string name="simplified_chinese">SimplifiedChinese</string>
     <string name="america_english">America English</string>
     <!-- other -->

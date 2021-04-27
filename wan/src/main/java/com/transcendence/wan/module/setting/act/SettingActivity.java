@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.transcendence.core.utils.L;
+import com.transcendence.ui.dialog.hjq.layout.UpdateDialog;
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.bean.NewWanBaseBean;
 import com.transcendence.wan.core.mvp.WanTitleBarActivity;
@@ -29,7 +30,7 @@ public class SettingActivity extends WanTitleBarActivity<SettingPresenter> imple
 
 
     TextView tvCache;
-    private LinearLayout llLanguage,llCache,llLogout;
+    private LinearLayout llLanguage,llCheckUpdate,llCache,llLogout;
 
 
     @Override
@@ -49,6 +50,8 @@ public class SettingActivity extends WanTitleBarActivity<SettingPresenter> imple
         tvCache = findViewById(R.id.tv_cache);
         llLanguage = findViewById(R.id.ll_language);
         llLanguage.setOnClickListener(this);
+        llCheckUpdate = findViewById(R.id.ll_check_update);
+        llCheckUpdate.setOnClickListener(this);
         llCache = findViewById(R.id.ll_cache);
         llCache.setOnClickListener(this);
         llLogout = findViewById(R.id.ll_logout);
@@ -78,6 +81,20 @@ public class SettingActivity extends WanTitleBarActivity<SettingPresenter> imple
 //                break;
             case R.id.ll_language:
                 LanguageActivity.start(getContext());
+                break;
+            case R.id.ll_check_update:
+                new UpdateDialog.Builder(mActivity)
+                        // 版本名
+                        .setVersionName("1.0.0")
+                        // 是否强制更新
+                        .setForceUpdate(false)
+                        // 更新日志
+                        .setUpdateLog("到底更新了啥\n到底更新了啥\n到底更新了啥\n到底更新了啥\n到底更新了啥")
+                        // 下载 URL
+                        .setDownloadUrl("https://dldir1.qq.com/weixin/android/weixin7014android1660.apk")
+                        // 文件 MD5
+                        .setFileMd5("6ec99cb762ffd9158e8b27dc33d9680d")
+                        .show();
                 break;
             case R.id.ll_cache:
                 presenter.clearCache();
