@@ -16,6 +16,12 @@
     <string name="cancel">Cancel</string>
     <string name="ok">OK</string>
     <string name="save">Save</string>
+    <string name="nickname">NickName</string>
+    <string name="address">Address</string>
+    <string name="next">Next</string>
+    <string name="search">Search</string>
+    <string name="edit">Edit</string>
+    <string name="tip">Tip</string>
     <!-- 4 tab -->
     <string name="tab_home">Home</string>
     <string name="tab_hierarchy">Hierarchy</string>

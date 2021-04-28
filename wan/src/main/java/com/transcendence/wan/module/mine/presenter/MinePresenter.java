@@ -7,6 +7,7 @@ import com.transcendence.network.jett.callback.IFailure;
 import com.transcendence.network.jett.callback.ISuccess;
 import com.transcendence.network.jett.retrofit.RetrofitClient;
 import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
+import com.transcendence.wan.core.mvp.presenter.WanTitlebarPresenter;
 import com.transcendence.wan.core.service.ParamUser;
 import com.transcendence.wan.module.mine.model.MyCoinModel;
 import com.transcendence.wan.module.mine.view.MineView;
@@ -21,7 +22,7 @@ import java.util.Map;
  * @EditionHistory
  */
 
-public class MinePresenter extends WanBasePresenter<MineView> {
+public class MinePresenter extends WanTitlebarPresenter<MineView> {
 
     public void getCoin() {
         L.d("getCoin");

@@ -19,6 +19,7 @@ import com.transcendence.wan.module.login.model.LoginBean;
 import com.transcendence.wan.module.main.act.WanWebActivity;
 import com.transcendence.wan.module.mine.act.AboutMeActivity;
 import com.transcendence.wan.module.mine.act.MyCoinActivity;
+import com.transcendence.wan.module.mine.act.PersonalActivity;
 import com.transcendence.wan.module.mine.act.RankActivity;
 import com.transcendence.wan.module.mine.model.MyCoinBean;
 import com.transcendence.wan.module.mine.presenter.MinePresenter;
@@ -42,10 +43,9 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
     private static final String ARG_SHOW_TEXT = "text";
     private ImageView ivRight;
 
-
-//    private RelativeLayout rlUserInfo;
     private LinearLayout llCoin,llShare,llPpen,llSetting,llAboutAuthor,llReadLater;
     private LinearLayout ll_user_level,ll_user_id;
+    private ImageView ivBg;
     private FrameLayout flRight;
     private HeaderZoomLayout mScroll;
     private TextView tvName,tvId,tvRanking,tvLevel,tvMyCoinCount;
@@ -66,6 +66,8 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
 
     @Override
     protected void initView() {
+        ivBg = findViewById(R.id.iv_bg);
+        ivBg.setOnClickListener(this);
         userIcon = findViewById(R.id.civ_user_icon);
         userIcon.setOnClickListener(this);
         tvName = findViewById(R.id.tvName);
@@ -78,8 +80,6 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
         ll_user_id = findViewById(R.id.ll_user_level);
 
 //        ivRight = findViewById(R.id.ivRight);
-//        rlUserInfo = findViewById(R.id.rlUserInfo);
-//        rlUserInfo.setOnClickListener(this);
         llCoin = findViewById(R.id.ll_coin);
         llCoin.setOnClickListener(this);
         llShare= findViewById(R.id.ll_share);
@@ -147,6 +147,11 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
             case R.id.tv_name:
                 if(UserUtils.getInstance().toDoIfLogin(getContext())){
 
+                }
+                break;
+            case R.id.iv_bg:
+                if(UserUtils.getInstance().toDoIfLogin(getContext())){
+                    PersonalActivity.start(getContext());
                 }
                 break;
             case R.id.fl_right:

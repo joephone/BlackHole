@@ -1,6 +1,7 @@
 package com.transcendence.wan.module.mine.view;
 
 import com.transcendence.wan.core.mvp.view.WanBaseView;
+import com.transcendence.wan.core.mvp.view.WanTitleBarView;
 import com.transcendence.wan.module.mine.model.MyCoinBean;
 
 /**
@@ -11,7 +12,7 @@ import com.transcendence.wan.module.mine.model.MyCoinBean;
  * @EditionHistory
  */
 
-public interface MineView extends WanBaseView{
+public interface MineView extends WanTitleBarView {
 
     void getMyCoinSuc(int code, MyCoinBean bean);
 

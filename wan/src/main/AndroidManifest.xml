@@ -57,6 +57,8 @@
         <activity android:name=".module.mine.act.RankActivity"/>
         <!-- 我的积分-->
         <activity android:name=".module.mine.act.MyCoinActivity"/>
+
+        <activity android:name=".module.mine.act.PersonalActivity" />
         <!-- 设置-->
         <activity android:name=".module.setting.act.SettingActivity"/>
         <!-- setting language-->
@@ -69,7 +71,6 @@
         <!-- ToDo-->
         <activity
             android:name=".module.mine.act.ToDoActivity"/>
-
 
 
 
