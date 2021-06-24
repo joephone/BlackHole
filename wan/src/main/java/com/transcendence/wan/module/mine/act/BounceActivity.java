@@ -1,6 +1,6 @@
 package com.transcendence.wan.module.mine.act;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanBaseActivity;

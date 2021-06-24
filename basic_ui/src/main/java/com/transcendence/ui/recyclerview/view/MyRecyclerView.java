@@ -1,11 +1,12 @@
 package com.transcendence.ui.recyclerview.view;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * @Author Joephone on 2020/4/24 1:20
@@ -15,7 +16,7 @@ import android.view.View;
  * @EditionHistory
  */
 
-public class MyRecyclerView extends RecyclerView{
+public class MyRecyclerView extends RecyclerView {
 
     private View mEmptyView;
 

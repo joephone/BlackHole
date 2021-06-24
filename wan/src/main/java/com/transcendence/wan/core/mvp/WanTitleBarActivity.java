@@ -1,5 +1,6 @@
 package com.transcendence.wan.core.mvp;
 
+import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
@@ -159,9 +160,25 @@ public abstract class WanTitleBarActivity<P extends WanTitlebarPresenter> extend
 
 
     private void initStateHeight() {
-        int statusHeight = AppUtils.getStatusHeight(this);
+        int statusHeight = getStatusHeight(this);
         LinearLayout.LayoutParams l = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, statusHeight);
         statusView.setLayoutParams(l);
+    }
+
+
+
+    public int getStatusHeight(Context context) {
+        int statusHeight = -1;
+        try {
+            Class<?> clazz = Class.forName("com.android.internal.R$dimen");
+            Object object = clazz.newInstance();
+            int height = Integer.parseInt(clazz.getField("status_bar_height")
+                    .get(object).toString());
+            statusHeight = context.getResources().getDimensionPixelSize(height);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return statusHeight;
     }
 
 }

@@ -1,25 +1,14 @@
 package com.transcendence.music.ui;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
-import android.os.Handler;
-import android.os.Message;
-import android.print.PrintDocumentAdapter;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
 import android.view.KeyEvent;
-import android.view.View;
 import android.view.WindowManager;
-import android.webkit.JavascriptInterface;
 import android.webkit.JsResult;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
@@ -29,25 +18,15 @@ import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Button;
 import android.widget.Toast;
 
-import com.transcendence.core.base.activity.TitleBarActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.transcendence.core.utils.L;
-import com.transcendence.core.utils.permission.PermissionPool;
 import com.transcendence.music.R;
 
-import org.json.JSONObject;
-
-import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.InvocationHandler;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.Timer;
 import java.util.TimerTask;
-
-import javax.net.ssl.HttpsURLConnection;
 
 /**
  * @Author Joephone on 2021/3/26 0026 下午 5:59

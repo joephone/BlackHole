@@ -24,9 +24,6 @@ public class ScollLayoutActivity extends AmapFragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
     }
 
 

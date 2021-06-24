@@ -1,9 +1,10 @@
 package com.transcendence.wan.module.main.act;
 
-import android.support.annotation.Nullable;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.View;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanBaseActivity;

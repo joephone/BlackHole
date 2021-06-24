@@ -1,7 +1,8 @@
 package com.transcendence.wan.module.wxpublic.fragment;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.Nullable;
 
 import com.transcendence.ui.recyclerview.adapter.BaseAbsAdapter;
 import com.transcendence.ui.recyclerview.view.RefreshLayout;

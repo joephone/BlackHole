@@ -2,11 +2,12 @@ package com.transcendence.wan.module.setting.act;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.transcendence.core.utils.L;
 import com.transcendence.ui.recyclerview.view.LoadMoreLayout;

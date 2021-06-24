@@ -2,7 +2,10 @@ package com.transcendence.map.catches.act;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
+import android.widget.ImageView;
 
+import com.transcendence.core.utils.L;
 import com.transcendence.map.R;
 
 /**
@@ -14,7 +17,7 @@ import com.transcendence.map.R;
  */
 public class CatchesMapActivity extends ScollLayoutActivity {
 
-
+    private ImageView mIvMyLoc;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,6 +28,18 @@ public class CatchesMapActivity extends ScollLayoutActivity {
         mRlRoot = findViewById(R.id.rlRoot);
 
         initScrollLayoutView();
+        initMapViewFragment();
+        mIvMyLoc = findViewById(R.id.ivMyLoc);
+        mIvMyLoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(mapUtil!=null){
+                    mapUtil.onMyLoc();
+                }else {
+                    L.d("mapUtil == null");
+                }
+            }
+        });
 
     }
 

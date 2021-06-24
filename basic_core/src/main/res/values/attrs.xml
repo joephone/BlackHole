@@ -123,7 +123,6 @@
         <attr name="cpd_outAnimDuration" format="reference|integer"/>
         <attr name="cpd_inStepColors" format="reference"/>
         <attr name="cpd_inStepPercent" format="float"/>
-        <attr name="pv_progressMode"/>
     </declare-styleable>
     <!-- end dialog -->
 

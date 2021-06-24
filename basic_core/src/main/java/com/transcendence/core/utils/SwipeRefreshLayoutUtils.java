@@ -1,6 +1,6 @@
 package com.transcendence.core.utils;
 
-import android.support.v4.widget.SwipeRefreshLayout;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.transcendence.core.R;
 import com.transcendence.core.listener.OnSrflRefreshListener;

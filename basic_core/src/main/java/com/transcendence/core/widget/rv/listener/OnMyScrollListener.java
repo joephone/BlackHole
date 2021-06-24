@@ -1,7 +1,8 @@
 package com.transcendence.core.widget.rv.listener;
 
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * @Author Joephone on 2020/4/18 0:15

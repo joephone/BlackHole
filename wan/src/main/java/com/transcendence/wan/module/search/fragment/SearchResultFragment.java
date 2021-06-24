@@ -1,11 +1,12 @@
 package com.transcendence.wan.module.search.fragment;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.transcendence.core.base.activity.BaseFragment;
 import com.transcendence.wan.R;
@@ -20,8 +21,8 @@ import com.transcendence.wan.R;
 
 public class SearchResultFragment extends BaseFragment {
 
-    RecyclerView mRvHot;
-    RecyclerView mRvHistory;
+    private RecyclerView mRvHot;
+    private RecyclerView mRvHistory;
     /**
      * 缓存Fragment view
      */

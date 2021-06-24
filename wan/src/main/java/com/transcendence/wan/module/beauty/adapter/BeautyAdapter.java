@@ -1,11 +1,12 @@
 package com.transcendence.wan.module.beauty.adapter;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 
 import com.transcendence.ui.recyclerview.hjq.AppAdapter;
 import com.transcendence.utils.glide.GlideUtils;

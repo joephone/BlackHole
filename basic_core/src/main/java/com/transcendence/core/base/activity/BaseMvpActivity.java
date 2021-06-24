@@ -6,11 +6,6 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
@@ -23,11 +18,17 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 import com.transcendence.core.base.mvp.LibBasePresenter;
 import com.transcendence.core.R;
 import com.transcendence.core.utils.AppUtils;
 import com.transcendence.core.utils.L;
-import com.transcendence.core.utils.permission.PermissionPool;
+import com.transcendence.permissions.PermissionPool;
 import com.umeng.analytics.MobclickAgent;
 
 
@@ -204,26 +205,26 @@ public abstract class BaseMvpActivity<V,T extends LibBasePresenter<V>> extends A
         return super.dispatchTouchEvent(ev);
     }
 
-    /**
-     * android6.0权限处理
-     * @param permissionCode    权限标记Code
-     * @param permissionName    权限名称
-     *                          int requestCode, String[] permissions, int[] grantResults
-     */
-    public void onPermissionRequest(@PermissionPool.PermissionCode int permissionCode, @PermissionPool.PermissionName String permissionName){
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
-            L.logI("22以下");
-            onPermissionsGranted(permissionCode);
-            return ;
-        }
-        if(ContextCompat.checkSelfPermission(this, permissionName)== PackageManager.PERMISSION_GRANTED){
-            //有权限
-            onPermissionsGranted(permissionCode);
-        }else{
-            //没有权限,开始申请
-            ActivityCompat.requestPermissions(this,new String[]{permissionName},permissionCode);
-        }
-    }
+//    /**
+//     * android6.0权限处理
+//     * @param permissionCode    权限标记Code
+//     * @param permissionName    权限名称
+//     *                          int requestCode, String[] permissions, int[] grantResults
+//     */
+//    public void onPermissionRequest(@PermissionPool.PermissionCode int permissionCode, @PermissionPool.PermissionName String permissionName){
+//        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+//            L.logI("22以下");
+//            onPermissionsGranted(permissionCode);
+//            return ;
+//        }
+//        if(ContextCompat.checkSelfPermission(this, permissionName)== PackageManager.PERMISSION_GRANTED){
+//            //有权限
+//            onPermissionsGranted(permissionCode);
+//        }else{
+//            //没有权限,开始申请
+//            ActivityCompat.requestPermissions(this,new String[]{permissionName},permissionCode);
+//        }
+//    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {

@@ -2,11 +2,12 @@ package com.transcendence.wan.utils;
 
 import android.content.res.Resources;
 import android.os.Build;
-import android.support.design.widget.TabLayout;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.google.android.material.tabs.TabLayout;
 
 import java.lang.reflect.Field;
 

@@ -1,9 +1,10 @@
 package com.transcendence.blackhole.core;
 
-import android.support.constraint.ConstraintLayout;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.ImageView;
+
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.transcendence.blackhole.R;
 import com.transcendence.core.base.activity.BaseActivity;

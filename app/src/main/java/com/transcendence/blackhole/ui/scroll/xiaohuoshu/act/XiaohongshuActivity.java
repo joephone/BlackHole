@@ -1,7 +1,7 @@
 package com.transcendence.blackhole.ui.scroll.xiaohuoshu.act;
 
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.transcendence.blackhole.R;
 import com.transcendence.core.base.activity.TitleBarActivity;

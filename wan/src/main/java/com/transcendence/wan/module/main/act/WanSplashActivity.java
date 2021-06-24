@@ -1,13 +1,14 @@
 package com.transcendence.wan.module.main.act;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+
+import androidx.annotation.Nullable;
 
 import com.transcendence.core.global.Global;
 import com.transcendence.core.utils.GlideUtils;
@@ -176,7 +177,6 @@ public class WanSplashActivity extends WanBaseActivity<SplashPresenter> implemen
                 startMain();
             }
         }, ANIM_DURATION_TIME);
-
     }
 
     private void startMain() {

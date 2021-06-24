@@ -7,6 +7,8 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.LinearLayout;
 
+import com.transcendence.core.utils.L;
+
 public class LinearLayoutView extends LinearLayout{
 
 	public static final int KEYBORAD_HIDE = 0;
@@ -34,13 +36,11 @@ public class LinearLayoutView extends LinearLayout{
 			@Override
 			public void run() {
 				if (oldh - h > SOFTKEYPAD_MIN_HEIGHT){		
-					Log.e("lp", "up");
-					System.out.println("弹起");
+					L.d("up弹起");
 					keyBordStateListener.stateChange(KEYBORAD_SHOW);
 				}
-				else {					
-					System.out.println("隐藏");
-					Log.e("lp", "down");
+				else {
+					L.d( "down隐藏");
 					if(keyBordStateListener != null){
 						keyBordStateListener.stateChange(KEYBORAD_HIDE);
 					}
@@ -61,14 +61,14 @@ public class LinearLayoutView extends LinearLayout{
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 	}
 	
-	private KeyBordStateListener  keyBordStateListener;
+	private KeyBordStateListener keyBordStateListener;
 	
 	public void setKeyBordStateListener(KeyBordStateListener keyBordStateListener) {
 		this.keyBordStateListener = keyBordStateListener;
 	}
 
 	public interface KeyBordStateListener{		
-		public void stateChange(int state);
+		void stateChange(int state);
 	}
 	
 }

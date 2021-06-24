@@ -8,10 +8,11 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.os.Parcelable;
-import android.support.annotation.ColorRes;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+
+import androidx.annotation.ColorRes;
 
 import com.lht.paintview.pojo.DrawPath;
 import com.lht.paintview.pojo.DrawPoint;

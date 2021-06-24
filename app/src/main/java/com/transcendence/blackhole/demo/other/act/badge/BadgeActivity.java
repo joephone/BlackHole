@@ -34,8 +34,6 @@ public class BadgeActivity extends TitleBarActivity {
         setTitle("App角标", "另一方案");
         mCountEditText = findViewById(R.id.et_count);
 
-
-
         findViewById(R.id.tv_set).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,6 +52,7 @@ public class BadgeActivity extends TitleBarActivity {
                 clickHome();
             }
         });
+
         findViewById(R.id.tv_notification).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,7 +66,6 @@ public class BadgeActivity extends TitleBarActivity {
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-
                     Toast.makeText(mActivity, "设置失败", Toast.LENGTH_SHORT).show();
                 }
                 clickHome();

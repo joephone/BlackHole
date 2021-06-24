@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.transcendence.core.global.Global;
 import com.transcendence.core.utils.L;
 import com.transcendence.ui.dialog.hjq.layout.UpdateDialog;
 import com.transcendence.wan.R;
@@ -15,6 +16,7 @@ import com.transcendence.wan.core.mvp.WanTitleBarActivity;
 import com.transcendence.wan.event.LoginEvent;
 import com.transcendence.wan.module.setting.presenter.SettingPresenter;
 import com.transcendence.wan.module.setting.view.SettingView;
+import com.transcendence.wan.utils.AliPayUtils;
 import com.transcendence.wan.utils.StringUtils;
 import com.transcendence.wan.utils.UserUtils;
 
@@ -30,7 +32,7 @@ public class SettingActivity extends WanTitleBarActivity<SettingPresenter> imple
 
 
     TextView tvCache;
-    private LinearLayout llLanguage,llCheckUpdate,llCache,llLogout;
+    private LinearLayout llLanguage,llCheckUpdate,llCache,llAlipay,llLogout;
 
 
     @Override
@@ -54,6 +56,8 @@ public class SettingActivity extends WanTitleBarActivity<SettingPresenter> imple
         llCheckUpdate.setOnClickListener(this);
         llCache = findViewById(R.id.ll_cache);
         llCache.setOnClickListener(this);
+        llAlipay = findViewById(R.id.ll_alipay);
+        llAlipay.setOnClickListener(this);
         llLogout = findViewById(R.id.ll_logout);
         llLogout.setOnClickListener(this);
         if(!UserUtils.getInstance().isLogin()){
@@ -93,11 +97,14 @@ public class SettingActivity extends WanTitleBarActivity<SettingPresenter> imple
                         // 下载 URL
                         .setDownloadUrl("https://dldir1.qq.com/weixin/android/weixin7014android1660.apk")
                         // 文件 MD5
-                        .setFileMd5("6ec99cb762ffd9158e8b27dc33d9680d")
+                        .setFileMd5(Global.MD5_MAP)
                         .show();
                 break;
             case R.id.ll_cache:
                 presenter.clearCache();
+                break;
+            case R.id.ll_alipay:
+                AliPayUtils.showDonateDialog(this);
                 break;
             case R.id.ll_logout:
                 if(UserUtils.getInstance().toDoIfLogin(getContext())){

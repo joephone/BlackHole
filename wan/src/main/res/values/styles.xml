@@ -14,6 +14,8 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorPrimaryDark</item>
         <item name="android:windowBackground">@color/bg_public</item>
+        <!-- 窗口无默认标题栏 -->
+        <item name="android:windowNoTitle">true</item>
     </style>
 
     <style name="ActionBar">

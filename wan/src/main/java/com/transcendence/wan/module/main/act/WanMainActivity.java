@@ -1,8 +1,8 @@
 package com.transcendence.wan.module.main.act;
 
-import android.support.annotation.NonNull;
-import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
+
+import androidx.viewpager.widget.ViewPager;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.hjq.toast.ToastUtils;
@@ -111,10 +111,10 @@ public class WanMainActivity extends WanBaseActivity<WanMainPresenter> implement
         mVp.setCurrentItem(0);
     }
 
-    @Override
-    public boolean swipeBackEnable() {
-        return false;
-    }
+//    @Override
+//    public boolean swipeBackEnable() {
+//        return false;
+//    }
 
     //记录用户首次点击返回键的时间
     private long mExitTime=0;

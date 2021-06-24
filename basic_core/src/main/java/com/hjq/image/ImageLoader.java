@@ -2,8 +2,9 @@ package com.hjq.image;
 
 import android.app.Application;
 import android.content.Context;
-import android.support.annotation.DrawableRes;
 import android.widget.ImageView;
+
+import androidx.annotation.DrawableRes;
 
 /**
  *    github : https://github.com/getActivity/AndroidProject

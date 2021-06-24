@@ -2,7 +2,8 @@ package com.transcendence.wan.module.mine.act;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.Nullable;
 
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanBaseActivity;

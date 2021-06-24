@@ -1,6 +1,5 @@
 package com.transcendence.map.base.act;
 
-import android.Manifest;
 import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,7 +10,6 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.transcendence.core.arouter.ARouterController;
 import com.transcendence.core.base.activity.TitleBarActivity;
 import com.transcendence.core.utils.StringUtils;
-import com.transcendence.core.utils.permission.PermissionPool;
 import com.transcendence.map.R;
 import com.transcendence.map.catches.act.CatchesMapActivity;
 import com.transcendence.map.fragment.BasicAmapFragmentActivity;
@@ -19,6 +17,8 @@ import com.transcendence.map.mobike.main.act.MobikeMainActivity;
 import com.transcendence.map.mobike.main.act.SlidingUpPanelActivity;
 import com.transcendence.map.mobike.main.act.SlidingUpPanelTestActivity;
 import com.transcendence.map.weinxinloc.act.WeixinLocActivity;
+import com.transcendence.permissions.OnPermissionCallback;
+import com.transcendence.permissions.Permissions;
 
 import java.util.List;
 
@@ -59,20 +59,29 @@ public class AmapIndexActivity extends TitleBarActivity implements AdapterView.O
         setTitle("Amap序列");
         lvIndex = findViewById(R.id.lvIndex);
 
-        onPermissionRequest(PermissionPool.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION);
-        onPermissionRequest(PermissionPool.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION);
+
+        Permissions.with(mActivity)
+                .permission(com.transcendence.permissions.PermissionPool.GROUP.LOCATION)
+                .request(new OnPermissionCallback() {
+                    @Override
+                    public void onGranted(List<String> permissions, boolean all) {
+                        suc();
+                    }
+                });
+
+
     }
 
-    @Override
-    protected void onPermissionsGranted(int requestCode) {
-        super.onPermissionsGranted(requestCode);
 
+    private void suc(){
         List<String> items = StringUtils.getStringList(mActivity,R.array.amap_index_item);
         adapter = new ArrayAdapter<>(mActivity,
                 android.R.layout.simple_list_item_1, items);
         lvIndex.setAdapter(adapter);
         lvIndex.setOnItemClickListener(this);
     }
+
+
 
 
     @Override

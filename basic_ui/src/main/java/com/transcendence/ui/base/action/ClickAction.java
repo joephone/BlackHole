@@ -1,7 +1,8 @@
 package com.transcendence.ui.base.action;
 
-import android.support.annotation.IdRes;
 import android.view.View;
+
+import androidx.annotation.IdRes;
 
 
 /**

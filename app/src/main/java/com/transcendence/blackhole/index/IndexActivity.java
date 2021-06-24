@@ -6,7 +6,6 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.graphics.PointF;
-import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -141,7 +140,7 @@ public class IndexActivity extends TitleBarActivity implements View.OnClickListe
 
             if(ivList.indexOf(v)==2){
                 Permissions.with(mActivity)
-                        .permission(PermissionPool.Group.LOCATION)
+                        .permission(PermissionPool.GROUP.LOCATION)
                         .request(new OnPermissionCallback() {
                             @Override
                             public void onGranted(List<String> permissions, boolean all) {

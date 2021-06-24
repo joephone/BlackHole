@@ -2,8 +2,9 @@ package com.transcendence.wan.module.mine.act;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.Nullable;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
 
 import com.transcendence.core.utils.L;
 import com.transcendence.ui.recyclerview.adapter.BaseAbsAdapter;

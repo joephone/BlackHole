@@ -1,21 +1,19 @@
 package com.transcendence.ui.recyclerview.swiperecyclerview;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.OnScrollListener;
-import android.support.v7.widget.RecyclerView.LayoutManager;
-import android.support.v7.widget.StaggeredGridLayoutManager;
-import android.support.v7.widget.GridLayoutManager.SpanSizeLookup;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.transcendence.ui.R;
 import com.transcendence.ui.recyclerview.swiperecyclerview.footerView.BaseFooterView;
@@ -35,9 +33,9 @@ public class SwipeRecyclerView extends FrameLayout
     private RecyclerView recyclerView;
     private SwipeRefreshLayout mRefreshLayout;
 
-    private LayoutManager mLayoutManager;
+    private RecyclerView.LayoutManager mLayoutManager;
     private OnLoadListener mListener;
-    private SpanSizeLookup mSpanSizeLookup;
+    private GridLayoutManager.SpanSizeLookup mSpanSizeLookup;
     private DataObserver mDataObserver;
     private WrapperAdapter mWrapperAdapter;
 
@@ -76,7 +74,7 @@ public class SwipeRecyclerView extends FrameLayout
         mLayoutManager = recyclerView.getLayoutManager();
 
         mRefreshLayout.setOnRefreshListener(this);
-        recyclerView.setOnScrollListener(new OnScrollListener() {
+        recyclerView.setOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
@@ -207,7 +205,7 @@ public class SwipeRecyclerView extends FrameLayout
      * support for GridLayoutManager
      * @param spanSizeLookup
      */
-    public void setSpanSizeLookup(SpanSizeLookup spanSizeLookup){
+    public void setSpanSizeLookup(GridLayoutManager.SpanSizeLookup spanSizeLookup){
         this.mSpanSizeLookup = spanSizeLookup;
     }
 
@@ -417,10 +415,10 @@ public class SwipeRecyclerView extends FrameLayout
 
         @Override
         public void onAttachedToRecyclerView(RecyclerView recyclerView) {
-            LayoutManager manager = recyclerView.getLayoutManager();
+            RecyclerView.LayoutManager manager = recyclerView.getLayoutManager();
             if (manager instanceof GridLayoutManager) {
                 final GridLayoutManager gridManager = ((GridLayoutManager) manager);
-                gridManager.setSpanSizeLookup(new SpanSizeLookup() {
+                gridManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
                     @Override
                     public int getSpanSize(int position) {
                         boolean isLoadMore = isLoadMoreItem(position);

@@ -13,6 +13,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <ImageView
+        android:id="@+id/ivMyLoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:src="@mipmap/ic_loc_gps_black"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        />
+
     <!--<include layout="@layout/activity_catches_new_map_control" />-->
 
 

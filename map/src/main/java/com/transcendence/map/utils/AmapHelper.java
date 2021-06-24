@@ -156,8 +156,8 @@ public class AmapHelper extends AppCompatActivity implements
      * 如果有默认坐标，则移动到默认位置，而不是北京
      */
     private void moveToDefaultPosition() {
-        double defLat = StringUtils.string2Double(SPUtils.getInstance().getString(Global.MAP.DEFAULT_LAT,"0"));
-        double defLon = StringUtils.string2Double(SPUtils.getInstance().getString(Global.MAP.DEFAULT_LON,"0"));
+        double defLat = string2Double(SPUtils.getInstance().getString(Global.MAP.DEFAULT_LAT,"0"));
+        double defLon = string2Double(SPUtils.getInstance().getString(Global.MAP.DEFAULT_LON,"0"));
         if(defLat>0 && defLon >0){
             LatLng pos = new LatLng(defLat,defLon);
             aMap.moveCamera(CameraUpdateFactory.newLatLngZoom(pos,Global.standardZoom()));
@@ -178,6 +178,7 @@ public class AmapHelper extends AppCompatActivity implements
 
     @Override
     public void onLocSuc(AMapLocation target) {
+        L.d("定位成功");
         //存用户默认的经纬点
         SPUtils.getInstance().put(Global.MAP.DEFAULT_LAT,target.getLatitude()+"");
         SPUtils.getInstance().put(Global.MAP.DEFAULT_LON,target.getLongitude()+"");
@@ -348,8 +349,18 @@ public class AmapHelper extends AppCompatActivity implements
      *  回定位
      */
     protected void onMyLoc(){
-        if (aMap != null && mLatLng != null) {
-            aMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mLatLng,Global.standardZoom()));
+        if (aMap != null ) {
+            if( mLatLng != null){
+                aMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mLatLng,Global.standardZoom()));
+            } else {
+                L.d("mLatLng == null");
+                double latitude = string2Double(SPUtils.getInstance().getString(Global.MAP.DEFAULT_LAT,"0"));
+                double longitude = string2Double(SPUtils.getInstance().getString(Global.MAP.DEFAULT_LON,"0"));
+                mLatLng = new LatLng(latitude,longitude);
+                aMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mLatLng,Global.standardZoom()));
+            }
+        } else {
+            L.d("aMap == null");
         }
     }
 
@@ -366,4 +377,13 @@ public class AmapHelper extends AppCompatActivity implements
     }
 
 
+    public static double string2Double(String str) {
+        try {
+            double no = Double.parseDouble(str);
+            return no;
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+        return 0.0;
+    }
 }

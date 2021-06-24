@@ -17,7 +17,7 @@ import com.transcendence.core.utils.L;
  * @Edition 1.0
  * @EditionHistory
  */
-public class NotificationBroadcastReceiver  extends BroadcastReceiver {
+public class NotificationBroadcastReceiver extends BroadcastReceiver {
 
     public static final String TYPE = "type"; //这个type是为了Notification更新信息的，这个不明白的朋友可以去搜搜，很多
 

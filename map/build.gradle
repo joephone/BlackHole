@@ -39,6 +39,8 @@ android {
     }
 }
 
+//sh1 3A:BE:6F:5B:79:5B:15:78:B9:74:9F:06:D1:29:91:28:B2:4B:35:71
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     //注解器
@@ -48,6 +50,7 @@ dependencies {
     implementation project(':basic_ui')
     implementation project(':basic_res')
     implementation project(':basic_utils')
+    implementation project(':permissions')
 
     //3D地图so及jar
     implementation 'com.amap.api:3dmap:latest.integration'

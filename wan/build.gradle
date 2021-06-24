@@ -47,7 +47,7 @@ dependencies {
 
 
     api config.dependencies.bravh
-
+    api config.dependencies.promptDialog
 
 
     annotationProcessor config.dependencies.butterknifeCompiler
@@ -66,6 +66,7 @@ dependencies {
     implementation project(':basic_res')
     implementation project(':basic_utils')
     implementation project(':permissions')
+    implementation project(':imagepicker')
 
     //Awesome 项目引用的库
 }

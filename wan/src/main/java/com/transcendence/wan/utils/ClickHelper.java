@@ -1,7 +1,8 @@
 package com.transcendence.wan.utils;
 
-import android.support.annotation.NonNull;
 import android.view.View;
+
+import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
 import java.util.List;

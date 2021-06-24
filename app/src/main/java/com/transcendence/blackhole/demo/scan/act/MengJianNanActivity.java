@@ -1,8 +1,9 @@
 package com.transcendence.blackhole.demo.scan.act;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.transcendence.blackhole.R;
 import com.transcendence.blackhole.demo.scan.view.MengJianNanScanView;

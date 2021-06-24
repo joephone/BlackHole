@@ -12,8 +12,9 @@ import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.v4.content.FileProvider;
 import android.util.Log;
+
+import androidx.core.content.FileProvider;
 
 import com.lzy.imagepicker.bean.ImageFolder;
 import com.lzy.imagepicker.bean.ImageItem;
@@ -256,8 +257,13 @@ public class ImagePicker {
         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         takePictureIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         if (takePictureIntent.resolveActivity(activity.getPackageManager()) != null) {
-            if (Utils.existSDCard()) {takeImageFile = new File(Environment.getExternalStorageDirectory(), "/DCIM/camera/");}
-            else {takeImageFile = Environment.getDataDirectory();}
+            if (Utils.existSDCard()) {
+                //Environment.getExternalStorageDirectory(), "/DCIM/camera/");}
+                takeImageFile = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).getAbsolutePath());
+            }
+            else {
+                takeImageFile = Environment.getDataDirectory();
+            }
             takeImageFile = createFile(takeImageFile, "IMG_", ".jpg");
             if (takeImageFile != null) {
                 // 默认情况下，即不需要指定intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
@@ -283,7 +289,7 @@ public class ImagePicker {
                     }
                 }
 
-                Log.e("nanchen", ProviderUtil.getFileProviderName(activity));
+                Log.e("BlackHole", ProviderUtil.getFileProviderName(activity));
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, uri);
             }
         }

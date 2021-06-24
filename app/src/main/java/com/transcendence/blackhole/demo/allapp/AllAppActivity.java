@@ -1,6 +1,6 @@
 package com.transcendence.blackhole.demo.allapp;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 import com.transcendence.blackhole.R;
 import com.transcendence.blackhole.demo.allapp.fragment.AllAppFragment;

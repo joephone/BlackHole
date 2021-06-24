@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'com.antfortune.freeline'
+//apply plugin: 'com.antfortune.freeline'
 apply from: "../basic.gradle"
 
 def config = rootProject.ext
@@ -33,4 +33,6 @@ dependencies {
     annotationProcessor config.dependencies["router-compiler"]
 
     implementation "me.leolin:ShortcutBadger:1.1.13@aar"
+    //dingding head
+    implementation 'in.srain.cube:ultra-ptr:1.0.11'
 }

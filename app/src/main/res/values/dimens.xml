@@ -16,4 +16,12 @@
     <!-- pdf down -->
     <dimen name="fab_margin">16dp</dimen>
     <!-- pdf down end-->
+
+
+    <!-- dingdingheader -->
+    <dimen name="header_content_height">400dp</dimen>
+    <dimen name="title_bar_avatar_size">30dp</dimen>
+    <dimen name="header_avatar_size">60dp</dimen>
+    <dimen name="titlebar_height">50dp</dimen>
+    <!-- dingdingheader end -->
 </resources>

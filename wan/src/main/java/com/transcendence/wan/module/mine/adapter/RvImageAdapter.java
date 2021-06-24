@@ -1,23 +1,19 @@
 package com.transcendence.wan.module.mine.adapter;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
-import com.transcendence.core.base.app.LibApplication;
 import com.transcendence.core.utils.GlideUtils;
 import com.transcendence.core.utils.L;
 import com.transcendence.wan.R;
-import com.transcendence.wan.core.app.WanApp;
 import com.transcendence.wan.listener.OnMyItemClickListener;
 import com.transcendence.wan.module.beauty.model.BeautyBean;
-import com.transcendence.wan.module.mine.act.RvActivity;
-import com.transcendence.wan.module.mine.model.MineBean;
 
 import java.util.List;
 

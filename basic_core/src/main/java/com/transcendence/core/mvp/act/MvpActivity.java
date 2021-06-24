@@ -1,7 +1,8 @@
 package com.transcendence.core.mvp.act;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.Nullable;
 
 import com.transcendence.core.mvp.presenter.BasePresenter;
 import com.transcendence.core.mvp.view.MvpView;

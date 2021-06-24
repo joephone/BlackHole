@@ -1,10 +1,11 @@
 package com.transcendence.wan.module.knowledge.adapter;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.view.View;
+
+import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -29,7 +30,7 @@ public class TreeLeftAdapter extends BaseQuickAdapter<TreeBean,BaseViewHolder>{
     private Context mContext;
     private List<Boolean> isClicks;//控件是否被点击,默认为false，如果被点击，改变值，控件根据值改变自身颜色
 
-    public TreeLeftAdapter(@Nullable List<TreeBean> data,Context context) {
+    public TreeLeftAdapter(@Nullable List<TreeBean> data, Context context) {
         super(R.layout.fragment_navi_tree_left_item, data);
         this.mContext = context;
         isClicks = new ArrayList<>();

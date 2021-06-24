@@ -1,12 +1,13 @@
 package com.transcendence.blackhole.ui.rv.mi.act;
 
 import android.content.Context;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.transcendence.blackhole.R;
 import com.transcendence.core.base.activity.TitleBarActivity;

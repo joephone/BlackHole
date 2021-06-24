@@ -1,9 +1,9 @@
 package com.transcendence.blackhole.demo.allapp;
 
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.transcendence.blackhole.R;
 import com.transcendence.core.base.activity.TitleBarActivity;

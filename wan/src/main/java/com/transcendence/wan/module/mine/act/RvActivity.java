@@ -1,10 +1,9 @@
 package com.transcendence.wan.module.mine.act;
 
-import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.transcendence.core.base.activity.TitleBarActivity;
 import com.transcendence.core.global.Global;
 import com.transcendence.core.utils.L;
 import com.transcendence.wan.R;

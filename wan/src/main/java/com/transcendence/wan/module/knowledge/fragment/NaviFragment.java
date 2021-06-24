@@ -1,8 +1,9 @@
 package com.transcendence.wan.module.knowledge.fragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.widget.FrameLayout;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.transcendence.core.adapter.GoweiiFragmentPagerAdapter;
 import com.transcendence.wan.R;

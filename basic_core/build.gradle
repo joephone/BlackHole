@@ -16,7 +16,7 @@ dependencies {
 
 
     api config.dependencies.router
-
+    api config.dependencies.aop
 
     api config.dependencies.glide
 //    api config.dependencies.glideCompiler
@@ -48,7 +48,7 @@ dependencies {
     implementation project(':basic_ui')
     implementation project(':basic_res')
     implementation project(':basic_utils')
-
+    implementation project(path: ':permissions')
 
 
 }

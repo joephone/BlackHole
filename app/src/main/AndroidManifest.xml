@@ -23,7 +23,6 @@
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
     <!--  <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" /> -->
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
     <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
@@ -52,6 +51,16 @@
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
+    <!-- 外部存储 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <!-- 在sd中创建和删除文件的权限 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+
 
     <application
         android:name=".core.app.ApbApplication"
@@ -61,6 +70,7 @@
         android:roundIcon="@mipmap/ic_app_ten"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
+        android:requestLegacyExternalStorage="true"
         tools:ignore="LockedOrientationActivity"
         android:theme="@style/NoTitleAppTheme">
         <activity
@@ -232,7 +242,10 @@
         <activity
             android:name=".ui.image.headcliper.act.HeadCliperActivity"
             android:screenOrientation="portrait"/>
-
+            <!-- 仿微信QQ 上传头像 裁剪-->
+        <activity
+            android:name=".ui.image.saveimgtogallery.SaveToGallaryActivity"
+            android:screenOrientation="portrait"/>
         <!-- 序列2.2 UI Rv -->
         <activity android:name=".index.UIRvIndexActivity"
             android:screenOrientation="portrait"/>
@@ -348,6 +361,18 @@
             android:name=".demo.other.act.OverKeyBoardActivity"
             android:windowSoftInputMode="adjustResize"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name=".demo.other.act.InputMethodFirstActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".demo.other.act.InputMethodSecondActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".demo.other.pushhead.PushHeadMainActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="portrait"/>
             <!--  贡献图 -->
         <activity
             android:name=".demo.other.act.GitHubContributionActivity"
@@ -372,6 +397,12 @@
             android:name=".demo.didi.act.DidiMainActivity"
             android:screenOrientation="portrait"/>
             <!--  雷达 -->
+        <activity
+            android:name=".demo.radar.act.RadarMainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".demo.radar.act.RefreshProgressActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".demo.scan.act.MengJianNanActivity"
             android:screenOrientation="portrait" />
@@ -398,12 +429,27 @@
         <activity
             android:name=".demo.handler.act.HelloHandler02"
             android:screenOrientation="portrait" />
+            <!-- Notification -->
+        <activity
+            android:name=".demo.notification.NotificationMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".demo.permission.PerMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
 
-        <!-- 序列8 地图  -->
+        <!-- 模仿钉钉的头部滑动动画，并且加上UltaPullToRefresh -->
+        <activity
+            android:name=".demo.dingdingheader.DingdingHeaderMainActivity"
+            android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".demo.dingdingheader.ScrollingActivity"
+            android:screenOrientation="portrait" />
 
-
+     <!-- 序列8 地图  -->
 
 
     </application>

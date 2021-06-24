@@ -1,9 +1,10 @@
 package com.transcendence.blackhole.ui.base.act;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
 
 import com.transcendence.blackhole.R;
 import com.transcendence.core.base.activity.TitleBarActivity;

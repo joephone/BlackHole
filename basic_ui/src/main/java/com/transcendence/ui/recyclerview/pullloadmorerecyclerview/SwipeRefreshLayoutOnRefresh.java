@@ -1,6 +1,6 @@
 package com.transcendence.ui.recyclerview.pullloadmorerecyclerview;
 
-import android.support.v4.widget.SwipeRefreshLayout;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 /**
  * Created by WuXiaolong

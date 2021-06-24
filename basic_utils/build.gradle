@@ -6,6 +6,7 @@ def config = rootProject.ext
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     api config.dependencies.supportv4
+    api config.dependencies.glide
 
     implementation 'jp.wasabeef:glide-transformations:2.0.2'
 }

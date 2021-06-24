@@ -1,16 +1,6 @@
 package com.transcendence.ui.dialog.hjq.layout;
 
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Environment;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.content.FileProvider;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;

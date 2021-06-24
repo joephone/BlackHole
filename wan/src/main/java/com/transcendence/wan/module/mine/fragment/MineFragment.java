@@ -239,14 +239,16 @@ public class MineFragment extends WanBaseFragment<MinePresenter> implements View
     }
 
     private void setMyCoinInfo(MyCoinBean bean) {
-        if(bean.getLevel()>=0){
-            tvLevel.setText("Level："+bean.getLevel()+"");
-        }
-        if(bean.getRank()>=0){
-            tvRanking.setText("Rank："+bean.getRank()+"");
-        }
-        if(bean.getCoinCount()>=0){
-            AnimatorUtils.doIntAnim(tvMyCoinCount, bean.getCoinCount(), 300);
+        if(bean!=null){
+            if(bean.getLevel()>=0){
+                tvLevel.setText("Level："+bean.getLevel()+"");
+            }
+            if(bean.getRank()>=0){
+                tvRanking.setText("Rank："+bean.getRank()+"");
+            }
+            if(bean.getCoinCount()>=0){
+                AnimatorUtils.doIntAnim(tvMyCoinCount, bean.getCoinCount(), 300);
+            }
         }
     }
 

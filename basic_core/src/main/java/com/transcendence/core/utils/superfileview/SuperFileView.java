@@ -1,8 +1,9 @@
 package com.transcendence.core.utils.superfileview;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.widget.FrameLayout;
+
+import androidx.annotation.NonNull;
 
 /**
  * @author 12457 on 2019/8/15 17:14

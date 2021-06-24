@@ -2,10 +2,11 @@ package com.transcendence.wan.module.login.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.LinearLayout;
+
+import androidx.annotation.Nullable;
+import androidx.viewpager.widget.ViewPager;
 
 import com.transcendence.core.adapter.GoweiiFragmentPagerAdapter;
 import com.transcendence.core.utils.L;

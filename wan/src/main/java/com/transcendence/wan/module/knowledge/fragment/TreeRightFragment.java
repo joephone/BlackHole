@@ -1,9 +1,10 @@
 package com.transcendence.wan.module.knowledge.fragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.widget.FrameLayout;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanBaseFragment;

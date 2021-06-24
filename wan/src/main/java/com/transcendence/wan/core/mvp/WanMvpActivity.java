@@ -1,7 +1,9 @@
 package com.transcendence.wan.core.mvp;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
 import com.transcendence.wan.core.mvp.view.WanMvpView;
@@ -12,7 +14,7 @@ import per.goweii.swipeback.SwipeBackActivity;
  * Created by Administrator on 2020/3/2.
  */
 
-public abstract class WanMvpActivity<T extends WanBasePresenter> extends SwipeBackActivity implements WanMvpView {
+public abstract class WanMvpActivity<T extends WanBasePresenter> extends AppCompatActivity implements WanMvpView {
 
 
     protected T presenter;

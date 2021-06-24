@@ -41,6 +41,9 @@ import jp.wasabeef.glide.transformations.gpu.VignetteFilterTransformation;
  */
 public class GlideUtils {
 
+
+
+
     /**
      * (1)
      * 显示图片Imageview
@@ -48,16 +51,16 @@ public class GlideUtils {
      * @param context  上下文
      * @param errorimg 错误的资源图片
      * @param url      图片链接
-     * @param imgeview 组件
+     * @param imageView 组件
      */
     public static void showImageView(Context context, int errorimg, String url,
-                                     ImageView imgeview) {
+                                     ImageView imageView) {
         Glide.with(context).load(url)// 加载图片
                 .error(errorimg)// 设置错误图片
                 .crossFade()// 设置淡入淡出效果，默认300ms，可以传参
                 .placeholder(errorimg)// 设置占位图
                 .diskCacheStrategy(DiskCacheStrategy.RESULT)// 缓存修改过的图片
-                .into(imgeview);
+                .into(imageView);
         // Glide.with(context).load(url).thumbnail(0.1f).error(errorimg)
         // .into(imgeview);
 

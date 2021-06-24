@@ -1,6 +1,14 @@
 package com.transcendence.blackhole.core;
 
+import com.transcendence.blackhole.demo.dingdingheader.DingdingHeaderMainActivity;
+import com.transcendence.blackhole.demo.notification.NotificationMainActivity;
+import com.transcendence.blackhole.demo.other.act.InputMethodFirstActivity;
+import com.transcendence.blackhole.demo.other.act.InputMethodSecondActivity;
 import com.transcendence.blackhole.demo.other.act.badge.BadgeActivity;
+import com.transcendence.blackhole.demo.other.pushhead.PushHeadMainActivity;
+import com.transcendence.blackhole.demo.permission.PerMainActivity;
+import com.transcendence.blackhole.demo.radar.act.RadarMainActivity;
+import com.transcendence.blackhole.ui.image.saveimgtogallery.SaveToGallaryActivity;
 import com.transcendence.core.arouter.ARouterController;
 import com.transcendence.blackhole.base.launchmode.act.SingleTaskFirstActivity;
 import com.transcendence.blackhole.demo.allapp.AllAppActivity;
@@ -98,8 +106,8 @@ public interface AppConstantValue {
             LockerHomeActivity.class,
             HandlerMainActivity.class,
             FirstEventActivity.class,
-            TouchEventActivity.class
-            ,RetrofitIntroActivity.class};
+            TouchEventActivity.class,
+            RetrofitIntroActivity.class};
     /**
      * 1.1
      */
@@ -123,7 +131,8 @@ public interface AppConstantValue {
             HeadCliperMainActivity.class,
             HandlerDownLoadActivity.class,
             ImageAutoCycleOneActivity.class,
-            ImageAutoCycleTwoActivity.class};
+            ImageAutoCycleTwoActivity.class,
+                    SaveToGallaryActivity.class};
 
     /**
      * 2.2
@@ -173,20 +182,26 @@ public interface AppConstantValue {
     Class[] otherIndex = {
             MarqueeIndexActivity.class,
             OverKeyBoardActivity.class,
+            InputMethodFirstActivity.class,
+            InputMethodSecondActivity.class,
+            PushHeadMainActivity.class,
             GitHubContributionActivity.class,
             AllAppActivity.class,
             ZhihuBehaviorActivity.class,
             IosSegmentViewActivity.class,
             XiaoMiAct.class,
             DidiMainActivity.class,
+            RadarMainActivity.class,
             MengJianNanActivity.class,
             XiaoMiCalcActivity.class,
             JavaH5Activity.class,
             PdfDownMainActivity.class,
-            BadgeActivity.class};    //PDFdownMainActivity
+            BadgeActivity.class,
+            NotificationMainActivity.class,
+            PerMainActivity.class,
+            DingdingHeaderMainActivity.class};    //PDFdownMainActivity
 
     Class[] voiceIndex = {};
-
 
 
     /**
