@@ -79,8 +79,7 @@ public class HomeFragment extends WanBaseFragment<HomePresenter> implements Home
     protected void initView() {
         L.d("HomeFragment initView");
         mBanner = findViewById(R.id.banner);
-        mBanner.setOnBannerItemClickListener(this);
-        createHeaderBanner();
+
         ivLeft = findViewById(R.id.ivLeft);
         ivRight = findViewById(R.id.ivRight);
         ivLeft.setOnClickListener(new View.OnClickListener() {
@@ -186,7 +185,10 @@ public class HomeFragment extends WanBaseFragment<HomePresenter> implements Home
             mBannerUrls.add(bean.getImagePath());
             titles.add(bean.getTitle());
         }
+        createHeaderBanner();
         mBanner.setViewUrls(mBannerUrls);
+        mBanner.setOnBannerItemClickListener(this);
+
     }
 
     @Override

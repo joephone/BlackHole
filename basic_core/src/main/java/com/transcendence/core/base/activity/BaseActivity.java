@@ -177,7 +177,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     /**
      * 根据EditText所在坐标和用户点击的坐标相对比，来判断是否隐藏键盘，因为当用户点击EditText时则不能隐藏
-     *
+     *7
      * @param v
      * @param event
      * @return

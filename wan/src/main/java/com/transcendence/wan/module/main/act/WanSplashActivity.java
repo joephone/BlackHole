@@ -63,7 +63,7 @@ public class WanSplashActivity extends WanBaseActivity<SplashPresenter> implemen
         GlideUtils.getInstance().loadImageFromLocal(ids[index], ivLauncher);
 //        GlideUtils.showImageView(mActivity,R.drawable.img_default_book,ids[index],ivLauncher);
 //        initStartAnim();
-        CountDown();
+        countDown();
         mTvSkip.start();
     }
 
@@ -169,7 +169,7 @@ public class WanSplashActivity extends WanBaseActivity<SplashPresenter> implemen
 //        Debug.stopMethodTracing();
     }
 
-    public void CountDown() {
+    public void countDown() {
         mTimer = new Timer();
         mTimer.schedule(new TimerTask() {
             @Override

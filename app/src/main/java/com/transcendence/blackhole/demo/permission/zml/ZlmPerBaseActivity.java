@@ -1,4 +1,4 @@
-package com.transcendence.blackhole.demo.permission;
+package com.transcendence.blackhole.demo.permission.zml;
 
 import android.app.Activity;
 import android.content.Context;
@@ -15,12 +15,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.transcendence.blackhole.R;
+
 /**
  * description: 公共activity类
  * author: zlm
  * date: 2017/3/17 12:37
  */
-public class PerBaseActivity extends AppCompatActivity {
+public class  ZlmPerBaseActivity extends AppCompatActivity {
 
     private RequestPermissionCallBack mRequestPermissionCallBack;
     private final int mRequestCode = 1024;
@@ -69,7 +71,7 @@ public class PerBaseActivity extends AppCompatActivity {
                                             startActivity(intent);
                                         }
                                     })
-                                    .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                                    .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             mRequestPermissionCallBack.denied();

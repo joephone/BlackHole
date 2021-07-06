@@ -49,8 +49,8 @@ dependencies {
     api config.dependencies.bravh
     api config.dependencies.promptDialog
 
-
-    annotationProcessor config.dependencies.butterknifeCompiler
+    api config.dependencies.anyLayer
+//    annotationProcessor config.dependencies.butterknifeCompiler
 
     implementation 'net.soulwolf.widget:ratiolayout:1.0.0'
     implementation 'com.makeramen:roundedimageview:2.3.0'

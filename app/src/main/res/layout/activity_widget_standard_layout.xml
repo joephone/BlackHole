@@ -8,7 +8,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <com.transcendence.core.widget.custom.StandardLayout
         android:id="@+id/standardLayout"
         android:layout_width="match_parent"
@@ -16,6 +15,6 @@
         android:layout_marginTop="@dimen/standard_padding"
         android:clickable="true"
         app:leftText="左"
-        app:leftIcon="@mipmap/ic_app_swan"
-        />
+        app:leftIcon="@mipmap/ic_app_swan" />
+
 </LinearLayout>

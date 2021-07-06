@@ -2,12 +2,16 @@ package com.transcendence.blackhole.core;
 
 import com.transcendence.blackhole.demo.dingdingheader.DingdingHeaderMainActivity;
 import com.transcendence.blackhole.demo.notification.NotificationMainActivity;
+import com.transcendence.blackhole.demo.other.act.FileSelectorMainActivity;
 import com.transcendence.blackhole.demo.other.act.InputMethodFirstActivity;
 import com.transcendence.blackhole.demo.other.act.InputMethodSecondActivity;
 import com.transcendence.blackhole.demo.other.act.badge.BadgeActivity;
 import com.transcendence.blackhole.demo.other.pushhead.PushHeadMainActivity;
-import com.transcendence.blackhole.demo.permission.PerMainActivity;
+import com.transcendence.blackhole.demo.permission.simple.SimplePerMainActivity;
+import com.transcendence.blackhole.demo.permission.zml.ZlmPerMainActivity;
 import com.transcendence.blackhole.demo.radar.act.RadarMainActivity;
+import com.transcendence.blackhole.demo.umeng.UmengThirdLoginAndShareActivity;
+import com.transcendence.blackhole.index.PermissionIndexActivity;
 import com.transcendence.blackhole.ui.image.saveimgtogallery.SaveToGallaryActivity;
 import com.transcendence.core.arouter.ARouterController;
 import com.transcendence.blackhole.base.launchmode.act.SingleTaskFirstActivity;
@@ -94,7 +98,8 @@ public interface AppConstantValue {
             ScrollIndexActivity.class,
             OtherIndexActivity.class,
             VoiceIndexActivity.class,
-            ToastActivity.class};
+            ToastActivity.class,
+            PermissionIndexActivity.class};
 
     /**
      * 1
@@ -190,16 +195,43 @@ public interface AppConstantValue {
             ZhihuBehaviorActivity.class,
             IosSegmentViewActivity.class,
             XiaoMiAct.class,
-            DidiMainActivity.class,
+            DidiMainActivity.class,     //10
             RadarMainActivity.class,
             MengJianNanActivity.class,
             XiaoMiCalcActivity.class,
             JavaH5Activity.class,
-            PdfDownMainActivity.class,
+            PdfDownMainActivity.class,   //15
             BadgeActivity.class,
             NotificationMainActivity.class,
-            PerMainActivity.class,
-            DingdingHeaderMainActivity.class};    //PDFdownMainActivity
+            DingdingHeaderMainActivity.class,
+            UmengThirdLoginAndShareActivity.class
+    };    //PDFdownMainActivity   FileSelectorMainActivity.class
+
+    /**
+     *  <string-array name="other_index_item">
+     *         <item>0 跑马灯序列</item>
+     *         <item>1 解决软键盘遮挡输入框</item>
+     *         <item>2 第一种方案</item>
+     *         <item>3 第二种方案</item>
+     *         <item>4 Push Head Demo</item>
+     *         <item>5 仿GitHub的提交活跃表格</item>
+     *         <item>6 全APP</item>
+     *         <item>7 Behavior</item>
+     *         <item>8 Segment</item>
+     *         <item>9 XiaoMI</item>
+     *         <item>10 滴滴Splash</item>
+     *         <item>11 雷达</item>
+     *         <item>12 全屏雷达扫描</item>
+     *         <item>13 仿小米计算器</item>
+     *         <item>14 Android调JS</item>
+     *         <item>15 PDF DownLoad</item>
+     *         <item>16 角标</item>
+     *         <item>17 通知栏</item>
+     *         <item>18 权限逻辑</item>
+     *         <item>19 模仿钉钉的头部滑动动画</item>
+     *         <item>20 UMengThirdPartyShareLogin</item>
+     *     </string-array>
+     */
 
     Class[] voiceIndex = {};
 
@@ -210,5 +242,13 @@ public interface AppConstantValue {
     Class[] marqueeIndex = {
             MarqueeTextOneActivity.class,
             MarqueeTextTwoActivity.class};
+
+
+    /**
+     * 6.2
+     */
+    Class[] permissionIndex = {
+            ZlmPerMainActivity.class,
+            SimplePerMainActivity.class};
 
 }

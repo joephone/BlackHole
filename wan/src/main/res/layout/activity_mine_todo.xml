@@ -8,41 +8,39 @@
 
     <include layout="@layout/title" />
 
-<!--    <android.support.v4.view.ViewPager-->
-<!--        android:id="@+id/vp"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="0dp"-->
-<!--        android:layout_weight="1"-->
-<!--        android:layout_marginBottom="50dp" />-->
+    <!--    <android.support.v4.view.ViewPager-->
+    <!--        android:id="@+id/vp"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:layout_weight="1"-->
+    <!--        android:layout_marginBottom="50dp" />-->
 
     <FrameLayout
         android:id="@+id/fl_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginBottom="50dp" />
+        android:layout_marginBottom="50dp"
+        android:layout_weight="1" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="@color/gary"
-        />
+        android:background="@color/gary" />
 
     <RadioGroup
         android:id="@+id/radio_group"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/white"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
+
         <RadioButton
             style="@style/RadioButtonStyle"
-            android:text="@string/plan"
-            />
+            android:text="@string/plan" />
+
         <RadioButton
             style="@style/RadioButtonStyle"
-            android:text="@string/complete"
-            />
+            android:text="@string/complete" />
 
     </RadioGroup>
 

@@ -62,7 +62,9 @@
             android:name=".module.main.act.WanMainActivity"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".module.main.act.WanWebActivity" />
+        <activity
+            android:name=".module.main.act.WanWebActivity"
+            android:launchMode="singleTask"/>
 
         <!-- 积分榜-->
         <activity android:name=".module.mine.act.RankActivity"/>

@@ -19,6 +19,7 @@ import com.transcendence.wan.module.dama.fragment.DamaFragment;
 import com.transcendence.wan.module.home.fragment.MainFragment;
 import com.transcendence.wan.module.main.presenter.WanMainPresenter;
 import com.transcendence.wan.module.main.view.WanMainView;
+import com.transcendence.wan.ui.dialog.PrivacyPolicyDialog;
 
 import java.util.List;
 
@@ -94,12 +95,12 @@ public class WanMainActivity extends WanBaseActivity<WanMainPresenter> implement
                     @Override
                     public void run() {
                         L.d("showPrivacyPolicyDialog");
-//                        PrivacyPolicyDialog.showIfFirst(getContext(), new PrivacyPolicyDialog.CompleteCallback() {
-//                            @Override
-//                            public void onComplete() {
-//
-//                            }
-//                        });
+                        PrivacyPolicyDialog.showIfFirst(getContext(), new PrivacyPolicyDialog.CompleteCallback() {
+                            @Override
+                            public void onComplete() {
+
+                            }
+                        });
                     }
                 });
             }

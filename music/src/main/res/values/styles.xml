@@ -14,9 +14,9 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-
+        <!-- 窗口无默认标题栏 -->
+        <item name="android:windowNoTitle">true</item>
         <item name="android:windowBackground">@color/bg_public</item>
-        <item name="android:textColor">@color/text_33</item>
     </style>
 
 

@@ -4,9 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@color/white"
-   >
-
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/tv"
@@ -17,4 +15,5 @@
 
     <View
         style="@style/Line"/>
+
 </LinearLayout>

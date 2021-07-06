@@ -33,22 +33,18 @@ public class ZhihuBehaviorActivity extends AppCompatActivity {
         initViews();
 
         //这两句代码必须要有，并且需要把 values -> style 中的theme主题修改为NoActionBar ,
-        Toolbar tool_bar = (Toolbar) findViewById(R.id.tool_bar);
+        Toolbar tool_bar = findViewById(R.id.tool_bar);
         setSupportActionBar(tool_bar);
 
-
-        RecyclerView recycler_view = (RecyclerView) findViewById(R.id.recycler_view);
+        RecyclerView recycler_view = findViewById(R.id.recycler_view);
         recycler_view.setLayoutManager(new LinearLayoutManager(this));
         recycler_view.setAdapter(new RecyclerView.Adapter() {
             @Override
             public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
                 // 下边这两种写法都是可以的
                 View itemView = LayoutInflater.from(ZhihuBehaviorActivity.this).inflate(R.layout.activity_demo_behavior_item, parent, false) ;
 //                View itemView = View.inflate(ZhihuBehaviorActivity.this , R.layout.item_behavior , null) ;
-
                 ViewHolder holder = new ViewHolder(itemView) ;
-
                 return holder;
             }
 
@@ -74,7 +70,6 @@ public class ZhihuBehaviorActivity extends AppCompatActivity {
 //        mTabTwo.setOnClickListener(this);
 //        mTabThree.setOnClickListener(this);
 //        mTabFour.setOnClickListener(this);
-
         initTabs();
     }
 
@@ -87,7 +82,6 @@ public class ZhihuBehaviorActivity extends AppCompatActivity {
 
 
     class ViewHolder extends RecyclerView.ViewHolder{
-
         public ViewHolder(View itemView) {
             super(itemView);
         }

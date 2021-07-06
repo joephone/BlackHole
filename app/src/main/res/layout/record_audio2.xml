@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#252525"
     android:gravity="center_horizontal"
-    android:orientation="vertical" 
-    android:background="#252525">
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/record"
@@ -18,19 +18,21 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="播放录音" />
-        
-    <TextView android:id="@+id/luyin_time"
-        	  android:layout_width="match_parent"
-        	  android:layout_height="wrap_content"
-        	  android:textColor="#ffffff"
-        	  android:textSize="15dp"
-        	  android:layout_marginTop="10dp"/>
-        	  
-   <TextView android:id="@+id/luyin_path"
-        	  android:layout_width="match_parent"
-        	  android:layout_height="wrap_content"
-        	  android:textColor="#ffffff"
-        	  android:textSize="15dp"
-        	  android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/luyin_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="#ffffff"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/luyin_path"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="#ffffff"
+        android:textSize="15dp" />
 
 </LinearLayout>
