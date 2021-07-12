@@ -11,23 +11,22 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresPermission;
 
 import com.lzy.imagepicker.ImagePicker;
 import com.lzy.imagepicker.bean.ImageItem;
 import com.lzy.imagepicker.imageloader.GlideImageLoader;
 import com.lzy.imagepicker.ui.ImageGridActivity;
 import com.lzy.imagepicker.view.CropImageView;
+import com.transcendence.core.aop.PermissionAop;
 import com.transcendence.core.base.activity.TitleBarActivity;
 import com.transcendence.core.global.Global;
 import com.transcendence.core.utils.L;
 import com.transcendence.permissions.OnPermissionCallback;
 import com.transcendence.permissions.PermissionPool;
-import com.transcendence.permissions.Permissions;
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.WanBaseActivity;
-import com.transcendence.wan.core.mvp.WanTitleBarActivity;
 import com.transcendence.wan.module.mine.presenter.MinePresenter;
-import com.transcendence.wan.module.setting.presenter.SettingPresenter;
 import com.transcendence.wan.utils.UserUtils;
 
 import java.io.File;
@@ -97,32 +96,37 @@ public class PersonalActivity extends WanBaseActivity<MinePresenter> implements 
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.ll_name:
-
                 break;
             case R.id.iv_avatar:
-                Permissions.with(mActivity)
-                        .permission(new String[]{PermissionPool.MANAGE_EXTERNAL_STORAGE,PermissionPool.CAMERA})
-                        .request(new OnPermissionCallback() {
-                            @Override
-                            public void onGranted(List<String> permissions, boolean all) {
-                                PromptButton cancle = new PromptButton("取消", null);
-                                cancle.setTextColor(Color.parseColor("#0076ff"));
-                                //设置显示的文字大小及颜色
-//                promptDialog.getAlertDefaultBuilder().textSize(12).textColor(Color.GRAY);
-                                //默认两个按钮为Alert对话框，大于三个按钮的为底部SHeet形式展现
-                                promptDialog.showAlertSheet("", true, cancle,
-                                        new PromptButton("拍照", PersonalActivity.this),
-                                        new PromptButton("相册", PersonalActivity.this));
-                            }
-
-                            @Override
-                            public void onDenied(List<String> permissions, boolean never) {
-
-                            }
-                        });
+                showPromDialog();
+//                Permissions.with(mActivity)
+//                        .permission(new String[]{PermissionPool.MANAGE_EXTERNAL_STORAGE,PermissionPool.CAMERA})
+//                        .request(new OnPermissionCallback() {
+//                            @Override
+//                            public void onGranted(List<String> permissions, boolean all) {
+//
+//                            }
+//
+//                            @Override
+//                            public void onDenied(List<String> permissions, boolean never) {
+//
+//                            }
+//                        });
 
                 break;
         }
+    }
+
+    @PermissionAop({PermissionPool.MANAGE_EXTERNAL_STORAGE,PermissionPool.CAMERA})
+    private void showPromDialog() {
+        PromptButton cancle = new PromptButton("取消", null);
+        cancle.setTextColor(Color.parseColor("#0076ff"));
+        //设置显示的文字大小及颜色
+//                promptDialog.getAlertDefaultBuilder().textSize(12).textColor(Color.GRAY);
+        //默认两个按钮为Alert对话框，大于三个按钮的为底部SHeet形式展现
+        promptDialog.showAlertSheet("", true, cancle,
+                new PromptButton("拍照", PersonalActivity.this),
+                new PromptButton("相册", PersonalActivity.this));
     }
 
 

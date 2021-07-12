@@ -25,6 +25,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/weibo/BlackHole.weibo.iml" filepath="$PROJECT_DIR$/.idea/modules/weibo/BlackHole.weibo.iml" group="BlackHole/weibo" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/weiboSDK/BlackHole.weiboSDK.iml" filepath="$PROJECT_DIR$/.idea/modules/weiboSDK/BlackHole.weiboSDK.iml" group="BlackHole/weiboSDK" />
       <module fileurl="file://$PROJECT_DIR$/web/GitHub.joephone.BlackHole.web.iml" filepath="$PROJECT_DIR$/web/GitHub.joephone.BlackHole.web.iml" group="BlackHole/web" />
+      <module fileurl="file://$PROJECT_DIR$/fileExplorer/fileExplorer.iml" filepath="$PROJECT_DIR$/fileExplorer/fileExplorer.iml" group="BlackHole/fileExplorer" />
       <module fileurl="file://$PROJECT_DIR$/guard/guard.iml" filepath="$PROJECT_DIR$/guard/guard.iml" group="BlackHole/guard" />
       <module fileurl="file://$PROJECT_DIR$/web/joephone.BlackHole.web.iml" filepath="$PROJECT_DIR$/web/joephone.BlackHole.web.iml" group="BlackHole/web" />
       <module fileurl="file://$PROJECT_DIR$/web/web.iml" filepath="$PROJECT_DIR$/web/web.iml" group="BlackHole/web" />

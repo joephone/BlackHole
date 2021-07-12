@@ -50,6 +50,7 @@ dependencies {
     api config.dependencies.promptDialog
 
     api config.dependencies.anyLayer
+
 //    annotationProcessor config.dependencies.butterknifeCompiler
 
     implementation 'net.soulwolf.widget:ratiolayout:1.0.0'

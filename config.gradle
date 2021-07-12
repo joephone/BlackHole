@@ -9,6 +9,7 @@ ext {
     isNewsApplication = false
     isWeiboApplication = false
     isWeChatApplication = false
+    isFileExplorerApplication = true
 
     android = [
             compileSdkVersion       : 30,
@@ -53,6 +54,8 @@ ext {
 
             persistentCookieJar             : "v1.0.1",
             leakcanaryVersion               : "1.6.3",
+
+            aop                             : "1.9.6",
 
             jLog                            : "1.0.2",
     ]
@@ -111,7 +114,7 @@ ext {
             //提示窗口，正在加载中，主页广告，IOS 底部弹出选择，确认对话框,轻量View，非组合框架
             promptDialog                    : "com.github.limxing:Android-PromptDialog:1.1.3",
                                             // AOP 插件库：https://mvnrepository.com/artifact/org.aspectj/aspectjrt
-            aop                             : "org.aspectj:aspectjrt:1.9.6",
+            aop                             : "org.aspectj:aspectjrt:$version.aop",
 
 
             debugImplementation             : "com.squareup.leakcanary:leakcanary-android:$version.leakcanaryVersion",
