@@ -3,7 +3,8 @@ package com.transcendence.map.service;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.Nullable;
 
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
@@ -17,7 +18,7 @@ import com.amap.api.location.AMapLocationListener;
  * @Edition 1.0
  * @EditionHistory
  */
-public class LocationService  extends Service implements AMapLocationListener {
+public class LocationService extends Service implements AMapLocationListener {
 
     private AMapLocationClient mlocationClient;
     private AMapLocationClientOption mLocationOption;

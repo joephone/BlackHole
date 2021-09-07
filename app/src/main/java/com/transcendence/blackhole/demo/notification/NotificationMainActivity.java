@@ -134,6 +134,7 @@ public class NotificationMainActivity extends TitleBarActivity {
             ((ImageButton) root.findViewById(R.id.main_secondary_config)).setOnClickListener(this);
 
             ((Button) root.findViewById(R.id.btnA)).setOnClickListener(this);
+            ((Button) root.findViewById(R.id.btn_cancel)).setOnClickListener(this);
         }
 
         private String getTitlePrimaryText() {
@@ -173,6 +174,9 @@ public class NotificationMainActivity extends TitleBarActivity {
                     break;
                 case R.id.btnA:
                     goToNotificationSettings();
+                    break;
+                case R.id.btn_cancel:
+                    noti.cancelNoti(NOTI_PRIMARY1);
                     break;
                 default:
                     Log.e(TAG, "Unknown click event.");

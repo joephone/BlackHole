@@ -132,4 +132,9 @@ public class NotificationHelper extends ContextWrapper {
         }
         return manager;
     }
+
+
+    public void cancelNoti(int id){
+        manager.cancel(id);
+    }
 }

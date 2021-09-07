@@ -1,8 +1,9 @@
 package com.transcendence.map.base.act;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.MapView;

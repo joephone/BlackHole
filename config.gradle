@@ -122,8 +122,6 @@ ext {
             testImplementation              : "com.squareup.leakcanary:leakcanary-android-no-op:$version.leakcanaryVersion",
             //日志
             jLog                            : "com.github.joephone:jLog:$version.jLog",
-            //umeng
-            umeng                           : "com.umeng.analytics:analytics:latest.integration",
     ]
 
 

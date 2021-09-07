@@ -82,6 +82,8 @@
         <activity android:name=".mobike.main.act.SlidingUpPanelTestActivity" />
         <activity android:name=".base.act.AmapLocationSourceTwoActivity" />
 
+        <!-- 原生定位-->
+        <activity android:name=".gpsloc.GpsLocActivity" />
 
 
         <!-- 高德地图  -->

@@ -4,8 +4,9 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
 import android.view.animation.DecelerateInterpolator;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.amap.api.location.AMapLocation;
 import com.amap.api.maps.AMap;

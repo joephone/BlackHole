@@ -1,7 +1,8 @@
 package com.transcendence.map.mobike.main.act;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.Nullable;
 
 import com.transcendence.map.R;
 

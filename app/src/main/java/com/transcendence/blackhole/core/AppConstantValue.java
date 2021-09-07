@@ -2,7 +2,6 @@ package com.transcendence.blackhole.core;
 
 import com.transcendence.blackhole.demo.dingdingheader.DingdingHeaderMainActivity;
 import com.transcendence.blackhole.demo.notification.NotificationMainActivity;
-import com.transcendence.blackhole.demo.other.act.FileSelectorMainActivity;
 import com.transcendence.blackhole.demo.other.act.InputMethodFirstActivity;
 import com.transcendence.blackhole.demo.other.act.InputMethodSecondActivity;
 import com.transcendence.blackhole.demo.other.act.badge.BadgeActivity;
@@ -10,7 +9,6 @@ import com.transcendence.blackhole.demo.other.pushhead.PushHeadMainActivity;
 import com.transcendence.blackhole.demo.permission.simple.SimplePerMainActivity;
 import com.transcendence.blackhole.demo.permission.zml.ZlmPerMainActivity;
 import com.transcendence.blackhole.demo.radar.act.RadarMainActivity;
-import com.transcendence.blackhole.demo.umeng.UmengThirdLoginAndShareActivity;
 import com.transcendence.blackhole.index.PermissionIndexActivity;
 import com.transcendence.blackhole.ui.image.saveimgtogallery.SaveToGallaryActivity;
 import com.transcendence.core.arouter.ARouterController;
@@ -99,7 +97,7 @@ public interface AppConstantValue {
             OtherIndexActivity.class,
             VoiceIndexActivity.class,
             ToastActivity.class,
-            PermissionIndexActivity.class};
+            PermissionIndexActivity.class,};
 
     /**
      * 1
@@ -128,8 +126,8 @@ public interface AppConstantValue {
     /**
      * 2.1
      */
-    Class[] imageIndex =
-            {WxImagePickerActivity.class,
+    Class[] imageIndex = {
+            WxImagePickerActivity.class,
             ImageLoadActivity.class,
             JGalleryMainActivity.class,
             ZgalleryMainActivity.class,
@@ -204,7 +202,6 @@ public interface AppConstantValue {
             BadgeActivity.class,
             NotificationMainActivity.class,
             DingdingHeaderMainActivity.class,
-            UmengThirdLoginAndShareActivity.class
     };    //PDFdownMainActivity   FileSelectorMainActivity.class
 
     /**
@@ -250,5 +247,8 @@ public interface AppConstantValue {
     Class[] permissionIndex = {
             ZlmPerMainActivity.class,
             SimplePerMainActivity.class};
+
+
+
 
 }

@@ -1,8 +1,9 @@
 package com.transcendence.map.mobike.main.act;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 import com.transcendence.map.R;

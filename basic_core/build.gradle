@@ -25,8 +25,6 @@ dependencies {
     api config.dependencies.gson
     api config.dependencies.eventbus
 
-    //友盟分析
-    api config.dependencies.umeng
 
     api config.dependencies.butterknife
     api config.dependencies.swipeBack
@@ -51,13 +49,6 @@ dependencies {
     implementation project(':permissions')
 
 
-    implementation files('libs/SocialSDK_QQ_Simplify.jar')
-    implementation files('libs/SocialSDK_Sina_Simplify.jar')
-    implementation files('libs/SocialSDK_WeChat_Simplify.jar')
-    implementation files('libs/umeng_social_api.jar')
-    implementation files('libs/umeng_social_net.jar')
-    implementation files('libs/umeng_social_shareview.jar')
-    implementation files('libs/umeng_social_tool.jar')
 
 
 }

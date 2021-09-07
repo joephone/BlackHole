@@ -14,6 +14,7 @@
         <item name="basic_map">摩拜开场</item>
         <item name="basic_map">地图滑动层</item>
         <item name="basic_map">滑动层</item>
+        <item name="basic_map">Gps定位</item>
     </string-array>
 
 

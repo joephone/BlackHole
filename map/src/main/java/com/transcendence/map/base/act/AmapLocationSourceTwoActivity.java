@@ -2,8 +2,9 @@ package com.transcendence.map.base.act;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;

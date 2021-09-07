@@ -28,8 +28,6 @@ import com.transcendence.core.base.mvp.LibBasePresenter;
 import com.transcendence.core.R;
 import com.transcendence.core.utils.AppUtils;
 import com.transcendence.core.utils.L;
-import com.transcendence.permissions.PermissionPool;
-import com.umeng.analytics.MobclickAgent;
 
 
 /**
@@ -294,13 +292,11 @@ public abstract class BaseMvpActivity<V,T extends LibBasePresenter<V>> extends A
     @Override
     protected void onResume() {
         super.onResume();
-        MobclickAgent.onPause(this);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        MobclickAgent.onPause(this);
     }
 
 

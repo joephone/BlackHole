@@ -1,7 +1,8 @@
 package com.transcendence.map.fragment;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
+
+import androidx.fragment.app.FragmentActivity;
 
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.SupportMapFragment;
@@ -34,8 +35,8 @@ public class BasicAmapFragmentActivity extends FragmentActivity {
 
     private void setUpMapIfNeeded() {
 		if (mMap == null) {
-			mMap = ((SupportMapFragment) getSupportFragmentManager()
-					.findFragmentById(R.id.map)).getMap();
+//			mMap = ((SupportMapFragment) getSupportFragmentManager()
+//					.findFragmentById(R.id.map)).getMap();
 		}
     }
 }
