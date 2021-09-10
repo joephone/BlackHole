@@ -4,10 +4,11 @@ import android.Manifest;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.support.v4.app.ActivityCompat;
 import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
+
+import androidx.core.app.ActivityCompat;
 
 import com.transcendence.core.base.app.LibApplication;
 import com.transcendence.core.utils.L;

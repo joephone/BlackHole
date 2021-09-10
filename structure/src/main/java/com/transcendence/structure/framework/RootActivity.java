@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import com.transcendence.structure.R;
 import com.transcendence.structure.activity.KeyBoardActivity;
 
 import java.util.concurrent.ScheduledExecutorService;
@@ -74,7 +75,7 @@ public class RootActivity extends ListActivity {
         ScheduledExecutorService service = null;
         if (isExit == false) {
             isExit = true;
-            Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.main_exit, Toast.LENGTH_SHORT).show();
             service = new ScheduledThreadPoolExecutor(2);
             service.schedule(new Runnable() {
                 @Override

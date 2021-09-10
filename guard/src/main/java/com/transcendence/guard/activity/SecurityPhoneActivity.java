@@ -1,12 +1,13 @@
 package com.transcendence.guard.activity;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
 
 import com.transcendence.guard.R;
 import com.transcendence.guard.adapter.BlackContactAdapter;

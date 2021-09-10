@@ -1,9 +1,10 @@
 package com.transcendence.guard.activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * @Author Joephone on 2021/2/10 0010 上午 9:49

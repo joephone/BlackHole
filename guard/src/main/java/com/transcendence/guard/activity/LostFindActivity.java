@@ -3,10 +3,11 @@ package com.transcendence.guard.activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
+
+import androidx.annotation.Nullable;
 
 import com.transcendence.guard.R;
 

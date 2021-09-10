@@ -1,11 +1,12 @@
 package com.transcendence.guard.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.animation.AlphaAnimation;
 import android.widget.ProgressBar;
 import android.widget.SlidingDrawer;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.transcendence.guard.R;
 

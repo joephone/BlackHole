@@ -32,9 +32,6 @@ dependencies {
     //注解器
     annotationProcessor config.dependencies["router-compiler"]
 
-    implementation "me.leolin:ShortcutBadger:1.1.13@aar"
-    //dingding head
-    implementation 'in.srain.cube:ultra-ptr:1.0.11'
 
     implementation 'com.github.Duckdan:FileSelectDemo:v1.0'
 
