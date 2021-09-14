@@ -1,15 +1,8 @@
 ext {
     isAnimApplication = false
-    isStructureApplication = true
-    isDoudouApplication = false
-    isDongnaoApplication = false
     isWanApplication = true
     isMapApplication = true
-    isMusicApplication = true
-    isNewsApplication = false
-//    isWeiboApplication = false
-    isWeChatApplication = false
-    isFileExplorerApplication = true
+    isFitzRoyApplication = true
 
     android = [
             compileSdkVersion       : 30,
