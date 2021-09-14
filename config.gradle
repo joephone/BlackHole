@@ -7,7 +7,7 @@ ext {
     isMapApplication = true
     isMusicApplication = true
     isNewsApplication = false
-    isWeiboApplication = false
+//    isWeiboApplication = false
     isWeChatApplication = false
     isFileExplorerApplication = true
 
