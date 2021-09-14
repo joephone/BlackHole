@@ -11,16 +11,11 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/basic_utils/BlackHole.basic_utils.iml" filepath="$PROJECT_DIR$/.idea/modules/basic_utils/BlackHole.basic_utils.iml" group="BlackHole/basic_utils" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/imagepicker/BlackHole.imagepicker.iml" filepath="$PROJECT_DIR$/.idea/modules/imagepicker/BlackHole.imagepicker.iml" group="BlackHole/imagepicker" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/map/BlackHole.map.iml" filepath="$PROJECT_DIR$/.idea/modules/map/BlackHole.map.iml" group="BlackHole/map" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/music/BlackHole.music.iml" filepath="$PROJECT_DIR$/.idea/modules/music/BlackHole.music.iml" group="BlackHole/music" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/network/BlackHole.network.iml" filepath="$PROJECT_DIR$/.idea/modules/network/BlackHole.network.iml" group="BlackHole/network" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/news/BlackHole.news.iml" filepath="$PROJECT_DIR$/.idea/modules/news/BlackHole.news.iml" group="BlackHole/news" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/permissions/BlackHole.permissions.iml" filepath="$PROJECT_DIR$/.idea/modules/permissions/BlackHole.permissions.iml" group="BlackHole/permissions" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/structure/BlackHole.structure.iml" filepath="$PROJECT_DIR$/.idea/modules/structure/BlackHole.structure.iml" group="BlackHole/structure" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/wan/BlackHole.wan.iml" filepath="$PROJECT_DIR$/.idea/modules/wan/BlackHole.wan.iml" group="BlackHole/wan" />
       <module fileurl="file://$PROJECT_DIR$/web/BlackHole.web.iml" filepath="$PROJECT_DIR$/web/BlackHole.web.iml" group="BlackHole/web" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/wechat/BlackHole.wechat.iml" filepath="$PROJECT_DIR$/.idea/modules/wechat/BlackHole.wechat.iml" group="BlackHole/wechat" />
       <module fileurl="file://$PROJECT_DIR$/web/GitHub.joephone.BlackHole.web.iml" filepath="$PROJECT_DIR$/web/GitHub.joephone.BlackHole.web.iml" group="BlackHole/web" />
-      <module fileurl="file://$PROJECT_DIR$/fileExplorer/fileExplorer.iml" filepath="$PROJECT_DIR$/fileExplorer/fileExplorer.iml" group="BlackHole/fileExplorer" />
       <module fileurl="file://$PROJECT_DIR$/guard/guard.iml" filepath="$PROJECT_DIR$/guard/guard.iml" group="BlackHole/guard" />
       <module fileurl="file://$PROJECT_DIR$/web/joephone.BlackHole.web.iml" filepath="$PROJECT_DIR$/web/joephone.BlackHole.web.iml" group="BlackHole/web" />
       <module fileurl="file://$PROJECT_DIR$/web/web.iml" filepath="$PROJECT_DIR$/web/web.iml" group="BlackHole/web" />
