@@ -13,10 +13,9 @@ dependencies {
     api config.dependencies.design
     api config.dependencies.supportv4
 
-
     implementation 'com.github.hackware1993:MagicIndicator:1.6.0'
 
-    implementation 'com.google.android.material:material:1.2.1'
+    api config.dependencies.material
 
     api config.dependencies.smartRefreshLayoutLayoutKernel
     api config.dependencies.smartRefreshLayoutHeaderMaterial

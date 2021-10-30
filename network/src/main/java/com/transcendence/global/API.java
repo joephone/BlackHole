@@ -19,6 +19,7 @@ public class API {
     public final static String API_QSBK = "http://m2.qiushibaike.com/";
     public final static String API_MTIME = "https://api-m.mtime.cn/";
     public final static String API_MTIME_TICKET = "https://ticket-api-m.mtime.cn/";
+    public final static String API_AIS = "http://121.199.36.204:8092/";//"http://4bac-171-43-184-188.ngrok.io/"; //
     /**
      * 分页数据，每页的数量
      */
@@ -176,6 +177,17 @@ public class API {
             return String.format(MY_COIN_LIST, page);
         }
 
+    }
+
+
+    public static class AIS {
+        public final static String AIS_FETCH = API_AIS + "device/location/add";
+
+
+        public final static String AIS_GET_CAPT_CAH = API_AIS + "logon/getCaptcha";
+
+
+        public final static String GET_SHIP_INFO = API_AIS + "locationInfo/shipInfo";    //"获取船舶基本信息"
     }
 
 }

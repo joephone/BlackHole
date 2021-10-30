@@ -37,4 +37,11 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8  //config.compileOptions.targetCompatibility
     }
 
+    sourceSets {
+        main {
+            jni.srcDirs = []
+            jniLibs.srcDirs = ['src/main/jniLibs']
+        }
+    }
+
 }

@@ -43,6 +43,7 @@ public class RetrofitCreator {
 
     /**
      * 获取对象
+     *
      * @param source
      */
     public static RetrofitAPI getRetrofitAPI(ApiSource source) {
@@ -53,12 +54,16 @@ public class RetrofitCreator {
 
     private static Retrofit getRetrofit(ApiSource source) {
         String BASE_URL = API.API_WAN_ANDROID; //ProjectInit.getConfiguratorByKey(ConfigKeys.API_HOST);
-        if(source!=null){
-            switch (source){
+        if (source != null) {
+            switch (source) {
                 case WAN:
+                    BASE_URL = API.API_WAN_ANDROID;
                     break;
                 case GANK:
                     BASE_URL = API.API_GANK_IO;
+                    break;
+                case AIS:
+                    BASE_URL = API.API_AIS;
                     break;
             }
         }

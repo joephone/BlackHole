@@ -9,16 +9,20 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/basic_res/BlackHole.basic_res.iml" filepath="$PROJECT_DIR$/.idea/modules/basic_res/BlackHole.basic_res.iml" group="BlackHole/basic_res" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/basic_ui/BlackHole.basic_ui.iml" filepath="$PROJECT_DIR$/.idea/modules/basic_ui/BlackHole.basic_ui.iml" group="BlackHole/basic_ui" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/basic_utils/BlackHole.basic_utils.iml" filepath="$PROJECT_DIR$/.idea/modules/basic_utils/BlackHole.basic_utils.iml" group="BlackHole/basic_utils" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/imagepicker/BlackHole.imagepicker.iml" filepath="$PROJECT_DIR$/.idea/modules/imagepicker/BlackHole.imagepicker.iml" group="BlackHole/imagepicker" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/map/BlackHole.map.iml" filepath="$PROJECT_DIR$/.idea/modules/map/BlackHole.map.iml" group="BlackHole/map" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/network/BlackHole.network.iml" filepath="$PROJECT_DIR$/.idea/modules/network/BlackHole.network.iml" group="BlackHole/network" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/permissions/BlackHole.permissions.iml" filepath="$PROJECT_DIR$/.idea/modules/permissions/BlackHole.permissions.iml" group="BlackHole/permissions" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/wan/BlackHole.wan.iml" filepath="$PROJECT_DIR$/.idea/modules/wan/BlackHole.wan.iml" group="BlackHole/wan" />
       <module fileurl="file://$PROJECT_DIR$/web/BlackHole.web.iml" filepath="$PROJECT_DIR$/web/BlackHole.web.iml" group="BlackHole/web" />
       <module fileurl="file://$PROJECT_DIR$/web/GitHub.joephone.BlackHole.web.iml" filepath="$PROJECT_DIR$/web/GitHub.joephone.BlackHole.web.iml" group="BlackHole/web" />
-      <module fileurl="file://$PROJECT_DIR$/fitzroy/fitzroy.iml" filepath="$PROJECT_DIR$/fitzroy/fitzroy.iml" group="BlackHole/fitzroy" />
+      <module fileurl="file://$PROJECT_DIR$/fitzRoy/fitzRoy.iml" filepath="$PROJECT_DIR$/fitzRoy/fitzRoy.iml" group="BlackHole/fitzRoy" />
       <module fileurl="file://$PROJECT_DIR$/guard/guard.iml" filepath="$PROJECT_DIR$/guard/guard.iml" group="BlackHole/guard" />
+      <module fileurl="file://$PROJECT_DIR$/heima/heima.iml" filepath="$PROJECT_DIR$/heima/heima.iml" group="BlackHole/heima" />
+      <module fileurl="file://$PROJECT_DIR$/imagePicker/imagepicker.iml" filepath="$PROJECT_DIR$/imagePicker/imagepicker.iml" group="BlackHole/imagepicker" />
       <module fileurl="file://$PROJECT_DIR$/web/joephone.BlackHole.web.iml" filepath="$PROJECT_DIR$/web/joephone.BlackHole.web.iml" group="BlackHole/web" />
+      <module fileurl="file://$PROJECT_DIR$/libWSLive/libWSLive.iml" filepath="$PROJECT_DIR$/libWSLive/libWSLive.iml" group="BlackHole/libWSLive" />
+      <module fileurl="file://$PROJECT_DIR$/rtmp/rtmp.iml" filepath="$PROJECT_DIR$/rtmp/rtmp.iml" group="BlackHole/rtmp" />
+      <module fileurl="file://$PROJECT_DIR$/serialPort/serialPort.iml" filepath="$PROJECT_DIR$/serialPort/serialPort.iml" group="BlackHole/serialPort" />
+      <module fileurl="file://$PROJECT_DIR$/serialportlib/serialportlib.iml" filepath="$PROJECT_DIR$/serialportlib/serialportlib.iml" group="BlackHole/serialportlib" />
       <module fileurl="file://$PROJECT_DIR$/web/web.iml" filepath="$PROJECT_DIR$/web/web.iml" group="BlackHole/web" />
     </modules>
   </component>

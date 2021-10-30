@@ -141,5 +141,11 @@ public final class PermissionPool {
         public static final String[] LOCATION = new String[]{
                 PermissionPool.ACCESS_FINE_LOCATION,
                 PermissionPool.ACCESS_COARSE_LOCATION};
+
+        /** location */
+        public static final String[] LIVE = new String[]{
+                PermissionPool.CAMERA,
+                PermissionPool.RECORD_AUDIO,
+                PermissionPool.MANAGE_EXTERNAL_STORAGE};
     }
 }

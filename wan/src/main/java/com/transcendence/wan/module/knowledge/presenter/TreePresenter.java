@@ -7,7 +7,7 @@ import com.transcendence.network.jett.callback.IFailure;
 import com.transcendence.network.jett.callback.ISuccess;
 import com.transcendence.network.jett.retrofit.RetrofitClient;
 import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
-import com.transcendence.wan.core.service.ParamMap;
+import com.transcendence.network.service.ParamMap;
 import com.transcendence.wan.module.knowledge.model.TreeModel;
 import com.transcendence.wan.module.knowledge.view.TreeView;
 

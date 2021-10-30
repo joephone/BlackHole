@@ -8,6 +8,8 @@ def config = rootProject.ext
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    implementation project(':basic_core')
+
     //retrofit2
     api config.dependencies.retrofit
     api config.dependencies.converterScalars
@@ -15,4 +17,12 @@ dependencies {
     api config.dependencies.okhttp
 
     api config.dependencies.persistentCookieJar
+
+    api config.dependencies.gson
+
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.2.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.0-beta3'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    implementation 'com.squareup.okhttp3:okhttp:3.4.1'
+
 }

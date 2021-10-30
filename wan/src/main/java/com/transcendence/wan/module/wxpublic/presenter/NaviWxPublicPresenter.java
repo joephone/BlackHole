@@ -3,12 +3,11 @@ package com.transcendence.wan.module.wxpublic.presenter;
 import com.transcendence.core.utils.GsonUtils;
 import com.transcendence.core.utils.L;
 import com.transcendence.global.API;
-import com.transcendence.network.jett.ApiSource;
 import com.transcendence.network.jett.callback.IFailure;
 import com.transcendence.network.jett.callback.ISuccess;
 import com.transcendence.network.jett.retrofit.RetrofitClient;
 import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
-import com.transcendence.wan.core.service.ParamMap;
+import com.transcendence.network.service.ParamMap;
 import com.transcendence.wan.module.wxpublic.model.WxChapterModel;
 import com.transcendence.wan.module.wxpublic.view.NaviWxPublicView;
 

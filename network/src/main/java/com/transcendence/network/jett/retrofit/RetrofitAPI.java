@@ -11,6 +11,7 @@ import retrofit2.http.DELETE;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Headers;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
@@ -32,7 +33,8 @@ public interface RetrofitAPI {
     @GET
     Call<String> get(@Url String url, @QueryMap Map<String, Object> params);
 
-    @FormUrlEncoded
+    @Headers({"Content-Type: application/json","Accept: application/json"})
+    @FormUrlEncoded  //会对请求体的数据进行url编码
     @POST
     Call<String> post(@Url String url, @FieldMap Map<String, Object> params);
 

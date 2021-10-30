@@ -6,7 +6,7 @@ import com.transcendence.network.jett.callback.IFailure;
 import com.transcendence.network.jett.callback.ISuccess;
 import com.transcendence.network.jett.retrofit.RetrofitClient;
 import com.transcendence.wan.core.mvp.presenter.WanTitlebarPresenter;
-import com.transcendence.wan.core.service.ParamUser;
+import com.transcendence.network.service.ParamUser;
 import com.transcendence.wan.module.setting.view.SettingView;
 import com.transcendence.wan.utils.CacheUtils;
 

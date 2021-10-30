@@ -5,6 +5,9 @@
     <color name="colorAccent">#D81B60</color>
     <color name="colorTheme">#24292E</color>
 
+    <color name="theme_tudor_red">#E71B64</color>
+    <color name="theme_tudor_white">#FFFFF0</color>
+
     <!-- 元色 -->
     <color name="transparent">#00000000</color>
     <!--白色透明度-->
@@ -56,6 +59,7 @@
     <color name="gary">#898989</color>
     <color name="orange">#ff7116</color>
     <color name="line">#d1d1d1</color>
+    <color name="green">#13de64</color>
 
     <!-- 分割线的颜色 -->
     <color name="colorLine">#ECECEC</color>

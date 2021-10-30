@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+apply from: '../basic.gradle'
+
+def config = rootProject.ext
+
+android {
+    defaultConfig {
+        //组件模式下设置applicationId
+        applicationId "com.transcendence.rtmp"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
+    }
+
+
+    sourceSets {
+        main {
+
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //注解器
+    annotationProcessor rootProject.ext.dependencies["router-compiler"]
+
+    implementation project(':basic_core')
+    implementation project(':basic_ui')
+    implementation project(':basic_res')
+    implementation project(':basic_utils')
+    implementation project(':permissions')
+    implementation project(':libWSLive')
+
+}

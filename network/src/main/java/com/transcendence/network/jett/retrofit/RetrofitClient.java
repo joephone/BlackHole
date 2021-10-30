@@ -1,6 +1,8 @@
 package com.transcendence.network.jett.retrofit;
 
 
+import android.util.Log;
+
 import com.transcendence.network.jett.ApiSource;
 import com.transcendence.network.jett.HttpMethod;
 import com.transcendence.network.jett.callback.IError;
@@ -80,6 +82,7 @@ public class RetrofitClient {
      * @param method
      */
     private void request(HttpMethod method) {
+        Log.d("BlackHole","url:"+URL);
         final RetrofitAPI service = RetrofitCreator.getRetrofitAPI(SOURCE);
         Call<String> call = null;
         if (REQUEST != null) {

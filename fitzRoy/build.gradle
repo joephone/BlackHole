@@ -1,0 +1,60 @@
+if (rootProject.ext.isFitzRoyApplication) {
+    apply plugin: 'com.android.application'
+    apply from: '../basic.gradle'
+} else {
+    apply plugin: 'com.android.library'
+    apply from: '../basic.gradle'
+}
+
+
+def config = rootProject.ext
+
+android {
+    defaultConfig {
+        if (rootProject.ext.isFitzRoyApplication){
+            //组件模式下设置applicationId
+            applicationId "com.transcendence.fitzroy"
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+
+    sourceSets {
+        main {
+            if (rootProject.ext.isWanApplication) {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/java/com/transcendence/fitzroy/core/AndroidManifest.xml'
+            }
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //注解器
+    annotationProcessor rootProject.ext.dependencies["router-compiler"]
+
+    implementation project(':basic_core')
+    implementation project(':basic_ui')
+    implementation project(':basic_res')
+    implementation project(':basic_utils')
+    implementation project(':permissions')
+    implementation project(':network')
+
+    //Awesome 项目引用的库
+    api config.dependencies.material
+
+    implementation 'com.google.code.gson:gson:2.5'
+
+
+    implementation 'io.reactivex:rxjava:1.1.9'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+}

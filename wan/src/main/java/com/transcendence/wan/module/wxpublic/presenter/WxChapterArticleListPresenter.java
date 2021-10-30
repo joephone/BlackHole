@@ -6,7 +6,7 @@ import com.transcendence.network.jett.callback.IFailure;
 import com.transcendence.network.jett.callback.ISuccess;
 import com.transcendence.network.jett.retrofit.RetrofitClient;
 import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
-import com.transcendence.wan.core.service.ParamWx;
+import com.transcendence.network.service.ParamWx;
 import com.transcendence.wan.module.wxpublic.model.WxChapterArticleModel;
 import com.transcendence.wan.module.wxpublic.view.WxChapterArticleListView;
 

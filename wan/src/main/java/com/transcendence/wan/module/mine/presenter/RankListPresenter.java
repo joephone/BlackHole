@@ -6,7 +6,7 @@ import com.transcendence.network.jett.callback.IFailure;
 import com.transcendence.network.jett.callback.ISuccess;
 import com.transcendence.network.jett.retrofit.RetrofitClient;
 import com.transcendence.wan.core.mvp.presenter.WanTitlebarPresenter;
-import com.transcendence.wan.core.service.ParamMap;
+import com.transcendence.network.service.ParamMap;
 import com.transcendence.wan.module.mine.model.RankListModel;
 import com.transcendence.wan.module.mine.view.RankView;
 

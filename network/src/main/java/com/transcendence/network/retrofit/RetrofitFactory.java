@@ -18,15 +18,15 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class RetrofitFactory {
 
-    private static class OkHttpClientHolder{
-        private static final int TIME_OUT=60;
+    private static class OkHttpClientHolder {
+        private static final int TIME_OUT = 60;
         public static final OkHttpClient OK_HTTP_CLIENT = new OkHttpClient.Builder()
                 .connectTimeout(TIME_OUT, TimeUnit.SECONDS)
                 .build();
     }
 
 
-    public static Retrofit factory(){
+    public static Retrofit factory() {
         final String BASE_URL = API.API_WAN_ANDROID;
         Retrofit client = new Retrofit.Builder()
                 .baseUrl(BASE_URL)

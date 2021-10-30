@@ -17,7 +17,7 @@ public class SoftKeyboardAdjustActivity extends TitleBarActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_widget_et_softkeykoard;
+        return R.layout.activity_widget_edittext_softkeykoard;
     }
 
     @Override

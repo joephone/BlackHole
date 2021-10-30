@@ -10,6 +10,7 @@ import android.os.Process;
 
 import com.transcendence.core.arouter.ARouterUtils;
 import com.transcendence.core.base.config.AppInit;
+import com.transcendence.core.crash.CrashHandler;
 import com.transcendence.core.utils.L;
 
 import java.util.Collections;
@@ -47,6 +48,8 @@ public class LibApplication extends Application {
         applicationContext = getApplicationContext();
         AppInit.INSTANCE.initConfig(this);
 
+//        CrashHandler.getInstance().init(this); // 一定要先初始化
+//        Thread.setDefaultUncaughtExceptionHandler(CrashHandler.getInstance());
     }
 
 

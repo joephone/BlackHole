@@ -9,7 +9,7 @@ import com.transcendence.network.jett.callback.ISuccess;
 import com.transcendence.network.jett.retrofit.RetrofitClient;
 import com.transcendence.wan.R;
 import com.transcendence.wan.core.mvp.presenter.WanTitlebarPresenter;
-import com.transcendence.wan.core.service.ParamMap;
+import com.transcendence.network.service.ParamMap;
 import com.transcendence.wan.module.home.model.BannerModel;
 import com.transcendence.wan.module.home.view.HomeView;
 import com.transcendence.wan.module.main.bean.ArticleListBean;

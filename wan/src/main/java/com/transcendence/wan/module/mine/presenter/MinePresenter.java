@@ -6,9 +6,8 @@ import com.transcendence.global.API;
 import com.transcendence.network.jett.callback.IFailure;
 import com.transcendence.network.jett.callback.ISuccess;
 import com.transcendence.network.jett.retrofit.RetrofitClient;
-import com.transcendence.wan.core.mvp.presenter.WanBasePresenter;
 import com.transcendence.wan.core.mvp.presenter.WanTitlebarPresenter;
-import com.transcendence.wan.core.service.ParamUser;
+import com.transcendence.network.service.ParamUser;
 import com.transcendence.wan.module.mine.model.MyCoinModel;
 import com.transcendence.wan.module.mine.view.MineView;
 

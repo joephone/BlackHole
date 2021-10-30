@@ -130,8 +130,6 @@ public class BeautyFragment extends WanBaseFragment<BeautyPresenter> implements 
         PAGE ++;
         isLoadMore = true;
         presenter.getBeautyList(PAGE, Global.LIMIT);
-
-
     }
 
     @Override

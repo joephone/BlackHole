@@ -286,6 +286,10 @@
         <activity
             android:name=".ui.widget.edittext.SoftKeyboardAdjustActivity"
             android:screenOrientation="portrait" />
+        <!-- 车辆录入专用输入键盘 -->
+        <activity
+            android:name=".ui.widget.edittext.VehicleKeyboardActivity"
+            android:screenOrientation="portrait" />
 
 
         <!-- 序列3   抽奖 序列 -->

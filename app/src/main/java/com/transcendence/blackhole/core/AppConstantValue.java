@@ -11,6 +11,7 @@ import com.transcendence.blackhole.demo.permission.zml.ZlmPerMainActivity;
 import com.transcendence.blackhole.demo.radar.act.RadarMainActivity;
 import com.transcendence.blackhole.index.PermissionIndexActivity;
 import com.transcendence.blackhole.ui.image.saveimgtogallery.SaveToGallaryActivity;
+import com.transcendence.blackhole.ui.widget.edittext.VehicleKeyboardActivity;
 import com.transcendence.core.arouter.ARouterController;
 import com.transcendence.blackhole.base.launchmode.act.SingleTaskFirstActivity;
 import com.transcendence.blackhole.demo.allapp.AllAppActivity;
@@ -151,7 +152,8 @@ public interface AppConstantValue {
      */
     Class[] etIndex = {
             AutoClearEditActivity.class,
-            SoftKeyboardAdjustActivity.class};
+            SoftKeyboardAdjustActivity.class,
+            VehicleKeyboardActivity.class};
 
     /**
      * 3

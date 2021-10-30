@@ -3,6 +3,8 @@ ext {
     isWanApplication = true
     isMapApplication = true
     isFitzRoyApplication = true
+    isHeimaApplication = true
+    isSerialApplication = true
 
     android = [
             compileSdkVersion       : 30,
@@ -28,6 +30,8 @@ ext {
             gson                            : "2.5",
             butterknifeVersion              : "8.5.1",
             eventbus                        : "3.1.1",
+
+            material                        : "1.2.1",
 
             bravh                           : "2.9.46",
 
@@ -72,6 +76,9 @@ ext {
             //gson
             gson                            : "com.google.code.gson:gson:$version.gson",
             eventbus                        : "org.greenrobot:eventbus:$version.eventbus",
+
+
+            material                        : "com.google.android.material:material:$version.material",
 
 
             bravh                           : "com.github.CymChad:BaseRecyclerViewAdapterHelper:$version.bravh",
