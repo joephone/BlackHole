@@ -1,0 +1,54 @@
+//plugins {
+//    id 'com.android.library'
+//    id 'kotlin-android'
+//}
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply from: "../basic.gradle"
+def config = rootProject.ext
+
+android {
+    defaultConfig {
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    //  dataBinding是一种支持库，借助该库，可以以声明方式将可观察数据绑定到界面元素。
+    buildFeatures{
+        dataBinding = true
+    }
+}
+
+dependencies {
+
+    api config.dependencies.arouterApi
+    annotationProcessor config.dependencies.arouterCompiler
+
+    api config.dependencies.ktx
+    api config.dependencies.appcompat
+    api config.dependencies.material
+    api config.dependencies.constraintlayout
+
+    api config.dependencies.smartRefreshLayout
+    api config.dependencies.smartRefreshHeader
+    api config.dependencies.smartRefreshFooter
+
+    api config.dependencies.gson
+    api config.dependencies.glide
+
+    api config.dependencies.mmkv
+
+    api config.dependencies.XXPermissions
+    api config.dependencies.blankUtils
+
+
+//    //状态栏
+//    implementation 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+
+    // Bugly 异常捕捉：https://bugly.qq.com/docs/user-guide/instruction-manual-android/?v=20190418140644
+    api 'com.tencent.bugly:crashreport:3.4.4'
+    api 'com.tencent.bugly:nativecrashreport:3.9.2'
+}

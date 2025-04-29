@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.transcendence.core.ui.rv.linkage.LinkageRecyclerView
+            android:id="@+id/linkage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+
+        <!--    <com.google.android.material.button.MaterialButton-->
+        <!--        android:id="@+id/btn_preview"-->
+        <!--        style="@style/Widget.MaterialComponents.Button.UnelevatedButton"-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_gravity="center_horizontal"-->
+        <!--        android:layout_marginTop="@dimen/standard_padding"-->
+        <!--        android:layout_marginBottom="@dimen/standard_padding"-->
+        <!--        android:layout_weight="0"-->
+        <!--        android:backgroundTint="?attr/colorPrimary"-->
+        <!--        android:text="饿了么"-->
+        <!--        android:textColor="@color/white"-->
+        <!--        android:visibility="gone" />-->
+
+    </LinearLayout>
+</layout>
+

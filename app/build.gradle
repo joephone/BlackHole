@@ -1,0 +1,76 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply from: '../basic.gradle'
+def config = rootProject.ext
+
+android {
+
+    defaultConfig {
+
+        applicationId "com.transcendence.freeland"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def versionName = variant.versionName
+            def versionCode = variant.versionCode
+            def buildType = variant.buildType.name
+            output.outputFileName = "FreeLand_${versionName}_${versionCode}_${buildType}.apk"
+        }
+    }
+
+    buildTypes {
+        release {
+            // 压缩对齐开关
+            zipAlignEnabled true
+            // 移除无用的资源
+            shrinkResources true
+            // 代码混淆开关
+            minifyEnabled true
+            // 混淆文件的位置
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures{
+        dataBinding = true
+    }
+}
+
+dependencies {
+    annotationProcessor config.dependencies.arouterCompiler
+    api config.dependencies.arouterApi
+
+    api config.dependencies.ktx
+    api config.dependencies.kotlinxJdk
+    api config.dependencies.appcompat
+    api config.dependencies.material
+    api config.dependencies.constraintlayout
+
+    api config.dependencies.smartRefreshLayout
+    api config.dependencies.smartRefreshHeader
+
+    api config.dependencies.okhttp
+
+//    implementation 'com.github.joephone:Core:v0.0.1'
+    implementation project(path: ':lib_core')
+    implementation project(path: ':lib_gallery')
+    implementation project(path: ':lib_logcat')
+    implementation project(':lib_aop')
+    if(!config.isMusicApplication){
+        implementation project(path: ':module_music')
+    }
+    if(!config.isGreenStarApplication){
+        implementation project(path: ':module_greenstar')
+    }
+
+    implementation "androidx.activity:activity:1.2.0"
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+
+}

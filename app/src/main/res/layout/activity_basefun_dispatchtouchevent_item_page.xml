@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <!-- 标题 -->
+    <TextView
+        android:id="@+id/pageTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        android:text="Page Title"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:visibility="visible"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- 自定义的RecyclerView -->
+    <com.transcendence.freeland.basefun.dispatchtouchevent.view.CustomRecyclerView
+        android:id="@+id/rv"
+        android:layout_below="@id/pageTitle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white" /> <!-- 默认背景颜色 -->
+</RelativeLayout>

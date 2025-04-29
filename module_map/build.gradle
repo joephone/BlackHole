@@ -1,0 +1,58 @@
+def config = rootProject.ext
+if (config.isMapApplication) {
+    apply plugin: 'com.android.application'
+    apply plugin: 'kotlin-android'
+} else {
+    apply plugin: 'com.android.library'
+}
+
+apply from: "../basic.gradle"
+
+android {
+
+    defaultConfig {
+        if (config.isMapApplication){
+            applicationId "com.transcendence.map"
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    sourceSets {
+        main {
+            if (config.isMapApplication) {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+            }
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+//    kotlinOptions {
+//        jvmTarget = '1.8'
+//    }
+
+    buildFeatures{
+        dataBinding = true
+    }
+
+}
+
+dependencies {
+    annotationProcessor config.dependencies.arouterCompiler
+    api config.dependencies.arouterApi
+
+    api config.dependencies.ktx
+    api config.dependencies.appcompat
+    api config.dependencies.material
+    api config.dependencies.constraintlayout
+
+    implementation project(path: ':lib_core')
+    implementation project(path: ':lib_aop')
+
+}

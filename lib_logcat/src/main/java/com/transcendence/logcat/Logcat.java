@@ -1,0 +1,543 @@
+/*
+ * Copyright (C) 2015. The Android Open Source Project.
+ *
+ *         yinglovezhuzhu@gmail.com
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+
+package com.transcendence.logcat;
+
+import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.graphics.PixelFormat;
+import android.graphics.Rect;
+import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+import android.view.Gravity;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+
+import com.transcendence.core.global.Global;
+import com.transcendence.logcat.observer.LogObservable;
+import com.transcendence.logcat.observer.LogObserver;
+import com.transcendence.logcat.ui.activity.LogcatActivity;
+import com.transcendence.core.utils.log.LogUtils;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+
+/**
+ * 滚屏日志
+ * Created by yinglovezhuzhu@gmail.com on 2015/8/24.
+ */
+public class Logcat {
+
+    public static final String SP_LOGCAT_CONFIG = "logcat_config";
+
+    /** 关闭logcat **/
+    public static final String ACTION_CLOSE_LOGCAT = "com.ghw.sdk.ACTION_CLOSE_LOGCAT";
+    /** logcat关闭成功 **/
+    public static final String ACTION_LOGCAT_CLOSED = "com.ghw.sdk.ACTION_LOGCAT_CLOSED";
+    /** logcat打开 **/
+    public static final String ACTION_LOGCAT_OPENED = "com.ghw.sdk.ACTION_LOGCAT_OPENED";
+
+    private static final String SP_KEY_FLOW_BUTTON_X = "debug_flow_button_x";
+    private static final String SP_KEY_FLOW_BUTTON_Y = "debug_flow_button_y";
+    /** Boolean **/
+    private static final String SP_KEY_LOG_AUTO_SCROLL = "log_auto_scroll";
+
+
+
+    private Context mAppContext;
+    private WindowManager mWindowManager;
+    private ImageButton mIBtnLog;
+    private WindowManager.LayoutParams mBtnLayoutParams;
+
+    private final LogcatHandler mHandler = new LogcatHandler(Looper.getMainLooper());
+    private LogObservable mLogObservable = new LogObservable();
+
+    private SharedPrefHelper mSharePrefHelper;
+    private int mMaxLines = Global.DEFAULT_LOG_MAX_LIENS;
+
+    private final List<String> mLogs = new ArrayList<>();
+
+    private boolean mInitialized = false;
+    private boolean mLogcatOpened = false;
+    private boolean mLogAutoScroll = false;
+
+    private ReadLogThread mReadLogThread;
+
+    private static Logcat mInstance = null;
+
+    private Logcat() {
+    }
+
+    /**
+     * 启用Logcat，启用后将会有一个悬浮按钮入口，强烈建议在Activity的onResume中调用
+     * @param activity
+     */
+    public static void enableLogcat(Activity activity) {
+        getInstance().enableLogcatWindow(activity);
+    }
+
+    /**
+     * 禁用Logcat，禁用后将关闭悬浮按钮入口，强烈建议在Activity的onStop中调用
+     */
+    public static void disableLogcat() {
+        getInstance().disableLogcatWindow();
+    }
+
+    /**
+     * 设置保存最大的日志数
+     * @param maxLines
+     */
+    public static void setMaxLogLines(int maxLines) {
+        getInstance().setMaxLines(maxLines);
+    }
+
+    public static Logcat getInstance() {
+        synchronized (Logcat.class) {
+            if(null == mInstance) {
+                mInstance = new Logcat();
+            }
+            return mInstance;
+        }
+    }
+
+    void initialize(Activity activity) {
+        if(mInitialized) {
+            return;
+        }
+        LogUtils.d("initialize");
+        mWindowManager = (WindowManager) activity.getSystemService(Context.WINDOW_SERVICE);
+
+        mSharePrefHelper = SharedPrefHelper.newInstance(activity.getApplicationContext(), SP_LOGCAT_CONFIG);
+        mLogAutoScroll = mSharePrefHelper.getBoolean(SP_KEY_LOG_AUTO_SCROLL, false);
+
+        initLayoutParams(activity);
+
+        initLogButton(activity);
+
+        mAppContext = activity.getApplicationContext();
+        LocalReceiver receiver = new LocalReceiver();
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(ACTION_LOGCAT_CLOSED);
+        mAppContext.registerReceiver(receiver, intentFilter);
+
+        mInitialized = true;
+    }
+
+    void enableLogcatWindow(Activity activity) {
+        initialize(activity);
+
+        try {
+            LogUtils.d("enableLogcatWindow");
+            mWindowManager.addView(mIBtnLog, mBtnLayoutParams);
+        } catch (Exception e) {
+            // do nothing
+        }
+
+        mReadLogThread = new ReadLogThread();
+        mReadLogThread.start();
+    }
+
+    void disableLogcatWindow() {
+        if(null != mWindowManager) {
+            if(null != mIBtnLog) {
+                try {
+                    mWindowManager.removeView(mIBtnLog);
+                } catch (Exception e) {
+                    // do nothing
+                }
+            }
+        }
+        if(null != mReadLogThread) {
+            mReadLogThread.interrupt();
+            mReadLogThread = null;
+        }
+    }
+
+    void setMaxLines(int maxLines) {
+        this.mMaxLines = maxLines;
+    }
+
+
+    /**
+     * 注册一个日志观察者
+     * @param observer
+     */
+    public void registerLogObserver(LogObserver observer) {
+        mLogObservable.registerObserver(observer);
+    }
+
+    /**
+     * 反注册一个日志观察者
+     * @param observer
+     */
+    public void unregisterLogObserver(LogObserver observer) {
+        mLogObservable.unregisterObserver(observer);
+    }
+
+    /**
+     * 反注册所有的日志观察者
+     */
+    public void unregisterAllLogObserver() {
+        mLogObservable.unregisterAll();
+    }
+
+    //------- Log ---------
+
+    /**
+     * 日志数据的长度
+     */
+    public int getLogSize() {
+        synchronized (mLogs) {
+            return mLogs.size();
+        }
+    }
+
+    public String getLog(int position) {
+        synchronized (mLogs) {
+            return mLogs.get(position);
+        }
+    }
+
+    public void clearLog() {
+        synchronized (mLogs) {
+            mLogs.clear();
+        }
+        new ClearLogThread().start();
+    }
+
+    public boolean isLogAutoScroll() {
+        return mLogAutoScroll;
+    }
+
+    public void setLogAutoScroll(boolean autoScroll) {
+        this.mLogAutoScroll = autoScroll;
+        if(null != mSharePrefHelper) {
+            mSharePrefHelper.saveBoolean(SP_KEY_LOG_AUTO_SCROLL, autoScroll);
+        }
+    }
+
+    /**
+     * 记录log
+     * @param log
+     */
+    public void addLog(String log) {
+//        LogUtils.d("addLog");
+        mHandler.sendMessage(mHandler.obtainMessage(LogcatHandler.MSG_LOG, log));
+    }
+
+    //------- Log ---------
+
+    /**
+     * 显示日志窗口
+     */
+    private void showLog() {
+        if(mLogcatOpened) {
+            Intent intent = new Intent(Logcat.ACTION_CLOSE_LOGCAT);
+            mAppContext.sendBroadcast(intent);
+            mLogcatOpened = false;
+            return;
+        }
+        Intent intent = new Intent(mAppContext, LogcatActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        mAppContext.startActivity(intent);
+        mLogcatOpened = true;
+    }
+
+    /**
+     * 初始化入口悬浮按钮
+     * @param context
+     */
+    private void initLogButton(Context context) {
+        LogUtils.d("initLogButton");
+        mIBtnLog = new ImageButton(context);
+        mIBtnLog.setBackgroundResource(context.getResources().getIdentifier("selector_entry_button", "drawable", context.getPackageName()));
+        mIBtnLog.setImageResource(context.getResources().getIdentifier("ic_entry", "drawable", context.getPackageName()));
+        mIBtnLog.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+        mIBtnLog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showLog();
+            }
+        });
+        mIBtnLog.setOnTouchListener(new View.OnTouchListener() {
+
+            float startX = 0f;
+            float startY = 0f;
+
+            float downX = 0f;
+            float downY = 0f;
+            int statusBarHeight = 0;
+            boolean start = false;
+
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                try {
+                    switch (event.getAction()) {
+                        case MotionEvent.ACTION_DOWN:
+                            startX = event.getRawX();
+                            startY = event.getRawY();
+                            downX = event.getX();
+                            downY = event.getY();
+                            Rect rect = new Rect();
+                            mIBtnLog.getWindowVisibleDisplayFrame(rect);
+                            statusBarHeight = rect.top;
+
+                            start = true;
+                            break;
+                        case MotionEvent.ACTION_MOVE:
+                            if (start && Math.abs(event.getRawX() - startX) < 5 && Math.abs(event.getRawY() - startY) < 5) {
+                                start = false;
+                                return true;
+                            }
+                            mBtnLayoutParams.x = (int) (event.getRawX() - downX);
+                            mBtnLayoutParams.y = (int) (event.getRawY() - downY - statusBarHeight);
+                            mWindowManager.updateViewLayout(mIBtnLog, mBtnLayoutParams);
+                            mSharePrefHelper.saveInt(SP_KEY_FLOW_BUTTON_X, mBtnLayoutParams.x);
+                            mSharePrefHelper.saveInt(SP_KEY_FLOW_BUTTON_Y, mBtnLayoutParams.y);
+                            return true;
+                        case MotionEvent.ACTION_UP:
+                            return Math.abs(event.getRawX() - startX) > 5 || Math.abs(event.getRawY() - startY) > 5;
+                        default:
+                            break;
+
+                    }
+                } catch (Exception e) {
+                    // do nothing
+                }
+                return false;
+            }
+        });
+
+    }
+
+    private void initLayoutParams(Activity activity) {
+        mBtnLayoutParams = new WindowManager.LayoutParams();
+        mBtnLayoutParams.type = WindowManager.LayoutParams.TYPE_APPLICATION_SUB_PANEL;
+//        mBtnLayoutParams.width = WindowManager.LayoutParams.WRAP_CONTENT;
+//        mBtnLayoutParams.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        mBtnLayoutParams.width = 120;
+        mBtnLayoutParams.height = 120;
+        mBtnLayoutParams.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
+        mBtnLayoutParams.format = PixelFormat.RGBA_8888;
+        mBtnLayoutParams.gravity = Gravity.LEFT | Gravity.TOP;
+
+        if(null != mSharePrefHelper) {
+            mBtnLayoutParams.x = mSharePrefHelper.getInt(SP_KEY_FLOW_BUTTON_X, 0);
+            mBtnLayoutParams.y = mSharePrefHelper.getInt(SP_KEY_FLOW_BUTTON_Y, 0);
+        }
+
+    }
+
+    /**
+     * 读取日志的线程类
+     */
+    private class ReadLogThread extends Thread {
+
+        Process process = null;
+        @Override
+        public void run() {
+            try {
+//                    process = Runtime.getRuntime().exec("logcat -v time");
+                process = new ProcessBuilder()
+//                        .command("bash", "-c", "adb logcat -v time -s " + Global.TAG) // 执行 adb logcat 命令，并过滤日志
+//                        .command("logcat", "-v", "time", "-s", Global.TAG)
+//                        .command("logcat", "-v", "time", "|", "grep", String.valueOf(android.os.Process.myPid()))
+                        .command("logcat", "-v", "time", "-s", Global.TAG)
+////                        .command("logcat", "-v", "time")
+////                        .command("logcat", "-v", "time", "-b", "events")
+                        .redirectErrorStream(true)
+                        .start();
+                final InputStream is = process.getInputStream();
+                final InputStream es = process.getErrorStream();
+                new Thread(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+                        String line;
+                        try {
+                            while((line = br.readLine()) != null) {
+                                addLog(line);
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }).start();
+                new Thread(new Runnable() {
+
+                    @Override
+                    public void run() {
+                        BufferedReader br = new BufferedReader(new InputStreamReader(es));
+                        String line;
+                        try {
+                            while((line = br.readLine()) != null) {
+                                addLog(line);
+                            }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }).start();
+
+                process.waitFor();
+
+            } catch (IOException|InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                if(null != process) {
+                    process.destroy();
+                }
+            }
+        }
+
+        @Override
+        public void interrupt() {
+            super.interrupt();
+            if(null != process) {
+                process.destroy();
+            }
+        }
+    }
+
+    /**
+     * 清除log
+     */
+    private class ClearLogThread extends Thread {
+        @Override
+        public void run() {
+            Process process = null;
+            try {
+                process = new ProcessBuilder()
+                        .command("logcat", "-c")
+                        .redirectErrorStream(true)
+                        .start();
+                process.waitFor();
+            } catch (IOException|InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                if(null != process) {
+                    process.destroy();
+                }
+            }
+        }
+    }
+
+    private class LogcatHandler extends Handler {
+
+        public static final int MSG_LOG = 0x01;
+
+        public LogcatHandler(Looper looper) {
+            super(looper);
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case MSG_LOG:
+                    synchronized (mLogs) {
+                        String log = (String) msg.obj;
+                        mLogs.add(log);
+                        if(mLogs.size() >= mMaxLines) {
+                            try {
+                                saveLogToFile(mLogs);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            mLogs.remove(0);
+                        }
+                        mLogObservable.notifyLogChanged(log);
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    private static final Charset CHARSET_UTF_8 = Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT ? StandardCharsets.UTF_8 : Charset.forName("UTF-8");
+    /**
+     * 保存日志到本地
+     */
+    public File saveLogToFile(List<String> data) throws IOException {
+        File directory = mAppContext.getExternalFilesDir("FullLog");
+        if (!directory.isDirectory()) {
+            directory.delete();
+        }
+        if (!directory.exists()) {
+            directory.mkdirs();
+        }
+        File file = new File(directory, new SimpleDateFormat("yyyy_MM_dd", Locale.getDefault()).format(new Date()) + ".txt");
+        if (!file.isFile()) {
+            LogUtils.d("file.delete()");
+            file.delete();
+        }
+        if (!file.exists()) {
+            LogUtils.d("file.createNewFile()");
+            file.createNewFile();
+        }
+        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file, true), CHARSET_UTF_8));
+        for (String log : data) {
+            writer.write(log.replace("\n", "\r\n") + "\r\n");
+        }
+        writer.flush();
+        try {
+            writer.close();
+        } catch (IOException ignored) {}
+        return file;
+    }
+
+    private class LocalReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if(null == intent) {
+                return;
+            }
+            String action = intent.getAction();
+            if(Logcat.ACTION_LOGCAT_CLOSED.equals(action)) {
+                mLogcatOpened = false;
+            } else if(Logcat.ACTION_LOGCAT_OPENED.equals(action)) {
+                mLogcatOpened = true;
+            }
+        }
+    }
+
+}

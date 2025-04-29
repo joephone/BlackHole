@@ -1,0 +1,15 @@
+package com.transcendence.gallery.viewpager;
+
+
+public final class ConstantsLibGallery {
+    public static final String ZOOM = "zoom";
+    public static final String IS_VIDEO = "isVideo";
+    public static final String URL = "url";
+    public static final String IS_LOCKED = "isLocked";
+    public static final String IMAGE = "image";
+    public static final String POSITION = "position";
+
+    private ConstantsLibGallery() throws Exception {
+        throw new Exception("You can`t init me,bitch");
+    }
+}

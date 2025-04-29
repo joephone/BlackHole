@@ -1,0 +1,29 @@
+def config = rootProject.ext
+// 通用配置
+android {
+    // 编译源码版本
+    compileSdkVersion config.android["compileSdkVersion"]
+    buildToolsVersion config.android["buildToolsVersion"]
+
+    defaultConfig {
+        // 最低安装版本
+        minSdkVersion config.android["minSdkVersion"]
+        // 目标适配版本
+        targetSdkVersion config.android["targetSdkVersion"]
+        versionCode config.android["versionCode"]
+        versionName config.android["versionName"]
+
+    }
+
+    // 支持 Java JDK 8
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+
+}

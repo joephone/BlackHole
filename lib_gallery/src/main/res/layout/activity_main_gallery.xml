@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title" />
+
+    <ImageView
+        android:id="@+id/tv_1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/bg_launcher_animation"/>
+
+    <TextView
+        android:id="@+id/tv_2"
+        style="@style/standardGreenButton"
+        android:layout_marginTop="@dimen/standard_padding"
+        android:text="图片缩放滑动处理案例"/>
+
+    <TextView
+        android:id="@+id/tv_3"
+        style="@style/standardGreenButton"
+        android:layout_marginTop="@dimen/standard_padding"
+        android:text="加载超级大图的缩放滑动案例"/>
+
+    <TextView
+        android:id="@+id/tv_4"
+        style="@style/standardGreenButton"
+        android:layout_marginTop="@dimen/standard_padding"
+        android:text="加载超级大图，带有加载loading的缩放滑动案例"/>
+
+
+    <TextView
+        android:id="@+id/tv_5"
+        style="@style/standardGreenButton"
+        android:layout_marginTop="@dimen/standard_padding"
+        android:transitionName="YangChong"
+        android:text="画廊图片浏览，使用recyclerView实现，支持滑动"/>
+
+
+    <TextView
+        android:id="@+id/tv_6"
+        style="@style/standardGreenButton"
+        android:layout_marginTop="@dimen/standard_padding"
+        android:transitionName="YangChong"
+        android:text="Tab + Recycler"/>
+
+</LinearLayout>

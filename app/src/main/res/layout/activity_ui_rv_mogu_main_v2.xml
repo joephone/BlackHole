@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <include layout="@layout/title" />
+
+    <com.transcendence.freeland.ui.rv.mogu.ui.MoguLayoutV2
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@id/id_top_banner"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:background="@color/colorGitHubGreen"
+            android:scaleType="centerCrop"
+            android:orientation="vertical"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_avatar"
+                android:layout_width="@dimen/height_avatar"
+                android:layout_height="@dimen/height_avatar"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_avatar_djt" />
+
+        </RelativeLayout>
+
+
+
+
+        <com.transcendence.freeland.ui.rv.mogu.ui.AutoHorizontalScrollView
+            android:id="@id/id_horizontalmenu"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:layout_gravity="center"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/tab_layout"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"/>
+
+        </com.transcendence.freeland.ui.rv.mogu.ui.AutoHorizontalScrollView>
+
+        <androidx.viewpager.widget.ViewPager
+            android:background="@color/green"
+            android:id="@id/id_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.transcendence.freeland.ui.rv.mogu.ui.MoguLayoutV2>
+</LinearLayout>
+
+
+

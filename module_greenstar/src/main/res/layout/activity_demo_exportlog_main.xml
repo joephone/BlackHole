@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_zip_today_log"
+            style="@style/standardGreenButton"
+            android:layout_margin="20dp"
+            android:text="压缩当天日志文件" />
+
+        <Button
+            android:id="@+id/btn_zip_logs_in_the_past_three_days"
+            style="@style/standardGreenButton"
+            android:layout_margin="20dp"
+            android:text="压缩最近三天日志文件" />
+
+        <TextView
+            android:id="@+id/tv_process"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="20dp" />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

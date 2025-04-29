@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="markArray">
+        <item>0</item>
+        <item>30</item>
+        <item>60</item>
+        <item>90</item>
+        <item>100</item>
+    </string-array>
+
+    <string-array name="markArray2">
+        <item>-1</item>
+        <item>-0.5</item>
+        <item>0.1</item>
+        <item>0.5</item>
+        <item>0.9</item>
+    </string-array>
+
+    <string-array name="markArray3">
+        <item>商家接单</item>
+        <item>骑手到店</item>
+        <item>配送中</item>
+        <item>已送达</item>
+    </string-array>
+
+    <string-array name="markArray4">
+        <item>0</item>
+        <item>25</item>
+        <item>50</item>
+        <item>75</item>
+        <item>100</item>
+    </string-array>
+
+    <string-array name="markArray5">
+        <item>-100</item>
+        <item>100</item>
+    </string-array>
+    <string-array name="negativeMarkArray">
+        <item>-100</item>
+        <item>中间</item>
+        <item>0</item>
+        <item>中间</item>
+        <item>100</item>
+    </string-array>
+
+    <string-array name="wordsArray">
+        <item>Lv1</item>
+        <item>Lv2</item>
+        <item>Lv3</item>
+        <item>Lv4</item>
+        <item>Lv5</item>
+    </string-array>
+
+
+
+    <string-array name="fragments">
+<!--        <item name="rx_magic">RxMagicSampleFragment</item>-->
+<!--        <item name="custom_json">CustomJsonSampleFragment</item>-->
+        <item name="eleme">ElemeSampleFragment</item>
+<!--        <item name="switch">SwitchSampleFragment</item>-->
+<!--        <item name="custom_header">CustomHeaderSampleFragment</item>-->
+<!--        <item name="custom_decoration">CustomDecorationSampleFragment</item>-->
+<!--        <item name="dialog">DialogSampleFragment</item>-->
+<!--        <item name="bottom_sheet">BottomSheetSampleFragment</item>-->
+<!--        <item name="much_level1_item">MuchPrimaryItemSampleFragment</item>-->
+<!--        <item name="less_level1_item">LessPrimaryItemSampleFragment</item>-->
+    </string-array>
+
+    <string-array name="fragments_full_path">
+<!--        <item name="rx_magic">"com.transcendence.freeland.ui.rv.linkpage.fragment.RxMagicSampleFragment"</item>-->
+<!--        <item name="custom_json">"com.transcendence.freeland.ui.rv.linkpage.fragment.CustomJsonSampleFragment"</item>-->
+        <item name="eleme">"com.transcendence.freeland.ui.rv.linkpage.fragment.ElemeSampleFragment"</item>
+<!--        <item name="switch">"com.transcendence.freeland.ui.rv.linkpage.fragment.SwitchSampleFragment"</item>-->
+<!--        <item name="custom_header">"com.transcendence.freeland.ui.rv.linkpage.fragment.CustomHeaderSampleFragment"</item>-->
+<!--        <item name="custom_decoration">"ccom.transcendence.freeland.ui.rv.linkpage.fragment.CustomDecorationSampleFragment"</item>-->
+<!--        <item name="dialog">"ccom.transcendence.freeland.ui.rv.linkpage.fragment.DialogSampleFragment"</item>-->
+<!--        <item name="bottom_sheet">"com.transcendence.freeland.ui.rv.linkpage.fragment.BottomSheetSampleFragment"</item>-->
+<!--        <item name="much_level1_item">"com.transcendence.freeland.ui.rv.linkpage.fragment.MuchPrimaryItemSampleFragment"</item>-->
+<!--        <item name="less_level1_item">"com.transcendence.freeland.ui.rv.linkpage.fragment.LessPrimaryItemSampleFragment"</item>-->
+    </string-array>
+
+</resources>

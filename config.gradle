@@ -1,0 +1,76 @@
+ext {
+    isApplication = true  //false:作为Lib组件存在， true:作为application存在，这个不建议改
+    isGreenStarApplication = false //其他模块开关，false:作为Lib组件存在， true:作为application存在
+    isMusicApplication = false
+    isMapApplication = false
+
+    //kotlin系列
+    kotlin_version = '1.4.31'
+
+    android = [
+            compileSdkVersion: 30,
+            minSdkVersion    : 23,
+            targetSdkVersion : 30,
+            buildToolsVersion: "30.0.2",
+            versionCode      : 3,
+            versionName      : "1.0.2",    //-beta1
+    ]
+
+    compileOptions = [
+            sourceCompatibility: JavaVersion.VERSION_1_8,
+            targetCompatibility: JavaVersion.VERSION_1_8,
+    ]
+
+    version =[
+            appcompat                       : "1.2.0",
+            constraintlayout                : "2.0.4",
+            material                        : "1.3.0",
+
+            ktx                                 :"1.3.2",
+//            gson                            : "2.5",
+//            eventbus                        : "3.1.1",
+
+            smartRefreshLayout              : "2.0.1",
+
+            retrofit_version                :"2.6.1",
+            glide                           :"3.5.2"        //"""4.9.0"
+    ]
+
+    dependencies = [
+            ktx                             :"androidx.core:core-ktx:$version.ktx",
+            kotlinxJdk                      :"org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version",
+            appcompat                       :"androidx.appcompat:appcompat:$version.appcompat",
+            constraintlayout                :"androidx.constraintlayout:constraintlayout:$version.constraintlayout",
+            material                        :"com.google.android.material:material:$version.material",
+            // AOP 插件库：https://mvnrepository.com/artifact/org.aspectj/aspectjrt
+            aop                             : "org.aspectj:aspectjrt:1.9.6",
+            gson                            : "com.google.code.gson:gson:2.8.5",
+            /*rxJava + retrofit -----start*/
+            retrofitConvertGson             : "com.squareup.retrofit2:converter-gson:$version.retrofit_version",
+            retrofitConvertScalars          : "com.squareup.retrofit2:converter-scalars:$version.retrofit_version",
+            retrofit                        : "com.squareup.retrofit2:retrofit:$version.retrofit_version",
+            retrofitAdapterRxJava2          : "com.squareup.retrofit2:adapter-rxjava2:$version.retrofit_version",
+            rxJava                          : "io.reactivex.rxjava2:rxjava:2.2.11",
+            rxAndroid                       : "io.reactivex.rxjava2:rxandroid:2.1.1",
+            okhttp                          : "com.squareup.okhttp3:okhttp:4.9.3",
+
+            mmkv                            : "com.tencent:mmkv-static:1.2.2",
+            glide                           : "com.github.bumptech.glide:glide:$version.glide",
+            glidecompiler                   : "com.github.bumptech.glide:compiler:$version.glide",
+
+            // ui
+            smartRefreshLayout              : "com.scwang.smart:refresh-layout-kernel:$version.smartRefreshLayout",
+            smartRefreshHeader              : "com.scwang.smart:refresh-header-two-level:$version.smartRefreshLayout",
+            smartRefreshFooter              : "com.scwang.smart:refresh-footer-classics:$version.smartRefreshLayout",
+
+            //阿里路由
+            arouterApi                      : "com.alibaba:arouter-api:1.5.2",
+            arouterCompiler                 : "com.alibaba:arouter-compiler:1.5.2",
+
+            //带说明的动态权限
+            XXPermissions                   : 'com.github.getActivity:XXPermissions:18.2',
+            rxpermissions                   : "com.github.tbruyelle:rxpermissions:0.10.2",
+            blankUtils                      : "com.blankj:utilcodex:1.30.1",
+
+    ]
+}

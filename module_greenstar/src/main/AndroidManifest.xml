@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.transcendence.greenstar">
+
+    <!-- 网络相关 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- 外部存储 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage" />
+    <!--安装权限-->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.REQUEST_INSTALL_PACKAGES.GET_TASKS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.BODY_SENSORS"/>//传感器权限
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>//录音
+    <!-- 生物识别 -->
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+
+    <!--bluetooth start 基本蓝牙开启-->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!--6.0蓝牙搜索需要定位权限-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--bluetooth end 基本蓝牙开启-->
+
+    <application
+        android:name=".base.app.GSApp"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_app_green_star"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_config"
+        android:roundIcon="@mipmap/ic_app_green_star"
+        android:requestLegacyExternalStorage="false"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Freeland">
+
+        <activity
+            android:name=".main.GreenStarMainActivity"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".main.index.DemoIndexActivity"
+            android:screenOrientation="portrait"
+            android:exported="true">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+
+
+        <activity
+            android:name=".main.index.PopupIndexKt"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            />
+
+        <!-- 幸运转盘 -->
+        <activity
+            android:name=".demo.luckypanel.LuckyPanelAc"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            />
+
+
+        <activity
+            android:name=".demo.encryption.act.EncryptionMainAc"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".demo.encryption.act.EncryptionAc"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
+
+<!--        <activity-->
+<!--            android:name=".demo.wearecord.WeaRecordMainKt"-->
+<!--            android:launchMode="singleTask"-->
+<!--            android:screenOrientation="portrait"-->
+<!--            />-->
+
+        <activity
+            android:name=".demo.record.act.RecordMainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".demo.record.example.RecordExampleActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".demo.dbnote.act.DBNoteActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".demo.biometric.BiometricActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name=".demo.exportlog.logcat.LogcatKt"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
+
+        <activity
+            android:name=".demo.showPermissions.ShowPermissionAc"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
+
+
+        <activity
+            android:name=".demo.splash.SplashActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"/>
+
+
+
+        <activity
+            android:name=".demo.load.LoadAcKt"
+            android:screenOrientation="portrait"/>
+        <!--        <activity-->
+        <!--            android:name=".demo.load.LoadAcKt"-->
+        <!--            android:launchMode="singleTask" />-->
+
+        <activity
+            android:name=".demo.pdf.act.FileDisplayActivity"
+            android:screenOrientation="portrait"/>
+
+
+        <activity
+            android:name="com.transcendence.greenstar.demo.tabvprv.act.TabVpRvActivity"
+            android:screenOrientation="portrait"/>
+
+
+
+        <activity android:name=".demo.jscalljava.JsCallJavaMainActivity" />
+        <activity android:name=".demo.jscalljava.JavaAndJSActivity" />
+        <activity android:name=".demo.jscalljava.JsCallJavaCallPhoneActivity" />
+        <activity android:name=".demo.jscalljava.JsCallJavaVideoActivity" />
+
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider> <!-- 高德地图Key -->
+    </application>
+
+</manifest>

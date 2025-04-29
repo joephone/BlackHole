@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <include layout="@layout/title" />
+
+    <com.transcendence.freeland.ui.rv.mogu.ui.MoguLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@id/id_top_banner"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/pink">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:text="轮播图"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+
+        <HorizontalScrollView
+            android:id="@id/id_horizontalview"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/id_horizontalview_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+
+        <com.transcendence.freeland.ui.rv.mogu.ui.AutoHorizontalScrollView
+            android:id="@id/id_horizontalmenu"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:layout_gravity="center"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/tab_layout"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"/>
+
+        </com.transcendence.freeland.ui.rv.mogu.ui.AutoHorizontalScrollView>
+
+        <androidx.viewpager.widget.ViewPager
+            android:background="@color/green"
+            android:id="@id/id_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.transcendence.freeland.ui.rv.mogu.ui.MoguLayout>
+</LinearLayout>
+
+
+

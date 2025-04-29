@@ -1,0 +1,57 @@
+<resources>
+
+    <style name="standardGreenButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginLeft">@dimen/standard_padding</item>
+        <item name="android:layout_marginRight">@dimen/standard_padding</item>
+        <item name="android:background">@drawable/water_effect_green_selector</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/standard_text</item>
+    </style>
+
+    <style name="standardBlackButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:background">@drawable/water_effect_github_black_selector</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/standard_text</item>
+    </style>
+
+    <style name="standardButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:background">@drawable/water_effect_selector</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/standard_text</item>
+    </style>
+
+    <!-- 正则表达式编辑框 -->
+    <declare-styleable name="RegexEditText">
+        <!-- 正则输入限制 -->
+        <attr name="inputRegex" format="string" />
+        <!-- 常用正则类型 -->
+        <attr name="regexType" >
+            <!-- 手机号（只能以 1 开头） -->
+            <enum name="mobile" value="0x01" />
+            <!-- 中文（普通的中文字符） -->
+            <enum name="chinese" value="0x02" />
+            <!-- 英文（大写和小写的英文） -->
+            <enum name="english" value="0x03" />
+            <!-- 整数（非 0 开头的数字） -->
+            <enum name="count" value="0x04" />
+            <!-- 用户名（中文、英文、数字） -->
+            <enum name="name" value="0x05" />
+            <!-- 非空格字符 -->
+            <enum name="nonnull" value="0x06" />
+        </attr>
+    </declare-styleable>
+
+</resources>

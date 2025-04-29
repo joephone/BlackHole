@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.transcendence.freeland">
+
+    <!-- 网络相关 -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 检测 WLAN 状态的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 修改 WLAN 状态的权限 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 检测移动网络状态的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 修改移动网络状态的权限 -->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <!-- 网络相关 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- 外部存储 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage" />
+
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!--安装权限-->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.REQUEST_INSTALL_PACKAGES.GET_TASKS" />
+
+    <!--bluetooth start 基本蓝牙开启-->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!--6.0蓝牙搜索需要定位权限-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--bluetooth end 基本蓝牙开启-->
+
+    <application
+       android:name=".main.app.MainApp"
+        android:allowBackup="true"
+        android:largeHeap="true"
+        android:icon="@mipmap/ic_app_green_star"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_app_green_star"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:requestLegacyExternalStorage="true"
+        android:theme="@style/Theme.Freeland">
+        <activity
+            android:name=".main.MainActivity"
+            android:exported="true">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+
+
+        <activity
+            android:name=".main.guide.LauncherActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:exported="true">
+            <intent-filter>
+                <!-- 声明该 Activity 是应用的主入口点（类似于程序的 main() 函数）。
+                当用户点击应用图标时，系统会找到带有 MAIN Action 的 Activity 并启动它。-->
+                <action android:name="android.intent.action.MAIN" />
+                <!-- 声明该 Activity 应该显示在系统的应用启动器（Launcher，即桌面应用列表）中。
+                没有此配置，应用图标不会出现在桌面或应用列表里。-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".other.SchemeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="schemedemo"
+                    android:host="ihongqiqu.com"
+                    android:pathPrefix="/test/"
+                    />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".main.guide.GuideActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+
+        <activity
+            android:name=".main.ArouterAc"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+
+
+
+        <!-- index start -->
+        <activity
+            android:name=".main.index.AppIndexActivity" />
+        <activity
+            android:name=".main.index.BasefunIndexActivity" />
+        <activity
+            android:name=".main.index.SettingsIndexActivity" />
+        <activity
+            android:name=".basefun.settings.SysSettingsAc" />
+        <activity
+            android:name=".main.index.UIIndexActivity" />
+        <activity
+            android:name=".main.index.IndexRv" />
+        <activity
+            android:name=".main.index.IndexBle" />
+        <activity
+            android:name=".main.index.IndexFragAc" />
+        <!-- index end -->
+
+
+        <!-- basefun start -->
+        <activity
+            android:name=".basefun.bugly.BuglyKt" />
+        <activity
+            android:name=".basefun.countdownrestart.CountDownRestartKt" />
+        <activity
+            android:name=".basefun.alert.AlertAc" />
+        <activity
+            android:name=".basefun.permission.PermissionIndexActivity" />
+        <activity
+            android:name=".basefun.directory.AndroidDirectoryKt" />
+        <activity
+            android:name=".basefun.nostart.NoStartA"
+            android:launchMode="singleTask"/>
+        <activity
+            android:name=".basefun.nostart.NoStartB"/>
+        <activity
+            android:name=".basefun.nostart.NoStartC"/>
+
+        <activity
+            android:name=".basefun.dispatchtouchevent.act.DispatchTouchEventActivity"/>
+
+        <activity android:name=".basefun.reflection.ReflectionActivity" />
+
+        <activity android:name=".basefun.synch.SynchActivity" />
+        <!-- basefun start -->
+
+        <!-- ble start -->
+        <activity
+            android:name=".ble.test.BleTest" />
+        <activity
+            android:name=".ble.test2.BleTest3" />
+        <activity
+            android:name=".ble.test2.NetTest" />
+        <!-- ble end -->
+
+        <!-- frag start -->
+        <activity
+            android:name=".frag.test02.act.FragmentTest02Act" />
+        <!-- frag end -->
+
+        <activity
+            android:name=".crash.CrashActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            />
+
+        <activity
+            android:name=".main.image.SaveImageActivity" />
+
+        <activity
+            android:name=".main.image.SaveZfPicAc" />
+
+        <!--Rv start -->
+        <activity
+            android:name=".ui.rv.vp.act.RvVpMainActivity" />
+            <!-- 仿蘑菇街-->
+        <activity
+            android:name=".ui.rv.mogu.act.MoguMainActivity" />
+        <activity
+            android:name=".ui.rv.mogu.act.MoguMainActivityV2" />
+        <activity
+            android:name=".ui.rv.staggerd.act.StaggerdMainActivity" />
+        <activity
+            android:name=".ui.rv.linkpage.act.LinkPageMainActivity" />
+        <activity
+            android:name=".ui.rv.linkpage.act.LinkPageMainV2Activity" />
+        <!--Rv end -->
+
+        <!--Seekbar start -->
+        <activity
+            android:name=".ui.seekbar.StepSeekBarMainActivity" />
+
+        <!--Seekbar end -->
+
+
+        <!-- 适配 Android 7.0 文件意图
+            authorities：app的包名.fileProvider
+            grantUriPermissions：必须是true，表示授予 URI 临时访问权限
+            exported：必须是false
+            resource：中的@xml/file_paths是我们接下来要添加的文件-->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.transcendence.freeland.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+
+        </provider>
+
+    </application>
+
+</manifest>

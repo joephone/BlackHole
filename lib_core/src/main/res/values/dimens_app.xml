@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Activity 转场动画时间 -->
+    <integer name="activity_anim_duration">200</integer>
+
+    <dimen name="drawer_icon_size">@dimen/dp_30</dimen>
+
+</resources>

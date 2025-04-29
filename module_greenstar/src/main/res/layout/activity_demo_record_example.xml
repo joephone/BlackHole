@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title"/>
+
+    <ListView
+        android:id="@+id/em_lv_recodeList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="#0000"
+        android:listSelector="#0000"/>
+
+    <com.transcendence.greenstar.demo.record.manager.AudioRecordButton
+        android:id="@+id/em_tv_btn"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        style="@style/standardGreenButton"
+        android:text="@string/long_click_record"
+        android:textSize="16dp"/>
+</LinearLayout>

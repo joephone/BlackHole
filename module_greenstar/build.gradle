@@ -1,0 +1,91 @@
+def config = rootProject.ext
+if (config.isGreenStarApplication) {
+    apply plugin: 'com.android.application'
+    apply plugin: 'kotlin-android'
+//    apply plugin: 'java'
+//    id 'com.android.library'
+//    id 'kotlin-android'
+} else {
+    apply plugin: 'com.android.library'
+    apply plugin: 'kotlin-android'
+
+}
+
+apply from: "../basic.gradle"
+
+android {
+    
+    defaultConfig {
+        if (config.isGreenStarApplication){
+            applicationId "com.transcendence.greenstar"
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    sourceSets {
+        main {
+            if (config.isGreenStarApplication) {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+            }
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+//    kotlinOptions {
+//        jvmTarget = '1.8'
+//    }
+
+    buildFeatures{
+        dataBinding = true
+    }
+
+}
+
+dependencies {
+    annotationProcessor config.dependencies.arouterCompiler
+    api config.dependencies.arouterApi
+
+    api config.dependencies.ktx
+    api config.dependencies.appcompat
+    api config.dependencies.material
+    api config.dependencies.constraintlayout
+
+    api config.dependencies.smartRefreshLayout
+    api config.dependencies.smartRefreshHeader
+
+    api config.dependencies.okhttp
+    api config.dependencies.retrofit
+    api config.dependencies.rxJava
+    api config.dependencies.retrofitConvertGson
+
+    implementation project(path: ':lib_core')
+    implementation project(path: ':lib_aop')
+    implementation project(path: ':lib_logcat')
+    implementation project(path: ':lib_zxing')
+    //sm2 sm4
+    api "org.bouncycastle:bcprov-jdk15on:1.69"
+    //
+    implementation 'pub.devrel:easypermissions:0.3.0'
+    //生物识别
+    implementation 'androidx.biometric:biometric:1.2.0-alpha01'
+//    // Kotlin
+//    implementation "androidx.biometric:biometric-ktx:1.2.0-alpha05"
+
+    //exportlog
+    implementation files('libs\\android-logging-log4j-1.0.3.jar')
+    implementation files('libs\\log4j-1.2.17.jar')
+
+
+    //pdf
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+    implementation 'com.tencent.tbs:tbssdk:44153'
+
+//    implementation 'com.github.joephone:Core:v0.0.5'
+}

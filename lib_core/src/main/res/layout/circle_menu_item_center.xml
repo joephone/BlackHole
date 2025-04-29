@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:layout_width="116.0dp"
+        android:layout_height="116.0dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/shape_round_grey_inner_white" />
+    <!-- android:background="@drawable/cycle_menu_center_unlogin_normal" -->
+
+    <ImageView
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_80"
+        android:layout_centerInParent="true"
+        android:background="@mipmap/tudor_rose_two" />
+    <!-- "@drawable/cycle_menu_center_unlogin"  -->
+</RelativeLayout>

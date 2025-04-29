@@ -1,0 +1,439 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible " content="IE=edge" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover"
+    />
+    <link
+            href="https://fonts.googleapis.com/css?family=Press+Start+2P"
+            rel="stylesheet"
+    />
+    <link
+            href="https://unpkg.com/nes.css@latest/css/nes.min.css"
+            rel="stylesheet"
+    />
+    <style>
+      html,
+      body,
+      pre,
+      code,
+      kbd,
+      samp {
+        font-family: "font-family you want to use";
+      }
+    </style>
+</head>
+
+<body>
+<style>
+      .IS2P {
+        font-family: "Press Start 2P";
+        font-size: 12px;
+      }
+      .content {
+        margin-bottom: 40px;
+      }
+      .box {
+        width: 90vw;
+        margin: 0 auto !important;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        top: 20px;
+        text-decoration: none !important;
+      }
+      .box .title_text {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 24px;
+      }
+      .default_select {
+        width: 90vw;
+        margin-top: 30px;
+        margin-left: 5vw;
+      }
+      .TOP_SELECT {
+        margin-top: 40px;
+      }
+      .nes-select {
+        width: 90vw;
+        margin: 0 auto;
+      }
+      .nes-select select {
+        padding: 0 10px;
+      }
+      .input-url input {
+        width: 90vw;
+        overflow: hidden;
+        margin: 0 auto;
+        display: block;
+        padding: 2px 10px;
+        font-family: "Press Start 2P";
+        font-size: 12px;
+      }
+      .history {
+        width: 90vw;
+        margin: 0 auto;
+        margin-top: 30px;
+        display: none;
+      }
+      .history_list li {
+        word-break: break-all;
+        margin-bottom: 6px;
+        font-family: "Press Start 2P";
+        font-size: 12px;
+      }
+      .history_list li:active {
+        text-decoration: underline;
+      }
+      .history_btn {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+      .btn_box {
+        width: 90vw;
+        margin: 0 auto;
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .tips {
+        width: 90vw;
+        margin: 0 auto;
+        margin-top: 50px;
+      }
+      .list {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      .nes-list.is-disc li::before {
+        top: 5px !important;
+      }
+      .icon-list {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 20px;
+      }
+      .github {
+        transform: scale(0.5);
+      }
+      .scale_font {
+        transform: scale(0.8);
+        display: block;
+        font-style: normal;
+      }
+    </style>
+<div >
+
+    <!-- 通过链接方式唤起APP  weixin:// -->
+    <a href="https://www.baidu.com/">打开微信</a>
+    <!-- 通过绑定事件方式唤起APP -->
+    <button onclick="location.href='weixin://'">打开微信</button>
+
+</div>
+
+<div class="content">
+    <a
+            id="link"
+            href="JavaScript:void(0)"
+            class="box nes-container is-rounded is-dark"
+    >
+        <i class="nes-smartphone"></i>
+        <p class="title_text">唤起APP</p>
+    </a>
+    <label for="default_select" class="default_select TOP_SELECT IS2P">APP</label>
+    <div class="nes-select">
+        <select required id="default_select">
+            <option value="0" selected>企迈助手</option>
+        </select>
+    </div>
+    <label for="default_select" class="default_select IS2P">LINK</label>
+    <div class="input-url nes-field">
+        <input
+                type="text"
+                id="inputs"
+                value="https://sj.qq.com/appdetail/com.dfcyc.app.dffs?source=qrcode"
+                class="nes-input"
+        />
+    </div>
+    <div class="btn_box">
+        <button type="button" id="btns" class="nes-btn is-primary">
+            保 存
+        </button>
+        <button type="button" id="reset" class="nes-btn is-warning">
+            重 置
+        </button>
+        <button type="button" id="route" class="nes-btn is-error">撤 回</button>
+    </div>
+    <div class="history nes-container with-title" id="history">
+        <p class="title">
+            <a href="JavaScript:void(0)" class="nes-badge">
+                <span class="is-success IS2P">History</span>
+            </a>
+        </p>
+        <ul class="nes-list is-disc history_list" id="history_select"></ul>
+        <div class="history_btn">
+            <a class="nes-btn is-small" href="JavaScript:void(0)" id="clearBtn"
+            >清 空</a
+            >
+        </div>
+    </div>
+    <div class="tips nes-container with-title">
+        <p class="title">
+            <a href="JavaScript:void(0)" class="nes-badge is-icon">
+                <span class="is-dark IS2P">Hi</span>
+                <span class="is-warning IS2P">Tips</span>
+            </a>
+        </p>
+        <div class="lists">
+            <ul class="nes-list is-disc">
+                <li class="list">
+                    目的：解决<span class="nes-text is-success">`APP-H5`</span
+                >调试过程过于繁琐的问题，减少H5部署次数.
+                </li>
+                <li class="list">
+                    打开：通过<span class="nes-text is-error">手机默认浏览器</span
+                >打开该链接,在微信内置等浏览器中打开无效.
+                </li>
+                <li class="list">
+                    使用方式：本地项目通过<br /><span class="nes-text is-error"
+                >`npm run serve:<环境></span
+                >方式运行项目后在上面输入框内输入服务地址,保存后点击<span
+                        class="nes-text is-error"
+                >`唤起APP`</span
+                >按钮.
+                </li>
+                <li class="list">
+                    点击<span class="nes-text is-warning">`保存`</span
+                >可以存储输入的页面缓存.
+                </li>
+                <li class="list">
+                    适用环境：<span class="nes-text is-primary"
+                >`dev、test、beta、pro`</span
+                ><br />
+                    例子：<span class="nes-text is-primary"
+                >`pnpm run serve:dev`</span
+                >
+                </li>
+                <li class="list">
+                    注意：需要使用对应环境的<span class="nes-text is-error"
+                >`2022-09-28`</span
+                >后打包的<span class="nes-text is-success">`APP`</span
+                >才能进行接口调试
+                </li>
+                <li class="list">
+                    拓展：如果可以在<span class="nes-text is-success">`APP`</span
+                >内进行环境的切换，可以更进一步的提升对接效率，因为避免了重复和频繁的找<span
+                        class="nes-text is-success"
+                >`APP`</span
+                >进行打包.
+                    <br />
+                    但是暂时<span class="nes-text is-success">`APP`</span
+                >端不支持该功能.
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- github -->
+    <div class="icon-list">
+        <i class="nes-octocat animate github"></i>
+        <a
+                href="https://github.com/mahoushaojo/callApp"
+                target="_blank"
+                class="nes-badge is-splited"
+        >
+            <span class="is-dark IS2P"><i class="scale_font">GitHub</i></span>
+            <span class="is-primary IS2P"><i class="scale_font">1.1.0</i></span>
+        </a>
+    </div>
+    <section>
+        <dialog class="nes-dialog is-dark is-rounded" id="dialog-dark-rounded">
+            <form method="dialog">
+                <p class="title">Tips</p>
+                <p>请输入链接后保存.</p>
+                <menu class="dialog-menu">
+                    <button class="nes-btn">取消</button>
+                    <button class="nes-btn is-primary">知道了</button>
+                </menu>
+            </form>
+        </dialog>
+    </section>
+    <section>
+        <dialog
+                class="nes-dialog is-dark is-rounded"
+                id="dialog-dark-rounded-two"
+        >
+            <form method="dialog">
+                <p class="title">Tips</p>
+                <p>未作任何修改.</p>
+                <menu class="dialog-menu">
+                    <button class="nes-btn is-primary">知道了</button>
+                </menu>
+            </form>
+        </dialog>
+    </section>
+</div>
+<script type="text/javascript">
+      (function getLink() {
+        let urlLink = "";
+        // 获取input内容
+        let inputs = document.getElementById("inputs");
+        // 获取缓存中的地址
+        let link = localStorage.getItem("linkurl") || "";
+        // 获取唤起APP按钮
+        let links = document.getElementById("link");
+        // 为唤起APP按钮绑定监听事件
+        links.addEventListener("click", (e) => {
+          if (!inputs.value) {
+            document.getElementById("dialog-dark-rounded").showModal();
+            return;
+          } else if (inputs.value !== urlLink) {
+            if (isIOS) {
+              urlLink =
+                "cn.qmai.newAssistant.LSYOpenHttp://h5url=" +
+                encodeURIComponent(inputs.value);
+            } else {
+              urlLink =
+                "qmzs://h5debug?h5url=" + encodeURIComponent(inputs.value);
+            }
+          }
+          window.location.href = urlLink;
+        });
+        // 获取历史记录
+        let history = JSON.parse(localStorage.getItem("history")) || [];
+        const userAgent = window.navigator.userAgent.toLowerCase();
+        // 获取判断是否是ios环境
+        let isIOS = userAgent && /iphone|ipad|ipod|ios/.test(userAgent);
+        // 监听点击历史记录
+        setHistory(history);
+        inputs.value = link;
+        // 如果缓存中存在链接
+        if (link && link !== "") {
+          // 为唤APP按钮赋值
+          if (isIOS) {
+            urlLink =
+              "cn.qmai.newAssistant.LSYOpenHttp://h5url=" +
+              encodeURIComponent(inputs.value);
+          } else {
+            urlLink =
+              "qmzs://h5debug?h5url=" + encodeURIComponent(inputs.value);
+          }
+        }
+
+        // 获取保存按钮
+        let btns = document.getElementById("btns");
+        btns.onclick = async () => {
+          // 保存按钮点击事件
+          if (inputs.value == "") {
+            // 如果地址为空 进行弹窗提示
+            document.getElementById("dialog-dark-rounded").showModal();
+          } else {
+            // 如果地址不为空 缓存输入的地址 并设置APP按钮的地址
+            let link = document.getElementById("link");
+            if (isIOS) {
+              urlLink =
+                "cn.qmai.newAssistant.LSYOpenHttp://h5url=" +
+                encodeURIComponent(inputs.value);
+            } else {
+              urlLink =
+                "qmzs://h5debug?h5url=" + encodeURIComponent(inputs.value);
+            }
+            // 把输入的地址存入缓存
+            localStorage.setItem("linkurl", inputs.value);
+            localStorage.setItem("OLD_LINK", inputs.value);
+            let history = JSON.parse(localStorage.getItem("history")) || [];
+            if (!history.length) {
+              history.push(inputs.value);
+            } else {
+              let index = history.findIndex((link) => {
+                return link === String(inputs.value);
+              });
+              if (index !== -1) {
+                history[index] = inputs.value;
+              } else {
+                if (history.length >= 5) {
+                  history[0] = inputs.value;
+                } else {
+                  history.push(inputs.value);
+                }
+              }
+            }
+            await localStorage.setItem("history", JSON.stringify(history));
+            let newhistory =
+              (await JSON.parse(localStorage.getItem("history"))) || [];
+            clearEle(newhistory);
+          }
+        };
+        // 获取重置按钮
+        let reset = document.getElementById("reset");
+        reset.onclick = () => {
+          // 重置按钮点击事件，清空地址栏 并清空缓存
+          inputs.value = "";
+          localStorage.removeItem("linkurl");
+        };
+
+        // 获取撤回操作按钮
+        let route = document.getElementById("route");
+        route.onclick = () => {
+          // 撤回操作点击事件
+          let link = localStorage.getItem("OLD_LINK") || "";
+          if (inputs.value === link) {
+            document.getElementById("dialog-dark-rounded-two").showModal();
+          } else {
+            let link = localStorage.getItem("OLD_LINK") || "";
+            inputs.value = link;
+            localStorage.setItem("linkurl", inputs.value);
+          }
+        };
+        // 处理地址信息
+
+        // 处理历史记录
+        function setHistory(history) {
+          if (history.length) {
+            let history_box = document.getElementById("history");
+            history_box.addEventListener("click", selectHistoryLink);
+            history_box.style.display = "block";
+            let history_select = document.getElementById("history_select");
+            for (let index = 0; index < history.length; index++) {
+              const element = history[index];
+              let option = document.createElement("li");
+              option.innerText = element;
+              history_select.appendChild(option);
+            }
+          } else {
+            let history_box = document.getElementById("history");
+            history_box.style.display = "none";
+          }
+        }
+        // 清理元素
+        function clearEle(history) {
+          let history_select = document.getElementById("history_select");
+          while ((ele = history_select.children.item(0))) {
+            ele.remove();
+          }
+          setHistory(history);
+        }
+        // 选择历史地址
+        function selectHistoryLink(event) {
+          if (event.target.localName == "li") {
+            let link = event.target.innerText;
+            inputs.value = link;
+          }
+          if (event.target.id == "clearBtn") {
+            localStorage.removeItem("history");
+            clearEle([]);
+          }
+        }
+      })();
+    </script>
+</body>
+</html>

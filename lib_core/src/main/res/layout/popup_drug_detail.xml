@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pop_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/bg_rect_white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="30dp"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="25dp"
+                    android:gravity="center|left"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="5dp"
+                    tools:text="药名"
+                    android:textColor="@color/text_33"
+                    android:textSize="@dimen/standard_text" />
+
+                <TextView
+                    android:id="@+id/tvUniformSpec"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|left"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="5dp"
+                    tools:text="规格型号"
+                    android:textColor="@color/text_33"
+                    android:textSize="@dimen/standard_text" />
+
+                <TextView
+                    android:id="@+id/tvUsageMethod"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|left"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="5dp"
+                    tools:text="用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量用法用量"
+                    android:textColor="@color/text_33"
+                    android:textSize="@dimen/standard_text" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

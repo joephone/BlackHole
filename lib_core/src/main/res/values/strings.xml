@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GreenStar</string>
+    <!-- system -->
+    <string name="request_fail">请求失败</string>
+    <string name="exit_app">退出应用</string>
+    <string name="private_policy">隐私政策</string>
+    <string name="public_notice">公告</string>
+    <string name="crash_restart">运行意外，正在重新启动</string>
+    <string name="exit_app_warning">再按一次返回键退出程序</string>
+    <!-- common -->
+    <string name="id">ID</string>
+    <string name="exit">退出</string>
+    <string name="login">登录</string>
+    <string name="unlogin">未登录</string>
+    <string name="register">注册</string>
+    <string name="level">Level</string>
+    <string name="accept">同意</string>
+    <string name="cancel">取消</string>
+    <string name="open">打开</string>
+    <string name="confirm">确定</string>
+    <string name="ok">确定</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="save">保存</string>
+    <string name="save_success">保存成功</string>
+    <string name="delete">删除</string>
+    <string name="nickname">昵称</string>
+    <string name="address">地区</string>
+    <string name="next">下一步</string>
+    <string name="search">搜索</string>
+    <string name="edit">编辑</string>
+    <string name="tip">提示</string>
+    <string name="skip">跳过</string>
+    <string name="pay">支付</string>
+    <string name="to_app_setting">跳转到应用详情页</string>
+    <string name="right_now">立刻体验</string>
+    <!-- tab -->
+    <string name="tab_home">首页</string>
+    <string name="tab_hierarchy">体系</string>
+    <string name="tab_wx_public_account">公众号</string>
+    <string name="tab_me">我的</string>
+    <string name="tab_beauty">福利社</string>
+    <!--  me -->
+    <string name="user_info">用户信息</string>
+    <string name="user_name">用户名</string>
+    <string name="my_coin">我的积分</string>
+    <string name="my_score_list">积分记录</string>
+    <string name="my_share">我的分享</string>
+    <string name="my_collection">我的收藏</string>
+    <string name="read_later">稍后阅读</string>
+    <string name="my_open_source">开源项目</string>
+    <string name="about_me">关于作者</string>
+    <string name="system_setting">系统设置</string>
+    <string name="sign">签到</string>
+    <string name="area">地区</string>
+    <!--  knowledge -->
+    <string name="home_search_keyword_hint">请输入关键字进行搜索</string>
+    <!--  title -->
+    <string name="home">首页</string>
+    <string name="rank_list">排行榜</string>
+    <string name="map">地图</string>
+    <string name="setting">设置</string>
+    <string name="setting_language">语言设置</string>
+    <string name="setting_check_update">检查更新</string>
+    <string name="simplified_chinese">简体中文</string>
+    <string name="america_english">美国英语</string>
+    <!-- login -->
+    <string name="login_forget">忘记密码？</string>
+    <string name="login_other_way">其他方式登录</string>
+    <string name="hint_pw_input">请输入密码</string>
+    <string name="hint_phone_input">请输入手机号码</string>
+    <string name="common_phone_input_error">手机号输入不正确</string>
+    <string name="common_password_input_error">请输入密码</string>
+    <string name="common_password_input_unlike">两次密码输入不一致，请重新输入</string>
+    <!-- 注册 -->
+    <string name="register_title">注册</string>
+    <string name="register_hint">手机号仅用于登录和保护账号安全</string>
+    <string name="register_password_hint1">设置6&#8211;18位登录密码</string>
+    <string name="register_password_hint2">请再次输入一次密码</string>
+    <!-- code -->
+    <string name="common_code_input_hint">请输入验证码</string>
+    <string name="common_code_send">发送验证码</string>
+    <string name="common_code_send_hint">验证码已发送，请注意查收</string>
+    <string name="common_code_error_hint">验证码错误，请检查输入</string>
+    <!-- setting -->
+    <string name="cache_clear">清除缓存</string>
+    <string name="multi_setting">多功能设备</string>
+    <string name="finger_print">指纹解锁</string>
+    <string name="set_gesture">设置手势</string>
+    <string name="verify_gesture">手势解锁</string>
+    <string name="act_manage">Activity管理</string>
+    <string name="signature">签名</string>
+    <string name="Settings_TextSize_TxtSizeAdjustNote">滑动下面的滑块，可设置字体大小</string>
+    <string name="Settings_TextSize_Slide">拖动下方滑块</string>
+    <string name="Settings_TextSize_Normal">正常</string>
+    <string name="Settings_General_FontSize">字体大小</string>
+    <!-- lan -->
+    <string name="lan_chinese">简体中文</string>
+    <string name="lan_en">英文</string>
+    <string name="lan_ja">日文</string>
+    <string name="lan_de">德文</string>
+    <string name="lan_change_confirm">确定更改吗？</string>
+    <string name="lan_system">跟随系统</string>
+    <!-- other -->
+    <string name="target">Your Device Target:</string>
+    <string name="stop_service">Stop Push Service</string>
+    <string name="start_service">Start Push service</string>
+    <string name="viewpager_indicator">%1$d/%2$d</string>
+    <string name="privacy_check_android_edition">本应用为高版本Android设备打造\n感谢您的使用！</string>
+    <string name="confirm_to_clean_cache">确定清除缓存？</string>
+    <string name="about">关于我</string>
+    <string name="about_author"><font color="#85b84f">Android</font>Joephone</string>
+    <string name="copy_right" translatable="false">Copyrights © 2022</string>
+    <string name="digits_password">0123456789abcdefghijklmnopqrstuvwxyz</string>
+    <string name="digits_price">0123456789</string>
+    <string name="digits_id_card">0123456789*#xX</string>
+    <string name="digits_number">0123456789</string>
+</resources>

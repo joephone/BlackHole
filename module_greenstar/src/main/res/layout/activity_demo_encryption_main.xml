@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/title"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/btn_aes"
+            style="@style/standardGreenButton"
+            android:onClick="onClick"
+            android:text="AES" />
+
+        <Button
+            android:id="@+id/btn_base64"
+            style="@style/standardGreenButton"
+            android:layout_marginTop="@dimen/standard_padding"
+            android:onClick="onClick"
+            android:text="base64" />
+
+        <Button
+            android:id="@+id/btn_md5"
+            style="@style/standardGreenButton"
+            android:layout_marginTop="@dimen/standard_padding"
+            android:onClick="onClick"
+            android:text="MD5" />
+
+        <Button
+            android:id="@+id/btn_rsa"
+            style="@style/standardGreenButton"
+            android:layout_marginTop="@dimen/standard_padding"
+            android:onClick="onClick"
+            android:text="RSA" />
+
+        <Button
+            android:id="@+id/btn_sha"
+            style="@style/standardGreenButton"
+            android:layout_marginTop="@dimen/standard_padding"
+            android:onClick="onClick"
+            android:text="SHA" />
+
+        <Button
+            android:id="@+id/btn_sm2"
+            style="@style/standardGreenButton"
+            android:layout_marginTop="@dimen/standard_padding"
+            android:onClick="onClick"
+            android:text="SM2" />
+
+        <Button
+            android:id="@+id/btn_sm3"
+            style="@style/standardGreenButton"
+            android:layout_marginTop="@dimen/standard_padding"
+            android:onClick="onClick"
+            android:text="SM3" />
+
+        <Button
+            android:id="@+id/btn_sm4"
+            style="@style/standardGreenButton"
+            android:layout_marginTop="@dimen/standard_padding"
+            android:onClick="onClick"
+            android:text="SM4" />
+
+    </LinearLayout>
+</LinearLayout>

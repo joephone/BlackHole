@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/standardGreenButton"
+            android:layout_margin="20dp"
+            android:text="创建Context.getCacheDir()目录下文件" />
+
+
+        <TextView
+            android:id="@+id/tv_context_getcachedir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_margin="20dp" />
+
+        <TextView
+            style="@style/standardGreenButton"
+            android:layout_margin="20dp"
+            android:text="创建Context.getFilesDir()目录下文件" />
+
+
+        <TextView
+            android:id="@+id/tv_context_getfilesdir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_margin="20dp" />
+
+        <TextView
+            style="@style/standardGreenButton"
+            android:layout_margin="20dp"
+            android:text="创建Context.getExternalFilesDir()目录下文件" />
+
+
+        <TextView
+            android:id="@+id/tv_context_geternalfilesdir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_margin="20dp" />
+
+        <TextView
+            style="@style/standardGreenButton"
+            android:layout_margin="20dp"
+            android:text="创建Context.getExternalCacheDir()目录下文件" />
+
+
+        <TextView
+            android:id="@+id/tv_context_geternalcachedir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_margin="20dp" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

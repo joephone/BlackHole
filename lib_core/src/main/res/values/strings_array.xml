@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright 2017 Yan Zhenjie
+
+    Licensed under the Apache License, Version 2.0 (the "License</item>
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissionAop and
+    limitations under the License.
+-->
+
+<resources>
+    <string-array name="map_index_item">
+        <item>GPS</item>
+    </string-array>
+
+    <string-array name="popup_index_item">
+        <item>从下方弹出的popupwindow拍照裁剪</item>
+    </string-array>
+
+
+    <string-array name="app_index_item">
+        <item>Base Fun</item>
+        <item>权请</item>
+        <item>APP功能跳转（跳转手机各种功能页面，以及判断某系统功能是否打开）</item>
+        <item>UI序列</item>
+        <item>BLE序列</item>
+        <item>Fragment序列</item>
+    </string-array>
+
+    <string-array name="base_fun_index_item">
+        <item>Bugly测试</item>
+        <item>重启倒数</item>
+        <item>Alert</item>
+        <item>Android存储目录及方法详解</item>
+        <item>不通过startActivity将activity置为栈顶</item>
+        <item>事件分发机制</item>
+        <item>反射</item>
+        <item>交互演示同步锁作用</item>
+    </string-array>
+
+    <string-array name="permission_index_item">
+        <item>存储权请</item>
+        <item>定位权请</item>
+        <item>相机权请</item>
+        <item>电话权请</item>
+    </string-array>
+
+    <string-array name="settings_index_item">
+        <item>1、跳转系统的辅助功能界面</item>
+        <item>2、飞行模式，无线网和网络设置界面</item>
+        <item>3、根据包名跳转到系统自带的应用程序信息界面</item>
+        <item>4、跳转开发人员选项界面</item>
+        <item>5、跳转应用程序列表界面</item>
+        <item>6、跳转蓝牙设置界面</item>
+        <item>7、跳转到移动网络设置界面</item>
+        <item>8、跳转日期时间设置界面</item>
+        <item>9、跳转手机详情界面</item>
+        <item>10、跳转语言和输入设备</item>
+        <item>11、跳转 语言选择界面</item>
+        <item>12、跳转存储设置界面【内部存储】</item>
+        <item>13、跳转 存储设置 【记忆卡存储】</item>
+        <item>14、跳转语言选择界面【仅有English 和 中文两种选择】</item>
+        <item>15、跳转位置服务界面</item>
+        <item>16、跳转到 显示设置选择网络运营商</item>
+        <item>17、显示NFC共享设置</item>
+        <item>18、显示NFC设置。这显示了用户界面,允许NFC打开或关闭</item>
+        <item>19、跳转到安全设置界面</item>
+        <item>20、跳转到设置界面</item>
+        <item>21、跳转到声音设置界面</item>
+        <item>22、跳转账户同步界面</item>
+    </string-array>
+
+
+    <string-array name="ui_index_item">
+        <item>RV Index</item>
+        <item>Seek Bar</item>
+    </string-array>
+
+    <string-array name="index_item_rv">
+        <item>RecyclerView嵌套ViewPager吸顶</item>
+        <item>仿蘑菇街</item>
+        <item>仿蘑菇街V2</item>
+        <item>瀑布流</item>
+        <item>双表联动</item>
+        <item>双表联动2</item>
+    </string-array>
+
+    <string-array name="ble_index_item">
+        <item>Ble测试</item>
+        <item>Ble3测试</item>
+        <item>NetTest</item>
+    </string-array>
+
+    <string-array name="index_item_fragment">
+        <item>Fragment底部导航栏</item>
+    </string-array>
+
+    <string-array name="demo_index_item">
+        <item>幸运转盘</item>
+        <item>Encryption</item>
+        <item>Record 仿微信语音聊天音量大小显示控件</item>
+        <item>DB Note</item>
+        <item>生物识别</item>
+        <item>导出日志 Logcat</item>
+        <item>启动页隐私协议</item>
+        <item>权限库px</item>
+        <item>Loading</item>
+        <item>PDF file display</item>
+        <item>tablayout + viewpager + rv</item>
+        <item>过度滚动器</item>
+        <item>java和js互调</item>
+    </string-array>
+
+    <string-array name="spinner_bing_resolution">
+        <item>1366x768</item>
+        <item>1920x1080</item>
+        <item>1920x1200</item>
+    </string-array>
+</resources>
