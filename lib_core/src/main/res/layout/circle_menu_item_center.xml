@@ -5,17 +5,19 @@
     android:layout_height="match_parent">
 
 
-    <ImageView
-        android:layout_width="116.0dp"
-        android:layout_height="116.0dp"
-        android:layout_centerInParent="true"
-        android:background="@drawable/shape_round_grey_inner_white" />
-    <!-- android:background="@drawable/cycle_menu_center_unlogin_normal" -->
+<!--    <ImageView-->
+<!--        android:layout_width="116.0dp"-->
+<!--        android:layout_height="116.0dp"-->
+<!--        android:layout_centerInParent="true"-->
+<!--        android:background="@drawable/shape_round_grey_inner_white" />-->
+    <!-- android:background="@drawable/cycle_menu_center_unlogin_normal shape_round_grey_inner_white" -->
 
     <ImageView
+        android:id="@+id/iv_cycle"
         android:layout_width="@dimen/dp_80"
         android:layout_height="@dimen/dp_80"
         android:layout_centerInParent="true"
-        android:background="@mipmap/tudor_rose_two" />
-    <!-- "@drawable/cycle_menu_center_unlogin"  -->
+        android:src="@drawable/taiji"
+        android:background="@color/transparent" />
+    <!-- "@drawable/cycle_menu_center_unlogin   @mipmap/tudor_rose_two"  -->
 </RelativeLayout>

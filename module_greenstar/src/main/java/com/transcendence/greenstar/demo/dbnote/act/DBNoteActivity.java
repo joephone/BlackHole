@@ -1,5 +1,6 @@
 package com.transcendence.greenstar.demo.dbnote.act;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -15,13 +16,27 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.transcendence.core.base.activity.AppAc;
+import com.transcendence.core.utils.log.LogUtils;
 import com.transcendence.greenstar.R;
+import com.transcendence.greenstar.demo.dbnote.EmptyStateManager;
+import com.transcendence.greenstar.demo.dbnote.NoteDialogManager;
 import com.transcendence.greenstar.demo.dbnote.adapter.NotesAdapter;
 import com.transcendence.greenstar.demo.dbnote.bean.Note;
 import com.transcendence.greenstar.demo.dbnote.db.DatabaseHelper;
 import com.transcendence.greenstar.demo.dbnote.listener.MyDividerItemDecoration;
 import com.transcendence.greenstar.demo.dbnote.listener.RecyclerTouchListener;
+import com.transcendence.greenstar.demo.dbnote.resp.NotesRepository;
+import com.transcendence.greenstar.demo.dbnote.resp.NotesViewModel;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,16 +44,18 @@ import java.util.List;
  * @author joephone
  * @date 2023/5/8
  * @desc
+ * @edition  1.1  加入Repository ViewModel  NoteDialogManager
  */
 public class DBNoteActivity extends AppAc {
-
     private NotesAdapter mAdapter;
-    private List<Note> notesList = new ArrayList<>();
     private LinearLayout container;
     private RecyclerView recyclerView;
     private TextView noNotesView;
 
-    private DatabaseHelper db;
+    private NotesRepository repository;
+    private NotesViewModel mViewModel;
+    private EmptyStateManager emptyStateManager;
+    private NoteDialogManager dialogManager;
 
     @Override
     protected int getLayoutId() {
@@ -47,201 +64,76 @@ public class DBNoteActivity extends AppAc {
 
     @Override
     protected void initView() {
+        initViews();
+        initDatabase();
+        observeData();
+    }
+
+    private void initViews() {
+        setTitle("DB Note拆分版");
         container = findViewById(R.id.ll_container);
         recyclerView = findViewById(R.id.rv);
         noNotesView = findViewById(R.id.empty_notes_view);
-
         setRightImage(R.drawable.ic_add_white_24dp);
+    }
 
-        db = new DatabaseHelper(this);
+    private void initDatabase() {
+        repository = new NotesRepository(this);
+        mViewModel = new NotesViewModel();
+        mViewModel.init(repository);
 
-        notesList.addAll(db.getAllNotes());
+        emptyStateManager = new EmptyStateManager(noNotesView, recyclerView);
+        dialogManager = new NoteDialogManager(this, mViewModel);
 
-
-        mIvRight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showNoteDialog(false, null, -1);
-            }
-        });
-
-        mAdapter = new NotesAdapter(this, notesList);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(mLayoutManager);
+        mAdapter = new NotesAdapter(this, mViewModel.notesLiveData.getValue());
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.addItemDecoration(new MyDividerItemDecoration(this, LinearLayoutManager.VERTICAL, 16));
         recyclerView.setAdapter(mAdapter);
 
-        toggleEmptyNotes();
-
-        /**
-         * On long press on RecyclerView item, open alert dialog
-         * with options to choose
-         * Edit and Delete
-         * */
         recyclerView.addOnItemTouchListener(new RecyclerTouchListener(this,
                 recyclerView, new RecyclerTouchListener.ClickListener() {
             @Override
-            public void onClick(View view, final int position) {
-            }
+            public void onClick(View view, int position) {}
 
             @Override
             public void onLongClick(View view, int position) {
                 showActionsDialog(position);
             }
         }));
+
+        mIvRight.setOnClickListener(v -> dialogManager.showNoteDialog(false, null, -1));
     }
 
-    /**
-     * Inserting new note in db
-     * and refreshing the list
-     */
-    private void createNote(String note) {
-        // inserting note in db and getting
-        // newly inserted note id
-        long id = db.insertNote(note);
 
-        // get the newly inserted note from db
-        Note n = db.getNote(id);
-
-        if (n != null) {
-            // adding new note to array list at 0 position
-            notesList.add(0, n);
-
-            // refreshing the list
-            mAdapter.notifyDataSetChanged();
-
-            toggleEmptyNotes();
-        }
-    }
-
-    /**
-     * Updating note in db and updating
-     * item in the list by its position
-     */
-    private void updateNote(String note, int position) {
-        Note n = notesList.get(position);
-        // updating note text
-        n.setNote(note);
-
-        // updating note in db
-        db.updateNote(n);
-
-        // refreshing the list
-        notesList.set(position, n);
-        mAdapter.notifyItemChanged(position);
-
-        toggleEmptyNotes();
-    }
-
-    /**
-     * Deleting note from SQLite and removing the
-     * item from the list by its position
-     */
-    private void deleteNote(int position) {
-        // deleting the note from db
-        db.deleteNote(notesList.get(position));
-
-        // removing the note from the list
-        notesList.remove(position);
-        mAdapter.notifyItemRemoved(position);
-
-        toggleEmptyNotes();
-    }
-
-    /**
-     * Opens dialog with Edit - Delete options
-     * Edit - 0
-     * Delete - 0
-     */
-    private void showActionsDialog(final int position) {
-        CharSequence colors[] = new CharSequence[]{"Edit", "Delete"};
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Choose option");
-        builder.setItems(colors, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                if (which == 0) {
-                    showNoteDialog(true, notesList.get(position), position);
-                } else {
-                    deleteNote(position);
-                }
+    private void observeData() {
+        mViewModel.notesLiveData.observe(this, notes -> {
+            LogUtils.d("LiveData更新，数据量: " + notes.size());
+//            mAdapter.notifyDataSetChanged();
+            if (mAdapter == null) {
+                // 首次初始化 Adapter
+                mAdapter = new NotesAdapter(this, notes);
+                recyclerView.setAdapter(mAdapter);
+            } else {
+                // 后续更新数据
+                mAdapter.updateData(notes);
             }
+            emptyStateManager.toggleEmptyState(notes.isEmpty());
         });
-        builder.show();
     }
 
-
-    /**
-     * Shows alert dialog with EditText options to enter / edit
-     * a note.
-     * when shouldUpdate=true, it automatically displays old note and changes the
-     * button text to UPDATE
-     */
-    private void showNoteDialog(final boolean shouldUpdate, final Note note, final int position) {
-        LayoutInflater layoutInflaterAndroid = LayoutInflater.from(getApplicationContext());
-        View view = layoutInflaterAndroid.inflate(R.layout.activity_demo_db_note_dialog, null);
-
-        AlertDialog.Builder alertDialogBuilderUserInput = new AlertDialog.Builder(DBNoteActivity.this);
-        alertDialogBuilderUserInput.setView(view);
-
-        final EditText inputNote = view.findViewById(R.id.note);
-        TextView dialogTitle = view.findViewById(R.id.dialog_title);
-        dialogTitle.setText(!shouldUpdate ? "New Note" : "Edit Note");
-
-        if (shouldUpdate && note != null) {
-            inputNote.setText(note.getNote());
-        }
-        alertDialogBuilderUserInput
-                .setCancelable(false)
-                .setPositiveButton(shouldUpdate ? "update" : "save", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialogBox, int id) {
-
+    private void showActionsDialog(int position) {
+        LogUtils.d("showActionsDialog");
+        new AlertDialog.Builder(this)
+                .setTitle("Choose option")
+                .setItems(new CharSequence[]{"Edit", "Delete"}, (dialog, which) -> {
+                    if (which == 0) {
+                        dialogManager.showNoteDialog(true, mViewModel.notesLiveData.getValue().get(position), position);
+                    } else {
+                        mViewModel.deleteNote(mViewModel.notesLiveData.getValue().get(position));
                     }
                 })
-                .setNegativeButton("cancel",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialogBox, int id) {
-                                dialogBox.cancel();
-                            }
-                        });
-
-        final AlertDialog alertDialog = alertDialogBuilderUserInput.create();
-        alertDialog.show();
-
-        alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Show toast message when no text is entered
-                if (TextUtils.isEmpty(inputNote.getText().toString())) {
-                    Toast.makeText(DBNoteActivity.this, "Enter note!", Toast.LENGTH_SHORT).show();
-                    return;
-                } else {
-                    alertDialog.dismiss();
-                }
-
-                // check if user updating note
-                if (shouldUpdate && note != null) {
-                    // update note by it's id
-                    updateNote(inputNote.getText().toString(), position);
-                } else {
-                    // create new note
-                    createNote(inputNote.getText().toString());
-                }
-            }
-        });
+                .show();
     }
 
-    /**
-     * Toggling list and empty notes view
-     */
-    private void toggleEmptyNotes() {
-        // you can check notesList.size() > 0
-        if (db.getNotesCount() > 0) {
-            noNotesView.setVisibility(View.GONE);
-        } else {
-            noNotesView.setVisibility(View.VISIBLE);
-        }
-    }
 }

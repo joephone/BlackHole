@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:clickable="true"
     android:foreground="?attr/selectableItemBackground"
-    android:paddingBottom="@dimen/dp_10"
+    android:paddingBottom="@dimen/dp_16"
     android:paddingLeft="@dimen/standard_padding"
     android:paddingRight="@dimen/standard_padding"
-    android:paddingTop="@dimen/dp_10">
+    android:paddingTop="@dimen/dp_16">
 
+    <!-- 圆形指示点 -->
+<!--    <TextView-->
+<!--        android:id="@+id/dot"-->
+<!--        android:layout_width="@dimen/dp_8"-->
+<!--        android:layout_height="@dimen/dp_8"-->
+<!--        android:layout_marginTop="@dimen/dp_12"-->
+<!--        android:layout_marginRight="@dimen/dp_12"-->
+<!--        android:background="@drawable/bg_circle_green"-->
+<!--        android:includeFontPadding="false" />-->
     <TextView
         android:id="@+id/dot"
         android:layout_width="wrap_content"
@@ -19,22 +29,45 @@
         android:textColor="@color/colorGitHubGreen"
         android:lineSpacingExtra="0dp"
         android:textSize="@dimen/size_40" />
+    <!-- 标题（新增）-->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/dot"
+        android:textColor="@color/text_33"
+        android:textSize="@dimen/size_16"
+        android:textStyle="bold"
+        android:maxLines="1"
+        android:ellipsize="end"
+        tools:text="title"
+        android:lineSpacingExtra="@dimen/dp_4" />
 
+    <!-- 时间戳 -->
     <TextView
         android:id="@+id/timestamp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/dot"
-        android:textColor="@color/text_66"
-        android:textSize="@dimen/size_14" />
+        android:layout_below="@id/tv_title"
+        android:textColor="@color/text_99"
+        android:textSize="@dimen/size_12"
+        tools:text="timestamp"
+        android:layout_marginTop="@dimen/dp_4" />
 
+    <!-- 内容 -->
     <TextView
-        android:id="@+id/note"
+        android:id="@+id/tv_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/timestamp"
         android:layout_toRightOf="@id/dot"
-        android:textColor="@color/text_33"
-        android:textSize="@dimen/size_18" />
+        android:layout_below="@id/timestamp"
+        android:textColor="@color/text_66"
+        android:textSize="@dimen/size_14"
+        android:lineSpacingMultiplier="1.2"
+        android:layout_marginTop="@dimen/dp_8"
+        android:maxLines="2"
+        tools:text="content"
+        android:ellipsize="end" />
 
 </RelativeLayout>

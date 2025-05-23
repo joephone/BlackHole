@@ -21,7 +21,7 @@ public abstract class AppAc extends AbsTitleBarAc {
 
 
     public void startAc(Class<?> cls) {
-        LogUtils.d("startAc:"+cls.getName());
+//        LogUtils.d("startAc:"+cls.getName());
         Intent intent = new Intent(this, cls);
         startActivity(intent);
     }

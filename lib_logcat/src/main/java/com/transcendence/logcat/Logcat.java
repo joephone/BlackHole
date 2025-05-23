@@ -140,7 +140,7 @@ public class Logcat {
         if(mInitialized) {
             return;
         }
-        LogUtils.d("initialize");
+//        LogUtils.d("initialize");
         mWindowManager = (WindowManager) activity.getSystemService(Context.WINDOW_SERVICE);
 
         mSharePrefHelper = SharedPrefHelper.newInstance(activity.getApplicationContext(), SP_LOGCAT_CONFIG);
@@ -163,7 +163,7 @@ public class Logcat {
         initialize(activity);
 
         try {
-            LogUtils.d("enableLogcatWindow");
+//            LogUtils.d("enableLogcatWindow");
             mWindowManager.addView(mIBtnLog, mBtnLayoutParams);
         } catch (Exception e) {
             // do nothing
@@ -284,7 +284,7 @@ public class Logcat {
      * @param context
      */
     private void initLogButton(Context context) {
-        LogUtils.d("initLogButton");
+//        LogUtils.d("initLogButton");
         mIBtnLog = new ImageButton(context);
         mIBtnLog.setBackgroundResource(context.getResources().getIdentifier("selector_entry_button", "drawable", context.getPackageName()));
         mIBtnLog.setImageResource(context.getResources().getIdentifier("ic_entry", "drawable", context.getPackageName()));

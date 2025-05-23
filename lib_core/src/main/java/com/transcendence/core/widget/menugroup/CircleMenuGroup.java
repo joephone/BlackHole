@@ -429,7 +429,7 @@ public class CircleMenuGroup extends ViewGroup {
         }
 
         public void run() {
-            LogUtils.d("AutoFlingRunnable run");
+//            LogUtils.d("AutoFlingRunnable run");
 //            // 如果小于20,则停止
 //            if ((int) Math.abs(angelPerSecond) < 20) {
 //                isFling = false;

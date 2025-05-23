@@ -1,11 +1,14 @@
 package com.transcendence.freeland.main;
 
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
+import android.widget.ImageView;
 
 import androidx.databinding.DataBindingUtil;
 
@@ -48,6 +51,18 @@ public class ArouterAc extends AppAc {
         initData(mItemTexts, mItemImgs);
         //中心视图
         View centerView = LayoutInflater.from(this).inflate(R.layout.circle_menu_item_center,null,false);
+        ImageView ivCycle = centerView.findViewById(R.id.iv_cycle);
+        // 创建旋转动画（绕 Z 轴无限旋转）
+        ObjectAnimator rotationAnimator = ObjectAnimator.ofFloat(
+                ivCycle,
+                "rotation",
+                0f,
+                360f
+        );
+        rotationAnimator.setDuration(3000); // 3秒转一圈
+        rotationAnimator.setRepeatCount(ObjectAnimator.INFINITE); // 无限循环
+        rotationAnimator.setInterpolator(new LinearInterpolator()); // 匀速旋转
+        rotationAnimator.start();
 
         centerView.setOnClickListener(v ->  {
 ////            SaveImageActivity.launch(this);
